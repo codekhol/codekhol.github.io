@@ -14,7 +14,7 @@ body.inverse a:visited,
 body.inverse a:hover,
 body.inverse a:active { color: skyblue; }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width:1024px) {
     nav { padding: 10px 20px; }
     main { width: 100%; padding-left: 20px; padding-right: 20px; }
 }
