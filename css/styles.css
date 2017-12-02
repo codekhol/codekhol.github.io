@@ -14,6 +14,7 @@ body.inverse a:visited,
 body.inverse a:hover,
 body.inverse a:active { color: skyblue; }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width:768px) {
     body { font-size: 200%; }
+    main { width: 100%; }
 }
