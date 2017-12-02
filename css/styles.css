@@ -1,11 +1,15 @@
 body { font-family: Inconsolata, monospace;  margin:0; line-height: 1.5; }
-body.inverse { background-color: black; color: white; }
-nav { margin: 10px 40px; }
+nav { padding: 10px 40px; }
 main { box-sizing: border-box; width:640px; padding-left: 40px; padding-right: 40px; }
-
 
 a, a:visited, a:hover, a:active { color: blue; }
 ul { padding: 0; margin: 0; }
 li { display: inline; }
 .books img { height: 160px; margin-right: 20px; margin-bottom: 20px; }
 .meuseum { background-color: black; color: white; }
+
+body.inverse { background-color: black; color: white; }
+body.inverse a,
+body.inverse a:visited,
+body.inverse a:hover,
+body.inverse a:active { color: skyblue; }
