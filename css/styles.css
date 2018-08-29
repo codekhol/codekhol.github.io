@@ -9,11 +9,18 @@ main { box-sizing: border-box; width:640px; margin: auto; padding-left: 40px; pa
 
 .books img { height: 160px; margin-right: 20px; margin-bottom: 20px; }
 
-body.inverse { background-color: black; color: white; }
+body.inverse { background-color: #0A0A1F; color: #CCC; }
 body.inverse a,
 body.inverse a:visited,
 body.inverse a:hover,
 body.inverse a:active { color: skyblue; }
+body.inverse ul.processors img.s1 {  width: 30mm; }
+body.inverse ul.processors img.s2 {  width: 35mm; }
+body.inverse ul.processors img.s3 {  width: 42mm; }
+body.inverse ul.processors img.s4 {  width: 50mm; }
+body.inverse ul.processors img.s5 {  width: 60mm; }
+body.inverse ul.processors img.s6 {  width: 65mm; }
+
 
 @media screen and (max-width: 1024px) {
     nav { width: 100%; padding: 10px 20px; }
