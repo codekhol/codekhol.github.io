@@ -20,6 +20,7 @@ body.inverse ul.processors img.s3 {  width: 42mm; }
 body.inverse ul.processors img.s4 {  width: 50mm; }
 body.inverse ul.processors img.s5 {  width: 60mm; }
 body.inverse ul.processors img.s6 {  width: 65mm; }
+body.inverse ul.processors img.s7 {  width: 85mm; height: 65mm; }
 
 
 @media screen and (max-width: 1024px) {
