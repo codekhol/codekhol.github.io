@@ -10,17 +10,41 @@ main { box-sizing: border-box; width:640px; margin: auto; padding-left: 40px; pa
 .books img { height: 160px; margin-right: 20px; margin-bottom: 20px; }
 
 body.inverse { background-color: #0A0A1F; color: #CCC; }
+body.inverse main { width:840px; }
 body.inverse a,
 body.inverse a:visited,
 body.inverse a:hover,
 body.inverse a:active { color: skyblue; }
-body.inverse ul.processors img.s1 {  width: 30mm; }
-body.inverse ul.processors img.s2 {  width: 35mm; }
-body.inverse ul.processors img.s3 {  width: 42mm; }
-body.inverse ul.processors img.s4 {  width: 50mm; }
-body.inverse ul.processors img.s5 {  width: 60mm; }
-body.inverse ul.processors img.s6 {  width: 65mm; }
-body.inverse ul.processors img.s7 {  width: 85mm; }
+
+/*
+    286      = 30mm
+    P4 478   = 35mm
+    386      = 37mm
+    486 + OD = 45mm
+    Pentium  = 50mm
+    PODP     = 50mm
+    P3       = 50mm
+    8086     = 52mm
+    P4 423   = 54mm
+    Pent S4  = 55mm
+    PODP 133 = 55mm
+    PPro     = 68mm
+    P II OD  = 82mm
+    P II/III = 125mm
+    P II     = 139mm
+*/
+
+body.inverse ul.processors img.w30 {  width: 135px; }
+body.inverse ul.processors img.w35 {  width: 157.5px; }
+body.inverse ul.processors img.w37 {  width: 166.5px; }
+body.inverse ul.processors img.w45 {  width: 202.5px; }
+body.inverse ul.processors img.w50 {  width: 225px; }
+body.inverse ul.processors img.w52 {  width: 234px; }
+body.inverse ul.processors img.w55 {  width: 247.5px; }
+body.inverse ul.processors img.w68 {  width: 306px; }
+body.inverse ul.processors img.w82 {  width: 369px; }
+body.inverse ul.processors img.w125 {  width: 562.5px; }
+body.inverse ul.processors img.w139 {  width: 625.5px; }
 
 
 @media screen and (max-width: 1024px) {

@@ -1,0 +1,16 @@
+
+8086     = 52mm
+286      = 30mm
+386      = 37mm
+486 + OD = 45mm
+Pent S4  = 55mm
+Pentium  = 50mm
+PODP     = 50mm
+PODP 133 = 55mm
+PPro     = 68mm
+P II OD  = 82mm
+P II/III = 125mm
+P II     = 139mm
+P3       = 50mm
+P4 423   = 54mm
+P4 478   = 35mm
