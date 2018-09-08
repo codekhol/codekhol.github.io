@@ -34,16 +34,16 @@ body.inverse a:active { color: skyblue; }
 */
 
 body.inverse ul.processors img.w30 {  width: 135px; }
-body.inverse ul.processors img.w35 {  width: 157.5px; }
-body.inverse ul.processors img.w37 {  width: 166.5px; }
-body.inverse ul.processors img.w45 {  width: 202.5px; }
+body.inverse ul.processors img.w35 {  width: 157px; }
+body.inverse ul.processors img.w37 {  width: 166px; }
+body.inverse ul.processors img.w45 {  width: 202px; }
 body.inverse ul.processors img.w50 {  width: 225px; }
 body.inverse ul.processors img.w52 {  width: 234px; }
-body.inverse ul.processors img.w55 {  width: 247.5px; }
+body.inverse ul.processors img.w55 {  width: 247px; }
 body.inverse ul.processors img.w68 {  width: 306px; }
 body.inverse ul.processors img.w82 {  width: 369px; }
-body.inverse ul.processors img.w125 {  width: 562.5px; }
-body.inverse ul.processors img.w139 {  width: 625.5px; }
+body.inverse ul.processors img.w125 {  width: 585px; }
+body.inverse ul.processors img.w139 {  width: 625px; }
 
 
 @media screen and (max-width: 1024px) {
