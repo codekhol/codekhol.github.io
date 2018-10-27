@@ -10,7 +10,7 @@ i cant read clever code, but i can understand clear code\
 i cant read files with 1000 LoC, but i can read small files\
 i don't write comments unless absolutely necessary (i document public interfaces, i rarely document internal details)\
 i use paper and whiteboard to discuss ideas visually along being verbally\
-im argumetative, i refuse some principles in software development, there's no silver bullet in our industry, principles change rapidly\
+i refuse some principles in software development if i dont have a reason for, there's no silver bullet in our industry, principles change rapidly\
 using code generation and automation, i prefer consistency over creativity\
 i feel more productive when removing code than when adding code\
 i dont feel comfortable when pairing, i love code reviews, i cant write clean code the first time, i re-iterate and re-write multiple times\
