@@ -37,9 +37,8 @@ Software Engineer (Mar 2018 - Present)
 #### Achievements
 - 
 
-### Geeks Ltd (London, UK)
-Technical Lead (2014 - 2018)<br>
-Senior Software Developer (2010 - 2013)
+### 2014-2018, Technical Lead, Geeks Ltd (London, UK)
+### 2010-2013, Senior Software Developer, Geeks Ltd (London, UK)
 
 #### Responsibilities
 - Day-to-day coding, debugging, testing, deployment, and maintenance
@@ -55,23 +54,21 @@ Senior Software Developer (2010 - 2013)
 
 
 
-### Saman Electronic Payment Company (Tehran, Iran)
-Senior Software Developer (Apr 2009 - Dec 2009)
+### 2009, Senior Software Developer, Saman Electronic Payment Company (Tehran, Iran)
+
 - Implemented a Windows Service to replicate large volume of financial transactions from Oracle to SQL Server for reporting purposes
 - Worked on a web-based system to deliver a variety of financial reports to merchants. Optimised complex SQL queries to deliver efficient merchant reports
 
 
-### Nofasoft (Tehran, Iran)
-Software Developer (2005 - 2009)
-- Provided a software solution to Cutting Stock Problem using Genetic Algorithms. The software was used by aluminium door and window makers to optimise their stock and minimise wastage
+### 2005-2009, Software Developer, Nofasoft (Tehran, Iran)
+
+- Provided a software solution to Cutting Stock Problem (CSP) for aluminium door and window makers. using Genetic Algorithms. The software was used by aluminium door and window makers to optimise their stock and minimise wastage
 - Pleased to offer the company my own developed O/R Mapping tool
 
 
-### Mahfa Co (Tehran, Iran)
+### 2004-2005, Software Developer, Mahfa Co (Tehran, Iran)
 
-Software Developer (2004 - 2005)
-
-Re-developed their legacy MS Access accounting and stock management systems using C# (WinForms) and SQL Server. Increased maintainability by improving object-oriented and relational model design.
+- Re-developed legacy MS Access accounting and stock management systems using C# (WinForms) and SQL Server. Increased maintainability by improving object-oriented and relational model design.
 
 ## EDUCATION
 - MSc Information Systems Development<br>
