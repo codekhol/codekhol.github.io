@@ -5,7 +5,6 @@ linkedin.com/in/hghader
  
  ## ABOUT
 I am an experienced software developer with over 12 years of employment record. I am a proficient coder in several programming languages encompassing the entire stack from writing robust and efficient back-end code to implementing clear and consistent front-end.
-Clean code, consistency, automation, ... 
 not afraid of asking questions, even if im the only one in a group who doesn't understand something\
 i cant read clever code, but i can understand clear code\
 i cant read files with 1000 LoC, but i can read small files\
@@ -14,7 +13,7 @@ i use paper and whiteboard to discuss ideas visually along being verbally\
 im argumetative, i refuse some principles in software development, there's no silver bullet in our industry, principles change rapidly\
 using code generation and automation, i prefer consistency over creativity\
 i feel more productive when removing code than when adding code\
-i dont feel comfortable when pairing, i cant write clean code the first time, i re-iterate and re-wrrite multiple times\
+i dont feel comfortable when pairing, i love code reviews, i cant write clean code the first time, i re-iterate and re-write multiple times\
 there are [rare] cases that 'goto' statemet is the best option to use\
 design patterns are all summarised into one principle, use interfaces\
 
