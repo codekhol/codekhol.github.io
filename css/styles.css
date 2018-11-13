@@ -33,18 +33,17 @@ body.inverse a:active { color: skyblue; }
     P II     = 139mm
 */
 
-body.inverse ul.processors img.w30 {  width: 135px; }
-body.inverse ul.processors img.w35 {  width: 160px; }
-body.inverse ul.processors img.w37 {  width: 170px; }
-body.inverse ul.processors img.w45 {  width: 205px; }
-body.inverse ul.processors img.w50 {  width: 225px; }
-body.inverse ul.processors img.w52 {  width: 235px; }
-body.inverse ul.processors img.w55 {  width: 250px; }
-body.inverse ul.processors img.w68 {  width: 305px; }
-body.inverse ul.processors img.w82 {  width: 370px; }
-body.inverse ul.processors img.w125 {  width: 585px; }
-body.inverse ul.processors img.w139 {  width: 625px; }
-
+body.inverse ul.processors img.w30 { width: 135px; }
+body.inverse ul.processors img.w35 { width: 160px; }
+body.inverse ul.processors img.w37 { width: 170px; }
+body.inverse ul.processors img.w45 { width: 205px; }
+body.inverse ul.processors img.w50 { width: 225px; }
+body.inverse ul.processors img.w52 { width: 235px; }
+body.inverse ul.processors img.w55 { width: 250px; }
+body.inverse ul.processors img.w68 { width: 305px; }
+body.inverse ul.processors img.w82 { width: 370px; }
+body.inverse ul.processors img.w125 { width: 585px; }
+body.inverse ul.processors img.w139 { width: 625px; }
 
 @media screen and (max-width: 1024px) {
     nav { width: 100%; padding: 10px 20px; }
