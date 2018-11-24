@@ -1,24 +1,22 @@
 # Hamid Ghader
+
 hamid.ghader@live.com\
 linkedin.com/in/hghader
 
+<small>_Last update: December 2018_</small>
+
 ## ABOUT
-I am an experienced software developer with over 12 years of employment record. I am a proficient coder in several programming languages encompassing the entire stack from writing robust and efficient back-end code to implementing clear and consistent front-end. I am particularly interested in developing cloud-native distributed systems in ♥ Go ♥ Programming Language.
+I am an experienced software developer with over 14 years of employment record, worked as a technical lead and as a developer. I have been involved in numerous successful projects, responsible for a variety of activities, including providing technical advice, architecting, designing, and coding software systems. 
+
+I am a proficient coder in several programming languages encompassing the entire stack from writing robust and efficient back-ends to implementing clear and consistent front-ends. I am particularly interested in designing and implementing cloud-native distributed systems in ♥ Go ♥ Programming Language.
 
 ## SKILLS
-- Go
-- C# 
-- JavaScript/TypeScript 
-- ASP.NET 
-- Kafka/NATS
-- AWS/Kubernetes/Docker/Terraform
-- SQL Server 
-- MongoDB
-- HTML/CSS/LESS/SASS 
-- Node.js/npm/gulp/bower
-- Cordova/PhoneGap
-- Git/SourceTree 
-- Visual Basic (6.0/.NET)
+
+- <b>Languages:</b> Go, C#, JavaScript, TypeScript, Visual Basic
+- <b>Databases:</b> SQL Server, Oracle, MongoDB, Elasticsearch, Redis, etcd
+- <b>Messaging:</b> Kafka, NATS, gRPC, Protocol Buffers, JSON, XML
+- <b>Operations:</b> AWS, Kubernetes, Docker, Terraform, CI/CD, Git, Prometheus
+- <b>Web:</b> ASP.NET (WebForms/MVC), HTML, CSS, LESS, SASS, Chrome Extensions, Selenium/WebDriver
 
 ## EXPERIENCE
 
@@ -33,7 +31,7 @@ I am an experienced software developer with over 12 years of employment record. 
 
 - Successfully delivered numerous mission-critical client projects on time and on budget
 
-- In charge of technical direction of projects, making architectural and design decisions, and reporting to directors
+- In charge of technical direction of projects, transforming client requirements  making architectural and design decisions, and reporting to directors
 
 - Mentoring developers, pair programming, code review, sharing knowledge, and applying best practices (Design Patterns, SOLID, KISS, and DRY)
 
@@ -47,7 +45,7 @@ I am an experienced software developer with over 12 years of employment record. 
 `C#` `SQL Server` `Oracle` `ASP.NET` `IIS`
 
 - Implemented a Windows Service to replicate large volume of financial transactions from Oracle to SQL Server for reporting purposes
-- Created a web application to deliver a variety of financial reports to merchants 
+- Developed a web application to deliver a variety of financial reports to merchants 
 
 ### 2005-2008, Software Developer, Nofasoft (Tehran, Iran)
 `C#` `SQL Server` `ASP.NET` `HTML/CSS/JS` `IIS` `WinForms`
