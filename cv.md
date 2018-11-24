@@ -12,11 +12,16 @@ I am a proficient coder in several programming languages encompassing the entire
 
 ## SKILLS
 
-- <b>Languages:</b> Go, C#, JavaScript, TypeScript, Visual Basic
-- <b>Databases:</b> SQL Server, Oracle, MongoDB, Elasticsearch, Redis, etcd
-- <b>Messaging:</b> Kafka, NATS, gRPC, Protocol Buffers, JSON, XML
-- <b>Operations:</b> AWS, Kubernetes, Docker, Terraform, CI/CD, Git, Prometheus
-- <b>Web:</b> ASP.NET (WebForms/MVC), HTML, CSS, LESS, SASS, Chrome Extensions, Selenium/WebDriver
+### Languages 
+`Go` `C#` `JavaScript` `TypeScript` `Visual Basic`
+### Databases
+`SQL Server` `Oracle` `MongoDB` `Elasticsearch` `Redis` `etcd`
+### Messaging
+`Kafka` `NATS` `gRPC` `Protocol Buffers` `JSON` `XML`
+### Operations
+`AWS` `Kubernetes` `Docker` `CI/CD` `Git` `Terraform` `Prometheus`
+### Web
+`ASP.NET (WebForms/MVC)` `HTML` `CSS` `LESS` `SASS` `Chrome Extensions` `Selenium/WebDriver`
 
 ## EXPERIENCE
 
