@@ -2,8 +2,8 @@ _Last update: December 2018_
 
 # Hamid Ghader
 
-hamid.ghader@live.com\
-linkedin.com/in/hghader
+[hamid.ghader@live.com](mailto:hamid.ghader@live.com)
+[linkedin.com/in/hghader](https://www.linkedin.com/in/hghader)
 
 ## ABOUT
 I am an experienced software developer with over 14 years of employment record, worked as a technical lead and as a developer. I have been involved in numerous successful projects, responsible for a variety of activities, including providing technical advice, architecting, designing, and coding software systems. 
