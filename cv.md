@@ -2,7 +2,7 @@ _Last update: December 2018_
 
 # Hamid Ghader
 
-[hamid.ghader@live.com](mailto:hamid.ghader@live.com)
+[hamid.ghader@live.com](mailto:hamid.ghader@live.com)\
 [linkedin.com/in/hghader](https://www.linkedin.com/in/hghader)
 
 ## ABOUT
