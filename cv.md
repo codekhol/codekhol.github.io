@@ -6,7 +6,7 @@ _Last update: December 2018_
 [linkedin.com/in/hghader](https://www.linkedin.com/in/hghader)
 
 ## ABOUT
-I am an experienced software developer with over 14 years of employment record, worked as a technical lead and as a developer. I have been involved in numerous successful projects, responsible for a variety of activities, including providing technical advice, architecting, designing, and coding software systems. 
+I am an experienced software engineer with over 14 years of employment record, worked as a Technical Lead and as a Software Developer. I have been involved in numerous successful projects, responsible for a variety of activities, including providing technical advice, architecting, designing, and coding software systems. 
 
 I am a proficient coder in several programming languages encompassing the entire stack from writing robust and efficient back-ends to implementing clear and consistent front-ends. I am particularly interested in designing and implementing cloud-native distributed systems in ♥ Go ♥ Programming Language.
 
