@@ -1,0 +1,434 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>Xenix - Unix I.P.B 3162 - SCO Unix tape install on FT//ex with SCSI disk and tape</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../products/main.htm" onMouseOver="act('product')" onMouseOut="inact('product')"><img width="113" height="22" src="../../../images/product1.gif" name="product" alt="Products" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/kbase2.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+       <a HREF="../ipbmain.htm"><img width="113" height="17" src="../../../images/s_ipb.gif" alt="Bulletins (IPBs)" border="0"></a><br>
+       <a HREF="../../guides/guidecon.htm"><img width="113" height="17" src="../../../images/s_guides.gif" alt="Guides" border="0"></a><br>
+       <a HREF="../../faq/main.htm"><img width="113" height="17" src="../../../images/s_faq.gif" alt="FAQs" border="0"></a><br>
+       <a HREF="../../guides/manuals/menu.htm"><img width="113" height="17" src="../../../images/s_manual.gif" alt="Owner's Handbooks" border="0"></a><br>
+       <a HREF="../../../common/infact/menu.htm"><img width="113" height="17" src="../../../images/s_datash.gif" alt="Product Datasheets" border="0"></a><br>
+       <a HREF="../../../common/misc/menu.htm"><img width="113" height="17" src="../../../images/s_misc.gif" alt="Miscellaneous Items" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top">&nbsp;<table border="0" width="100%" bgcolor="#FFFFC0">
+      <tr>
+        <td colspan="2"><font face="Arial,Helvetica" size="4" color="#D60029"><strong>Xenix -
+        Unix I.P.B. 3162 </strong></font>
+        </td>
+        <td valign="bottom"><strong><font size="2">17th January 1994 (JE) </font></strong></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Department </font></strong></td>
+        <td><strong><font size="2">Category </font></strong></td>
+        <td><strong><font size="2">Implementation </font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="3" bgcolor="#000000" height="1"></td>
+      </tr>
+      <tr>
+        <td><font size="2">Unix </font></td>
+        <td><font size="2">Hardware </font></td>
+        <td><font size="2">Advisory </font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">Software </font></td>
+        <td></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td align="center" width="50%"><font size="2"><a href="ipb3161.htm">Previous IPB</a> </font></td>
+        <td align="center" width="50%"><font size="2"><a href="ipb3163.htm">Next IPB</a> </font></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td><p align="center"><font size="3"><strong>SCO Unix tape install on FT//ex with SCSI
+        disk and tape </strong></font>
+        <p><font size="2">SCO Unix 3.2v4.2 has been installed onto a SCSI root disk from SCSI tape
+        using the on board dual port SCSI adapter (Adaptec AIC-7770) by configuring the system as
+        below. It is suggested that this configuration is verified before an installation is
+        attempted. </font></p>
+        <p><font size="2">Full configuration is achieved by changing settings in two areas, one
+        being the ROM BIOS setup (&lt;CNTRL&gt;&lt;ALT&gt;&lt;ESC&gt; during boot up), and the
+        other being the use of the EISA Configuration Utility floppy. </font></p>
+        <p><font size="2">See the section at the end of this IPB for configuration changes from
+        these that are required for a Specialix card. </font></p>
+        <p><font size="2"><strong>ROM BIOS Setup</strong> </font><ol>
+          <li><font size="2">Select &quot;System Configuration&quot; </font></li>
+          <li><font size="2">Select &quot;Advanced Configuration&quot; and set the options as
+            follows:- </font><p><font size="2">Shadow RAM </font></p>
+            <table border="0" width="70%">
+              <tr>
+                <td width="20"></td>
+                <td><font size="2">F0000 - FFFFF (System BIOS) </font></td>
+                <td><font size="2">Enabled </font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">C0000 - C7FFF (Video BIOS) </font></td>
+                <td><font size="2">Enabled </font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">C8000 - CFFFF </font></td>
+                <td><font size="2">Enabled</font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">D0000 - D7FFF</font></td>
+                <td><font size="2">Enabled </font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">D8000 - DFFFF</font></td>
+                <td><font size="2">Enabled </font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">E0000 - EFFFF</font></td>
+                <td><font size="2">Enabled </font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">Internal Cache (CPU Cache)</font></td>
+                <td><font size="2">Enabled </font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">System Cache (External Cache) </font></td>
+                <td><font size="2">Enabled</font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">Cache Scheme</font></td>
+                <td><font size="2">Write Back </font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">Cache Burst Read Write State</font></td>
+                <td><font size="2">2-2-2-2 </font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">Cache Write Cycle Insert Wait</font></td>
+                <td><font size="2">Disabled </font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">F0000 - FFFFF (System BIOS)</font></td>
+                <td><font size="2">Cacheable</font></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><font size="2">C0000 - C7FFF (Video BIOS)</font></td>
+                <td><font size="2">Cacheable</font></td>
+              </tr>
+            </table>
+          </li>
+        </ol>
+        </td>
+      </tr>
+    </table>
+    <p><strong><font size="2">Use the &lt;PageDown&gt; key </font></strong></p>
+    <table border="0" width="67%">
+      <tr>
+        <td width="20"></td>
+        <td><font size="2">Hidden Refresh </font></td>
+        <td><font size="2">Enabled </font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">CPU-DRAM Read Cycle Insert Wait </font></td>
+        <td><font size="2">Disabled </font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">CPU-DRAM Write Cycle Insert Wait </font></td>
+        <td><font size="2">Disabled </font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">SCSI I/O ROM Mapping </font></td>
+        <td><font size="2">0D800 </font></td>
+      </tr>
+    </table>
+    <p><strong><font size="2">EISA Configuration Utility floppy </font></strong><ol>
+      <li><font size="2">Boot system from the floppy <br>
+        </font></li>
+      <li><font size="2">Select &quot;Configure Computer&quot; <br>
+        </font></li>
+      <li><font size="2">Select &quot;Configure Computer - advanced method&quot; <br>
+        </font></li>
+      <li><font size="2">After several pauses while configuration files are loaded, select Slot 9
+        - Adaptec AIC-7770 SCSI Host Adapter. <br>
+        </font></li>
+      <li><font size="2">From within the Adaptec AIC-7770 menu entered in step 4 above, set the
+        following options:- </font><table border="0" width="85%">
+          <tr>
+            <td colspan="3" width="15"><font size="2">Host Adapter Interface Definitions </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">Interrupt Level </font></td>
+            <td><font size="2">IRQ 11 </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">Bus Release Time </font></td>
+            <td><font size="2">60 BCLKS </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">Data FIFO Threshold </font></td>
+            <td><font size="2">100% </font></td>
+          </tr>
+          <tr>
+            <td height="10" colspan="3"></td>
+          </tr>
+          <tr>
+            <td colspan="3"><font size="2">SCSI Channel A Configuration </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">Host Adapter SCSI ID </font></td>
+            <td><font size="2">7 </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">SCSI Bus Parity Check </font></td>
+            <td><font size="2">Enabled </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">SCSI Selection Timeout </font></td>
+            <td><font size="2">256 milliseconds </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">SCS Bus Reset at Power-on </font></td>
+            <td><font size="2">Enabled </font></td>
+          </tr>
+          <tr>
+            <td height="10" colspan="3"></td>
+          </tr>
+          <tr>
+            <td colspan="3"><font size="2">SCSI Channel B Configuration </font></td>
+          </tr>
+          <tr>
+            <td height="10" colspan="3"></td>
+          </tr>
+          <tr>
+            <td><font size="2">. Same as Channel A </font></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td height="10" colspan="3"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><font size="2">Primary Channel Selection </font></td>
+            <td><font size="2">A </font></td>
+          </tr>
+          <tr>
+            <td height="10" colspan="3"></td>
+          </tr>
+          <tr>
+            <td colspan="3"><font size="2">Note: The &quot;Primary Channel Selection&quot; option may
+            not appear. </font></td>
+          </tr>
+          <tr>
+            <td colspan="3"></td>
+          </tr>
+        </table>
+      </li>
+      <li><font size="2">Select &quot;BIOS and Device Configuration&quot; by pressing
+        &lt;RETURN&gt;. <br>
+        </font></li>
+      <li><font size="2">Select &quot;BIOS Configuration&quot; and set the options as below:- </font><table
+        border="0">
+          <tr>
+            <td><font size="2">Support Removable Disks as Fixed Disk </font></td>
+            <td><font size="2">All Devices </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">Extended Translation for Drives &gt; 1GByte </font></td>
+            <td><font size="2">Disabled </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">Support more than two drives </font></td>
+            <td><font size="2">Enabled </font></td>
+          </tr>
+        </table>
+      </li>
+      <li><font size="2">Press ESC twice to return to the main menu that shows the slot numbers. <br>
+        </font></li>
+      <li><font size="2">Press &lt;ALT&gt;&lt;ESC&gt; to select the &quot;System&quot; drop down
+        menu. <br>
+        </font></li>
+      <li><font size="2">Select &quot;Exit&quot; <br>
+        </font></li>
+      <li><font size="2">Select &quot;Save configuration and exit&quot; and follow to prompts to
+        exit the configuration utility. </font></li>
+    </ol>
+    <p><font size="2">As with other Adaptec SCSI based systems the root disk should be set to
+    ID 0 and the tape unit to ID 2. </font></p>
+    <p><font size="2">Channel A of the Adaptec AIC-7770 is the top 50 way dual-in-line
+    connector located at the top right hand side of the mother board. </font></p>
+    <p><font size="2">Reboot the machine from the SCO N1 floppy and at the boot prompt enter
+    &quot;link&quot;. You wil then be asked for the name of the Boot Time Loadable Driver
+    required - the name is &quot;arad&quot;. The floppy containing the driver is labelled
+    &quot;AIC-7770 SCSI Utilities BTLD Driver for SCO UNIX&quot; and the current version is
+    1.0L. </font></p>
+    <p><font size="2"><strong>Specialix card</strong> </font></p>
+    <p><font size="2">As with the XEN-LS II and XEN-PC Specialix configuration covered in <a
+    href="ipb3140.htm">IPB 3140</a>, the card cannot use a RAM area that is cached. Therefore
+    set the card's switches and link to SW1=0, SW2=D, LINK 1=0 (this to set the shared RAM
+    address range to D0000-D7FFF), and disable the caching of this 32k RAM area by setting the
+    &quot;D0000 - D7FFF&quot; option under the &quot;Shadow RAM&quot; section of the ROM BIOS
+    Setup to &quot;Disabled&quot;. </font></p>
+    <p><font size="2">When installing the Specialix driver from custom, select the Use the
+    card in polled mode by selecting this option from the Specialix custom installation
+    utility. </font></p>
+    <p align="center"><font size="2">----------oOo---------- </font>
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

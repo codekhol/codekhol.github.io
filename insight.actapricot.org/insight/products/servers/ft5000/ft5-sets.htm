@@ -1,0 +1,1291 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FT5000 (Sitka motherboard) - BIOS Setup</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+    <td valign="top"><br>
+    <font face="Arial,Helvetica" size="4" color="#D60029"><strong>FT5000 (Sitka motherboard) -
+    BIOS Setup</strong></font><p ALIGN="JUSTIFY"><font size="3"><strong>Setup Menus</strong></font></p>
+    <font FACE="AGaramond" SIZE="2"><p ALIGN="JUSTIFY"></font><font size="2">Setup has six
+    major menus and several submenus:</font></p>
+    <blockquote>
+      <p><strong><font size="2">1. <a href="#main%20menu">Main Menu</a></font></strong><ul>
+        <li><font size="2">Primary IDE Master and Slave</font></li>
+        <li><font size="2">Keyboard Features</font></li>
+      </ul>
+      <p><strong><font size="2">2. <a href="#advanced%20menu">Advanced Menu</a></font></strong><ul>
+        <li><font size="2">PCI Configuration</font> <ul>
+            <li><font size="2">PCI Device, Embedded SCSI</font></li>
+            <li><font size="2">PCI Devices</font></li>
+          </ul>
+        </li>
+        <li><font size="2">I/O Device Configuration</font></li>
+        <li><font size="2">Advanced Chipset Control</font></li>
+      </ul>
+      <p><strong><font size="2">3. <a href="#security%20menu">Security Menu</a></font></strong></p>
+      <p><strong><font size="2">4. <a href="#server%20menu">Server Menu</a></font></strong><ul>
+        <li><font size="2">System Management</font></li>
+        <li><font size="2">Console Redirection</font></li>
+      </ul>
+      <p><strong><font size="2">5. <a href="#boot%20menu">Boot Menu</a></font></strong><ul>
+        <li><font size="2">Boot Device Priority</font></li>
+        <li><font size="2">Hard Drive</font></li>
+      </ul>
+      <p><strong><font size="2">6. <a href="#exit%20menu">Exit Menu</a></font></strong></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="3"><strong>Control Keys</strong></font></p>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" width="50%" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>To:</strong></font></td>
+        <td VALIGN="top" width="50%" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Press</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Get general help</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">&lt;F1&gt; or &lt;Atl+H&gt;</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Move between menus</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">left arrow, right arrow</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Go to the previous item</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">up arrow</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Go to the next Item</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">down arrow</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Change the value of an item</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">+ or -</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Select an item or display a submenu</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">&lt;Enter&gt;</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Leave a submenu or exit Setup</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">&lt;Esc&gt;</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Reset to Setup defaults</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">&lt;F9&gt;</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Save and exit Setup</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">&lt;F10&gt;</font></td>
+      </tr>
+    </table>
+    </center></div><p ALIGN="JUSTIFY">&nbsp;</p>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550" cellpadding="2"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td WIDTH="48%" VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>When
+        you see this:</strong></font></td>
+        <td WIDTH="52%" VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>What
+        it means </strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">On screen, an option is shown but you
+        cannot select it or move to that field.</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">You cannot change or configure the
+        option in that menu screen. Either the option is autoconfigured or autodetected, or you
+        must use a different Setup screen, or you must use the SSU.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">On screen, the phrase Press Enter
+        appears next to the option.</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Press &lt;Enter&gt; to display a submenu
+        that is either a separate full-screen menu or a pop-up menu with one or more choices.</font></td>
+      </tr>
+    </table>
+    </center></div><p ALIGN="JUSTIFY"><font size="2">The rest of this section lists the
+    features that display onscreen after you press &lt;F2&gt; to enter Setup. Not all of the
+    option choices are described, because (1) a few are not user-selectable but are displayed
+    for your information, and (2) many of the choices are relatively self-explanatory.</font></p>
+    <p ALIGN="JUSTIFY">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p><a name="main menu"></a><font size="3"><strong>Main Menu</strong></font></p>
+    <font FACE="AGaramond" SIZE="2"><p></font><font size="2">This table lists the selections
+    you can make on the Main Menu itself. Use the submenus for other selections. Default
+    values are in <b>bold</b>.</font></p>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029" width="30%"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029" width="20%"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029" width="50%"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="30%"><font size="2">System Time</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="20%"><font size="2">HH:MM:SS</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="50%"><font size="2">Sets the system time.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="30%"><font size="2">System Date</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="20%"><font size="2">MM/DD/YYYY</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="50%"><font size="2">Sets the system date.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="30%"><font size="2">Legacy Diskette A:</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="20%"><font size="2">Disabled<br>
+        360KB<br>
+        1.2 MB<br>
+        720KB<br>
+        <strong>1.44&nbsp;MB</strong><br>
+        2.88 MB</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="50%"><font size="2">Selects the diskette type.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="30%"><font size="2">Legacy Diskette B:</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="20%"><font size="2">Disabled<br>
+        360KB<br>
+        1.2 MB<br>
+        720KB<br>
+        <strong>1.44&nbsp;MB</strong><br>
+        2.88 MB</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="50%"><font size="2">Selects the diskette type.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="30%"><font size="2">Hard Disk Pre-delay</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="20%"><font size="2"><strong>Disabled</strong><br>
+        3, 6, 9, 12, 15, 21 or 30 seconds</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="50%"><font size="2">Adds a delay before the
+        first BIOS access of a hard disk drive. Some hard disk drives hang if accessed before they
+        initialise themselves. This delay ensures the hard disk drive has initialised after
+        powerup, before being accessed.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="30%"><font size="2">Primary Master</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="20%"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="50%"><font size="2">Enters <a href="#ide">submenu</a>.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="30%"><font size="2">Primary Slave</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="20%"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="50%"><font size="2">Enters <a href="#ide">submenu</a>.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="30%"><font size="2">Keyboard Features</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="20%"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="50%"><font size="2">Enters <a href="#keybd">submenu</a>.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="30%"><font size="2">Language</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="20%"><font size="2"><strong>English (US)</strong><br>
+        Spanish<br>
+        Italian<br>
+        French<br>
+        German<br>
+        Japanese (Kanji)</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" width="50%"><font size="2">Selects which language BIOS
+        displays.</font><p ALIGN="JUSTIFY"><font size="2">NOTE<br>
+        <em>Serial redirection does not work with Kanji.</em></font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><font size="2"><strong>&nbsp;<a name="ide"></a>Primary master and slave Submenu</strong></font></p>
+      <font FACE="AGaramond" SIZE="2"><p></font><font size="2">In the following table, the
+      features other than &quot;Type&quot; appear only for Type Auto if a drive is detected.</font></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td WIDTH="22%" VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td WIDTH="19%" VALIGN="TOP" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td WIDTH="58%" VALIGN="TOP" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Type</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Auto</strong><br>
+        None<br>
+        CD-ROM<br>
+        IDE Removable<br>
+        ATAPI&nbsp;Removable<br>
+        User</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Auto forces the system to attempt
+        autodetection of the drive type.<br>
+        None informs the system to ignore this drive. <br>
+        CD ROM allows the manual entry of fields described below.<br>
+        User allows the manual entry of all fields described below.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Cylinders</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">1 to 2048</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Number of Cylinders on Drive. <br>
+        This field is changeable only for Type User.<br>
+        This field is informational only for Type Auto.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Heads</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">1 to 16</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Number of read/write heads on drive. <br>
+        This field is available only for Type User.<br>
+        This field is informational only for Type Auto.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Sectors</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">1 to 64</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Number of sectors per track. <br>
+        This field is available only for Type User.<br>
+        This field is informational only for Type Auto.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Maximum Capacity</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A </font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Computed size of drive from cylinders,
+        heads, and sectors entered. <br>
+        This field is available only for Type User.<br>
+        This field is informational only for Type Auto.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Multi-Sector Transfer</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Disabled</strong><br>
+        2,&nbsp;4,&nbsp;8,&nbsp;or&nbsp;16&nbsp;sectors</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Determines the number of sectors per
+        block for multisector transfers. <br>
+        This field is informational only for Type Auto.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">LBA Mode Control</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Disabled</strong><br>
+        Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabling LBA causes logical block
+        addressing to be used in place of cylinders, heads, and sectors.<br>
+        This field is informational only for Type Auto.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">32 Bit I/O</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Disabled</strong><br>
+        Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabling allows 32 bit IDE data
+        transfers.<br>
+        This field is informational only for Type Auto.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Transfer Mode</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Standard</strong><br>
+        Fast PIO 1<br>
+        Fast PIO 2<br>
+        Fast PIO 3<br>
+        Fast PIO 4<br>
+        FPIO&nbsp;3&nbsp;/&nbsp;DMA&nbsp;1<br>
+        FPIO 4 / DMA 2</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the method for moving data to
+        and from the drive.<br>
+        This field is informational only for Type Auto.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Ultra DMA</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Disabled</strong><br>
+        Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">For use with Ultra DMA driver<br>
+        This field is informational only for Type Auto.</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><a name="keybd"></a><strong><font size="2">Keyboard features submenu</font></strong></p>
+    </blockquote>
+    <div align="center"><center><table cellspacing="2" border="0" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Num Lock</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Auto</strong><br>
+        On<br>
+        Off</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the power-on state for Num Lock.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Key Click</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Disabled</strong><br>
+        Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enables or disables key click.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Keyboard auto-repeat rate</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>30</b>, 26.7, 21.8, 18.5, 13.3, 10,
+        6, or 2 per second</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Sets key repeat rate.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Keyboard auto-repeat delay</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">1/4 sec<br>
+        <strong>1/2 sec</strong><br>
+        3/4 sec<br>
+        1 sec</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Sets delay before key repeat.</font></td>
+      </tr>
+    </table>
+    </center></div><p ALIGN="JUSTIFY">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p><a name="advanced menu"></a><font size="3"><strong>Advanced Menu</strong></font></p>
+    <font FACE="AGaramond" SIZE="2"><p ALIGN="JUSTIFY"></font><font size="2">You can make the
+    following selections on the Advanced Menu itself. Use the submenus for the three other
+    selections that appear on the Advanced Menu.</font></p>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Plug and Play OS</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>No</strong><br>
+        Yes</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Select Yes if you are booting a Plug and
+        Play capable OS.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Reset Configuration Data</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>No</strong><br>
+        Yes</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Select Yes if you want to clear the
+        system configuration data during next boot. System automatically resets to No in next
+        boot.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">PCI Configuration</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enters <a href="#pci_conf_sub">submenu</a>.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">I/O Device Configuration</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enters <a href="#int_peri_sub">submenu</a>.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Use Multiprocessor Specification</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">1.1<br>
+        <strong>1.4</strong></font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the version of multiprocessor
+        specification to use. Some operating systems require version&nbsp;1.1 for compatibility
+        reasons.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Large&nbsp;Disk&nbsp;Access&nbsp;Mode</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>LBA</strong><br>
+        CHS</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Applies to IDE drives only; refers to
+        the method used to access the drive.<br>
+        Most OSs use logical block addressing (LBA); some use cylinder head sector (CHS). To
+        verify method, consult OS documentation</font><font FACE="AGaramond" SIZE="2">.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Pause before Boot</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Enabled</strong><br>
+        Disabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enables five-second pause before booting
+        OS.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Advanced Chipset Control</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enters <a href="#chipset_sub">submenu</a>.</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><a name="pci_conf_sub"></a><strong><font size="2">PCI configuration submenu</font></strong></p>
+      <blockquote>
+        <p ALIGN="JUSTIFY"><font size="2">The PCI Configuration Menu contains selections that
+        access other submenus, shown here below.</font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><strong><font size="2">PCI device, embedded SCSI submenu</font></strong></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Option&nbsp;ROM&nbsp;Scan</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Enabled</strong><br>
+        Disabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enables option ROM scan of the selected
+        device.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enable&nbsp;Master</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Enabled</strong><br>
+        Disabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabled selected device as a PCI bus
+        master.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Latency Timer</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Default<br>
+        0020h<br>
+        0040h<br>
+        0060h<br>
+        0080h<br>
+        00A0h<br>
+        <strong>00C0h</strong><br>
+        00E0h</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Minimum guaranteed time, in units of PCI
+        bus clocks, that a device can be master on a PCI bus. Typically, option ROM code
+        overwrites the value set by the BIOS.</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><strong><font size="2">PCI devices submenu</font></strong></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Option&nbsp;ROM&nbsp;Scan</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Enabled</strong><br>
+        Disabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enables option ROM scan of all devices
+        other than the onboard SCSI controllers.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enable&nbsp;Master</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Enabled</strong><br>
+        Disabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enables all devices, other than the
+        onboard SCSI controllers, as a PCI bus master.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Latency Timer</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Default<br>
+        020h<br>
+        <strong>040h</strong><br>
+        060h<br>
+        080h<br>
+        0A0h<br>
+        0C0h<br>
+        0E0h</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Minimum guaranteed time, in units of PCI
+        bus clocks, that a device can be master on a PCI bus. Typically, option ROM code
+        overwrites the value set by the BIOS.</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><a name="int_peri_sub"></a><strong><font size="2">I/O device configuration submenu</font></strong></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Serial Port A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Disabled<br>
+        <strong>Enabled</strong><br>
+        Auto<br>
+        OS Controlled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><br>
+        <br>
+        Auto forces BIOS to configure the port. <br>
+        OS Controlled displays when OS controls the port.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Base I/O Address</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>3F8</strong><br>
+        2F8<br>
+        3E8<br>
+        2E8</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the base I/O address for COM
+        port A.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Interrupt</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>IRQ 4</strong><br>
+        IRQ 3</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the IRQ for COM port A.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Serial Port B</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Disabled<br>
+        <strong>Enabled</strong><br>
+        Auto<br>
+        OS Controlled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><br>
+        <br>
+        Auto forces BIOS to configure the port. <br>
+        OS Controlled displays when OS controls the port.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Base I/O Address</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">3F8<br>
+        <strong>2F8</strong><br>
+        3E8<br>
+        2E8</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the base I/O address for COM
+        port B.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Interrupt</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">IRQ 4<br>
+        <strong>IRQ 3</strong></font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the IRQ for COM port B</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Parallel Port</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Disabled<br>
+        <strong>Enabled</strong><br>
+        Auto<br>
+        OS Controlled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><br>
+        <br>
+        Auto forces BIOS to configure the port.<br>
+        OS Controlled displays when OS controls the port.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Mode</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>ECP</strong><br>
+        Output only<br>
+        Bidirectional<br>
+        EPP</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects mode for parallel port.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Base I/O Address</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>378</strong><br>
+        278</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the base I/O address for
+        parallel port.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Interrupt</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">IRQ 5<br>
+        <strong>IRQ 7</strong></font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the interrupt for parallel port.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">DMA channel</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>DMA 1</strong><br>
+        DMA 3</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the DMA channel for parallel
+        port.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Floppy disk controller</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Disabled<br>
+        <strong>Enabled</strong></font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enables onboard diskette controller.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Base I/O Address</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Primary</strong><br>
+        Secondary</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Sets the base I/O address for diskette
+        controller.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">PS/2 Mouse</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Auto</strong><br>
+        Disabled<br>
+        Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enables or disables onboard mouse.
+        Disabling the mouse frees up IRQ 12. If this feature is enabled, the OS can determine
+        whether to enable or disable the mouse.</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><a name="chipset_sub"></a><strong><font size="2">Advanced chipset control submenu</font></strong></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td WIDTH="26%" VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td WIDTH="15%" VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Option</strong></font></td>
+        <td WIDTH="59%" VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Address Bit Permuting</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled</b><br>
+        Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">To be enabled, there must be a power of
+        2 number of rows, all rows must be the same size, and all populated rows must be adjacent
+        and start at row 0. Two-way or four-way permuting is set automatically based on memory
+        configuration.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Base RAM Step</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>1 MB<br>
+        </b>1 KB<br>
+        Every&nbsp;location</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Tests base memory once per MB, once per
+        KB, or every location.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Extended RAM Step</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>1 MB<br>
+        </b>1 KB<br>
+        Every location</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Tests extended memory once per MB, once
+        per KB, or every location.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">L2 Cache</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Enabled<br>
+        </b>Disabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When enabled, the secondary cache is
+        sized and enabled. For Core Clock Frequency-to-System Bus ratios equal to two, BIOS
+        automatically disables the L2&nbsp;cache.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">ISA Expansion Aliasing</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Enabled<br>
+        </b>Disabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When enabled, every I/O access with an
+        address in the range x100-x3FFh, x500-x7FFh, x900-xBFF, and xD00-xFFFh is internally
+        aliased to the range 0100-03FFh before any other address range checking is performed.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Memory Scrubbing</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When enabled, BIOS automatically detects
+        and corrects SBEs.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Restreaming Buffer</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Enabled<br>
+        </b>Disabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When enabled, the data returned and
+        buffered for a Delayed Inbound Read can be reaccessed following a disconnect.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Read Prefetch for PXB0A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Information field only. Configures the
+        number of Dwords that are prefetched on Memory Read Multiple commands.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" nowrap><font size="2">Read Prefetch for PBX0B</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Information field only. Configures the
+        number of Dwords that are prefetched on Memory Read Multiple commands.</font></td>
+      </tr>
+    </table>
+    </center></div><p ALIGN="JUSTIFY">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p><a name="security menu"></a><font size="3"><strong>Security Menu</strong></font></p>
+    <font FACE="AGaramond" SIZE="2"><p ALIGN="JUSTIFY"></font><font size="2">You can make the
+    following selections on the Security Menu. Enabling the Supervisor Password field requires
+    a password for entering Setup. The passwords are not case sensitive.</font></p>
+    <div align="center"><center><table BORDER="0" CELLPADDING="2" WIDTH="550">
+      <tr>
+        <td WIDTH="26%" VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td WIDTH="16%" VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td WIDTH="57%" VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Administrator Password is</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Clear</b><br>
+        Set</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><p ALIGN="JUSTIFY"><font size="2">Status only; user
+        cannot modify. Once set, this can be disabled by setting it to a null string or by
+        clearing password jumper on the mainboard (see the &#145;Mainboard&#146; chapter for
+        details)</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">User Password is</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Clear</b><br>
+        Set</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Status only; user cannot modify. Once
+        set, this can be disabled by setting it to a null string or by clearing password jumper on
+        the mainboard (see the &#145;Mainboard&#146; chapter for details)</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" nowrap><font size="2">Set Administrative Password</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Press Enter</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When the &lt;Enter&gt; key is pressed,
+        the user is prompted for a password; press ESC key to abort. Once set, this can be
+        disabled by setting it to a null string or by clearing password jumper on the mainboard.
+        (see the &#145;Mainboard&#146; chapter for details)</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Set User Password</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Press Enter</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When the &lt;Enter&gt; key is pressed,
+        the user is prompted for a password; press ESC key to abort. Once set, this can be
+        disabled by setting it to a null string or by clearing password jumper on the mainboard.
+        (see the &#145;Mainboard chapter for details) </font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Password on Boot</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">If enabled and the user password is set,
+        the system prompts the user for a password before the system boots.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Fixed Disk Boot Sector</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Normal<br>
+        </b>Write Protect</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Write-protects boot sector on hard disk
+        to protect against viruses.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">System Backup Reminder</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Daily<br>
+        Weekly<br>
+        Monthly</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Displays system-backup reminder message
+        at boot.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Virus Check Reminder</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Daily<br>
+        Weekly<br>
+        Monthly</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Displays virus-check reminder message at
+        boot.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Secure Mode Timer</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>1, 2, 5, 10, <br>
+        or 20 min<br>
+        1 or 2 hr</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Period of keyboard or PS/2 mouse
+        inactivity specified for secure mode to activate. A password is required for secure mode
+        to function. Cannot be enabled unless at least one password is enabled.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Secure Mode Hot Key <b><br>
+        </b>(Ctrl-Alt- )</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB" nowrap><font size="2">[ ]<b> <br>
+        </b>[A, B, ..., Z]<br>
+        [0-9]</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Key assigned to invoke the secure mode
+        feature. Cannot be enabled unless at least one password is enabled. Can be disabled by
+        entering a new key followed by a backspace or by entering &lt;Delete&gt;.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Secure Mode Boot</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">System boots in secure mode. The user
+        must enter a password to unlock the system. Cannot be enabled unless at least one password
+        is enabled.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Video Blanking</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Blank video when secure mode is
+        activated. The user must enter a password to unlock the system. Cannot be enabled unless
+        at least one password is enabled.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Floppy Write Protect</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When secure mode is activated, the
+        diskette drive is write protected. The user must enter a password to re-enable diskette
+        writes. Cannot be enabled unless at least one password is enabled.</font></td>
+      </tr>
+    </table>
+    </center></div><p ALIGN="JUSTIFY">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p><a name="server menu"></a><font size="3"><strong>Server Menu</strong></font></p>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">System&nbsp;Management</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enters <a href="#sms_sub">submenu</a>.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Console Redirection</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enters <a href="#cons_redir_sub">submenu</a>.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Processor Retest</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>No</strong><br>
+        Yes</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Instructs BIOS to clear historical
+        processor status and to retest all processors on next boot.</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><a name="sms_sub"></a><strong><font size="2">System management submenu</font></strong></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Server&nbsp;Management Mode</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Disabled<br>
+        <strong>Enabled</strong></font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabled loads Server Management
+        Interrupt handler, which handles system errors.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">System Event Logging</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Disabled<br>
+        <strong>Enabled</strong></font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabled forces BIOS and BMC to log
+        system events.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Clear Event Log</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Disabled</strong><br>
+        Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabled clears the system event log.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Assert NMI on AERR</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabled generates a nonmaskable
+        interrupt (NMI) on an address parity error (AERR).</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Assert NMI on BERR</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabled generates an NMI on a bus error
+        (BERR).</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Assert NMI on PERR</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabled generates an NMI on a parity
+        error (PERR). To activate this feature, the system error (SERR) option must be enabled.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Assert NMI on SERR</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enabled generates an NMI on SERR.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" nowrap><font size="2">Enabled Host Bus Error</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><b>Disabled<br>
+        </b>Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enables host single-bit errors (SBEs)
+        and multiple-bit errors (MBEs).</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><a name="cons_redir_sub"></a><strong><font size="2">Console redirection submenu</font></strong></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB" nowrap><font size="2">COM Port Address</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Disabled</strong><br>
+        3F8<br>
+        2F8<br>
+        3E8</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When enabled, console redirection uses
+        the I/O port specified.<br>
+        When disabled, console redirection is completely disabled.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">IRQ #</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">None, 3 or 4</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When console redirection is enabled,
+        this displays the IRQ assigned per the address chosen in the COM Port Address field.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Baud Rate</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">9600<br>
+        <strong>19.2k</strong><br>
+        38.4k<br>
+        115.2k</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">When console redirection is enabled, use
+        the baud rate specified.<br>
+        When the Emergency Management Port (EMP) shares the COM port as console redirection, the
+        baud rate must be set to 19.2k to match EMP baud rate, unless the autobaud feature is
+        used.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Flow Control</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">No&nbsp;Flow&nbsp;Control<br>
+        CTS/RTS<br>
+        XON/XOFF<br>
+        <strong>CTS/RTS&nbsp;+&nbsp;CD</strong></font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">None disables flow control.<br>
+        CTS/RTS is hardware flow control.<br>
+        XON/XOFF is software flow control.<br>
+        CTS/RTS +CD is hardware plus carrier-detect flow control.</font></td>
+      </tr>
+    </table>
+    </center></div><p ALIGN="JUSTIFY">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p><a name="boot menu"></a><font size="3"><strong>Boot Menu</strong></font></p>
+    <p ALIGN="JUSTIFY"><font size="2">You can make the following selections on the Boot Menu
+    itself.</font></p>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Feature</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td VALIGN="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Floppy Check</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Disabled</strong><br>
+        Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">If Enabled, system verifies diskette
+        type on boot. <br>
+        Disabled results in a faster boot.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Multi-boot Support</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>Disabled</strong><br>
+        Enabled</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enable this option only if the total
+        number of hard drives is less than eight.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Boot&nbsp;Device&nbsp;Priority</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enters <a href="#boot_dev_sub">submenu</a>.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Hard Drive</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enters <a href="#hd_sub">submenu</a>.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Removable Devices</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Enters submenu.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Maximum Number of I<sup>2</sup>O Drives</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>1</strong><br>
+        4</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Selects the maximum number of I2O drives
+        assigned a DOS drive letter.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Message Timeout Multiplier</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2"><strong>1</strong>, 2, 8, 10, 50, 100,
+        1000</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">All timeout values are multiplied by
+        this number</font><font FACE="AGaramond" SIZE="2">.</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><a name="boot_dev_sub"></a><strong><font size="2">Boot Device Priority</font></strong></p>
+      <p ALIGN="JUSTIFY"><font size="2">Use the up or down arrow keys to select a device. Press
+      the &lt;+&gt; or &lt;-&gt; keys to move the device higher or lower in the boot priority
+      list.</font></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550" cellpadding="2"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Boot Priority</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Device</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">1</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Diskette Drive</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Attempts to boot from drive A.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">2</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Removable&nbsp;Devices</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Attempts to boot from a removable media
+        device.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">3</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Hard Drive </font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Attempts to boot from a hard drive
+        device.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">4</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">ATAPI CD-ROM Drive</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Attempts to boot from an ATAPI CD-ROM
+        drive. </font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><a name="hd_sub"></a><strong><font size="2">Hard Drive submenu</font></strong></p>
+      <p ALIGN="JUSTIFY"><font size="2">For options on this menu, use the up or down arrow keys
+      to select a device. Press the &lt;+&gt; or &lt;-&gt; keys to move the device higher or
+      lower in the boot priority list.</font></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Option</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">1.&nbsp;Drive&nbsp;#1 (or actual drive
+        string)</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">N/A</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">2. Other bootable cards<br>
+        (additional entries for each drive that has a PnP header)</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Covers all the boot devices that are not
+        reported to the system BIOS through the BIOS boot specification mechanism.</font></td>
+      </tr>
+    </table>
+    </center></div><p ALIGN="JUSTIFY">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p><a name="exit menu"></a><font size="3"><strong>Exit Menu</strong></font></p>
+    <p ALIGN="JUSTIFY"><font size="2">You can make the following selections on the Exit Menu.
+    Select an option using the up or down arrow keys. Press &lt;Enter&gt; to execute the
+    option. Pressing &lt;Esc&gt; does not exit this menu. You must select one of the items
+    from the menu or menu bar to exit.</font></p>
+    <div align="center"><center><table border="0" cellspacing="2" WIDTH="550"
+    bordercolor="#FFFFFF" cellpadding="2">
+      <tr>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Choices</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Exit Saving Changes </font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Exits after writing all modified Setup
+        item values to NVRAM.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Exit&nbsp;Discarding&nbsp;Changes</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Exits leaving NVRAM unmodified and
+        continues POST. User is prompted if any of the Setup fields were modified.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Load Setup Defaults</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Loads default values for all Setup
+        items.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Load Custom Defaults</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Loads settings from custom details.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Save Custom Defaults</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Saves present Setup values to custom
+        defaults. These settings override the standard BIOS defaults; BIOS loads these values when
+        CMOS is corrupted or when the Clear CMOS jumper is in the clear position.</font><b><font
+        FACE="AGaramond Bold" SIZE="1"><p ALIGN="JUSTIFY"></font><font size="2">CAUTION<br>
+        </b><em>Verify that custom defaults are saved before saving. Failure to do so can result
+        in system malfunction.</em></font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Discard Changes</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Reads previous values of all Setup items
+        from NVRAM.</font></td>
+      </tr>
+      <tr>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Save Changes</font></td>
+        <td VALIGN="top" bgcolor="#EBEBEB"><font size="2">Writes all Setup item values to NVRAM.</font></td>
+      </tr>
+    </table>
+    </center></div><p ALIGN="JUSTIFY">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

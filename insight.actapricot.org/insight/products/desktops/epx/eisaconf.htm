@@ -1,0 +1,548 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>EISA Configuration Utility</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">EISA Configuration Utility </font><font
+    size="3" color="#D60029">(Rev 1.11.1)</font></strong><p><font size="2">To start the EISA
+    configuration Utility (ECU) type CF to run the program, you will be presented with this
+    opening screen:</font></p>
+    <p align="center"><font size="2"><img src="graphics/epxes1.gif" width="484" height="204"></font></p>
+    <p><font size="2">When you choose OK the screen displays a graphical overview of the
+    boards and options installed in your computer. At the top of the screen is a bar listing
+    pull-down menus.</font></p>
+    <p align="center"><font size="2"><img src="graphics/epxes2.gif" width="484" height="204"
+    usemap="#Epxes2Map"><!--webbot bot="HTMLMarkup" startspan --><MAP NAME="Epxes2Map">
+			<AREA SHAPE=RECT COORDS="61,65,397,75" HREF="#eisa_config_detailed">
+</MAP>
+<!--webbot
+    bot="HTMLMarkup" endspan --></font></p>
+    <p><font size="2">Use the pull-down menus to enter configuration data about your computer.
+    As you enter information, the entries are verified (when Auto Verify in turned on). If the
+    utility finds any resource conflicts, you must correct the errors by changing function and
+    resource choices. When there are no resource conflicts, the configuration information is
+    saved in an SCI file.</font></p>
+    <p><font size="2">Before you return to the main menu, write down or print the list of the
+    switch, jumper, and software settings you need to change for ISA boards. If no CFG file
+    accompanies an option or board you want to install follow the instructions that go with
+    the option to install it.</font></p>
+    <p><font size="2"><b>Configuration Menu Bar Selections</b></font></p>
+    <table border="0" cellspacing="5" width="100%">
+      <tr>
+        <td valign="top"><font size="2"><b>Menu&nbsp;Bar<br>
+        Selection</b></font></td>
+        <td valign="top"><font size="2"><b>Pull-Down<br>
+        Selection</b></font></td>
+        <td valign="top"><font size="2"><b>Function</b> </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2"><a href="#eisa_config_system"><u>System</u></a></font></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_sysem_open"><u>Open</u></a></font></td>
+        <td valign="top"><font size="2">Opens an existing SCI file for editing.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_system_save"><u>Save As</u></a></font></td>
+        <td valign="top"><font size="2">Makes a backup copy of the current configuration choices
+        in a specified SCI.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_system_print"><u>Print</u></a></font></td>
+        <td valign="top"><font size="2">Prints configuration data about the current option or the
+        entire configuration on a printer.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_system_verify"><u>Verify</u></a></font></td>
+        <td valign="top"><font size="2">Verifies that the computer is correctly configured (the
+        configuration is free of system resource conflicts).</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_system_exit"><u>Exit</u></a></font></td>
+        <td valign="top"><font size="2">Prompts to either view the settings of the boards and
+        options, save the configuration and exit, or exit without saving any changes. If the
+        configuration has changed and is saved, the system restarts instead of exiting to the
+        menu.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"></td>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2"><a href="#eisa_config_edit"><u>Edit</u></a></font></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_edit_add"><u>Add</u></a></font></td>
+        <td valign="top"><font size="2">Adds a selected board or option to the current
+        configuration.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">Move</font></td>
+        <td valign="top"><font size="2">Selects the current board and moves it to a selected
+        available slot.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">Remove</font></td>
+        <td valign="top"><font size="2">Selects the current board and removes it from the current
+        configuration.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_edit_change"><u>Change Function</u></a></font></td>
+        <td valign="top"><font size="2">Selects the current function and allows you to change the
+        function choice. Only selectable when the detailed view is active.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">Change Resource</font></td>
+        <td valign="top"><font size="2">Selects the current function and allows you to change the
+        system resources for the function. Only selectable when the detailed view is active.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_edit_revert"><u>Revert to Saved</u></a></font></td>
+        <td valign="top"><font size="2">Sets all choices for the current board or the entire
+        configuration to the last saved choices.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_edit_default"><u>Reset to Default</u></a></font></td>
+        <td valign="top"><font size="2">Sets all choices for the current board or the entire
+        configuration to the manufacturer's default choices.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"></td>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2"><a href="#eisa_config_view"><u>View</u></a></font></td>
+        <td valign="top"><font size="2">Overview</font></td>
+        <td valign="top"><font size="2">Displays a general overview of the configuration.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_view_detail"><u>Detailed by Slot</u></a></font></td>
+        <td valign="top"><font size="2">Displays a detailed view of the configuration sorted by
+        slot.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_view_type"><u>Detailed by Type</u></a></font></td>
+        <td valign="top"><font size="2">Displays a detailed view of the configuration sorted by
+        the type of function.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_view_switch"><u>Switch and Jumper
+        Settings</u></a></font></td>
+        <td valign="top"><font size="2">Selects the current board or option and displays
+        information about its switches and jumpers.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_view_parameters"><u>Software
+        Parameters</u></a></font></td>
+        <td valign="top"><font size="2">Selects the current board or option and displays
+        information about software drivers.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_view_connections"><u>Connections</u></a></font></td>
+        <td valign="top"><font size="2">Selects the current board or option and displays
+        information about its external cable connections.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_view_board"><u>Board Specifications</u></a></font></td>
+        <td valign="top"><font size="2">Selects the current board or option and displays
+        information about identification and physical characteristics.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#eisa_config_view_resource"><u>Resources</u></a></font></td>
+        <td valign="top"><font size="2">Selects the current board or function and displays system
+        resource summary information.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"></td>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2"><a href="#eisa_config_settings"><u>Settings</u></a></font></td>
+        <td valign="top"><font size="2">Auto Verify</font></td>
+        <td valign="top"><font size="2">Checks the system configuration for resource conflicts
+        each time you change the configuration. Selecting Auto Verify turns Manual Verify off.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">Manual Verify</font></td>
+        <td valign="top"><font size="2">Your computer configuration is not checked for resource
+        conflicts. You must select Verify from the System pull-down menu to check your system
+        configuration.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"></td>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">Help</font></td>
+        <td valign="top"><font size="2">Help Topics</font></td>
+        <td valign="top"><font size="2">Displays an index of help topics which can be displayed on
+        your screen.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">Help</font></td>
+        <td valign="top"><font size="2">Displays help information about the currently selected
+        board, option or function. This menu item does the same function as pressing the F1 key.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">How to Use Keys</font></td>
+        <td valign="top"><font size="2">Displays a list of the key sequences which you can use.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">How to Use Help</font></td>
+        <td valign="top"><font size="2">Displays information about using help.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">Copyright Information</font></td>
+        <td valign="top"><font size="2">Displays copyright information about this utility.</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_system"></a><img
+    src="graphics/epxess.gif" width="162" height="70"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_sysem_open"></a><img
+    src="graphics/epxessoo.gif" width="468" height="168"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_system_save"></a><img
+    src="graphics/epxessa.gif" width="468" height="168"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_system_print"></a><img
+    src="graphics/epxessp.gif" width="348" height="80"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_system_verify"></a><img
+    src="graphics/epxessv.gif" width="270" height="56"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_system_exit"></a><img
+    src="graphics/epxessx.gif" width="467" height="136"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_edit"></a><img
+    src="graphics/epxese.gif" width="210" height="111"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_edit_add"></a><img
+    src="graphics/epxesea.gif" width="468" height="168"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_edit_change"></a><img
+    src="graphics/epxesec.gif" width="408" height="168"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_edit_revert"></a><img
+    src="graphics/epxeser.gif" width="348" height="80"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_edit_default"></a><img
+    src="graphics/epxesed.gif" width="348" height="80"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_view"></a><img
+    src="graphics/epxesv.gif" width="234" height="95"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_view_detail"></a><img
+    src="graphics/epxesvd.gif" width="484" height="204"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_view_type"></a><img
+    src="graphics/epxesvt.gif" width="484" height="204"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_view_switch"></a><img
+    src="graphics/epxesvs.gif" width="288" height="88"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_view_parameters"></a><img
+    src="graphics/epxesvp.gif" width="288" height="88"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_view_connections"></a><img
+    src="graphics/epxesvc.gif" width="240" height="168"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_view_board"></a><img
+    src="graphics/epxesvb.gif" width="414" height="112"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_view_resource"></a><img
+    src="graphics/epxesvr.gif" width="420" height="168"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_settings"></a><img
+    src="graphics/epxest.gif" width="132" height="39"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_detailed"></a><img
+    src="graphics/epxesm5.gif" width="484" height="363" usemap="#Epxesm5Map"><!--webbot
+    bot="HTMLMarkup" startspan --><MAP NAME="Epxesm5Map">
+			<AREA SHAPE=RECT COORDS="248,64,462,90" HREF="#eisa_config_detailed_1">
+			<AREA SHAPE=RECT COORDS="248,90,396,154" HREF="#eisa_config_detailed_2">
+			<AREA SHAPE=RECT COORDS="248,168,458,202" HREF="#eisa_config_detailed_3">
+			<AREA SHAPE=RECT COORDS="248,208,397,219" HREF="#eisa_config_detailed_4">
+			<AREA SHAPE=RECT COORDS="248,232,404,252" HREF="#eisa_config_detailed_5">
+			<AREA SHAPE=RECT COORDS="248,304,288,323" HREF="#eisa_config_detailed_6">
+</MAP>
+<!--webbot bot="HTMLMarkup" endspan --></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_detailed_1"></a><img
+    src="graphics/epxescf.gif" width="444" height="409"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_detailed_2"></a><img
+    src="graphics/epxescr.gif" width="372" height="104"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_detailed_3"></a><img
+    src="graphics/epxescp.gif" width="408" height="464"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_detailed_4"></a><img
+    src="graphics/epxescb.gif" width="408" height="72"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_detailed_5"></a><img
+    src="graphics/epxescm.gif" width="408" height="477"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="center"><font size="2"><a name="eisa_config_detailed_6"></a><img
+    src="graphics/epxescs.gif" width="408" height="112"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <h3><font size="1"><br>
+    </font></h3>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

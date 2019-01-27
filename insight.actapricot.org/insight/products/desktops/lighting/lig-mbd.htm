@@ -1,0 +1,1563 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>'Lightning' Motherboard Layout</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><p align="left"><font size="2"><br>
+    </font><font face="Arial,Helvetica" size="4" color="#D60029"><strong>'Lightning'
+    Motherboard Layout</strong></font></p>
+    <table border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td><font size="2"><strong>Note:</strong></font></td>
+        <td><font size="2"><strong>Lightning incorporates Intel 440LX chipset (66MHz system bus)</strong></font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2"><strong>Lightning BX incorporates Intel 440BX chipset (66 or 100MHz
+        system bus)</strong></font></td>
+      </tr>
+    </table>
+    <p><br>
+    </p>
+    <div align="center"><center><table border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td><font size="2"><img src="graphics/ligmbd.gif" width="300" height="438" border="0"></font></td>
+        <td><p align="center"><font size="2">&nbsp; <img src="graphics/lig-opt.gif" border="0"
+        width="207" height="305" usemap="#MainMap"></font><!--webbot bot="HTMLMarkup" startspan --><MAP NAME="MainMap">
+<AREA SHAPE="RECT" COORDS="1, 274, 31, 304" HREF="#Beep">
+<AREA SHAPE="RECT" COORDS="1, 240, 31, 270" HREF="#io">
+<AREA SHAPE="RECT" COORDS="1, 206, 31, 236" HREF="#CMOS">
+<AREA SHAPE="RECT" COORDS="1, 172, 33, 202" HREF="#jumpers">
+<AREA SHAPE="RECT" COORDS="1, 138, 31, 168" HREF="#Add_Ins">
+<AREA SHAPE="RECT" COORDS="1, 104, 33, 134" HREF="#memory">
+<AREA SHAPE="RECT" COORDS="1, 70, 33, 100" HREF="#Motherboard">
+<AREA SHAPE="RECT" COORDS="1, 38, 31, 66" HREF="#Rear">
+<AREA SHAPE="RECT" COORDS="1, 4, 31, 32" HREF="#Front">
+</MAP>
+<!--webbot
+        bot="HTMLMarkup" endspan --></td>
+      </tr>
+    </table>
+    </center></div><p> </p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="front"></a><br>
+    </font><font size="3"><strong>Front View</strong></font></p>
+    <p><strong><font size="2">Mini-tower</font></strong></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="70%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td align="center" colspan="4"><font size="2"><img src="graphics/lig-frnt.gif" width="470"
+        height="623"></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">1</font></td>
+        <td><font size="2">Infra-red sensor</font></td>
+        <td align="center"><font size="2">10</font></td>
+        <td><font size="2">Universal Serial Bus (USB) port</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">2</font></td>
+        <td><font size="2">Hard disk activity indicator</font></td>
+        <td align="center"><font size="2">11</font></td>
+        <td><font size="2">FireWire port (factory option)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">3</font></td>
+        <td><font size="2">Power Mode light</font></td>
+        <td align="center"><font size="2">12</font></td>
+        <td><font size="2">S-Video In port (factory option)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">4</font></td>
+        <td><font size="2">Power button</font></td>
+        <td align="center"><font size="2">13</font></td>
+        <td><font size="2">Composite Video In port (factory option)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">5</font></td>
+        <td><font size="2">CD-ROM disc drawer (platter)</font></td>
+        <td align="center"><font size="2">14</font></td>
+        <td><font size="2">CD emergency eject hole</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">6</font></td>
+        <td><font size="2">CD headphone jack &amp; volume control</font></td>
+        <td align="center"><font size="2">15</font></td>
+        <td><font size="2">CD Eject button</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">7</font></td>
+        <td><font size="2">CD activity indicator</font></td>
+        <td align="center"><font size="2">16</font></td>
+        <td><font size="2">Diskette drive</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">8</font></td>
+        <td><font size="2">Line In socket for audio input</font></td>
+        <td align="center"><font size="2">17</font></td>
+        <td><font size="2">Message LED alerts you that you have an unread message</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">9</font></td>
+        <td><font size="2">Headphones socket</font></td>
+        <td align="center"><font size="2">18</font></td>
+        <td><font size="2">Message Cancel button clears the Message LED alert</font></td>
+      </tr>
+    </table>
+    </center></div><p><strong><font size="2">Desktop</font></strong></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="70%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td colspan="4"><p align="center"><font size="2">&nbsp; <img src="graphics/lig-defr.gif"
+        width="469" height="233"></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">1</font></td>
+        <td><font size="2">Power button</font></td>
+        <td align="center"><font size="2">6</font></td>
+        <td><font size="2">CD phono jack &amp; volume control</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">2</font></td>
+        <td><font size="2">CD Eject button</font></td>
+        <td align="center"><font size="2">7</font></td>
+        <td><font size="2">Diskette drive</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">3</font></td>
+        <td><font size="2">CD emergency eject hole</font></td>
+        <td align="center"><font size="2">8</font></td>
+        <td><font size="2">Infra-red sensor (optional)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">4</font></td>
+        <td><font size="2">CD-ROM disc drawer (platter)</font></td>
+        <td align="center"><font size="2">9</font></td>
+        <td><font size="2">Hard disk activity indicator</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">5</font></td>
+        <td><font size="2">CD activity indicator</font></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="rear"></a><br>
+    </font><font size="3"><strong>Rear View</strong></font></p>
+    <p><strong><font size="2">Mini-tower</font></strong></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="70%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td align="center" colspan="4"><font size="2"><img src="graphics/lig-rear.gif" width="374"
+        height="377"></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">1</font></td>
+        <td><font size="2">Monitor port</font></td>
+        <td align="center"><font size="2">12</font></td>
+        <td><font size="2">AC power outlet for monitor</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">2</font></td>
+        <td><font size="2">S-Video Out port for displaying the monitor image on a television
+        (factory option)</font></td>
+        <td align="center"><font size="2">13</font></td>
+        <td><font size="2">Voltage selection switch</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">3</font></td>
+        <td><font size="2">Parallel (printer) port</font></td>
+        <td align="center"><font size="2">14</font></td>
+        <td><font size="2">AC power inlet from AC supply</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">4</font></td>
+        <td><font size="2">Mouse port</font></td>
+        <td align="center"><font size="2">15</font></td>
+        <td><font size="2">Caselock</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">5</font></td>
+        <td><font size="2">Keyboard port</font></td>
+        <td align="center"><font size="2">16</font></td>
+        <td><font size="2">MIDI/Joystick port</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">6</font></td>
+        <td><font size="2">Serial port</font></td>
+        <td align="center"><font size="2">17</font></td>
+        <td><font size="2">Auxiliary Line In socket (factory option)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">7</font></td>
+        <td><font size="2">Microphone socket</font></td>
+        <td align="center"><font size="2">18</font></td>
+        <td><font size="2">SPDIF digital audio output for sending digital audio to an external
+        audio amplifier (factory option)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">8</font></td>
+        <td><font size="2">Line Out socket for audio output</font></td>
+        <td align="center"><font size="2">19</font></td>
+        <td><font size="2">Modem port</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">9</font></td>
+        <td><font size="2">Speaker socket</font></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">10</font></td>
+        <td><font size="2">Universal Serial Bus (USB) port</font></td>
+        <td align="center"><font size="2">A</font></td>
+        <td><font size="2">Side panel fixing screws</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">11</font></td>
+        <td><font size="2">Security loop for cable or padlock</font></td>
+        <td align="center"><font size="2">B</font></td>
+        <td><font size="2">Handles to assist side panel removal</font></td>
+      </tr>
+    </table>
+    </center></div><p><strong><font size="2">Desktop</font></strong></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="70%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td align="center" valign="top" colspan="4"><font size="2"><img
+        src="graphics/lig-dere.gif" width="500" height="234">&nbsp; </font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">1</font></td>
+        <td valign="top"><font size="2">Casing screws for the top cover</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">12</font></td>
+        <td valign="top"><font size="2">Parallel (printer) port</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">2</font></td>
+        <td valign="top"><font size="2">AC power outlet for monitor</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">13</font></td>
+        <td valign="top"><font size="2">Video out port (option)</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">3</font></td>
+        <td valign="top"><font size="2">Voltage selection switch</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">14</font></td>
+        <td valign="top"><font size="2">Monoitor port</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">4</font></td>
+        <td valign="top"><font size="2">AC power inlet from AC supply</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">15</font></td>
+        <td valign="top"><font size="2">PCI slot (full-length)</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">5</font></td>
+        <td valign="top"><font size="2">Double USB port</font></td>
+        <td align="center" valign="top"><font size="2">16</font></td>
+        <td valign="top"><font size="2">ISA slot (full-length)</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">6</font></td>
+        <td valign="top"><font size="2">Audio output (speaker) jack</font></td>
+        <td align="center" valign="top"><font size="2">17</font></td>
+        <td valign="top"><font size="2">ISA slot (half-length)</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">7</font></td>
+        <td valign="top"><font size="2">Audio line-out jack</font></td>
+        <td align="center" valign="top"><font size="2">18</font></td>
+        <td valign="top"><font size="2">PCI slots (two half-length)</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">8</font></td>
+        <td valign="top"><font size="2">Microphone input jack</font></td>
+        <td align="center" valign="top"><font size="2">19</font></td>
+        <td valign="top"><font size="2">Serial port 2 (optional)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">9</font></td>
+        <td><font size="2">Serial (modem) port 1</font></td>
+        <td align="center"><font size="2">20</font></td>
+        <td><font size="2">Security loop for cable or padlock</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">10</font></td>
+        <td><font size="2">PS/2 Keyboard port</font></td>
+        <td align="center"><font size="2">21</font></td>
+        <td><font size="2">Caselock (key supplied)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">11</font></td>
+        <td><font size="2">PS/2 Mouse port</font></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="motherboard"></a><br>
+    </font><font size="3"><strong>Motherboard</strong></font><font size="2"> </font></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="70%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td align="center" colspan="4"><font size="2"><img src="graphics/lig-mbd.gif" width="430"
+        height="548"></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">1</font></td>
+        <td><font size="2">Auxiliary Line In internal connector (option)</font></td>
+        <td align="center"><font size="2">12</font></td>
+        <td><font size="2">Front panel conn. option</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">2</font></td>
+        <td><font size="2">1.44MB diskette drive connector</font></td>
+        <td align="center"><font size="2">13</font></td>
+        <td><font size="2">Processor slot</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">3</font></td>
+        <td><font size="2">S/P Dif. (option) dig. audio</font></td>
+        <td align="center"><font size="2">14</font></td>
+        <td><font size="2">DIMM sockets</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">4</font></td>
+        <td><font size="2">CD audio connector</font></td>
+        <td align="center"><font size="2">15</font></td>
+        <td><font size="2">Case fan connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">5</font></td>
+        <td><font size="2">Front panel USB internal connector (option)</font></td>
+        <td align="center"><font size="2">16</font></td>
+        <td><font size="2">CPU fan connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">6</font></td>
+        <td><font size="2">Primary E-IDE connector</font></td>
+        <td align="center"><font size="2">17</font></td>
+        <td><font size="2">Processor heat sense input</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">7</font></td>
+        <td><font size="2">Secondary E-IDE connector</font></td>
+        <td align="center"><font size="2">18</font></td>
+        <td><font size="2">VEC/AMC feature connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">8</font></td>
+        <td><font size="2">PSU logic connector</font></td>
+        <td align="center"><font size="2">19</font></td>
+        <td><font size="2">TV tuner connector (option)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">9</font></td>
+        <td><font size="2">&#145;Wake on LAN&#146; connector</font></td>
+        <td align="center"><font size="2">20</font></td>
+        <td><font size="2">Video memory upgrade socket</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">10</font></td>
+        <td><font size="2">&quot;Wake on Call&quot; Modem connector</font></td>
+        <td align="center"><font size="2">21</font></td>
+        <td><font size="2">Riser board connect</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">11</font></td>
+        <td><font size="2">CMOS battery</font></td>
+        <td align="center"><font size="2">22</font></td>
+        <td><font size="2">Motherboard power connector</font></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td align="center"><font size="2">23</font></td>
+        <td><font size="2">COM2 interface (option)</font></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">J1</font></td>
+        <td><font size="2">On-board video enable/disable</font></td>
+        <td align="center"><font size="2">A</font></td>
+        <td><font size="2">Monitor port</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">J2</font></td>
+        <td><font size="2">BIOS program enable/disable</font></td>
+        <td align="center"><font size="2">B</font></td>
+        <td><font size="2">TV Out (S-Video) port (factory option)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">J5-8</font></td>
+        <td><font size="2">Processor clock multipliers</font></td>
+        <td align="center"><font size="2">C</font></td>
+        <td><font size="2">Parallel (printer) port</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">J9</font></td>
+        <td><font size="2">DSP enable/disable (option)</font></td>
+        <td align="center"><font size="2">D</font></td>
+        <td><font size="2">PS/2 Mouse port</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">J10</font></td>
+        <td><font size="2">Audio subsystem enable/disable</font></td>
+        <td align="center"><font size="2">E</font></td>
+        <td><font size="2">PS/2 Keyboard port</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">J11</font></td>
+        <td><font size="2">Red power LED enable/disable</font></td>
+        <td align="center"><font size="2">F</font></td>
+        <td><font size="2">Serial port COM1</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">J12</font></td>
+        <td><font size="2">Clear CMOS</font></td>
+        <td align="center"><font size="2">G</font></td>
+        <td><font size="2">Microphone socket</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">PL4</font></td>
+        <td><font size="2">Server management (option)</font></td>
+        <td align="center"><font size="2">H</font></td>
+        <td><font size="2">Line Out socket</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">PL18</font></td>
+        <td><font size="2">Joystick/MIDI internal connector </font></td>
+        <td align="center"><font size="2">I</font></td>
+        <td><font size="2">Speaker socket</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">PL19</font></td>
+        <td><font size="2">Voice modem audio connector</font></td>
+        <td align="center"><font size="2">J</font></td>
+        <td><font size="2">Dual USB port</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">PL23</font></td>
+        <td><font size="2">Front panel controls/options</font></td>
+        <td align="center">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">PL25</font></td>
+        <td><font size="2">Internal case speaker (if fitted)</font></td>
+        <td align="center">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">PL26</font></td>
+        <td><font size="2">Message light (option)</font></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">PL27</font></td>
+        <td><font size="2">Message switch (option)</font></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="memory"></a><br>
+    </font><font size="3"><strong>Memory</strong></font></p>
+    <blockquote>
+      <p><font size="2">You can give your PC more memory by adding or replacing memory modules
+      called Dual Inline Memory Modules - DIMMs.</font></p>
+      <p><font size="2">The motherboard&#146;s three DIMM sockets accept DIMMs of up to 128
+      Mbytes in any combination (giving a maximum memory capacity of 384 Mbytes). The slot 'MM1'
+      nearest to the processor&nbsp; is recommended to be used first.</font></p>
+      <p><em><font size="2"><strong>Note that the Lightning and Lightning BX motherboards use
+      DIMMs of different specifications. See below for details and ensure that you fit the
+      correct type.</strong></font></em></p>
+      <p><font size="2"><strong>Lightning<br>
+      </strong>The DIMMs you use must have the following specification: gold contacts, 3.3V, 64
+      or 72-bit, unbuffered, SDRAM-type with Serial Presence Detect (SPD) and a CAS latency of 2
+      at 66 MHz. If you use any other type of DIMM you risk damaging the motherboard.<br>
+      <br>
+      <strong>Lightning BX<br>
+      </strong>The DIMMs you use must meet the following specification:<br>
+      Serial Presence Detect (SPD), gold contact, 64-bit, (or 72-bit ECC), unbuffered, 3.3V,
+      SDRAM type, Intel PC100 spec compliant.</font></p>
+      <p><font size="2">The ECC capabilities of 72-bit DIMMs will only operate if all the DIMMs
+      in the system are 72-bit.</font></p>
+      <p><font size="2">Using DIMMs of a different type could affect system performance with a
+      risk of damaging the motherboard.</font></p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="add_ins"></a><br>
+    </font><font size="3"><strong>Add-Ins</strong></font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td colspan="2"><strong><font size="2">SDRAM memory expansion for Lightning Systems (LW,
+        LG, LH, LK, LL)</font></strong></td>
+      </tr>
+      <tr>
+        <td><font size="2">16MB 64-bit DIMM Module</font></td>
+        <td><font size="2">XB61385</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">32MB 64-bit DIMM Module</font></td>
+        <td><font size="2">XB61386</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">64MB 64-bit DIMM Module</font></td>
+        <td><font size="2">XB61387</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">128MB 64-bit DIMM Module</font></td>
+        <td><font size="2">XB61388</font></td>
+      </tr>
+      <tr>
+        <td><font size="2"><strong>SDRAM memory expansion for Lightning BX Systems (LB, LJ)</strong></font></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">16MB 64-bit DIMM Module (PC100)</font></td>
+        <td><font size="2">XB64151</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">32MB 64-bit DIMM Module (PC100)</font></td>
+        <td><font size="2">XB64152</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">64MB 64-bit DIMM Module (PC100)</font></td>
+        <td><font size="2">XB64153</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">128MB 64-bit DIMM Module (PC100)</font></td>
+        <td><font size="2">XB64154</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Video memory expansion for LS500 and LS600 Pentium II systems</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">2MB to 4MB SGRAM upgrade (Pentium II 233, 266, 300, 333MHz)</font></td>
+        <td><font size="2">XB61393</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">4MB to 8MB SGRAM upgrade (Pentium II 350, 400MHz)</font></td>
+        <td><font size="2">XB64155</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Drive Options</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2"><a href="../../../common/drives/hard/qst2160a.htm">2.1GB IDE Stratus
+        hard disk drive add-in</a></font></td>
+        <td><font size="2">SU61670</font></td>
+      </tr>
+      <tr>
+        <td><font size="2"><a href="../../../common/drives/hard/qst3240a.htm">3.2GB IDE Stratus
+        hard disk drive add-in</a></font></td>
+        <td><font size="2">SU61671</font></td>
+      </tr>
+      <tr>
+        <td><font size="2"><a href="../../../common/drives/hard/qst4320a.htm">4.3GB IDE Stratus
+        hard disk drive add-in</a></font></td>
+        <td><font size="2">SU62667</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">IDE HDD fixing kit</font></td>
+        <td><font size="2">SU56129</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">CD-ROM Drives</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2"><a href="../../../common/drives/cd/so511c.htm">IDE CDU-511 Sony x16
+        Speed PCAV CD-ROM Drive</a></font></td>
+        <td><font size="2">XB61060</font></td>
+      </tr>
+      <tr>
+        <td><font size="2"><a href="../../../common/drives/cd/so621c.htm">IDE CDU-621 Sony x12-24
+        Speed PCAV CD-ROM Drive</a></font></td>
+        <td><font size="2">XB62488</font></td>
+      </tr>
+      <tr>
+        <td><a href="../../../common/drives/cd/so711c.htm"><font size="2">IDE CDU-711 Sony x14-32
+        Speed PCAV CD-ROM Drive</font></a></td>
+        <td><font size="2">SU63831</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">IDE Sony CD-ROM Drive Fixing Kit for LS500</font></td>
+        <td><font size="2">SU56017</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">IDE Sony CD-ROM Drive Fixing Kit for LS600</font></td>
+        <td><font size="2">SU60353</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">SCSI card options</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">Adaptec 1510B SCSI card add-in (No HDD Support)</font></td>
+        <td><font size="2">SA50160</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Adaptec 2940 PCI SCSI Card add-in</font></td>
+        <td><font size="2">UD55556</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">SCSI Fixing Kit for AHA1510</font></td>
+        <td><font size="2">SU56213</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">SCSI Fixing Kit for AHA2940</font></td>
+        <td><font size="2">SU56214</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Connectivity options</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">Intel Pro 100B PCI Ethernet Card</font></td>
+        <td><font size="2">XB61343</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">3Com triple-combo Ethernet card (3C509B)</font></td>
+        <td><font size="2">XB55742</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">3Com 10/100 PCI Ethernet (3C905TX)</font></td>
+        <td><font size="2">XB59527</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">56K ISA Modem</font></td>
+        <td><font size="2">XB62192</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Diamond ISDN Modem (64K)</font></td>
+        <td><font size="2">XB62494</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">3Com 8 port Micro Hub &amp; 3 x 5M UTP cables</font></td>
+        <td><font size="2">XB62451</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Specialix serial cards</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">32-port ISA SI/XIO serial card</font></td>
+        <td><font size="2">XB54693</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">4 port terminal adaptor</font></td>
+        <td><font size="2">XB43319</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">8 port terminal adaptor</font></td>
+        <td><font size="2">XB43320</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">8 port modular terminal adapter</font></td>
+        <td><font size="2">XB54611</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">8 port modular terminal adaptor (7 RS232, 1 Parallel)</font></td>
+        <td><font size="2">XB54612</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Audio Options</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">Apricot Deepsound Subwoofer</font></td>
+        <td><font size="2">XB58090</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">20W Powered external speakers</font></td>
+        <td><font size="2">XB55607</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Wavetable upgrade for on-board audio</font></td>
+        <td><font size="2">XB57690</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="jumpers"></a><br>
+    </font><font size="3"><strong>Jumper Settings</strong></font></p>
+    <blockquote>
+      <p><font size="2">There are only a few jumpers on the motherboard that you may need to
+      alter. All others are set at the factory and should not be changed.</font></p>
+      <p><font size="2">On the motherboard, pin 1 of each jumper block is indicated by a small
+      triangular marking.</font></p>
+      <blockquote>
+        <p><font size="2">Do not change jumper settings unnecessarily<br>
+        Do not alter any jumpers or switch settings other than those identified in this chapter,
+        unless told to by your Mitsubishi Electric PC supplier or an authorised maintainer.
+        Otherwise, you may damage the system processor, the motherboard, or both.</font></p>
+      </blockquote>
+      <p><font size="2"><strong>On-board video disabling (J1)</strong><br>
+      If you install a video adapter expansion card, the computer should automatically detect
+      this and disable the on-board video adapter. If for some reason this does not happen, and
+      you experience problems with a newly-fitted card, you can manually disable the on-board
+      video adapter by moving jumper J1 from position 2-3 (EN) to position 1-2 (DIS).</font></p>
+      <p><font size="2"><strong>Processor multiplier (J5 to J8)</strong><br>
+      The details below are given for the clock speeds of processors known at the time of
+      writing. Higher speed and overdrive processors may become available, in which case consult
+      your supplier for further information.</font></p>
+      <p><font size="2">In the case of the Lightning BX, the processor will send information to
+      the BIOS and the BX chipset, ensuring that the required bus frequency is set
+      automatically. </font></p>
+      <p><font size="2">You then have to set the links as below.</font></p>
+      <div align="center"><center><table border="0" cellpadding="3" width="400" cellspacing="0">
+        <tr>
+          <td align="center"></td>
+          <td align="center"></td>
+          <td align="center"></td>
+          <td align="center"></td>
+          <td align="center"></td>
+          <td align="center" colspan="2"><font size="2"><em><strong>CPU bus speed</strong></em></font></td>
+        </tr>
+        <tr>
+          <td align="center"><em><strong><font size="2">J5</font></strong></em></td>
+          <td align="center"><em><strong><font size="2">J6</font></strong></em></td>
+          <td align="center"><em><strong><font size="2">J7</font></strong></em></td>
+          <td align="center"><em><strong><font size="2">J8</font></strong></em></td>
+          <td align="center"><em><strong><font size="2">Ratio</font></strong></em></td>
+          <td align="center"><em><strong><font size="2">66MHz bus</font></strong></em></td>
+          <td align="center"><em><strong><font size="2">100MHz bus *</font></strong></em></td>
+        </tr>
+        <tr>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">O</font></td>
+          <td align="center"><font size="2">3</font></td>
+          <td align="center"><font size="2">200</font></td>
+          <td align="center"><font size="2">-</font></td>
+        </tr>
+        <tr>
+          <td align="center"><font size="2">O</font></td>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">O</font></td>
+          <td align="center"><font size="2">3.5</font></td>
+          <td align="center"><font size="2">233</font></td>
+          <td align="center"><font size="2">350</font></td>
+        </tr>
+        <tr>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">O</font></td>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">4</font></td>
+          <td align="center"><font size="2">266</font></td>
+          <td align="center"><font size="2">400</font></td>
+        </tr>
+        <tr>
+          <td align="center"><font size="2">O</font></td>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">O</font></td>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">4.5</font></td>
+          <td align="center"><font size="2">300</font></td>
+          <td align="center"><font size="2">450</font></td>
+        </tr>
+        <tr>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">I</font></td>
+          <td align="center"><font size="2">O</font></td>
+          <td align="center"><font size="2">O</font></td>
+          <td align="center"><font size="2">5.0</font></td>
+          <td align="center"><font size="2">333</font></td>
+          <td align="center"></td>
+        </tr>
+      </table>
+      </center></div>
+    </blockquote>
+    <p align="center"><font size="2">I = jumper fitted, O = No jumper</font></p>
+    <p align="center"><em><strong><font size="2">* Lightning BX only</font></strong></em></p>
+    <blockquote>
+      <p><font size="2"><strong>Audio DSP (J9)<br>
+      </strong>If you need to disable the PCI audio accelerator (DSP) move jumper J9 from pins
+      1-2 (EN) to pins 2-3 (DIS). </font></p>
+      <p><font size="2"><strong>Audio disabling (J10)</strong><br>
+      The on-board audio system can be disabled by removing jumper J10 from pins 1-2 (EN) to
+      pins 2-3 (DIS). Disabling the audio system frees the interrupt and DMA channel used by
+      that system (normally IRQ5 and DMA1).</font></p>
+      <p><font size="2"><strong>BIOS upgrade and reprogram (J12, J2)</strong><br>
+      These jumpers should not normally be changed except by a service engineer or at the
+      direction of a service engineer.<br>
+      <br>
+      CMOS is cleared by moving the jumper J12 to the 2-3 (CLR) position for a few moments while
+      the system is turned off and the power cord removed, then returning it to the 1-2 (NOR)
+      position. It must be returned to normal before the power is reconnected.<br>
+      <br>
+      BIOS reprogramming (J2) requires special software. </font></p>
+      <div align="center"><center><table border="1" cellpadding="2">
+        <tr>
+          <td valign="top"><font size="2">Clearing CMOS</font></td>
+          <td valign="top"><p align="center"><font size="2">J12</font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font size="2">CMOS battery connected (default)</font></td>
+          <td valign="top"><p align="center"><font size="2">1-2*</font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font size="2">CMOS battery disconnected</font></td>
+          <td valign="top"><p align="center"><font size="2">2-3</font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font size="2">BIOS reprogramming</font></td>
+          <td valign="top"><p align="center"><font size="2">J2</font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font size="2">Enabled</font></td>
+          <td valign="top"><p align="center"><font size="2">1-2</font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font size="2">Disabled</font></td>
+          <td valign="top"><p align="center"><font size="2">2-3</font></td>
+        </tr>
+      </table>
+      </center></div><p align="center"><font size="2">* This jumper <strong>must</strong> be
+      returned to the normal position before reconnecting the power cord.</font></p>
+      <p><strong><font size="2">Fan Connectors, PL3 &amp; PL2</font></strong></p>
+      <div align="center"><center><table border="1" cellpadding="2">
+        <tr>
+          <td valign="top"><p align="center"><strong><font size="2">Pins</font></strong></td>
+          <td valign="top"><p align="center"><strong><font size="2">CPU Fansink PL3</font></strong></td>
+          <td valign="top"><p align="center"><strong><font size="2">Pins</font></strong></td>
+          <td valign="top"><p align="center"><strong><font size="2">Main fan PL2</font></strong></td>
+        </tr>
+        <tr>
+          <td valign="top"><p align="center"><font size="2">1</font></td>
+          <td valign="top"><p align="center"><font size="2">Ground</font></td>
+          <td valign="top"><p align="center"><font size="2">1</font></td>
+          <td valign="top"><p align="center"><font size="2">Ground</font></td>
+        </tr>
+        <tr>
+          <td valign="top"><p align="center"><font size="2">2</font></td>
+          <td valign="top"><p align="center"><font size="2">+ 12v </font></td>
+          <td valign="top"><p align="center"><font size="2">2</font></td>
+          <td valign="top"><p align="center"><font size="2">+ 12v (controlled)*</font></td>
+        </tr>
+        <tr>
+          <td valign="top"><p align="center"><font size="2">3</font></td>
+          <td valign="top"><p align="center"><font size="2">Fan Fail</font></td>
+          <td valign="top"><p align="center"><font size="2">3</font></td>
+          <td valign="top"><p align="center"><font size="2">Fan Fail</font></td>
+        </tr>
+      </table>
+      </center></div><p align="center"><font size="2">* This voltage varies to control the fan
+      speed. This is determined from the processor&#146;s heatsink temperature sensor.</font></p>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="cmos"></a><br>
+    </font><font size="3"><strong>CMOS</strong></font></p>
+    <blockquote>
+      <p><strong><font size="2">Replacing the configuration battery</font></strong></p>
+      <p><font size="2">The computer keeps a record of its current hardware configuration in a
+      CMOS memory chip which is sustained by a small battery. This battery has a life of up to 5
+      years. If you find that you have to reconfigure the computer every time you turn it on,
+      the battery is probably failing and needs to be replaced.</font></p>
+      <p><font size="2">The battery is a 3 volt lithium type (CR2032 or equivalent) typically
+      used in calculators and other small, battery-powered electronic items.</font></p>
+      <p align="center"><font size="2"><img src="graphics/lig-cmos.gif" width="418" height="272"></font></p>
+      <p><strong><font size="2">To replace the battery</font></strong></p>
+      <p><font size="2">Turn off the computer and unplug all power cords.<br>
+      Take suitable anti-static precautions and remove the right side panel.<br>
+      Using a non-conductive implement, release the latch that holds the battery in place. The
+      battery will pop up allowing you to lift it out of the holder.</font></p>
+      <blockquote>
+        <p><font size="2">Danger!<br>
+        You must not use a metal or other conductive implement to remove the battery. If a
+        short-circuit is accidentally made between the battery&#146;s positive and negative
+        terminals, the battery may explode.</font></p>
+      </blockquote>
+      <p><font size="2">Check that the replacement battery looks the same as the battery you
+      have removed.<br>
+      Taking care not to touch the top or bottom surface of the battery, pick up the replacement
+      with the positive (+) terminal upwards. Press the battery into the holder using a
+      non-conductive implement.<br>
+      Refit the right side panel.<br>
+      Dispose of the discharged battery in accordance with the battery manufacturer&#146;s
+      instructions.<br>
+      The next time you turn on the computer you will have to run the BIOS Setup utility to
+      reset the hardware configuration.</font></p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="io"></a><br>
+    </font><font size="3"><strong>System Resources</strong></font></p>
+    <div align="center"><center><table border="1" cellpadding="2" bordercolor="#C0C0C0"
+    bordercolordark="#C0C0C0" bordercolorlight="#C0C0C0">
+      <tr>
+        <td><strong><font size="2">Components</font></strong></td>
+        <td align="center" colspan="16"><strong><font size="2">Interrupts (IRQs)</font></strong></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td align="center"><font size="2">0</font></td>
+        <td align="center"><font size="2">1</font></td>
+        <td align="center"><font size="2">2</font></td>
+        <td align="center"><font size="2">3</font></td>
+        <td align="center"><font size="2">4</font></td>
+        <td align="center"><font size="2">5</font></td>
+        <td align="center"><font size="2">6</font></td>
+        <td align="center"><font size="2">7</font></td>
+        <td align="center"><font size="2">8</font></td>
+        <td align="center"><font size="2">9</font></td>
+        <td align="center"><font size="2">10</font></td>
+        <td align="center"><font size="2">11</font></td>
+        <td align="center"><font size="2">12</font></td>
+        <td align="center"><font size="2">13</font></td>
+        <td align="center"><font size="2">14</font></td>
+        <td align="center"><font size="2">15</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">System timer</font></td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Keyboard controller</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">PIC daisy chain</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Infra-red remote control BS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Serial port 1 BS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808000">&nbsp;</td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Audio JS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Diskette controller BS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Parallel port (usually sharable)</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Real time clock</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">On-board video (sharable) JS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">USB (sharable) BS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Mouse BS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Co-processor</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Primary E-IDE BS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Secondary E-IDE BS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td><strong><font size="2">Components</font></strong></td>
+        <td align="center" colspan="8"><strong><font size="2">DMA channels</font></strong></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td align="center"><font size="2">0</font></td>
+        <td align="center"><font size="2">1</font></td>
+        <td align="center"><font size="2">2</font></td>
+        <td align="center"><font size="2">3</font></td>
+        <td align="center"><font size="2">4</font></td>
+        <td align="center"><font size="2">5</font></td>
+        <td align="center"><font size="2">6</font></td>
+        <td align="center"><font size="2">7</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Audio JS</font></td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#C0C0C0">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Diskette controller BS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Parallel port (in ECP mode) BS</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#808080">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">DMAC daisy chain</font></td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center" bgcolor="#000000">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <blockquote>
+        <p><font size="2">Key</font></p>
+      </blockquote>
+    </blockquote>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td valign="top" width="6%" bgcolor="#000000"></td>
+        <td valign="top" width="2%"></td>
+        <td valign="top" width="37%"><font size="2">Fixed assignment</font></td>
+        <td valign="top" width="56%"><font size="2">BS = Can be disabled by BIOS Setup</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="6%" height="8"></td>
+        <td valign="top" width="2%" height="8"></td>
+        <td valign="top" width="37%" height="8"></td>
+        <td valign="top" width="56%" height="8"></td>
+      </tr>
+      <tr>
+        <td valign="top" width="6%" bgcolor="#808080"></td>
+        <td valign="top" width="2%"></td>
+        <td valign="top" width="37%"><font size="2">Usual assignment</font></td>
+        <td valign="top" width="56%"><font size="2">JS = Can be disabled by changing a motherboard
+        jumper setting</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="6%" height="8"></td>
+        <td valign="top" width="2%" height="8"></td>
+        <td valign="top" width="37%" height="8"></td>
+        <td valign="top" width="56%" height="8"></td>
+      </tr>
+      <tr>
+        <td valign="top" width="6%" bgcolor="#808000"></td>
+        <td valign="top" width="2%"></td>
+        <td valign="top" width="37%"><font size="2">Alternative assignment by BIOS Setup</font></td>
+        <td valign="top" width="56%"></td>
+      </tr>
+      <tr>
+        <td valign="top" width="6%" height="8"></td>
+        <td valign="top" width="2%" height="8"></td>
+        <td valign="top" width="37%" height="8"></td>
+        <td valign="top" width="56%" height="8"></td>
+      </tr>
+      <tr>
+        <td valign="top" width="6%" bgcolor="#C0C0C0"></td>
+        <td valign="top" width="2%"></td>
+        <td valign="top" width="37%"><font size="2">Alternative assignment by Plug-and-Play</font></td>
+        <td valign="top" width="56%"></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="beep"></a><br>
+    </font><strong><font size="3">POST Beep Codes</font></strong></p>
+    <div align="center"><center><table border="1" cellpadding="2" bordercolor="#C0C0C0">
+      <tr>
+        <td align="center" valign="top"><p align="center"><strong><font size="2">Code</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Beeps</font></strong></td>
+        <td valign="top"><strong><font size="2">Test which failed</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">16</font></td>
+        <td align="center" valign="top"><font size="2">1-2-2-3</font></td>
+        <td valign="top"><font size="2">BIOS ROM checksum</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">20</font></td>
+        <td align="center" valign="top"><font size="2">1-3-1-1</font></td>
+        <td valign="top"><font size="2">DRAM refresh.</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">22</font></td>
+        <td align="center" valign="top"><font size="2">1-3-1-3</font></td>
+        <td valign="top"><font size="2">8742 keyboard controller</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">2C xxxx</font></td>
+        <td align="center" valign="top"><font size="2">1-3-4-1</font></td>
+        <td valign="top"><font size="2">RAM failure on address line xxxx.</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" nowrap><p align="center"><font size="2">2E xxxx</font></td>
+        <td align="center" valign="top"><font size="2">1-3-4-3</font></td>
+        <td valign="top"><font size="2">RAM failure on data bits xxxx of low byte of memory bus.</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">30 xxxx</font></td>
+        <td align="center" valign="top"><font size="2">1-4-1-1</font></td>
+        <td valign="top"><font size="2">RAM failure on data bits xxxx of high byte of memory bus.</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">46</font></td>
+        <td align="center" valign="top"><font size="2">2-1-2-3</font></td>
+        <td valign="top"><font size="2">Check ROM copyright notice</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">58</font></td>
+        <td align="center" valign="top"><font size="2">2-2-3-1</font></td>
+        <td valign="top"><font size="2">Test for unexpected interrupts</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">98</font></td>
+        <td align="center" valign="top"><font size="2">1-2</font></td>
+        <td valign="top"><font size="2">Video configuration failure, or option ROM checksum
+        failure. (One long, two short beeps.)</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

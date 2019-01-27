@@ -1,0 +1,566 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>'Spitfire' ROM BIOS Summary </title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><p align="left"><font size="1"><br>
+    </font><strong><font face="Arial,Helvetica" size="4" color="#D60029">'Spitfire' ROM BIOS
+    Summary </font><font size="3" color="#D60029">(Rev 1.18) </font></strong></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>10.00.09<br>
+        Beta</strong><br>
+        <br>
+        checksum<br>
+        <br>
+        P/N 160579SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">01/09/97<br>
+        <br>
+        <br>
+        CD81</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>Programming</strong><br>
+        <br>
+        </font><table border="0" cellpadding="7" cellspacing="0" width="100%">
+          <tr>
+            <td valign="top" width="21%"><font size="2">Target device:</font></td>
+            <td valign="top" width="79%"><font size="2">Alliance AS29F002T</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Utility:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH on update disk (Normally Automated
+            process)</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Command line:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH -w -m -f:161422SW.BIN </font></td>
+          </tr>
+        </table>
+        <p><font size="2"><strong>Changes since release 10.00.08</strong><br>
+        <br>
+        Should fix IPR 03957 Entering setup message remains on screen when entering setup<br>
+        <br>
+        Fixes IPR 03858 Crystal drivers 1.8 do not install with Windows 3.11<br>
+        <br>
+        Fixes IPR 03954 Video screen not switched off during standby<br>
+        <br>
+        Fixes IPR 04133 ROM checksum Failures<br>
+        <br>
+        IPR 03952 Power Management H/D does not work in DOS<br>
+        <br>
+        Cache flushing fix that was lost in new core reintroduced<br>
+        <br>
+        Cache options for C800-DFFF are removed from setup and values hard coded Off<br>
+        <br>
+        ESCD data included in Binary<br>
+        <br>
+        Wake on AC connect fixed<br>
+        <br>
+        Branding strings fixed in build<br>
+        <br>
+        UltraDMA fixes from Phoenix added<br>
+        <br>
+        Help strings added for setup<br>
+        <br>
+        DRAMEC register in TXC value changes from 34 to 36 for more than two rows<br>
+        <br>
+        New power Management code to fix various problems<br>
+        <br>
+        Latest versions of Signon and Branding added<br>
+        <br>
+        PCI slot numbering in setup is dynamically set according to the type of backplane in the
+        manufacturer data area<br>
+        <br>
+        IDE strings changed in Setup<br>
+        <br>
+        Fixed problem of Not booting from floppy if manufacturing defaults and AC disconnect
+        happens<br>
+        <br>
+        New setup defaults added<br>
+        <br>
+        Moved Smart Drive monitoring node<br>
+        <br>
+        Moved Large Disk access node<br>
+        <br>
+        Fixed Serial port 2 mode etc appearing if F9 pressed in setup.<br>
+        <br>
+        Fixed screen corruption with two PCI cards fitted<br>
+        <br>
+        Should Fix IPR 03975 System takes 2hrs to go into suspend when set to 60 minutes<br>
+        <br>
+        Should fix IPR 03974 Keyboard mouse activity wakes system form suspend<br>
+        <br>
+        Known omissions<br>
+        <br>
+        DMI support for NT<br>
+        <br>
+        IO and DMA legacy support<br>
+        <br>
+        Apricot Diva support<br>
+        <br>
+        ACPI<br>
+        <br>
+        <strong>Known problems </strong><br>
+        <br>
+        IPR 03549 Windows NT fails to restart/PSU never powers down<br>
+        <br>
+        Windows 95 does not suspend when Intel Pro 100 card present<br>
+        <br>
+        IPR 03625 Floppy drive not ready errors<br>
+        <br>
+        IPR 03789 Fails HCT-Video ROP <br>
+        <br>
+        IPR 03809 Fails to allocate resources for AHA1510 PnP Card<br>
+        <br>
+        IPR 03816 No BIOS option for reserving I/O and DMA<br>
+        <br>
+        IPR 03880 Shows DC000-DFFFF available when used by BIOS<br>
+        <br>
+        IPR 03892 memory allocation issue<br>
+        <br>
+        IPR 03958 Wakeup on LAN fails with NT/95<br>
+        <br>
+        IPR 03966 Win NT fails bus mastering test<br>
+        <br>
+        IPR 04017 Power Management does not work under Windows NT4.0<br>
+        <br>
+        IPR 04076 No DMI support for NT<br>
+        <br>
+        IPR 04083 Performance loss with UltraDMA<br>
+        <br>
+        IPR 04099 Post hang at 8Eh - Dormant ???<br>
+        <br>
+        IPR 04190 WFW3.11 Can Hang<br>
+        <br>
+        IPR 04193 WFW3.11 will not load without SMARTDrive<br>
+        <br>
+        <strong>What String</strong><br>
+        <br>
+        File: 161422sw.bin<br>
+        Identification:Apricot BIOS Version 10.00.09, 29th August 1997<br>
+        Part Number 161422SW</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>10.00.10<br>
+        Beta</strong><br>
+        <br>
+        checksum</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">8/9/97<br>
+        <br>
+        <br>
+        95D4</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><strong><font size="2">Programming</font></strong><table
+        border="0" cellpadding="2" width="100%">
+          <tr>
+            <td valign="top" width="21%"><font size="2">Target device:</font></td>
+            <td valign="top" width="79%"><font size="2">Alliance AS29F002T</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Utility:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH on update disk (Normally Automated
+            process)</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Command line:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH -w -m -f:161422SW.BIN </font></td>
+          </tr>
+        </table>
+        <p><strong><font size="2">Changes since release 10.00.09</font></strong><ul>
+          <li><font size="2">Fix SP053 Mouse IRQ not being freed</font></li>
+          <li><font size="2">Fixes DMI CPU structure</font></li>
+          <li><font size="2">Fix SP065 Preserve IRQ 11 for Windows to use as Shared Interrupt </font></li>
+          <li><font size="2">Fixes PCIDIAGS.EXE failure</font></li>
+          <li><font size="2">Fixes IPR 04236 IDE drives now monitored in Power Management (Break
+            events)</font></li>
+          <li><font size="2">Preserve TXC register 79h when entering and leaving suspend</font></li>
+        </ul>
+        <p><strong><font size="2">Known omissions</font></strong><ul>
+          <li><font size="2">DMI support for NT</font></li>
+          <li><font size="2">IPR 03816 IO and DMA legacy support</font></li>
+          <li><font size="2">Apricot Diva support</font></li>
+          <li><font size="2">ACPI</font></li>
+        </ul>
+        <p><strong><font size="2">Known problems </font></strong><ul>
+          <li><font size="2">Windows 95 does not suspend when Intel Pro 100 card present</font></li>
+          <li><font size="2">IPR 03625 Floppy drive not ready errors</font></li>
+          <li><font size="2">IPR 03880 Shows DC000-DFFFF available when used by BIOS</font></li>
+          <li><font size="2">IPR 04017 Power Management does not work under Windows NT4.0</font></li>
+          <li><font size="2">IPR 04076 No DMI support for NT</font></li>
+          <li><font size="2">IPR 04083 Performance loss with UltraDMA</font></li>
+          <li><font size="2">IPR 04190 WFW3.11 Can Hang</font></li>
+          <li><font size="2">IPR 04193 WFW3.11 will not load without SMARTDrive</font></li>
+        </ul>
+        <p><font size="2"><strong>What String<br>
+        </strong><br>
+        Apricot BIOS Version 10.00.10, 5th September 1997<br>
+        Part Number 161422SW</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>10</strong><br>
+        <strong>Release</strong><br>
+        <br>
+        checksum</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">22/9/97<br>
+        <br>
+        <br>
+        407A</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><strong><font size="2">Programming</font></strong><table
+        border="0" cellpadding="2" width="100%">
+          <tr>
+            <td valign="top" width="21%"><font size="2">Target device:</font></td>
+            <td valign="top" width="79%"><font size="2">Alliance AS29F002T</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Utility:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH on update disk (Normally Automated
+            process)</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Command line:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH -w -m -f:161422SW.BIN </font></td>
+          </tr>
+        </table>
+        <p><strong><font size="2">Changes since release 10.00.12</font></strong><ul>
+          <li><font size="2">Signon Changed to 10.00</font></li>
+        </ul>
+        <p><strong><font size="2">Known omissions</font></strong><ul>
+          <li><font size="2">DMI support for NT</font></li>
+          <li><font size="2">IPR 03816 IO and DMA legacy support</font></li>
+          <li><font size="2">Apricot Diva support</font></li>
+          <li><font size="2">ACPI</font></li>
+        </ul>
+        <p><strong><font size="2">Known problems </font></strong><ul>
+          <li><font size="2">SMART errors not visible when Diagnostic screen is disabled </font></li>
+          <li><font size="2">IPR 04230 (SP051) Intermittent Boot with Intel PRO 100 LAN Card</font></li>
+          <li><font size="2">IPR 03625 Floppy drive not ready errors</font></li>
+          <li><font size="2">IPR 04017 Power Management does not work under Windows NT4.0</font></li>
+          <li><font size="2">IPR 04076 No DMI support for NT</font></li>
+          <li><font size="2">IPR 04083 Performance loss with UltraDMA</font></li>
+          <li><font size="2">IPR 04190 WFW3.11 Can Hang</font></li>
+          <li><font size="2">IPR 04193 WFW3.11 will not load without SMARTDrive</font></li>
+        </ul>
+        <p><font size="2"><strong>What String</strong><br>
+        <br>
+        Apricot BIOS Version 10.00, 16th September 1997<br>
+        Part Number 161422SW</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><strong><font size="2">10.01</font></strong></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">7/10/97</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>Changes since last release</strong><br>
+        <br>
+        Workaround for IPR004230 (disappearing hard drive) to lift &#145;stop ship&#146; imposed
+        on Japanese systems.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>10.04</strong><br>
+        <br>
+        checksum<br>
+        <br>
+        P/N 161422SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">14/11/97<br>
+        <br>
+        </font></td>
+        <td valign="top" bgcolor="#EBEBEB"><strong><font size="2">Programming</font></strong><table
+        border="0" cellpadding="2" width="100%">
+          <tr>
+            <td valign="top" width="21%"><font size="2">Target device:</font></td>
+            <td valign="top" width="79%"><font size="2">Alliance AS29F002T or Micron MT28F002</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Utility:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH on update disk (Normally Automated
+            process)</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Command line:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH -w -m -f:161422SW.BIN </font></td>
+          </tr>
+        </table>
+        <p><strong><font size="2">Changes since release 10.04.01</font></strong><ul>
+          <li><font size="2">Signon Changed to 10.04</font></li>
+        </ul>
+        <p><strong><font size="2">Known omissions</font></strong><ul>
+          <li><font size="2">DMI support for NT</font></li>
+          <li><font size="2">IPR 03816 IO and DMA legacy support</font></li>
+          <li><font size="2">Apricot Diva support</font></li>
+          <li><font size="2">ACPI</font></li>
+        </ul>
+        <p><font size="2"><strong>Known problems</strong> </font><ul>
+          <li><font size="2">SMART errors not visible when Diagnostic screen is disabled </font></li>
+          <li><font size="2">IPR 03625 Floppy drive not ready errors</font></li>
+          <li><font size="2">IPR 04017 Power Management does not work under Windows NT4.0</font></li>
+          <li><font size="2">IPR 04076 No DMI support for NT</font></li>
+          <li><font size="2">IPR 04083 Performance loss with UltraDMA</font></li>
+          <li><font size="2">IPR 04193 WFW3.11 will not load without SMARTDrive</font></li>
+        </ul>
+        <p><font size="2"><strong>What String</strong><br>
+        <br>
+        Apricot BIOS Version 10.04, 31st October 1997<br>
+        Part Number 161422SW</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>10.05</strong><br>
+        <br>
+        P/N 161422SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">20/01/98<br>
+        <br>
+        </font></td>
+        <td valign="top" bgcolor="#EBEBEB"><strong><font size="2">Programming</font></strong><table
+        border="0" cellpadding="2" width="100%">
+          <tr>
+            <td valign="top" width="21%"><font size="2">Target device:</font></td>
+            <td valign="top" width="79%"><font size="2">Alliance AS29F002T or Micron MT28F002</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Utility:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH on update disk (Normally Automated
+            process)</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Command line:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH -w -m -f:161422SW.BIN </font></td>
+          </tr>
+        </table>
+        <p><font size="2"><strong>What String</strong><br>
+        <br>
+        File: 161422sw.bin<br>
+        Identification:<br>
+        Apricot BIOS Version 10.05, 19th January 1998<br>
+        Part Number 161422SW</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>10.06</strong><br>
+        <br>
+        P/N 161422SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">17/03/98<br>
+        <br>
+        </font></td>
+        <td valign="top" bgcolor="#EBEBEB"><strong><font size="2">Programming</font></strong><table
+        border="0" cellpadding="2" width="100%">
+          <tr>
+            <td valign="top" width="21%"><font size="2">Target device:</font></td>
+            <td valign="top" width="79%"><font size="2">Alliance AS29F002T or Micron MT28F002</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Utility:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH on update disk (Normally Automated
+            process)</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="21%"><font size="2">Command line:</font></td>
+            <td valign="top" width="79%"><font size="2">AFLASH -w -m -f:161422SW.BIN </font></td>
+          </tr>
+        </table>
+        <p><strong><font size="2">Changes since release 10.05</font></strong><ul>
+          <li><font size="2">Signon Changed to 10.06</font></li>
+          <li><font size="2">Reboot hanging problem fixed.</font></li>
+          <li><font size="2">IPR04230 HD disappearing fix changed from Phoenix fix to Apricot fix.</font></li>
+          <li><font size="2">German character support for Branding.</font></li>
+          <li><font size="2">Serial / Parallel setup option PnP tracking.</font></li>
+          <li><font size="2">Fix for SMART problems (message not being displayed in graphical boot
+            mode, and IPR&nbsp;4159 - &quot;SMART Warning Message Displays Garbage&quot;)</font></li>
+          <li><font size="2">Fix for Setup out of sync with Mustang project.</font></li>
+          <li><font size="2">Fix for IPR 4251 - Setup message incorrect.</font></li>
+          <li><font size="2">Fix for IPR 4466 - Intrusion warning message remains on screen for too
+            short a time.</font></li>
+          <li><font size="2">Fix for IPR 4424 - F2 key causes intrusion password entry to not be
+            displayed and machine appears to hang.</font></li>
+          <li><font size="2">Fix for IPR 4430 - Pressing F2 has double effect.</font></li>
+          <li><font size="2">Fix for IPR 4250 - Int 15h func 87h and 89h not working.</font></li>
+          <li><font size="2">Fix for SPR 800439 (Phoenix tracking number) - Screen corruption during
+            Oprom scan.</font></li>
+          <li><font size="2">Fix for IPR 4458 - Only one HDD drive powers down during suspend.</font></li>
+          <li><font size="2">Fix for IPR 04708 - ATAPI Tape streamer.</font></li>
+          <li><font size="2">Suppression of Mitsubishi Logo for OEM boards.</font></li>
+          <li><font size="2">Fix for IPR 04693 - Add PME wake on LAN.</font></li>
+          <li><font size="2">Fixed AC-Disconnect Security Hole with branding.</font></li>
+          <li><font size="2">Default for intrusion clear is now BIOS not OS.</font></li>
+          <li><font size="2">Change default CMOS value for cmosLM78Lid to ENABLED from DISABLED.</font></li>
+          <li><font size="2">Added fix for IPR 04271 Disable wake-on-ring in Windows 95 does not work.</font></li>
+          <li><font size="2">Added fix for IPR 04270 RI Handler that goes to UTR rather than Full On.</font></li>
+          <li><font size="2">The message &quot;Press &lt;F1&gt; to...&quot; As will be printed off the
+            bottom of the screen if numerous error messages are found - fixed.</font></li>
+          <li><font size="2">Fix GP fault in PCIDIAG.</font></li>
+        </ul>
+        <p><strong><font size="2">Known omissions</font></strong><ul>
+          <li><font size="2">IPR 03816 IO and DMA legacy support.</font></li>
+          <li><font size="2">Apricot Diva support</font></li>
+          <li><font size="2">ACPI</font></li>
+          <li><font size="2">120M floppy Boot-Block support.</font></li>
+          <li><font size="2">German Language support.</font></li>
+        </ul>
+        <p><strong><font size="2">Known problems </font></strong><ul>
+          <li><font size="2">IPR 03625 Floppy drive not ready errors</font></li>
+          <li><font size="2">IPR 04017 Power Management does not work under Windows NT4.0</font></li>
+          <li><font size="2">IPR 04083 Performance loss with UltraDMA</font></li>
+          <li><font size="2">IPR 04193 WFW3.11 will not load without SMARTDrive (Double buffer Issue
+            with PCI bus masters).</font></li>
+          <li><font size="2">Fix for UMB space issues / EMM386 hang.</font></li>
+        </ul>
+        <p><strong><font size="2">What String</font></strong></p>
+        <p><font size="2">File: 161422sw.bin<br>
+        Identification:<br>
+        Apricot BIOS Version 10.06, 12th March 1998<br>
+        Part Number 161422SW</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

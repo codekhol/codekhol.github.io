@@ -1,0 +1,3404 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FT4200 Facts, Tips &amp; Tricks</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<tr>
+  <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+  <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+  <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+  <td valign="top"><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">FT4200 Facts, Tips &amp; Tricks </font><font
+    color="#D60029" size="3">(Rev&nbsp;2.7 - 17th October 1997)</font></strong><p><font
+    size="3"><strong><b>Contents</b></strong></font></p>
+    <p><font size="2"><b><a href="#1general">1. General Information on FT4200</a> </b></font></p>
+    <blockquote>
+      <p><font size="2"><a href="#1.1">1.1 BIOS and Software</a> <br>
+      Key to Motherboard Layout <br>
+      Switches <br>
+      Jumpers<br>
+      <a href="#1.2">1.2 FT4200 Parts Listing</a> <br>
+      <a href="#1.3">1.3 Buttons / Functions</a> <br>
+      LCD codes<br>
+      <em>Additional Useful Codes</em><br>
+      <a href="#1.4">1.4 Memory Configuration</a> <br>
+      <a href="#1.5">1.5 BIOS Upgrades</a> <br>
+      <i>Upgrading the Motherboard BIOS <br>
+      Upgrading the SMIC BIOS <br>
+      Upgrading the FPSC/SMC BIOS <br>
+      To upgrade the FPSC via Flash Disk <br>
+      Upgrading the Flash Disk <br>
+      </i><a href="#1.6">1.6 BIOS and ECU Limitations </a></font></p>
+    </blockquote>
+    <p><font size="2"><a href="#2default_config"><b>2. Default Configuration </b></a></font></p>
+    <blockquote>
+      <p><font size="2">2.1 Clearing CMOS RAM and returning to defaults <br>
+      2.2 F1 Setup <br>
+      2.3 On-Board 7850 SCSI Controller Setup (Bus:Device 01:01h) <br>
+      2.4 On-Board 7880 SCSI Controller Setup (Bus:Device 01:02h) <br>
+      2.5 Add-in 2940 SCSI Controller Setup <br>
+      2.6 Add-in DPT 3334 SCSI Controller Setup </font></p>
+    </blockquote>
+    <p><font size="2"><a href="#3config"><b>3 Configuring the system using the ECU </b></a></font></p>
+    <blockquote>
+      <p><font size="2">To configure add-in boards: <br>
+      3.1 Configuration of Standard FT4200 Items <br>
+      <i>SMIC Card Configuration (EISA Slot E4) <br>
+      7850 SCSI Controller Configuration <br>
+      7880 SCSI Controller Configuration <br>
+      </i>3.2 Configuration of additional add-in cards <br>
+      <i>1<sup>st</sup> 3Com 3C595 10/100 Ethernet Controller (PCI Slot P1)<br>
+      2<sup>nd</sup> 3Com 3C595 10/100 Ethernet Controller(PCI Slot P2)<br>
+      1<sup>st</sup> DPT 3334 SCSI Controller Card (PCI Slot P6/E1)<br>
+      2<sup>nd</sup> DPT 3334 SCSI Controller Card (PCI Slot P5)<br>
+      1<sup>st</sup> Adaptec 2940 SCSI Controller Card (PCI Slot P6/E1)<br>
+      2<sup>nd</sup> Adaptec 2940 SCSI Controller Card (PCI Slot P5) </i></font></p>
+    </blockquote>
+    <p><font size="2"><a href="#4n+1"><strong>4. Installation and Configuration of N+1 Power
+    Supply Unit in FT4200</strong></a></font></p>
+    <p><font size="2"><a href="#5software"><b>5. Software Issues </b></a></font></p>
+    <blockquote>
+      <p><font size="2">5.1 FT4200 OS Pack Limitations <br>
+      5.2 Installing SCO OpenServer 5 on FT4200 </font></p>
+    </blockquote>
+    <p><font size="2"><a href="#6tips"><b>6. Tips </b></a></font></p>
+    <blockquote>
+      <p align="left"><font size="2">6.1 Disabling the on-board 7880 SCSI controller<br>
+      6.2 Clearing the POST error log (LCD alternating 3230 to 3A30)<br>
+      6.3 Setting up the SMA for remote connection by modem<br>
+      6.4 Motherboard BIOS 8.03 sets SMIC card to D0000 by default</font></p>
+    </blockquote>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><font size="2"><a name="1general"></a></font><font size="3"><strong><b>1. General
+    Information on FT4200</b></strong></font></p>
+    <p><font size="2"><b>Expansion Bus&nbsp;</b> </font><ul>
+      <li><font size="2">6 x 32 bit PCi Expansion Slots P1 - P6 (P6 Shared with E1)</font></li>
+      <li><font size="2">Peer Bus Architecture, P1-P3 bus 1, P4-P6 bus 2</font></li>
+      <li><font size="2">4 x 32 bit EISA Expansion Slots E1 - E4 (E1 shared with P6, E4 used by
+        SMIC)</font></li>
+    </ul>
+    <p><font size="2"><b>Processors</b> </font><ul>
+      <li><font size="2">2x200MHz Pentium Pro (TM) Processors on motherboard (1<sup>st</sup> CPU
+        in Socket A, 2<sup>nd</sup> CPU in Socket B)</font></li>
+      <li><font size="2">2x200MHz Pentium Pro (TM) Processors on expansion card</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2">Either 256Kb (Used in Single and Dual systems) or 512Kb L2 Cache (Used
+      in Dual and Quad systems)<br>
+      Note: Processor types may NOT be mixed </font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Each individual processor requires an accompanying VRM (Voltage Regulator
+        Module)</font></li>
+      <li><font size="2">200MHz Pentium Pro chips must have a 12.4A rated VRM</font></li>
+      <li><font size="2">Processor bus MUST be terminated where a CPU expansion board is not
+        fitted. An empty CPU expansion board will suffice for diagnostic purposes.</font></li>
+    </ul>
+    <p><font size="2"><b>Memory</b> </font><ul>
+      <li><font size="2">8xDIMM Memory sockets (Max RAM 2Gb - See config tables)</font></li>
+    </ul>
+    <p><font size="2"><b>SCSI Controllers</b> </font><ul>
+      <li><font size="2">On-board Adaptec 7850 SCSI Controller (for built in 5 ¼&quot;
+        peripherals i.e., CD-ROM, Tape Drive etc.)</font></li>
+      <li><font size="2">On-Board Adaptec 7880 Ultra Wide SCSI Controller for hard disk drive bay
+        E only</font></li>
+      <li><font size="2">Optional DPT PM3334UW, 3 channel RAID controller</font></li>
+    </ul>
+    <p><font size="2"><b>Tape Drive options</b> </font><ul>
+      <li><font size="2">Conner 'Peregrine' CDT8000 (4-16Gb DDS II)</font></li>
+      <li><font size="2">Conner 'Diamondback' Autoloader CTL96GR-S (16-64Gb DDS II)</font></li>
+      <li><font size="2">Quantum DLT4000 TH5AA-HB (Digital Linear Tape).</font></li>
+    </ul>
+    <p><font size="2"><b>Drive Accommodation</b></font></p>
+    <p><font size="2">5 x Ultra SCSI hard drive bays. </font><ul>
+      <li><font size="2">Each bay will take 4 Wide or Ultra SCSI drives fitted with SCA II
+        connectors</font></li>
+      <li><font size="2">Drive bays are designated A to E (Front to back)</font></li>
+      <li><font size="2">Primary drive channel is <b>now bay E </b>in FT4200 (rear-most)</font></li>
+      <li><font size="2">SCSI Id's are 0,1,3,4, top to bottom in each channel</font></li>
+      <li><font size="2">SCA II includes the 2 stage removal. No micro switch latches on drive
+        trays. Shogun drive trays will fit.</font></li>
+    </ul>
+    <p><font size="2"><b>Current hard drive options</b>: </font><ul>
+      <li><font size="2">Quantum Atlas 2 Ultra SCSI 4 and 9Gb</font></li>
+    </ul>
+    <p><font size="2"><b>Floppy Drive</b> </font><ul>
+      <li><font size="2">Mitsubishi MF355F-2450MP</font></li>
+      <li><font size="2">LED now visible from front of machine</font></li>
+    </ul>
+    <p><font size="2"><b>CD ROM</b> </font><ul>
+      <li><font size="2">8 speed SCSI CD-ROM (Panasonic CR505B)</font></li>
+    </ul>
+    <p><font size="2"><b>Video</b> </font><ul>
+      <li><font size="2">Cirrus Logic CL-GD54M30 EVGA Video Controller. 1Mb Video RAM</font></li>
+    </ul>
+    <p><font size="2"><b>Power Supply</b> </font><ul>
+      <li><font size="2">1000W UPS</font></li>
+      <li><font size="2">N+1 Redundant Power Supply and Optional BBU</font></li>
+    </ul>
+    <p><font size="2"><b>Currently supported add-in cards</b> </font><ul>
+      <li><font size="2">3C592 EISA Triple Combo</font></li>
+      <li><font size="2">3C905TX PCI 10/100 UTP</font></li>
+      <li><font size="2">3C900 PCI Triple Combo</font></li>
+      <li><font size="2">DPT <a href="../../../common/addin/dpt3334.htm">PM3334UW</a> 3 Channel
+        RAID (up to 2 cards supported)</font></li>
+      <li><font size="2"><a href="../../../common/addin/aha2940u.htm">Adaptec 2940UW</a> PCI
+        Ultra/Wide SCSI (up to 2 cards supported)</font></li>
+    </ul>
+    <p><font size="2"><b>Environmental</b> </font><ul>
+      <li><font size="2">Temperature (operating) +5 to +35 C</font></li>
+      <li><font size="2">Temperature (non-operating) -10 to +60 C</font></li>
+      <li><font size="2">R. Humidity (operating) 20 to 80%</font></li>
+      <li><font size="2">R Humidity (non-operating) 20 to 80%</font></li>
+    </ul>
+    <p><font size="2"><b>Dimensions</b> </font><ul>
+      <li><font size="2">WxDxH 410x800x700mm</font></li>
+      <li><font size="2">Weight 115Kg fully loaded / 50Kg minimum system</font></li>
+    </ul>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><font size="2"><a name="1.1"></a></font><font size="3"><strong><b>1.1 BIOS and Software</b></strong></font></p>
+    <p><font size="2"><b>Released</b></font></p>
+    <div align="center"><center><table border="1" cellpadding="3" width="568">
+<tr>
+<td width="29%"><p align="center"><font size="2"><b>Description</b></font></td>
+<td width="23%"><p align="center"><font size="2"><b>Disk</b></font></td>
+<td width="24%"><p align="center"><font size="2"><b>Version</b></font></td>
+<td width="24%"><p align="center"><font size="2"><b>Part Number</b></font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">Motherboard BIOS</font></td>
+<td><p align="center"><font size="2">Rel 8</font></td>
+<td><p align="center"><font size="2">08.03</font></td>
+<td><p align="center"><font size="2">157550SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">ECU</font></td>
+<td><p align="center"><font size="2">Rel 1</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">156823SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">F/W Upgrade Disk</font></td>
+<td><p align="center"><font size="2">Rel 1</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">156825SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">Flash Disk</font></td>
+<td><p align="center"><font size="2">Rel 2</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">156822SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">FPSC</font></td>
+<td><p align="center"><font size="2">Rel 1</font></td>
+<td><p align="center"><font size="2">4.013</font></td>
+<td><p align="center"><font size="2">158022SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">FPSC (N+1)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">4.130</font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">SMIC BIOS</font></td>
+<td><p align="center"><font size="2">Rel 2</font></td>
+<td><p align="center"><font size="2">2.00</font></td>
+<td><p align="center"><font size="2">157770SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">Netware Env.</font></td>
+<td><p align="center"><font size="2">Rel 3</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">156818SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">SMA</font></td>
+<td><p align="center"><font size="2">Rel 1.4</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">155078SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">EZSCSI 7880</font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">157611SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">7880 FMS</font></td>
+<td align="center"><font size="2">Rel 2</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">157610SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">DPT Storage Mgr</font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">158814SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">DPT Firmware</font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">155858SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">NT SUP Pack</font></td>
+<td><p align="center"><font size="2">Rel 2.0</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">156817SW</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">SCO SUP Pack</font></td>
+<td><p align="center"><font size="2">Rel 1.0</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">156821SW</font></td>
+</tr>
+    </table>
+    </center></div><p><font size="2"><b>Beta Releases</b></font></p>
+    <div align="center"><center><table border="1" cellpadding="3" width="568">
+<tr>
+<td width="29%"><p align="center"><font size="2"><b>Description</b></font></td>
+<td width="23%"><p align="center"><font size="2"><b>Disk</b></font></td>
+<td width="24%"><p align="center"><font size="2"><b>Version</b></font></td>
+<td width="24%"><p align="center"><font size="2"><b>Part Number</b></font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">SCO SUP Pack</font></td>
+<td><p align="center"><font size="2">Beta 1.04</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">156821SW</font></td>
+</tr>
+<tr>
+<td align="center"><font size="2">NT SUP Pack</font></td>
+<td align="center"><font size="2">Beta 2C</font></td>
+<td align="center">&nbsp;</td>
+<td align="center"><font size="2">156817SW</font></td>
+</tr>
+<tr>
+<td align="center"><font size="2">FPSC</font></td>
+<td align="center"><font size="2">Beta 3d</font></td>
+<td align="center"><font size="2">4.13d</font></td>
+<td align="center"><font size="2">159667SW</font></td>
+</tr>
+<tr>
+<td align="center">&nbsp;</td>
+<td align="center">&nbsp;</td>
+<td align="center">&nbsp;</td>
+<td align="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center"><font size="2">DPT SNMP Agent</font></td>
+<td align="center"><font size="2">Beta 1A</font></td>
+<td align="center">&nbsp;</td>
+<td align="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center"><font size="2">Motherboard BIOS</font></td>
+<td align="center">&nbsp;</td>
+<td align="center"><font size="2">8.03.01</font></td>
+<td align="center"><font size="2">157550SW</font></td>
+</tr>
+<tr>
+<td align="center"><font size="2">SMA</font></td>
+<td align="center"><font size="2">Beta 1.4</font></td>
+<td align="center">&nbsp;</td>
+<td align="center">&nbsp;</td>
+</tr>
+<tr>
+<td align="center"><font size="2">Flash Disk</font></td>
+<td align="center"><font size="2">Beta 2A</font></td>
+<td align="center">&nbsp;</td>
+<td align="center"><font size="2">156822SW</font></td>
+</tr>
+<tr>
+<td align="center"><font size="2">Netware Env</font></td>
+<td align="center"><font size="2">Beta 3B</font></td>
+<td align="center">&nbsp;</td>
+<td align="center"><font size="2">156818SW</font></td>
+</tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p align="center"><font size="2"><img src="graphics/4200ftt1.gif" width="325" height="402"></font></p>
+    <blockquote>
+      <p align="center"><font size="2"><b>FT4200 (Discovery) Motherboard Layout</b></font></p>
+    </blockquote>
+    <p><font size="2"><b>Key to Motherboard Layout</b></font></p>
+    <blockquote>
+      <table border="0" cellpadding="3" width="90%">
+<tr>
+<td><font size="2">1. Slot for CPU/termination card</font></td>
+<td><font size="2">13. Busbar connections to PSU</font></td>
+</tr>
+<tr>
+<td><font size="2">2. VRM8 socket for processor 'B'</font></td>
+<td><font size="2">14. EISA expansion sockets</font></td>
+</tr>
+<tr>
+<td><font size="2">3. DIMMs 1 to 4 (top to bottom)</font></td>
+<td><font size="2">15. PCI expansion sockets</font></td>
+</tr>
+<tr>
+<td><font size="2">4. ZIF socket for processor 'B'</font></td>
+<td><font size="2">16. BIOS recovery links</font></td>
+</tr>
+<tr>
+<td><font size="2">5. ZIF socket for processor 'A'</font></td>
+<td><font size="2">17. Replaceable CMOS Lithium battery</font></td>
+</tr>
+<tr>
+<td><font size="2">6. DIMMs 5 to 8 (top to bottom)</font></td>
+<td><font size="2">18. Clear CMOS links</font></td>
+</tr>
+<tr>
+<td><font size="2">7. VRM8 socket for processor 'A'</font></td>
+<td><font size="2">19. System external connections</font></td>
+</tr>
+<tr>
+<td><font size="2">8. Aux power socket (from PSU)</font></td>
+<td><font size="2">20. Data connection to power dis. board</font></td>
+</tr>
+<tr>
+<td><font size="2">9. UltraSCSI connector to HDD module 'A'</font></td>
+<td><font size="2">21. Bus and multiplier switches, SW1-1 to 6</font></td>
+</tr>
+<tr>
+<td><font size="2">10. Aux busbar connect to PSU (not used)</font></td>
+<td><font size="2">22. FDD mode setting links</font></td>
+</tr>
+<tr>
+<td><font size="2">11. SCSI connec for Remov. media drives</font></td>
+<td><font size="2">23. Floppy disk control connector</font></td>
+</tr>
+<tr>
+<td><font size="2">12. Busbar connections to PSU</font></td>
+<td><font size="2">24. Power connections to power distribution board</font></td>
+</tr>
+      </table>
+    </blockquote>
+    <p><font size="2"><b>Switches </b></font></p>
+    <blockquote>
+      <table border="0" cellpadding="3" cellspacing="1" width="90%">
+<tr>
+<td colspan="4"><p align="center"><font size="2"><b><i>External bus clock</i></b>&nbsp;</font></td>
+<td colspan="5"><p align="center"><font size="2"><b><i>Processor bus multiplier</i></b>&nbsp;</font></td>
+</tr>
+<tr>
+<td width="15%"><p align="center"><font size="2">Frequency</font></td>
+<td width="12%"><p align="center"><font size="2">SW1-5</font></td>
+<td width="11%"><p align="center"><font size="2">SW1-6</font></td>
+<td width="4%"></td>
+<td width="12%"><p align="center"><font size="2">SW1-1</font></td>
+<td width="12%"><p align="center"><font size="2">SW1-2</font></td>
+<td width="11%"><p align="center"><font size="2">SW1-3</font></td>
+<td width="11%"><p align="center"><font size="2">SW1-4</font></td>
+<td width="11%"><p align="center"><font size="2">Factor</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">66Mhz</font></td>
+<td><p align="center"><font size="2">off</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">x2</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">60Mhz</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">off</font></td>
+<td></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">off</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">x2.5</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">50Mhz</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">off</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">x3</font></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">off</font></td>
+<td><p align="center"><font size="2">off</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">x3.5</font></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">on</font></td>
+<td><p align="center"><font size="2">off</font></td>
+<td><p align="center"><font size="2">x4</font></td>
+</tr>
+      </table>
+    </blockquote>
+    <p align="left"><font size="2"><b>Jumpers</b></font></p>
+    <blockquote>
+      <p><font size="2"><i>Clear BIOS Settings (18 on motherboard layout). Consists of 2 , three
+      pin jumpers (PL17 and PL18) which must be moved together as a pair. Pin 3 is the furthest
+      righthand pin in each case. PL17 is the upper of the two jumpers</i></font></p>
+    </blockquote>
+    <div align="center"><center><table border="1" cellpadding="7" cellspacing="1" width="275">
+<tr>
+<td valign="top" width="17%"><font size="2">Pins</font></td>
+<td valign="top" width="17%"><font size="2">Pins</font></td>
+<td valign="top" width="66%"><font size="2">Action</font></td>
+</tr>
+<tr>
+<td valign="top" width="17%"><font size="2">1 - 2</font></td>
+<td valign="top" width="17%">&nbsp;</td>
+<td valign="top" width="66%"><font size="2">Normal Position</font></td>
+</tr>
+<tr>
+<td valign="top" width="17%">&nbsp;</td>
+<td valign="top" width="17%"><font size="2">2 - 3</font></td>
+<td valign="top" width="66%"><font size="2">&gt; 1 Sec Discharge</font></td>
+</tr>
+    </table>
+    </center></div><blockquote>
+      <p><font size="2"><i>BIOS Recovery (16 on Motherboard layout). Single, three pin jumper,
+      pin 3 uppermost on motherboard</i></font></p>
+    </blockquote>
+    <div align="center"><center><table border="1" cellpadding="7" cellspacing="1" width="275">
+<tr>
+<td valign="top" width="17%"><font size="2">Pins</font></td>
+<td valign="top" width="17%"><font size="2">Pins</font></td>
+<td valign="top" width="66%"><font size="2">Action</font></td>
+</tr>
+<tr>
+<td valign="top" width="17%"><font size="2">1 - 2</font></td>
+<td valign="top" width="17%">&nbsp;</td>
+<td valign="top" width="66%"><font size="2">Recover</font></td>
+</tr>
+<tr>
+<td valign="top" width="17%">&nbsp;</td>
+<td valign="top" width="17%"><font size="2">2 - 3</font></td>
+<td valign="top" width="66%"><font size="2">Normal</font></td>
+</tr>
+    </table>
+    </center></div><blockquote>
+      <p><font size="2"><i>Floppy Drive Mode (22 on motherboard layout). Four pin jumper
+      arranged in a square format. Pins 3 and 4 lowermost</i></font></p>
+    </blockquote>
+    <div align="center"><center><table border="1" cellpadding="7" cellspacing="1" width="396">
+<tr>
+<td valign="top" width="12%"><font size="2">Pins</font></td>
+<td valign="top" width="12%"><font size="2">Pins</font></td>
+<td valign="top" width="13%"><font size="2">Pins</font></td>
+<td valign="top" width="63%">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" width="12%"><font size="2">1 - 3</font></td>
+<td valign="top" width="12%"><font size="2">2-4</font></td>
+<td valign="top" width="13%">&nbsp;</td>
+<td valign="top" width="63%"><font size="2">3-mode operation (Japan)</font></td>
+</tr>
+<tr>
+<td valign="top" width="12%">&nbsp;</td>
+<td valign="top" width="12%">&nbsp;</td>
+<td valign="top" width="13%"><font size="2">3-4</font></td>
+<td valign="top" width="63%"><font size="2">Normal 2-mode Operation</font></td>
+</tr>
+    </table>
+    </center></div><blockquote>
+      <table border="0">
+<tr>
+<td><font size="2"><b>PL14 <i>(Marked as &#145;RESET&#146;)</i></b></font></td>
+<td><font size="2"><b><i>Not Fitted</i></b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b>PL16</b></font></td>
+<td><font size="2"><b><i>Not Fitted</i></b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b><i>Jumper marked as &#145;IC5&#146; </i></b></font></td>
+<td><font size="2"><b><i>Not Fitted</i></b></font></td>
+</tr>
+      </table>
+    </blockquote>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><font size="2"><a name="1.2"></a></font><font size="3"><strong><b>1.2 FT4200 Parts
+    Listing</b></strong></font></p>
+    <table border="1" cellpadding="3" cellspacing="1" width="100%" bordercolor="#000000">
+<tr>
+<td width="59%" bgcolor="#000000" height="55"><p align="center"><font color="#FFFFFF"
+        size="2"><b>ITEM DESCRIPTION</b></font></td>
+<td width="6%" bgcolor="#000000" height="55"></td>
+<td width="14%" bgcolor="#000000" height="55"><p align="center"><font color="#FFFFFF"
+        size="2"><b>PART NUMBER</b></font></td>
+<td width="21%" bgcolor="#000000" height="55"><p align="center"><font color="#FFFFFF"
+        size="2"><b>PRODUCT CODE</b></font></td>
+</tr>
+<tr>
+<td width="59%"><font size="2"><b>FT4200 (Discovery) </b></font></td>
+<td colspan="3" width="41%"><font size="2"><b>(Product code prefix - HB)</b></font></td>
+</tr>
+<tr>
+<td colspan="4">&nbsp;</td>
+</tr>
+<tr>
+<td width="59%"><font size="2"><b><i>Motherboards</i></b></font></td>
+<td width="6%">&nbsp;</td>
+<td width="14%">&nbsp;</td>
+<td width="21%">&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">M/B-Discovery/C</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12392031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">M/B-1x200MHz 256K Disco PPro</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15848131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">M/B-2x200MHz 256K Disco PPro</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15848231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">M/B-1x200MHz 512K Disco PPro </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15784331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">M/B-2x200MHz 512K Disco PPro </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15784431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BRD-CPU 2x200MHz 512K PPro Dis</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15784531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2"><b><i>Main Items</i></b></font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">BOARD-P6 EXTENDER/B Discovery </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12387631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD-TERMINATOR/C Disocvery</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12391031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">MODULE-PSU VRM 8 12.4A</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12401530</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">HEATSINK - P6 PASSIVE WITH CLIP</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12364230</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">IC - P6 CPU 200MHz 256K A1</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12394630</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">IC - PROCESSOR 200MHz/512K</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12385030</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">IC - 200MHZ 512K Ppro</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12385130</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CARD - I/R KEYLOC</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15424331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">MOUSE-PS/2 OEM</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15469231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY-MECH Discovery</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15681031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD - FAN DISTRIBUTION/B</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12363331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD-POWER DIST LINEAR</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12395031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">LOCK KIT - RADIAL PIN SHOGUN (SIDE PANEL)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15376431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY - FAN 120mm</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15381731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD - HDD POWER DISK SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15478531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD - RM POWER DIST SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15478631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">POWER SUPPLY - SHOGUN 5V 80A</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15662131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD-SYSTEM CONT Discovery </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15801831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD-SYSTEM MANAGEMENT I/F</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15848731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CHASSIS-COMPLETE FT4200</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font color="#000000" size="2">15849031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY-FRONT BEZEL FT4200 (COMPLETE)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15849831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">LOCK KIT - SUBMINATURE CAM (FRONT)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15353831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD - FRONT PANEL SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15362031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CARD-RAID PM3334UW ULTRA SCSI </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15683631</font></td>
+<td><p align="center"><font size="2">HB58024</font></td>
+</tr>
+<tr>
+<td><font size="2">CARD-ETHERNET 3C595TX</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15464931</font></td>
+<td><p align="center"><font size="2">XB54991</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD-PCI SCI <a href="../../../common/addin/aha2940u.htm">AHA2940UW</a></font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15761831</font></td>
+<td><p align="center"><font size="2">XB58023</font></td>
+</tr>
+<tr>
+<td><font size="2">CARD-EISA ETH 3C592 COMBO</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15465231</font></td>
+<td><p align="center"><font size="2">XB54993</font></td>
+</tr>
+<tr>
+<td><font size="2">MODULE-VRM8 POWER SUPPLY</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12354030</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">M/B-200MHz 256K FT4200 PPro</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">HB58480</font></td>
+</tr>
+<tr>
+<td><font size="2">UPG-HD BAY FAST20 FT4200</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">HB58486</font></td>
+</tr>
+<tr>
+<td><font size="2">CPU-200MHz 256K PPro FT4200</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">XB58374</font></td>
+</tr>
+<tr>
+<td><font color="#000000" size="2">UPG-CPU 200MHz 256K PPro </font></td>
+<td><p align="center"><font color="#000000" size="2">%%</font></td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font color="#000000" size="2">HB57838</font></td>
+</tr>
+<tr>
+<td><font size="2">SHOGUN HDD MODULE UPGRADE</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">HA55484</font></td>
+</tr>
+<tr>
+<td><font size="2">3COM UTP ETH TRANSCEIVER</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">XB50900</font></td>
+</tr>
+<tr>
+<td><font size="2">ADAPTEC AHA2940 SINGLE CHANNEL SCSI CONT</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15568031</font></td>
+<td><p align="center"><font size="2">HA55681</font></td>
+</tr>
+<tr>
+<td><font size="2">CARD-RAID PCi 3ch 4M ECC CACHE</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15549231</font></td>
+<td><p align="center"><font size="2">HA55486</font></td>
+</tr>
+<tr>
+<td><font size="2">KEYBOARD-CofC UK</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">KK55709</font></td>
+</tr>
+<tr>
+<td><font size="2">KEYBOARD-WIN95 JAPAN 109KEY</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">KK58513</font></td>
+</tr>
+<tr>
+<td width="59%"><font size="2"><b><i>Drives</i></b></font></td>
+<td colspan="3" width="41%">&nbsp;</td>
+</tr>
+<tr>
+<td width="59%"><font size="2">DRIVE - FLOPPY 3.5 MF355F-2450MP</font></td>
+<td width="6%">&nbsp;</td>
+<td width="14%"><p align="center"><font size="2">15607231</font></td>
+<td width="21%"><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE - DAT DDS-2 CDT8000/M</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15354931</font></td>
+<td><p align="center"><font size="2">SU54778</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE - CD ROM CDU76S</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15470231</font></td>
+<td><p align="center"><font size="2">SU54768</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE - 16-64GB DDS II AUTOLOADER ADD-IN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15355031</font></td>
+<td><p align="center"><font size="2">HA55473</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-CofC TAPE DLT4000</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15355131</font></td>
+<td><p align="center"><font size="2">HA55474</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-HARD 1GB 80pin SCA2</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15696031</font></td>
+<td><p align="center"><font size="2">HB58483</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-HARD 2GB 80Pin SCA2</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15696131</font></td>
+<td><p align="center"><font size="2">HB58484</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-HARD 4GB 80Pin SCA2</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15696231</font></td>
+<td><p align="center"><font size="2">HB58485</font></td>
+</tr>
+<tr>
+<td><font size="2">HDD-2GB 80Pin Barracuda</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15696531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">HDD-4Gb 80Pin Barracuda</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15696631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-CofC HARD 4Gb SCA2 Atlas</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15847131</font></td>
+<td><p align="center"><font size="2">HB58476</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-CofC HARD 9Gb SCA2 Atlas</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15847231</font></td>
+<td><p align="center"><font size="2">HB58477</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-CD CR-505-B 6 SPEED</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15743131</font></td>
+<td><p align="center"><font size="2">SU57757</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-CofC HARD 4Gb SCA2 4LP</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15846931</font></td>
+<td><p align="center"><font size="2">HB58478</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-CofC HARD 9Gb SCA2</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15847031</font></td>
+<td><p align="center"><font size="2">HB58479</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE-CofC CD ROM SCSI CR506B </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15830931</font></td>
+<td><p align="center"><font size="2">SU58491</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE - HARD 2GB Starfire(80PIN) SCA 74G7000 </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15324031</font></td>
+<td><p align="center"><font size="2">HA55476</font></td>
+</tr>
+<tr>
+<td><font size="2">DRIVE - HARD 4GB Starfire(80PIN) SCA 89G9047</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15478731</font></td>
+<td><p align="center"><font size="2">HA55477</font></td>
+</tr>
+<tr>
+<td><font size="2"><b><i>Memory</i></b></font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">DIMM - 2M*72 60nS ECC EDO (=16MB)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12361930</font></td>
+<td><p align="center"><font size="2">HA57828</font></td>
+</tr>
+<tr>
+<td><font size="2">DIMM - 4M*72 60nS ECC EDO (=32MB)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12362130</font></td>
+<td><p align="center"><font size="2">HA57829</font></td>
+</tr>
+<tr>
+<td><font size="2">DIMM - 8M*72 60nS ECC 3V FPM AU (=64MB)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12395630</font></td>
+<td><p align="center"><font size="2">HA57830</font></td>
+</tr>
+<tr>
+<td><font size="2"><b><i>Cables</i></b></font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">CABLE - MAINS CLD UK13A-IEC</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">11002221</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td<td><font size="2">CABLE - MAINS CLD UK13A - IEC (SHOGUN)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15478831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - FPSC SERIAL SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15543231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - SERIAL SMC-MODEM</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15546130</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - SIGNAL FPSC/PSU</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15201431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - SGNL FPSC/FR PNL</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15201731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - SPEAKER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15201831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - SIDE PNL DOOR LO</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15201931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - FPSC/525 BAY DC</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15209131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - 3.5 FDD DC POWER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15209431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - FPSC DC POWER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15409031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - FAN THERMISTOR</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15410231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - FPSC DATA</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15491831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - FAN CONTROL</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15494431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE- FDD (Mitsubishi)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15684231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-SMICC</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15684331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-34WAY M/B-PDB</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15684431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-M/B-PDB POWER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15684531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-M/B-PSU POWER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15684931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - FRONT DOOR LOCK</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15202231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - MAINS CLD EURO IEC</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">11542921</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - MAINS IEC EURO GOLD </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15510431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-NONRAID E FROM M/B </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15684631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-NONRAID D</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15693131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-NONRAID C </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15693231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-NONRAID B</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15693331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-SCSI RAID BAY D</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15693631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-SCSI RAID BAY C </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15693731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-SCSI RAID BAY A</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15693831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-SCSI RAID BAY B</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15693931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE - 5.25 BAY DC PWR</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15209331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CABLE-5.25 SCSI</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15684131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">RAID CABLE SET</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">HA56372</font></td>
+</tr>
+<tr>
+<td><font size="2">UPG-CABLES SCSI RAID FT4200</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">HB57832</font></td>
+</tr>
+<tr>
+<td><font size="2">SCSI CABLE SET</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">HA56371</font></td>
+</tr>
+<tr>
+<td><font size="2"><b><i>Plastics</i></b></font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">BEZEL-CofC FT4200</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15849931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY-FRONT DOOR FT4200</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15866831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2"><b><i>Metalwork</i></b></font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">BLANKING PIECE-EXPANSION PLATE</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">11602952</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BRACKET - FAN HDD BAY SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15179531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BRACKET - FPSC FAN SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15200731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">TRAY - DRIVE MTG DRIVE BAY 525</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15259731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">PLATE - FPSC COVER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15446331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BRACKET - CARD SUPPORT EISA/PCI</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15477131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BRACKET - CARD SUPPORT CPU/MEM</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15493631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BRACKET - FAN M/B SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15493731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">PLATE - SUB ESCUTCHEON SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15494231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">PLATE - AREA COVER CPU/MEM</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15499731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CRADLE-5.25 DRIVE</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15551131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CHASSIS-ASSY FT4200 Centurion</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15831531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">PLATE MICROSWITCH</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15354331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">NN-BUS BAR-UPS-M/B 5V POWER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15201231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">NN-BUS BAR-UPS-M/B 0V</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15201331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BUS BAR - UPS - HDD (0V)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15367031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BUS BAR - UPS - HDD (5V)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15367131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BUS BAR - UPS - HDD (12V)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15367231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">PLATE - AIR BAFFLE HD BAY SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15264831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2"><b><i>Misc.</i></b></font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">ADAPTOR - 25 PIN TO 9 PIN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15546230</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">TOOL-ALLEN KEY 5mm</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15546330</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">FOOT-BUMPON RUBBER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">11006521</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SCR-M5*10LG HEX HEAD</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">11728481</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">HEATSHRINK-9.5mm*15mm</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">13238931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">GUARD-FAN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">14288130</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CARD GUIDE - RFI</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15376031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">5.25 DRIVE BAY CLOAK</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15464431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">RIVET - PUSH 4mm BLACK</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15467030</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CARD GUIDE - DEEP CHANNEL 4.5</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15468030</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">WIRE TIE - PUSH BUTTON FIXING</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15468230</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CLAMP - CABLE SPLIT FLAT</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15498230</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">RIVET - 3.2mm DIA*4.37mm</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15500030</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">RIVET - 4.0mm DIA*4.88mm</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15500130</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">LABEL SET-CofC CHASSIS Shogun</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15515831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">GASKET-CofC CLIPON SNAPTITE D</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15522931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SHEET-INSULATION BASE BOX</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15531031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BAR-CPU RETAINING</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15684031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">PANEL - DRIVE BAY BLANKING 525</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15265031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CASTOR/JACKPAD - SWIVEL</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15468331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">DAMPER - PLASTIC OIL</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15389831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CLIP - E RING </font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15390830</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">FASTENER - PUSH ON</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15390930</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">FRAME - SUPPORT FRONT PANEL</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15394631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY - BEZEL BTM PIVOT PLATE</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15395031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SPRING - DOOR RETURN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15395131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SHEET- INSULATION FR PANEL</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15586231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY-KEYPAD FT4200</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15866931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">PLAQUE-FT4200 PRINTED</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15684831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY-DRIVE BAY RIGID B/P</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15695531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SCR-M3*6 POZIPAN Z.PL C/W WSHR</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">11120482</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD-FAST20 BACKPLANE</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12376031</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY-HDD MODULE</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15673331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CRADLE-LED HOLDER SCAII</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15679831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY-BACKPLANE LED</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15694331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SCR-6-32 UNC*1/4 PZD C/W WSHR</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">13272530</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY - DRIVE BAY ONE SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">13206531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">BOARD - BACKPLANE SCSI SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">12272931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SCR - M3 SHOULDER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15286831</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY - HDD MODULE SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15377331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">HDD MODULE (Fabricated)</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15377431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY - HDD TRAY MECHANISM</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15468531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">ASSY - HDD TRAY</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15377631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SWITCH LEVER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15377731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SPRING - EXTENSION</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15377830</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">KNOB - DRIVE MODULE SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15393231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">CAM - DRIVE MODULE SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15393331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SCR - M5*12 PT POZI PAN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15464630</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">WASHER-WAVE</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15464730</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">SHOGUN FIXING KIT</font></td>
+<td>&nbsp;</td>
+<td bgcolor="#000000">&nbsp;</td>
+<td><p align="center"><font size="2">HA56373</font></td>
+</tr>
+<tr>
+<td><font size="2"><b><i>Documentation</i></b></font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">GUIDE-USER KEYLOC CARD</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15509231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">GUIDE-HEALTH/COMFORT</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15443731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">LEAFLET-DISCOVERWARE STANDARD</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15653931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">HANDBOOK-OWNERS FT42xx</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15673731</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">DOC-GETTING STARTED FT42xx</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15681531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">DOC-SMA OVERVIEW Shogun</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15691131</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">DOC-APR MANAGEMENT S/W INSTAL</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15691231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">GUIDE-USER EVENT MANAGER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15691331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">GUIDE-USER SMA Shogun</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15691431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">GUIDE-USER SNMP Shogun</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15691531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">WARRANTY CARD FT4200</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15705431</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">WARRANTY-JAPAN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15429130</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">HANDBOOK-OWNERS GERMAN FT42xx</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15683331</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">USER GUIDE DDS-2 DAT DRIVE</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15478231</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">GUIDE-USER DDS2 AUTOLOADER</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15549931</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">FLYSHEET-USER ETHERNET CARD</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15498531</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">DOC-M/B-UPGRADE</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15681631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2"><b><i>Packaging</i></b></font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">ASSY - PACKAGING SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15454631</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td><font size="2">PALLET - SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15454731</font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">CUSHION - BASE LH SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15454831</font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">CUSHION - BASE RH SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15454931</font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">CUSHION - TOP SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15455031</font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">ACCESSORIES BOX</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15455131</font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">CARTON - OUTER SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15455231</font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">PACKING - BAND ASSY SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15517031</font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font size="2">PACKING - BAND ASSY SHOGUN</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">15517031</font></td>
+<td>&nbsp;</td>
+</tr>
+    </table>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><font size="2"><a name="1.3"></a></font><font size="3"><strong><b>1.3 Buttons /
+    Functions</b></strong></font></p>
+    <div align="center"><center><table border="1" cellpadding="3" width="90%">
+<tr>
+<td width="34%"><p align="center"><font size="2"><b>Button</b></font></td>
+<td width="66%"><p align="center"><font size="2"><b>Function</b></font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">POWER</font></td>
+<td><font size="2">Power on the system</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">CONTROL</font></td>
+<td><font size="2">Silences alarm sound and clears the LCD</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">STANDBY</font></td>
+<td><font size="2">Issues a STANDBY request to software and starts the hold_off_timer.
+        When the hold_off_timer expires DC power is removed from the motherboard</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">CONTROL + STANDBY</font></td>
+<td><font size="2">Issues a STANDBY cancel request to software, if the software sends an
+        acknowledgement back the hold_off_timer is cancelled</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">RESET</font></td>
+<td><font size="2">Issues a reset request to software and starts the hold_off_timer. When
+        the hold_off_timer expires the motherboard is reset.</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">CONTROL + RESET</font></td>
+<td><font size="2">Issues a reset cancel request to software, if the software sends an
+        acknowledgement back the hold_off_timer is cancelled</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2"><b>Multi-button Function Mode</b></font></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">CONTROL + STANDBY + RESET</font></td>
+<td><font size="2">System displays 8.8.8.8 on the LCD, this indicates the system has
+        entered Multi-button Function Mode for 10 seconds only</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">CONTROL</font></td>
+<td><font size="2">Sends a sequence of AT reset commands to the modem</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">STANDBY</font></td>
+<td><font size="2">The system creates an NMI error causing the NOS to Panic/Abend. This
+        should allow the NOS to do a complete memory dump.</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">STANDBY + RESET</font></td>
+<td><font size="2">Resets the SMC to defaults. Removes all SMA user information going back
+        to the default NETUSER and PORTUSER</font></td>
+</tr>
+<tr>
+<td><p align="center"><font Helvetica" size="2">CONTROL + STANDBY + RESET</font></td>
+<td><font size="2">The SMC displays it's BIOS version on the LCD</font></td>
+</tr>
+    </table>
+    </center></div><p><font size="2"><b>LCD codes</b></font></p>
+    <p><font size="2">The LCD of the front panel displays the error codes that POST (or BIOS)
+    sends to the FPSC. When the LCD displays the code issued by POST, the code is 4 digits.<br>
+    The lower 2bytes of the NextBootStage variable is displayed shown as follows.</font></p>
+    <blockquote>
+      <table border="0" cellpadding="3" cellspacing="0" width="396">
+<tr>
+<td width="6%"><font size="2"><b>X</b></font></td>
+<td width="6%"></td>
+<td width="6%"><font size="2"><b>X</b></font></td>
+<td width="6%"></td>
+<td width="6%"><font size="2"><b>X</b></font></td>
+<td width="6%"></td>
+<td width="66%"><font size="2"><b>X</b></font></td>
+</tr>
+<tr>
+<td width="6%"><font size="2">­ </font></td>
+<td width="6%"></td>
+<td width="6%"><font size="2">­ </font></td>
+<td width="6%"></td>
+<td width="6%"><font size="2">­ </font></td>
+<td width="6%"></td>
+<td width="66%"><font size="2">­ </font></td>
+</tr>
+<tr>
+<td colspan="7"><font size="2">4 digit error code issued by POST (or BIOS)</font></td>
+</tr>
+      </table>
+    </blockquote>
+    <p><font size="2">F/W displays the F/W version when it completes its initialisation and no
+    error is found during its PowerOnSelfTest. For example, if the F/W version is 2.100,
+    &quot;<b> 2.1 0 0</b> &quot; is displayed on the LCD.</font></p>
+    <p><font size="2">The LCD also displays the error codes that show the error factors FPSC
+    detected. Almost all code displayed on the LCD is the FPSC variable number. MSD is always
+    zero.<br>
+    The FPSC variable number or FPSC detected error code is displayed as follows.</font></p>
+    <blockquote>
+      <table border="0" cellpadding="3" cellspacing="0" width="442">
+<tr>
+<td width="5%"><font size="2"><b>0</b></font></td>
+<td width="5%"></td>
+<td width="5%"><font size="2"><b>X</b></font></td>
+<td width="5%"></td>
+<td width="5%"><font size="2"><b>X</b></font></td>
+<td width="5%"></td>
+<td width="69%"><font size="2"><b>X</b></font></td>
+</tr>
+<tr>
+<td width="5%"><p align="left"><font size="2">­ </font></td>
+<td width="5%"></td>
+<td width="5%"><font size="2">­ </font></td>
+<td width="5%"></td>
+<td width="5%"><font size="2">­ </font></td>
+<td width="5%"></td>
+<td width="69%"><font size="2">­ </font></td>
+</tr>
+<tr>
+<td width="5%"><p align="left"><font size="2">|</font></td>
+<td width="5%"></td>
+<td colspan="5" width="90%"><font size="2">FPSC variable number or error code (3 digits)</font></td>
+</tr>
+<tr>
+<td colspan="7"><p align="left"><font size="2">|</font></td>
+</tr>
+<tr>
+<td colspan="7"><font size="2">Zero</font></td>
+</tr>
+      </table>
+    </blockquote>
+    <p><font size="2">The table below shows the error codes that are displayed when FPSC
+    detects error during FPSC's Power On Self Test or other error condition. These codes are
+    same as those of the error_log_records.</font></p>
+    <div align="center"><center><table border="1" cellpadding="3" cellspacing="1" width="90%"
+    bordercolor="#808080">
+<tr>
+<td width="18%"><p align="center"><font size="2"><b>Error Code</b></font></td>
+<td width="82%"><p align="center"><font size="2"><b>Error Factor</b></font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F01</font></td>
+<td><font size="2">80C186EB internal H/W (general purpose register) error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F02</font></td>
+<td><font size="2">80C186EB internal H/W (flag-register) error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F03</font></td>
+<td><font size="2">80C186EB internal H/W (timer) error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F04</font></td>
+<td><font size="2">SC's SRAM write/read test error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F05</font></td>
+<td><font size="2">SC's EPROM checksum error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F06</font></td>
+<td><font size="2">SC's FLASH checksum error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F07</font></td>
+<td><font size="2">Copy from FLASH to SRAM failed</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F08</font></td>
+<td><font size="2">Copy from EPROM to SRAM failed</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F09</font></td>
+<td><font size="2">RTC's RAM write/read test error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F0A</font></td>
+<td><font size="2">A/D converter's busy bit error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F0b</font></td>
+<td><font size="2">SC&#146;s FLASH is not programmed</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F0d</font></td>
+<td><font size="2">UART1 internal loop test failed</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F0E</font></td>
+<td><font size="2">UART2 internal loop test failed </font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F0F</font></td>
+<td><font size="2">UART1 and UART2 internal loop test both failed</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F10</font></td>
+<td><font size="2">Power On Error (DC-Good signal does not become active)</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F11</font></td>
+<td><font size="2">Power Off Error (DC-Good signal does not become inactive)</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F12</font></td>
+<td><font size="2">FPSC Watch Dog Timer over-flow error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F13</font></td>
+<td><font size="2">Push-button access violation</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F14</font></td>
+<td><font size="2">Too many timer2 time-out error</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F15</font></td>
+<td><font size="2">Invalid interrupt</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F20</font></td>
+<td><font size="2">Diag-Processor communication error (maybe not displayed)</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F30</font></td>
+<td><font size="2">FPSC port retry-over occurred (maybe not displayed)</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F31</font></td>
+<td><font size="2">FPSC port Response time-out occurred (maybe not displayed)</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F32</font></td>
+<td><font size="2">FPSC port Transmit time-out occurred (maybe not displayed)</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F40</font></td>
+<td><font size="2">MODEM port retry-over occurred (maybe not displayed)</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F41</font></td>
+<td><font size="2">MODEM port Response time-out occurred (maybe not displayed)</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F42</font></td>
+<td><font size="2">MODEM port Transmit time-out occurred (maybe not displayed)</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F4d</font></td>
+<td><font size="2">MODEM AT command result code time-out occurred</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2">0F4E</font></td>
+<td><font size="2">MODEM AT command failed</font></td>
+</tr>
+<tr>
+<td><p align="center"><font size="2"><b>0F4F</b></font></td>
+<td><font size="2">MODEM AT command unexpected result code is received</font></td>
+</tr>
+    </table>
+    </center></div><p><font size="2">F/W also displays the code that indicates that F/W starts
+    its function. The FPSC specific codes and NextBootStage codes are shown as follows.</font></p>
+    <div align="center"><center><table border="1" cellpadding="3" cellspacing="1" width="90%"
+    bordercolor="#808080">
+<tr>
+<td valign="top" width="16%"><p align="center"><font size="2"><b>Code</b></font></td>
+<td valign="top" width="56%"><p align="center"><font size="2"><b>Meaning</b></font></td>
+<td width="28%"><p align="center"><font size="2"><b>Source</b></font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">0000</font></td>
+<td valign="top"><font size="2">Reset or Shutdown has been canceled by S/W.<br>
+        All system management software are booted.</font></td>
+<td><p align="center"><font size="2">Event Manager<br>
+        Last Clients</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">1000</font></td>
+<td valign="top"><font size="2">Reset is issued to Diag-processor.</font></td>
+<td><p align="center"><font size="2">FPSC</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">100F</font></td>
+<td valign="top"><font size="2">POST has not started its execution. (FPSC detected
+        time-out.)</font></td>
+<td><p align="center"><font size="2">FPSC</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">1200</font></td>
+<td valign="top"><font size="2">Shutdown_request is issued to S/W.<br>
+        This code is cleared when the machine is powered off normally.</font></td>
+<td><p align="center"><font size="2">FPSC</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">1400</font></td>
+<td valign="top"><font size="2">Normal Reset_request is issued to S/W.</font></td>
+<td><p align="center"><font size="2">FPSC</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">1600</font></td>
+<td valign="top"><font size="2">NMI request is issued to Diag-processor.</font></td>
+<td><p align="center"><font size="2">FPSC</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">1FFF</font></td>
+<td valign="top"><font size="2">POST execution time-out is detected by Diag-processor.
+        FPSC regards the system is dead.</font></td>
+<td><p align="center"><font size="2">Diag-processor</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">2000</font></td>
+<td valign="top"><font size="2">POST execution of motherboard BIOS completed</font></td>
+<td><p align="center"><font size="2">Motherboard BIOS</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">2XXN</font></td>
+<td valign="top"><font size="2">XX is a value that is written into port80 by POST, which
+        is captured by Diag-processor.<br>
+        N = 0 means that new value is written into port80.<br>
+        N = F means that FPSC detected POST execution time-out.</font></td>
+<td><p align="center"><font size="2">Motherboard BIOS</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">3000~3FFF</font></td>
+<td valign="top"><font size="2">These codes are written by SMIC BIOS.</font></td>
+<td><p align="center"><font size="2">SMIC BIOS</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">7FF0</font></td>
+<td valign="top"><font size="2">POST complete (OS booting started)</font></td>
+<td><p align="center"><font size="2">SMIC BIOS</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">4000~7FFF</font></td>
+<td valign="top"><font size="2">These codes are not assigned.</font></td>
+<td><p align="center"><font size="2">none</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">8000~FFFF</font></td>
+<td valign="top"><font size="2">These codes are issued by device driver or clients</font></td>
+<td><p align="center"><font size="2">Device driver or client</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">8FE0</font></td>
+<td valign="top"><font size="2">Device driver is detached.</font></td>
+<td><p align="center"><font size="2">(Device driver)</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">8FF0</font></td>
+<td valign="top"><font size="2">Device driver is attached.</font></td>
+<td><p align="center"><font size="2">Device driver</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">FFE0</font></td>
+<td valign="top"><font size="2">Clients are detached.</font></td>
+<td><p align="center"><font size="2">(Last Client)</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2"><b>FFF0</b></font></td>
+<td valign="top"><font size="2">Clients are attached.</font></td>
+<td><p align="center"><font size="2">Last Client</font></td>
+</tr>
+    </table>
+    </center></div><p><font size="2">In the case that AC fails and clients are NOT loaded, the
+    firmware will display remaining hold off time as follows. The remaining hold_off_time will
+    be decreased every second.</font></p>
+    <div align="center"><center><table border="1" cellpadding="3" cellspacing="1" width="90%"
+    bordercolor="#808080">
+<tr>
+<td valign="top" width="13%"><p align="center"><font size="2"><b>Code</b></font></td>
+<td valign="top" width="29%"><p align="center"><font size="2"><b>Power Mode</b></font></td>
+<td width="58%"><p align="center"><font size="2"><b>Meaning</b></font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">A.n n n</font></td>
+<td valign="top"><font size="2">Brownout mode</font></td>
+<td><font size="2">Remaining brownout hold_off_time is nnn second. When nnn becomes zero,
+        the power mode will change to Battery-time mode. If nnn is greater than 1000, then 999
+        will be displayed.</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2">b.n n n</font></td>
+<td valign="top"><font size="2">Battery-time mode</font></td>
+<td><font size="2">Remaining battery-time hold_off_time is nnn second. When nnn becomes
+        zero, the power mode will change to AC Power Fail mode. If nnn is greater than 1000, then
+        999 will be displayed.</font></td>
+</tr>
+<tr>
+<td valign="top"><p align="center"><font size="2"><b>F.n n n</b></font></td>
+<td valign="top"><font size="2">AC Power Fail mode</font></td>
+<td><font size="2">Remaining AC Power Fail hold_off_time is nnn second. When nnn becomes
+        zero, the system will be switched off. If nnn is greater than 1000, then 999 will be
+        displayed.</font></td>
+</tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p><font size="2"><strong>Additional Useful Codes</strong></font></p>
+    <p><font size="2">006B </font></p>
+    <p><font size="2">When FPSC firmware detects software WDT time-out, the behavior of the
+    FPSC is determined by the action set in the WDTTimeoutAction (0=Disabled, 1=Sound Alarm,
+    2=Reset System, 3=Sound Alarm and Reset System) variable.</font></p>
+    <p><font size="2">0077 </font></p>
+    <p><font size="2">DOOR LOCK trap indicating that the door is open.</font></p>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><font size="2"><a name="1.4"></a></font><font size="3"><strong><b>1.4 Memory
+    Configuration</b></strong></font></p>
+    <p align="center"><font size="2"><img src="graphics/4200ftt4.gif" width="267" height="305"
+    alt="4200ftt4.gif (6711 bytes)"></font></p>
+    <table border="1" cellpadding="7">
+<tr>
+<td><font size="2"><b>Caution</b></font><p><font size="2"><i>There are 2 different
+        specifications of DIMM in use on Apricot products. The PCL6000 motherboard uses xMb by
+        72bit, 60ns, 3v, EDO non-buffered. Cosworth and Discovery motherboards use xMb by 72bit,
+        60ns, 3v, EDO buffered.</i></font></td>
+</tr>
+    </table>
+    <p><font size="2">There are 8 DIMM (Dual In-line Memory Modules) on the motherboard. These
+    are split into 2 banks of 4.</font></p>
+    <blockquote>
+      <p><font size="2">Bank 1 = even numbered sockets, 2, 4, 6 and 8<br>
+      Bank 2 = odd numbered sockets, 1, 3, 5 and 7</font></p>
+    </blockquote>
+    <p><font size="2">The following rules must be followed: </font><ul>
+      <li><font size="2">Only FT4200 approved DIMMs must be used (see table later)</font></li>
+      <li><font size="2">DIMM capacities can be 16, 32, 64, 128 or 256Mb</font></li>
+      <li><font size="2">1, 2 or 4 DIMMs can be fitted to a bank</font></li>
+      <li><font size="2">DIMMs on a bank must be identical</font></li>
+      <li><font size="2">If both banks are being used, they must contain the same number of DIMMs</font></li>
+      <li><font size="2">Two or Four way Interleaving is employed automatically depending on the
+        number of DIMMs used.</font></li>
+    </ul>
+    <p><font size="2">An example memory table:</font></p>
+    <div align="center"><center><table border="1" cellpadding="3" cellspacing="1" width="90%">
+<tr>
+<td width="12%"><p align="right">&nbsp;</td>
+<td width="9%"><p align="center"><font size="2"><b>MM1</b></font></td>
+<td width="9%"><p align="center"><font size="2"><b>MM2</b></font></td>
+<td width="9%"><p align="center"><font size="2"><b>MM3</b></font></td>
+<td width="9%"><p align="center"><font size="2"><b>MM4</b></font></td>
+<td width="9%"><p align="center"><font size="2"><b>MM5</b></font></td>
+<td width="9%"><p align="center"><font size="2"><b>MM6</b></font></td>
+<td width="9%"><p align="center"><font size="2"><b>MM7</b></font></td>
+<td width="9%"><p align="center"><font size="2"><b>MM8</b></font></td>
+<td width="15%"><font size="2"><b>Interleave</b></font></td>
+</tr>
+<tr>
+<td><p align="right"><font size="2"><em>See Note</em></font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">x</font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><font size="2">none</font></td>
+</tr>
+<tr>
+<td><p align="right">&nbsp;</td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">x</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">x</font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><font size="2">2 way</font></td>
+</tr>
+<tr>
+<td><p align="right">&nbsp;</td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">x</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">x</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">x</font></td>
+<td>&nbsp;</td>
+<td><p align="center"><font size="2">x</font></td>
+<td><font size="2">4 way</font></td>
+</tr>
+<tr>
+<td><p align="right"><font size="2"><em>See Note</em></font></td>
+<td><p align="center"><font size="2">y</font></td>
+<td><p align="center"><font size="2">x</font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><font size="2">none</font></td>
+</tr>
+<tr>
+<td><p align="right">&nbsp;</td>
+<td><p align="center"><font size="2">y</font></td>
+<td><p align="center"><font size="2">x</font></td>
+<td><p align="center"><font size="2">y</font></td>
+<td><p align="center"><font size="2">x</font></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><font size="2">2 way</font></td>
+</tr>
+<tr>
+<td><p align="right">&nbsp;</td>
+<td><p align="center"><font size="2">y</font></td>
+<td><p align="center"><font size="2">x</font></td>
+<td><p align="center"><font size="2">y</font></td>
+<td><p align="center"><font size="2">x</font></td>
+<td><p align="center"><font size="2">y</font></td>
+<td><p align="center"><font size="2">x</font></td>
+<td><p align="center"><font size="2">y</font></td>
+<td><p align="center"><font size="2">x</font></td>
+<td><font size="2">4 way</font></td>
+</tr>
+    </table>
+    </center></div><p><font size="2">All instances of x must be identical, likewise all
+    instances of y, although x and y can either be the same capacity or different. <br>
+    DIMMs can be 16, 32, 64, 128 or 256MB DIMMs.</font></p>
+    <p><font size="2">Maximum memory capacity is 2GB using 8 x 256MB DIMMs.</font></p>
+    <p><font size="2"><b>Please Note<br>
+    </b><i>It is recommended that single DIMM configurations are not used as 2 way and 4 way
+    Interleaving increases performance.</i></font></p>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>FT4200 Approved Vendor List (AVL)</b></font></p>
+    <div align="center"><center><table BORDER="1" CELLSPACING="1" CELLPADDING="7" WIDTH="568">
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>Part: </b>12361930 (Limited Availability)</font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>16Mb (2M*72) EDO, 3V</b></font></td>
+</tr>
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2">Micron Europe Ltd</font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2">MT9LD272G-6X</font></td>
+</tr>
+<tr>
+<td WIDTH="100%" VALIGN="top" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>Part: </b>HA57829</font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>32Mb (4M*72) EDO, 3V</b></font></td>
+</tr>
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2">Micron Europe Ltd</font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2">MT18LD472G-6X</font></td>
+</tr>
+<tr>
+<td WIDTH="100%" VALIGN="top" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>Part: </b>HA57830</font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>64Mb (8M*72) EDO, 3V</b></font></td>
+</tr>
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2">Micron Europe Ltd</font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2">MT36LD872G-6X</font></td>
+</tr>
+<tr>
+<td WIDTH="100%" VALIGN="top" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>Part: </b>HA61089<i> (See Note Below)</i></font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>128Mb (16M*72) EDO, 3V</b></font></td>
+</tr>
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2">Samsung Semiconductor Eur Ltd</font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2">KMM372F1600AK-6U</font></td>
+</tr>
+<tr>
+<td WIDTH="100%" VALIGN="top" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>Part: </b>HA61090<i> (See Note Below)</i></font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2"><b>256Mb (32M*72) EDO, 3V</b></font></td>
+</tr>
+<tr>
+<td WIDTH="50%" VALIGN="top"><font size="2">Samsung Semiconductor Eur Ltd</font></td>
+<td WIDTH="50%" VALIGN="top"><font size="2">KMM372F3200AK-6U<br>
+        KMM372F3200AK2-6U<br>
+        KMM372F3200AK3-6U</font></td>
+</tr>
+    </table>
+    </center></div><b><p><font size="2">Important Note<br>
+    </b>128 and 256MB DIMMs are supported only by Motherboard BIOS version 8.03.00 or greater.</font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><img src="graphics/4200ftt2.gif" width="593" height="181"></font></p>
+    <p><font size="2">&nbsp;<br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><font size="2"><a name="1.5"></a></font><font size="3"><strong><b>1.5 BIOS
+    Upgrades&nbsp;</b></strong></font></p>
+    <p><font size="2">There are only 4 upgradeable BIOS'es within the Apricot FT4200. These
+    are:</font></p>
+    <blockquote>
+      <p><font size="2"><b>Motherboard BIOS<br>
+      SMIC BIOS<br>
+      FPSC BIOS<br>
+      Flash Disk</b></font></p>
+    </blockquote>
+    <p><font size="2">The version details for these are detailed in the previous tables.</font></p>
+    <p><font size="2"><b><i>Upgrading the Motherboard BIOS</i></b></font></p>
+    <blockquote>
+      <p><font size="2"><b>STOP!</b></font></p>
+      <p><font size="2"><b>IF THE PROCESS OF FLASHING THE MOTHERBOARD BIOS DEVICE FAILS OR IS
+      ABORTED FOR ANY REASON DURING THE COURSE OF OPERATION, THE PROM DEVICE AT LOCATION IC67
+      WILL BE RENDERED INOPERATIVE AND WILL NEED TO BE PHYSICALLY REPLACED. NOTE THAT THERE IS <u>NO
+      RECOVERY PATH FOR THIS OPERATION</u>.</b></font></p>
+      <blockquote>
+        <ol type="a" start="1">
+          <li><font size="2">Boot system from Firmware Update Disk</font></li>
+          <li><font size="2">Select <b>2</b> from the main menu. Note that there is no confirmation
+            prompt from the programme - it goes straight into programming.<i> Do NOT interfere with
+            the system while programming commences.</i></font></li>
+          <li><font size="2">Once programming is complete, exit and reboot the system.</font></li>
+        </ol>
+      </blockquote>
+    </blockquote>
+    <p><font size="2"><b><i>Upgrading the SMIC BIOS</i></b></font></p>
+    <blockquote>
+      <p><font size="2"><b>Caution: </b>When upgrading the SMIC card in an FT4200, you must
+      first ensure that the default I/O is set to <b>C800h</b>. This is particularly important
+      if the SMIC was previously used with a Shogun motherboard. This setting is altered using
+      Jumper PL3 on the SMIC card. Set the jumper as shown below.</font></p>
+    </blockquote>
+    <p align="center"><font size="2"><img src="graphics/4200ftt3.gif" width="363" height="143">&nbsp;</font></p>
+    <blockquote>
+      <p><font size="2">The BIOS upgrade can now proceed as follows:</font></p>
+      <blockquote>
+        <ol type="a" start="1">
+          <li><font size="2">Reboot the system from the firmware upgrade diskette</font></li>
+          <li><font size="2">Select <b>1</b> from the main menu. Note that there is no confirmation
+            prompt from the programme - it goes straight into programming.<i> Do NOT interfere with
+            the system while programming commences.</i></font></li>
+          <li><font size="2">Once programming is complete, exit and reboot the system.</font></li>
+        </ol>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><strong>Note<br>
+      </strong>Once the SMIC card has been upgraded in this way, it will no longer operate in an
+      Apricot Shogun. If a situation arises where the card is required to operate in a Shogun,
+      the SMIC card will need be re-flashed <i>in an FT4200 system</i>. A Shogun system will not
+      run with an upgraded SMIC card installed.</font></p>
+    </blockquote>
+    <p><font size="2"><b><i>Upgrading the FPSC/SMC BIOS</i></b></font></p>
+    <blockquote>
+      <p><font size="2"><i>To upload new SMC firmware using SMA</i></font><ol>
+        <li><font size="2">Select the appropriate Server window.</font></li>
+        <li><font size="2">Choose Upload Firmware from the Control menu.<br>
+          The Upload Firmware dialog box appears.</font></li>
+        <li><font size="2">Select the binary file corresponding to the new SMC firmware (it should
+          have a .FRM file extension) and choose OK. (158021SW.BIN or 4013.FRM). This can be found
+          on the FPSC disk (Pt 158022SW) or on Area44 of <strong>Insight BBS </strong>as a
+          self-unpacking archive 4200FPSC.EXE</font></li>
+        <li><font size="2">If you are uploading over the network, check the LoginUser variable (in
+          the Users subsystem) to see if anyone currently has a serial connection to the SMC's modem
+          port. If so, you may have to force that user to disconnect, as described in another topic.</font></li>
+        <li><font size="2">Change the value of the FPSCResetRequest variable to &quot;Active&quot;.</font></li>
+        <li><font size="2">Wait until FIRMWAREUPGRADEFLAG Flag: =FPSC</font></li>
+        <li><font size="2">Choose Power/Reset from the Control menu.<br>
+          The Power/Reset dialog appears.</font></li>
+        <li><font size="2">Under Action, select the [Power] Off option. Under Scheduled Action,
+          select the Enabled check box and specify a time a few minutes into the future. Choose OK.<br>
+          Note: You cannot schedule a Power On to occur after the SMC firmware has been upgraded.
+          The upgrading process does not preserve this information.</font></li>
+        <li><font size="2">Close the Server window to disconnect from the server.</font></li>
+      </ol>
+      <p><font size="2">As soon as the server is in Power Off mode, and provided there is no
+      serially-connected workstation, the SMC updates its firmware using the binary file you
+      have given it..</font></p>
+      <p><font size="2">The Shogun will display 0001 on the LCD when upgrade is complete.</font></p>
+    </blockquote>
+    <p><font size="2"><b><i>To upgrade the FPSC via Flash Disk</i></b></font></p>
+    <blockquote>
+      <p><font size="2">Boot from the Flash Disk by pressing &lt;F2&gt; when prompted <br>
+      Select Upgrade SMC Firmware<br>
+      Insert disk with the FPSC binary on.</font></p>
+      <blockquote>
+        <p><font size="2"><i>If the file from the FPSC disk is used you will have to rename
+        158021SW.BIN to the BIOS version with an extension of FRM <br>
+        E.g. REN 158021SW.BIN 4013.FRM. (<b>Do not</b> use 158019SW.BIN or 158020SW.BIN.).</i></font></p>
+        <p><font size="2"><i>There is a file on Area44 of </i><strong>Insight BBS </strong><i>(4200FPSC.EXE)
+        which is a self-unpacking archive that just contains 158021SW and 4013.FRM. This can be
+        created onto an HD floppy diskette and used if preferred. The upgrade process will only
+        look for files with a .FRM extension.</i></font></p>
+      </blockquote>
+      <p><font size="2">Transfer file and Upgrade<br>
+      Wait until the machine switches off and the LCD reports 0001.</font></p>
+    </blockquote>
+    <p><font size="2"><b><i>Upgrading the Flash Disk</i></b></font></p>
+    <blockquote>
+      <p><font size="2">Download the latest version from Area 44 of <strong>Insight BBS</strong>.
+      This is a file called 4200FDSK.EXE and is a self unpacking archive. When run it will
+      produce 2 disk image files and IMAGE.EXE. Make the disks required and insert disk 1 into
+      the server. Reboot to this disk and answer &quot;y&quot; to the prompt &quot;Do you wish
+      to format?&quot;. The program will copy files from disk 1 to the Flash Disk and then
+      prompt you for the second disk. When all the files are copied the system will require Disk
+      1 again before prompting you to reboot the system.</font></p>
+    </blockquote>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><font size="2"><a name="1.6"></a></font><font size="3"><strong><b>1.6 BIOS and ECU
+    Limitations</b></strong></font></p>
+    <blockquote>
+      <table border="0" cellpadding="3" width="90%">
+<tr>
+<td valign="top"><font size="2">IPR2248</font></td>
+<td><font size="2">EZSCSI reporting too few terminators on SCSI bus. This is a problem
+          with older versions of the ASPI8DOS.SYS driver and there is an update available from
+          Adaptec which I have tried and the problem goes away.<br>
+          <b>Solution : </b>Get the latest driver update from Adaptec and replace your existing one
+          with it.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2292</font></td>
+<td><font size="2">With password prompt set to &#145;OFF&#146;, and no password entered,
+          error 162 is displayed on reboot. The password prompt option in set-up simply determines
+          whether or not a prompt should be output for the password to be entered. By setting this
+          option to &#145;OFF&#146; it implies that there is a password installed but the prompt
+          shouldn&#146;t be output when the BIOS tries to read the password. However if there
+          isn&#146;t actually a valid password then a configuration change error is produced
+          indicating that CMOS password may be incorrect. <br>
+          <b>Solution : </b>This should be documented accordingly.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2293</font></td>
+<td><font size="2">Initial configuration of password is unclear. The password is only
+          active when the user has entered a password, confirmed the password and then selected the
+          &#145;Change Password&#146; option to set the password for use.<br>
+          <b>Solution :</b> This should be documented accordingly.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2294</font></td>
+<td><font size="2">Password help file states maximum length is 7 characters, but menu
+          allows 20+. What happens is that only 7 characters are to be used for the password and the
+          entry box is only 7 characters long however when all 7 characters have been typed in the
+          user can continue pressing keys with no beep being produced indicating the password buffer
+          is full but only the first 7 characters entered are used for the password.<br>
+          <b>Solution :</b> This should be documented accordingly.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2295</font></td>
+<td><font size="2">With password prompt set to &#145;OFF&#146;, the password is still
+          requested. The password prompt ON/OFF control purely controls output of the &#145;Please
+          Enter Password -&#145; message and has no bearing on the requirement for a password to be
+          entered, i.e. If a password is set then it is required.<br>
+          <b>Solution :</b> This should be documented accordingly.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2309</font></td>
+<td><font size="2">NT install hangs if drives are attached to the 2940&#146;s. This is
+          only the case if the drives are brand new and have never been partitioned or formatted,
+          however once they have been written once it is possible to delete all partition
+          information and the install will work so it is impossible to recreate without getting hold
+          of more new drives, however I suspect this is an NT or Adaptec issue as I cannot think of
+          any possible way the BIOS can have a bearing on this error under these particular
+          circumstances.<br>
+          <b>Solution :</b> There is a program available from Adaptec called AFDISK.EXE which will
+          allow new drives to be partitioned and then the systems functions correctly.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2429</font></td>
+<td><font size="2">Discovery will not boot from CD-ROM when the option is enabled within
+          start-up device menu.<br>
+          <b>Solution : </b>This option will not be provided by the BIOS but instead will be
+          implemented using the Adaptec BIOS bootable CD-ROM support. This has a knock on effect
+          causing a further shortage of option ROM space when installing 2940 cards into a system
+          due to the 7850 having to &#145;install&#146; it&#146;s BIOS to facilitate booting from
+          CD-ROM which in turn reduces the space available to option ROMs.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2430</font></td>
+<td><font size="2">If the 2<sup>nd</sup>, 3<sup>rd</sup> &amp; 4<sup>th</sup> start-up
+          devices within F1 set-up are set to Disabled, the system continues to boot from drive A:.<br>
+          <b>Solution : </b>The BIOS does it&#146;s best to boot the system and if the user
+          specifies a boot order which causes the system not to be able to boot then after
+          attempting the user boot sequence it will drop back to a default and use that one to try
+          and boot. (The default sequence is A:, C: , D: &amp; E: ), This should be documented
+          accordingly.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2431</font></td>
+<td><font size="2">Discovery will not boot from hard drive 1 when option is enabled within
+          startup device menu.<br>
+          <b>Solution : </b>I have not had problems with this when booting from drives connected to
+          the onboard Adaptec controller, however the IPR does state that it was trying to boot from
+          a RAID drive on a DPT card, I haven&#146;t tried this but the BIOS simply uses drives
+          logically ie. C:, D: etc&#133; so as long as the RAID DPT drive appeared correctly as D:
+          then the startup option should work correctly so I suspect this is a config / setup issue
+          which should be investigated and documented accordingly.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2432</font></td>
+<td><font size="2">If all startup devices within F1 setup are set to disabled, the system
+          continues to boot from drive C:. See IPR2430 above - default boot sequence will be used.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2349</font></td>
+<td><font size="2">POST reports incorrect CPU cache size. This fault has been observed by
+          several people (I am not one of them and I have powered a Discovery on a few times by now)
+          including BIOS staff during the development of the CPU reporting code. On the occasion
+          that this error was seen the CPU had actually reported back the cache size incorrectly but
+          it has never occured since. We cannot find any Intel documentation to suggest that there
+          is a problem with the CPU cache information reporting.<br>
+          <b>Solution : </b>If investigation into this problem is required it would take a long time
+          to even see the problem. We have contacted Intel with respect to this problem and see if
+          they are aware of any such instances and are awaiting feedback.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2444</font></td>
+<td><font size="2">If a 3½&quot; 1.44MB floppy drive is fitted, and setup is configured
+          as a 360KB 5¼&quot; drive and &lt;ESC&gt; is pressed during the memory test no error is
+          reported.<br>
+          <b>Solution : </b>This should be documented accordingly as pressing &lt;ESC&gt; during the
+          memory test activates &#145;quick POST&#146; which attempts to boot as quickly as possible
+          and this includes skipping floppy drive verification during POST and it assumes that the
+          CMOS information for the floppy is correct so the BIOS is performing as expected.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2445</font></td>
+<td><font size="2">A second floppy drive cannot be fitted to system due to an incorrect
+          cable configuration or a lack of drive select switches / jumpers.<br>
+          <b>Solution : </b>This is not actually a BIOS issue however it does have implications on
+          the BIOS in that the floppy B: option needs to be removed from the F1 setup and ECU menus,
+          this has now been done and will be in future releases.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2460</font></td>
+<td><font size="2">If in F1 setup ROM shadowing is set to Enabled, on rebooting the SMIC
+          card changes the CMOS settings and disables C800h - CFFFh.<br>
+          <b>Solution : </b>This is how the SMIC is supposed to function as its ROM is paged and
+          thus cannot be shadowwed otherwise it cannot function correctly.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2462 </font></td>
+<td><font size="2">Once a CFG file is created for an ISA card, there is no facility to
+          edit the configuration details.<br>
+          <b>Solution : </b>This is a feature of the ECU, it provides a CFG creation option but no
+          CFG file editor. The ECU is bought in from MCS and we do not have control to that degree
+          over the functionality of it so this is how it will be.</font></td>
+</tr>
+<tr>
+<td valign="top"><font lvetica" size="2">IPR2463</font></td>
+<td><font size="2">Fitting and creating a CFG file for a 3-Com 509 card causes an IRQ
+          clash.<br>
+          <b>Solution : </b>The ECU is supposed to resolve resource conflicts and if an ISA card is
+          added on an already used IRQ then it will flag this as an error which is what has happened
+          here. The ECU will also move any required resources to try and resolve this allocation
+          problem by changing dynamically allocatable cards e.g. PCI cards.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2471</font></td>
+<td><font size="2">ECU does not load &#145;Not Listed&#146; CFG files correctly.<br>
+          <b>Solution : </b>This is a documentation issue as the ECU will load &#145;not
+          listed&#146; CFG files correctly but the way it is done is not immediately obvious and
+          could be clearer however given the ECU documentation it is fairly straight forward.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2472</font></td>
+<td><font size="2">If diskette drive A: is configured as 360KB or 1.2MB within the ECU
+          system does not error on reboot, but does error if configured as 720KB.<br>
+          <b>Solution : </b>The drive mismatch comparrison is performed based on the number of
+          cylinders a drive has so the only mismatch should be between a 360K drive and the rest,
+          this is now the case.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2492</font></td>
+<td><font size="2">If a discovery ECU (.SCI) file is saved with clashing interrupts e.g.
+          7850 &amp; 7880 on IRQ 9, when loaded they are placed on IRQ 10 &amp; 11.<br>
+          <b>Solution : </b>This is as a result of the ECU performing it&#146;s job i.e resolving
+          resource clashes. This can be controlled by locking the configuration or changing the
+          configuration mode from automatic to manual.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2506</font></td>
+<td><font size="2">Discovery is not MP 1.4 compliant.<br>
+          <b>Solution : </b>This is not the case, however Discovery&#146;s MP table doesn&#146;t
+          actually make use of the 1.4 spec changes and the version information in the header
+          information used to be incorrect so some OS&#146;s did see the MP table as being 1.1 and
+          not 1.4 compliant - This has now been placed on a switch in setup and can be selected by
+          the user (defaults to MPS V1.4).</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2728</font></td>
+<td><font size="2">After removing the 2940 cards the ECU De-activates the onboard 7880
+          &amp; 7850.<br>
+          <b>Solution : </b>I don&#146;t seem to be able to recreate this problem and need to speak
+          to the owner of the IPR about the error as I have never seen a card De-activated, however
+          there should be a description of De-activated cards in the ECU documentation.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2729</font></td>
+<td><font size="2">NT install hangs with drives attached to the 2940 cards.<br>
+          <b>Solution : </b>This IPR contains an update as follows : UPDATE .. 20<sup>th</sup> Aug -
+          AFDISK.EXE was used to place a partition on all hard drives and NT installs no trouble.
+          These partitions were then removed using the NT disk Administrator utility and NT still
+          installs with no problem. It seems to indicate that NT has a problem with installation on
+          new or raw drives.</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">IPR2730</font></td>
+<td><font size="2">Fdisk does not see drives attached to the 2940 cards.<br>
+          <b>Solution : </b>This IPR contains an update as follows : UPDATE&#133;. 20<sup>th</sup>
+          August. Using AFDISK I was able to see all drives and place a DOS partition on them. NT
+          then installed.</font></td>
+</tr>
+      </table>
+    </blockquote>
+    <p><font size="2"><b>Option ROM Space</b></font></p>
+    <blockquote>
+      <p><font size="2">There is a general limitation with option ROM space on discovery with
+      the SMIC fitted.</font></p>
+      <p><font size="2"><b>Solution : </b>When a SMIC is fitted there is only 64K of option ROM
+      space to use and the onboard Adaptecs take 20K of this leaving only 44K. This seems to be
+      more of a problem when trying to fit 2940 cards into a system as they require 32K each in
+      their uncompressed form to execute and shrink themselves down. This is going to be an
+      ongoing limitation and will keep reoccurring when we try to fit lots of cards to a system.
+      I suspect this was not a problem on the XXPRESS shogun as the BIOS may have only took up
+      64K (need to check this&#133;?) creating another free 64K (0E000h segment) for option
+      ROM&#146;s however the surepath BIOS is 128K and thus uses the 64K block at 0E000h.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">When error logging is enabled and there is no SMIC fitted the system can
+      hang.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><b>Solution : </b>We don&#146;t currently have a fix for this but seeing
+      as all systems will ship with a SMIC it is here as a limitation and then should anybody
+      wish to run without a SMIC the error logging features should be disabled.</font></p>
+    </blockquote>
+    <blockquote>
+      <p align="left"><font size="2">As part of the Bus Error logging EISA bus time-outs used to
+      be logged, however we have seen that when a 3COM 592 card is &nbsp;fitted to the system it
+      causes EISA bus time-out errors even when operating normally.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><b>Solution : </b>It has been decided to remove the EISA bus time-out
+      detection for the time being until this condition can be resolved.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">There is a problem with the EISA Configuration Utility which can
+      sometimes result in a crash situation.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><b>Solution : </b>This is not believed to be due to anything we have
+      added to the ECU and MCS who supply the ECU kit to us are currently investigating this
+      issue.</font></p>
+    </blockquote>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><font size="2"><a name="2default_config"></a></font><font size="3"><strong><b>2.
+    Default Configuration</b></strong></font></p>
+    <p><font size="2">Steps to return an FT4200 to its default configuration.</font></p>
+    <p><font size="2"><b>2.1 Clearing CMOS RAM and returning to defaults</b></font></p>
+    <blockquote>
+      <ol type="i" start="1">
+        <li><font size="2">Ensure system is powered off</font></li>
+        <li><font size="2">Remove left hand side panel and metal cover over the upper half of the
+          motherboard</font></li>
+        <li><font size="2">Locate PL17 and PL18 just under the lithium battery, top left hand side
+          of the motherboard.</font></li>
+        <li><font size="2">Move <u>both</u> jumpers horizontally from pins 1-2 to 2-3 (from left
+          hand pair to right hand pair)</font></li>
+        <li><font size="2">Leave in position for around 10 seconds</font></li>
+        <li><font size="2">Replace jumpers in their original positions (1-2)</font></li>
+        <li><font size="2">Power system up </font></li>
+        <li><font size="2">Memory count will be slow, so press &lt;esc&gt; to end it if desired.</font></li>
+        <li><font size="2">After SCSI controller sign on messages, press &lt;F1&gt; when prompted to
+          continue</font></li>
+        <li><font size="2">After error messages, system will go into the SurePath setup</font></li>
+        <li><font size="2">Press &lt;return&gt; to continue</font></li>
+        <li><font size="2">Press &lt;return&gt; to automatically reconfigure system</font></li>
+        <li><font size="2">Press &lt;return&gt; to continue</font></li>
+        <li><font size="2">Select <i>Save Settings</i>. Press &lt;return&gt; twice</font></li>
+        <li><font size="2">Select Exit from the setup utility or press &lt;esc&gt;</font></li>
+      </ol>
+      <p><font size="2">The system will then reboot itself. After the memory count, the screen
+      will clear, and report:</font></p>
+      <p><font size="2"><b>CMOS Changed by SMIC BIOS<br>
+      Rebooting........</b></font></p>
+      <p><font size="2">The system will then auto reboot itself for a second time.</font></p>
+      <p><font size="2">Press &lt;F1&gt; during the memory count to enter SurePath setup.</font></p>
+    </blockquote>
+    <p><font size="2"><b>2.2 F1 Setup</b></font></p>
+    <blockquote>
+      <p><font size="2">Press &lt;F1&gt; at any time during the memory count to enter the
+      SurePath setup. Note that there is no prompt for this at any time during boot as on
+      previous products. Once the SCSI adapters have signed on, setup will then commence.</font></p>
+      <p><font size="2"><b>Important: </b>The SurePath setup is automatically entered at reboot
+      whenever any setting or hardware change has been made, i.e., removing/adding a mouse. If
+      two or more changes to the hardware are made consecutively without saving the changes in
+      setup, the system will automatically reset ALL parameters to default on next boot.</font></p>
+      <p><font size="2">You should not set any parameters in F1 set-up, all relevant changes
+      should be made using the EISA Configuration Utility (ECU). When set-up is entered
+      automatically, simply allow it to Auto configure then save and exit as described in the
+      previous section.</font></p>
+    </blockquote>
+    <p><font size="2"><b>2.3 On-Board 7850 SCSI Controller Setup (Bus:Device 01:01h)</b></font></p>
+    <blockquote>
+      <p><font size="2">This controller is intended only to support the built-in peripherals,
+      I.e., Tape drive, CD-ROM etc.</font></p>
+      <p><font size="2">During 7850 SCSI sign-on, press &lt;ctrl-A&gt; to enter the SCSI Select
+      Utility.<br>
+      Select <i>Configure/View Host Adapter Settings</i>. Press &lt;F6&gt; and select
+      &quot;Yes&quot; to reset to defaults. Press &lt;esc&gt; and select &quot;Yes&quot; to <i>Save
+      Changes</i>. Press &lt;esc&gt; and select &quot;Yes&quot; to <i>Exit Utility</i>. Press
+      &lt;return&gt; to reboot.</font></p>
+    </blockquote>
+    <p><font size="2"><b>2.4 On-Board 7880 SCSI Controller Setup (Bus:Device 01:02h)</b></font></p>
+    <blockquote>
+      <p><font size="2">During 7880 SCSI sign-on, press &lt;ctrl-A&gt; to enter the SCSI Select
+      Utility.<br>
+      Select <i>Configure/View Host Adapter Settings</i>. Press &lt;F6&gt; and select
+      &quot;Yes&quot; to reset to defaults. Select <i>SCSI Device Configuration</i> and press
+      &lt;enter&gt;. For devices #0, #1, #3 and #4, change <i>Send Start Unit Command</i> to
+      &quot;Yes&quot;. </font></p>
+      <p><font size="2">Press &lt;esc&gt;, and select <i>Advanced Configuration Options</i>.
+      Change <i>Support for Ultra SCSI Speed</i> to enabled. Press &lt;esc&gt; twice and select
+      &quot;Yes&quot; to <i>Save Changes</i>. </font></p>
+      <p><font size="2"><b><i>For NetWare and SCO OpenServer 5</i></b> the parameter &quot;
+      Extended BIOS Translation for DOS Drives &gt; 1Gb&quot; should be changed to Disable.</font></p>
+      <p><font size="2">Press &lt;esc&gt; and select &quot;Yes&quot; to <i>Exit Utility</i>.
+      Press &lt;return&gt; to reboot.</font></p>
+    </blockquote>
+    <p><font size="2"><b>2.5 Add-in 2940 SCSI Controller Setup</b></font></p>
+    <blockquote>
+      <p><font size="2">*** <i>Ignore this section if there are none fitted to the system</i>
+      ***</font></p>
+      <p><font size="2">During Adaptec 2940 SCSI sign-on press &lt;Ctrl-A&gt; to enter
+      SCSI-Select. <br>
+      If you have 2 2940 cards fitted, the memory address for both are displayed, select the
+      appropriate card and press &lt;Enter&gt;<br>
+      Select <i>Configure/View Host Adapter Settings.<br>
+      </i>Press &lt;F6&gt; and select &quot;Yes&quot; to reset to defaults.<br>
+      Move to <i>SCSI Device Configuration</i> and press &lt;Enter&gt;. <br>
+      Change <i>Send Start Unit Command</i> from &quot;no&quot; to &quot;yes&quot; for devices
+      #0, #1, #3 and #4.<br>
+      Press &lt;Esc&gt; to return to the menu<br>
+      Move to <i>Advanced Configuration Options</i></font></p>
+      <p><font size="2"><b>For NetWare and SCO installations</b> change <i>Extended BIOS
+      Translation for DOS Drives &gt; 1Gb</i> to Disable<br>
+      Change <i>Support for Ultra SCSI Speed</i> to Enable<br>
+      Press &lt;Esc&gt; twice and select &quot;yes&quot; to save. <br>
+      Return to step 1 for the second controller or press &lt;Esc&gt; to exit and reboot when
+      all channels have been updated.</font></p>
+    </blockquote>
+    <p><font size="2"><b>2.6 Add-in DPT 3334 SCSI Controller Setup</b></font></p>
+    <blockquote>
+      <p><font size="2">*** <i>Ignore this section if there are none fitted to the system</i>
+      ***</font></p>
+      <p><font size="2">During DPT RAID sign on, press &lt;ctrl-d&gt;<br>
+      Press &lt;F9&gt; to select default settings. Press &lt;y&gt; to save and reboot</font></p>
+    </blockquote>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><font size="2"><a name="3config"></a></font><font size="3"><strong><b>3 Configuring the
+    system using the ECU</b></strong></font></p>
+    <p><font size="2">Ensure that any additional add-in boards are correctly fitted before
+    proceeding with system configuration.</font></p>
+    <p><font size="2">When the system reboots, it will report:</font></p>
+    <blockquote>
+      <p><font size="2"><b>*** SMIC Configuration missing<br>
+      Press &lt;F1&gt; to continue</b></font></p>
+    </blockquote>
+    <p><font size="2">You can then either press &lt;F1&gt; and &lt;F2&gt; to boot from the
+    flash disk, or insert the ECU floppy disk (156823SW) and boot from that. If you choose to
+    use the floppy, make sure it in the drive <u>before</u> you press &lt;F1&gt;.</font></p>
+    <p><font size="2">If there are any additional EISA cards fitted to the FT4200, ensure that
+    the relevant .CFG files are to hand on floppy disk, or have been uploaded to the flash
+    disk using the <i>Transfer File</i> option in the main flash disk menu.</font></p>
+    <p><font size="2">Select <i>Run Configuration Utility</i> from the menu and press
+    &lt;return&gt;. Press &lt;return&gt; again at the OK prompt, and select <i>Add or Remove
+    Boards</i> from the menu. Move the cursor down to EISA Slot 4 (E4) and press
+    &lt;return&gt;.</font></p>
+    <p><font size="2">Press &lt;return&gt; again and highlight <i>!ACL0100.CFG System
+    Management Interface Card</i>. Press &lt;return&gt;. An 'Add Confirmation' dialogue box
+    appears. <br>
+    Ignore the line that says it should be fitted to EISA slot M2. <br>
+    In the FT4200, the SMIC card must be fitted in slot E4 (the bottom EISA slot)</font></p>
+    <p><font size="2">Press &lt;return&gt; again. If there are additional EISA cards to add,
+    highlight the relevant slot and repeat the same procedure as detailed above, using the
+    appropriate .CFG file. If the .CFG file is not listed, press &lt;F7&gt;, put the floppy
+    containing the .CFG file for that board in drive A and press &lt;return&gt;</font></p>
+    <p><font size="2">This will allow the card to be configured, but the .CFG file will not be
+    permanently added to the flash disk. It is recommended that you transfer the .CFG file to
+    the flash disk at the earliest convenience. To add the .CFG file to the flashdisk, the
+    .CFG file must be transferred and the flashdisk <i>upgraded</i>. <br>
+    This option may be selected from the main flashdisk boot menu.</font></p>
+    <p><font size="2">Once all cards have been successfully been added, press &lt;F10&gt; ,
+    and highlight <i>Step 3 View or Edit Details</i>. This allows settings of individual
+    boards to be adjusted.</font></p>
+    <p><font size="2">Press &lt;return&gt;. </font><ol>
+      <li><font size="2">Move to <i>CMOS Settings</i> and press &lt;Enter&gt;</font></li>
+      <li><font size="2">Move to <i>Advanced Options</i> and press &lt;Enter&gt;</font></li>
+      <li><font size="2">Move to <i>CPU Control</i> and press &lt;Enter&gt;</font></li>
+      <li><font size="2">For each processor that you can access, hit &lt;Enter&gt; and select <i>Enabled</i>.
+        Notice the highest number CPU will be listed as <i>Boot Processor</i>. Ensure that <i>MP
+        Version</i> is set to <i>V1.4</i></font></li>
+      <li><font size="2">Press &lt;Tab&gt; to move to <i>Accept Changes</i> and press
+        &lt;Enter&gt;.</font></li>
+      <li><font size="2">Repeat step 5 twice more to return to the main screen.</font></li>
+    </ol>
+    <p><font size="2"><b>To configure add-in boards:</b></font></p>
+    <p><font size="2">To change values for EISA cards, highlight them and press
+    &lt;return&gt;.<br>
+    To change values for PCI cards, highlight them and press F6.</font></p>
+    <p><font size="2">You may find that as you make changes, the ECU will inform you that
+    another card has been moved. This is normal and can be generally disregarded to start
+    with, but be careful that you aren't trying to set 2 devices to the same addresses or
+    IRQ's</font></p>
+    <p><font size="2"><b>3.1 Configuration of Standard FT4200 Items</b></font></p>
+    <blockquote>
+      <p><font size="2"><b><i>SMIC Card Configuration (EISA Slot E4)</i></b></font></p>
+      <p><font size="2">Highlight <i>Pass Through Port</i> and set this to <b>IRQ 14,</b> <b>COM3</b>
+      port address.<br>
+      Highlight <i>Diagnostic Port</i> and set this to <b>IRQ 15<br>
+      </b>Highlight <i>Base Memory</i> and set this to <b>C8000h (Note: Will default to D0000h
+      on motherboard BIOS version 8.03)<br>
+      </b>Press &lt;F10&gt; when finished</font></p>
+      <p><font size="2"><b><i>7850 SCSI Controller Configuration</i></b></font></p>
+      <p><font size="2">Highlight<i> PCI Function 1</i> associated with the <i>7850 - PCI SCSI
+      Controller.</i> Press &lt;F6&gt; and set Interrupt to <b>IRQ 2(9)</b>. (use + and - keys
+      to change the values)<br>
+      Press &lt;F10&gt; when finished.</font></p>
+      <p><font size="2"><b><i>7880 SCSI Controller Configuration</i></b></font></p>
+      <p><font size="2">Highlight<i> PCI Function 1</i> associated with the <i>7880 - PCI SCSI
+      Controller.</i> Press &lt;F6&gt; and set Interrupt to <b>IRQ 2(9)</b>. (use + and - keys
+      to change the values)<br>
+      Press &lt;F10&gt; when finished.</font></p>
+    </blockquote>
+    <p><font size="2"><b>3.2 Configuration of additional add-in cards</b></font></p>
+    <blockquote>
+      <p><font size="2"><b><i>1<sup>st</sup> 3Com 3C595/905 10/100 Ethernet Controller (PCI Slot
+      P1)</i></b></font></p>
+      <p><font size="2">Highlight<i> PCI Function 1</i> associated with the <i>PCI Ethernet
+      Controller.</i> Press &lt;F6&gt; and set Interrupt to <b>IRQ&nbsp;11</b>. (use + and -
+      keys to change the values)<br>
+      Press &lt;F10&gt; when finished.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><b><i>2<sup>nd</sup> 3Com 3C595/905 10/100 Ethernet Controller (PCI Slot
+      P2)</i></b></font></p>
+      <p><font size="2">Highlight<i> PCI Function 1</i> associated with the <i>PCI Ethernet
+      Controller.</i> Press &lt;F6&gt; and set Interrupt to <b>IRQ 5</b>. (use + and - keys to
+      change the values)<br>
+      Press &lt;F10&gt; when finished.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><b><i>1<sup>st</sup> DPT 3334 SCSI Controller Card (PCI Slot P6/E1)</i></b></font></p>
+      <p><font size="2">Highlight<i> PCI Function 1</i> associated with the<i> PCI SCSI
+      Controller.</i> Press &lt;F6&gt; and set Interrupt to <b>IRQ 10</b>. (use + and - keys to
+      change the values) <br>
+      Press &lt;F10&gt; when finished.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><b><i>2<sup>nd</sup> DPT 3334 SCSI Controller Card (PCI Slot P5)</i></b></font></p>
+      <p><font size="2">Highlight<i> PCI Function 1</i> associated with the <i>PCI SCSI
+      Controller.</i> Press &lt;F6&gt; and set Interrupt to <b>IRQ 10</b>. (use + and - keys to
+      change the values)<br>
+      Press &lt;F10&gt; when finished.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><b><i>1<sup>st</sup> Adaptec 2940 SCSI Controller Card (PCI Slot P6/E1)</i></b></font></p>
+      <p><font size="2">Highlight<i> PCI Function 1</i> associated with the <i>PCI SCSI
+      Controller.</i> Press &lt;F6&gt; and set Interrupt to <b>IRQ&nbsp;2&nbsp;(9)</b>. (use +
+      and - keys to change the values)<br>
+      Press &lt;F10&gt; when finished.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><b><i>2<sup>nd</sup> Adaptec 2940 SCSI Controller Card (PCI Slot P5)</i></b></font></p>
+      <p><font size="2">Highlight<i> PCI Function 1</i> associated with the <i>PCI SCSI
+      Controller.</i> Press &lt;F6&gt; and set Interrupt to <b>IRQ&nbsp;2&nbsp;(9)</b>. (use +
+      and - keys to change the values)<br>
+      Press &lt;F10&gt; when finished.</font></p>
+    </blockquote>
+    <p><font size="2">When all the changes are complete, press &lt;F7&gt; and select
+    Lock/Unlock boards. Press &lt;F7&gt; to lock all boards followed by &lt;F10&gt; and
+    &lt;esc&gt;</font></p>
+    <p><font size="2">Press &lt;F10&gt;, highlight <i>Step 5 Save and Exit</i>. Press
+    &lt;return&gt; 3 times to return to the main flash disk menu or exit from floppy disk.
+    Highlight <i>Exit and Reboot</i> on the main menu and press &lt;return&gt;.<br>
+    The system will now reboot.</font></p>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><a name="4n+1"></a><font size="3"><strong><b>4. Installation and Configuration of N+1
+    Power Supply Unit in FT4200</b></strong></font></p>
+    <p><font size="2">The N+1 power supply unit consists of up to 4 identical plug in
+    redundant PSU modules, and an optional battery back up (BBU) unit. All installed modules
+    run together, so that if one module fails for any reason, the other(s) will continue to
+    run the system. The battery backup unit (if installed) provides a power source in the
+    event of a mains failure.</font></p>
+    <p align="center"><font size="2"><img src="graphics/4200ftt5.gif" width="397" height="192"
+    alt="4200ftt5.gif (47490 bytes)"></font></p>
+    <i><p ALIGN="CENTER"><font size="2">Fig 1. Rear aspect of the FT4200 N+1 power supply,
+    with 4 modules fitted</font></i></p>
+    <p><font size="2">A new FT4200 manual is supplied with the N+1 upgrade, along with some
+    additional screws and 4 shorter bus bar bolts. These 4 bolts are fitted to the PSU supply
+    rail bus bars during the process of installing the upgrade PSU unit. Note that if these
+    are not fitted, the PSU may appear dead/intermittent. </font></p>
+    <p><font size="2">It is important to thoroughly read and understand the supplied FT4200
+    manual, as this describes the fitting/removal process in detail. A suitable socket wrench
+    to fit M5 type head will be required to fit/remove the hex power bus bar bolts &#150; <i>do
+    not be tempted to use pliers, as this can result in damage to the bolts and/or bus bars.</i></font></p>
+    <p><font size="2">By default, the N+1 PSU is supplied with one plug in redundant PSU
+    module.</font></p>
+    <p><font size="2">In order that the PSU can be controlled and monitored correctly by the
+    SMC, an additional daughter board, the SMI2C, is &quot;piggy backed&quot; onto the SMC
+    card in the FT4200 (Fig 2). The SMI2C card has a separate ribbon cable that connects
+    directly to the PSU. This is the I2C bus cable. It is important to note when installing
+    the SMI2C card, it is possible to fit it to the SMC in such a way that the IDC plugs can
+    be displaced by one set of pins in either direction, as they are not keyed. Similarly, the
+    smaller ribbon cable (I2C bus cable) that connects to the PSU, can be fitted incorrectly
+    to the SMI2C card. These conditions can result in failure of the SMC and/or SMI2C
+    modules&nbsp;</font></p>
+    <p><font size="2">When fitting the SMI2C card to the SMC, install the 4 stand off pillars
+    to the SMC board first. When the SMI2C card is offered up to them, ensure that the 4 holes
+    align correctly with the pillars. When they do, the board should be correctly located.</font></p>
+    <p align="center"><font size="2"><img src="graphics/4200ftt6.gif" width="400" height="265"
+    alt="4200ftt6.gif (54804 bytes)"></font></p>
+    <i><p align="center"><font size="2">Fig 2. FT4200 SMC board, showing positioning of SMI2C
+    module.</font></p>
+    </i><p><font size="2">The FT4200 configured with an N+1 power supply unit, utilises a
+    modified SMC board (Pt. No. 15966631). The Discovery SMC (Pt. No.15801831), will allow the
+    machine to function, but will not allow monitoring or control of the N+1 PSU. This module
+    cannot simply be flash upgraded to work as an N+1 compliant unit, as there are hardware
+    modifications as well as different BIOS revisions between the boards. The modified SMC
+    must have at least version 4.120 BIOS to work with N+1 (see section 1.1 of this manual for
+    current release version). Typically, the &quot;UPS&quot; LED on the FT4200 front bezel
+    will show no activity if there is any issue with either the SMC, its BIOS level, or the
+    I2C bus in general.</font></p>
+    <p><font size="2">PSU modules should not be installed/removed with the power still applied
+    to the system. There are 2 LEDs visible through the grille on each redundant PSU module, a
+    green and a red one. Under normal conditions, the green led will be on, indicating that
+    the module is functioning correctly. If the module develops a fault, the red one will be
+    on.</font></p>
+    <p><font size="2">In order to interrogate the N+1 PSU variables correctly , the SMA client
+    must be running SMA version 1.4 or greater.</font></p>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><a name="5software"></a><font size="3"><strong><b>5. Software Issues</b></strong></font></p>
+    <p><font size="2"><b>5.1 FT4200 OS Pack Limitations</b></font></p>
+    <div align="center"><center><table border="1" cellpadding="3" cellspacing="1" width="90%">
+<tr>
+<td width="30%">&nbsp;</td>
+<td width="17%"><p align="center"><font size="2"><b>NT</b></font></td>
+<td width="17%"><p align="center"><font size="2"><b>Netware</b></font></td>
+<td width="17%"><p align="center"><font size="2"><b>SCO</b></font></td>
+<td width="17%"><p align="center"><font size="2"><b>Unixware</b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b>SMC Driver</b></font></td>
+<td><p align="center"><font size="2"><b>y</b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>y</b></font></td>
+<td><p align="center"><font size="2"><b>not avail</b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b>Security Driver</b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>y</b></font></td>
+<td><p align="center"><font size="2"><b>not avail</b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b>SNMP Agent</b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>y</b></font></td>
+<td><p align="center"><font size="2"><b>not avail</b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b>Lan Stats</b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>n </b></font></td>
+<td><p align="center"><font size="2"><b>y</b></font></td>
+<td><p align="center"><font size="2"><b>not avail</b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b>Lan Client</b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>y</b></font></td>
+<td><p align="center"><font size="2"><b>not avail</b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b>Event Manager</b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>y </b></font></td>
+<td><p align="center"><font size="2"><b>y</b></font></td>
+<td><p align="center"><font size="2"><b>not avail</b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b>Error Log</b></font></td>
+<td><p align="center"><font size="2"><b>n <sup>1</sup></b></font></td>
+<td><p align="center"><font size="2"><b>y <sup>3</sup></b></font></td>
+<td><p align="center"><font size="2"><b>y</b></font></td>
+<td><p align="center"><font size="2"><b>not avail</b></font></td>
+</tr>
+<tr>
+<td><font size="2"><b>RAID</b></font></td>
+<td><p align="center"><font size="2"><b>n <sup>2</sup></b></font></td>
+<td><p align="center"><font size="2"><b>n <sup>2</sup></b></font></td>
+<td><p align="center"><font size="2"><b>n</b></font></td>
+<td><p align="center"><font size="2"><b>not avail</b></font></td>
+</tr>
+    </table>
+    </center></div><blockquote>
+      <ol>
+        <li><font size="2">The Error Log driver provides information to the SMA about non-Fatal
+          errors recorded by the BIOS e.g. single bit ECC errors, CPU thermal alarm. Fatal errors
+          e.g. double bit ECC &amp; CPU overheat, are recorded as the BIOS passes the information
+          directly to the SMA</font></li>
+        <li><font size="2">The spec is for the SMA to provide status information about the RAID
+          HDD&#146;s. This function is missing. The workaround is to use the DPT Storage Manager
+          only.</font></li>
+        <li><font size="2">Non-Fatal ECC errors are not recorded by the SMA. The hardware &amp; BIOS
+          correctly identify and correct the error, but they are not recorded in the SMA</font></li>
+      </ol>
+      <p><font size="2"><b>FT4200 SMA Deliverables - 1<sup>st</sup> Shipment</b></font><ol>
+        <li><font size="2">SMA &amp; System Management Controller (SMC) Firmware Limitations - Side
+          Panel keys do not generate an alarm when Security is armed. Violation is recorded in the
+          SMA event log</font></li>
+        <li><font size="2">SMA &amp; DPT Storage Manager - DPT Storage Manager will not run over the
+          serial link to the Discovery. The LAN connection works correctly.</font></li>
+      </ol>
+    </blockquote>
+    <p><font size="2"><b>5.2 Installing SCO OpenServer 5 on FT4200</b></font></p>
+    <blockquote>
+      <p><font size="2">When installing SCO OpenServer 5 onto this system, where the root
+      filesystem is to be attached to the onboard 7880 SCSI controller, it is essential that a
+      replacement boot disk be used, along with modified boot syntax. This is because the FT4200
+      has 2 SCSI controllers on the main motherboard, the Adaptec 7850 and the Adaptec 7880. The
+      installation script will try to find the first hard drive on the 7850 controller, which is
+      dedicated to the exchangeable media drives only.</font></p>
+      <p><font size="2">Using the supplied boot diskette, the system will panic during
+      installation with the message</font></p>
+      <p><font size="2">Panic:&lt;srmountfun&gt;:no rootdisk controller</font></p>
+      <p><font size="2">followed by the usual &quot;safe to power off&quot; messages.</font></p>
+      <p><font size="2">To install OpenServer 5, first obtain the new boot disk image. This can
+      be found in Area 39 of<strong> Insight BBS</strong>, and is called BOOT4200.DSK.<br>
+      This is not a compressed disk image, and as such could be created on a DOS based machine
+      using the <i>rawrite</i> programme if desired. This can also be found in Area 39 of <strong>Insight
+      BBS </strong>as the file RAWRITE.EXE</font></p>
+      <p><font size="2">Once the disk has been created, power up the system with the new boot
+      diskette installed. At the Boot: prompt type</font></p>
+      <p><font size="2">defbootstr Sdsk=alad(1,0,0,0)</font></p>
+      <p><font size="2">Followed by &lt;return&gt;<br>
+      Installation will then proceed as normal.</font></p>
+      <p><font size="2">Note that the &quot;alad&quot; driver included with SCO OpenServer 5 is
+      suitable for use with the new 7880 SCSI controller, and will not require replacement.</font></p>
+      <p><font size="2">Where an installation is to be performed using the DPT3334 SCSI RAID
+      controller, the standard boot disk may be used, in conjunction with a BTLD disk containing
+      the &quot;dptr5&quot; driver. The disk containing this driver is produced by the DPT
+      storage manager during initial RAID system setup. At the Boot: prompt type</font></p>
+      <p><font size="2">defbootstr ahslink=dptr5 disable=dpt</font></p>
+      <p><font size="2">Follow the system prompts. The installation script will tell you that
+      &quot;another routine called dptrinit exists at 25&quot;. When given the options to
+      replace it, type 25 at the prompt. Installation will then continue as normal.</font></p>
+    </blockquote>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p><a name="6tips"></a><font size="3"><strong><b>6. Tips</b></strong></font></p>
+    <b><p><font size="2">6.1 Disabling the On-board 7880 SCSI Controller</font></p>
+    </b><p><font size="2">If you are using a DPT RAID controller you can disable the Adaptec
+    7880 to speed up the boot process. In the SCU select 7880 - PCI SCSI Controller and press
+    &lt;enter&gt;. Select Disabled then &lt;tab&gt; down to Accept and press &lt;enter&gt;</font></p>
+    <b><p><font size="2">6.2 Clearing the POST error log (LCD Alternating 3230 to 3A30)</font></p>
+    </b><p><font size="2">You may find that the machine will pause after running through its
+    CPU check, with the LCD display alternating between 3230 and 3A30. This indicates that the
+    POST error log on the system has entries. To cure this, boot the system into the ECU, and
+    from within the configuration, select CMOS Settings -&gt;Advanced Configuration,-&gt;Error
+    log control. Within this menu, you can disable all error logs, and erase current contents.
+    This will clear the LCD messages, and speed up the boot.</font></p>
+    <p><font size="2">In an extreme case, it may be necessary to remove the SMIC first,
+    re-boot into ECU and carry out the above, especially if the error log has become corrupt
+    for any reason.</font></p>
+    <p><font size="2">&nbsp;<b>6.3 Setting up the SMA for remote connection by modem</b></font></p>
+    <b><p></b><font size="2">In order for this to work, we recommend that the modems used at
+    both ends are compatible, and ideally, identical. Start by connecting directly to the SMC
+    port, and within SMA, (System controller à Users) create a unique user that will be used
+    exclusively for remote login purposes, ensuring that the password used is <u>exactly</u>
+    the same as that which will be set at the remote end, including the case. Set the <i>call-back
+    info </i>field to the telephone number of your remote workstation. Avoid using internal
+    PABX lines that cannot be dialled directly for the FT4200 modem. Only select the <i>Force
+    traps</i> tick box if you want the system to dial you up every time there is an alert (not
+    desirable!).</font></p>
+    <b><p><font size="2">6.4 Motherboard BIOS 8.03 Sets SMIC card to D0000 by default</font></b></p>
+    <p><font size="2">When the motherboard BIOS is upgraded to 8.03, the ECU sets the SMIC
+    card to address D0000 by default instead of C8000. The result of this is that the system
+    will hang after initialising the installed SCSI controllers, the final message on the
+    screen being:</font></p>
+    <blockquote>
+      <p><font size="2">&quot;Examining Processor 0&quot;</font></p>
+    </blockquote>
+    <p><font size="2">The solution is to drain the CMOS RAM, and using the ECU, set the SMIC
+    base address to C8000. All the other settings will also need to be reset of course. Note
+    that this will need to be done every time the CMOS RAM is drained for any reason.</font></p>
+    <p><font size="2"><br>
+    <a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top" align="left"
+    border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p>&nbsp;
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+</tr>
+</table>
+</body>
+</html>

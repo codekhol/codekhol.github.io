@@ -1,0 +1,440 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>Xenix - Unix I.P.B 3153 - Configuring Adaptec 1542C card with XEN-LS II / XEN-PC</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../products/main.htm" onMouseOver="act('product')" onMouseOut="inact('product')"><img width="113" height="22" src="../../../images/product1.gif" name="product" alt="Products" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/kbase2.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+       <a HREF="../ipbmain.htm"><img width="113" height="17" src="../../../images/s_ipb.gif" alt="Bulletins (IPBs)" border="0"></a><br>
+       <a HREF="../../guides/guidecon.htm"><img width="113" height="17" src="../../../images/s_guides.gif" alt="Guides" border="0"></a><br>
+       <a HREF="../../faq/main.htm"><img width="113" height="17" src="../../../images/s_faq.gif" alt="FAQs" border="0"></a><br>
+       <a HREF="../../guides/manuals/menu.htm"><img width="113" height="17" src="../../../images/s_manual.gif" alt="Owner's Handbooks" border="0"></a><br>
+       <a HREF="../../../common/infact/menu.htm"><img width="113" height="17" src="../../../images/s_datash.gif" alt="Product Datasheets" border="0"></a><br>
+       <a HREF="../../../common/misc/menu.htm"><img width="113" height="17" src="../../../images/s_misc.gif" alt="Miscellaneous Items" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top">&nbsp;<table border="0" width="100%" bgcolor="#FFFFC0">
+      <tr>
+        <td colspan="2"><font face="Arial,Helvetica" size="4" color="#D60029"><strong>Xenix -
+        Unix I.P.B. 3153 </strong></font>
+        </td>
+        <td valign="bottom"><strong><font size="2">16th July 1993 (JE) </font></strong></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Department </font></strong></td>
+        <td><strong><font size="2">Category </font></strong></td>
+        <td><strong><font size="2">Implementation </font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="3" bgcolor="#000000" height="1"></td>
+      </tr>
+      <tr>
+        <td><font size="2">Unix </font></td>
+        <td><font size="2">Hardware </font></td>
+        <td><font size="2">Advisory </font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">Software </font></td>
+        <td></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td align="center" width="50%"><font size="2"><a href="ipb3152.htm">Previous IPB</a> </font></td>
+        <td align="center" width="50%"><font size="2"><a href="ipb3154.htm">Next IPB</a> </font></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td><p align="center"><font size="3"><strong>Configuring Adaptec 1542C card with XEN-LS
+        II / XEN-PC</strong> </font>
+        <p><font size="2">The 1540C/1542C are the latest versions of the card from Adaptec that
+        have an on-board BIOS setup program called SCSISelect(TM). This program is run by entering
+        Cntrl-A at boot-up if the BIOS is enabled on the card, or with a debug command such as
+        g=dc00:6. There is a bank of 8 switches on the card that set some configuration
+        parameters, but SCSISelect can override some of these. There are no other switches or
+        jumpers. Follow the recommendations below for when to use the switches and SCSISelect and
+        when to disable the BIOS. </font></p>
+        <p><font size="2">Reference should be made to <a href="ipb3144.htm">IPB 3144</a> which
+        details patches required for fast machines with Unix and Xenix when using Adaptec 154x
+        cards. </font></p>
+        <p><font size="2">The card should function on its default settings of IRQ 11, DMA 5, I/O
+        330h, and BIOS address DC000 in the XEN-PC. </font></p>
+        <p><font size="2">SCSI disks should be formatted and verified by using the SCSISelect BIOS
+        utility prior to use. </font></p>
+        <p><font size="2"><strong>XEN-LS II with SCO Unix 3.2v4 - SCSI root disk.</strong> </font></p>
+        <p><font size="2">This configuration requires that there be no IDE drive present. Set the
+        hard disk type to NONE within Setup and disable the hard disk controller - the latter has
+        to be done also otherwise the SCO installation routine will still find an ST-506 type disk
+        on IRQ 14 and try to prepare it; resulting in the installation exiting with a floating
+        point error. </font></p>
+        <p><font size="2">Set the switches for the 1542C as follows:- </font></p>
+        <div align="center"><center><table border="0" border-0 cellspacing="0" cellpadding="3">
+          <tr>
+            <td><font size="2">SW1 </font></td>
+            <td><font size="2">ON </font></td>
+            <td><font size="2">SCSI termination fixed to installed (SCSISelect cannot override) </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">SW2 </font></td>
+            <td><font size="2">OFF </font></td>
+            <td><font size="2">I/O 330 - 333h </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">SW3 </font></td>
+            <td><font size="2">OFF </font></td>
+            <td><font size="2">&quot; </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">SW4 </font></td>
+            <td><font size="2">OFF </font></td>
+            <td><font size="2">&quot; </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">SW5 </font></td>
+            <td><font size="2">ON </font></td>
+            <td><font size="2">Disable floppy controller </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">SW6 </font></td>
+            <td><font size="2">OFF </font></td>
+            <td><font size="2">BIOS Address DC000 </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">SW7 </font></td>
+            <td><font size="2">OFF </font></td>
+            <td><font size="2">&quot; </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">SW8 </font></td>
+            <td><font size="2">OFF </font></td>
+            <td><font size="2">&quot; </font></td>
+          </tr>
+        </table>
+        </center></div><p><font size="2">At power up enter Cntrl-A to enter SCSISelect. Select the
+        factory reset option to reset to a known start point. Change the IRQ to 9. All other
+        settings remain at factory defaults. </font></p>
+        <p><font size="2">At the boot: prompt from the SCO N1 floppy enter the following to boot
+        the installation kernel with the Adaptec driver running on I/O address 330, IRQ 9, and DMA
+        5.:- </font></p>
+        <blockquote>
+          <p><font size="2"><font face="Courier New">unix kernel.adapter=ad(0x330,0x9,0x5)</font> </font></p>
+        </blockquote>
+        <p><font size="2">or, if an aborted or old installation exists on the drive:- </font></p>
+        <blockquote>
+          <p><font size="2" face="Courier New">restart kernel.adapter=ad(0x330,0x9,0x5) </font></p>
+        </blockquote>
+        <p><font size="2">Once Unix is installed the link kit does not need modifying - the
+        Adaptec driver is configured for the correct hardware settings. </font></p>
+        <p><font size="2"><strong>XEN-LS II with SCO Unix 3.2v4 - IDE root disk.</strong> </font></p>
+        <p><font size="2">Set the switches as above to enable the SCSISelect program to be run at
+        boot up with Cntrl-A. Use SCSISelect to factory reset the card and then set it to IRQ 9 as
+        above. </font></p>
+        <p><font size="2">Now disable the card's BIOS by setting SW6, SW7, and SW8 to ON. </font></p>
+        <p><font size="2">The sdevice.d/ad file does not require editing for use on IRQ 9 as does
+        the spad file for the Adaptec 1510 card. The ad file has no definition for the IRQ. </font></p>
+        <p><strong><font size="2">XEN-LS II with SCO Xenix 2.3.4 </font></strong></p>
+        <p><font size="2">The installation onto a SCSI root disk cannot be done because the SCO
+        Xenix master floppies expect the Adaptec card to be on IRQ 11. This is not possible
+        because of the clash with the security processor. </font></p>
+        <p><font size="2">The card can be used with secondary SCSI disks and tape units when the
+        standard IDE root disk is used. Install the card set for I/O address 330h and BIOS address
+        DC00 and with the floppy controller disabled as in the table above. Use SCSISelect to
+        factory reset the card and then set to IRQ 9. Disable the BIOS by setting SW 6,7, &amp; 8
+        to ON. </font></p>
+        <p><font size="2">Edit the ad0 line in /usr/sys/conf/master to reflect the card's setting
+        of IRQ 9 by changing the 11th field from 33 to 31. An example entry follows:- </font></p>
+        <pre><font size="2">ad0     1  0337  014  ad0  0  34  34  1  5  31  0  0  0
+</font></pre>
+        <p><font size="2">From the /usr/sys/conf directory run the command ./configure -r to
+        rebuild the link kit configuration files. Run ./link_xenix followed by ./hdinstall and
+        then reboot. </font></p>
+        <p><font size="2">To configure a SCSI tape drive XNX316 or APR316 should be installed.
+        This will update the Adaptec drivers and is mandatory for the 525MB tape unit (See <a
+        href="ipb3119.htm">IPB 3119</a>). Ensure also that the 525MB tape unit is strapped
+        correctly as detailed in <a href="ipb3131.htm">IPB 3131</a>. </font></p>
+        <p><font size="2">Without XNX/APR316 the following error will result when attempting to
+        use the tape command:- </font></p>
+        <div align="center"><center><table border="0" width="80%">
+          <tr>
+            <td><font size="2">SCSI: ERROR: CTRL 2 LUN 2 not attached </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">tape: can't open /dev/xct0: No such device or address </font></td>
+          </tr>
+        </table>
+        </center></div><p><font size="2">Once XNX/APR316 is installed the tape command options of
+        status and reset will no longer exist for SCSI tape units. The tape command appears to
+        forget the default of SCSI tape as defined in /etc/default/tape, our advice is to use the
+        -s switch of the tape command to force SCSI tape usage. As an example, to retension a tape
+        configured as rct0 use the command:- </font></p>
+        <blockquote>
+          <p><font size="2">tape -s reten </font></p>
+        </blockquote>
+        <p><font size="2">If the DDS tape unit is used a non eject device is created by remaking
+        the node /dev/rct0 with 32 added to the minor number. For the normal SCSI tape unit on ID2
+        this node should have a major number of 36 and a minor number of 32. For new tapes in DDS
+        units use the command 'tape -s erase' otherwise an error will result when trying to write.
+        </font></p>
+        <p><font size="2">For SCSI devices used on the Adaptec card with Xenix the major number is
+        equal to the SCSI ID number plus 34 - ID0 = 34, ID1 = 35, ID2 = 36, etc. </font></p>
+        <p><font size="2">To add support for SCSI disks use the mkdev hd command below as you must
+        use the correct syntax. Running the command 'mkdev hd' will result in the system
+        attempting to access a second ST506 drive:- </font></p>
+        <blockquote>
+          <p><font size="2">mkdev hd 0 2</font></p>
+          <p><font size="2">Where the 0 denotes the SCSI ID of the hard disk and the 2 denotes the
+          first Adaptec card when the boot disk is an ST506 drive. </font></p>
+          <p><font size="2">The ID will be asked for despite the same number being given on the
+          command line. </font></p>
+        </blockquote>
+        </td>
+      </tr>
+      <tr>
+        <td><font size="2">Note: </font><p><font size="2">For accessing SCSI drives with fdisk the
+        command syntax is as follows:- </font></p>
+        <blockquote>
+          <p><font size="2">fdisk -f &lt;device&gt; Where &lt;device&gt; is as in the table below:- </font></p>
+        </blockquote>
+        <div align="center"><center><table border="0" width="90%">
+          <tr>
+            <td colspan="2" align="left"><strong><font size="2">Xenix - ST506 boot disk </font></strong></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">SCSI ID </font></td>
+            <td><font size="2">&lt;device&gt; </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">0 </font></td>
+            <td><font size="2">/dev/rhd20 or /dev/rdsk/2s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">1 </font></td>
+            <td><font size="2">/dev/rhd30 or /dev/rdsk/3s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">2 </font></td>
+            <td><font size="2">/dev/rdsk/6s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">3 </font></td>
+            <td><font size="2">/dev/rdsk/7s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">4 </font></td>
+            <td><font size="2">/dev/rdsk/8s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">5 </font></td>
+            <td><font size="2">/dev/rdsk/9s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">6 </font></td>
+            <td><font size="2">/dev/rdsk/10s0 </font></td>
+          </tr>
+        </table>
+        </center></div><p><font size="2">For accessing SCSI drives with divvy the command syntax
+        is as follows:- </font></p>
+        <div align="center"><center><table border="0" width="90%">
+          <tr>
+            <td><font size="2">divvy -c nn -b nn Where nn is calculated by adding 34 to the SCSI ID. </font></td>
+          </tr>
+          <tr>
+            <td><font size="2">E.g. divvy -c 35 -b 35 for a SCSI disk on ID 1. </font></td>
+          </tr>
+        </table>
+        </center></div><p><font size="2">After installation of XNX/APR 316 the control device -
+        /dev/xct0 - used by the tape command will have a minor number of 4. </font></p>
+        <p><strong><font size="2">XEN-PC with SCO Unix 3.2v4 or Xenix 2.3.4 </font></strong></p>
+        <p><font size="2">The card should function on its default settings of IRQ 11, I/O address
+        330h, DMA 5 so should not present any problems. As stated above the SCO Xenix master
+        floppies will expect the card on these settings and a SCSI boot disk installation should
+        therefore work. Unix 3.2v4 will also install onto a SCSI boot disk with the card on these
+        settings. </font></p>
+        <p><font size="2">Unix device node major and minor numbers and device names for secondary
+        drives and tape units will be identical to SCSI based MCA systems. </font></p>
+        <p><font size="2">For SCO Xenix with a SCSI boot disk the fdisk syntax is as follows:- </font></p>
+        <blockquote>
+          <p><font size="2">fdisk -f &lt;device&gt; Where &lt;device&gt; is as in the table below:- </font></p>
+        </blockquote>
+        <div align="center"><center><table border="0" width="90%">
+          <tr>
+            <td colspan="2" align="left"><font size="2"><strong>Xenix - SCSI boot disk</strong> </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">SCSI ID </font></td>
+            <td><font size="2">&lt;device&gt; </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">0 </font></td>
+            <td><font size="2">/dev/rhd00 or /dev/rdsk/0s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">1 </font></td>
+            <td><font size="2">/dev/rhd10 or /dev/rdsk/1s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">2 </font></td>
+            <td><font size="2">/dev/rhd20 or /dev/rdsk/2s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">3 </font></td>
+            <td><font size="2">/dev/rhd30 or /dev/rdsk/3s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">4 </font></td>
+            <td><font size="2">/dev/rdsk/6s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">5 </font></td>
+            <td><font size="2">/dev/rdsk/7s0 </font></td>
+          </tr>
+          <tr>
+            <td align="center"><font size="2">6 </font></td>
+            <td><font size="2">/dev/rdsk/8s0 </font></td>
+          </tr>
+        </table>
+        </center></div><p><font size="2">For Xenix SCSI tape unit configuration see the previous
+        XEN-LS II section. </font></p>
+        <p align="center"><font size="2">----------oOo---------- </font></td>
+      </tr>
+    </table>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

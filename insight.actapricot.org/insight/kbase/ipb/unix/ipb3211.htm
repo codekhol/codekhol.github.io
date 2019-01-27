@@ -1,0 +1,244 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>Xenix - Unix I.P.B 3211 - Specialix SI/XIO AT &amp; Adaptec 1510 in VS660 (Intel) with SCO OpenServer 5</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../products/main.htm" onMouseOver="act('product')" onMouseOut="inact('product')"><img width="113" height="22" src="../../../images/product1.gif" name="product" alt="Products" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/kbase2.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+       <a HREF="../ipbmain.htm"><img width="113" height="17" src="../../../images/s_ipb.gif" alt="Bulletins (IPBs)" border="0"></a><br>
+       <a HREF="../../guides/guidecon.htm"><img width="113" height="17" src="../../../images/s_guides.gif" alt="Guides" border="0"></a><br>
+       <a HREF="../../faq/main.htm"><img width="113" height="17" src="../../../images/s_faq.gif" alt="FAQs" border="0"></a><br>
+       <a HREF="../../guides/manuals/menu.htm"><img width="113" height="17" src="../../../images/s_manual.gif" alt="Owner's Handbooks" border="0"></a><br>
+       <a HREF="../../../common/infact/menu.htm"><img width="113" height="17" src="../../../images/s_datash.gif" alt="Product Datasheets" border="0"></a><br>
+       <a HREF="../../../common/misc/menu.htm"><img width="113" height="17" src="../../../images/s_misc.gif" alt="Miscellaneous Items" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top">&nbsp;<table border="0" width="100%" bgcolor="#FFFFC0">
+      <tr>
+        <td colspan="2"><font face="Arial,Helvetica" size="4" color="#D60029"><strong>Xenix -
+        Unix I.P.B. 3211 </strong></font>
+        </td>
+        <td valign="bottom"><strong><font size="2">11th April 1996 (JB) </font></strong></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Department </font></strong></td>
+        <td><strong><font size="2">Category </font></strong></td>
+        <td><strong><font size="2">Implementation </font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="3" bgcolor="#000000" height="1"></td>
+      </tr>
+      <tr>
+        <td><font size="2">Unix </font></td>
+        <td><font size="2">Software </font></td>
+        <td><font size="2">Advisory </font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">Hardware </font></td>
+        <td></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td align="center" width="50%"><font size="2"><a href="ipb3210.htm">Previous IPB</a> </font></td>
+        <td align="center" width="50%"><font size="2"><a href="ipb3212.htm">Next IPB</a> </font></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td><p align="center"><font size="3"><strong>Specialix SI/XIO AT &amp; Adaptec 1510 in
+        VS660 (Intel) with SCO OpenServer 5</strong> </font>
+        <p><font size="2">It has been found that when installing the above configuration, problems
+        can arise where the Specialix card appears to install correctly, and is recognised on
+        boot, but when attempting to log in, the system appears to ignore input from the any of
+        the terminal ports. </font></p>
+        <p><font size="2">This is due to the configuration of the 'Plug and Play' option within
+        the system BIOS setup. To overcome this, proceed with installation as follows: </font></p>
+        <p><strong><font size="2">VS660 setup</font></strong></p>
+        <p><font size="2">Within the system BIOS setup (F1 at power up), tab right to select
+        Advanced and use arrow keys to go down to </font><font face="Courier New" size="2">Plug
+        and Play Configuration</font><font size="2">. </font></p>
+        <p><font size="2">Highlight the </font><font face="Courier New" size="2">ISA Shared Memory
+        Base Address</font><font size="2"> and press return. </font></p>
+        <p><font size="2">A popdown menu will appear, with the current selection set to Disabled.
+        Using the arrow keys, go down and highlight 32Kb. Press return, and a new option will
+        appear underneath labelled </font><font face="Courier New" size="2">ISA Shared Memory Base
+        Address</font><font size="2">. Highlight this, press return and select D8000h from the
+        popdown menu. </font></p>
+        <p><font size="2">Unix Support have tested a configuration with the Specialix using IRQ
+        15. </font></p>
+        <p><font size="2">If either card is to be set to any of the IRQ levels mentioned on the
+        same screen, (IRQ 5, 9, 10, 11) highlight the selection as before, press return and set it
+        to Used By ISA Card. This is in order to prevent the Plug and Play BIOS from using that
+        interrupt for a PCI card that may be added in the future. If an Adaptec 1510 SCSI card is
+        also fitted to the system, the interrupt that this uses <strong><u>must</u></strong> be
+        set to </font><font face="Courier New" size="2">Used By ISA Card</font><font size="2"> as
+        above. If this is not done, the system will hang in the <em>SCO Software Manager</em> when
+        attempting to install additional software packages such as the Specialix driver. </font></p>
+        <p><font size="2">When complete, use F10 to save and exit. </font></p>
+        <p><font size="2">Ensure the SI/XIO adapter is on the recommended RAM address of D8000.
+        This is set using the switches and jumper on the card itself. To set this address, set SW1
+        to 0, SW2 to D, and jumper LK1 to 8. The interrupt setting is programmed into the card by
+        the driver at run-time, and configured during the <em>Custom (SCO Software Manager )</em>
+        installation. This can be set to IRQ 11, 12 or 15. Use IRQ 15 in preference if available.
+        If there is a lack of these interrupts, then polled mode should be selected. </font></p>
+        <p><font size="2">Ensure that the Specialix device driver is installed as follows. If the
+        driver has already been installed on the wrong settings, remove it through </font><font
+        face="Courier New" size="2">SCO Software Manager</font><font size="2"> or </font><font
+        face="Courier New" size="2">Custom</font><font size="2"> </font></p>
+        <p><font size="2">Booting into UNIX, use the </font><font face="Courier New" size="2">Custom</font><font
+        size="2"> or </font><font face="Courier New" size="2">SCO Software Manager</font><font
+        size="2"> utility, to install the Specialix driver. At time of writing, the preferred
+        driver is version 8.00. This can be found on <strong>Insight</strong> Rel 10, or <strong>Insight
+        BBS </strong>in Area 39. </font></p>
+        <p><font size="2">During the driver installation, ignore the screen that tells you to set
+        the card for D0000h. Use the </font><font face="Courier New" size="2">AT compatible</font><font
+        size="2"> option from the machine type selection menu. </font></p>
+        <p><font size="2">Once complete, the kernel will re-link, and you should shutdown and
+        reboot the system. As UNIX reloads, the SLXOS in the hardware config screen should report
+        both the card, and the number of serial ports attached. Once in multiuser mode, any
+        enabled Specialix port should now work correctly for login sessions. </font></p>
+        <p><font size="2">See also <a href="ipb3210.htm">IPB 3210</a> for <em>SCO OpenServer 5 /
+        UNIX 3.2v4.2</em> related issues on the Apricot VS660. </font></p>
+        <p align="center"><font size="2">----------oOo---------- </font></td>
+      </tr>
+    </table>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

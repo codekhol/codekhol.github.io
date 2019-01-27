@@ -1,0 +1,1922 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FT1200 'Crinkle' DK440LX Motherboard Layout</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><p align="left"><strong><font size="2"><br>
+    </font><font face="Arial,Helvetica" size="4" color="#D60029">FT1200 'Crinkle' DK440LX
+    Motherboard Layout</font></strong></p>
+    <div align="center"><center><table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><font size="2"><img src="graphics/crinmbd.gif" width="320" height="352" border="0"></font></td>
+        <td><p align="center"><font size="2">&nbsp;<img
+        src="graphics/crin-opt.gif" border="0" width="263"
+        height="372" usemap="#MainMap"> <!--webbot bot="HTMLMarkup" startspan --><MAP NAME="MainMap">
+<AREA SHAPE="RECT" COORDS="1, 373, 32, 405" HREF="#Beep">
+<AREA SHAPE="RECT" COORDS="1, 340, 32, 370" HREF="#Beep">
+<AREA SHAPE="RECT" COORDS="1, 306, 32, 337" HREF="#io">
+<AREA SHAPE="RECT" COORDS="1, 273, 32, 303" HREF="#CMOS">
+<AREA SHAPE="RECT" COORDS="1, 239, 31, 270" HREF="#jumpers">
+<AREA SHAPE="RECT" COORDS="1, 205, 32, 236" HREF="#Add_Ins">
+<AREA SHAPE="RECT" COORDS="1, 167, 32, 203" HREF="#disks">
+<AREA SHAPE="RECT" COORDS="1, 137, 32, 167" HREF="#memory">
+<AREA SHAPE="RECT" COORDS="1, 103, 32, 134" HREF="#proc_up">
+<AREA SHAPE="RECT" COORDS="1, 69, 32, 100" HREF="#mbd_conn">
+<AREA SHAPE="RECT" COORDS="1, 35, 31, 66" HREF="#Motherboard">
+<AREA SHAPE="RECT" COORDS="0, 0, 32, 32" HREF="#views"></MAP>
+</MAP>
+<!--webbot
+        bot="HTMLMarkup" endspan --></font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="views"></a><strong><br>
+    </font><font size="3">Front &amp; Rear Views</font></strong></p>
+    <blockquote>
+      <p><font size="2"><strong>Front</strong></font></p>
+    </blockquote>
+    <div align="center"><center><table border="1" cellpadding="2" width="80%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td colspan="4"><p align="center"><font size="2"><img src="graphics/crin-frt.gif"
+        width="378" height="466"></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">1</font></td>
+        <td><font size="2">Reserved for future options</font></td>
+        <td align="center"><font size="2">7</font></td>
+        <td><font size="2">CD activity indicator</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">2</font></td>
+        <td><font size="2">Hard disk activity indicator</font></td>
+        <td align="center"><font size="2">8</font></td>
+        <td><font size="2">Lockable front door</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">3</font></td>
+        <td><font size="2">Power mode indicator</font></td>
+        <td align="center"><font size="2">9</font></td>
+        <td><font size="2">CD emergency eject hole</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">4</font></td>
+        <td><font size="2">Power button</font></td>
+        <td align="center"><font size="2">10</font></td>
+        <td><font size="2">CD eject button</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">5</font></td>
+        <td><font size="2">CD-ROM drive disc drawer</font></td>
+        <td align="center"><font size="2">11</font></td>
+        <td><font size="2">Diskette drive</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">6</font></td>
+        <td><font size="2">CD headphone jack &amp; volume control</font></td>
+        <td align="center"><font size="2">12</font></td>
+        <td><font size="2">Front lifting point</font></td>
+      </tr>
+    </table>
+    </center></div><p align="left">&nbsp;</p>
+    <blockquote>
+      <p><font size="2"><strong>Rear View</strong></font></p>
+    </blockquote>
+    <div align="center"><center><table border="1" cellpadding="2" width="80%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td colspan="4"><p align="center"><font size="2"><img src="graphics/crin-rea.gif"
+        width="444" height="460"></font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">1</font></td>
+        <td><font size="2">Microphone input socket</font></td>
+        <td><p align="center"><font size="2">9</font></td>
+        <td><font size="2">Voltage selector switch</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">2</font></td>
+        <td><font size="2">Line audio, (left) in (right) out</font></td>
+        <td><p align="center"><font size="2">10</font></td>
+        <td><font size="2">AC power inlet from AC supply</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">3</font></td>
+        <td><font size="2">Network connector</font></td>
+        <td><p align="center"><font size="2">11</font></td>
+        <td><font size="2">Fan cover (do not use to lift)</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">4</font></td>
+        <td><font size="2">Serial port (COM2)</font></td>
+        <td><p align="center"><font size="2">12</font></td>
+        <td><font size="2">Case lock</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">5</font></td>
+        <td><font size="2">Parallel printer port</font></td>
+        <td><p align="center"><font size="2">13</font></td>
+        <td><font size="2">Handles to assist side panel removal</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">6</font></td>
+        <td><font size="2">Serial port (COM1)</font></td>
+        <td><p align="center"><font size="2">14</font></td>
+        <td><font size="2">Security loop for cable or padlock</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">7</font></td>
+        <td><font size="2">Dual USB port</font></td>
+        <td><p align="center"><font size="2">15</font></td>
+        <td><font size="2">System expansion slots</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">8</font></td>
+        <td><font size="2">Mouse and keyboard ports</font></td>
+        <td><p align="center"><font size="2">A</font></td>
+        <td><font size="2">Side panel fixing screws</font></td>
+      </tr>
+    </table>
+    </center></div><p align="left">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="motherboard"></a><strong><br>
+    </font><font size="3">Motherboard Components</font></strong></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="80%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td align="center" colspan="4"><font size="2"><img src="graphics/crin-mbd.gif" width="450"
+        height="469"></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">A</font></td>
+        <td><font size="2">Onboard serial port 2 conn. (optional)</font></td>
+        <td align="center"><font size="2">S</font></td>
+        <td><font size="2">Ultra-wide (16-bit) SCSI connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">B</font></td>
+        <td><font size="2">CPU 1 fan connector</font></td>
+        <td align="center"><font size="2">T</font></td>
+        <td><font size="2">Narrow (8-bit) SCSI connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">C</font></td>
+        <td><font size="2">ATAPI CD audio connector (optional)</font></td>
+        <td align="center"><font size="2">U</font></td>
+        <td><font size="2">Sleep LED connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">D</font></td>
+        <td><font size="2">ATAPI-style telephony connector (optional)</font></td>
+        <td align="center"><font size="2">V</font></td>
+        <td><font size="2"><a href="#front_panel">Front panel I/O connectors</a></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">E</font></td>
+        <td><font size="2">ATAPI-style Line In connector (optional)</font></td>
+        <td align="center"><font size="2">W</font></td>
+        <td><font size="2">HDD LED input connector (4-pin)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">F</font></td>
+        <td><font size="2">2mm CD audio connector (optional)</font></td>
+        <td align="center"><font size="2">X</font></td>
+        <td><font size="2">Fan connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">G</font></td>
+        <td><font size="2">Fan connector</font></td>
+        <td align="center"><font size="2">Y</font></td>
+        <td><font size="2">Fan connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">H</font></td>
+        <td><font size="2"><a href="#back_panel">Back panel connectors</a></font></td>
+        <td align="center"><font size="2">Z</font></td>
+        <td><font size="2">Speaker</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">I</font></td>
+        <td><font size="2">Fan connector</font></td>
+        <td align="center"><font size="2">AA</font></td>
+        <td><font size="2">Battery</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">J</font></td>
+        <td><font size="2">Auxillary power connector</font></td>
+        <td align="center"><font size="2">BB</font></td>
+        <td><font size="2">HDD LED input connector (2-pin)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">K</font></td>
+        <td><font size="2">Boot processor Slot 1 connector</font></td>
+        <td align="center"><font size="2">CC</font></td>
+        <td><font size="2">Wake-on-modem connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">L</font></td>
+        <td><font size="2">ATX power connector</font></td>
+        <td align="center"><font size="2">DD</font></td>
+        <td><font size="2">Wake-on-LAN connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">M</font></td>
+        <td><font size="2">Application processor Slot 1 connector</font></td>
+        <td align="center"><font size="2">EE</font></td>
+        <td><font size="2">SCSI PCI RAIDport connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">N</font></td>
+        <td><font size="2">DIMM sockets</font></td>
+        <td align="center"><font size="2">FF</font></td>
+        <td><font size="2">AGP connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">O</font></td>
+        <td><font size="2">Configuration jumper block</font></td>
+        <td align="center"><font size="2">GG</font></td>
+        <td><font size="2">Port connector (used for chassis security)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">P</font></td>
+        <td><font size="2">Secondary IDE connector</font></td>
+        <td align="center"><font size="2">HH</font></td>
+        <td><font size="2">PCI connectors</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">Q</font></td>
+        <td><font size="2">Primary IDE connector</font></td>
+        <td align="center"><font size="2">II</font></td>
+        <td><font size="2">ISA connectors</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">R</font></td>
+        <td><font size="2">Floppy drive connector</font></td>
+        <td align="center"><font size="2">JJ</font></td>
+        <td><font size="2">Chassis security connector</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><a name="back_panel"></a><font size="2"><strong>Back panel connectors</strong></font></p>
+    </blockquote>
+    <div align="center"><center><table border="1" cellpadding="2" width="80%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td align="center" colspan="4"><font size="2"><img src="graphics/crin-con.gif" width="450"
+        height="346"></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">A</font></td>
+        <td><font size="2">PS/2 connector (mouse or keyboard)</font></td>
+        <td align="center"><font size="2">F</font></td>
+        <td><font size="2">Serial port A connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">B</font></td>
+        <td><font size="2">Parallel port connector</font></td>
+        <td align="center"><font size="2">G</font></td>
+        <td><font size="2">Serial port B connector</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">C</font></td>
+        <td><font size="2">Audio Line In jack (optional)</font></td>
+        <td align="center"><font size="2">H</font></td>
+        <td><font size="2">LAN connector (optional)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">D</font></td>
+        <td><font size="2">PS/2 connector (mouse or keyboard)</font></td>
+        <td align="center"><font size="2">I</font></td>
+        <td><font size="2">Audio Line Out jack (optional)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">E</font></td>
+        <td><font size="2">USB connectors</font></td>
+        <td align="center"><font size="2">J</font></td>
+        <td><font size="2">Audio Mic In jack (optional)</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p align="left"><strong><font size="2"><a name="mbd_conn">&nbsp;</a><br>
+    </font><font size="3">Motherboard Connections &amp; pin-outs</font></strong></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="80%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td align="center" colspan="4"><font size="2"><img src="graphics/crin-mcn.gif" width="450"
+        height="483"></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">A</font></td>
+        <td><font size="2"><a href="#fans">Fan</a></font></td>
+        <td align="center"><font size="2">J</font></td>
+        <td><font size="2"><a href="#j11b1">HDD LED (4-pin)</a></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">B</font></td>
+        <td><font size="2"><a href="#j1f1">ATAPI CD audio</a></font></td>
+        <td align="center"><font size="2">K</font></td>
+        <td><font size="2"><a href="#j12d1">Sleep LED</a></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">C</font></td>
+        <td><font size="2">CD audio (2mm)</font></td>
+        <td align="center"><font size="2">L</font></td>
+        <td><font size="2"><a href="#fans">Fan</a></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">D</font></td>
+        <td><font size="2">Line In</font></td>
+        <td align="center"><font size="2">M</font></td>
+        <td><font size="2"><a href="#fans">Fan</a></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">E</font></td>
+        <td><font size="2"><a href="#j0e1">Telephony</a></font></td>
+        <td align="center"><font size="2">N</font></td>
+        <td><font size="2"><a href="#j10a1">HDD LED (2-pin)</a></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">F</font></td>
+        <td><font size="2"><a href="#fans">Fan</a></font></td>
+        <td align="center"><font size="2">O</font></td>
+        <td><font size="2"><a href="#j9a1">Wake on Modem</a></font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">G</font></td>
+        <td><font size="2"><a href="#j1m2">Auxillary power</a></font></td>
+        <td align="center"><font size="2">P</font></td>
+        <td><font size="2">Port (chassis security)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">H</font></td>
+        <td><font size="2"><a href="#fans">Fan</a></font></td>
+        <td align="center"><font size="2">Q</font></td>
+        <td><font size="2">Security (option)</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">I</font></td>
+        <td><font size="2"><a href="#j6d1">Wake on LAN</a></font></td>
+        <td align="center"><font size="2">R</font></td>
+        <td><font size="2"><a href="#front_panel">Front Panel connectors</a></font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <blockquote>
+        <p>&nbsp;</p>
+        <p><a name="j1f1"></a><font size="2"><strong>ATAPI CD Audio Connector (J1F1)</strong></font></p>
+        <div align="center"><center><table border="0" cellpadding="4" cellspacing="0" width="293">
+          <tr>
+            <td width="24%"><font size="2"><b>Pin</b></font></td>
+            <td width="76%"><font size="2"><b>Signal Name</b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">Left CD In</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">CD_common</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">3</font></td>
+            <td><font size="2">CD_common</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">4</font></td>
+            <td><font size="2">Right CD In</font></td>
+          </tr>
+        </table>
+        </center></div>
+      </blockquote>
+      <blockquote>
+        <p>&nbsp;</p>
+        <p><a name="j0e1"></a><font size="2"><strong>ATAPI-Style Telephony Connector (J0E1)</strong></font></p>
+      </blockquote>
+      <blockquote>
+        <div align="center"><center><table border="0" cellpadding="4" cellspacing="0" width="293">
+          <tr>
+            <td width="24%"><font size="2"><b>Pin</b></font></td>
+            <td width="76%"><font size="2"><b>Signal Name</b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">MONO_IN (from external device)</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">3</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">4</font></td>
+            <td><font size="2">TEL_MICIN</font></td>
+          </tr>
+        </table>
+        </center></div><p>&nbsp;</p>
+        <p><a name="fans"></a><font size="2"><strong>Fan Connector (J12B2) (J3F2) (J1M1) (J2E1)
+        (J12A1)</strong></font></p>
+        <div align="center"><center><table border="0" cellpadding="4" cellspacing="0" width="294">
+          <tr>
+            <td width="24%"><font size="2"><b>Pin</b></font></td>
+            <td width="76%"><font size="2"><b>Signal Name</b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">FAN_SEN</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">+12 V</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">3</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+        </table>
+        </center></div><p>&nbsp;</p>
+        <p><a name="j10a1"></a><font size="2"><strong>Hard Drive LED Input Connector (J10A1)</strong></font></p>
+        <div align="center"><center><table border="0" cellpadding="4" cellspacing="0" width="294">
+          <tr>
+            <td width="24%"><font size="2"><b>Pin</b></font></td>
+            <td width="76%"><font size="2"><b>Signal Name</b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">DRV_ACT#</font></td>
+          </tr>
+        </table>
+        </center></div><p>&nbsp;</p>
+        <p><a name="j11b1"></a><font size="2"><strong>Hard Drive LED Input Connector (J11B1)</strong></font></p>
+        <div align="center"><center><table border="0" cellpadding="4" cellspacing="0" width="293">
+          <tr>
+            <td width="24%"><font size="2"><b>Pin</b></font></td>
+            <td width="76%"><font size="2"><b>Signal Name</b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">DRV_ACT#</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">3</font></td>
+            <td><font size="2">DRV_ACT#</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">4</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+        </table>
+        </center></div><p>&nbsp;</p>
+        <p><a name="j6d1"></a><font size="2"><strong>Wake on LAN Connector (J6D1)</strong></font></p>
+        <div align="center"><center><table border="0" cellpadding="4" cellspacing="0" width="293">
+          <tr>
+            <td width="24%"><font size="2"><b>Pin</b></font></td>
+            <td width="76%"><font size="2"><b>Signal Name</b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">+5 VSB</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">3</font></td>
+            <td><font size="2">MP_WAKEUP</font></td>
+          </tr>
+        </table>
+        </center></div><p>&nbsp;</p>
+        <p><a name="j9a1"></a><font size="2"><strong>Wake-on-Modem Connector (J9A1)</strong></font></p>
+        <div align="center"><center><table border="0" cellpadding="4" cellspacing="0" width="293">
+          <tr>
+            <td width="24%"><font size="2"><b>Pin</b></font></td>
+            <td width="76%"><font size="2"><b>Signal Name</b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">SLOT_RI_N</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+        </table>
+        </center></div><p>&nbsp;</p>
+        <p><a name="j1m2"></a><font size="2"><strong>Auxiliary Power Supply Connector (J1M2)</strong></font></p>
+        <div align="center"><center><table border="0" cellpadding="4" cellspacing="0" width="294">
+          <tr>
+            <td width="24%"><font size="2"><b>Pin</b></font></td>
+            <td width="76%"><font size="2"><b>Signal Name</b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">3</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">4</font></td>
+            <td><font size="2">+3.3 V</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">5</font></td>
+            <td><font size="2">+3.3 V</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">6</font></td>
+            <td><font size="2">+5 V</font></td>
+          </tr>
+        </table>
+        </center></div><p>&nbsp;</p>
+        <p><a name="j12d1"></a><font size="2"><strong>Power/Sleep LED Header (J12D1)</strong></font></p>
+        <div align="center"><center><table border="0" cellpadding="4" cellspacing="0" width="293">
+          <tr>
+            <td width="24%"><font size="2"><b>Pin</b></font></td>
+            <td width="76%"><font size="2"><b>Signal Name</b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">Ground</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">Yellow/Green</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">3</font></td>
+            <td><font size="2">Green/Yellow</font></td>
+          </tr>
+        </table>
+        </center></div>
+      </blockquote>
+    </blockquote>
+    <p>&nbsp;</p>
+    <blockquote>
+      <p><a name="front_panel"></a><font size="2"><strong>Front Panel connectors</strong></font></p>
+    </blockquote>
+    <div align="center"><center><table border="1" cellpadding="2" width="80%"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td colspan="3"><p align="center"><font size="2"><img src="graphics/crin-fpc.gif"
+        width="450" height="316"><br>
+        &nbsp;</font></td>
+      </tr>
+      <tr>
+        <td width="37%"><font size="2"><b>Connector</b></font></td>
+        <td width="22%"><font size="2"><b>Pin</b></font></td>
+        <td width="41%"><font size="2"><b>Signal Name</b></font></td>
+      </tr>
+      <tr>
+        <td width="37%"><font size="2">A. Speaker </font></td>
+        <td width="22%"><font size="2">27<br>
+        26<br>
+        25<br>
+        24</font></td>
+        <td width="41%"><font size="2">SPKR_HDR<br>
+        PIEZO_IN<br>
+        Key<br>
+        Ground</font></td>
+      </tr>
+      <tr>
+        <td width="37%"><font size="2">B. Reset </font></td>
+        <td width="22%"><font size="2">23<br>
+        22<br>
+        21</font></td>
+        <td width="41%"><font size="2">SW_RST<br>
+        Ground<br>
+        Key</font></td>
+      </tr>
+      <tr>
+        <td width="37%"><font size="2">C. Power/Sleep LED </font></td>
+        <td width="22%"><font size="2">20<br>
+        19<br>
+        18<br>
+        17</font></td>
+        <td width="41%"><font size="2">PWR_LED (+5 V)<br>
+        Key<br>
+        PWR_LED (ground)<br>
+        Key</font></td>
+      </tr>
+      <tr>
+        <td width="37%"><font size="2">D. Hard Drive LED </font></td>
+        <td width="22%"><font size="2">16<br>
+        15<br>
+        14<br>
+        13<br>
+        12</font></td>
+        <td width="41%"><font size="2">HD_PWR (+5 V)<br>
+        HD Active#<br>
+        Key<br>
+        HD_PWR (+5 V)<br>
+        Key</font></td>
+      </tr>
+      <tr>
+        <td width="37%"><font size="2">E. Infrared</font></td>
+        <td width="22%"><font size="2">11<br>
+        10<br>
+        9<br>
+        8<br>
+        7<br>
+        6<br>
+        5</font></td>
+        <td width="41%"><font size="2">IRLS1<br>
+        Ir TX<br>
+        Ground<br>
+        Ir RX<br>
+        Key<br>
+        +5V<br>
+        Key</font></td>
+      </tr>
+      <tr>
+        <td width="37%"><font size="2">F. Sleep/Resume Switch</font></td>
+        <td width="22%"><font size="2">4<br>
+        3</font></td>
+        <td width="41%"><font size="2">SLEEP_PU (pullup)<br>
+        SLEEP</font></td>
+      </tr>
+      <tr>
+        <td width="37%"><font size="2">G. Power On</font></td>
+        <td width="22%"><font size="2">2<br>
+        1</font></td>
+        <td width="41%"><font size="2">Ground<br>
+        SW_ON#</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="proc_up"></a><strong><br>
+    </font><font size="3">Processor Upgrade</font></strong></p>
+    <blockquote>
+      <p><font size="2">If your motherboard has one processor, you can upgrade the computer by
+      replacing this processor with a faster one, or by installing an application processor. </font></p>
+      <p><font size="2">If your motherboard has two processors, you can upgrade by replacing
+      these processors with two faster processors. </font></p>
+      <p><font size="2">If you install two processors, make sure they have:</font><ul>
+        <li><font size="2">Identical speeds and voltages.</font></li>
+        <li><font size="2">The same stepping or a difference of no more than one stepping. Processor
+          stepping is designated by a five-letter code, for example, SL28R, printed on the top edge
+          of the S.E.C. cartridge.</font></li>
+      </ul>
+      <p><font size="2"><strong>Note</strong>:</font></p>
+      <p><font size="2"><i>If there is only one processor on a motherboard, it must be fitted in
+      the boot processor Slot 1 connector. In a single-processor configuration, you must install
+      a termination card in the empty application processor Slot&nbsp;1 connector to ensure
+      proper operation of the computer.</i></font></p>
+      <p><font size="2"><strong>Warning</strong>:</font></p>
+      <p><font size="2"><i>In all instances you must remove the rear drive carrier and the main
+      cross strut of the chassis to safely access the system processors. </i></font></p>
+      <p><font size="2"><i>The rear drive carrier assembly has a large cooling fan fitted to the
+      rear. It is essential that care is taken with this. It must be correctly refitted and
+      reconnected after you have finished your work.</i></font></p>
+      <p><font size="2"><a href="crin-pro.htm#rem_proc"><strong>To Remove a Processor</strong></a></font></p>
+      <p><font size="2"><a href="crin-pro.htm#single_proc"><strong>To Install a Single Processor</strong></a></font></p>
+      <p><font size="2"><a href="crin-pro.htm#rem_term"><strong>To Remove the Termination Card</strong></a></font></p>
+      <p><font size="2"><a href="crin-pro.htm#ins_term"><strong>To Install the Termination Card</strong></a></font></p>
+      <p><font size="2"><a href="crin-pro.htm#second_proc"><strong>To Install a Second Processor</strong></a></font></p>
+      <p><font size="2"><a href="crin-pro.htm#set_speed"><strong>To Set the Processor Speed</strong></a></font></p>
+    </blockquote>
+    <p align="left">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="memory">&nbsp;</a><br>
+    </font><font size="3"><strong>RAM Configuration</strong></font></p>
+    <blockquote>
+      <p><font size="2">You can install from 16MB to 512MB of memory in the motherboard DIMM
+      sockets. Memory can be installed in one, two, three, or four sockets. DIMM size can vary
+      between sockets. </font></p>
+      <p><font size="2">The motherboard supports 66-MHz unbuffered (72-bit) ECC SDRAM based on
+      168-pin 3.3V DIMMs with gold-plated contacts.</font></p>
+      <p><font size="2">Single or double-sided DIMMs can be used as follows:</font></p>
+      <table border="0" cellpadding="3" cellspacing="0" width="50%">
+        <tr>
+          <td><font size="2"><strong>DIMM size</strong></font></td>
+          <td><font size="2"><strong>Configuration</strong></font></td>
+        </tr>
+        <tr>
+          <td><font size="2">16MB</font></td>
+          <td><font size="2">2 Mbit x 72</font></td>
+        </tr>
+        <tr>
+          <td><font size="2">32MB</font></td>
+          <td><font size="2">4 Mbit x 72</font></td>
+        </tr>
+        <tr>
+          <td><font size="2">64MB</font></td>
+          <td><font size="2">8 Mbit x 72</font></td>
+        </tr>
+        <tr>
+          <td><font size="2">128MB</font></td>
+          <td><font size="2">16 Mbit x 72</font></td>
+        </tr>
+      </table>
+      <p><font size="2">Refer to the <a href="#add_ins">Add-ins section</a> for memory part
+      numbers.</font></p>
+    </blockquote>
+    <p align="left">&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="disks">&nbsp;<br>
+    </a></font><font size="3"><strong>Disk Drives</strong></font></p>
+    <blockquote>
+      <table border="0" cellpadding="2" width="550">
+        <tr>
+          <td colspan="5"><font size="2"><strong><b>Hard Drives</b></strong></font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><b>MB</b></font></td>
+          <td><font size="2"><b>Make</b></font></td>
+          <td><font size="2"><b>Model</b></font></td>
+          <td><font size="2"><b>Type</b></font></td>
+          <td><font size="2"><b>Part Number</b></font></td>
+        </tr>
+        <tr>
+          <td><font size="2">4GB</font></td>
+          <td><font size="2">IBM</font></td>
+          <td><font size="2"><a href="../../../common/drives/hard/idcas433.htm">DCAS-34330</a>
+          'Capricorn'</font></td>
+          <td><font size="2">UltraSCSI</font></td>
+          <td><font size="2">XB61177</font></td>
+        </tr>
+        <tr>
+          <td><font size="2">9GB</font></td>
+          <td><font size="2">IBM</font></td>
+          <td><font size="2"><a href="../../../common/drives/hard/iddrs130.htm">DDRS-39130</a>
+          'Draco'</font></td>
+          <td><font size="2">UltraSCSI</font></td>
+          <td><font size="2">XB62206</font></td>
+        </tr>
+        <tr>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td colspan="5"><font size="2"><b>Tape Drive (requires AHA1510B interface card UF59378)</b></font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><b>MB</b></font></td>
+          <td><font size="2"><b>Make</b></font></td>
+          <td><font size="2"><b>Model</b></font></td>
+          <td><font size="2"><b>Type</b></font></td>
+          <td><font size="2"><b>Part Number</b></font></td>
+        </tr>
+        <tr>
+          <td><font size="2">12-24GB</font></td>
+          <td><font size="2">HP</font></td>
+          <td><font size="2"><a href="../../../common/drives/tape/hpc1537a.htm">HP C1537A</a></font></td>
+          <td><font size="2">DDS III</font></td>
+          <td><font size="2">SU61220</font></td>
+        </tr>
+        <tr>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td colspan="5"><font size="2"><b>Floppy Drives</b></font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><b>MB</b></font></td>
+          <td><font size="2"><b>Make</b></font></td>
+          <td><font size="2"><b>Model</b></font></td>
+          <td><font size="2"><b>Type</b></font></td>
+          <td><font size="2"><b>Part Number</b></font></td>
+        </tr>
+        <tr>
+          <td><font size="2">2 MB</font></td>
+          <td><font size="2">Mitsubishi</font></td>
+          <td><font size="2"><a href="../../../common/drives/floppy/mi3450f.htm">MF355F-3450MP</a></font></td>
+          <td><font size="2">3.5&quot;</font></td>
+          <td><font size="2">16037231</font></td>
+        </tr>
+        <tr>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td colspan="5"><font size="2"><b>CD-ROM</b></font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><b>Speed</b></font></td>
+          <td><font size="2"><b>Make</b></font></td>
+          <td><font size="2"><b>Model</b></font></td>
+          <td><font size="2"><b>Type</b></font></td>
+          <td><font size="2"><b>Part Number</b></font></td>
+        </tr>
+        <tr>
+          <td><font size="2">16x</font></td>
+          <td><font size="2">Sony</font></td>
+          <td><font size="2"><a href="../../../common/drives/cd/so511c.htm">CDU511-10/10</a></font></td>
+          <td><font size="2">IDE PCAV</font></td>
+          <td><font size="2">XB61060</font></td>
+        </tr>
+      </table>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="add_ins"></a><strong><br>
+    </font><font size="3">Add-Ins</font></strong></p>
+    <blockquote>
+      <table border="0" cellpadding="2">
+        <tr>
+          <td><font size="2"><strong>DIMM memory expansion</strong></font></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><font size="2">32MB SDRAM DIMM</font></td>
+          <td><font size="2">XB62202</font></td>
+        </tr>
+        <tr>
+          <td><font size="2">64MB SDRAM DIMM</font></td>
+          <td><font size="2">XB62203</font></td>
+        </tr>
+        <tr>
+          <td><font size="2">128MB SDRAM DIMM</font></td>
+          <td><font size="2">XB62204</font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><strong>Additional Processors</strong></font></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><font size="2">Single to dual 266MHz Pentium II processor 512KB ECC cache</font></td>
+          <td><font size="2">XB62827</font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><strong>RAID</strong></font></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><font size="2">AMI 431 single channel RAID &amp; cable</font></td>
+          <td><font size="2">XB62536</font></td>
+        </tr>
+        <tr>
+          <td><font size="2">4MB RAID cache upgrade</font></td>
+          <td><font size="2">XB61650</font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><strong>Controller cards </strong></font></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><font size="2">Adaptec 2940uw SCSI card (includes cable for duplexing)</font></td>
+          <td><font size="2">SU61229</font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><strong>Network options</strong></font></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><font size="2">Intel Pro 100B PCI Ethernet Card</font></td>
+          <td><font size="2">XB61343</font></td>
+        </tr>
+        <tr>
+          <td><font size="2">Intel Pro 10+ ISA Combo Ethernet Card</font></td>
+          <td><font size="2">XB61345</font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><strong>Connectivity options</strong></font></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><font size="2">56K ISA modem</font></td>
+          <td><font size="2">XB62492</font></td>
+        </tr>
+        <tr>
+          <td><font size="2">3Com Office Connect 8 port Micro Hub &amp; 3 x 5m UTP cables</font></td>
+          <td><font size="2">XB1000</font></td>
+        </tr>
+        <tr>
+          <td><font size="2"><strong>Uninterruptible Power Supply</strong></font></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="apc420vs.htm"><font size="2">APC 420v/s Smart UPS</font></a></td>
+          <td><font size="2">XB59898</font></td>
+        </tr>
+      </table>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="jumpers"></a><strong><br>
+    </font><font size="3">Jumper Settings</font></strong></p>
+    <blockquote>
+      <p><font size="2">Note that with this motherboard the setting of the processor clock speed
+      and clearing of passwords is carried out by software and not by hardware jumper settings,
+      via a Maintenance menu in Setup. </font></p>
+      <p><font size="2">To enable this mode of Setup, a Configuration Jumper Block (J7E1) is set
+      as explained below. The diagram shows the location of the Configuration Jumper Block on
+      the motherboard. The jumper is set to normal mode at the factory.</font></p>
+      <p><font size="2">The following table shows the jumper settings for the different Setup
+      modes. These modes configure Setup for normal operations, maintenance operations, or
+      recovering the BIOS.</font></p>
+      <table border="0" cellpadding="6" cellspacing="0" width="90%">
+        <tr>
+          <td><font size="2"><strong>Function</strong></font></td>
+          <td align="center"><font size="2"><strong>Jumper&nbsp;J7E1</strong></font></td>
+          <td><font size="2"><strong>Description</strong></font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font size="2">Normal</font></td>
+          <td align="center" valign="top"><font size="2"><strong>1-2</strong><br>
+          <img src="graphics/crin-pr7.gif" width="56" height="33"></font></td>
+          <td><font size="2">BIOS uses current configuration and passwords for booting. Connect pins
+          1 and 2 with a jumper on the configuration header&nbsp;(J7E1) to enable the mode. The BIOS
+          uses the current bus/processor frequency ratio, configuration information, and passwords
+          to boot the computer. Access to the Set-up program can be restricted using an
+          administrative or user password. In normal mode, the BIOS attempt an automatic recovery if
+          the configuration information in flash memory is corrupted. </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font size="2">Configure</font></td>
+          <td align="center" valign="top"><font size="2"><strong>2-3</strong><br>
+          <img src="graphics/crin-pr6.gif" width="56" height="33"></font></td>
+          <td><font size="2">After the POST runs, Setup starts and displays the Maintenance menu.
+          There are options for setting the processor speed and clearing passwords. Connect pins 2
+          and 3 with a jumper on the configuration header&nbsp;(J7E1) to enable the mode. In this
+          mode, Set-up automatically executes after the POST runs, and no password is required.
+          Set-up provides the Maintenance menu with options for setting the processor speed and
+          clearing passwords. All other Set-up screens are available. Configure mode uses the
+          default BIOS settings for booting, not the current user or administrative settings. The
+          default settings include the lowest bus/processor frequency ratio the processor supports.
+          When the computer is rebooted, Set-up uses the original user and administrative settings
+          with the exception of the options that were changed. For the configuration changes to take
+          effect after exiting the Set-up program, power down the computer, set the configuration
+          jumper to normal mode, and boot the computer. In configure mode, the BIOS attempts an
+          automatic recovery if the configuration information flash memory is corrupted. </font></td>
+        </tr>
+        <tr>
+          <td valign="top"><font size="2">Recovery</font></td>
+          <td align="center" valign="top"><font size="2"><strong>No jumper fitted</strong></font></td>
+          <td><font size="2">This mode is for upgrading the BIOS or recovering BIOS data. Remove the
+          jumper (no pins connected) from the configuration header&nbsp;(J7E1) to enable this mode.
+          After the computer is powered-on, the BIOS attempts to upgrade or recover the BIOS data
+          from a diskette in the floppy drive. If the recovery fails with a diskette in the boot
+          drive, a beep code indicates that the recovery failed. If a diskette is not in the boot
+          drive, the BIOS attempts to run the POST, does not boot the operating system, and displays
+          a message that the jumper is not properly installed. For the configuration changes to take
+          effect after a successful recovery, power down the computer, set the configuration jumper
+          to normal mode, and boot the computer. </font></td>
+        </tr>
+      </table>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">A step-by-step description of how to set the processor speed is given in
+      &quot;<a href="crin-pro.htm#set_speed">Processor Upgrades - To Set the Processor Speed</a>&quot;.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="cmos"></a><strong><br>
+    </font><font size="3">CMOS</font></strong></p>
+    <blockquote>
+      <p><font size="2"><b>Clear CMOS</b></font></p>
+      <p><font size="2">To erase the CMOS memory, remove the 3-volt Lithium battery (CR2032) and
+      leave out for approximately 60 seconds before replacing. The CMOS will then require
+      reconfiguring.</font></p>
+      <p><font size="2"><strong>Replacing the configuration battery</strong></font></p>
+      <p><font size="2">When your computer is turned off, a lithium battery keeps the
+      time-of-day clock and the values in CMOS RAM current. The battery should last about seven
+      years. When the battery begins to die, it loses voltage; when the voltage drops below a
+      certain level, the Setup program settings stored in CMOS RAM (for example, the date and
+      time) might not be accurate. Replace the battery only with a direct equivalent and ensure
+      correct polarity.</font></p>
+      <p><font size="2"><em><strong>Warning</strong></em><br>
+      <em>The CMOS battery is a lithium type. You must not use a metal or other conductive
+      implement to remove the battery. If a short-circuit is accidentally made between the
+      battery's positive an negative terminals, the battery may explode. Dispose of the battery
+      according to the battery manufacturer's recommendations.</em></font></p>
+      <p><font size="2"><strong>To replace the battery</strong></font><ol>
+        <li><font size="2">Turn off all peripheral devices connected to the computer.</font></li>
+        <li><font size="2">Turn off the computer and unplug all power cords.</font></li>
+        <li><font size="2">Take suitable anti-static precautions and remove the computer top and
+          access covers.</font></li>
+        <li><font size="2">With a small non-metallic tool, gently pull the retaining clip from the
+          battery, and it will pop up for easy removal. Note the orientation of the the
+          &quot;+&quot; and &quot;-&quot; on the battery.</font></li>
+        <li><font size="2">Install the new battery in the socket, orienting the &quot;+&quot; and
+          &quot;-&quot; correctly and press it home. Make sure the retaining clip is holding the
+          battery in the socket correctly and firmly.</font></li>
+        <li><font size="2">Replace the computer covers.</font></li>
+      </ol>
+      <p><font size="2">You will need to enter the BIOS Setup utility to check your system
+      settings.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="io"></a><strong><b><br>
+    </font><font size="3">System Resources</font></b></strong></p>
+    <blockquote>
+      <p><font size="2"><a href="#memmap">Memory Map</a></font></p>
+      <p><font size="2"><a href="#dma">DMA Channels</a></font></p>
+      <p><font size="2"><a href="#iomap">I/O Map</a></font></p>
+      <p><font size="2"><a href="#pcimap">PCI Configuration Space Map</a></font></p>
+      <p><font size="2"><a href="#int">Interrupts</a></font></p>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><a name="memmap"></a><font size="2"><strong>Memory Map</strong></font></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="550"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td><font size="2"><b>Address&nbsp;Range<br>
+        (decimal)</b></font></td>
+        <td><font size="2"><b>Address Range<br>
+        (hex)</b></font></td>
+        <td><font size="2"><b>Size</b></font></td>
+        <td><font size="2"><b>Description</b></font></td>
+      </tr>
+      <tr>
+        <td nowrap><font size="2">1024 K - 1048576 K</font></td>
+        <td nowrap><font size="2">100000 - 3FFFFFFF</font></td>
+        <td nowrap><font size="2">1023 MB</font></td>
+        <td><font size="2">Extended memory (EDO memory)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1024 K - 524288 K</font></td>
+        <td><font size="2">100000 - 1FFFFFFF</font></td>
+        <td><font size="2">511 MB</font></td>
+        <td><font size="2">Extended memory (SDRAM)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">928 K - 1024 K</font></td>
+        <td><font size="2">E8000 - FFFFF</font></td>
+        <td><font size="2">96 KB</font></td>
+        <td><font size="2">System BIOS </font></td>
+      </tr>
+      <tr>
+        <td><font size="2">800 K - 928 K</font></td>
+        <td><font size="2">C8000 - E7FFF</font></td>
+        <td><font size="2">128 KB</font></td>
+        <td><font size="2">Available high DOS memory (open to ISA and PCI bus)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">640 K - 800 K</font></td>
+        <td><font size="2">A0000 - C7FFF</font></td>
+        <td><font size="2">160 KB</font></td>
+        <td><font size="2">Video memory and BIOS</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">639 K - 640 K</font></td>
+        <td><font size="2">9FC00 - 9FFFF</font></td>
+        <td><font size="2">1 KB</font></td>
+        <td><font size="2">Extended BIOS data (movable by memory manager software)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">512 K - 639 K</font></td>
+        <td><font size="2">80000 - 9FBFF</font></td>
+        <td><font size="2">127 KB</font></td>
+        <td><font size="2">Extended conventional memory</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0 K - 512 K</font></td>
+        <td><font size="2">00000 - 7FFFF</font></td>
+        <td><font size="2">512 KB</font></td>
+        <td><font size="2">Conventional memory</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><a name="dma"></a><font size="2"><strong>DMA Channels</strong></font></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="550"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td width="33%"><font size="2"><b>DMA Channel Number</b></font></td>
+        <td width="20%"><font size="2"><b>Data Width</b></font></td>
+        <td width="48%"><font size="2"><b>System Resource</b></font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0</font></td>
+        <td><font size="2">8 or 16 bits</font></td>
+        <td><font size="2">Audio</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1</font></td>
+        <td><font size="2">8 or 16 bits</font></td>
+        <td><font size="2">Audio/parallel port</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">2</font></td>
+        <td><font size="2">8 or 16 bits</font></td>
+        <td><font size="2">Floppy drive</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">3</font></td>
+        <td><font size="2">8 or 16 bits</font></td>
+        <td><font size="2">Parallel port (for ECP)/audio </font></td>
+      </tr>
+      <tr>
+        <td><font size="2">4</font></td>
+        <td><font size="2">-</font></td>
+        <td><font size="2">Reserved - cascade channel</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">5</font></td>
+        <td><font size="2">16 bits</font></td>
+        <td><font size="2">Open</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">6</font></td>
+        <td><font size="2">16 bits</font></td>
+        <td><font size="2">Open</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">7</font></td>
+        <td><font size="2">16 bits</font></td>
+        <td><font size="2">Open</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p><a name="iomap"></a><font size="2"><strong>I/O Map</strong></font></p>
+    <blockquote>
+      <p><font size="2"><strong>Note</strong>: This table does not list I/O addresses that may
+      be used by add-in cards in the system.</font></p>
+    </blockquote>
+    <div align="center"><center><table border="1" cellpadding="2" width="550"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td width="24%"><font size="2"><b>Address (hex)</b></font></td>
+        <td width="13%"><font size="2"><b>Size</b></font></td>
+        <td width="63%"><font size="2"><b>Description</b></font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0000 - 000F</font></td>
+        <td><font size="2">16 bytes</font></td>
+        <td><font size="2">PIIX4 - DMA 1</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0020 - 0021</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">PIIX4 - interrupt controller 1</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">002E - 002F</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">Super I/O controller configuration registers</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0040 - 0043</font></td>
+        <td><font size="2">4 bytes</font></td>
+        <td><font size="2">PIIX4 - Counter/Timer 1</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0048 - 004B</font></td>
+        <td><font size="2">4 bytes</font></td>
+        <td><font size="2">PIIX4- Counter/Timer 2</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0060</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Keyboard Controller Byte - reset IRQ</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0061</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">PIIX4 - NMI, speaker control</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0064</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Keyboard controller, CMD/STAT Byte</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0070, bit 7</font></td>
+        <td><font size="2">1 bit</font></td>
+        <td><font size="2">PIIX4 - enable NMI</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0070, bits 6:0</font></td>
+        <td><font size="2">7 bits</font></td>
+        <td><font size="2">PIIX4 - real time clock, address</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0071</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">PIIX4 - real time clock, data</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0078</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Reserved - motherboard configuration</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0079</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Reserved - motherboard configuration</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0080 - 008F</font></td>
+        <td><font size="2">16 bytes</font></td>
+        <td><font size="2">PIIX4 - DMA page registers</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00A0 - 00A1</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">PIIX4 - interrupt controller 2</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00B2 - 00B3</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">APM control </font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00C0 - 00DE</font></td>
+        <td><font size="2">31 bytes</font></td>
+        <td><font size="2">PIIX4 - DMA 2</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00F0</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Reset numeric error</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0170 - 0177</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Secondary IDE channel</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">01F0 - 01F7</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Primary IDE channel</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0200 - 0207</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Audio/game port</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0220 - 022F</font></td>
+        <td><font size="2">16 bytes</font></td>
+        <td><font size="2">Audio (Sound Blaster compatible)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0240 - 024F</font></td>
+        <td><font size="2">16 bytes</font></td>
+        <td><font size="2">Audio (Sound Blaster compatible)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0278 - 027F</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">LPT2</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0290 - 0297</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Hardware monitor</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">02E8 - 02EF</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">COM4/Video (8514A)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">02F8 - 02FF</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">COM2</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0300 - 0301</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">MPU-401 (MIDI)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0330 - 0331</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">MPU-401 (MIDI)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0332 - 0333</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">MPU-401 (MIDI)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0334 - 0335</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">MPU-401 (MIDI)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0376</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Secondary IDE channel command port</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0377</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Floppy channel 2 command</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0377, bit 7</font></td>
+        <td><font size="2">1 bit</font></td>
+        <td><font size="2">Floppy disk change, channel 2</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0377, bits 6:0</font></td>
+        <td><font size="2">7 bits</font></td>
+        <td><font size="2">Secondary IDE channel status port</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0378 - 037F</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">LPT1</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0388 - 038D</font></td>
+        <td><font size="2">6 bytes</font></td>
+        <td><font size="2">AdLib (FM synthesizer)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03B4 - 03B5</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">Video (VGA)</font></td>
+      </tr>
+      <tr>
+        <td width="24%"><font size="2">03BA</font></td>
+        <td width="13%"><font size="2">1 byte</font></td>
+        <td width="63%"><font size="2">Video (VGA)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03BC - 03BF</font></td>
+        <td><font size="2">4 bytes</font></td>
+        <td><font size="2">LPT3</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03C0 - 03CA</font></td>
+        <td><font size="2">11 bytes</font></td>
+        <td><font size="2">Video (VGA)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03CC</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Video (VGA)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03CE - 03CF</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">Video (VGA)</font></td>
+      </tr>
+      <tr>
+        <td width="24%"><font size="2">03D4 - 03D5</font></td>
+        <td width="13%"><font size="2">2 bytes</font></td>
+        <td width="63%"><font size="2">Video (VGA)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03DA</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Video (VGA)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03E8 - 03EF</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">COM3</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03F0 - 03F5</font></td>
+        <td><font size="2">6 bytes</font></td>
+        <td><font size="2">Floppy channel 1</font></td>
+      </tr>
+      <tr>
+        <td width="24%"><font size="2">03F6</font></td>
+        <td width="13%"><font size="2">1 byte</font></td>
+        <td width="63%"><font size="2">Primary IDE channel command port</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03F7 (Write)</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Floppy channel 1 command</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03F7, bit 7</font></td>
+        <td><font size="2">1 bit</font></td>
+        <td><font size="2">Floppy disk change channel 1</font></td>
+      </tr>
+      <tr>
+        <td width="24%"><font size="2">03F7, bits 6:0</font></td>
+        <td width="13%"><font size="2">7 bits</font></td>
+        <td width="63%"><font size="2">Primary IDE channel status port</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">03F8 - 03FF</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">COM1</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">04D0 - 04D1</font></td>
+        <td><font size="2">2 bytes</font></td>
+        <td><font size="2">Edge/level triggered PIC</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0530 - 0537</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Windows Sound System</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0604 - 060B</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Windows Sound System</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">LPT<i>n</i> + 400h</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">ECP port, LPT<i>n</i> base address + 400h</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0CF8 - 0CFB*</font></td>
+        <td><font size="2">4 bytes</font></td>
+        <td><font size="2">PCI configuration address register</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0CF9**</font></td>
+        <td><font size="2">1 byte</font></td>
+        <td><font size="2">Turbo and reset control register</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0CFC - 0CFF</font></td>
+        <td><font size="2">4 bytes</font></td>
+        <td><font size="2">PCI configuration data register</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0E80 - 0E87</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Windows Sound System</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0F40 - 0F47</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Windows Sound System</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0FF0 - 0FF7</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">CS4236B audio control</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">FF00 - FF07</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">IDE bus master register</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">FFA0 - FFA7</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Primary bus master IDE registers</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">FFA8 - FFAF</font></td>
+        <td><font size="2">8 bytes</font></td>
+        <td><font size="2">Secondary bus master IDE registers</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">007C, bits 5:4</font></td>
+        <td><font size="2">2 bits</font></td>
+        <td><font size="2">Chassis fan RPM sense selection</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><font size="2">*&nbsp;&nbsp;DWORD access only. <br>
+      **&nbsp;Byte access only.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><a name="pcimap"></a><font size="2"><strong>PCI Configuration Space Map</strong></font></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="550"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td bgcolor="#FFFFFF"><font size="2"><b>Bus<br>
+        Number<br>
+        (hex)</b></font></td>
+        <td bgcolor="#FFFFFF"><font size="2"><b>Device<br>
+        Number<br>
+        (hex)</b></font></td>
+        <td bgcolor="#FFFFFF"><font size="2"><b>Function<br>
+        Number<br>
+        (hex)</b></font></td>
+        <td bgcolor="#FFFFFF"><font size="2"><b>Description</b></font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">Intel 82443LX (PAC)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">01</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">Intel 82371AB (PAC ) A.G.P. bus</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">02</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">Intel 82371AB (PIIX4 ) PCI/ISA bridge</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">02</font></td>
+        <td><font size="2">01</font></td>
+        <td><font size="2">Intel 82371AB (PIIX4 ) IDE bus master</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">02</font></td>
+        <td><font size="2">02</font></td>
+        <td><font size="2">Intel 82371AB (PIIX4 ) USB</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">02</font></td>
+        <td><font size="2">03</font></td>
+        <td><font size="2">Intel 82371AB (PIIX4 ) power management</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">03</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">Ethernet</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">09</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">SCSI</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">0D</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">PCI expansion slot 1 (J1D2)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">0E</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">PCI expansion slot 2 (J1D1)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">0F</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">PCI expansion slot 3 (J1C1)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">00</font></td>
+        <td><font size="2">10</font></td>
+        <td><font size="2">00</font></td>
+        <td><font size="2">PCI expansion slot 4 (J1B1)</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p><a name="int"></a><font size="2"><strong>Interrupts</strong></font></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="550"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td width="26%"><font size="2"><b>IRQ</b></font></td>
+        <td width="74%"><font size="2"><b>System Resource</b></font></td>
+      </tr>
+      <tr>
+        <td><font size="2">NMI</font></td>
+        <td><font size="2">I/O channel check</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">0</font></td>
+        <td><font size="2">Reserved, interval timer</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1</font></td>
+        <td><font size="2">Reserved, keyboard buffer full</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">2</font></td>
+        <td><font size="2">Reserved, cascade interrupt from slave PIC</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">3</font></td>
+        <td><font size="2">COM2*</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">4</font></td>
+        <td><font size="2">COM1*</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">5</font></td>
+        <td><font size="2">Plug and Play option /audio/user available</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">6</font></td>
+        <td><font size="2">Floppy drive</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">7</font></td>
+        <td><font size="2">LPT1*</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">8</font></td>
+        <td><font size="2">Real time clock</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">9</font></td>
+        <td><font size="2">Reserved</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">10</font></td>
+        <td><font size="2">Windows Sound System*</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">11</font></td>
+        <td><font size="2">User available</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">12</font></td>
+        <td><font size="2">Onboard mouse port (if present, else user available)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">13</font></td>
+        <td><font size="2">Reserved, math coprocessor</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">14</font></td>
+        <td><font size="2">Primary IDE (if present, else user available)</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">15</font></td>
+        <td><font size="2">Secondary IDE (if present, else user available)</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><font size="2"><sup>*</sup> Default, but can be changed to another IRQ</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="beep"></a><b><br>
+    </font><font size="3"><strong>POST Beep Codes</strong></font></b></p>
+    <div align="center"><center><table border="1" cellpadding="2" width="550"
+    bordercolor="#C0C0C0">
+      <tr>
+        <td><font size="2"><strong>Beeps</strong></font></td>
+        <td align="center"><font size="2"><strong>80h Code</strong></font></td>
+        <td><font size="2"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1</font></td>
+        <td align="center"><font size="2">B4h</font></td>
+        <td><font size="2">One short beep before boot</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1-2</font></td>
+        <td align="center"><font size="2">98h</font></td>
+        <td><font size="2">Search for option ROMs</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1-2-2-3</font></td>
+        <td align="center"><font size="2">16h</font></td>
+        <td><font size="2">BIOS ROM checksum</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1-3-1-1</font></td>
+        <td align="center"><font size="2">20h</font></td>
+        <td><font size="2">Test DRAM refresh</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1-3-1-3</font></td>
+        <td align="center"><font size="2">22h</font></td>
+        <td><font size="2">Test 8742 keyboard controller</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1-3-4-1</font></td>
+        <td align="center"><font size="2">2Ch</font></td>
+        <td><font size="2">RAM failure on address line <em>nnnn</em></font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1-3-4-3</font></td>
+        <td align="center"><font size="2">2Eh</font></td>
+        <td><font size="2">RAM failure on data bits <em>nnnn</em> of low byte of memory bus</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">1-4-1-1</font></td>
+        <td align="center"><font size="2">30h</font></td>
+        <td><font size="2">RAM failure on data bits <em>nnnn</em> of high byte of memory bus</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">2-1-2-3</font></td>
+        <td align="center"><font size="2">46h</font></td>
+        <td><font size="2">Check ROM copyright notice</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">2-2-3-1</font></td>
+        <td align="center"><font size="2">58h</font></td>
+        <td><font size="2">Test for unexpected interrupts</font></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><font size="2"><em>nnnn</em> = hexadecimal number</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>Xenix - Unix I.P.B 3186 - Specialix XIO configuration under SCO Unix in FT//ex</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../products/main.htm" onMouseOver="act('product')" onMouseOut="inact('product')"><img width="113" height="22" src="../../../images/product1.gif" name="product" alt="Products" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/kbase2.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+       <a HREF="../ipbmain.htm"><img width="113" height="17" src="../../../images/s_ipb.gif" alt="Bulletins (IPBs)" border="0"></a><br>
+       <a HREF="../../guides/guidecon.htm"><img width="113" height="17" src="../../../images/s_guides.gif" alt="Guides" border="0"></a><br>
+       <a HREF="../../faq/main.htm"><img width="113" height="17" src="../../../images/s_faq.gif" alt="FAQs" border="0"></a><br>
+       <a HREF="../../guides/manuals/menu.htm"><img width="113" height="17" src="../../../images/s_manual.gif" alt="Owner's Handbooks" border="0"></a><br>
+       <a HREF="../../../common/infact/menu.htm"><img width="113" height="17" src="../../../images/s_datash.gif" alt="Product Datasheets" border="0"></a><br>
+       <a HREF="../../../common/misc/menu.htm"><img width="113" height="17" src="../../../images/s_misc.gif" alt="Miscellaneous Items" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top">&nbsp;<table border="0" width="100%" bgcolor="#FFFFC0">
+      <tr>
+        <td colspan="2"><font face="Arial,Helvetica" size="4" color="#D60029"><strong>Xenix -
+        Unix I.P.B. 3186 </strong></font>
+        </td>
+        <td valign="bottom"><strong><font size="2">9th March 1995 (JE) </font></strong></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Department </font></strong></td>
+        <td><strong><font size="2">Category </font></strong></td>
+        <td><strong><font size="2">Implementation </font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="3" bgcolor="#000000" height="1"></td>
+      </tr>
+      <tr>
+        <td><font size="2">Unix </font></td>
+        <td><font size="2">Hardware </font></td>
+        <td><font size="2">Advisory </font></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td align="center" width="50%"><font size="2"><a href="ipb3185.htm">Previous IPB</a> </font></td>
+        <td align="center" width="50%"><font size="2"><a href="ipb3187.htm">Next IPB</a> </font></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td><p align="center"><font size="3"><strong>Specialix XIO configuration under SCO Unix
+        in FT//ex </strong></font>
+        <p align="center"><font size="2">See also <a href="ipb3195.htm">IPB 3195</a>. </font></p>
+        <p><font size="2">Apricot has added Specialix XIO and RIO products to its range of I/O
+        connectivity options. See <a href="ipb3187.htm">IPB 3187</a> for configuration of RIO. </font></p>
+        <p><font size="2">Specialix SI and XIO products use the same host card, SI uses the
+        familiar TA (Terminal Adapter) with the card and XIO uses the MTA (Modular Terminal
+        Adapter). However the XIO product provides higher performance, having a maximum baud rate
+        of 115.2Kb, and greater I/O flexibility; Apricot are offering one of the parallel port
+        versions of the MTA in addition to the standard eight port RS-232 model. </font></p>
+        <p><font size="2">Apart from the different type of terminal adapter the XIO product is
+        very similar to install to the SI. The Specialix driver software is the same as that used
+        by SI and must be at least SLXOS version 7.03. </font></p>
+        <p><font size="2">We are supplying the EISA version of the SI/XIO card - product code
+        XB54610. The card should be configured into the machine with the ECU floppy as for any
+        EISA card. The card occupies a 64k address range which is twice the size of the AT
+        variant. However the EISA card can be placed at several addresses above 1Mb as well as
+        addresses below 1Mb, taking into account the following limitations of the FT//ex. Because
+        the card requires a large address range it is best to locate it at an address above the
+        RAM installed and this should be done whenever possible to eliminate clashes with other
+        cards: </font></p>
+        <table border="0" cellspacing="0" cellpadding="3">
+          <tr>
+            <td valign="top"><em><strong><font size="2">Machine type </font></strong></em></td>
+            <td><em><strong><font size="2">Valid addresses offered by ECU </font></strong></em></td>
+            <td><em><strong><font size="2">Invalid addresses offered by ECU </font></strong></em></td>
+            <td valign="top"><em><strong><font size="2">Note </font></strong></em></td>
+          </tr>
+          <tr>
+            <td valign="top"><font size="2">FT//ex 486 (VESA bus - UB product code)</font></td>
+            <td><font size="2">D0000 <br>
+            16Mb + 64k <br>
+            to<br>
+            64Mb + 256k</font></td>
+            <td><font size="2">E0000<br>
+            1025Mb<br>
+            to<br>
+            2052Mb</font></td>
+            <td valign="top"><font size="2">1</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><font size="2">FT//ex Pentium (VESA bus - UC product code)</font></td>
+            <td><font size="2">D0000<br>
+            16Mb + 64k<br>
+            to <br>
+            64Mb + 256k</font></td>
+            <td><font size="2">E0000<br>
+            1025Mb<br>
+            to<br>
+            2052Mb</font></td>
+            <td valign="top"><font size="2">2</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><font size="2">FT//ex 1000 (PCI bus - UD product code) </font></td>
+            <td><font size="2">Any except E0000</font></td>
+            <td><font size="2">E0000</font></td>
+            <td valign="top"><font size="2">3</font></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    <p><font size="2"><strong>Notes</strong> </font><ol>
+      <li><font size="2">Installed RAM must be maximum 64Mb as maximum address for card is 64Mb +
+        256k. Card is not addressable at 1Gb or 2Gb range in this machine. If more than 64Mb RAM
+        then card MUST be at D0000 - likely that other cards will clash though. The E000 address
+        is unavailable. If D0000 has to be used disable the shadow option for this range in the
+        Advanced Configuration menu within the CMOS setup utility
+        (&lt;cntrl&gt;&lt;alt&gt;&lt;escape&gt; at power up). <br>
+        <br>
+        </font></li>
+      <li><font size="2">Card is not addressable at 1Gb or 2Gb range in this machine. If D0000 is
+        used then see note 1 above. The E0000 address is unavailable. If installed RAM is more
+        than 64Mb and D0000 is not suitable then a hole will have to be defined in the RAM by
+        using the Advanced Configuration menu within the CMOS setup utility. Under the Memory
+        Block Configuration option set the Block Size to 64k for one card, 128k for two cards, and
+        set the Starting Address to the binary values for address lines A31-A16 to represent the
+        starting address of the hole. Examples follow: <br>
+        </font><table border="0" cellpadding="3" cellspacing="0">
+          <tr>
+            <td valign="top" width="5"></td>
+            <td valign="top" width="100"><font size="2"><u>Example 1.</u> </font></td>
+            <td valign="top"><font size="2">One card set to an address of 16Mb + 64k. This will need a
+            64k hole set to start at 16Mb + 64k. The settings for these address lines will be: </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="3"><font size="2">0000 0001 0000 0001 </font></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="2"><font size="2">Set the Block Size to 64k and set the Reserved For option
+            to Memory Hole. </font></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td valign="top"></td>
+            <td valign="top"><font size="2"><u>Example 2.</u> </font></td>
+            <td valign="top"><font size="2">Two cards, one set to 64Mb + 64k, the other set to 64Mb +
+            128k. This will need a 128k hole set to start at 64Mb + 64k and end immediately before
+            64Mb + 192k: </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="3"><font size="2">0000 0100 0000 0001 </font></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="2"><font size="2">Set the Block Size to 128k to accommodate two cards each
+            requiring 64k. Set the Reserved For option to Memory Hole. </font></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="2"><font size="2">To set the Starting Address (A31-A16) do the following: </font></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">i. </font></td>
+            <td><font size="2">Cursor down to the Starting Address (A31-A16) option. </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">ii. </font></td>
+            <td><font size="2">The first four bits will be highlighted, cursor down again. </font></td>
+          </tr>
+          <tr>
+            <td valign="top"></td>
+            <td valign="top"><font size="2">iii. </font></td>
+            <td valign="top"><font size="2">The next four bits are now highlighted, use the left and
+            right arrows to set the required bits. Here the bits refer to 128Mb, 64Mb, 32Mb, 16Mb
+            respectively. </font></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><font size="2">iv. </font></td>
+            <td><font size="2">Cursor down again, the next four bits are highlighted. </font></td>
+          </tr>
+          <tr>
+            <td valign="top"></td>
+            <td valign="top"><font size="2">v. </font></td>
+            <td valign="top"><font size="2">Cursor down again, the right most four bits are
+            highlighted. Use the left and right arrows to set the required bits. Here the bits refer
+            to 512k, 256k, 128k, and 64k respectively. </font></td>
+          </tr>
+        </table>
+      </li>
+      <li><font size="2">The E0000 address is unavailable. However the card is addressable at the
+        1Gb and 2Gb ranges offered in the ECU with this PCI motherboard, the highest address being
+        2052Mb. Use these high address settings to eliminate the need to enable the 15Mb-16Mb hole
+        available with this motherboard. </font></li>
+    </ol>
+    <p><font size="2">The card can be set to a range of IRQ's - 3,4,5,6,7,9,10,11,12,14, and
+    15. It can also be set to polled mode. IRQ's 5 and 9 have been used with the card. </font></p>
+    <p><strong><font size="2">Parallel port MTA</font></strong></p>
+    <p><font size="2">We are also offering the seven RS-232 + one parallel port version of the
+    MTA, Product Code XB54612 as well as the eight RS-232 port version, product code XB54611. </font></p>
+    <p><font size="2">This provides a means of attaching a parallel printer to an intelligent
+    I/O adapter thus eliminating the need to use the mother board parallel port which is a
+    Unix overhead and can cause slow system performance when in use. </font></p>
+    <p><font size="2">For this parallel port version of the MTA the three serial ports below
+    the parallel port are marked as &quot;RS 232 *&quot; indicating a reduced pin out. The RI
+    and DTR pins are not implemented. For this reason do not connect modems to these three
+    ports. </font></p>
+    <p><font size="2">The parallel port is treated by the driver in the same way as if the
+    port were serial. For the first MTA attached to the host card the parallel port would be
+    /dev/ttya01. To configure a printer on this port define the device as /dev/ttya01 when
+    setting up the printer in sysadmsh in the normal way. An stty setting is needed in the
+    interface script to define line settings. An stty entry exists in the crnlmap model script
+    and the tab3 entry should be added to it, as below. No baud rate is required though: </font></p>
+    <blockquote>
+      <p align="left"><font face="Courier New" size="2">stty onlcr tab3 opost 0&lt;&amp;1 </font></p>
+    </blockquote>
+    <p align="center"><font size="2">----------oOo---------- </font>
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

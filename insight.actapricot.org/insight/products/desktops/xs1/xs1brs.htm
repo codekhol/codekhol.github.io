@@ -1,0 +1,502 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>XEN-S Venus I BIOS Revision Summary</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><p align="left"><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">XEN-S Venus I BIOS Revision Summary </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.1.38)</font></strong></p>
+    <table border="0" cellpadding="2" bordercolor="#FFFFFF" width="620">
+      <tr>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.3</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/10/88</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">During initialisation the SCSI code was
+        corrupting the NMI vector, this could have caused a system crash on Parity or other NMI.<br>
+        Time-out duration for SCSI device search extended to allow greater chance of detecting
+        Syquest drives.<br>
+        Sign on text corrected - cosmetic change only.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.4</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/10/88</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Winchester type 38 parking cylinder
+        changed from 615 to 663 MiniScribe 30MB drive.<br>
+        Chipset shadowing and EMS disabled on boot (including CTRL-ALT-DEL) this ensures that EMS
+        or shadowing is disabled correctly between boots.<br>
+        VGA set the 8-bit interface only if CGA or MDA card found to be co-resident.<br>
+        RAM configurations now supported are:</font><table border="0" cellpadding="2" width="100%">
+          <tr>
+            <td><font size="2">Total Ram</font></td>
+            <td><font size="2">Bank 0</font></td>
+            <td><font size="2">Bank 1</font></td>
+            <td><font size="2">Bank 2</font></td>
+            <td><font size="2">Bank 3</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">1MB</font></td>
+            <td><font size="2">256KB</font></td>
+            <td><font size="2">256KB</font></td>
+            <td><font size="2">-</font></td>
+            <td><font size="2">-</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2MB</font></td>
+            <td><font size="2">1MB</font></td>
+            <td><font size="2">-</font></td>
+            <td><font size="2">-</font></td>
+            <td><font size="2">-</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">3MB</font></td>
+            <td><font size="2">256KB</font></td>
+            <td><font size="2">256KB</font></td>
+            <td><font size="2">1MB</font></td>
+            <td><font size="2">-</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">5MB</font></td>
+            <td><font size="2">256KB</font></td>
+            <td><font size="2">256KB</font></td>
+            <td><font size="2">1MB</font></td>
+            <td><font size="2">1MB</font></td>
+          </tr>
+        </table>
+        <p><font size="2">Removed Error message when no floppy fitted (for diskless) - set ONBDLAN
+        to TRUE.<br>
+        RAM allocation algorithm changed to allow data segment to be moved by TSR's or .SYS
+        files(this allows WINDOWS 386 to run with a suitable version of the network stack or
+        AMODE.EXE.<br>
+        The RAM allocated by SCSI or Remote boot code is pointed to by a segment address word at
+        04DEh absolute - this is now reserved by Apricot location.<br>
+        DMA channels used by Ethernet disconnected if Ethernet disabled.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.4</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9/12/88</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Winchester type 40 added for Toshiba RLL
+        65MB drive<br>
+        Remove references to 80286 or 80386 from signon for XEN-s (could be 286 or 386).<br>
+        Floppy init. routines modified to override CMOS settings with drive type 4 if drive found
+        but CMOS incorrect.<br>
+        Movable memory scheme still wasn't working properly due to Omninet chip being loaded with
+        a physical address of the data segment at init. time only.<br>
+        When DS is moved the chip was not reprogrammed.<br>
+        Reprogramming is now done on every Omninet command.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.5</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">15/12/88</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Loadall emulation is required for the
+        XEN-s series as only some machines are 286. An extra switch has therefore been added
+        'LALLEMU'. It is OR'ed with the I80386 switch, so if either is true, loadall emulation
+        will be included.<br>
+        VGA drivers have been modified.<br>
+        Apricot logo modified to correct aspect ratio.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.5</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">15/12/88</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The NEAT Chipset was being incorrectly
+        programmed in such a way that the A20 address line could not be gated by standard software
+        - this could have caused problems with certain programs such as Basic and early versions
+        of Wordstar.<br>
+        Correction to memory initialisation code. If Omninet found that SCSI had already set-up
+        the RAM data area it left its own data segment (DS) incorrect.<br>
+        Int. 13h Func 80h restored to just returning the sector size (physical). a new
+        function(83h) was added to take over the old function 80h where ES:BX is the pointer to
+        the SCSI drive table. This is because IO.SYS did not cater for Func 80h corrupting ES.<br>
+        All SCSI drives now have 32spt (512 byte sectors) and 64 heads. This gives 1MB per
+        cylinder. A consequence of this is that old drives need to be re-fdisked and formatted if
+        they are to be used with the new ROM's.<br>
+        This falls in line with the IBM way of dealing with large disks or disks of unknown
+        physical format.<br>
+        The Chipset initialisation routines have been modified to disable page interleave mode
+        when there are an odd number of DRAM banks(e.g. 2MB RAM card), and also to set DRAM wait
+        states to 1 in this case - this could correct problems with Windows 386 and other memory
+        thrashing programs, but will impact performance on 3MB machines(1MB and 5MB machines will
+        be faster). Also the option to use SETNEAT1 to configure the Chipset can now be disabled
+        by using the PASSWORD disable switch (Disables both password and SETNEAT configuration).
+        The 8-bit memory AT bus command delay has now been set to 0 cycle(was 1 cycle).
+        Initialisation code checks for 212 or 212b memory controller and sets Gate A20 control bit
+        as appropriate, also all reserved 212 bits are now set to 1 to allow correct operation of
+        non-B part. When attempting to remote boot from a missing Ethernet network the code did
+        not correctly give the Node address and error messages during the time-out - now
+        corrected.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">&nbsp;1.2.6</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/1/89</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Machine has no colour/Mono switch for
+        selection of CGA or MDA (port is tied to colour setting) - code now uses CMOS RAM. MDA
+        card setting as Mono switch - this should allow system with MDA cards fitted to be set up
+        correctly.<br>
+        Modifications for 10MHz only build incorporated.<br>
+        From mod 21. Function 83h was not added into the range variable for function checking. Now
+        corrected.<br>
+        Normal Winchesters (not removable) started failing the new search algo.<br>
+        Corrected. Removable Winchesters should still use ID 5.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.7</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/1/89</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Corrected Write Pre comp. cylinders for
+        drive types:</font><p><font size="2">36 (CDC 122MB) 0(whole disk)<br>
+        38 (MiniScribe 30MB) 300<br>
+        40 (Toshiba 65MB) 512<br>
+        </font></p>
+        <p><font size="2">Modifications for 10MHz only build incorporated - enabled by VEN10M
+        equate (ifdef), crashes if faster than 10MHz or on 386SX.<br>
+        Chipset Initialisation code rewritten to support differences between 212 and 212B memory
+        controllers, as pr SETNEAT3.<br>
+        Optional flags implemented in CMOS:1(Byte 42 bit 2) to allow shadowing of a phantom VGA
+        BIOS ROM to address 0C0000h (allows installation of IBM OS/2); 2(Byte 42 bits 3 &amp; 4)
+        to allow shadowing of VGA/EGA ROM's for 16K at C0000h and C4000h.<br>
+        Support for Chips SETNEAT program removed. Optional Chipset override data can be set in
+        CMOS by setting flags at 44h = 12h, 45h = 34h followed by register/data pairs, terminating
+        in a 0 register address (Apricot debug use only).<br>
+        I/O Channel wait states and command delays changed to C&amp;T defaults 5 w/s on 8-bit, 2
+        w/s on 16-bit AT cycles; 2 clock delay on I/O cycles; 1 clock delay on 8-bit memory, no
+        clock delay on 16-bit memory.<br>
+        Modified Int. 10h function 1Ah to return AX=1A1Ah instead of 001Ah as per IBM spec.<br>
+        Int. 15h, Function C0h sub model byte return fixed as 01h (8MHz AT) for all machines
+        (problems with OS/2 Machine Identification).<br>
+        Reset all write protect bits on soft reset (cures problem with AMODE LOCK).<br>
+        ADDMEM changed to reflect code size change.<br>
+        VGA Video Memory transfers set to 16-bit for all configurations - masks problem with
+        16-bit decode PAL and allows use of secondary (Mono) video in the system.<br>
+        Optional flag in CMOS (Byte 42 bit 7) to allow use of Shadow RAM at EC000h for SCSI/Remote
+        Boot data area - may be required for 3rd party operating system support.<br>
+        Optional flag word in CMOS (Byte 34h = 54h) to allow use of scan codes instead of ASCII
+        for password verification (required for support of foreign language keyboards) using
+        suitable versions of KP.EXE or SETUP.EXE.<br>
+        Apricot ROM revision changed to 4 to reflect this capability.<br>
+        Logo signon set to maximum speed.<br>
+        Serial and parallel time-outs increased for 386SX processor.<br>
+        Parallel printer print routine error checking code corrected - cures problem with printing
+        under GEM and FoxBase.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.8</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/3/89</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Chipset initialisation changed to 0
+        clock delay on 8-bit memory - corrects problems with video on some machines.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.9</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">29/3/89</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Temporary stack initialised to 30:80h on
+        all returns to real mode, corrects problems with WD7000-FAST SCSI controller.<br>
+        Video Mode 7 underline position corrected, Corrects Word /h and Display Write problems.<br>
+        Bug Fixes for REV G 82C206 tidied &amp; modified, helps CMOS reliability.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.10</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/5/89</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Chipset initialisation changed to give
+        AT bus I/O command delay of 1 (was 2), and AT bus 16-bit cycle wait states of 3 (was 2) -
+        this is to meet the C&amp;T bus timing requirements for the 451 VGA chip.<br>
+        Interrupt 'window' in Hard Disk driver code closed - could cause problems with CDOS and
+        fast Winchester subsystems.<br>
+        Major rework of Chipset initialisation to correct marginal problems on 386SX builds with
+        video failures.<br>
+        Initial support for 1MB daughter card. Requires User to enter total RAM size into CMOS to
+        allow distinction between 2MB and 5MB RAM machines. - This will require a new version of
+        SETUP.EXE (V1.2.6).<br>
+        Scancode flag now cleared along with password switch is set to off - allows recovery from
+        mixed use of old/new KP.EXE.<br>
+        1023 Cylinder variant of CDC drive to allow for Defect Cylinder map introduced - drive
+        type 37.<br>
+        A variable was set incorrectly so that if we used 'hidden' ram and then found we had no
+        SCSI cards, the wrong amount of memory was returned to DOS.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.11</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/6/89</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Cylinder-1 variants of
+        CDC/MiniScribe/Seagate drive types for Defect Cylinder support included as Types 37,39,47
+        (old type +1).<br>
+        EMS wait states set to 1 for all memory configurations, used to be set to 0 for
+        configurations with even numbers of DRAM banks.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.12</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">11/7/89</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Reset from protected mode changed to CR0
+        from Port 92h/8042 (Auto CAD fix).<br>
+        Winchester types Added/Removed&nbsp;</font><table border="0" cellpadding="2" width="100%">
+          <tr>
+            <td><font size="2">Removed</font></td>
+            <td><font size="2">Added</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">Type 30 Newbury 40MB</font></td>
+            <td><font size="2">Type 30 Seagate ST157A Native</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">Type 31 Nippon 20MB</font></td>
+            <td><font size="2">Type 31 MiniScribe 8051A Native</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">Type 32 Nippon 30MB</font></td>
+            <td><font size="2">Type 32 Quantum Pro Drive 40AT</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">Type 33 NatPan 20MB</font></td>
+            <td><font size="2">Type 33 Quantum Pro Drive 80AT</font></td>
+          </tr>
+        </table>
+        <p>&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.13</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/10/89</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Added support for 8MB memory card.<br>
+        New build added to produce ROM's containing Novell remote boot.<br>
+        They do not contain SCSI, Omninet or Ethernet (VX-NET/LANMAN) support.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.14</font></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">+Novell Remote boot (NRB), 8/2/90,
+        Removed jump from Int. 10 to Int.6D to video code. Now Int. 10 goes straight to video
+        code. Fixed DECnet problem.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.14</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">28/2/90</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Problems encountered with 1.2.14 build.
+        So ROM's re-released as 1.2.15's.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.15</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/3/90</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Stopped corruption of AX at the start of
+        the CHIPINIT routine. This cured the warm boot memory error problem with 82C212 and
+        82C212B chips.<br>
+        Included support for new hard disk - 170 MB Quantum. Type 39.<br>
+        Replaces old type 39 (RLL MiniScribe 30MB w/defect table).<br>
+        Stopped shut-down type 07 being written into CMOS when exiting protected mode on a 386SX.
+        This is the /286 method of entering real mode. Using this method on a 386SX caused 386 LIM
+        memory drivers to crash on reboot.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.16</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">11/5/90</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Added code to take note of CMOS byte 41h
+        bit 5 to slow the I/O bus to 3 wait states. Requires new version of Generic reference disk
+        to support this option.<br>
+        New build supported Venus 2. Should make Venus 1 build obsolete as soon boards are in
+        production. Venus 1 build retained for field updates.<br>
+        Software video disable for Venus 2. This utilises port 02Bh to disable the 451 on board.<br>
+        ROM's signon for Venus 2 changed to &quot;XEN-S II BIOS&quot;. This enables easier
+        identification of Venus 1 and Venus 2 ROM's - to try to prevent confusion !<br>
+        Added conditional compile statements so that different builds of ROM's can have different
+        correction numbers (to align on 16 Byte boundaries).&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">11/5/90</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changed call address for Novell remote
+        boot code - because it's now inserted in a different place.<br>
+        Altered type 30 (Seagate ST157A Native) - Number of cylinders was wrong.<br>
+        Included a new type 29 - Seagate ST125A Native. This replaces the old NEC D3126
+        20MB.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">23/5/90</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Fix for CTRL-ALT-DEL with lim 386 driver
+        loaded (CDS PRF No 332).<br>
+        Fix for CTRL-ALT-DEL with extended memory set, and the correct detection of 82C212 and
+        82C212B chip.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.16 NRB</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">30/5/90</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Added code to check if a security
+        processor exists. If not, security is ignored.<br>
+        Secure Floppy boot now uses a global bit in the SDP registers to enable Floppy boot.<br>
+        Took out 452 routines for things like write dot and scrolling routines.&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.17</font></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.2.17 NRB</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">16/10/90</font></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3.10.17</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4/9/91</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Change CRCT values to match IBM VGA.<br>
+        New logo implemented.<br>
+        Support for 8-bit Video cards.<br>
+        Fixes bug in Int. 10 mode 11 function 09 when writing char attribute of 00.<br>
+        Fixes for ATLAS software problems.<br>
+        Fixes IBM Link way problems.<br>
+        Support for 50 and 100 MB Quantum drives added.</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

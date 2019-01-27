@@ -1,0 +1,968 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>LS Pro (Caracal) Motherboard Layout</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><p align="left"><font size="2"><br>
+    </font><strong><font face="Arial,Helvetica" size="4" color="#D60029">LS Pro (Caracal)
+    Motherboard Layout </font><font face="Arial,Helvetica" color="#D60029" size="3">(Rev&nbsp;1.5.1)</font></strong></p>
+    <div align="center"><center><table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><font size="2"><img src="graphics/lspcmbd.gif" border="0" usemap="#BoardMap"
+        width="226" height="304"></font></td>
+        <td><font size="2"><img src="graphics/lspcopt.gif" border="0" width="296" height="235"
+        usemap="#MainMap"></font><!--webbot bot="HTMLMarkup" startspan --><MAP NAME="MainMap">
+<AREA SHAPE="RECT" COORDS="1, 206, 295, 234" HREF="#lspc7">
+<AREA SHAPE="RECT" COORDS="2, 174, 138, 202" HREF="#lspc6">
+<AREA SHAPE="RECT" COORDS="1, 141, 201, 169" HREF="#lspc5">
+<AREA SHAPE="RECT" COORDS="2, 105, 172, 134" HREF="#lspc4">
+<AREA SHAPE="RECT" COORDS="3, 71, 139, 97" HREF="#lspc3">
+<AREA SHAPE="RECT" COORDS="2, 38, 185, 66" HREF="#lspc2">
+<AREA SHAPE="RECT" COORDS="3, 4, 203, 33" HREF="#lspc1">
+</MAP>
+<!--webbot
+        bot="HTMLMarkup" endspan --></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="lspc1"></a></font><font size="3"><strong>RAM Configurations</strong></font><font
+    size="2"> </font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top" width="25%"><p align="center"><strong><font size="2">On-Board</font></strong></td>
+        <td valign="top" width="25%"><p align="center"><strong><font size="2">SIMM 1</font></strong></td>
+        <td valign="top" width="25%"><p align="center"><strong><font size="2">SIMM 2</font></strong></td>
+        <td valign="top" width="24%"><p align="center"><strong><font size="2">Total</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">-</font></td>
+        <td valign="top"><p align="center"><font size="2">-</font></td>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">-</font></td>
+        <td valign="top"><p align="center"><font size="2">8 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">12 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">8 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">-</font></td>
+        <td valign="top"><p align="center"><font size="2">12 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">8 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">16 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">8 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">8 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">20 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">-</font></td>
+        <td valign="top"><p align="center"><font size="2">20 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">24 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">8 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">28 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">36 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">32 Mb (See Note)</font></td>
+        <td valign="top"><p align="center"><font size="2">-</font></td>
+        <td valign="top"><p align="center"><font size="2">36 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">32 Mb (See Note)</font></td>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">40 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">32 Mb (See Note)</font></td>
+        <td valign="top"><p align="center"><font size="2">8 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">44 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">32 Mb (See Note)</font></td>
+        <td valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">52 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">4 Mb</font></td>
+        <td valign="top"><p align="center"><font size="2">32 Mb (See Note)</font></td>
+        <td valign="top"><p align="center"><font size="2">32 Mb (See Note)</font></td>
+        <td valign="top"><p align="center"><font size="2">68 Mb</font></td>
+      </tr>
+      <tr>
+        <td valign="top" colspan="4"><p align="center"><font size="2">Memory Expansion consists of
+        two 72-pin SIMM sockets, no parity, 70ns or faster.</font></td>
+      </tr>
+    </table>
+    <p><strong><font size="2">Memory Expansion Note</font></strong></p>
+    <p><font size="2">For the correct operation of this device in Caracal and to gain the best
+    system performance, this device is to be ONLY used in Caracal systems with a Cache Module
+    installed. Its use in cacheless machines is NOT recommended.</font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="lspc2"></a></font><font size="3"><strong>Ethernet Options</strong></font><font
+    size="2"> </font></p>
+    <table border="0" cellpadding="2" width="451">
+      <tr>
+        <td valign="top"><font size="2">Ethernet AMD PCNet-32 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">Controller 32-bit VL local bus master controller </font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">Interfaces</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">UTP RJ-45 connector on motherboard (10Base-T) </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">Thin Wire On-board shielded BNC connector (10Base-2) </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">Thick Wire Connector via 16 way IDC header (10Base-5) </font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">PCMCIA Token Ring card XB53637 </font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="lspc3"></a></font><font size="3"><strong>Disk Drives</strong></font></p>
+    <table border="0" cellpadding="2" width="385">
+      <tr>
+        <td valign="top" width="31%"><font size="2">170MB</font></td>
+        <td valign="top" width="40%"><font size="2"><a
+        href="../../../common/drives/hard/qlps170a.htm">Quantum LPS 170 AT</a></font></td>
+        <td valign="top" width="28%"><font size="2">P/N SU52565 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">210MB</font></td>
+        <td valign="top"><font size="2"><a href="../../../common/drives/hard/qlps210a.htm">Quantum
+        LPS 210 AT</a></font></td>
+        <td valign="top"><font size="2">P/N 15344231 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">270MB</font></td>
+        <td valign="top"><font size="2"><a href="../../../common/drives/hard/qlps270a.htm">Quantum
+        LPS 270 AT</a></font></td>
+        <td valign="top"><font size="2">P/N SU52577 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">270MB</font></td>
+        <td valign="top"><font size="2"><a href="../../../common/drives/hard/qmv270at.htm">Quantum
+        MV270AT</a></font></td>
+        <td valign="top"><font size="2">P/N SU53459 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">365MB</font></td>
+        <td valign="top"><font size="2"><a href="../../../common/drives/hard/qlt365at.htm">Quantum
+        LT 365 AT</a></font></td>
+        <td valign="top"><font size="2">P/N 15323931 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">540MB</font></td>
+        <td valign="top"><font size="2"><a href="../../../common/drives/hard/qlps540a.htm">Quantum
+        LPS 540 AT</a></font></td>
+        <td valign="top"><font size="2">P/N SU52578 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">540MB</font></td>
+        <td valign="top"><font size="2"><a href="../../../common/drives/hard/qmv540at.htm">Quantum
+        MV540AT</a></font></td>
+        <td valign="top"><font size="2">P/N SU53460 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">640MB</font></td>
+        <td valign="top"><font size="2"><a href="../../../common/drives/hard/qfb640at.htm">Quantum
+        FB 640 AT</a></font></td>
+        <td valign="top"><font size="2">P/N SU56070</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">730MB</font></td>
+        <td valign="top"><font size="2"><a href="../../../common/drives/hard/qlt730at.htm">Quantum
+        LT 730 AT</a></font></td>
+        <td valign="top"><font size="2">P/N 15321531 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">850MB</font></td>
+        <td valign="top"><font size="2"><a href="../../../common/drives/hard/qtb850at.htm">Quantum
+        TB 850 AT</a></font></td>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"></td>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2"><a href="../../../common/drives/floppy/so420-1f.htm">2MB
+        3.5&quot; Floppy</a></font></td>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">P/N 15176831 </font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"></td>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2"><a href="../../../common/drives/cd/cuextnlc.htm">BP049</a></font></td>
+        <td valign="top"><font size="2">External CD-ROM drive </font></td>
+        <td valign="top"></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="lspc4"></a></font><font size="3"><strong>Switch Settings</strong></font><font
+    size="2"> </font></p>
+    <p align="center"><font size="2"><a name="pl6"></a>PL6 CMOS Jumper </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl6.gif" width="381" height="176"></font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl7"></a>PL7 Speaker </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl7.gif" width="217" height="177"></font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl10"></a>PL10 BIOS Protection </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl10.gif" width="381" height="176"></font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl12"></a>PL12 IR Receive </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl12.gif" width="217" height="177"></font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl14"></a>PL14 Fan </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl14.gif" width="219" height="178"></font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl18"></a>PL18 Ethernet Selection </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl18.gif" width="383" height="176"></font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl1920"></a>PL19 / 20 Speed Selection Jumper </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspc1920.gif" width="383" height="177"></font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl21"></a>PL21 Processor Voltage </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl21.gif" width="383" height="177"></font></p>
+    <p align="center"><font size="2">&nbsp;Do not alter from default position</font></p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl23"></a>PL23 Processor Voltage </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl23.gif" width="383" height="176"></font></p>
+    <p align="center"><font size="2">&nbsp;Do not alter from default position</font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl24"></a>PL24 Processor Voltage </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl24.gif" width="383" height="177"></font></p>
+    <p align="center"><font size="2">&nbsp;Do not alter from default position</font></p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><font size="2"><a name="pl25"></a>PL25 Processor Jumper </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl25.gif" width="383" height="176"></font></p>
+    <p><font size="2">&nbsp;&nbsp;</font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="lspc5"></a></font><font size="3"><strong>Additional Options</strong></font><font
+    size="2"> </font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top" width="73%"><strong><font size="2">Other Memory Expansion</font></strong></td>
+        <td valign="top" width="27%"></td>
+      </tr>
+      <tr>
+        <td valign="top" width="73%"><font size="2">256Kb Cache RAM upgrade</font></td>
+        <td valign="top" width="27%"><font size="2">BP53934 </font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="73%"></td>
+        <td valign="top" width="27%"></td>
+      </tr>
+      <tr>
+        <td valign="top" width="73%"><strong><font size="2">Modems</font></strong></td>
+        <td valign="top" width="27%"></td>
+      </tr>
+      <tr>
+        <td valign="top" width="73%"><font size="2">PCMCIA fax/modem card</font></td>
+        <td valign="top" width="27%"><font size="2">XB53638 </font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="lspc6"></a></font><font size="3"><strong>Rear Panel</strong></font><font
+    size="2"> </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcrear.gif" border="0" width="461"
+    height="234"></font></p>
+    <div align="center"><center><table border="2" cellpadding="2">
+      <tr>
+        <td valign="top" width="33%"><font size="2">1 - Security Loop</font></td>
+        <td valign="top" width="33%"><font size="2">2 - Security loop</font></td>
+        <td valign="top" width="33%"><font size="2">3 - PCMCIA Slots</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="33%"><font size="2">4 - Power Out</font></td>
+        <td valign="top" width="33%"><font size="2">5 - Voltage Switch</font></td>
+        <td valign="top" width="33%"><font size="2">6 - Power In</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="33%"><font size="2">7 - <a
+        href="../../../common/ports/ports.htm#serial25">Serial Port</a></font></td>
+        <td valign="top" width="33%"><font size="2">8 - <a
+        href="../../../common/ports/ports.htm#parallel">Parallel Port</a></font></td>
+        <td valign="top" width="33%"><font size="2">9 - <a
+        href="../../../common/ports/ports.htm#video">VGA Port</a></font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="33%"><font size="2">10 - UTP Connector</font></td>
+        <td valign="top" width="33%"><font size="2">11 - Thick Ethernet</font></td>
+        <td valign="top" width="33%"><font size="2">12 - Thin Ethernet</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="33%"><font size="2">13 - <a
+        href="../../../common/ports/ports.htm#keyboard">Mouse Port</a></font></td>
+        <td valign="top" width="33%"><font size="2">14 - <a
+        href="../../../common/ports/ports.htm#keyboard">Keyboard Port</a></font></td>
+        <td valign="top" width="33%"><font size="2">15 - Microphone Socket</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="33%"><font size="2">16 - Headphone Socket</font></td>
+        <td valign="top" width="33%"><font size="2">17 - Volume Switch</font></td>
+        <td valign="top" width="33%">&nbsp;</td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="lspc7"></a></font><font size="3"><strong>CMOS Discharge</strong></font><font
+    size="2"> </font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcpl6.gif" width="381" height="176"></font></p>
+    <p align="center"><font size="2">To enter CMOS SETUP press <a href="#setup1">ALT-S</a> key
+    combination when invited to do so at boot up.&nbsp;</font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup1"></a></font><font size="3"><strong>Basic Configuration
+    Options</strong></font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcsetu.gif" width="540" height="408"><!--webbot
+    bot="HTMLMarkup" startspan --><MAP NAME="SetupMap">
+			<AREA SHAPE=RECT COORDS="16,43,154,238" HREF="#setup-harddisks">
+			<AREA SHAPE=RECT COORDS="16,237,58,273" HREF="#setup-harddisks">
+			<AREA SHAPE=RECT COORDS="57,253,153,273" HREF="#setup-harddisks">
+			<AREA SHAPE=RECT COORDS="147,237,154,254" HREF="#setup-harddisks">
+			<AREA SHAPE=RECT COORDS="58,237,148,254" HREF="#setup-udharddisks">
+			<AREA SHAPE=RECT COORDS="16,280,155,358" HREF="#setup-floppydisk">
+			<AREA SHAPE=RECT COORDS="159,43,388,114" HREF="#setup-memory">
+			<AREA SHAPE=RECT COORDS="161,122,388,208" HREF="#setup-poweronsound">
+			<AREA SHAPE=RECT COORDS="160,214,389,273" HREF="#setup-poweronpassword">
+			<AREA SHAPE=RECT COORDS="160,280,388,357" HREF="#setup-monitortype">
+			<AREA SHAPE=RECT COORDS="394,214,526,272" HREF="#setup-startup">
+			<AREA SHAPE=RECT COORDS="395,280,525,357" HREF="#setup-bootdevice">
+			<AREA SHAPE=RECT COORDS="435,167,527,184" HREF="#setup-advanced">
+</MAP>
+<!--webbot bot="HTMLMarkup" endspan --></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-harddisks"></a></font><font size="3"><strong>Hard Disk</strong></font></p>
+    <p><font size="2">The disk 1 information box shows the type and capacity of the computer's
+    fixed hard disk drive, where known. Beneath this are three option buttons:</font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top" width="20%"><font size="2"><strong>Option</strong></font></td>
+        <td valign="top"><font size="2"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">None</font></td>
+        <td valign="top"><font size="2">Select this if your computer does not have a fixed hard
+        disk. This prevents the BIOS looking for a hard disk, and so speeds up the boot sequence.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">Autodetect</font></td>
+        <td valign="top"><font size="2">Select this if your computer has a hard disk drive
+        supplied by Apricot. In this case the BIOS will be able to detect the drive type
+        automatically.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">User-defined</font></td>
+        <td valign="top"><font size="2">Select this if your computer has a third-party hard disk
+        drive not supplied by Apricot. You must then define the characteristics of the drive.</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#setup-udharddisks">To define a Third-party hard disk drive:</a></font></p>
+    <p><font size="2"><a href="#setup1"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-udharddisks"></a></font><font size="3"><strong>User
+    Defined Hard Disks</strong></font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcseth.gif" width="425" height="214"></font></p>
+    <p align="left"><font size="2">In the User-defined Hard Disks dialog box, choose the
+    Detect button to see if BIOS Setup can detect what type of drive is fitted. If it can,
+    then the characteristics of the drive appear in the dialog.</font></p>
+    <p align="left"><font size="2">If BIOS Setup cannot detect the drive type, you must
+    manually enter the drive's number of cylinders, heads and sectors, and its capacity, in
+    the text boxes provided.</font></p>
+    <p align="left"><font size="2">Choose the Save button.</font></p>
+    <p><font size="2"><a href="#setup1"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-floppydisk"></a></font><font size="3"><strong>Floppy Disk</strong></font></p>
+    <p><font size="2">The information box shows the type and capacity of the computer's
+    diskette drive. Beneath it are two option buttons:</font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top" width="20%"><font size="2"><strong>Option</strong></font></td>
+        <td valign="top"><font size="2"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">None</font></td>
+        <td valign="top"><font size="2">Select this if your computer does not have a diskette
+        drive. This prevents the BIOS looking for a system diskette, and so speeds up the boot
+        sequence.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">3.5&quot; 1.44M</font></td>
+        <td valign="top"><font size="2">Select this if your computer has a 1.44 Mbyte diskette
+        drive.</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#setup1"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-memory"></a></font><font size="3"><strong>Memory</strong></font></p>
+    <p><font size="2">These information boxes show the total amount of system memory
+    (motherboard memory plus any additional memory modules, minus the 384 Kbytes upper memory
+    area) and the amount of extended memory (total memory minus the 640 Kbytes of conventional
+    memory).</font></p>
+    <p><font size="2"><a href="#setup1"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-poweronsound"></a></font><font size="3"><strong>Power-on
+    Sound</strong></font></p>
+    <p><font size="2">When this option is enabled a tone will sound whenever the computer is
+    turned on.</font></p>
+    <p><font size="2">To set the power-on sound: </font><ol type="1" start="1">
+      <li><font size="2">In the Power-on Sound group, select the Enable check box.</font></li>
+      <li><font size="2">Choose the Test button to audition the Power-on sound.</font></li>
+      <li><font size="2">Use the scroll bar to adjust the volume of the Power-on sound as
+        required.</font></li>
+    </ol>
+    <p><font size="2"><a href="#setup1"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-poweronpassword"></a></font><font size="3"><strong>Power-on
+    Password</strong></font></p>
+    <p><font size="2">If this option is enabled a password must be entered every time the
+    computer is turned on.</font></p>
+    <p><font size="2">To set a power-on password: </font><ol type="1" start="1">
+      <li><font size="2">In the Power-on Password group, select Enable check box.</font></li>
+      <li><font size="2">Select the text box, and type a password of up to seven characters using
+        A-Z and 0-9. The password is not case-sensitive and cannot include space characters. To
+        preserve security, the password is not displayed as you type but is shown as a string of
+        asterisks.</font></li>
+    </ol>
+    <p><font size="2">The power-on password operates in addition to the security system
+    features, if enabled.</font></p>
+    <p><font size="2"><a href="#setup1"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-monitortype"></a></font><font size="3"><strong>Monitor
+    Type</strong></font></p>
+    <p><font size="2">These three options alter the timings of the video signals provided by
+    the computer to suit a variety of different types of monitor.</font></p>
+    <p><font size="2">It is important that you make the correct selection for your monitor.
+    See the Apricot Help on the on-board EVGA controller for up-to-date advise on the choices
+    to make for Apricot monitors.</font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top" colspan="2"><strong><font size="2">Option Resolution and refresh rates</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">SVGA</font></td>
+        <td valign="top"><font size="2">640 x 480 @ 60 Hz</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">800 x 600 @ 56 Hz</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">1024 x 768 @ 87 Hz Interlaced</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">VGA/EVGA</font></td>
+        <td valign="top"><font size="2">640 x 480 @ 60 Hz</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">800 x 600 @ 60 Hz</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">1024 x 768 @ 60 Hz</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">EVGA (high refresh)</font></td>
+        <td valign="top"><font size="2">640 x 480 @ 72 Hz</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">800 x 600 @ 72 Hz</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">1024 x 768 @ 70 Hz</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">1280 x 1024 @ 60 Hz</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#setup1"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-startup"></a></font><font size="3"><strong>Startup</strong></font></p>
+    <p><font size="2">The Startup options control how the display looks during POST, when BIOS
+    sign-on and hardware configuration messages are displayed.</font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top" width="20%"><font size="2"><strong>Option</strong></font></td>
+        <td valign="top"><font size="2"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">Graphics</font></td>
+        <td valign="top"><font size="2">During POST, a dialog box is displayed giving information
+        about your computer, including the BIOS version, type of video controller and Ethernet
+        node address. The dialog includes a Setup button for accessing BIOS Setup.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">Text</font></td>
+        <td valign="top"><font size="2">The same information is displayed, but using only text. A
+        message invites you to &quot;Press Alt-S for SETUP&quot;.</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#setup1"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-bootdevice"></a></font><font size="3"><strong>Boot Device</strong></font></p>
+    <p><font size="2">These options allow you to select where you want the computer to look
+    for an operating system when it boots.</font></p>
+    <p><font size="2">Remote or network booting using Ethernet RPL won't work unless there's
+    an RPL server somewhere in your network. Don't attempt to boot your computer in this way
+    without first checking with the network administrator.</font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top" width="20%"><font size="2"><strong>Option</strong></font></td>
+        <td valign="top"><font size="2"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">Local</font></td>
+        <td valign="top"><font size="2">The computer looks for a system diskette or a bootable
+        hard disk partition (in that order).</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">Ethernet RPL</font></td>
+        <td valign="top"><font size="2">The computer attempts to load an operating system from a
+        server elsewhere on the network, using the on-board Ethernet adapter and the Remote
+        Program Load (RPL) code in the BIOS ROM.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">PCMCIA Card</font></td>
+        <td valign="top"><font size="2">This option is provided for future development of BIOS
+        Setup; it is greyed-out in the current version.</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#setup1"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-advanced"></a></font><font size="3"><strong>Advanced
+    Configuration Options</strong></font></p>
+    <p align="center"><font size="2"><img src="graphics/lspcseta.gif" width="538" height="428"><!--webbot
+    bot="HTMLMarkup" startspan --><MAP NAME="AdvancedMap">
+			<AREA SHAPE=RECT COORDS="13,39,210,102" HREF="#setup-parallel">
+			<AREA SHAPE=RECT COORDS="20,120,113,136" HREF="#setup-disablefd">
+			<AREA SHAPE=RECT COORDS="20,141,113,158" HREF="#setup-disablefdw">
+			<AREA SHAPE=RECT COORDS="20,162,113,178" HREF="#setup-disablefdb">
+			<AREA SHAPE=RECT COORDS="20,182,113,198" HREF="#setup-disableparallel">
+			<AREA SHAPE=RECT COORDS="20,202,114,218" HREF="#setup-disableserial1">
+			<AREA SHAPE=RECT COORDS="20,223,114,239" HREF="#setup-disableserial2">
+			<AREA SHAPE=RECT COORDS="20,243,159,259" HREF="#setup-disablehdc">
+			<AREA SHAPE=RECT COORDS="20,264,92,280" HREF="#setup-disableethernet">
+			<AREA SHAPE=RECT COORDS="20,284,135,300" HREF="#setup-disablebioscopy">
+			<AREA SHAPE=RECT COORDS="20,305,101,321" HREF="#setup-disable486cache">
+			<AREA SHAPE=RECT COORDS="20,326,120,341" HREF="#setup-disableextcache">
+			<AREA SHAPE=RECT COORDS="20,346,123,362" HREF="#setup-disablebiosshadow">
+			<AREA SHAPE=RECT COORDS="20,366,146,382" HREF="#setup-disablehdtranslation">
+			<AREA SHAPE=RECT COORDS="219,39,421,102" HREF="#setup-energy">
+			<AREA SHAPE=RECT COORDS="220,109,422,385" HREF="#setup-cpupower">
+</MAP>
+<!--webbot bot="HTMLMarkup" endspan --></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-parallel"></a></font><font size="3"><strong>Parallel Port</strong></font></p>
+    <p><font size="2">These three options allow you to set the mode of the parallel port.</font></p>
+    <table border="0" cellpadding="2" width="100%">
+      <tr>
+        <td valign="top" width="20%"><font size="2"><strong>Option</strong></font></td>
+        <td valign="top"><font size="2"><strong>Description</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">Standard</font></td>
+        <td valign="top"><font size="2">Standard IBM AT-compatible bi-directional
+        &quot;Centronics&quot; mode. EPP Compatible Compatible with the Enhanced Parallel Port
+        standard.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" width="20%"><font size="2">ECP Compatible</font></td>
+        <td valign="top"><font size="2">Compatible with the Microsoft/Hewlett Packard Extended
+        Capabilities Port standard.</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disablefd"></a></font><font size="3"><strong>Disable
+    Floppy Disk</strong></font></p>
+    <p><font size="2">Disables the diskette drive controller.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disablefdw"></a></font><font size="3"><strong>Disable
+    Floppy Write</strong></font></p>
+    <p><font size="2">Disables the computer's ability to write to the diskette drive.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disabledfdb"></a></font><font size="3"><strong>Disable
+    Floppy Boot</strong></font></p>
+    <p><font size="2">Disables the computer's ability to boot from a system diskette in the
+    diskette drive.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disableparallel"></a></font><font size="3"><strong>Disable
+    Parallel Port</strong></font></p>
+    <p><font size="2">Disables the parallel port, freeing interrupt IRQ7 and I/O ports
+    3BCh-3BFh. However, IRQ7 can usually be &quot;double-booked&quot; without affecting the
+    operation of the parallel port.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disableserial1"></a></font><font size="3"><strong>Disable
+    Serial Port 1</strong></font></p>
+    <p><font size="2">Disables serial port 1, freeing interrupt IRQ4 and I/O ports 3F8h-3FFh.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disableserial2"></a></font><font size="3"><strong>Disable
+    Serial Port 2</strong></font></p>
+    <p><font size="2">Disables serial port 2, freeing interrupt IRQ3 and I/O ports 2F8h-2FFh.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disablehdc"></a></font><font size="3"><strong>Disable
+    Hard Disk Controller</strong></font></p>
+    <p><font size="2">Disables the hard disk controller, freeing I/O ports 1F0h-1F8h and
+    3F6h-3F7h.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-ethernet"></a></font><font size="3"><strong>Ethernet</strong></font></p>
+    <p><font size="2">Disables the on-board network adapter, freeing interrupt IRQ5 and I/O
+    ports 300h-317h. (However, interrupt IRQ5, even if free, cannot be used by the PCMCIA
+    interface.)</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disablebioscopy"></a></font><font size="3"><strong>Disable
+    BIOS Copy at 16MB</strong></font></p>
+    <p><font size="2">Disables the &quot;copy&quot; of the computer's BIOS ROM which normally
+    appears in the computer's address space just below 16Mbytes (between FE0000h and FFFFFFh).
+    This is not a real copy, just the same ROM addressed through a different (higher) set of
+    memory addresses. This copy must be disabled if your computer actually has 16Mbytes (or
+    more) system memory, or the two will conflict.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disable486cache"></a></font><font size="3"><strong>Disable
+    i486 Cache</strong></font></p>
+    <p><font size="2">Disables the memory cache inside the system processor.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disableextcache"></a></font><font size="3"><strong>Disable
+    External Cache</strong></font></p>
+    <p><font size="2">Disables the external, or second-level memory cache, outside the system
+    processor.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disablebiosshadow"></a></font><font size="3"><strong>Disable
+    BIOS Shadowing</strong></font></p>
+    <p><font size="2">Disables the scheme whereby the contents of the computer's BIOS ROM are
+    copied into system memory, where they can be accessed more quickly.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-disablehdtranslation"></a></font><font size="3"><strong>Disable
+    Large HD Translation</strong></font></p>
+    <p><font size="2">Disables the scheme (known as Extended CHS) whereby the BIOS is able to
+    access hard disk drives of greater than 504 Mbytes capacity. You might need to do this if
+    your operating system does not support Extended CHS, in which case the drive will appear
+    to have less than its full capacity.</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-energy"></a></font><font size="3"><strong>Energy
+    Conservation</strong></font></p>
+    <p><font size="2">Currently Unavailable</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="setup-cpupower"></a></font><font size="3"><strong>CPU Power
+    Management</strong></font></p>
+    <p><font size="2">Currently Unavailable</font></p>
+    <p><font size="2"><a href="#setup-advanced"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

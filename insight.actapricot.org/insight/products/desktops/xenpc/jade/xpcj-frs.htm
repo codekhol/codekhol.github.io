@@ -1,0 +1,603 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>XEN-PC (Jade) ROM BIOS Release Summary</title>
+</head>
+
+<body background="../../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../../default.htm"><img width="41" height="32" src="../../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../main.htm"><img width="113" height="22" src="../../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../../prodid/idmenu.htm"><img width="113" height="17" src="../../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../../timeline/timeline.htm"><img width="113" height="17" src="../../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../dskmenu.htm"><img width="113" height="17" src="../../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../../servers/svrmenu.htm"><img width="113" height="17" src="../../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../../monitors/monpdc.htm"><img width="113" height="17" src="../../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../../common/drives/storage.htm"><img width="113" height="17" src="../../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">XEN-PC (Jade) ROM BIOS Release Summary </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.17)</font></strong></h2>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3-01-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">31/8/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Fixes a problem whereby Memory Errors
+        would be reported if &lt;ALT-S&gt; was pressed repeatedly during the Memory test following
+        a cold boot.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3-01</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">31/8/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Fixes a problem whereby Memory Errors
+        would be reported if &lt;ALT-S&gt; was pressed repeatedly during the Memory test following
+        a cold boot.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3-04-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/9/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A POST error is now generated and
+        'SETUP' entered if a cache module is removed or added.<br>
+        <br>
+        The power-on password can no longer be changed from the password prompt.<br>
+        <br>
+        The base I/O address of the parallel port can now be changed to cope with problems
+        encountered with certain adapter cards, e.g. Matrox PCI video card.<br>
+        <br>
+        Extended CHS support for large drives can now be disabled.<br>
+        <br>
+        Included warning in 'SETUP' that EPP support is not available for primary parallel port
+        I/O base address. If warning is ignored, the secondary parallel port I/O base address is
+        used anyway.<br>
+        <br>
+        If the on-board video is disabled, 'SETUP' will now display 'ADAPTER' rather than 'CL5430'
+        in the info' box.<br>
+        <br>
+        POST error pop-up display boxes no longer corrupt the 'stop' icon.<br>
+        <br>
+        The 'SETUP' options for hard disk and floppy disk configuration can now be selected from
+        the keyboard.<br>
+        <br>
+        If a second floppy drive is defined, but not connected, 'SETUP' now reports an invalid
+        configuration error.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3-04-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">28/9/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Power-on password entry changed to match
+        Caracal, i.e. if more than seven characters are typed, only the first seven are used for
+        password verification.<br>
+        <br>
+        The 'info' box now displays actual HDU size regardless of 'Large disk support' setting.<br>
+        <br>
+        'Large disk support' translation altered so that DOS, with 'Large disk support' disabled,
+        'sees' the first 1024 cylinders, rather than the actual disk size modulo 1024.<br>
+        <br>
+        The PCI IDE interface programming has been changed to match Ruby.<br>
+        <br>
+        'SETUP' changed so that buttons for HDU 3 &amp; 4 have now been 'greyed out'.<br>
+        <br>
+        'SETUP' changed to count number of 'Auto detect' drives as number of drives 'expected'.<br>
+        <br>
+        'SETUP' changed so that the 'expected' L2 cache type is not overwritten if the L1 cache is
+        disabled.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3-04</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/10/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">There have been no functional changes
+        since release 3-04-02 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3-05-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7/11/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for 4 line RAS has been added.<br>
+        <br>
+        Feature card support has been provided for Ethernet and Security.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3-05-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">18/11/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The security 'ownership' string and
+        logon statistics are now displayed in Graphical boot.<br>
+        <br>
+        The Cache configuration error seen on the second after clearing CMOS has been fixed.<br>
+        <br>
+        Power-on sound support has been added.<br>
+        <br>
+        Current PCI IRQ routing is now cleared before setting new routing in 'SETUP'.<br>
+        <br>
+        Known Issues<br>
+        A problem occurs with the Feature card PC-net drives for WFW3.11, causing hard disk read
+        failures.<br>
+        <br>
+        Power-on sound dialog box is sometimes 'greyed' out on boot.<br>
+        <br>
+        Power-on sound volume slider does not stay at maximum setting.<br>
+        <br>
+        Security logon count display shows information for invalid logon attempts, even if there
+        were no invalid logons.<br>
+        <br>
+        Main 'SETUP' changes are lost if the network or security settings are altered.<br>
+        <br>
+        The network 'SETUP' save button re-boots the machine.<br>
+        <br>
+        The help text for the network 'SETUP' exit button suggests that the machine will re-boot.
+        This is not the case.<br>
+        <br>
+        Changing the base address of the parallel port does not alter the PCI IRQ routing.<br>
+        <br>
+        The power-on sound volume slider 'down' button can disable the power-on sound.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3-05-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/11/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The PC speaker volume is now reset on
+        warm boot.<br>
+        <br>
+        The disk errors encountered with the PCnet ISA+ drivers have now been resolved.<br>
+        <br>
+        The sound system detection logic is no longer skipped on warm boot.<br>
+        <br>
+        Security logon statistics are not displayed for zero logons.<br>
+        <br>
+        Changes made in main 'SETUP' should be retained after entering the security or network
+        'SETUP' screens.<br>
+        <br>
+        Known Issues<br>
+        The network 'SETUP' save button re-boots the machine.<br>
+        <br>
+        The help text for the network 'SETUP' exit button suggests that the machine will re-boot.
+        This is not the case.<br>
+        <br>
+        Changing the base address of the parallel port does not alter the PCI IRQ routing.<br>
+        <br>
+        The power-on sound volume slider 'down' button can disable the power-on sound.<br>
+        <br>
+        The Microsoft 'MSAV' anti-virus software locks up.<br>
+        <br>
+        Clearing CMOS with the motherboard jumper does not reset the Ethernet configuration.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3-05-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/11/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The feature card BIOS is now left paged
+        into the system memory address space so it can be detected by software.<br>
+        <br>
+        Known Issues<br>
+        The network 'SETUP' save button re-boots the machine.<br>
+        <br>
+        The help text for the network 'SETUP' exit button suggests that the machine will re-boot.
+        This is not the case.<br>
+        <br>
+        Changing the base address of the parallel port does not alter the PCI IRQ routing.<br>
+        <br>
+        The power-on sound volume slider 'down' button can disable the power-on sound.<br>
+        <br>
+        The Microsoft 'MSAV' anti-virus software locks up.<br>
+        <br>
+        Clearing CMOS with the motherboard jumper does not reset the Ethernet configuration.<br>
+        <br>
+        In security 'SETUP' un-checking single radio button selections causes strange 'greying'
+        behaviour.<br>
+        <br>
+        Occasional GP faults occur within Windows for Workgroups 3.11 when running the Winstone
+        '94 benchmark in conjunction with a Diamond Stealth 64 VRAM PCI video card.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3.05<br>
+        checksum<br>
+        PN 153573SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2/12/94<br>
+        A600</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from version 3.05.04 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4.00<br>
+        checksum<br>
+        PN 154278SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">24/10/94<br>
+        3F00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This introduces the initial release, at
+        version 4.00, of the Apricot Ruby BIOS.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-01</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9/12/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Change to fix low temperature cold boot
+        problem highlighted during Factory MPP.<br>
+        <br>
+        Change to fix warm boot delay highlighted during Factory MPP.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4.02.01<br>
+        BETA<br>
+        checksum<br>
+        PN 154278SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">24/1/95<br>
+        <br>
+        0F00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Code to reset the Feature Card Ethernet
+        controller has been added.<br>
+        <br>
+        The Power management logic has been modified to support both P5 and P54C (Jade &amp; Ruby)
+        motherboards.<br>
+        <br>
+        The AIS BIOS function &#145;Return machine type&#146; has been modified to support both P5
+        and P54C (Jade &amp; Ruby) motherboards.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4.02.02<br>
+        BETA<br>
+        PN 154278SW<br>
+        checksum</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9/12/95<br>
+        <br>
+        <br>
+        F400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">&#145;CTL ALT DEL&#146; may have caused
+        the parallel port to not operate in ECP mode. This has been resolved.<br>
+        <br>
+        &#145;SETUP&#146; display of parallel port did not reflect current CMOS settings. This has
+        been fixed.<br>
+        <br>
+        Windows 95 and Windows NT were returning inconsistent results for memory configurations
+        above 64Mb. This has been resolved.<br>
+        <br>
+        There was no &#145;SETUP&#146; option for enabling PCI VGA palette snooping. This has now
+        been added.<br>
+        <br>
+        There was no build version or date being displayed at signon. This has now been added.<br>
+        <br>
+        There was no &#145;SETUP&#146; option for enabling PCI posted memory writes. This has now
+        been added.<br>
+        <br>
+        Certain SIMMs were producing un-reliable system operation. This was caused by marginal CAS
+        timings and has now been fixed.<br>
+        <br>
+        The &#145;SETUP&#146; key F1 was not being recognised when a Feature card was fitted. This
+        has now been resolved.<br>
+        <br>
+        Certain HDU types (Caviar) were failing. This has been fixed.<br>
+        <br>
+        &#145;Overdrive&#146; processors did not work correctly. This has been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-02-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">15/2/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The part number has been changed.<br>
+        <br>
+        The new Cirrus Logic video BIOS (v1.22) has been included.<br>
+        <br>
+        The video &#145;dot clock&#146; frequency for 800x600x256 resolution (mode 5C) was
+        incorrect. This has now been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-02-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">27/2/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A new Cirrus Logic video BIOS has been
+        included to fix problems with systems hanging.<br>
+        <br>
+        The date &amp; time were not always being displayed on a warm boot. This has now been
+        resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-02-05<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/3/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">DOS/Windows and Novell Netware only
+        detected 16Mb of RAM for configurations of 16Mb to 64Mb. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-02-06<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">31/3/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The correct processor speed is now
+        displayed by &#145;SETUP&#146; for 75Mhz &amp; 120Mhz Pentiums.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-02</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">31/3/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from 4.02.06 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-03-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/4/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The PCI IDE controller was not running
+        in '32 performance' mode. This has now been resolved.<br>
+        <br>
+        'Legacy' ISA devices were not reserving resources correctly. This has been fixed.<br>
+        <br>
+        A system node existed for PCI IDE, causing it to be 'claimed' twice by Windows 95. This
+        has now been fixed.<br>
+        <br>
+        The 'AIS' interface was incorrectly identifying some motherboards. This is now fixed.<br>
+        <br>
+        If 'POST' detected an extended memory size mismatch, the error message was corrupted. This
+        has now been resolved.<br>
+        <br>
+        Various combinations of SIMM size could cause memory sizing errors. This has now been
+        fixed.<br>
+        <br>
+        Power management features were not being explicitly disabled on soft reset. This has now
+        been fixed.<br>
+        <br>
+        PCI cards were being allocated IRQ14 &amp; IRQ15. This has now been fixed.<br>
+        <br>
+        'PNP' was returning an incorrect 'structure' version number. This has now been fixed.<br>
+        <br>
+        The PCI IDE &amp; GD5434 were not claiming resource from the 'PNP' pool. This has now been
+        fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-03-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/5/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The AIS Manager motherboard ID was
+        incorrect. This has now been resolved.<br>
+        <br>
+        Video modes 58, 65 &amp; 67 (hex) had incorrect timings. This has now been fixed.<br>
+        <br>
+        The Symphony PCI controller resources were still being used by other PCI cards. This has
+        now been resolved.<br>
+        <br>
+        Memory sizing was failing for single sided SIMMs. This has been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-03-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/5/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The PNP settings for ISA IDE were not
+        consistent with the primary/secondary settings, also a duplicate entry was found by
+        Windows 95. This has been resolved.<br>
+        <br>
+        The power management defaults were incorrect. This has been resolved.<br>
+        <br>
+        The video display type was not always 'communicated' to the video controller chip
+        correctly. This may be a Cirrus Logic silicon issue, (they are currently investigating
+        it), and a solution has been provided.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-03</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/6/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous version, 4-03-03 BETA</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-04-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9/6/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Version 1.23 of the Cirrus Logic video
+        BIOS has now been included.<br>
+        <br>
+        The Cirrus Logic signon has now been disabled.<br>
+        <br>
+        A fix for the 800 x 600 x 256 @ 72Hz problem has been provided.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-04</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">26/6/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from 4-04-01 BETA</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-05-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">26/6/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Chipset programming has been modified to
+        address a problem raised by ISEC. <br>
+        <br>
+        PRF-JADE-0011, occasional hanging during warm boot. This was caused by SMI being enabled
+        momentarily during warm boot, before the handler was enabled. Noise on the SMI input would
+        cause a jump to the non-existent handler and the machine would hang.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-05-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">18/7/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The power-on volume setting for the PC
+        speaker mixer feed into Soundblaster cards was very loud. This has now resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-05</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">28/7/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from 4-05-02 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-06-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">25/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Grey out the option in setup for PCI
+        posted writes when detecting VLSI 590 B0 step silicon.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-06</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">30/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">As revision B2 '591 silicon will no
+        longer be available there exists a requirement to ship machines fitted with B0 silicon.
+        However, the rev. B0 silicon does not support 'Posted PCI write' cycles, so the 'SETUP'
+        logic has been altered to sense the silicon revision and 'grey out' the option for 'Posted
+        PCI writes' if it detects B0 silicon.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-07-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/12/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR1424 - Matrox cards were causing
+        screen corruption under OS/2 Warp. This was caused by the cards PCI settings not being
+        programmed correctly, a result of a &#145;fix&#146; for AT&amp;T to enable
+        &#145;MIRO&#146; video cards to function. This &#145;fix&#146; has now been disabled.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4-07<br>
+        Release<br>
+        Checksum<br>
+        PN: 154723SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">29/01/98<br>
+        <br>
+        9600</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This BIOS has been released to provide
+        year 2000 compliance.</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

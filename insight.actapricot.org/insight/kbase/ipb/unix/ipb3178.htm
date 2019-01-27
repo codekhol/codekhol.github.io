@@ -1,0 +1,314 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>Xenix - Unix I.P.B 3178 - Getting UNIX files from Apricot</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../products/main.htm" onMouseOver="act('product')" onMouseOut="inact('product')"><img width="113" height="22" src="../../../images/product1.gif" name="product" alt="Products" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/kbase2.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+       <a HREF="../ipbmain.htm"><img width="113" height="17" src="../../../images/s_ipb.gif" alt="Bulletins (IPBs)" border="0"></a><br>
+       <a HREF="../../guides/guidecon.htm"><img width="113" height="17" src="../../../images/s_guides.gif" alt="Guides" border="0"></a><br>
+       <a HREF="../../faq/main.htm"><img width="113" height="17" src="../../../images/s_faq.gif" alt="FAQs" border="0"></a><br>
+       <a HREF="../../guides/manuals/menu.htm"><img width="113" height="17" src="../../../images/s_manual.gif" alt="Owner's Handbooks" border="0"></a><br>
+       <a HREF="../../../common/infact/menu.htm"><img width="113" height="17" src="../../../images/s_datash.gif" alt="Product Datasheets" border="0"></a><br>
+       <a HREF="../../../common/misc/menu.htm"><img width="113" height="17" src="../../../images/s_misc.gif" alt="Miscellaneous Items" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top">&nbsp;<table border="0" width="100%" bgcolor="#FFFFC0">
+      <tr>
+        <td colspan="2"><font face="Arial,Helvetica" size="4" color="#D60029"><strong>Xenix -
+        Unix I.P.B. 3178 </strong></font>
+        </td>
+        <td valign="bottom"><strong><font size="2">28th September 1994 (PW) </font></strong></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Department </font></strong></td>
+        <td><strong><font size="2">Category </font></strong></td>
+        <td><strong><font size="2">Implementation </font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="3" bgcolor="#000000" height="1"></td>
+      </tr>
+      <tr>
+        <td><font size="2">Unix </font></td>
+        <td><font size="2">Software </font></td>
+        <td><font size="2">Advisory </font></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td align="center" width="50%"><font size="2"><a href="ipb3177.htm">Previous IPB</a> </font></td>
+        <td align="center" width="50%"><font size="2"><a href="ipb3179.htm">Next IPB</a> </font></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td><p align="center"><font size="3"><strong>Getting UNIX files from Apricot </strong></font>
+        <p><font size="2">The following methods / areas are available to obtain files
+        electronically from Apricot. </font><ol>
+          <li><strong><font size="2">Insight BBS </font></strong></li>
+        </ol>
+        <blockquote>
+          <p><font size="2">UNIX related files which can be downloaded are located in three areas:- </font></p>
+          <table border="0">
+            <tr>
+              <td valign="top" width="150"><font size="2">area27 </font></td>
+              <td valign="top"><font size="2">Files which are available for public access </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">area39 </font></td>
+              <td><font size="2">Files (includes SCO Supplements) which are available to all Apricot
+              sales channels and direct support customers. </font></td>
+            </tr>
+            <tr>
+              <td valign="top"><font size="2">area56 </font></td>
+              <td valign="top"><font size="2">Chargeable or early release UNIX software (additional
+              password required) </font></td>
+            </tr>
+          </table>
+        </blockquote>
+        <ol>
+          <li value="2"><strong><font size="2">UUCP from UNIX Server </font></strong></li>
+        </ol>
+        <blockquote>
+          <p><font size="2">The UNIX server can be reached on 0121-717-045[67], please ask if you
+          wish to have an account added. </font></p>
+          <table border="0">
+            <tr>
+              <td width="150"><font size="2">/uuinfo/bbs </font></td>
+              <td><font size="2">Link to Bulletin Board (see above) </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/uuinfo/efs </font></td>
+              <td><font size="2">SCO Extended Feature Supplements </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/uuinfo/lng </font></td>
+              <td><font size="2">SCO Language and old Network Supplements </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/uuinfo/net </font></td>
+              <td><font size="2">SCO Network Supplements </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/uuinfo/unx </font></td>
+              <td><font size="2">SCO UNIX Supplements </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/uuinfo/uod </font></td>
+              <td><font size="2">SCO UNIX and Open Server Supplements </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/uuinfo/xnx </font></td>
+              <td><font size="2">SCO Xenix Supplements </font></td>
+            </tr>
+          </table>
+        </blockquote>
+        <ol type="1" start="3">
+          <li><strong><font size="2">Insight CD-ROM </font></strong></li>
+        </ol>
+        <blockquote>
+          <p><font size="2">Releases 4 and future releases contain SCO supplements to save download
+          time and costs. The new release 5 UNIX files are located in: </font></p>
+          <table border="0">
+            <tr>
+              <td width="150"><font size="2">\unix\images </font></td>
+              <td><font size="2">SCO Supplements </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">\unix\scripts </font></td>
+              <td><font size="2">Miscellaneous other supplements </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">\unix\utility </font></td>
+              <td><font size="2">Miscellaneous utilities. </font></td>
+            </tr>
+          </table>
+        </blockquote>
+        <ol type="1" start="4">
+          <li><font size="2"><strong>Internet</strong> </font></li>
+        </ol>
+        <blockquote>
+          <p><font size="2">Apricot now has a server available on the Internet for file downloads.
+          To access the server from your Internet machine please use the anonymous login and
+          password procedure. The machine can be reached with the command: </font></p>
+          <p><font size="2">ftp ftp.apricot.co.uk </font></p>
+          <p><font size="2">Files are located in the following directories: </font></p>
+          <table border="0">
+            <tr>
+              <td width="150"><font size="2">/pub/apricot </font></td>
+              <td><font size="2">Apricot specific files (usually temporary) </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/pub/bbs </font></td>
+              <td><font size="2">Link to Bulletin Board (see above) but only public areas available
+              (area27 only for UNIX) </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/pub/netware </font></td>
+              <td><font size="2">NetWare related files </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/pub/sco </font></td>
+              <td><font size="2">SCO related files </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/pub/src </font></td>
+              <td><font size="2">Source (usually &#145;C&#146;) </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/pub/unixware </font></td>
+              <td><font size="2">UnixWare related files </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/pub/winnt </font></td>
+              <td><font size="2">Windows NT related files </font></td>
+            </tr>
+            <tr>
+              <td><font size="2">/pub/windows </font></td>
+              <td><font size="2">Windows related files </font></td>
+            </tr>
+          </table>
+          <p><font size="2">Further Internet facilities are being developed and further information
+          will be issued when these are ready. </font></p>
+        </blockquote>
+        <p align="center"><font size="2">----------oOo---------- </font></td>
+      </tr>
+    </table>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

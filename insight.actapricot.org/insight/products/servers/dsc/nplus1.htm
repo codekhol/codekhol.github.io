@@ -1,0 +1,790 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FT4200 Redundant Power Supply (N+1)</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><font size="2"><br>
+    </font><font face="Arial,Helvetica" size="4" color="#D60029"><strong>FT4200 Redundant Power
+    Supply (N+1)</strong></font>
+    <blockquote>
+      <p><font size="2"><a href="#rear_panel">Rear Panel</a></font></p>
+      <p><font size="2"><a href="#power_supply">Power Supply and optional Battery Back Up unit
+      (BBU)</a></font></p>
+      <p><font size="2"><a href="#module_power">Module Power Output</a></font></p>
+      <p><font size="2"><a href="#remfit_module">Removing and fitting power modules</a></font></p>
+      <p><font size="2"><a href="#rem_tray">Removing the complete Power Tray</a></font></p>
+      <p><font size="2"><a href="#bbu">Optional Battery backup unit (BBU)</a></font></p>
+      <p><font size="2"><a href="#fireman">Battery Isolation (Fireman&#146;s Switch)</a></font></p>
+      <p><font size="2"><a href="#smi2c">System management controller (SMC)</a></font></p>
+    </blockquote>
+    <hr>
+    <p><font size="2"><a name="rear_panel"></a><strong><br>
+    </font><font size="3">Rear Panel</font></strong></p>
+    <p><font size="2">The rear panel contains the various ports and connectors as shown in the
+    following illustration:</font></p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td><font size="2"><img src="graphics/new3qdsc.gif" width="372" height="395"></font></td>
+        <td valign="top"><table border="1" cellpadding="2" bordercolor="#808080">
+          <tr>
+            <td valign="top"><p align="center"><font size="2">1</font></td>
+            <td valign="top"><font size="2">Keyboard Connector (PS/2)</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Mouse Connector (PS/2)</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">3</font></td>
+            <td valign="top"><font size="2">Serial Port COM2</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">4</font></td>
+            <td valign="top"><font size="2">Serial Port COM1</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">5</font></td>
+            <td valign="top"><font size="2">SMC Modem Port</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">6</font></td>
+            <td valign="top"><font size="2">Video Connector</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">7</font></td>
+            <td valign="top"><font size="2">Parallel Port</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">8</font></td>
+            <td valign="top"><font size="2">Expansion Slot Openings</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">9</font></td>
+            <td valign="top"><font size="2">Stud for Antistatic Strap</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">10</font></td>
+            <td valign="top"><font size="2">Optional Battery back up unit</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">11</font></td>
+            <td valign="top"><font size="2">Battery isolation link</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">12</font></td>
+            <td valign="top"><font size="2">AC Power Socket </font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">13</font></td>
+            <td valign="top"><font size="2">Power Supply modules </font></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="power_supply"></a><strong><br>
+    </font><font size="3">Power Supply and optional Battery Back Up unit (BBU)</font></strong></p>
+    <blockquote>
+      <p><font size="2">The power supply itself can consist of the minimum of one plug-in module
+      or the maximum of four. Each module can provide up to 267W to the computer&#146;s power
+      requirements (see chapter 10 of the Owner's Handbook for further information). If there is
+      more than one Power Module, the computer may be able to continue to operate if one module
+      should fail, depending upon the configuration. When considering any additions to the
+      computer hardware, the power requirements should be assessed prior to their installation.<br>
+      <br>
+      When the BBU is fitted, the complete power supply becomes an uninterruptible power supply
+      (UPS) and is designed to keep your system powered up for a limited period of time after,
+      or during, a power failure. The optional on-line removable BBU will provide time to
+      shutdown the network and the server without losing valuable data. <br>
+      <br>
+      The UPS should maintain power to the system for approximately 4 minutes in a fully-laden
+      system, i.e. equipped with 20 hard disk drives. This time will be much longer in a system
+      equipped with fewer drives.</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2"><em><b>Note</b><br>
+        In the event that the mains power fails, the LCD will display a countdown of the number of
+        seconds remaining until the (optional) battery back up unit is fully discharged. The <b>Event
+        Manager User&#146;s Guide</b> contains more details about this feature.</em></font></p>
+      </blockquote>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="module_power"></a><strong><br>
+    </font><font size="3">Module Power Output</font></strong></p>
+    <blockquote>
+      <p><font size="2">The power section is, in total, rated at: (output of 3 modules at 267W
+      per module)<br>
+      <br>
+      <br>
+      +5V rail at 81A<br>
+      +12V rail at 33A<br>
+      -5V rail at 500mA<br>
+      -12V rail at 500mA<br>
+      5V standby rail at 800mA</font></p>
+      <p><font size="2"><b>The above ratings are for three power modules, the fourth being a
+      &#145;redundant&#146; module.</b></font></p>
+      <p><font size="2">The first two are for the busbars for the motherboard and the hard drive
+      power board, the rest are taken via the multiway cables to their various destinations.
+      Adding hard drives, extra processors or multiple expansion cards may require the addition
+      of further power modules, contact your Apricot supplier for details.</font></p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="remfit_module"></a><strong><br>
+    </font><font size="3">Removing and fitting power modules</font></strong></p>
+    <blockquote>
+      <p><font size="2">The power tray will be fitted with at least one power module, or up to a
+      maximum of four.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Depending on the system configuration and the number of working modules
+      fitted, one power module may be removed without shutting down the whole system, providing
+      the remaining power modules can cope with the system load. See above for power module
+      rating information.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">It is advisable, if unsure, to fit a spare unit first if the computer
+      cannot be shut down. The modules can be hot-swapped.<i> </i></font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Any failed unit will display a red LED on its rear plate, or be
+      completely unlit, while healthy units display a green LED. The modules are easily removed
+      and fitted.</font></p>
+    </blockquote>
+    <p><font size="2"><strong>To remove a module</strong></font></p>
+    <blockquote>
+      <p><font size="2">Loosen the floating fasteners, located at the top and bottom of the
+      module to be removed, until they move in and out freely. </font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2">These fasteners are mounted in a spring fitting and should not be
+        separated from the module.</font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Gently but firmly pull on the handle until the module slides out. There
+      will be some resistance from the rear socket.</font></p>
+    </blockquote>
+    <p align="center"><font size="2"><img src="graphics/shogcost.gif" width="187" height="205"></font></p>
+    <p align="center"><font size="2"><i>Power Module removal and refitting</i></font></p>
+    <p><font size="2"><strong>To fit a module</strong></font></p>
+    <blockquote>
+      <p><font size="2">Carefully slide the module into the internal guide rails and press
+      firmly into the rear socket.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Fix into position with the retaining fasteners. Do not overtighten.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">If the module is being fitted to a live system, the red LED will
+      initially show during the unit&#146;s self test. Then the green LED will come on to
+      indicate the module is working correctly. If the computer has been powered down, all
+      modules will briefly show red LEDs on power-up.</font></p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="rem_tray"></a><strong><br>
+    </font><font size="3">Removing the complete Power Tray</font></strong></p>
+    <blockquote>
+      <blockquote>
+        <p><font size="2"><b>Warning<br>
+        </b><i>There are very few circumstances that would require the removal of the Power Tray,
+        but details are given here for completeness. It is recommended that work on the tray
+        should only be undertaken by a service engineer, with someone to assist, as the tray is
+        very heavy.</i></font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">It is <b>vitally</b> important to ensure that the system is correctly
+      shut down. If a BBU is fitted, the battery link must be removed and the system
+      disconnected from the mains electricity supply.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Remove the motherboard cooling fan assembly as detailed in chapter 8 of
+      Owner's Handbook.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">First detach two pairs of motherboard busbars and then the set of 3
+      busbars under the cooling fan assembly as shown in the following diagram. </font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">If necessary, remove some of the expansion cards to improve access to
+      the busbars. You may also need to unplug some of the data cables which are connected to
+      the hard disk drive modules.</font></p>
+    </blockquote>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td><font size="2"><img src="graphics/dscbbars.gif" width="247" height="161"></font></td>
+        <td valign="top"><table border="1" cellpadding="2">
+          <tr>
+            <td valign="top"><p align="center"><font size="2">1</font></td>
+            <td valign="top" width="31%"><font size="2">Motherboard Busbars</font></td>
+          </tr>
+          <tr>
+            <td valign="top" width="7%"><p align="center"><font size="2">2</font></td>
+            <td valign="top" width="55%"><font size="2">Busbars for Hard Disk Power Distribution Panel</font></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    <p align="center"><font size="2"><i>Busbars </i></font></p>
+    <blockquote>
+      <blockquote>
+        <p><font size="2"><b>Caution<br>
+        </b><i>It is vital that you remember the exact cable and connector arrangement of your
+        hard disks, particularly if you are using a RAID (Redundant Array of Independent Disks)
+        configuration. If you fail to restore the arrangement so that all cables, plugs and hard
+        disks are as they were originally, you risk losing all the data on your hard disks.</i></font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Make sure that there is enough clearance between the busbars and their
+      power supply connections to allow the unit to slide freely, you may need to remove the
+      busbars completely. </font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Unplug three cables from the power supply as shown over.</font></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td valign="top"><font size="2"><img src="graphics/dscdisps.gif" width="200" height="258"></font></td>
+        <td valign="top"><table border="1" cellpadding="2">
+          <tr>
+            <td valign="top"><p align="center"><font size="2">1</font></td>
+            <td valign="top"><font size="2">System Controller Connector (Ribbon)</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Motherboard Auxiliary Power (16-way)</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">3.</font></td>
+            <td valign="top"><font size="2">Not used</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">4</font></td>
+            <td valign="top"><font size="2">Removable Media Bay Connector (12-way)</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">5</font></td>
+            <td valign="top"><font size="2">Cable Connector Group</font></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    </center></div><p align="center"><font size="2"><em>Disconnecting Power Supply Cables</em></font></p>
+    <blockquote>
+      <p><font size="2">Loosen four floating fasteners, two on each side of the server, until
+      they are free of the power supply unit, as indicated in the next illustration.</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2"><b>Warning<br>
+        </b><i>This Power supply is heavy. It is strongly advised to have a second person to
+        assist before either fully removing the assembly from the server, or picking it up to fit
+        it back into the server.</i></font></p>
+      </blockquote>
+    </blockquote>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td><font size="2"><img src="graphics/dscpsffa.gif" width="188" height="181"></font></td>
+        <td valign="top"><div align="center"><center><table border="1" cellpadding="2">
+          <tr>
+            <td valign="top"><p align="center"><font size="2">1</font></td>
+            <td valign="top"><font size="2">Floating Fasteners</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Front Bezel</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><p align="center"><font size="2"><em>Power Supply Floating Fasteners</em></font></p>
+    <blockquote>
+      <p><font size="2">Now remove six screws on the back panel of the server, as shown:</font></p>
+    </blockquote>
+    <p align="center"><font size="2"><img src="graphics/battrem.gif" width="329" height="231"></font></p>
+    <p align="center"><font size="2"><i>Power tray Securing Screws</i></font></p>
+    <blockquote>
+      <p><font size="2">Using one or two of the handles, pull the unit <b>carefully</b> forward
+      about 8 to 10cm, until a set of concealed busbar bolts become visible through one of the
+      motherboard chamber busbar windows. Remove these bolts.</font></p>
+      <p><font size="2">Continue pulling, this time using the main PSU flange, until it is a
+      little less than halfway out (about 30 cm), just before it begins to tip towards you.</font></p>
+      <p><font size="2">The second person should assist, on the opposite side of the unit, from
+      this point onwards.</font></p>
+      <p><font size="2">Place your hands under the metal casing of the unit as indicated by the
+      arrows in the following illustration:</font></p>
+    </blockquote>
+    <p align="center"><font size="2"><img src="graphics/battrem1.gif" width="369" height="248"></font></p>
+    <p align="center"><font size="2"><i>Power tray Removal</i></font></p>
+    <blockquote>
+      <p><font size="2">Slide the unit out <b>slowly</b> until it is free from its housing. Now
+      rest the unit on the floor or a suitable workbench. Do not drop it.</font></p>
+    </blockquote>
+    <p><font size="2"><strong>Fitting</strong></font></p>
+    <blockquote>
+      <p><font size="2">With the help of the second person on the opposite side, place your
+      hands underneath the power supply as indicated by the arrows in the illustration above.</font></p>
+      <p><font size="2">Now carefully slide the unit almost all the way into the chassis.</font></p>
+      <p><font size="2">Use the front motherboard chamber busbar window to fix the bolts that
+      hold the power distribution board to the output connections of the power tray. Then slide
+      the tray fully in.</font></p>
+      <blockquote>
+        <p><font size="2"><b>Caution<br>
+        </b><i>The hardware used to hold the busbar connections must be tightened using a torque
+        wrench set to 5 Newton meters (Nm).</i></font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Secure the unit to the chassis with the six screws as shown in <i>Figure
+      10-6.</i></font></p>
+      <p><font size="2">Now tighten the four floating fasteners, two on each side, located
+      towards the front of the machine.</font></p>
+      <p><font size="2">Plug the cables into their connectors on the power supply. </font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2"><strong>Note</strong> that these connectors are keyed and can only be
+        fitted in one position.</font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Attach the set of 3 busbars to the HDD power board. Then attach the two
+      pairs of busbars to the motherboard. </font></p>
+      <p><font size="2">As with the cables, it should not be possible to fit these bars
+      incorrectly.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Fit the motherboard cooling fan assembly.</font></p>
+      <p><font size="2">Refit any expansion cards you may have removed to improve access.</font></p>
+      <blockquote>
+        <p><font size="2"><b>Caution<br>
+        </b><i>It is vital that you remember the exact cable and connector arrangement of your
+        hard disks, particularly if you are using a RAID (Redundant Array of Independent Disks)
+        configuration. If you fail to restore the arrangement so that all cables, plugs and hard
+        disks are as they were originally, you risk losing all the data on your hard disks.</i></font></p>
+      </blockquote>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="bbu"></a><strong><br>
+    </font><font size="3">Optional Battery backup unit (BBU)</font></strong></p>
+    <blockquote>
+      <blockquote>
+        <p align="left"><font size="2"><b>Warning<br>
+        </b><i>The power supply tray can be equipped with an optional BBU. Although it is a
+        replaceable unit, (information on removal and refitting is given below) it MUST ONLY BE
+        FITTED, or removed, by a suitably qualified service engineer. </i></font></p>
+        <p align="left"><font size="2"><i>Initial installation of the unit MUST only be carried
+        out by a service engineer visit to correctly setup the system to accommodate a BBU.
+        Contact your Apricot supplier for details. </i></font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><strong>Initial installation</strong></font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2">Only be undertaken by a service engineer.</font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Shut down the system and disconnect from the supply.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Remove the blanking plate but retain the fixing screws.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Reach inside the BBU space and detach the small printed circuit board
+      from the clip-in mounting (this may be easier with a long screwdriver, due to limited
+      space).</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Disconnect the wiring harness from the rear BBU edge connector and
+      remove the assembly from the chassis completely.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Fit the BBU into the power tray as detailed on the following page.</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2"><b>Important - Warning</b></font></p>
+        <p><font size="2"><b><i>The battery pack contains lead acid batteries. In the EEC the
+        directive 91/157/EEC (plus subsequent amendment 93/86/EEC) designates batteries containing
+        lead to be handled as a dangerous substance. </i></b></font></p>
+        <p><font size="2"><b><i>Similar regulations will apply in other countries. </i></b></font></p>
+        <p><font size="2"><i>The battery pack must only be removed by a qualified electrician and
+        must not be disposed of in domestic waste.</i></font></p>
+      </blockquote>
+      <p><font size="2"><strong>Removing</strong></font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Ensure the system is shut down as detailed in chapter 3. </font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2">Ensure that you remove the BBU isolation link.</font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Remove the fastening screws as shown in the following diagram:</font></p>
+    </blockquote>
+    <p align="center"><font size="2">INSERT DIAG HERE</font></p>
+    <p align="center"><font size="2"><i>Battery Backup Unit</i></font></p>
+    <blockquote>
+      <p><font size="2">Pull the BBU handle carefully. There will be initial resistance due to
+      the power connector at the rear. Slide the unit out <b>slowly</b> . It is heavy. </font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Now with a slight lift, you can remove the BBU clear. Place it only on a
+      clear flat surface.</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2"><b>Warning</b></font></p>
+        <p><font size="2"><b><i>The BBU even when withdrawn may still contain a high charge.
+        Handle with extreme care.</i></b></font></p>
+      </blockquote>
+      <p><font size="2"><strong>Fitting</strong></font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Carefully lift the BBU into position and slide it slowly into the
+      chassis.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Push the unit the rest of the way into the chassis.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Press firmly into the socket.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Refit the retaining screws as shown in the above <i>Figure 10-8</i>.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Fit the BBU isolation link.</font></p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p align="left"><font size="2"><a name="fireman"></a><strong><br>
+    </font><font size="3">Battery Isolation (Fireman&#146;s Switch)</font></strong></p>
+    <blockquote>
+      <p><font size="2">The BBU link can be used to connect to the Building Fire Services power
+      isolation and safety mechanisms if required. This is a common for big buildings or
+      businesses having telephone exchanges and air conditioning etc., but often overlooked
+      within large computer installations and networks.</font></p>
+      <p><font size="2">The BBU isolation link is essentially a mini-plug, complete with cable
+      grip, having the two small pins internally connected. This connection can be broken and
+      the terminals wired to external cabling. </font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Screened cable should be used to connect to the isolation switch or
+      power panel relay, which should have a normally closed (healthy) contact. For further
+      information contact either your supplier, or Apricot Computers Limited, Technical Support
+      department.</font></p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="smi2c"></a><strong><br>
+    </font><font size="3">System management controller (SMC)</font></strong></p>
+    <blockquote>
+      <p><font size="2"><strong>Removing</strong></font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Take careful note of where each connection is from and unplug three
+      ribbon cable connectors, the power connector, three fan connectors, two thermistor
+      connectors and one keylock sensor cable connector as shown in the following diagram.</font></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><font size="2"><img src="graphics/smi2c.gif" width="309"
+        height="386"></font><p><font size="2"><em><img src="graphics/smi2csma.gif" width="361"
+        height="226"></em></font></td>
+        <td valign="top"><div align="center"><center><table border="1" cellpadding="2">
+          <tr>
+            <td valign="top"><p align="center"><font size="2">1</font></td>
+            <td valign="top"><font size="2">Power Connector</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Fan Connectors</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">3</font></td>
+            <td valign="top"><font size="2">Thermistor Connectors</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">4</font></td>
+            <td valign="top"><font size="2">Keylock Sensor Connector</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">5</font></td>
+            <td valign="top"><font size="2">Securing Screws</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">6</font></td>
+            <td valign="top"><font size="2">Ribbon Cable Connectors</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><p align="center"><font size="2"><em>System Management Controller Board</em></font></p>
+    <blockquote>
+      <p><font size="2">Remove the securing screws detailed above.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Carefully unplug the SMI2C daughterboard and put in a safe place.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Remove the four stand-off screwlock pillars from the SMC board that are
+      used to mount the SMI2C daughterboard.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Remove the two screw lock posts on the 25-way SMC serial port connector
+      which is visible on the server&#146;s back panel and lift the SMC board clear.</font></p>
+    </blockquote>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td valign="top"><font size="2"><img src="graphics/dscsmcsp.gif" width="203" height="153"></font></td>
+        <td valign="top"><div align="center"><center><table border="1" cellpadding="2">
+          <tr>
+            <td valign="top"><p align="center"><font size="2">1</font></td>
+            <td valign="top"><font size="2">Screw Lock Posts</font></td>
+          </tr>
+          <tr>
+            <td valign="top"><p align="center"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Back panel</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><p align="center"><font size="2"><em>SMC Serial Port Screw Lock Posts</em></font></p>
+    <blockquote>
+      <p><font size="2"><strong>Fitting</strong></font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Feed the 25-way serial port connector through the opening in the back
+      panel.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Fasten the board to the centre spine using the four screwlock stand-off
+      pillars as previously removed.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Fasten the two screwlock posts into place at both ends of the 25-way
+      connector on the back panel. Do not overtighten.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Plug in the SMI2C daughterboard to the top left sockets of the SMC.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Refit the remaining screws as shown in <i>Figure 6-1. </i></font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Plug the ribbon cables, power cable, fan and associated thermistor
+      cables and the keylock sensor cable into their respective connectors on the SMC board as
+      shown in <i>Figure 6-1</i>.</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2">Ensure the daughterboard is correctly seated on the connectors at the
+        top left of the SMC board and that the correct two ribbon cables are fitted to the sockets
+        on it.</font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2"><b>Caution<br>
+        </b><i>Ensure the ribbon cables from the front panel and the PSU are in their correct
+        positions or damage will be caused to the SMC board.</i></font></p>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Against each fan connector on the board there is a graphic which
+      indicates which fan cable should be plugged in:</font></p>
+    </blockquote>
+    <p align="center"><font size="2"><img src="graphics/dsctmb.gif" width="188" height="159"></font></p>
+    <blockquote>
+      <p align="left"><font size="2">The middle and bottom fans in this series are located below
+      the SMC board in the disk subsystem area.</font></p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

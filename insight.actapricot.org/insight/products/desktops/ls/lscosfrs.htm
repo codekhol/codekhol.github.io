@@ -1,0 +1,398 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>'Cosworth' ROM BIOS Summary</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">'Cosworth' ROM BIOS Summary </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.11.1)</font></strong></h2>
+    <div align="left"><table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>6.00.02<br>
+        BETA</strong><br>
+        checksum</font><p><font size="2">PN 123635SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/9/95<br>
+        <br>
+        E900</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Contents<br>
+        All base chipset initialisation for OPB, OMC, SIO and Combo as per Tech. Ref. Version 0.2
+        - 18 Sept. 1995<br>
+        <br>
+        P6 initialisation for Cache, A0 OPB bug and Fast Strings for B0 P6 included.<br>
+        <br>
+        Supports A, AV and B builds of the motherboard. Selection of Secondary IDE controller is
+        via setup option to support unmodified AV, modified AV and B. This setup option will be
+        removed or blanked in later releases.<br>
+        <br>
+        Support for GD5436. A separate version of the BIOS is available with support for GD5434
+        (IMAGE.BIN) in earlier prototypes, but should not be required for shipping.<br>
+        <br>
+        Full Combo device configuration via PnP for Windows95. (Win95 SCT BIOSTEST Passes.)<br>
+        <br>
+        IDE modes 0-4 supported on Disks and CD-ROMs.<br>
+        <br>
+        OEM Custom sign-on supported.<br>
+        <br>
+        PCI Bus masters are reset on warm boot.<br>
+        <br>
+        Supports Synchronous and Asynchronous builds of motherboard and core clocks 50Mhz, 60Mhz
+        and 66Mhz.<br>
+        <br>
+        Supports Via IDE Chips VT83C561 and VT83C571 in ISA Compatibility mode.<br>
+        <br>
+        Supports Diamond (2 PCI Slot) and Cosworth (3 PCI Slot) Risers.<br>
+        <br>
+        Date and Time in Setup should be in UK format.<br>
+        <br>
+        Displays detected max. IDE Device mode in setup and allows for limiting to compatibility
+        mode 0.<br>
+        <br>
+        Supports Colour and Monochrome monitors.<br>
+        <br>
+        Exclusions<br>
+        PCI-PCI bridge support.<br>
+        <br>
+        C2 Security.<br>
+        <br>
+        Power Saving.<br>
+        <br>
+        Proper name for P6 on setup screen.<br>
+        <br>
+        Includes no special support for EDO DIMMS.<br>
+        <br>
+        Testing<br>
+        Limited testing on Cosworth AV 50Mhz-66Mhz Core Clock, x2 processor A1/A3, Orion A1, 2x8Mb
+        Dimm, 340Mb HDD.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>6.00.03<br>
+        BETA</strong><br>
+        checksum</font><p><font size="2">PN 123635SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">12/12/95</font><p><font size="2">3D00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The release notes for this BIOS are
+        available.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>6-00-05<br>
+        BETA</strong><br>
+        CheckSum</font><p><font size="2">P/N 123707SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7/2/96</font><p><font size="2">9400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Part number has been changed to reflect
+        4Mb binary image size.<br>
+        <br>
+        Internal change. Menuing logic corrected.<br>
+        <br>
+        BIOS update text was incorrect. This has now been resolved.<br>
+        <br>
+        The status of BIOS update was not indicated on 'System summary'. This has now been
+        resolved.<br>
+        <br>
+        The 'Cache menu' in advanced setup has been removed.<br>
+        <br>
+        Power management options in setup did not accurately represent facilities available. This
+        has now been resolved.<br>
+        <br>
+        Co-processor type reporting in 'System summary' has been disabled.<br>
+        <br>
+        ECP DMA is now configured.<br>
+        <br>
+        Certain setup features are now dependant upon the revision level of processor and Orion
+        silicon.<br>
+        <br>
+        SIO timeout only supported units of minutes. This has now been resolved.<br>
+        <br>
+        SMI timer fail and BIOS virus detection were using same CMOS locations. This has now been
+        resolved.<br>
+        <br>
+        Help messages were being displayed incorrectly. This has now been resolved.<br>
+        <br>
+        Internal change. Support for multiple processor stepping levels required multiple BIOS
+        update patches. This has now been resolved.<br>
+        <br>
+        If the processor ID was not recognised the date string in signon would be blank. This has
+        now been resolved.<br>
+        <br>
+        Internal change. All device numbers for PCI devices are now made available in the setup
+        segment.<br>
+        <br>
+        Support for P6 stepping level C0 has been included.<br>
+        <br>
+        The BIOS memory test now extends to 4Mb rather than 64K.<br>
+        <br>
+        Warm boot sometimes would hang machine. This has now been fixed.<br>
+        <br>
+        The memory test algorithm has been improved.<br>
+        <br>
+        IPR 1466 - CD-ROM mode reported incorrectly. Now fixed.<br>
+        <br>
+        IPSL safe configuration showed incorrect cache type. Now resolved.<br>
+        <br>
+        IPSL safe configuration showed IOQ depth as 1 for everything upto OPB A2 silicon. Now
+        shows depth as 8, for silicon upto OPB B0.<br>
+        <br>
+        IPR 1224 - ISA legacy resources above 1Mb were being reflected at 8Mb boundary. This has
+        now been resolved.<br>
+        <br>
+        Redundant initialisation of DRAM row limits no longer takes place.<br>
+        <br>
+        SMM now works on Orion B0 silicon.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>6.00.06<br>
+        BETA</strong><br>
+        CheckSUM</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4/3/96</font><p><font size="2">9F00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Occasionally, machines would hang on
+        re-boot, with a message stating 'stack overflow ... system halted'. This has now been
+        resolved.<br>
+        <br>
+        IPR 2027 - Power saving mode for IDE hard drives did not work. This has been fixed.<br>
+        <br>
+        No beep code would be reported if DIMMs not fitted. This has now been resolved.<br>
+        <br>
+        First boot after clearing CMOS does not work. This has been resolved.<br>
+        <br>
+        IDE hard disk standby mode was being greyed out if chipset silicon revision did not
+        support SMI handling. This has now been resolved.<br>
+        <br>
+        IPR 1933 - PCI Lan card causes NT to lock up. This has now been resolved.<br>
+        <br>
+        LS security card (Diva) PnP option ROM was not being executed. This has now been resolved.<br>
+        <br>
+        Adaptec 2940 cards failing during boot. This has now been resolved.<br>
+        <br>
+        Standby SMIs were causing machine hangs. This has now been resolved.<br>
+        <br>
+        Setup option for PCI error handling were not visible. This has now been resolved.<br>
+        <br>
+        Setup option for 'Disk 3' was showing 'maximum performance' mode, even if no drive was
+        connected. This has been resolved.<br>
+        <br>
+        Power management was not working with Windows NT. This has been resolved.<br>
+        <br>
+        ECC for memory was disabled. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>6.00.07<br>
+        BETA</strong><br>
+        CheckSUM</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">14/3/96</font><p><font size="2">9700</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The cache size was not being correctly
+        reported on 512K versions. This has been resolved.<br>
+        <br>
+        Memory ECC was only being correctly generated for 64 bit writes. This has now been
+        resolved.<br>
+        <br>
+        During investigation of Orion A2 silicon it was noticed that the OPB latency timer was not
+        being set correctly. This has been corrected.<br>
+        <br>
+        During investigation of Orion A2 silicon it was noticed that a couple of registers were
+        not being initialised. This has been fixed.<br>
+        <br>
+        During investigation of Orion A2 silicon it was noticed that ECC single bit error
+        correction for DRAM as being enabled. This has been corrected.<br>
+        <br>
+        During investigation of Orion A2 silicon it was noticed that the minimum chipset latency
+        was too low. This has been corrected.<br>
+        <br>
+        3D accelerated video card fails. This has been resolved.<br>
+        <br>
+        IPR 2033 - a fix has been provided to cure problems with restarting from an SMI during a
+        HLT instruction.<br>
+        <br>
+        An issue with the IOQ depth setting has been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><strong><font size="2">6.00.08<br>
+        BETA</font></strong></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">12/4/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The object of this release is to provide
+        the latest firmware to the field.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>6.00.09<br>
+        BETA</strong><br>
+        CheckSUM</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">15/4/96</font><p><font size="2">7600</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The BIOS signon copyright message has
+        been changed to 1996, instead of 1995.<br>
+        <br>
+        Adaptec 2940 configuration failed to boot MS-DOS 6.2/V. This was caused by I/O port
+        corruption at 1160 to 1163 causing the PCI card to fail. This has now been resolved.<br>
+        <br>
+        Adaptec 2940 option ROM caused &#145;F1&#146; for ROM SETUP to fail. This has now been
+        resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>6.00<br>
+        RELEASE</strong><br>
+        <br>
+        checksum</font><p><font size="2">PN 123707SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">29/4/96<br>
+        <br>
+        <br>
+        7600</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA 6.00.09 version.</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    </div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

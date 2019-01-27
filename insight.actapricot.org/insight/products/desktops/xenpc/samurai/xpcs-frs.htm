@@ -1,0 +1,376 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>XEN-PC (Samurai) ROM BIOS Release Summary</title>
+</head>
+
+<body background="../../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../../default.htm"><img width="41" height="32" src="../../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../main.htm"><img width="113" height="22" src="../../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../../prodid/idmenu.htm"><img width="113" height="17" src="../../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../../timeline/timeline.htm"><img width="113" height="17" src="../../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../dskmenu.htm"><img width="113" height="17" src="../../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../../servers/svrmenu.htm"><img width="113" height="17" src="../../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../../monitors/monpdc.htm"><img width="113" height="17" src="../../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../../common/drives/storage.htm"><img width="113" height="17" src="../../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">XEN-PC (Samurai) ROM BIOS Release Summary </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.6.2)</font></strong></h2>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-00-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">18/3/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Inclusion of the Video BIOS in the
+        27C010 ROM, removing the need for the optional socket to be populated with a Cirrus Logic
+        BIOS.<br>
+        <br>
+        Setup code now gets uncompressed at address E400.<br>
+        <br>
+        Quantum drives equipped with firmware 4.40 now work correctly as a master with any slave.<br>
+        <br>
+        Fixes for all Maxtor MXT540A-related problems [please note the &quot;Growing Error
+        List&quot; problem is not a BIOS issue, but a Maxtor firmware issue].<br>
+        <br>
+        Quantum ELS170AT and Maxtor LXT535 are now supported.<br>
+        <br>
+        The Ethernet address is now displayed when booting in Text Mode.<br>
+        <br>
+        Setup can now be disabled with the external LockSet utility [yet to be released].<br>
+        <br>
+        Different signons have been implemented for the PC variants.<br>
+        <br>
+        The Remote Boot ROM socket now works.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-00-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/4/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Occasionally the floppy drive would not
+        be recognised at power on, this has now been fixed.<br>
+        <br>
+        Machines used with monochrome monitors would hang if the BIOS called security for the SIN
+        number. This has been fixed.<br>
+        <br>
+        The CMOS defaults, used following a 'bad' CMOS detection, are now correct.<br>
+        <br>
+        Power on sound has been re-included.<br>
+        <br>
+        Support has been added for the Quantum LPS525AT drive.<br>
+        <br>
+        Different signon strings are now supported for PC variants.<br>
+        <br>
+        Monitor types can now be setup, this includes SVGA, VGA/EVGA &amp; EVGA (Hi refresh), the
+        help strings in setup now indicate the refresh rates used by each mode.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-00-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9/4/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">CTRL ALT 'S' no longer hangs system.<br>
+        <br>
+        3 mode floppy now supported correctly.<br>
+        <br>
+        No more screen 'glitches' when setting up user defined fonts.<br>
+        <br>
+        Video Mode 13h no longer allows the palette to be altered.<br>
+        <br>
+        Version and date strings have been updated.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4/5/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">'Print Screen' is now supported</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4/5/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">'Print Screen' is now supported</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-02</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/5/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A fix has been provided for various
+        video problems resulting from the Cirrus 5422 telling the outside world it is a 5424.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-03-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">15/7/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Some adapter cards did not operate
+        correctly, this was due to the ISA bus using de coupled refresh mode. It now uses
+        synchronous refresh mode, but as this may impact performance it is only used when the user
+        selects 'slow' bus speed.<br>
+        <br>
+        Various 'mad mouse' fixes have been implemented.<br>
+        <br>
+        Various graphical boot 'POST' messages have been altered.<br>
+        <br>
+        The memory test is now performed on graphical boot as well as text boot.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-03-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/8/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Quantum 240 drives did not work when
+        used as a slave (second) unit. This has been fixed.<br>
+        <br>
+        Specialix cards would cause memory failures if addressed at 15Mb with a memory hole
+        enabled. This has been fixed by changing the granularity of the memory test logic.<br>
+        <br>
+        The latest video BIOS code has been included.<br>
+        <br>
+        Date and version have been changed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-03</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">16/9/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Bug Fixes.<br>
+        WLOC Controller fix has been included. This is to change from Asynchronous to synchronous,
+        this is instigated by changing the bus speed to SLOW.<br>
+        <br>
+        Mad Mouse fixes.<br>
+        <br>
+        Problem with Quantum LPS240AT drive when used as a slave not been found now fixed. A delay
+        determined by a CMOS location (66h) is executed before looking for the drive in order for
+        it to become ready. <br>
+        <br>
+        Default delay = 1.4 ses.<br>
+        <br>
+        Specialix controller and Memory hole at 15Mb no longer reports Memory Errors.<br>
+        <br>
+        Memory test now executed for graphical boot.<br>
+        <br>
+        All writes to PORT 680h during POST now removed.<br>
+        <br>
+        Other Remote boot ROM now works correctly.<br>
+        <br>
+        LOCKSET.EXE now works on XEN-PC.<br>
+        <br>
+        Problem with multiple 'Fixed disk 1 drive failure' messages when removing SLAVE drives has
+        been resolved.<br>
+        <br>
+        Video Changes.<br>
+        Video BIOS now uses correct VESA monitor timings.<br>
+        <br>
+        MCLK now 45 MHz and not 50 MHz.<br>
+        <br>
+        Problem with Windows 800 x 600 driver now fixed.<br>
+        <br>
+        Programming of SR16 has been changed to take into account MCLK being 45MHz.<br>
+        <br>
+        Cosmetic Changes.<br>
+        Graphical Boot Copyright message now same as Text Boot Copyright message.<br>
+        <br>
+        POST messages now reported during Graphical Boot in the form of 'Windows' style
+        error-boxes.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-04-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">12/10/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The Cirrus video BIOS 1-03 has been
+        implemented to support the 5428 part.<br>
+        <br>
+        User defined hard disks are now supported.<br>
+        <br>
+        Support is included for E/F and F2 motherboards (The 'help' text for CD-ROM disable is
+        different).<br>
+        <br>
+        Graphical boot reports the correct VGA controller part, eg. 5422, 5426 or 5428.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-04-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/11/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for drive type 27 Quantum LPS
+        270A and drive type 28 Quantum LPS 540A has been added.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-04-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/11/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for Quantum 170 &amp; 340 Mb
+        drives has been added.<br>
+        <br>
+        The text messages &quot;User defined hard disks&quot; and &quot;Capacity in Mbytes&quot;
+        have been changed to &quot;User-defined hard disks&quot; and Capacity (MB)&quot;.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-04-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">25/11/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The CL5428 video controller is now
+        detected correctly.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-04</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/12/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This is the release version of the
+        previous 2-04-04 BETA and is functionally unchanged</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-05</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3/8/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">VLSI revision 'FC3' memory controller
+        silicon is now supported.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-06-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">04/09/97</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This BIOS has been released to provide
+        year 2000 compliance.</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

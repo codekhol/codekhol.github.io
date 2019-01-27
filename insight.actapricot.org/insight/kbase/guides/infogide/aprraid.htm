@@ -1,0 +1,408 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<title>Apricot and RAID</title>
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../products/main.htm" onMouseOver="act('product')" onMouseOut="inact('product')"><img width="113" height="22" src="../../../images/product1.gif" name="product" alt="Products" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/kbase2.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+       <a HREF="../../ipb/ipbmain.htm"><img width="113" height="17" src="../../../images/s_ipb.gif" alt="Bulletins (IPBs)" border="0"></a><br>
+       <a HREF="../guidecon.htm"><img width="113" height="17" src="../../../images/s_guides.gif" alt="Guides" border="0"></a><br>
+       <a HREF="../../faq/main.htm"><img width="113" height="17" src="../../../images/s_faq.gif" alt="FAQs" border="0"></a><br>
+       <a HREF="../manuals/menu.htm"><img width="113" height="17" src="../../../images/s_manual.gif" alt="Owner's Handbooks" border="0"></a><br>
+       <a HREF="../../../common/infact/menu.htm"><img width="113" height="17" src="../../../images/s_datash.gif" alt="Product Datasheets" border="0"></a><br>
+       <a HREF="../../../common/misc/menu.htm"><img width="113" height="17" src="../../../images/s_misc.gif" alt="Miscellaneous Items" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><font size="2"><br>
+    </font><font face="Arial,Helvetica" size="4" color="#D60029"><strong>Apricot and RAID </strong></font><p><font
+    size="2">RAID was originally an acronym for Redundant Array of Inexpensive Disks. Each
+    RAID level describes the method in which data is distributed across a number of disk
+    drives, known as an array. It must be noted however, that these are not true
+    &quot;levels&quot;, as the higher levels don't contain all the functions of the lower
+    levels, and RAID 5 is not necessarily better than RAID 3. </font></p>
+    <p><font size="2">The birth of drive arrays effectively started with a paper published by
+    Berkeley University (CA), this paper classified the different architectures as RAID
+    levels. The driving force was to provide minicomputers with high performance drive
+    subsystems using the (then) newly available low cost 5.25&quot; Winchesters rather than
+    the very expensive mass storage magnetic drives used by mainframes. The concept was to
+    provide the required capacity using multiple 5.25&quot; drives connected as an array; in
+    effect the drives were operated in parallel to increase their performance. </font></p>
+    <p><font size="2">The word 'Inexpensive' in RAID's original definition is now somewhat of
+    a misnomer. The drives used in a RAID solution tend to be high quality, fast, SCSI devices
+    which are by no means the cheapest drives available for PCs. Consequently, the definition
+    of RAID is undergoing a change from Redundant Array of Inexpensive Disks to Redundant
+    Array of Independent Disks. </font><menu>
+      <p><font size="2"><a HREF="#RAID_1">RAID Levels</a><br>
+      <a HREF="#RAID_2">The Apricot Implementation</a><br>
+      <a HREF="#RAID_3">Warning!</a><br>
+      <a HREF="#RAID_4">Questions and Answers</a></font></p>
+    </menu>
+    <p>&nbsp;</p>
+    <p><font size="2"><a HREF="#top"><img SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="LEFT"
+    ALT="Back to Top" width="14" height="10"></a> <a HREF="#top"><img
+    SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="RIGHT" ALT="Back to Top" width="14"
+    height="10"></a> </font></p>
+    <hr>
+    <p><a name="raid_1"></a><font size="3"><strong>RAID Levels</strong></font></p>
+    <p><font size="2">The original Berkeley paper described five RAID levels. Of these only
+    RAID 1, 3 and 5 are now considered practical solutions. RAID 2 and 4 have been superseded
+    by RAID 3 and 5 respectively as they offer similar or superior performance at no
+    additional cost. </font></p>
+    <p><font size="2">There are other levels of RAID, but of these, only RAID 0 is accepted as
+    an industry standard. </font></p>
+    <p><font size="2">Note: For the purpose of this document, the diagrams illustrate a RAID
+    solution using either two or four disk drives - this is not a mandatory requirement. Each
+    RAID solution should be tailored to the customer's application using the appropriate
+    number of drives. </font></p>
+    <p><strong><font size="2">RAID LEVEL 0 </font></strong></p>
+    <p><font size="2">RAID 0 was not described by the Berkeley team but due to its wide
+    availability has since been endorsed by the RAID Advisory Board (RAB). RAB is an
+    association of suppliers and consumers of RAID related products and other organisations
+    with an interest in RAID technology set up to standardise RAID related terminology
+    throughout the industry. </font></p>
+    <p align="center"><font size="2"><img SRC="graphics/raid00.gif" BORDER="0" width="310"
+    height="209"></font></p>
+    <p><font size="2">RAID 0, also known as disk striping, works by segmenting a user file
+    into 'data blocks' and then writing the blocks sequentially across the drives in the
+    array. Disk striping offers excellent performance by transferring data using several disks
+    at once. However, in this configuration only one copy of the data is stored, and therefore
+    no fault tolerance is achieved. In fact this method is even more open to data loss; when
+    four drives make up a single logical drive, that logical drive is four times more likely
+    to fail than a single physical disk. Strictly speaking RAID level 0 is not a RAID at all
+    as there is no redundancy. </font></p>
+    <p><font size="2">RAID 0 can be implemented on any NetWare or Windows NT system with more
+    than 1 hard disk, without the introduction of any special hardware. Under NetWare this
+    option is called &#147;Spanning a volume&#148; and is achieved when creating a new volume
+    either at installation time or when adding another drive. Under Windows NT 3.5 this is a
+    standard feature of the Disk Administrator and is called &#147;Create Stripe Set&#148;.</font></p>
+    <p>&nbsp;</p>
+    <p><strong><font size="2">RAID LEVEL 1 </font></strong></p>
+    <p><font size="2">RAID 1 is also known as mirroring or shadowing. In its simplest form two
+    disks are connected to a single controller, and as data is written to one disk the same
+    information is also written to the mirrored disk. </font></p>
+    <p align="center"><font size="2"><img SRC="graphics/raid01.gif" BORDER="0" width="310"
+    height="190"></font></p>
+    <p><font size="2">If one drive fails, the system continues to run using data from the
+    remaining drive. However, if the controller fails, both drives fail and the system is
+    down. To overcome this, two controller cards can be used, which is a method known as
+    duplexing. </font></p>
+    <p><font size="2">The biggest disadvantage of mirroring is its cost. With each active
+    drive duplicated exactly, there is 50 percent data redundancy and twice the cost of the
+    same system with no mirroring. </font></p>
+    <p><font size="2">Again, RAID 1 can be implemented on any NetWare or Windows NT system
+    with more than 1 hard disk, without the introduction of any special hardware.</font></p>
+    <p>&nbsp;</p>
+    <p><strong><font size="2">RAID LEVEL 3 </font></strong></p>
+    <p><font size="2">RAID 3 employs a technique called 'disk striping with redundancy'. This
+    offers the advantage of disk striping but without the very high level of data redundancy
+    and cost of mirroring.</font></p>
+    <p align="center"><font size="2"><img SRC="graphics/raid03.gif" BORDER="0" width="310"
+    height="221"></font></p>
+    <p><font size="2">It provides data redundancy by producing 'parity' data that is stored on
+    a dedicated drive referred to as the parity drive. Parity data is created by applying
+    complex mathematical calculations to the original data which extract relevant bits of
+    information that can be stored using a fraction of the space used by a mirror image. In
+    the event of a drive failure, this parity information can be used to reconstruct the
+    original data. </font></p>
+    <p><font size="2">The disadvantage with this technique is that every time a write occurs,
+    parity information must be stored to a single disk. The idea of introducing
+    &#147;Striping&#148; is so that when a system is under heavy load, the writes are spread
+    across a number of drives in parallel, implementing RAID 3 therefore reduces the
+    performance of the system by having only a single drive for parity.</font></p>
+    <p>&nbsp;</p>
+    <p><font size="2"><strong>RAID LEVEL 5</strong> </font></p>
+    <p><font size="2">RAID 5 combines data striping and the storing of parity data on all
+    drives, as opposed to one dedicated parity drive. This option requires a minimum of three
+    hard disk drives. </font></p>
+    <p align="center"><font size="2"><img SRC="graphics/raid05.gif" BORDER="0" width="310"
+    height="208"></font></p>
+    <p><font size="2">RAID 5 and RAID 3 are very similar in terms of the benefits they offer,
+    their cost implications and the way in which they function. However, there are some
+    fundamental differences that make them suitable for very different applications. The
+    process of storing parity data across a number of drives, rather than one dedicated parity
+    drive, alleviates the bottleneck created by many parity write requests being directed to
+    one drive. </font></p>
+    <p><font size="2">In a RAID 5 configuration the amount of data actually stored on each
+    individual drive during the data striping process is larger than in RAID 3. Consequently
+    requests are typically serviced from one drive, as opposed to several drives, and thus the
+    potential competition for access to one drive is minimised. Due to this process RAID 5 is
+    particularly effective for applications which access a high number of small files such as
+    large databases and transaction processing systems (which most network users will be
+    running). In contrast, RAID 3 is particularly effective for applications such as image
+    processing which access large files. </font></p>
+    <p><font size="2"><strong>OTHER RAID LEVELS</strong> </font></p>
+    <p><font size="2">Many RAID products available today use RAID levels other than the
+    standard ones in their names or descriptions, e.g. RAID 6, RAID 8 etc. Usually these are a
+    combination of the levels described above, or the subsystem that implements one of these
+    may have been enhanced with a feature such as a cache. Of these non-standard levels, RAID
+    6 and RAID 10 are more widely used than any others. </font></p>
+    <p><strong><font size="2">RAID LEVEL 6 </font></strong></p>
+    <p><font size="2">RAID 6 is very similar to RAID 5, except that it stores two copies of
+    the parity data rather than one, with each copy being written to a separate drive. This
+    feature significantly improves reliability as three disks in the array must fail for data
+    to be lost; however, the write performance is the lowest of all RAIDs. </font></p>
+    <p><font size="2"><strong>RAID LEVEL 10 (1/0)</strong> </font></p>
+    <p><font size="2">Level 10, usually pronounced &quot;one zero&quot;, combines the features
+    of RAID level 0 (striping) and RAID level 1 (mirroring) to produce a system with very high
+    performance and high data reliability, but at a relatively high cost. </font></p>
+    <p align="center"><font size="2"><img SRC="graphics/raid10.gif" BORDER="0" width="300"
+    height="219"> </font></p>
+    <p><font size="2">It should be noted that some manufacturers use the term RAID 6 to define
+    the combination of RAID 0 &amp; 1.</font></p>
+    <p><font size="2"><a HREF="#top"><img SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="LEFT"
+    ALT="Back to Top" width="14" height="10"></a> <a HREF="#top"><img
+    SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="RIGHT" ALT="Back to Top" width="14"
+    height="10"></a> </font></p>
+    <hr>
+    <p><a name="raid_2"></a><strong><font size="3">The Apricot Implementation</font><font
+    size="2"> </font></strong></p>
+    <p><font size="2">Apricot have introduced this feature into the standard FT//ex 1000,
+    renaming it the FT//ex 1000R. This system employs a very high performance RAID controller
+    from a company called DPT which initially provides a high speed 32 bit PCI local bus
+    adapter with a single channel, 10MB/s SCSI controller and 4Mb of high speed cache. </font></p>
+    <p><font size="2"><strong>CHANGES TO THE FT//ex 1000</strong> </font></p>
+    <p><font size="2">The SCSI cable is replaced by a PCB backplane that allows up to 3 SCSI
+    channels to be fed to the 8 drive bays in the FT//ex. This board provides both a path for
+    the SCSI, the connectors to &#147;hot swap&#148; SCSI devices and switchable terminators
+    that allow a flexible combination of either 1, 2 or 3 channel SCSI. </font></p>
+    <p><font size="2">Each of the eight drive trays have extra fittings applied that allow the
+    drive tray to be locked in place and the drive to be powered down to initiate a &#147;hot
+    swap&#148; of a faulty drive. In addition an LED shows when the drive is correctly
+    powered. </font></p>
+    <p><font size="2">The on-board Adaptec AIC7870 SCSI controller is employed to control the
+    CD ROM drive and any tape devices fitted in the system while the DPT RAID controller
+    handles the hard disk drives. We would always recommend this configuration as the handling
+    of removable media devices on a RAID controller over-complicates the configuration whilst
+    not providing any advantages over using the on-board controller. </font></p>
+    <p><font size="2">Apricot sell systems with 4, 1Gb IBM &#147;Pegasus&#148; drives
+    installed. This is what is considered the optimum configuration for RAID 5 as it allows
+    the use of 3 of the hard disks to be employed as a RAID 5 system and the fourth drive to
+    be as a &#147;hot standby&#148; drive. </font></p>
+    <p><font size="2"><strong>HOT SWAP</strong> </font></p>
+    <p><font size="2">Hot Swap is not a facility offered by RAID but is dependant upon the
+    server itself. It requires the ability to power down each hard disk drive independently
+    without shutting down the server. Once the drive is powered down then the drive can be
+    removed without putting too much electrical interference on the, still active, SCSI bus. </font></p>
+    <p><font size="2">On the FT//ex 1000R this is achieved by replacement drive trays that
+    include both a power switch for each drive and a PCB edge connector with staggered
+    power/ground/data lines that connect smoothly into the Backplane. </font></p>
+    <p><font size="2"><strong>HOT STANDBY</strong> </font></p>
+    <p><font size="2">This is a facility provided by the RAID controller card. If an
+    additional disk is placed on the SCSI bus but is not used for any data, then in the event
+    of one of the other drives failing, the data and parity information is recreated onto the
+    &#147;spare&#148; drive thus allowing for more than one drive to fail without data loss. </font></p>
+    <p><font size="2"><strong>THE DPT PM3224 SmartRAID CONTROLLER</strong> </font></p>
+    <p><font size="2">This is a full length, 32 bit PCI 2.0 local bus card containing a 68030
+    40MHz processor to give full 132MByte/s PCI bus mastering. It supports full SCSI-2
+    initially on a single channel with the option to upgrade to 2 or even 3 channels. The DPT
+    card will support RAID levels 0, 1 and 5 (not RAID 3). </font></p>
+    <p><font size="2">Cache starts with a single 4MB SIMM and is upgradeable to a full 64MB
+    via 72 pin, 36 bit SIMMs with ECC parity. The board has 4 SIMM sockets which will accept
+    either 4MB or 16MB each, allowing a wide range of upgrade options without wasting SIMMs
+    that you have already purchased. </font></p>
+    <p><font size="2">The card also includes on-board sensors for temperature and voltage
+    fluctuations and is upgradeable to wide SCSI-2. </font></p>
+    <p><font size="2">Shipped with the card are drivers for NetWare 3.x, 4.x, IBM OS/2, SCO
+    UNIX, Microsoft OS/2 1.x, Windows NT, Banyan VINES, UnixWare and many more. With some of
+    these environments it is possible to make changes to the system from a remote site using
+    DPT's Storage Manager software. </font></p>
+    <p><font size="2">In the event of a disk failure, it is possible to both log any events as
+    well as broadcast a message to all users or selected groups informing them of any fault in
+    the system, whilst the server continues to run unaffected. Connections can also be made
+    via modem and notifications can be passed via pager or fax.</font></p>
+    <p><font size="2"><a HREF="#top"><img SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="LEFT"
+    ALT="Back to Top" width="14" height="10"></a> <a HREF="#top"><img
+    SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="RIGHT" ALT="Back to Top" width="14"
+    height="10"></a> </font></p>
+    <hr>
+    <p><a name="raid_3"></a><strong><font size="3">Warning!</font><font size="2"> </font></strong></p>
+    <p><font size="2">With RAID hardware and software installed, it is possible to continue
+    normal operation in the event of a disk failure and with Apricot&#146;s FT//ex 1000R it is
+    possible to rectify faults without downing the server. </font></p>
+    <p><font size="2">However, in any RAID scenario, whilst the system is running in
+    &#147;degraded&#148; mode (ie. one of the disks has failed and it has not yet updated any
+    hot spare drives that may be available) switching off the wrong drive can cause data loss.
+    </font></p>
+    <p><font size="2">It is vital that all hardware engineers who may need to change drives in
+    a RAID system have training on what effects removing the wrong drive can have. </font></p>
+    <p><font size="2">Apricot will run a number of seminars explaining RAID further and
+    helping you to recommend just how many drives and in what configuration they are best
+    installed.</font></p>
+    <p><font size="2"><a HREF="#top"><img SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="LEFT"
+    ALT="Back to Top" width="14" height="10"></a> <a HREF="#top"><img
+    SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="RIGHT" ALT="Back to Top" width="14"
+    height="10"></a> </font></p>
+    <hr>
+    <p><a name="raid_4"></a><strong><font size="3">Questions and Answers</font><font size="2">
+    </font></strong><dl>
+      <dt><font size="2">What does RAID stand for?</font></dt>
+      <dd><font size="2">RAID stands for Redundant Array of Inexpensive Disks, or more recently
+        Redundant Array of Independent Disks </font></dd>
+    </dl>
+    <dl>
+      <dt><font size="2">Why is RAID beneficial?</font></dt>
+      <dd><font size="2">It can provide an increased degree of fault tolerance to prevent loss of
+        information in the event of a failure of the storage sub-system. </font></dd>
+    </dl>
+    <dl>
+      <dt><font size="2">Are there different types of RAID implementation?</font></dt>
+      <dd><font size="2">There are 6 main types of RAID, known as levels 0 to 5, although in
+        practice only levels 0, 1, 3, and 5 are used. </font></dd>
+    </dl>
+    <dl>
+      <dt><font size="2">Is one particular type of RAID best?</font></dt>
+      <dd><font size="2">The simple answer is 'no'. The most suitable implementation depends on
+        the type of data that is likely to be processed. </font></dd>
+    </dl>
+    <dl>
+      <dt><font size="2">Which RAID implementation is best for each type of data?</font></dt>
+      <dd><font size="2">In general RAID 0 is used where speed is the only consideration as no
+        redundancy is provided. RAID 1 is excellent where the need for reliability and speed are
+        paramount; however, the cost of data storage cannot be a consideration since the amount of
+        disk space is doubled. RAID 5 is best where there are small files with a lot of disk I/O
+        such as large databases or transaction processing systems. </font></dd>
+    </dl>
+    <p>&nbsp;</p>
+    <p><font size="2"><a HREF="#top"><img SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="LEFT"
+    ALT="Back to Top" width="14" height="10"></a> <a HREF="#top"><img
+    SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="RIGHT" ALT="Back to Top" width="14"
+    height="10"></a> </font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

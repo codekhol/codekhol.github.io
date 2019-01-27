@@ -1,0 +1,349 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>Xenix - Unix I.P.B 3210 - Installing SCO OpenServer 5 and SCO UNIX 3.2v4.2 on VS660 (Intel)</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../products/main.htm" onMouseOver="act('product')" onMouseOut="inact('product')"><img width="113" height="22" src="../../../images/product1.gif" name="product" alt="Products" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/kbase2.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+       <a HREF="../ipbmain.htm"><img width="113" height="17" src="../../../images/s_ipb.gif" alt="Bulletins (IPBs)" border="0"></a><br>
+       <a HREF="../../guides/guidecon.htm"><img width="113" height="17" src="../../../images/s_guides.gif" alt="Guides" border="0"></a><br>
+       <a HREF="../../faq/main.htm"><img width="113" height="17" src="../../../images/s_faq.gif" alt="FAQs" border="0"></a><br>
+       <a HREF="../../guides/manuals/menu.htm"><img width="113" height="17" src="../../../images/s_manual.gif" alt="Owner's Handbooks" border="0"></a><br>
+       <a HREF="../../../common/infact/menu.htm"><img width="113" height="17" src="../../../images/s_datash.gif" alt="Product Datasheets" border="0"></a><br>
+       <a HREF="../../../common/misc/menu.htm"><img width="113" height="17" src="../../../images/s_misc.gif" alt="Miscellaneous Items" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top">&nbsp;<table border="0" width="100%" bgcolor="#FFFFC0">
+      <tr>
+        <td colspan="2"><font face="Arial,Helvetica" size="4" color="#D60029"><strong>Xenix -
+        Unix I.P.B. 3210 </strong></font>
+        </td>
+        <td valign="bottom"><strong><font size="2">5th March 1996 (JB) </font></strong></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Department </font></strong></td>
+        <td><strong><font size="2">Category </font></strong></td>
+        <td><strong><font size="2">Implementation </font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="3" bgcolor="#000000" height="1"></td>
+      </tr>
+      <tr>
+        <td><font size="2">Unix </font></td>
+        <td><font size="2">Software </font></td>
+        <td><font size="2">Advisory </font></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td align="center" width="50%"><font size="2"><a href="ipb3209.htm">Previous IPB</a> </font></td>
+        <td align="center" width="50%"><font size="2"><a href="ipb3211.htm">Next IPB</a> </font></td>
+      </tr>
+    </table>
+    <table border="0" width="100%">
+      <tr>
+        <td><p align="center"><font size="3"><strong>Installing SCO OpenServer 5 and SCO UNIX
+        3.2v4.2 on VS660 (Intel) </strong></font>
+        <menu>
+          <li><font size="2">Throughout this IPB, an <em>italic font</em> indicates SCO terminology,
+            and a </font><font face="Courier New" size="2">courier font</font><font size="2"> denotes
+            screen output, a file name, command or menu item name. </font></li>
+        </menu>
+        <p><font size="2">When installing the above software on the VS660, there are a number of
+        pitfalls to be aware of. These are summarised as follows: </font></p>
+        <p><font size="2"><em>SCO OpenServer 5</em> </font><ul>
+          <li><font size="2">System BIOS IDE translation mode set to Extended CHS. </font></li>
+          <li><font size="2">Erase the master boot block if any operating system exists (DOS is
+            pre-installed as shipped from Apricot). </font></li>
+          <li><font size="2">BTLD (Boot Time Loadable Driver) required to enable correct operation of
+            keyboard. </font></li>
+          <li><font size="2">Correct definition of hard disk drive parameters during installation. </font></li>
+        </ul>
+        <p><em><font size="2">SCO UNIX 3.2v4.2 </font></em><menu>
+          <li><font size="2">System BIOS IDE translation mode set to Standard CHS. </font></li>
+          <li><font size="2">Correct definition of hard disk drive parameters during installation. </font></li>
+        </menu>
+        <p><strong><font size="2">Installation for SCO OpenServer 5 only (no DOS) </font></strong></p>
+        <p><font size="2">Refer to <a href="ipb3212.htm">IPB 3212</a> for a problem that exists
+        with the OpenServer 5 installation software not recognising the master boot block
+        correctly. As described in the IPB it is worth erasing the master boot block before the
+        installation is started - the Apricot diagnostic &#147;TES050&#148; is a suitable utility
+        to use for this. If the master boot block is not erased the installation could fail with
+        an error </font><font face="Courier New" size="2">can&#146;t read bad block list</font><font
+        size="2"> at the fdisk stage during an <em>Interactive fdisk/divvy</em> installation. </font></p>
+        <p><font size="2">We recommend to always select an <em>Interactive fdisk/divvy</em>
+        installation - see <a href="ipb3198.htm">IPB 3198</a> for details. </font></p>
+        <p><font size="2">Ensure that you have a copy of the 'kbp' BTLD on floppy disk. This is
+        currently available on Area 39 of <strong>Insight BBS</strong>, and on the <strong>Insight
+        </strong>CD (from rel. 11) and is called '</font><font face="Courier New" size="2">oss424a.Z</font><font
+        size="2">'. </font></p>
+        <p><font size="2">At the boot: prompt, type: </font></p>
+        <blockquote>
+          <p><font face="Courier New" size="2">biosgeom=(<em>cyl,heads,spt</em>) defbootstr
+          ahslink=kbp </font></p>
+        </blockquote>
+        <p><font size="2">The biosgeom parameter will override the parameters that UNIX picks up
+        from the system BIOS. Substitute the correct physical parameters for the disk being used
+        for <em>cyl, heads, spt</em>. For example, the QUANTUM Fireball 1280A (1.2 Gb) would be
+        set to 2483,16,63. If this is set wrong, the software may install, but not boot. Note that
+        </font><font face="Courier New" size="2">biosgeom</font><font size="2"> counts from 1, so
+        the above total will be interpreted correctly as 2484 cylinders. </font></p>
+        <p><font size="2">If installation is to be done from a SCSI CD, then specify the adapter
+        to be used in the command line as well. For an Adaptec 1510 card set to I/O 340, IRQ10 the
+        syntax would be: </font></p>
+        <blockquote>
+          <p><font face="Courier New" size="2">biosgeom=(2483,16,63) defbootstr
+          adapter=spad(0x340,0xa,0)ahslink=kbp </font></p>
+        </blockquote>
+        <blockquote>
+          <p><font size="2">Note: The above is entered as one continuous line. </font></p>
+        </blockquote>
+        <p><font size="2">When prompted, insert the floppy disk containing the 'kbp' BTLD. The
+        system will build this in automatically. </font></p>
+        <p><font size="2">During </font><font face="Courier New" size="2">Hard Disk Setup</font><font
+        size="2">, Select the </font><font face="Courier New" size="2">interactive fdisk/divvy</font><font
+        size="2"> installation option (see <a href="ipb3198.htm">IPB 3198</a> for details). This
+        will allow the disk parameters to be examined/modified. These should correspond to the
+        values set with biosgeom previously. If they don't, select the option to modify disk
+        parameters, and type them in manually. This is typically the case if Extended CHS IDE
+        translation mode has been set in the system BIOS (recommended). If in doubt, type them in
+        anyway, as </font><font face="Courier New" size="2">biosgeom</font><font size="2"> has
+        been known not to work correctly in the past. </font></p>
+        <p><font size="2">If the disk geometry has been set correctly, installation will continue
+        as normal. If there is a problem, the installation script will go into a loop around the
+        fdisk partition creation menu, with the error: </font></p>
+        <blockquote>
+          <p><font face="Courier New" size="2">Can't read bad block list </font></p>
+        </blockquote>
+        <p><font size="2">At this point, the only option is to abort the installation and start
+        again. </font></p>
+        <p><strong><font size="2">Installation for SCO OpenServer 5 with DOS partition </font></strong></p>
+        <p><font size="2">There are additional issues to remember, when installing <em>SCO
+        OpenServer&nbsp;5</em> with a DOS partition on the same disk drive. Because of a problem
+        with the installation process, the following method must be used to install this
+        configuration. </font></p>
+        <p><font size="2">First, the masterboot record on the hard disk must be zeroed. This can
+        be done using Apricot diagnostic TES050 (Version 3.00). This can be found on the <strong>Insight
+        </strong>CD in the \diags directory. Running the destructive surface scan for short time
+        will overwrite any previous data on the drive. This is particularly important if a
+        previous attempt at installing software was done (either UNIX or DOS). </font></p>
+        <p><font size="2">Re-boot the system, and ensure IDE translation mode is set to <strong>Extended
+        CHS</strong>. The installation can be done using Standard CHS, but is not recommended, as
+        this will severely restrict available disk space. </font></p>
+        <p><font size="2">Install DOS as normal from the installation disks. Exit from the DOS
+        installation routine with the F3 key and manually set the size of the MS-DOS partition
+        required with the fdisk command. This is important, as a default DOS installation will try
+        to use all the available space for DOS. </font></p>
+        <p><font size="2">When the DOS installation is complete, re-boot the system using the <em>SCO
+        OpenServer&nbsp;5</em> boot disk. At the </font><font face="Courier New" size="2">Boot:</font><font
+        size="2"> prompt, type: </font></p>
+        <blockquote>
+          <p><font face="Courier New" size="2">biosgeom defbootstr adapter=spad(0x340,0xa,0)
+          ahslink=kbp </font></p>
+        </blockquote>
+        <blockquote>
+          <p><font size="2">Note: The above is entered as one continuous line. </font></p>
+        </blockquote>
+        <p><font size="2">Do not add any parameters to biosgeom this time. The above syntax will
+        allow the software to determine the correct disk geometry for itself. The line given in
+        the example also installs an Adaptec 1510 SCSI controller on IRQ10 and I/O 340 as
+        described in the previous section. Substitute appropriate values for other controller
+        types as necessary </font></p>
+        <p><font size="2">As before, have the keyboard supplement floppy to hand and insert this
+        when prompted. </font></p>
+        <p><font size="2">The <em>SCO OpenServer 5</em> installation continues as before. Select
+        the </font><font face="Courier New" size="2">interactive/fdisk divvy</font><font size="2">
+        option , using </font><font face="Courier New" size="2">Rest of disk for UNIX</font><font
+        size="2">. Make the Unix partition active. The system will not allow you to quit from the
+        partitioning stage. It will report: </font></p>
+        <blockquote>
+          <p><font face="Courier New" size="2">Can't read bad block list </font></p>
+        </blockquote>
+        <blockquote>
+          <p><font size="2">This is <u>normal <strong>only</strong> in this case</u>. </font></p>
+        </blockquote>
+        <p><font size="2">Switch the machine off, and start the UNIX installation from scratch.
+        DOS <strong><u>must not</u></strong> be reinstalled - it is not required to do so anyway. </font></p>
+        <p><font size="2">Proceed exactly as before, but at the disk partitioning stage, only view
+        the current partition status. It should still be set as before. Do not alter it. </font></p>
+        <p><font size="2">The installation should then continue to the division set up and
+        operating system software loading. </font></p>
+        <p><font size="2">Once installed, the system should then boot into either UNIX or DOS as
+        required. </font></p>
+        <p><font size="2">As with any <em>SCO OpenServer 5</em> installation, ensure that the
+        latest <em>Release Supplement</em> is added to the system when complete. At the time of
+        writing, this is <em>Release Supplement&nbsp;5.0.0d</em> which updates the base operating
+        system. There is a supplement to further update the networking subsystem which should also
+        be installed and this is the <em>Networking Supplement 1.0.0</em>. These can be found in
+        Area 39 of Apricot <strong>Insight BBS </strong>(</font><font face="Courier New" size="2">rs500v[123].dsk</font><font
+        size="2"> for <em>Release Supplement&nbsp;5.0.0d</em> and </font><font face="Courier New"
+        size="2">net100V[123].dsk</font><font size="2"> for. <em>Networking Supplement&nbsp;1.0.0</em>),
+        and the <strong>Insight&nbsp;</strong>CD (from rel&nbsp;10) under the same file names. </font></p>
+        <p><strong><font size="2">SCO UNIX 3.2v4.2 (with or without DOS partition) </font></strong></p>
+        <p><font size="2">We have currently found no keyboard problems with the VS660 under <em>SCO
+        UNIX&nbsp;3.2v4.2</em>, although the BTLD mentioned earlier (</font><font
+        face="Courier New" size="2">oss424a</font><font size="2">) is suitable for installation
+        under SCO UNIX 3.2v4.2. We would suggest that unless specific problems arise with this
+        configuration, that the BTLD is <u>not</u> installed. The disk drive parameters are more
+        critical however, and must be set up as follows. </font></p>
+        <p><font size="2">Before installation, ensure that the system BIOS setup that refers to
+        the IDE translation mode, is set to <strong>Standard CHS</strong>. This is important, as <em>SCO
+        UNIX 3.2v4.2</em> will not boot if this is not done. </font></p>
+        <p><font size="2">There are no additional parameters to specify at the </font><font
+        face="Courier New" size="2">boot:</font><font size="2"> prompt, unless additional
+        controllers/devices are being installed at this point. There is no </font><font
+        face="Courier New" size="2">biosgeom</font><font size="2"> command on <em>SCO UNIX 3.2v4.2</em>,
+        so the disk drive parameters must be examined/specified later. </font></p>
+        <p><font size="2">During installation, select the </font><font face="Courier New" size="2">fully
+        configurable installation</font><font size="2"> option. When prompted to </font><font
+        face="Courier New" size="2">display current disk parameters</font><font size="2">, check
+        the hard disk cylinder count. For <em>SCO UNIX 3.2v4.2</em>, this must not exceed 2047
+        cylinders. If it does, then modify this parameter to read 2047. A typical example would be
+        the Quantum Fireball 1.2Gb drive, which has 2484 cylinders. </font></p>
+        <p><font size="2">Again, if the geometry is correct, installation will continue normally.
+        Otherwise, it will loop around the fdisk/partition menu with a </font><font
+        face="Courier New" size="2">can't read bad block list</font><font size="2"> error. </font></p>
+        <p><font size="2">As before, ensure all relevant patches for <em>SCO UNIX 3.2v4.2</em> are
+        added to the system on completion of the initial installation. Refer to <a
+        href="ipb3183.htm">IPB 3183</a> for details. </font></p>
+        <p align="center"><font size="2">----------oOo---------- </font></td>
+      </tr>
+    </table>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1240 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<title>PCL6000 ROM BIOS Summary </title>
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+    <td valign="top"><p align="left"><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">PCL6000 ROM BIOS Summary</font><font
+    size="3" color="#D60029"> (Rev&nbsp;1.17)</font></strong></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.00.01<br>
+        BETA<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW<br>
+        <br>
+        For use with:-<br>
+        DataIO or Dataman<br>
+        S4 prom programmer</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/5/96<br>
+        <br>
+        <br>
+        D900</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>Included functionality</strong>,<br>
+        Based on IBM SurePath 2.0 code base.<br>
+        Natoma initial programming as per early BIOS writers guide.<br>
+        Nat Semi 308 initial programming.<br>
+        Automatic DIMM detection and sizing.<br>
+        Pentium Pro cache setup is functional (ignores L2 cache setup options).<br>
+        Pentium Pro BIOS update is provided for B0, C0, sA0 and sA1 steppings.<br>
+        Automatic detection, sizing and mode for up to 4 IDE drives.<br>
+        Single video binary support for GD5462 (Alpha).<br>
+        Adaptec 7880 binary and setup utility (Beta).<br>
+        USB controller is initialised.<br>
+        Signs on with Apricot version string and copyright (+ graphical boot with IBM SurePath
+        logo).<br>
+        <br>
+        <strong>Excluded functionality</strong>,<br>
+        Power management.<br>
+        Manufacturing support.<br>
+        Branding.<br>
+        Setup changes.<br>
+        Diva card support.<br>
+        Final chipset optimisation.<br>
+        Automatic DIMM type, speed and error correction.<br>
+        Boot block recovery.<br>
+        Machine ID API for Apricot diagnostics etc.<br>
+        Cosworth mods&#146; check.<br>
+        USB keyboard emulation.<br>
+        DMI.<br>
+        Appearance changes.<br>
+        Pentium Pro BIOS update API.<br>
+        <br>
+        <strong>Known Problems</strong>,<br>
+        Cirrus video controller does not work well in standard VGA graphics mode.<br>
+        PCI IDE timings have not been optimised.<br>
+        Some DIMMs are not recognised correctly.<br>
+        Memory timing is &#145;hard wired&#146;.<br>
+        Nat Semi 308 is showing issues with PnP under Windows 95.<br>
+        Dual video binary support is not included (GD 5466 or GD 5462).<br>
+        Pentium Pro BIOS update information is not available in setup.<br>
+        Processor type and speed determination does not work.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.00.02<br>
+        BETA<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">16/5/93<br>
+        <br>
+        <br>
+        0E00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Exit from Setup Causes Hang (Also
+        requires keyboard reset hardware mod)<br>
+        <br>
+        CPU Type and Speed not displayed correctly in System Summary Screen. Fixed<br>
+        <br>
+        IPR2171 Machine hangs after CMOS cleared if Adaptec Enabled.<br>
+        <br>
+        Some Dimm's not recognised correctly despite being correctly programmed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.00.03<br>
+        BETA<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/6/96<br>
+        <br>
+        <br>
+        F400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR02192, IPR02225 PCI Video resources
+        now removed from free pool correctly. Fixed<br>
+        <br>
+        New release of Adaptec BIOS, Version 1.24.<br>
+        <br>
+        Intel BIOS Update information in System Summary.<br>
+        <br>
+        Date/Time display in Setup in UK format. Fixed<br>
+        <br>
+        IPR02186, IPR02232, IPR02235, IPR02237 NS308 no longer put in PnP mode. Core PnP Code
+        still fails to configure system devices correctly and will therefore not configure PnP
+        Cards correctly either. Not yet fixed<br>
+        <br>
+        Inappropriate External Cache items replaced in Setup. Fixed.<br>
+        <br>
+        IPR02148, IPR02178, IPR02190, IPR02213, IPR02214, IPR02236 New video binary version 1.32a.
+        Doesn't seem to fix anything<br>
+        <br>
+        IPR02230 Now Resets if no video found (Attempt to fix Cirrus Cold Start problem). Doesn't
+        seem to fix all occurrences<br>
+        <br>
+        IPR02230 Now Resets if no video found (Attempt to fix Cirrus Cold Start problem).Doesn't
+        seem to fix all occurrences<br>
+        <br>
+        IPR02186, IPR02232, IPR02235, IPR02237, PCI Interrupt routing no takes into account legacy
+        and PnP usage (Limited to IRQ9/10 or 11 due to PnP problems above).Fixed<br>
+        <br>
+        Now supports limited Power Management Functionality (Just enough to test out hardware).<br>
+        <br>
+        Support for 3 Dimm Sockets Added (REV B).</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.00.05<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/8/96<br>
+        <br>
+        <br>
+        4D00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming: S4 / DATAIO, Offset 40000<br>
+        <br>
+        Status of outstanding problems for this release:<br>
+        Cache not Disablable, fixed in this release<br>
+        <br>
+        Cosmetic changes, new sign-on / logo provided.<br>
+        <br>
+        Setup Options Review, all but CD-ROM PIO Override In.<br>
+        <br>
+        CD-ROM Boot fails if ESC pressed during POST. Not fixed in this release.<br>
+        <br>
+        Processor Field Upgrades, Intel BIOS Update patches will be issued as updated versions of
+        this BIOS for the forseeable future.<br>
+        <br>
+        CHS translation disable (for legacy OS's that have different mapping strategies for large
+        drives), added in this release.<br>
+        <br>
+        Palette-snooping setup option, added in this release<br>
+        <br>
+        BIOS Recovery Code, not in this release.<br>
+        <br>
+        Machine-Identification API for Pre-Install/Diagnostics etc., Added in this release<br>
+        <br>
+        DMI 2.0 Support, Partial implementation in this release.<br>
+        <br>
+        USB Keyboard Emulation, not in this release<br>
+        <br>
+        Foghorne/BIOS branding/serialisation, not in this release<br>
+        <br>
+        Diva Card Removal Protection Support (for HMCE), Not in this release<br>
+        <br>
+        FR013, 16bit Legacy I/O resource clash.Initial fix starts I/O allocation at0x2000.<br>
+        <br>
+        Further design/discussion/development required for more full-proof fix.<br>
+        <br>
+        FR016, 062 Boot Failure, this is a fail-safe feature of Surepath, invoked if post failes
+        to reach setup/boot 3 times in a row.<br>
+        <br>
+        FR046, SCS HDD Orion Problem, unable to reproduce. Not addressed in this release<br>
+        <br>
+        IPR02226, Feature of Surepath, No change<br>
+        <br>
+        FR038, FR040/1, FR047<br>
+        <br>
+        IPR02232, IPR02305, NS308 PnP Device Nodes were not implemented. Caused various resource
+        clashes, incorrect identification etc. Fixed in this release.<br>
+        <br>
+        IPR02234, Win95J &quot;Unknown PCI Device&quot; - USB Controller! Setup Option to disable
+        has been added.<br>
+        <br>
+        IPR02235, FDC Controller not recognised and working with 3 Mode Floppy, 308 PnP Should now
+        identify it correctly and AIS manager is in for recognising machine type.<br>
+        <br>
+        FR042-4, IPR02349, User and Admin Password Problems.<br>
+        <br>
+        Extensive changes where made in the new drop of Surepath and all current fixes for Trent
+        have been included.<br>
+        <br>
+        IPR02251, IPR02378?, Can't do Express Install of WinNT with Onboard SCSI. In-The-Box
+        Adaptec driver problem. Workaround had been documented by Adaptec and will be documented.<br>
+        <br>
+        IPR02274, Memory Timing Violation. Chipset Settings Corrected.<br>
+        <br>
+        FR018, FR045, IPR02276, IPR02277, IPR02332, IPR02356, Power Saving Sub-Functional. This
+        release should bring it in line with TRENT.<br>
+        <br>
+        IPR02391, IPR02392, Adapter card problems, PCI Bus latency timers should now be correctly
+        configured. These IPR's are no longer reproducible so it is difficult to know whether this
+        is the fix.<br>
+        <br>
+        IPR02620, CCTEST Failure during MDP, Suspect Drive problems. Not addressed in this
+        release.<br>
+        <br>
+        FR021, IPR02633, BIOS occasionally reports Configuration Change when there is no change in
+        hardware. Unable to reproduce. Further investigation required.<br>
+        <br>
+        All video related IPR's. Were made dormant and have not been addressed in this release.<br>
+        <br>
+        Some HCT related IPR's were deemed to be problems with the HCT, Details passed to
+        Microsoft. Not addressed in this release.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.00.05<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 124128SW<br>
+        <br>
+        For use with JFLASH.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/8/96<br>
+        <br>
+        <br>
+        4D00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming - &quot;JFLASH -O:40000
+        -F:FERRARIR.BIN&quot;<br>
+        <br>
+        Status of outstanding problems for this release:<br>
+        Cache not Disablable, fixed in this release<br>
+        <br>
+        Cosmetic changes, new sign-on / logo provided.<br>
+        <br>
+        Setup Options Review, all but CD-ROM PIO Override In.<br>
+        <br>
+        CD-ROM Boot fails if ESC pressed during POST. Not fixed in this release.<br>
+        <br>
+        Processor Field Upgrades, Intel BIOS Update patches will be issued as updated versions of
+        this BIOS for the forseeable future.<br>
+        <br>
+        CHS translation disable (for legacy OS's that have different mapping strategies for large
+        drives), added in this release.<br>
+        <br>
+        Palette-snooping setup option, added in this release<br>
+        <br>
+        BIOS Recovery Code, not in this release.<br>
+        <br>
+        Machine-Identification API for Pre-Install/Diagnostics etc., Added in this release<br>
+        <br>
+        DMI 2.0 Support, Partial implementation in this release.<br>
+        <br>
+        USB Keyboard Emulation, not in this release<br>
+        <br>
+        Foghorne/BIOS branding/serialisation, not in this release<br>
+        <br>
+        Diva Card Removal Protection Support (for HMCE), Not in this release<br>
+        <br>
+        FR013, 16bit Legacy I/O resource clash.Initial fix starts I/O allocation at0x2000.<br>
+        <br>
+        Further design/discussion/development required for more full-proof fix.<br>
+        <br>
+        FR016, 062 Boot Failure, this is a fail-safe feature of Surepath, invoked if post failes
+        to reach setup/boot 3 times in a row.<br>
+        <br>
+        FR046, SCS HDD Orion Problem, unable to reproduce. Not addressed in this release<br>
+        <br>
+        IPR02226, Feature of Surepath, No change<br>
+        <br>
+        FR038, FR040/1, FR047<br>
+        <br>
+        IPR02232, IPR02305, NS308 PnP Device Nodes were not implemented. Caused various resource
+        clashes, incorrect identification etc. Fixed in this release.<br>
+        <br>
+        IPR02234, Win95J &quot;Unknown PCI Device&quot; - USB Controller! Setup Option to disable
+        has been added.<br>
+        <br>
+        IPR02235, FDC Controller not recognised and working with 3 Mode Floppy, 308 PnP Should now
+        identify it correctly and AIS manager is in for recognising machine type.<br>
+        <br>
+        FR042-4, IPR02349, User and Admin Password Problems.<br>
+        <br>
+        Extensive changes where made in the new drop of Surepath and all current fixes for Trent
+        have been included.<br>
+        <br>
+        IPR02251, IPR02378?, Can't do Express Install of WinNT with Onboard SCSI. In-The-Box
+        Adaptec driver problem. Workaround had been documented by Adaptec and will be documented.<br>
+        <br>
+        IPR02274, Memory Timing Violation. Chipset Settings Corrected.<br>
+        <br>
+        FR018, FR045, IPR02276, IPR02277, IPR02332, IPR02356, Power Saving Sub-Functional. This
+        release should bring it in line with TRENT.<br>
+        <br>
+        IPR02391, IPR02392, Adapter card problems, PCI Bus latency timers should now be correctly
+        configured. These IPR's are no longer reproducible so it is difficult to know whether this
+        is the fix.<br>
+        <br>
+        IPR02620, CCTEST Failure during MDP, Suspect Drive problems. Not addressed in this
+        release.<br>
+        <br>
+        FR021, IPR02633, BIOS occasionally reports Configuration Change when there is no change in
+        hardware. Unable to reproduce. Further investigation required.<br>
+        <br>
+        All video related IPR's. Were made dormant and have not been addressed in this release.<br>
+        <br>
+        Some HCT related IPR's were deemed to be problems with the HCT, Details passed to
+        Microsoft. Not addressed in this release.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.00.06<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2/9/96<br>
+        <br>
+        <br>
+        D400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Status of outstanding problems for this
+        release:<br>
+        FR013: 16bit Legacy I/O resource clash. Further design/discussion/development required for
+        more full-proof fix. Probably in 9.01.<br>
+        <br>
+        FR018 IPR02276: HDD Does not Spin Down in Power Saving Mode. Fixed in this release.<br>
+        <br>
+        FR038: HP Colorado T1000e Won't work in EPP/ECP/Bi-directional any OS? Won't work in
+        Standard mode under Win3.1? Not reproduced, awaiting results of tests with other EPP/ECP
+        devices.<br>
+        <br>
+        FR046: SCSI HDD Orion Problem. Unable to reproduce. Not addressed in this release.<br>
+        <br>
+        FR049 IPR02748: Setup ECC Options Confusing. Tidied up and now defaults to appropriate
+        setting based on DIMM(s) present.<br>
+        <br>
+        FR056: JFlash does not work on 9.00.05. Change over to using TFlash not synchronised well.<br>
+        <br>
+        FR057: PC Beep. Under Investigation.<br>
+        <br>
+        IPR02235: FDC Controller not recognised and working with 3 Mode Floppy. Awaiting results
+        of regression testing.<br>
+        <br>
+        IPR02251: Can't do Express Install of WinNT with Onboard SCSI. In-The-Box Adaptec driver
+        problem. Workaround had been documented by Adaptec and will be documented.<br>
+        <br>
+        IPR02305: 1800 PCI Error. This is the &amp;quot;out of resources&amp;quot; error and it
+        may be that the configuration was genuinely out of resources. Awaiting results of testing.<br>
+        <br>
+        IPR02349: User and Admin Password Problems. Awaiting results of regression testing.<br>
+        <br>
+        IPR02391 IPR02392: Adapter card problems. Awaiting results of regression testing.<br>
+        <br>
+        IPR02633: BIOS occasionally reports Configuration Change when there is no change in
+        hardware. Awaiting results of regression testing.<br>
+        <br>
+        IPR02739: Start-up screen corrupts with serial port error. Fixed in this release.<br>
+        <br>
+        IPR02740: Drive type detection and CD-ROM Boot failure with Fast Post. Under investigation
+        by IBM.<br>
+        <br>
+        IPR02754: Power Saving does not work under DOS. Fixed in this release.<br>
+        <br>
+        All video related IPR's. Were made dormant and have not been addressed in this release.<br>
+        <br>
+        Some HCT related IPR's were deemed to be problems with the HCT. Details passed to
+        Microsoft. Not addressed in this release.<br>
+        <br>
+        Help for summary line menu item incorrect. Fixed in this release.<br>
+        <br>
+        WinNT hangs if Floppy controller Disabled in Setup. Fixed in this release.<br>
+        <br>
+        Clear Error Log followed by Restore CMOS and re-display error log caused screen
+        corruption. Fixed in this release.<br>
+        <br>
+        TFLASH interface. Added for this release.<br>
+        <br>
+        Processor Field Upgrades. Intel BIOS Update patches will be issued as updated versions of
+        this BIOS for the foreseeable future.<br>
+        <br>
+        Setup Option for Disabling IDE Controller doesn't disable settings menu. Fixed in this
+        release.<br>
+        <br>
+        BIOS Recovery Code. Not in this release.<br>
+        <br>
+        DMI 2.0 Support. Partial implementation in this release.<br>
+        <br>
+        USB Keyboard Emulation. Not in this release<br>
+        <br>
+        Foghorne/BIOS branding/serialisation. Not in this release<br>
+        <br>
+        Diva Card Removal Protection Support (for HMCE). Not in this release</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.00.07<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW<br>
+        <br>
+        for (S4, DataIO).</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4/9/96<br>
+        <br>
+        <br>
+        5F00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Status of outstanding problems for this
+        release:<br>
+        FR013: 16bit Legacy I/O resource clash. Further design/discussion/development required for
+        more full-proof fix. Probably in 9.01<br>
+        <br>
+        FR038: HP Colorado T1000e Won't work in EPP/ECP/Bi-directional any OS?<br>
+        <br>
+        Won't work in Standard mode under Win3.1?. Not reproduced, awaiting results of tests with
+        other EPP/ECP devices.<br>
+        <br>
+        FR046: SCSI HDD Orion Problem. Unable to reproduce. Not addressed in this release<br>
+        <br>
+        FR049 IPR02748 IPR02772: Setup ECC Options Confusing. Tidied up and now defaults to
+        appropriate setting based on DIMM(s) present.<br>
+        <br>
+        FR056: JFlash does not work on 9.00.05. Change over to using TFlash not synchronised well<br>
+        <br>
+        FR057 IPR02771: PC Beep. Silicon Revision of Vibra Chip must be later then E stepping.<br>
+        <br>
+        Problem with caching of Video BIOS on Matrox fixed in this release.<br>
+        <br>
+        IPR02251: Can't do Express Install of WinNT with Onboard SCSI. In-The-Box Adaptec driver
+        problem. Workaround had been documented by Adaptec and will be documented.<br>
+        <br>
+        IPR02305: 1800 PCI Error. This is the &amp;quot;out of resources&amp;quot; error and it
+        may be that the configuration was genuinely out of resources. Awaiting results of testing.<br>
+        <br>
+        IPR02391 IPR02392: Adapter card problems. Awaiting results of regression testing.<br>
+        <br>
+        IPR02633: BIOS occasionally reports Configuration Change when there is no change in
+        hardware. Possible faulty Motherboard. Under Investigation<br>
+        <br>
+        IPR02726 IPR02740: Drive type detection and CD-ROM Boot failure with Fast Post. Under
+        investigation by IBM.<br>
+        <br>
+        IPR02770: IRQ 14 not a wake-up event. Not fixed in this release.<br>
+        <br>
+        IPR02779: SCO Unix reboot/restart hangs. Not fixed in this release.<br>
+        <br>
+        IPR02780: DPT Card Option Rom Hangs after CMOS Discharged. Not fixed in this release.<br>
+        <br>
+        All video related IPR's. Were made dormant and have not been addressed in this release.<br>
+        <br>
+        Some HCT related IPR's were deemed to be problems with the HCT. Details passed to
+        Microsoft. Not addressed in this release.<br>
+        <br>
+        Missing PnP node for 308 and 10bit aliasing. Fixed in this release.<br>
+        <br>
+        Video Controller line in Video Setup Menu appears &quot;selected&quot;. Fixed in this
+        release.<br>
+        <br>
+        Screen corruption when Error Log is cleared an subsequently restored with F9 key when in
+        Error Log menu. Fixed in this release.<br>
+        <br>
+        Shadowing Line for BIOS (E0000-FFFFF) in Shadow Menu can be selected. Fixed in this
+        release.<br>
+        <br>
+        Caching for memory sizes not a power of 2 (e.g. 48MB, 192MB...) only cached up to nearest
+        power of 2 below (e.g. 48MB-&gt;32MB, 192MB-&gt;128MB....) Fixed in this release.<br>
+        <br>
+        Change in Mouse counnection status does not show &quot;bullet&quot; to indicate change.
+        Not fixed in this release<br>
+        <br>
+        Manually setting IDE drive PIO mode to Mode 4 causes a configuration change notification
+        and forces it back to Automatic next time you enter setup. Not fixed in this release<br>
+        <br>
+        Inaccurate help for Power-On-Password about being prompted for password on booting. This
+        is conditioned by a setup option. Not fixed in this release<br>
+        <br>
+        Inconsistency of drive names/numbers between System Summary, Device and I/O Ports, and
+        Start Options menus. Not fixed in this release<br>
+        <br>
+        Processor Field Upgrades. Intel BIOS Update patches will be issued as updated versions of
+        this BIOS for the forseeable future.<br>
+        <br>
+        BIOS Recovery Code. Not in this release.<br>
+        <br>
+        DMI 2.0 Support. Partial implementation in this release.<br>
+        <br>
+        USB Keyboard Emulation. Not in this release<br>
+        <br>
+        Foghorne/BIOS branding/serialisation. Not in this release<br>
+        <br>
+        Diva Card Removal Protection Support (for HMCE). Not in this release</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.00<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/9/96<br>
+        <br>
+        <br>
+        5F00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">FR013: 16bit Legacy I/O resource clash.
+        Further design/discussion/development required for more full-proof fix. Probably in 9.01<br>
+        <br>
+        FR038: HP Colorado T1000e Won't work in EPP/ECP/Bi-directional any OS?<br>
+        <br>
+        Won't work in Standard mode under Win3.1? Not reproduced, awaiting results of tests with
+        other EPP/ECP devices.<br>
+        <br>
+        FR046: SCSI HDD Orion Problem.Unable to reproduce. Not addressed in this release<br>
+        <br>
+        FR049 IPR02748 IPR02772: Default ECC Setting Incorrect. Bug introduced in that caused
+        crash if &quot;Load Default Settings&quot; selected. Also didn't calculate default
+        correctly if CMOS Battery was bad. Fixed in 9.00.07<br>
+        <br>
+        FR056: JFlash does not work on 9.00.05. Change over to using TFlash not synchronised well<br>
+        <br>
+        FR057 IPR02771. PC Beep. Silicon Revision of Vibra Chip must be later then E stepping.<br>
+        <br>
+        Problem with caching of Video BIOS on Matrox fixed in release 9.00.07.<br>
+        <br>
+        IPR02251: Can't do Express Install of WinNT with Onboard SCSI. In-The-Box Adaptec driver
+        problem. Workaround had been documented by Adaptec and will be documented.<br>
+        <br>
+        IPR02305: 1800 PCI Error. This is the &quot;out of resources&quot; error and it may be
+        that the configuration was genuinely out of resources. Awaiting results of testing.<br>
+        <br>
+        IPR02391 IPR02392: Adapter card problems. Awaiting results of regression testing.<br>
+        <br>
+        IPR02633: BIOS occasionally reports Configuration Change when there is no change in
+        hardware. Possible faulty Motherboard. Under Investigation<br>
+        <br>
+        IPR02726 IPR02740: Drive type detection and CD-ROM Boot failure with Fast Post. Under
+        investigation by IBM.<br>
+        <br>
+        IPR02770: IRQ 14 not a wake-up event. Not fixed in this release.<br>
+        <br>
+        IPR02779: SCO Unix reboot/restart hangs. Not fixed in this release.<br>
+        <br>
+        IPR02780: DPT Card Option Rom Hangs after CMOS Discharged. Not fixed in this release.<br>
+        <br>
+        IPR02795: Reserved bit in one chipset register is being set. Not fixed in this release.<br>
+        <br>
+        All video related IPR's. Were made dormant and have not been addressed in this release.<br>
+        <br>
+        Some HCT related IPR's were deemed to be problems with the HCT. Details passed to
+        Microsoft. Not addressed in this release.<br>
+        <br>
+        Missing PnP node for 308 and 10bit aliasing. Fixed in 9.00.07<br>
+        <br>
+        Video Controller line in Video Setup Menu appears &quot;selected&quot;. Fixed in 9.00.07<br>
+        <br>
+        Screen corruption when Error Log is cleared an subsequently restored with F9 key when in
+        Error Log menu. Fixed in 9.00.07<br>
+        <br>
+        Shadowing Line for BIOS (E0000-FFFFF) in Shadow Menu can be selected. Fixed in 9.00.07<br>
+        <br>
+        Caching for memory sizes not a power of 2 (e.g. 48MB, 192MB...) only cached up to nearest
+        power of 2 below (e.g. 48MB-&gt;32MB, 192MB-&gt;128MB....) Fixed in 9.00.07<br>
+        <br>
+        Change in Mouse connection status does not show &quot;bullet&quot; to indicate change. Not
+        fixed in this release<br>
+        <br>
+        Manually setting IDE drive PIO mode to Mode 4 causes a configuration change notification
+        and forces it back to Automatic next time you enter setup. Not fixed in this release<br>
+        <br>
+        Inaccurate help for Power-On-Password about being prompted for password on booting. This
+        is conditioned by a setup option. Not fixed in this release<br>
+        <br>
+        Inconsistency of drive names/numbers between System Summary, Device and I/O Ports, and
+        Start Options menus. Not fixed in this release<br>
+        <br>
+        Processor Field Upgrades. Intel BIOS Update patches will be issued as updated versions of
+        this BIOS for the foreseeable future.<br>
+        <br>
+        BIOS Recovery Code. Not in this release.<br>
+        <br>
+        DMI 2.0 Support. Partial implementation in this release.<br>
+        <br>
+        USB Keyboard Emulation. Not in this release<br>
+        <br>
+        Foghorne/BIOS branding/serialisation. Not in this release<br>
+        <br>
+        Diva Card Removal Protection Support (for HMCE). Not in this release</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.01<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/9/96<br>
+        <br>
+        <br>
+        9400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Instructions for Installing Binary<br>
+        For factory build and updating before 9.00.06. PROM PROGRAMMER. Use offset 40000 for
+        29F040<br>
+        <br>
+        Won't work if current BIOS is before 9.00.06. TFLASH. &quot;TFLASH B W filename.BIN&quot;<br>
+        <br>
+        Differences from 9.00<br>
+        Logo changed from three diamonds only to three diamonds plus &quot;Mitsubishi
+        Electric&quot;.<br>
+        <br>
+        Removed leading zero from major version number i.e. &quot;9.00&quot; rather
+        than&quot;09.00&quot;.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.02.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/11/96<br>
+        <br>
+        <br>
+        1800</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">To install: &quot;TFLASH B W
+        FERRARIN.BIN&quot;<br>
+        <br>
+        Status of outstanding problems for this release:<br>
+        (Changes in status and new problems found since 9.01 release are in Bold)<br>
+        <br>
+        FR013: 16bit Legacy I/O resource clash. Setup Option not yet implemented.<br>
+        <br>
+        FR038: HP Colorado T1000e Won't work in EPP/ECP/Bi-directional any OS?<br>
+        <br>
+        Won't work in Standard mode under Win3.1? Not reproduced, awaiting results of tests with
+        other EPP/ECP devices.<br>
+        <br>
+        FR046: SCSI HDD Orion Problem. HDD batch problem?<br>
+        <br>
+        FR057 IPR02771. PC Beep. Silicon Revision of Vibra Chip must be later than E stepping.<br>
+        <br>
+        IPR02251: Can't do Express Install of WinNT 3.51with Onboard SCSI. In-The- Box Adaptec
+        driver problem. Workaround had been documented by Adaptec and will be included in our
+        documentation. Shouldn't be a problem for NT 4.0<br>
+        <br>
+        IPR02391 IPR02392: Adapter card problems. Awaiting results of regression testing.<br>
+        <br>
+        IPR02633: BIOS occasionally reports Configuration. Change when there is no change in
+        hardware. Possible faulty Motherboard. Under Investigation<br>
+        <br>
+        IPR02726 IPR02740: Drive type detection and CD-ROM Boot failure with Fast Post. Under
+        investigation by IBM.<br>
+        <br>
+        IPR02770: IRQ 14 not a wake-up event. Chipset does not support this.<br>
+        <br>
+        IPR02777 IPR02780: DPT card hangs after clearing CMOS (Also occurs on 062 Boot Failure).
+        Fixed in this release.<br>
+        <br>
+        IPR02779: SCO Unix reboot/restart hangs. Fixed in this release (NB. Removes shutdown
+        processing so may influence older OS's eg. Win 3.1!)<br>
+        <br>
+        IPR02780: DPT Card Option Rom Hangs after CMOS Discharged. Fixed in this release<br>
+        <br>
+        IPR02795: Reserved bit in one chipset register is being set. Fixed in this release<br>
+        <br>
+        IPR02804 (IPR02868?): Thomas Conrad card fails to connect with NW MPR3.0. Legacy resources
+        not defined in setup. Awaiting results of regression testing.<br>
+        <br>
+        (IPR02828): Enhanced 32bit disk driver reports failure. Fixed in this release.<br>
+        <br>
+        IPR02839: DPT2144 config utility causes &quot;PCI error&quot; message.<br>
+        <br>
+        DTP2144 BIOS config utility uses data segment that overlaps the BIOS PCI data segment.
+        This causes corruption of data and the BIOS fails if returned to(ie. exit without saving).<br>
+        <br>
+        Reserved bits being set in PMC. Fixed in this release.<br>
+        <br>
+        Change in Mouse connection status does not show &quot;bullet&quot; to indicate change.
+        Fixed in this release.<br>
+        <br>
+        Manually setting IDE drive PIO mode to Mode 4 causes a configuration change notification
+        and forces it back to Automatic next time you enter setup. Fixed in this release.<br>
+        <br>
+        Inaccurate help for Power-On-Password about being prompted for password on booting. This
+        is conditioned by a setup option. Fixed in this release.<br>
+        <br>
+        Onboard Video (Rev A and B machines only) didn't work. Fixed in this release.<br>
+        <br>
+        Window for pressing F1 limited to memory test if Adaptec of DPT fitted. Fixed in this
+        release.<br>
+        <br>
+        Expanded Phase2 size limit due to build problems. Fixed in this release.<br>
+        <br>
+        Various problems with TFLASH accessing Data Blocks. Fixed in this release. (Need TFLASH
+        1.04 or later)<br>
+        <br>
+        Factory reported 166Mhz Trents being mis-identified as 180Mhz. Would probably affect
+        PCL6000 as well. Fixed in this release.<br>
+        <br>
+        DMI 2.0 Support / Serialisation. DMI should work correctly for Real and 16bit Protected
+        mode environments IF THE MACHINE CONTAINS VALID MANUFACTURING/SERIALISATION DATA BLOCKS!
+        32bit Protected mode support is included but no test software available to test this yet.<br>
+        <br>
+        All video related IPR's. Were made dormant and have not been addressed in this release.<br>
+        <br>
+        Some HCT related IPR's were deemed to be problems with the HCT. Details passed to
+        Microsoft. NOT fixed in this release.<br>
+        <br>
+        Inconsistency of drive names/numbers between System Summary, Device and I/O Ports, and
+        Start Options menus. NOT fixed in this release.<br>
+        <br>
+        (Loughborough sound images card doesn't work.). NOT fixed in this release<br>
+        <br>
+        Processor Field Upgrades. Intel BIOS Update patches will be issued as updated versions of
+        this BIOS for the foreseeable future.<br>
+        <br>
+        BIOS Recovery Code. NOT in this release.<br>
+        <br>
+        USB Keyboard Emulation. NOT in this release<br>
+        <br>
+        Foghorne/BIOS branding. NOT in this release<br>
+        <br>
+        Diva Card Removal Protection Support (for HMCE). NOT in this release</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.02.02<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/11/96<br>
+        <br>
+        <br>
+        2800</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">To install: <br>
+        &quot;TFLASH B W FERRARIN.BIN&quot;<br>
+        <br>
+        Status of outstanding problems for this release:<br>
+        (Changes in status and new problems found since 9.02.01 release are in Bold)<br>
+        <br>
+        FR013: 16bit Legacy I/O resource clash. Setup Option not yet implemented.<br>
+        <br>
+        FR038: HP Colorado T1000e Won't work in EPP/ECP/Bi-directional any OS? Won't work in
+        Standard mode under Win3.1? Awaiting results of regression testing.<br>
+        <br>
+        FR046: SCSI HDD Orion Problem<br>
+        <br>
+        Awaiting results of regression testing.<br>
+        <br>
+        FR057 IPR02771: PC Beep. Awaiting results of regression testing.<br>
+        <br>
+        IPR02251: Can't do Express Install of WinNT 3.51with Onboard SCSI.<br>
+        <br>
+        In-The-Box Adaptec driver problem. Workaround had been documented by Adaptec and will be
+        included in our documentation. Shouldn't be a problem for NT 4.0 Awaiting results of
+        testing.<br>
+        <br>
+        IPR02391 IPR02392: Adapter card problems. Awaiting results of regression testing.<br>
+        <br>
+        IPR02633: BIOS occasionally reports Configuration Change when there is no change in
+        hardware. Awaiting results of regression testing.<br>
+        <br>
+        IPR02726 IPR02740: Drive type detection and CD-ROM Boot failure with Fast Post. Under
+        investigation by IBM.<br>
+        <br>
+        IPR02770: IRQ 14 not a wake-up event Chipset does not support this.<br>
+        <br>
+        IPR02777 IPR02780: DPT card hangs after clearing CMOS (Also occurs on 062 Boot Failure).
+        Awaiting results of regression testing.<br>
+        <br>
+        IPR02779: SCO UNIX reboot/restart hangs. Awaiting results of regression testing.<br>
+        <br>
+        IPR02780: DPT Card Option ROM Hangs after CMOS Discharged. Awaiting results of regression
+        testing.<br>
+        <br>
+        IPR02795: Reserved bit in one chipset register is being set. Awaiting results of
+        regression testing.<br>
+        <br>
+        IPR02804 (IPR02868?): Thomas Conrad card fails to connect with NW MPR3.0. Awaiting results
+        of regression testing.<br>
+        <br>
+        (IPR02828) (IPR02882): Disk Enhancer and Disk Power Management Problems. Help text updated
+        in this release. Awaiting results of regression testing for previous mod&#146;s to
+        functionality.<br>
+        <br>
+        IPR02839: DPT2144 config&#146; utility causes &quot;PCI error&quot; message.<br>
+        <br>
+        DTP2144 BIOS config&#146; utility uses data segment that overlaps the BIOS PCI data
+        segment. This causes corruption of data and the BIOS fails if returned to (i.e. exit
+        without saving).<br>
+        <br>
+        IPR02936: Default setting for Mouse is Not Installed which means it goes into Setup after
+        auto-config&#146;&#146;&#146;&#146;&#146;&#146;&#146;&#146;&#146;&#146;&#146; if Mouse
+        Present. Under Investigation.<br>
+        <br>
+        Reserved bits being set in PMC. Awaiting results of regression testing.<br>
+        <br>
+        Change in Mouse connection status does not show &quot;bullet&quot; to indicate change.
+        Awaiting results of regression testing.<br>
+        <br>
+        Manually setting IDE drive PIO mode to Mode 4 causes a configuration change notification
+        and forces it back to Automatic next time you enter Setup. Awaiting results of regression
+        testing.<br>
+        <br>
+        Inaccurate help for Power-On-Password about being prompted for password on booting. This
+        is conditioned by a Setup option. Awaiting results of regression testing.<br>
+        <br>
+        Onboard Video (Rev A and B machines only) didn't work. Awaiting results of regression
+        testing.<br>
+        <br>
+        Window for pressing F1 limited to memory test if Adaptec of DPT fitted. Awaiting results
+        of regression testing.<br>
+        <br>
+        Expanded Phase2 size limit due to build problems. Awaiting results of regression testing.<br>
+        <br>
+        Various problems with TFLASH accessing Data Blocks. Awaiting results of regression
+        testing.<br>
+        <br>
+        Factory reported 166Mhz Trents being miss-identified as 180Mhz. Would probably affect
+        PCL6000 as well. Awaiting results of regression testing.<br>
+        <br>
+        DMI 2.0 Support / Serialisation DMI should work correctly for Real and 16bit Protected
+        mode environments IF THE MACHINE CONTAINS VALID MANUFACTURING/SERIALISATION DATA BLOCKS!
+        32bit Protected mode support is included but no test software available to test this yet.
+        Some changes made to prevent DMI_INVALID_HANDLE and to remove invalid entries from NT
+        interface table.<br>
+        <br>
+        PCI Interrupt Slot Rotations/Riser Support. Support for the second slot on
+        Diamond/Lotus/SongCheer risers added and the slot ID's/Rotations set up to match Trent
+        where appropriate.<br>
+        <br>
+        NS307 not reporting correct inf. in PnP node. Fixed in this release.<br>
+        <br>
+        Parallel Port not reporting correct number of I/O ports in PnP node when at 3BC address.
+        Fixed in this release.<br>
+        <br>
+        All video related IPR's. Were made dormant and have not been addressed in this release.<br>
+        <br>
+        Some HCT related IPR's were deemed to be problems with the HCT Details passed to
+        Microsoft. NOT fixed in this release.<br>
+        <br>
+        Inconsistency of drive names/numbers between System Summary, Device and I/O Ports, and
+        Start Options menus. NOT fixed in this release.<br>
+        <br>
+        (Loughborough sound images card doesn't work.). NOT fixed in this release<br>
+        <br>
+        Processor Field Upgrades. Intel BIOS Update patches will be issued as updated versions of
+        this BIOS for the foreseeable future.<br>
+        <br>
+        BIOS Recovery Code. NOT in this release.<br>
+        <br>
+        USB Keyboard Emulation. NOT in this release<br>
+        <br>
+        Foghorn/BIOS branding. NOT in this release<br>
+        <br>
+        Diva Card Removal Protection Support (for HMCE). NOT in this release</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.02<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">27/11/96<br>
+        <br>
+        <br>
+        2100</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">To install: <br>
+        &quot;TFLASH B W FERRARIN.BIN&quot;<br>
+        <br>
+        Differences from 9.02.02<br>
+        None except version number.<br>
+        <br>
+        Status of outstanding problems for this release:<br>
+        (Changes in status and new problems found since9.02.01 release are in Bold)<br>
+        <br>
+        FR013: 16bit Legacy I/O resource clash. Setup Option not yet implemented.<br>
+        <br>
+        FR038: HP Colorado T1000e Won't work in EPP/ECP/Bi-directional any OS?<br>
+        <br>
+        Won't work in Standard mode under Win3.1? Awaiting results of regression testing.<br>
+        <br>
+        FR046: SCSI HDD Orion Problem<br>
+        <br>
+        Awaiting results of regression testing.<br>
+        <br>
+        FR057 IPR02771: PC Beep. Awaiting results of regression testing.<br>
+        <br>
+        IPR02251: Can't do Express Install of WinNT 3.51with Onboard SCSI. In-The-Box Adaptec
+        driver problem. Workaround had been documented by Adaptec and will be included in our
+        documentation. Shouldn't be a problem for NT 4.0 Awaiting results of testing.<br>
+        <br>
+        IPR02391 IPR02392: Adapter card problems. Awaiting results of regression testing.<br>
+        <br>
+        IPR02633: BIOS occasionally reports Configuration. Change when there is no change in
+        hardware. Awaiting results of regression testing.<br>
+        <br>
+        IPR02726 IPR02740: Drive type detection and CD-ROM Boot failure with Fast Post. Under
+        investigation by IBM.<br>
+        <br>
+        IPR02770: IRQ 14 not a wake-up event. Chipset does not support this.<br>
+        <br>
+        IPR02777 IPR02780: DPT card hangs after clearing CMOS (Also occurs on 062 Boot Failure).
+        Awaiting results of regression testing.<br>
+        <br>
+        IPR02779: SCO Unix reboot/restart hangs. Awaiting results of regression testing.<br>
+        <br>
+        IPR02780: DPT Card Option Rom Hangs after CMOS Discharged. Awaiting results of regression
+        testing.<br>
+        <br>
+        IPR02795: Reserved bit in one chipset register is being set. Awaiting results of
+        regression testing.<br>
+        <br>
+        IPR02804 (IPR02868?): Thomas Conrad card fails to connect with NW MPR3.0 Awaiting results
+        of regression testing.<br>
+        <br>
+        (IPR02828) (IPR02882): Disk Enhancer and Disk Power Management Problems. Help text updated
+        in this release. Awaiting results of regression testing for previous mods to
+        functionality.<br>
+        <br>
+        IPR02839: DPT2144 config utility causes &quot;PCI error&quot; message. DTP2144 BIOS config
+        utility uses data segment that overlaps the BIOS PCI data segment. This causes corruption
+        of data and the BIOS fails if returned to (ie. exit without saving).<br>
+        <br>
+        IPR02936: Default setting for Mouse is Not Installed which means it goes into setup after
+        autoconfig if Mouse Present. Under Investigation.<br>
+        <br>
+        Reserved bits being set in PMC. Awaiting results of regression testing.<br>
+        <br>
+        Change in Mouse connection status does not show &quot;bullet&quot; to indicate change.
+        Awaiting results of regression testing.<br>
+        <br>
+        Manually setting IDE drive PIO mode to Mode 4 causes a configuration change notification
+        and forces it back to Automatic next time you enter setup. Awaiting results of regression
+        testing.<br>
+        <br>
+        Inaccurate help for Power-On-Password about being prompted for password on booting. This
+        is conditioned by a setup option. Awaiting results of regression testing.<br>
+        <br>
+        Onboard Video (Rev A and B machines only) didn't work. Awaiting results of regression
+        testing.<br>
+        <br>
+        Window for pressing F1 limited to memory test if Adaptec of DPT fitted. Awaiting results
+        of regression testing.<br>
+        <br>
+        Expanded Phase2 size limit due to build problems. Awaiting results of regression testing.<br>
+        <br>
+        Various problems with TFLASH accessing Data Blocks. Awaiting results of regression
+        testing.<br>
+        <br>
+        Factory reported 166Mhz Trents being mis-identified as 180Mhz. Would probably affect
+        PCL6000 as well. Awaiting results of regression testing.<br>
+        <br>
+        DMI 2.0 Support / Serialisation. DMI should work correctly for Real and 16bit Protected
+        mode environments IF THE MACHINE CONTAINS VALID MANUFACTURING/SERIALISATION DATA BLOCKS!
+        32bit Protected mode support is included but no test software available to test this yet.
+        Some changes made to prevent DMI_INVALID_HANDLE and to remove invalid entries from NT
+        interface table.<br>
+        <br>
+        PCI Interrupt Slot Rotations/Riser Support<br>
+        <br>
+        Support for the second slot on Diamond/Lotus/SongCheer risers added and the slot
+        ID's/Rotations set up to match Trent where appropriate.<br>
+        <br>
+        NS307 not reporting correct info in PnP node. Fixed in this release.<br>
+        <br>
+        Parallel Port not reporting correct number of I/O ports in PnP node when at 3BC address.
+        Fixed in this release.<br>
+        <br>
+        All video related IPR's. Were made dormant and have not been addressed in this release.<br>
+        <br>
+        Some HCT related IPR's were deemed to be problems with the HCT. Details passed to
+        Microsoft. NOT fixed in this release.<br>
+        <br>
+        Inconsistency of drive names/numbers between System Summary, Device and I/O Ports, and
+        Start Options menus. NOT fixed in this release.<br>
+        <br>
+        (Loughborough sound images card doesn't work.). NOT fixed in this release<br>
+        <br>
+        Processor Field Upgrades<br>
+        <br>
+        Intel BIOS Update patches will be issued as updated versions of this BIOS for the
+        foreseeable future<br>
+        <br>
+        BIOS Recovery Code. NOT in this release.<br>
+        <br>
+        USB Keyboard Emulation. NOT in this release<br>
+        <br>
+        Foghorne/BIOS branding. NOT in this release<br>
+        <br>
+        Diva Card Removal Protection Support (for HMCE). NOT in this release</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.03.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/02/97<br>
+        <br>
+        <br>
+        4400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">To install: <br>
+        &quot;TFLASH B W FERRARIN.BIN&quot;<br>
+        <br>
+        Changes since last Release. <br>
+        <br>
+        Only change was to include BIOS Update (&quot;Stepping Data&quot;) for Intel P6s B1
+        stepping (patch level D1). </font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.03<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">14/02/97<br>
+        <br>
+        <br>
+        F500</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">To install: <br>
+        &quot;TFLASH B W FERRARIN.BIN&quot; <br>
+        <br>
+        Differences from 9.03.01 <br>
+        <br>
+        None except version number. </font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.04.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">02/07/97<br>
+        <br>
+        <br>
+        4300</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">What String: <br>
+        <br>
+        Apricot BIOS Version 9.04.01, 1st July 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd <br>
+        <br>
+        To install: <br>
+        <br>
+        &quot;TFLASH B W FERRARIN.BIN&quot;<br>
+        <br>
+        Changes since last Release. <br>
+        <br>
+        Correct the inversion of IRQ sense for the parallel port to fix PRF 1823. </font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9.04<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 123957SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">01/10/97<br>
+        <br>
+        <br>
+        A000</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">What String: <br>
+        <br>
+        Apricot BIOS Version 9.04, 8th September 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd <br>
+        <br>
+        To install: <br>
+        <br>
+        &quot;TFLASH B W FERRARIN.BIN&quot;<br>
+        <br>
+        Changes since last Release (9.03). <br>
+        <br>
+        PRF 1823. Slow printing on SCO OpenServer 5 fixed.<br>
+        PRF-AOS-97003. Novell Synchronous V.35 adapter can now be installed at D0000h.</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

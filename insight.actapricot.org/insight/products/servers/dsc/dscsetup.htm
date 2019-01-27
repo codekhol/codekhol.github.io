@@ -1,0 +1,680 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FT4200 Setting Up and Operating</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><strong><font size="2"><br>
+    </font><font size="4" color="#D60029">FT4200 Setting Up and Operating </font><font
+    color="#D60029" size="3">(Rel&nbsp;1.12.1)</font></strong><p><font size="2"><b>Front View</b></font></p>
+    <blockquote>
+      <p><font size="2">The following illustration shows a front view of the server with the
+      front drive bay door open:</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center"><font size="2"><img src="graphics/dscfrtvw.gif" width="249"
+        height="262"></font></td>
+        <td align="center" valign="top"><div align="left"><table border="1" cellpadding="2">
+          <tr>
+            <td><font size="2">1</font></td>
+            <td><font size="2">Diagnostic Codes LCD</font></td>
+            <td><font size="2">9</font></td>
+            <td><font size="2">3.5&quot; Floppy Drive</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">2</font></td>
+            <td><font size="2">Power On Button</font></td>
+            <td><font size="2">10</font></td>
+            <td><font size="2">5.25&quot; CD ROM Drive</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">3</font></td>
+            <td><font size="2">Control Button</font></td>
+            <td><font size="2">11</font></td>
+            <td><font size="2">Drive Bay Door Keylock</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">4</font></td>
+            <td><font size="2">Standby Button</font></td>
+            <td><font size="2">12</font></td>
+            <td><font size="2">Drive Bay Door</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">5</font></td>
+            <td><font size="2">Reset Button</font></td>
+            <td><font size="2">13</font></td>
+            <td><font size="2">Air Intake Vents</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">6</font></td>
+            <td><font size="2">Infrared Sensor</font></td>
+            <td><font size="2">14</font></td>
+            <td><font size="2">Removable Side Panel</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">7</font></td>
+            <td><font size="2">UPS LED</font></td>
+            <td><font size="2">15</font></td>
+            <td><font size="2">Side Panel Keylock</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">8</font></td>
+            <td><font size="2">Power LED</font></td>
+            <td><font size="2">16</font></td>
+            <td><font size="2">Side Panel Floating Fasteners</font></td>
+          </tr>
+        </table>
+        </div></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><font size="2"><b>Rear Panel</b></font></p>
+    <blockquote>
+      <p><font size="2">The rear panel contains the various ports and connectors as shown in the
+      following illustration:</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><font size="2"><img src="graphics/dscrepnl.gif"
+        width="227" height="251"></font></td>
+        <td align="center" valign="top"><div align="center"><center><table border="1"
+        cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">1</font></td>
+            <td valign="top"><font size="2">Keyboard Connector (PS/2)</font></td>
+            <td align="center"><font size="2">8</font></td>
+            <td valign="top"><font size="2">Expansion Slot Openings</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Mouse Connector(PS/2)</font></td>
+            <td align="center"><font size="2">9</font></td>
+            <td valign="top"><font size="2">Stud for Antistatic Strap</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">3</font></td>
+            <td valign="top"><font size="2">Serial Port COM2</font></td>
+            <td align="center"><font size="2">10</font></td>
+            <td valign="top"><font size="2">Removable UPS Battery Pack</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">4</font></td>
+            <td valign="top"><font size="2">Serial Port COM1</font></td>
+            <td align="center"><font size="2">11</font></td>
+            <td valign="top"><font size="2">UPS External Circuit Breaker</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">5</font></td>
+            <td><font size="2">SMC Modem Port</font></td>
+            <td><font size="2">12</font></td>
+            <td><font size="2">Uninterruptible Power Supply</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">6</font></td>
+            <td><font size="2">Video Connector</font></td>
+            <td><font size="2">13</font></td>
+            <td><font size="2">AC Power Socket</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">7</font></td>
+            <td><font size="2">Parallel Port </font></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><font size="2"><b>Hard Disk Subsystem</b></font></p>
+    <blockquote>
+      <p><font size="2">The hard disk subsystem is the area in which the hard disks are located.
+      It occupies the lower portion of the disk drive chamber. It can be configured to
+      accommodate up to 20 hard disk drives. </font></p>
+      <div align="center"><center><table border="0" cellpadding="2">
+        <tr>
+          <td align="center" valign="top"><font size="2"><img src="graphics/dschdsub.gif"
+          width="227" height="202"></font></td>
+          <td align="center" valign="top"><div align="center"><center><table border="1"
+          cellpadding="2">
+            <tr>
+              <td align="center" valign="top"><font size="2">1</font></td>
+              <td><font size="2">Disk Subsystem</font></td>
+              <td align="center" valign="top"><font size="2">2</font></td>
+              <td valign="top"><font size="2">Cooling Fan Assembly</font></td>
+            </tr>
+          </table>
+          </center></div></td>
+        </tr>
+      </table>
+      </center></div>
+    </blockquote>
+    <blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><font size="2"><b>Removable Media Drive Bay</b></font></p>
+    <blockquote>
+      <p><font size="2">The removable media drive bay is the area which can contain drives such
+      as floppy, CD ROM and tape backup drives. The bay will accommodate up to four half-height
+      5.25-inch drives. Your system will contain at least one 3.5-inch 1.44-Mbyte floppy disk
+      drive.</font></p>
+      <p><font size="2">User access to the drive bay is through the lockable drive bay door on
+      the front bezel. The lock on the door is fitted with a sensor which, when security is
+      enabled, sounds an alarm if the door is opened without using the key to unlock it, i.e. if
+      it is forced.</font></p>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><font size="2"><b>Motherboard</b></font></p>
+    <blockquote>
+      <p><font size="2">The motherboard contains the various disk controllers and other
+      electronics necessary to control the server&#146;s functions. It contains the memory and
+      first two processors as well as PCI and EISA expansion slots.</font></p>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><font size="2"><b>Uninterruptible Power Supply</b></font></p>
+    <blockquote>
+      <p><font size="2">This power supply is designed to keep your system powered up for a
+      limited period of time after, or during a power failure. It is equipped with an on-line
+      removable battery pack and will give you enough time to shutdown the network and the
+      server without losing valuable data. The power supply, including the battery pack,
+      occupies the entire lower level of the server chassis.</font></p>
+      <p><font size="2">The UPS will maintain power to the system for a minimum of 4 minutes in
+      a fully-laden system, i.e. equipped with 20 hard disk drives. This time will be longer in
+      a system equipped with fewer drives.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>Cooling Fans</b></font></p>
+    <blockquote>
+      <p><font size="2">Your computer is equipped with six thermally controlled and alarmed
+      cooling fans, three on each side of the machine. These will prevent overheating by
+      maintaining an appropriate temperature inside the system.</font></p>
+      <p><font size="2">In addition there are two cooling fans within the UPS unit.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2"><b>Caution</b></font></p>
+      <p><font size="2"><i>You must maintain at least 15 cm space around the computer for
+      adequate ventilation. Otherwise damage could result from overheating.</i></font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>Setting Up Your System for the First Time</b></font></p>
+    <blockquote>
+      <p><font size="2">After you have unpacked the server and rolled it into position, use the
+      jacking mechanism on the front castors to immobilise it. Then go through the following
+      steps to start up the system:</font></p>
+      <blockquote>
+        <p><font size="2">Connect the monitor signal, keyboard and AC power cables to the sockets
+        on the server&#146;s back panel.</font></p>
+        <p><font size="2">See the guide supplied with the monitor for details on its connections
+        to an AC supply and general information about its signal cable.</font></p>
+        <p><font size="2">Establish the appropriate link which will enable you to run the System
+        Management Application (SMA), such as:</font></p>
+        <p><font size="2">Direct link to another PC. In this case, use the supplied serial-to-PC
+        cable to connect the SMC modem port to the serial port on the separate diagnostic
+        computer.</font></p>
+        <p><font size="2">Modem link to a computer at another location. Use the supplied
+        serial-to-modem cable to connect the SMC port to the modem.</font></p>
+        <p><font size="2">In some cases you can also run the SMA over the network itself, from one
+        of the connected computers, depending on the operating system.</font></p>
+        <p><font size="2">Switch the AC supply on, followed by the UPS isolation switch on the
+        rear of the system. (For safety during transportation, this is locked in the off position
+        with a strap).</font></p>
+        <p><font size="2">The Uninterruptible Power Supply LED should display steady green
+        (battery fully charged) or flash green (battery pack is charging). If the LED is flashing,
+        it will take a maximum of 36 hours to charge the batteries from full discharge. </font></p>
+        <p><font size="2">The system is now in Standby mode.</font></p>
+        <p><font size="2">Locate and press the Power On button to switch the machine on.</font></p>
+      </blockquote>
+      <p><font size="2">When the system is up and running normally following boot-up and all
+      software loaded, the display code on the front LCD panel will be <b>0000. </b>If any codes
+      appear other than normal procedure codes, then refer to the chapter dealing with
+      Diagnostic codes towards the end of this handbook. Some codes are transitory, being way
+      markers for the boot-up process.</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Before proceeding further, read carefully the following pages in this
+      chapter. They contain important information about the controls and their functions.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>Using the Front Panel</b></font></p>
+    <blockquote>
+      <p><font size="2">This section describes the functions of the front panel during normal
+      operation.</font></p>
+      <p><font size="2"><b>Caution</b></font></p>
+      <p><font size="2"><i>Do not place any large or heavy objects on the top, especially near
+      to the front facia. Likewise avoid leaning on the machine. It may inadvertently cause the
+      operation of one or more front panel buttons.</i></font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><font size="2"><img src="graphics/dscfpcon.gif"
+        width="219" height="223"></font></td>
+        <td align="center" valign="top"><div align="center"><center><table border="1"
+        cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">1</font></td>
+            <td valign="top"><font size="2">Diagnostic LCD</font></td>
+            <td valign="top"><font size="2">5</font></td>
+            <td valign="top"><font size="2">Reset Button</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Power On Button</font></td>
+            <td valign="top"><font size="2">6</font></td>
+            <td valign="top"><font size="2">Infrared Sensor</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">3</font></td>
+            <td valign="top"><font size="2">Control Button</font></td>
+            <td valign="top"><font size="2">7</font></td>
+            <td valign="top"><font size="2">UPS LED</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">4</font></td>
+            <td valign="top"><font size="2">Standby Button</font></td>
+            <td valign="top"><font size="2">8</font></td>
+            <td valign="top"><font size="2">Power LED</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><font size="2"><b>Power On </b></font></p>
+    <blockquote>
+      <p><font size="2">Press this button to switch the system on from Standby mode. The Power
+      LED will light up and the system will initiate its boot sequence. Diagnostic codes,
+      expressed as hexadecimal numbers, will appear as a matter of course on the LCD screen on
+      the Front Panel (see the chapter <i>Diagnostic Codes Reference</i> for details). The
+      screen will display the SCSI ID number for each of the SCSI devices installed in your
+      system. What happens after this depends on how your Apricot has been configured, i.e.
+      which operating system or other software may be installed. Check with your supplier if you
+      need more details.</font></p>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><font size="2"><b>Control </b></font></p>
+    <blockquote>
+      <p><font size="2">Press this button to silence alarms and clear LCD display codes that are
+      produced because of internal errors and power failures (but not security alarms).</font></p>
+      <p><font size="2">Pressing Control at the end of firmware initialisation forces the System
+      Management Controller (SMC) to execute the code of the EPROM instead of the Flash ROM,
+      even if the version in the Flash is newer than that of the EPROM. This allows you to boot
+      from EPROM if there is something wrong with the Flash code.</font></p>
+      <p><font size="2"><b>Note</b></font></p>
+      <p><font size="2"><i>It is good practice to warn anyone who may be accessing the system
+      remotely, i.e. using the SMA from a remote computer via the modem port, before you press
+      the Standby button.</i></font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>Standby</b></font></p>
+    <blockquote>
+      <p><font size="2">After you have instructed all network users to close their applications
+      down and log off the network, hold this button down for a specific period of time before
+      the system initiates a shutdown sequence to Standby mode. The system will display the code
+      <b>1200</b> on the LCD and sound a tone. Continue to hold down the Standby button until
+      the tone stops, at which time the shutdown sequence begins. In Standby mode, the mains
+      electricity supply keeps the battery pack fully charged, but there is no DC power supplied
+      to the system. Use the System Management Application (SMA) to specify, in seconds, how
+      long you must hold down the button before the shutdown sequence begins (see the SMA
+      User&#146;s Guide). The default is 3 seconds.</font></p>
+      <p><font size="2">Press Standby and Control simultaneously to cancel the current Standby
+      sequence. (Only if last client is loaded)</font></p>
+      <p><font size="2"><b>Note</b></font></p>
+      <p><font size="2"><i>When accepted, the Standby timer requests that the operating system
+      be shutdown, thus the final screen message will be &quot;Shutdown or Restart OS.&quot; If
+      Restart is selected the motherboard is reset and the POST sequence initiated. During this
+      period the SMC timer is still running and can move the system into Standby at any point. <b>To
+      prevent possible data loss or corruption it is recommended to always select Shutdown in
+      this situation.</b></i></font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>Reset </b></font></p>
+    <blockquote>
+      <p><font size="2">Press this button to initiate a hardware reset, but only if it is
+      absolutely necessary. The LCD will display <b>1400</b>. You must hold the button down
+      until the accompanying tone stops sounding. Use the System Management Application (SMA) to
+      specify how long, in seconds, the reset tone will sound (see the <i>SMA User&#146;s Guide</i>).
+      The default is 3 seconds.</font></p>
+      <p><font size="2">Press Reset and Control simultaneously to cancel the current reset
+      sequence. (Only if last client is loaded)</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>Special Button Functions</b></font></p>
+    <blockquote>
+      <p><font size="2"><b>Caution</b></font></p>
+      <p><font size="2"><i>Do not use these functions unless there is serious problem with the
+      system and it is absolutely necessary.</i></font></p>
+      <p><font size="2">Pressing Standby, Control and Reset simultaneously while the front drive
+      bay door is <b>unlocked</b> switches the system into a mode in which these three buttons
+      have special functions. The LCD displays 8888 to indicate this mode. The following
+      paragraphs describe the special function of each button.</font></p>
+      <blockquote>
+        <p><font size="2">Standby or Reset - Pressing <b>either</b> of these buttons initiates a
+        memory dump to the central processing unit by activating and then deactivating the
+        Non-Maskable Interrupt (NMI) signal via the diagnostic processor. The effect of this
+        action will depend on the operating system. You can then use the appropriate function of
+        the network operating system to examine the contents of the dump.</font></p>
+        <p><font size="2">Control - Pressing this button initialises the modem, which is connected
+        to the SMC modem port on the back panel of the server. If the modem initialisation is
+        successful, the LCD displays the code 0000. If the initialisation is unsuccessful, the LCD
+        displays 0F4D or 0F4E.</font></p>
+        <p><font size="2">Standby + Reset - Pressing these buttons simultaneously clears the LCD
+        and then releasing them executes an independent SMC reset. This would only be necessary if
+        a major problem or error had occurred in the system, which is unlikely.</font></p>
+        <p><font size="2">All 3 - Displays SMC BIOS version on the LCD.</font></p>
+      </blockquote>
+      <p><font size="2">If you do not press any buttons for ten seconds, the system returns to
+      normal mode.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>UPS and Power LEDs</b></font></p>
+    <blockquote>
+      <p><font size="2">The UPS and Power LEDs indicate the state of the system as follows:</font></p>
+      <p><font size="2"><strong><u>UPS LED</u></strong></font></p>
+      <blockquote>
+        <p><font size="2">When this LED shows steady green, it means that the system is powered by
+        mains electricity and the batteries are fully charged.</font></p>
+        <p><font size="2">Flashing green means that system is powered by mains electricity and the
+        batteries are in the process of charging. This will usually be the case after the system
+        has been without mains electricity, i.e. disconnecting the plug or a power failure.</font></p>
+        <p><font size="2">Steady amber indicates that the system is drawing its power off the
+        batteries, i.e. there is no mains electricity. As soon as mains electricity fails, an
+        alarm sounds.</font></p>
+        <p><font size="2">Flashing amber indicates that the battery pack is about to fail.</font></p>
+        <p><font size="2">Off shows that the batteries are disconnected because the circuit
+        breaker switch on the back of the machine is in the Off position or the system is
+        disconnected from the mains.</font></p>
+      </blockquote>
+      <p><font size="2"><strong><u>Power LED</u></strong></font></p>
+      <blockquote>
+        <p><font size="2">Steady green means that the system is on and powered.</font></p>
+      </blockquote>
+    </blockquote>
+    <p><font size="2"><b>Security</b></font></p>
+    <blockquote>
+      <p><font size="2">Your Apricot is equipped with a security system to help prevent
+      unauthorised persons tampering with the front panel buttons and gaining access to the
+      interior of the system.</font></p>
+      <p><font size="2">Security is enabled within the System Management Application (see the <i>SMA
+      User&#146;s Guide</i>, the <i>Event Manager User&#146;s Guide</i> or the on-line help
+      within the SMA software). Once security is enabled, the key to the removable drive bay
+      door at the front of the machine serves as the security token:</font></p>
+      <p><font size="2">If the door is closed and has been locked with the key, the screen is
+      blanked, the keyboard is disabled, the security alarm is activated and will sound if there
+      is a violation.</font></p>
+      <p><font size="2">Unlocking the door unblanks the screen, enables the keyboard and
+      deactivates the security alarm.</font></p>
+      <p><font size="2"><b>Note</b></font></p>
+      <p><font size="2"><i>When security is enabled and the door locked, you can use the KeyLOC
+      infrared card to unblank the screen and enable the keyboard temporarily. The card will
+      also silence a security alarm. Use the card again to blank the screen and disable the
+      keyboard.</i></font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">The following actions are security violations and will set off the alarm
+      when the drive bay door is closed and locked and security is enabled:</font></p>
+      <blockquote>
+        <p><font size="2">Forcible opening (i.e. without the key) of the removable drive bay door.</font></p>
+        <p><font size="2">Removal, with or without the key, of one or both of the side panels.</font></p>
+        <p><font size="2">Pressing the , or buttons individually or in any combination.</font></p>
+      </blockquote>
+      <p><font size="2">To silence the alarm, use the key to unlock the drive bay door. If the
+      door is already unlocked when the alarm sounds, first lock and then unlock the door.
+      Alternatively, use the KeyLOC card to silence the alarm.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>Automatic Failure Recovery</b></font></p>
+    <blockquote>
+      <p><font size="2">As with any computer system, your server may develop a hardware or
+      software fault, which, for example, may only manifest itself intermittently, that causes
+      the system to hang. If this happens, the server is capable of resetting itself
+      automatically. This is particularly useful if the server is unattended some or all of the
+      time.</font></p>
+      <p><font size="2">Whether the server is able to rebuild the complete network environment,
+      together with application programs, after an automatic reset depends on the operating
+      system. The SMA contains several variables which govern the behaviour of automatic failure
+      recovery:</font></p>
+      <blockquote>
+        <p><font size="2">Machine Status</font></p>
+        <p><font size="2">Watchdog Timeout</font></p>
+        <p><font size="2">Watchdog Timer Reboot Count</font></p>
+        <p><font size="2">Watchdog Timer Timeout Action</font></p>
+      </blockquote>
+      <p><font size="2">You can make settings for these variables to enable, disable or modify
+      their effects. The on-line Help system within the SMA contains details of all of these
+      variables and how to make the appropriate settings.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>The Flash Memory</b></font></p>
+    <blockquote>
+      <p><font size="2">The Flash is a special portion of read-only memory (ROM). It differs
+      from conventional ROM in that its contents can be updated, but it still preserves its
+      information when system power is off. The following components of your server contain
+      their own portions of Flash memory:</font></p>
+      <blockquote>
+        <p><font size="2">The motherboard - This Flash stores the BIOS information for the
+        motherboard.</font></p>
+        <p><font size="2">The System Management Controller - This Flash stores the BIOS and
+        firmware which control the SMC and the Front Panel.</font></p>
+        <p><font size="2">The System Management Interface Card (SMIC) - This is the main Flash,
+        also referred to as a Flash Disk. It contains bootable DOS, its own BIOS and a Flash Disk
+        Utility program which affects the other portions of Flash memory. The Flash Disk Utility
+        also runs the EISA Configuration Utility (ECU).</font></p>
+      </blockquote>
+      <p><font size="2">Your access to the Flash is via a RAMdrive. This enables you to treat
+      the Flash almost as if it were a disk drive. The RAMdrive and the Flash Disk each have a
+      capacity of 2 Mbytes. Because the Flash Disk contains the operating system files, the
+      server can boot from it if the normal system hard disk boot process fails. You can also
+      copy files to the Flash Disk, e.g. hardware component configuration (.CFG) files which the
+      ECU uses. If you are using the RAMdrive to enter details of an add-in card, <b>you must
+      remember to update the Flash disk before closing.</b></font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2"><b>The Flash Disk Utility</b></font></p>
+    <blockquote>
+      <p><font size="2">The RAMdrive is necessary is because the Flash Disk is write-protected
+      and therefore you cannot copy anything directly to it. The purpose of the Flash Disk
+      Utility is to enable updates to the information held in any portion of Flash memory, such
+      as new BIOS versions or hardware information stored in the ECU.</font></p>
+      <p><font size="2">To run the Flash Disk Utility locally, press F2 during the hardware boot
+      sequence but before the operating system loads. This instructs the server to boot from the
+      Flash Disk and load the utility. The screen then displays a menu with the following
+      options:</font></p>
+      <blockquote>
+        <p><font size="2"><b>Receive File</b> - This option copies a file from the server to the
+        workstation which is running the SMA. If you are not using the SMA and are running the
+        utility locally, the file is copied from the Flash to a floppy disk. After you select 1
+        from the menu, select the file you want to copy and press the ENTER key.</font></p>
+        <p><font size="2"><b>Transfer File</b> - This option is the opposite of Receive File, i.e.
+        it copies a file from the SMA workstation to the server or, if you are running the utility
+        locally, from a floppy disk to the Flash.</font></p>
+        <p><font size="2"><b>Run Configuration Utility</b> - Select this option to run the ECU
+        (see &quot;Using the EISA Configuration Utility&quot;, earlier in this chapter).</font></p>
+        <p><font size="2"><b>Upgrade Motherboard BIOS</b> - This option enables you to upgrade the
+        motherboard&#146;s BIOS with a new version of BIOS information. This information is in the
+        form of a binary file. When you select this option, you have the choice of either copying
+        the binary file to the RAMdrive and updating the BIOS in one operation or, if the correct
+        binary file is already copied, just performing the update.</font></p>
+        <p><font size="2"><b>Upgrade SMIC BIOS</b> and <b>Upgrade SMC Firmware</b>, are similar to
+        option 4.</font></p>
+        <p><font size="2"><b>Upgrade Flash Disk</b> - This option copies the contents of the
+        RAMdrive to the Flash Disk, thereby making the Flash identical to the RAMdrive.</font></p>
+      </blockquote>
+      <p><font size="2"><b>Caution</b></font></p>
+      <p><font size="2"><i>You must perform this step to copy information on add-in expansion
+      cards back to the Flash Disk, after installing any card and making the necessary entries
+      in the ECU on RAMdrive, All details will be lost to the system on a re-boot or reset.</i></font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2"><b>Reset Flash Disk for Upgrade</b> - This option does the opposite to
+        option 8, i.e. copies the contents of the Flash to the RAMdrive, thereby making the
+        RAMdrive identical to the Flash. </font></p>
+        <p><font size="2"><b>Edit a File</b> - Use this option to load a file into the Microsoft
+        Edit program for editing.</font></p>
+        <p><font size="2"><b>Exit</b> - This option exits from the Flash Disk Utility and passes
+        control back to the SMA.</font></p>
+      </blockquote>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

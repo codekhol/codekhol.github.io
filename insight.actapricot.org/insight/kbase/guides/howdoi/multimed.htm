@@ -1,0 +1,314 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<title>Connect MIDI Instruments</title>
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../products/main.htm" onMouseOver="act('product')" onMouseOut="inact('product')"><img width="113" height="22" src="../../../images/product1.gif" name="product" alt="Products" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/kbase2.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+       <a HREF="../../ipb/ipbmain.htm"><img width="113" height="17" src="../../../images/s_ipb.gif" alt="Bulletins (IPBs)" border="0"></a><br>
+       <a HREF="../guidecon.htm"><img width="113" height="17" src="../../../images/s_guides.gif" alt="Guides" border="0"></a><br>
+       <a HREF="../../faq/main.htm"><img width="113" height="17" src="../../../images/s_faq.gif" alt="FAQs" border="0"></a><br>
+       <a HREF="../manuals/menu.htm"><img width="113" height="17" src="../../../images/s_manual.gif" alt="Owner's Handbooks" border="0"></a><br>
+       <a HREF="../../../common/infact/menu.htm"><img width="113" height="17" src="../../../images/s_datash.gif" alt="Product Datasheets" border="0"></a><br>
+       <a HREF="../../../common/misc/menu.htm"><img width="113" height="17" src="../../../images/s_misc.gif" alt="Miscellaneous Items" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><font size="2"><br>
+    </font><font face="Arial,Helvetica" size="4" color="#D60029"><strong>Connect MIDI
+    Instruments</strong></font><p><font size="2"><strong>What is MIDI?</strong><br>
+    All Apricot PCs supplied with audio capability also include a MIDI / Games Controller
+    Port. MIDI is an acronym for Musical Instrument Digital Interface and is a communications
+    protocol or common language which allows electronic musical instruments to communicate
+    with each other and with computers. </font></p>
+    <p><font size="2">MIDI files contain the equivalent of an electronic musical score. This
+    digital sheet music contains performance information, without any actual samples or
+    sounds. Your computer or electronic instrument contains the patches or sampled sounds that
+    are played from the MIDI score. Computer software such as Audition, Cakewalk, Midisoft,
+    etc. allows computer users to either compose music on screen, or record a performance from
+    an electronic instrument connected to the computer's MIDI interface port. </font></p>
+    <p><font size="2">MIDI computer files differ from other sound formats in that they contain
+    no actual sound samples. Microsoft .WAV files, for example, contain digitised audio
+    samples and as such tend to be much larger than an equivalent MIDI file. It should be
+    remembered though that the same MIDI file played on two different music keyboards could
+    produce different sounding results as reproduction is controlled by the musical
+    instrument's sound generating capabilities. </font></p>
+    <p><font size="2">For more information about the origins and uses of MIDI, try these WWW
+    sites. </font></p>
+    <blockquote>
+      <p><font size="2"><a href="http://www.harmony-central.com">http://www.harmony-central.com</a><br>
+      <a href="http://www.webthumper.com/midi">http://www.webthumper.com/midi</a></font></p>
+    </blockquote>
+    <p><font size="2"><strong>MIDI Interface (IN, OUT and THRU) </strong><br>
+    To connect your instrument to a computer or another instrument, it must have a MIDI
+    interface. Externally this appears as up to three round 5-pin port sockets labeled IN,OUT
+    and THRU. These ports control all of the information routing in the MIDI system. </font></p>
+    <p><font size="2">The IN port accepts MIDI data coming &quot;in&quot; to the unit from
+    external sources. This is the data that controls the sound generators of the synthesizer. </font></p>
+    <p><font size="2">The OUT port sends MIDI data &quot;out&quot; to the rest of the MIDI
+    setup. This data results from activities of the synthesizer, such as key presses, etc. </font></p>
+    <p><font size="2">The THRU port also sends data out to the MIDI system, but not in the
+    same manner as the OUT port. The data coming from the THRU port is an exact copy of the
+    data received at the synthesizer's IN port. </font></p>
+    <p><font size="2"><strong>How Do I Connect Electronic Musical Instruments?</strong><br>
+    Lets take a simple example of connecting a MIDI keyboard to a PC. There are two basic
+    types of MIDI music keyboard, a dumb keyboard and a synthesizer. A dumb keyboard (there
+    may be other industry terms to describe this type of keyboard, but we're using
+    &quot;dumb&quot; to highlight the differences with synthesizers) has no internal sound
+    generation circuitry and relies on external equipment (PCs or other keyboards) to produce
+    its sounds. Dumb keyboards generally only have a MIDI OUT port. A synthesizer, on the
+    other hand, is an instrument in its own right, capable of generating its own sounds and
+    normally would have IN, OUT and THRU ports. </font></p>
+    <p><font size="2">On the back of the PC, normally close to all the other audio connection
+    ports, is the MIDI / Games controller port. This port connector is a 15-pin &quot;D&quot;
+    type connector and looks totally different from the round 5-pin sockets found on
+    instruments. To connect the computer to the keyboard, you will need an interface cable
+    which converts the 15-pin &quot;D&quot; type to two 5-pin IN &amp; OUT connectors (there
+    is no need for a THRU connector) and also provides a separate games controller port (where
+    required). </font></p>
+    <p><font size="2">Interface cables are widely available from computer and music stores but
+    there are many different specifications available. Some have games controller ports, some
+    have opto-isolators, some have only MIDI IN ports, the variety can be very confusing. To
+    add to the confusion, some sound card manufacturers have implemented their MIDI interface
+    circuitry in subtly different ways which means that not all cables will work with every
+    keyboard / computer combination. To help with the selection process, Apricot has tested a
+    selection of cables with its computers and can recommend the following suppliers: </font><menu>
+      <li><font size="2">Creative Labs 1013251001 Cable, MIDI CT1325A </font></li>
+      <li><font size="2">Yamaha T.B.A </font></li>
+    </menu>
+    <p><font size="2">When you have a cable, connect the &quot;D&quot; type plug to the back
+    of your PC and, if you have a games controller, connect it to the spare &quot;D&quot; type
+    socket. </font></p>
+    <p align="center"><font size="2"><img src="graphics/midi1.jpg" width="313" height="185"> </font></p>
+    <p><font size="2">The 5-pin MIDI plugs will be marked IN and OUT if you have two, or may
+    have no markings if you are using a dumb keyboard, single plug cable. The IN / OUT
+    markings refer to the direction of data flow to and from the PC or instrument, so connect
+    the IN plug to the OUT socket on the keyboard and the OUT plug to the IN socket on the
+    keyboard. </font></p>
+    <p><font size="2"><strong>Making Music With Your PC</strong><br>
+    Once all the cables have been connected, the instrument won't play through the computer's
+    audio card until an application capable or reading data from the MIDI port has been
+    loaded. In most cases, if you have a synthesizer type keyboard, you will probably want to
+    use the audio reproduction qualities of the instrument rather than the computer. However,
+    if you have a dumb keyboard, the only method of hearing your composition is through the
+    computer's audio hardware, so the software application you are using will probably need to
+    be configured to enable this. </font></p>
+    <p><font size="2">On some PC models, Apricot supplies an application called Audition which
+    will be used as the basis for the remaining text, however much of what follows will be
+    equally applicable to any PC MIDI music package. Audition is a sixteen track notation
+    based sequencer that allows you to record, replay and edit music and musical effects using
+    your PC and a General MIDI, GS Sound Card or sound module. </font></p>
+    <p><font size="2">At Audition's main screen, click on System, select Configuration... and
+    check the Thru box. This option passes the incoming MIDI data out to the designated output
+    device, which by default is the computer's sound card. At this point when the instrument
+    is played, music it produces through the computer's audio circuit and speakers. From this
+    point you can record music, a track at a time, to create your own compositions as
+    required. </font></p>
+    <p><font size="2">If you have a synthesizer type keyboard, you can play your own, or
+    pre-recorded MIDI files from the computer out through your instrument. To do this you must
+    tell the computer which output device to use by performing these steps. From the START
+    button on the task bar, select SETTINGS and CONTROL PANEL. Choose MUTIMEDIA and select the
+    MIDI tab. </font></p>
+    <p align="center"><font size="2"><img src="graphics/midi3.jpg" width="367" height="263"> </font></p>
+    <p><font size="2">Select the external option and click the OK button. When you play a MIDI
+    file now, it will play out through your instrument using its audio reproduction circuitry.
+    </font></p>
+    <p><font size="2"><strong>Wave Table Extension</strong><br>
+    When MIDI files are played by your computer, the sound card hardware synthesizes the audio
+    properties of the instrument, specified in the file, in order to produce music. It's
+    possible to improve the fidelity of this reproduction by using a Wave Table card. Rather
+    than synthesizing instruments, a Wave Table card reproduces instrument sounds from a table
+    of stored samples. This means that a piano or a flute, for example, will sound even better
+    when played by the computer's audio circuit. </font></p>
+    <p><font size="2">Wave table cards are available as options for several audio expansion
+    cards and typically they are designed for use with a specific manufacturer's card. If you
+    have an Apricot MS540 PC, a Wave Table expansion card is available to complement the
+    onboard audio circuit. The card occupies an expansion slot and connects to the onboard
+    audio circuit using a short ribbon cable. No other manufacturer's Wave Table cards may be
+    used. </font></p>
+    <p><font size="2">Once installed, Windows 95 automatically detects the card and provides
+    an additional output device in the MIDI options control panel. </font></p>
+    <p align="center"><font size="2"><img src="graphics/midi2.jpg" width="367" height="276"> </font></p>
+    <p><font size="2">This now gives you the option to select external output to your musical
+    instrument, internal output via the computer's audio synthesizer, or internal output via
+    the Wave Table expansion card. It should be noted that some difference in volume may be
+    noticed when using the Wave Table option, but as this output is directed through the
+    computer's audio amplifier and external speakers, if connected, then a small adjustment to
+    the mixer desk will compensate for this. </font></p>
+    <p><font size="2">Wave Table expansion cards are available through your Apricot supplier
+    by requesting product code XB57690. </font></p>
+    <p><strong><font size="2">Frequently Asked Questions</font></strong></p>
+    <p><font size="2">Q. If I play MIDI files through my computer's audio card, why does it
+    sound different than it does through my keyboard? </font><menu>
+      <li><font size="2">A. MIDI files do not contain any sampled sounds, they do however contain
+        instructions about the type of note to be played and the type of instrument it's to be
+        played on. Actual reproduction of the instrument's characteristics is left to the
+        computer's or instrument's sound generation circuits. Most computer audio cards synthesize
+        instrument characteristics but if you have a Wave Table expansion card, instruments are
+        reproduced from a table of sampled sounds and are therefore closer to the original. </font></li>
+    </menu>
+    <p><font size="2">Q. I can play MIDI files out to my keyboard, but I can't record from my
+    keyboard to the computer. What's wrong? </font><menu>
+      <li><font size="2">A. The most common cause of this problem is the interface cable. The
+        ability to send data to the keyboard suggests that the MIDI port settings on the computer
+        are correct. The computer is probably having difficulty reading in from the keyboard due
+        to a compatibility problem between the interface opto-isolator circuit and the audio card
+        port. </font></li>
+    </menu>
+    <p><font size="2">Q. What is General MIDI? </font><menu>
+      <li><font size="2">A. General MIDI is an industry-wide set of specifications for sound
+        sources that allow music data to be created regardless of manufacturer or specific models.
+        General MIDI defines the minimum number of voices that should be recognized, what sounds
+        correspond to which Program Change numbers, and the layout of rhythm sounds on the
+        keyboard. </font></li>
+    </menu>
+    <p><font size="2">Q. What is Roland's GS Format? </font><menu>
+      <li><font size="2">A. This is a Roland specification which defines the manner in which
+        multi-timbral sound sources respond to MIDI messages. The GS Format includes
+        specifications of sounds, functions available for tone editing, effects (chorus and
+        reverb), and additional standardized parameters. Any sound source that carries the GS
+        format logo is compatible with any GS Music Data.</font></li>
+    </menu>
+    <p>&nbsp;</p>
+    <p><font size="2"><a HREF="#top"><img SRC="../../../graphics/redarr01.gif" BORDER="0"
+    ALIGN="LEFT" ALT="Back to Top" width="14" height="10"></a> <a HREF="#top"><img
+    SRC="../../../graphics/redarr01.gif" BORDER="0" ALIGN="RIGHT" ALT="Back to Top"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p>&nbsp;
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

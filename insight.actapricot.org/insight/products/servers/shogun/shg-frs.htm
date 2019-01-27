@@ -1,0 +1,2003 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>Shogun BIOS Revision Summary</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">Shogun BIOS Revision Summary </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.9.1)</font></strong></h2>
+    <blockquote>
+      <p><font size="2"><a href="#fw_upd">Shogun F/W Update Disk</a></font></p>
+      <p><font size="2"><a href="#bios">Shogun Intel Xxpress BIOS</a></font></p>
+      <p><font size="2"><a href="#user_bin">Shogun User Binary</a></font></p>
+      <p><font size="2"><a href="#smic">Shogun SMIC BIOS</a></font></p>
+      <p><a href="#fpsc"><font size="2">Shogun FPSC firmware disk</font></a></p>
+      <p><font size="2">&nbsp;</font></p>
+    </blockquote>
+    <p><a name="fw_upd"></a><font size="3"><strong>Shogun F/W Update Disk</strong></font></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+<tr>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="7"><font size="2">BETA 1A<br>
+        PN 156071SW</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Introduction</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This disk is a collection of utilities
+        and the binary images required to update (or in some cases program for the first time) all
+        the Flash-based firmware on Shogun. It is primarily intended for use by Apricot
+        manufacturing, but will also be the means by which BIOS updates are released from R&amp;D
+        for distribution to the field. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">Contents</font></td>
+<td valign="top" bgcolor="#EBEBEB"><table border="0" cellpadding="2" bordercolor="#FFFFFF">
+<tr>
+<td align="center" valign="top" bgcolor="#CCCCCC"><font size="2">File</font></td>
+<td valign="top" bgcolor="#CCCCCC"><font size="2">Description</font></td>
+<td align="center" valign="top" bgcolor="#CCCCCC"><font size="2">Version</font></td>
+<td align="center" valign="top" bgcolor="#CCCCCC"><p align="center"><font size="2">Part
+            num</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">1B03BG0S.CVx</font></td>
+<td valign="top"><font size="2">Motherboard BIOS (BG0_ to BG0S conversion)</font></td>
+<td align="center" valign="top"><font size="2">0.03.01.BG0S</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155309SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">1B03BG0S.BIx</font></td>
+<td valign="top"><font size="2">Motherboard BIOS (BG0S update)</font></td>
+<td align="center" valign="top"><font size="2">0.03.01.BG0S</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155309SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">10009.USR</font></td>
+<td valign="top"><font size="2">User-binary</font></td>
+<td align="center" valign="top"><font size="2">1.00.09</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155683SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">10009.BIN</font></td>
+<td valign="top"><font size="2">SMIC BIOS</font></td>
+<td align="center" valign="top"><font size="2">1.00.09</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">123554SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">3006.FRM</font></td>
+<td valign="top"><font size="2">FPSC firmware</font></td>
+<td align="center" valign="top"><font size="2">3.006</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155175SW</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">These items have all previously been
+        issued to SVG under their own part numbers, and most will continue to be so (since they
+        are originated by more than one person). However this complete disk will be re-released
+        each time any of it&#146;s components change, and should therefore be all that is required
+        to update a machine to the latest versions of firmware. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="3"><font size="2">Operation</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">As mentioned above there are two
+        potential users of the disk, production staff at the factory and engineers (or possibly
+        end-users ?) in the field. The former should simply boot from it, and wait for the
+        following menu to appear - </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Apricot Computers Limited, Copyright
+        1995<br>
+        Shogun Firmware Upgrade Diskette<br>
+        REL1A 19/09/1995<br>
+        1) SMIC BIOS.<br>
+        2) Motherboard BIOS (With Conversion BG0-}BG0S).<br>
+        3) User Binary.<br>
+        4) Motherboard BIOS (Without Conversion BG0S-}BG0S).<br>
+        5) File Information.<br>
+        6) Reboot Machine.<br>
+        7) Display Current Firmware Versions.<br>
+        8) Display Out Of Date Firmware Versions.<br>
+        Please Select Required Option Or 0 to Exit ... ?</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Selecting options 1, 2, &amp; 3 will
+        upgrade each BIOS part in turn. When option 3 has completed the machine will perform a
+        reboot, after which all firmware should be up-to-date. Option 8 can be used to confirm
+        this. If the disk is being used to update a single component (e.g. a last-minute release /
+        re-work scenario) then just the appropriate menu option should be selected, followed by
+        the reboot choice. </font><p><font size="2">Firmware upgrades in the field can be
+        performed either locally or remotely. In both of these cases the programming utilities
+        (JFLASH, FMUP.EXE, etc.) are run from the Flash Disk, with the floppy just being used to
+        supply the binary image files. In the case of remote upgrades it will be inserted into the
+        drive on the SMA machine, locally in the actual Shogun&#146;s drive. Note for local
+        updates of the m/b BIOS it is slightly quicker simply to boot from the floppy, and use the
+        factory menu (option 4), since copying files from floppy to the Flash Disk is currently
+        rather slow. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Notes</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">There is insufficient space on the disk
+        to include the utility for updating the FPSC firmware. This option is however available on
+        the Flash Disk.</font><p><font size="2">The version-checking utility, GETVERS.EXE, should
+        be added to the factory end-of-line Diagnostics disk, to ensure that all machines are
+        shipped with the correct flash firmware revisions.</font></p>
+        <p><font size="2">The current Flash Disk install floppy does not label the image it
+        creates, so the release number cannot be reported to the FPSC, or checked by GETVERS. This
+        will hopefully be fixed in the next release, and therefore VERSIONS.INI will need
+        updating. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">RELEASE 1<br>
+        PN 156071SW</font></td>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2">&nbsp;<p><font size="2">Contents</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA version.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><table border="0" cellpadding="2" bordercolor="#FFFFFF">
+<tr>
+<td align="center" valign="top" bgcolor="#CCCCCC"><font size="2">File</font></td>
+<td valign="top" bgcolor="#CCCCCC"><font size="2">Description</font></td>
+<td align="center" valign="top" bgcolor="#CCCCCC"><font size="2">Version</font></td>
+<td align="center" valign="top" bgcolor="#CCCCCC"><p align="center"><font size="2">Part
+            num</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">1001BG0S.CVx</font></td>
+<td valign="top"><font size="2">Motherboard BIOS (BG0_ to BG0S conversion)</font></td>
+<td align="center" valign="top"><font size="2">1.00.01.BG0S</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155309SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">1001BG0S.BIx</font></td>
+<td valign="top"><font size="2">Motherboard BIOS (BG0S update)</font></td>
+<td align="center" valign="top"><font size="2">1.00.01.BG0S</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155309SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">100.USR</font></td>
+<td valign="top"><font size="2">User-binary</font></td>
+<td align="center" valign="top"><font size="2">1.00</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155683SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">100.BIN</font></td>
+<td valign="top"><font size="2">SMIC BIOS</font></td>
+<td align="center" valign="top"><font size="2">1.00</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">123554SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">3006.FRM</font></td>
+<td valign="top"><font size="2">FPSC firmware</font></td>
+<td align="center" valign="top"><font size="2">3.006</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155175SW</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" colspan="2"><font size="2">BETA 2A<br>
+        PN <br>
+        156071SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This release includes the Apricot
+        customised version of the Intel 1.04 XX motherboard BIOS, PN 155309SW, version BETA 1E.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">BETA 2B<br>
+        PN 156071SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Introduction</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This release updates the XX motherboard
+        BIOS to version 0.02.02.BG0S (&quot;Beta 2.02&quot;), the change from Beta 2.01 being a
+        possible fix for the SMI test failures / CMOS corruption recently observed in Glenrothes
+        and Japan. See attached Intel release note for details. </font><p><font size="2">I have
+        also replaced the 3.006 FPSC binary with version 3.008, and updated the Flash Disk label
+        in VERSIONS.INI to &quot;REL2B&quot;.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Contents</font></td>
+<td valign="top" bgcolor="#EBEBEB"><table border="0" cellpadding="2" bordercolor="#FFFFFF">
+<tr>
+<td align="center" valign="top" bgcolor="#CCCCCC"><font size="2">File</font></td>
+<td valign="top" bgcolor="#CCCCCC"><font size="2">Description</font></td>
+<td align="center" valign="top" bgcolor="#CCCCCC"><font size="2">Version</font></td>
+<td align="center" valign="top" bgcolor="#CCCCCC"><p align="center"><font size="2">Part
+            num</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">2B02BG0S.CVx</font></td>
+<td valign="top"><font size="2">Motherboard BIOS (BG0_ to BG0S conversion)</font></td>
+<td align="center" valign="top"><font size="2">0.02.02.BG0S</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155309SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">2B02BG0S.BIx</font></td>
+<td valign="top"><font size="2">Motherboard BIOS (BG0S update)</font></td>
+<td align="center" valign="top"><font size="2">0.02.02.BG0S</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155309SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">100.USR</font></td>
+<td valign="top"><font size="2">User-binary</font></td>
+<td align="center" valign="top"><font size="2">1.00</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155683SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">100.BIN</font></td>
+<td valign="top"><font size="2">SMIC BIOS</font></td>
+<td align="center" valign="top"><font size="2">1.00</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">123554SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">3008.FRM</font></td>
+<td valign="top"><font size="2">FPSC firmware</font></td>
+<td align="center" valign="top"><font size="2">3.008</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155175SW</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">RELEASE 2<br>
+        PN 156071SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">Contents</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This is the production release of the
+        Rel 2B disk which has been on Beta since 24th Nov last year. See previous release notes
+        for details of the incremental changes since Rel 1. The only change in this version is
+        removal of the Beta banner from the Motherboard BIOS, and updates of the strings in
+        VERSIONS.INI (Flash Disk is now &quot;REL2_00&quot;). </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><table border="0" cellpadding="2" bordercolor="#FFFFFF">
+<tr>
+<td align="center" valign="top" bgcolor="#CCCCCC"><font size="2">File</font></td>
+<td valign="top" bgcolor="#CCCCCC"><font size="2">Description</font></td>
+<td align="center" valign="top" bgcolor="#CCCCCC"><font size="2">Version</font></td>
+<td align="center" valign="top" bgcolor="#CCCCCC"><p align="center"><font size="2">Part
+            num</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">1002BG0S.CVx</font></td>
+<td valign="top"><font size="2">Motherboard BIOS (BG0_ to BG0S conversion)</font></td>
+<td align="center" valign="top"><font size="2">1.00.02.BG0S</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155309SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">1002BG0S.BIx</font></td>
+<td valign="top"><font size="2">Motherboard BIOS (BG0S update)</font></td>
+<td align="center" valign="top"><font size="2">1.00.02.BG0S</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155309SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">100.USR</font></td>
+<td valign="top"><font size="2">User-binary</font></td>
+<td align="center" valign="top"><font size="2">1.00</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155683SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">100.BIN</font></td>
+<td valign="top"><font size="2">SMIC BIOS</font></td>
+<td align="center" valign="top"><font size="2">1.00</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">123554SW</font></td>
+</tr>
+<tr>
+<td align="center" valign="top"><font size="2">3008.FRM</font></td>
+<td valign="top"><font size="2">FPSC firmware</font></td>
+<td align="center" valign="top"><font size="2">3.008</font></td>
+<td align="center" valign="top"><p align="center"><font size="2">155175SW</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+    </table>
+    <p><a name="bios"></a><font size="3"><strong>Shogun Intel Xxpress BIOS</strong></font></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+<tr>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="3"><font size="2">0.02.03 BETA<br>
+        PN 155309SW</font></td>
+<td valign="top" bgcolor="#EBEBEB" rowspan="3"></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Issues resolved in this release,<br>
+        D2445, EISA cards are now detected in slot 6.<br>
+        D1996, &#145;Hobbes&#146; keylock control is now implemented in the system BIOS.<br>
+        D1949, 32-bit EISA NVRAM access via INT 015h is now supported.<br>
+        D2367, Add-in 787x cards are no longer disabled when on-board SCSI BIOS scan is disabled.<br>
+        D2041, PCI POST test errors are no longer disabled.<br>
+        D2321, &#145;Flash&#146; recovery with custom system BIOS is now supported.<br>
+        D2434, IRQ12 is now not mis-assigned if a mouse is not attached.<br>
+        D2423, Error log now matches INT 015h, function 021h.<br>
+        &#145;Three-mode&#146; FDU support now works on drive B:</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Features added or changed in this
+        release,<br>
+        This BIOS now includes SCSI CD-ROM boot code.<br>
+        &#145;Cancel Write Back&#146; is now set automatically. Users also have the option of
+        disabling &#145;Cancel Write Back&#146;, however, they cannot manually enable the feature.<br>
+        The user is no longer requested to &#145;press a key to continue&#146; when an error
+        occurs and no keyboard is attached to the system.<br>
+        Custom BIOS support is implemented in this release due to updated &#145;Flash&#146;
+        tables.<br>
+        The LCD display during POST has been altered. It now shows the BIOS version string on the
+        second line of the display, and the &#145;countdown code&#146; in the top-left corner, to
+        prevent display wrapping </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Outstanding issues,<br>
+        D2408, Turbo/DeTurbo fails on FAB 5.<br>
+        D2413, Turbo/DeTurbo fails on FAB 5A.<br>
+        D2425, &#145;HIMEM.SYS&#146; will not load if system memory is re-sized from &gt;64Mb to
+        &lt;64Mb.<br>
+        D2205, FDU boot in &#145;secure&#146; mode requires the user to enter the password twice.<br>
+        IRQ11 does not &#145;respond&#146; correctly for &#145;Hobbes&#146;.<br>
+        133Mhz CPUs are not automatically detected.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="3"><font size="2">Release 1d<br>
+        PN 155309SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Introduction</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This is the fourth release within
+        R&amp;D of the BIOS for XX Shogun motherboards, and consists of the following - <br>
+        MS-DOS 6.22 1.44MB boot floppy Extracted contents of Intel FMUPDISK.ZIP file (31/8/95),
+        which contains the flash programming utility and BIOS version 0.03.01.BG0S binaries </font><p><font
+        size="2">Removed unnecessary files (BG0SBG0S.BAT, BIOSUP.EXE, CHANGES.TXT, CUTUSER.BAT,
+        FLASH32.PCX, LOCAL.CFG, README.TXT and SHOWHDR.EXE)</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Testing</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">On a system with Fab-5 motherboard, BIOS
+        Version 0.01.01.BG0S, and no SMIC -<br>
+        Booted from the floppy (AUTOEXEC.BAT runs FMUP.EXE)<br>
+        Selected Update Flash Memory Area from a File, then Update System BIOS+User Area<br>
+        Tabbed to the file list, selected 1B03BG0S.BIO, and answered yes to the &quot;do you wish
+        to continue&quot; question<br>
+        Programming completed successfully, selected continue to reboot, and observed that the new
+        BIOS signed on correctly (&quot;0.03.01.BG0S - Beta 1.03&quot;)</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Notes</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This disk will only work on machines
+        which already contain the custom &#145;Apricot&#146; XX BIOS (recognisable by the last
+        section of it&#146;s version number being &quot;BG0S&quot;), i.e. cannot be used to
+        program virgin boards from Intel. </font><p><font size="2">These must be upgraded in a
+        two-stage process, firstly from Intel&#146;s 1.03.00.BG0_ to the Apricot 0.01.01.BG0S,
+        using the previous release of this disk, and then from 0.01.01.BG0S to 0.03.01.BG0S. I
+        appreciate that this is likely to cause problems for Glenrothes, having to work with 2
+        revisions of a item with the same part number, so will probably release a new disk for
+        them which allows direct conversion from BG0_ to BG0S </font></p>
+        <p><font size="2">No Intel release notes are available for this version of the BIOS, but
+        essentially it should be identical to 0.01.01.BG0S with the exception of default values
+        for some configuration options. To cut a long story short there was a degree of
+        misunderstanding over exactly what customisations Apricot needed, leading to a number of
+        system-management voltage / temperature monitoring channels being enabled when they
+        shouldn&#146;t be. The attached email defines what the new defaults are (note, they have
+        been implemented in the BIOS, not the SCU as previously), and needs to be checked by SVG.</font></p>
+        <p><font size="2">The Flash upgrade process still causes any user-binary present to be
+        erased, so for correct operation of the SMIC card FMUP.EXE must be used to reload it. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="3"><font size="2">Rel 1E<br>
+        155309SW</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Introduction</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Although this disk (155309SW) was
+        effectively superseded by the menu-driven Shogun Firmware Update Disk (156071SW), a new
+        release from Intel of the standard XX BIOS requires that it be updated once more. </font><p><font
+        size="2">This is because the necessary files to allow conversion back from the BG0S custom
+        BIOS have not been supplied, meaning that the only way to update our machines to this
+        version is via the Flash recovery procedure described below. </font></p>
+        <p><font size="2">When the custom build of this BIOS does become available (probably in a
+        few weeks time) a new version of 156071SW will be released, and it is only that disk which
+        will go final for release to the factory. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Testing</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">On a system with Fab-5 motherboard, BIOS
+        Version 1.00.01.BG0S, User-Binary Version 1.00, Rev/B SMIC, and SMIC BIOS Version 1.00 -
+        Moved the m/b &#145;Boot Block&#146; jumper (located just below the top CPU-card slot)
+        from &#145;Disable&#146; to &#145;Enable&#146;</font><p><font size="2">Powered on with
+        this floppy in the drive Listened for single high-pitched beep, followed by the drive
+        stepping and about a minute later another 2 beeps (confirming that programming has
+        completed successfully)</font></p>
+        <p><font size="2">Powered off, set the Boot Block jumper back to &#145;Disable&#146;,
+        powered on again, and confirmed that the new BIOS signs on - 1.00.04.BG0.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Notes</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">The above steps cause the User Binary to
+        become erased (the SMIC BIOS will issue an error message to this effect) - use menu option
+        3 on the Shogun Firmware Update Disk to replace it. </font><p><font size="2">Since 1.00.04
+        is a fairly major update from Intel it would probably be wise to reset the CMOS (using the
+        procedure described in the recent SCU release note, 155160SW Rel 2A) after re-programming.</font></td>
+</tr>
+    </table>
+    <p><a name="user_bin"></a><font size="3"><strong>Shogun User Binary</strong></font></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+<tr>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Section</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="7"><font size="2">BETA 1.00.07<br>
+        PN 155683SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">File details</font></td>
+<td valign="top" bgcolor="#EBEBEB"><div align="left"><table border="0" cellpadding="2">
+<tr>
+<td><font size="2">Name:</font></td>
+<td><font size="2">USERBIN.USR</font></td>
+<td><font size="2">Part number:</font></td>
+<td><font size="2">155683SW</font></td>
+</tr>
+<tr>
+<td><font size="2">Version number:</font></td>
+<td><font size="2">1.00.07</font></td>
+<td><font size="2">Date: </font></td>
+<td><font size="2">27th July 1995</font></td>
+</tr>
+<tr>
+<td><font size="2">Length:</font></td>
+<td><font size="2">8320 bytes</font></td>
+<td><font size="2">Checksum:</font></td>
+<td><font size="2">7B6A</font></td>
+</tr>
+        </table>
+        </div></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Programming</font></td>
+<td valign="top" bgcolor="#EBEBEB"><div align="left"><table border="0" cellpadding="2">
+<tr>
+<td><font size="2">Target device:</font></td>
+<td><font size="2">29F004 Flash EPROM (pre-soldered to the Intel XX motherboard) </font></td>
+</tr>
+<tr>
+<td><font size="2">Utility:</font></td>
+<td><font size="2">FMUP.EXE (available on the Shogun m/b BIOS Disk, 155309SW)</font></td>
+</tr>
+        </table>
+        </div></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Description</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">The user-binary is a small piece of
+        code, written by Apricot, which provides a s/w interface between the Intel XX and Shogun
+        SMIC BIOS&#146;s. </font><p><font size="2">It is stored in an independently programmable
+        8k page of the Intel Flash, and is called at a number of stages (scan points) throughout
+        POST, where it simply passes control on to routines in the SMIC BIOS. </font></p>
+        <p><font size="2">Design of the user-binary has been kept as simple as possible, with all
+        logic (apart from initial SMIC detection and a ROM paging / checksum test) being contained
+        in the SMIC BIOS. This way field upgrades of the user-binary (which, using Intel Flash
+        programming utilities, is less under our control than JFLASH) should rarely, if ever, be
+        required. </font></p>
+        <p><font size="2">The user-binary is also called towards the end of Intel&#146;s SMI
+        handler, allowing the SMIC BIOS to report fatal errors (double-bit ECC, PCI PERR / SERR,
+        bus timeouts, etc) to the FPSC.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Known omissions</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">SMIC BIOS debug-message enable / disable
+        flag controlled by switch in addition to CMOS location</font><p><font size="2">Removal of
+        Intel and Shogun references from WHAT string</font></p>
+        <p><font size="2">More meaningful description in the file header (currently displayed,
+        when running FMUP, as &quot;This is a comment&quot;)</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Known problems</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Some SMIC ROM errors, from self-tests
+        performed by the user-binary, may not be reported [too much error reporting moved out of
+        the user-binary into the option-ROM]</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Additional information</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This version of the user-binary must be
+        used in conjunction with SMIC BIOS 1.00.07 or later (by happy coincidence both version
+        numbers are currently the same). It is hoped that revisions of the SMIC BIOS between now
+        and production will not require further changes to the user-binary, or visa-versa. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">What string</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Intel XX Shogun User Binary<br>
+        Version 1.00.07, 27th July 1995<br>
+        Copyright (C) 1995 Apricot Computers Ltd</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="8"><font size="2">BETA 1.00.09<br>
+        PN 155683SW<br>
+        checksum 0D77.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">File details</font></td>
+<td valign="top" bgcolor="#EBEBEB"><div align="left"><table border="0" cellpadding="2">
+<tr>
+<td valign="top"><font size="2">Name:</font></td>
+<td valign="top"><font size="2">USERBIN.USR</font></td>
+<td valign="top"><font size="2">Part number:</font></td>
+<td valign="top"><font size="2">155683SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Version number:</font></td>
+<td valign="top"><font size="2">1.00.09</font></td>
+<td valign="top"><font size="2">Date: </font></td>
+<td valign="top"><font size="2">10th August 1995</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Length:</font></td>
+<td valign="top"><font size="2">8320 bytes</font></td>
+<td valign="top"><font size="2">Checksum:</font></td>
+<td valign="top"><font size="2">0D77</font></td>
+</tr>
+        </table>
+        </div></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Programming</font></td>
+<td valign="top" bgcolor="#EBEBEB"><div align="left"><table border="0" cellpadding="2">
+<tr>
+<td valign="top"><font size="2">Target device:</font></td>
+<td valign="top"><font size="2">29F004 Flash EPROM (pre-soldered to the Intel XX
+            motherboard) </font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Utility:</font></td>
+<td valign="top"><font size="2">FMUP.EXE (available on the Shogun m/b BIOS Disk, 155309SW)</font></td>
+</tr>
+        </table>
+        </div></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Changes from version 1.00.07</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Problem of a maximum of 8 entries in
+        each scan point being called fixed. <br>
+        This means that some SMIC BIOS code that might not have been called in the past will now
+        be called. This included Security and Console Redirection.<br>
+        Code now checks for the presence of the standard option ROM signature in page 0 after
+        detecting the presence of a valid page 1 signature.<br>
+        SMIC BIOS debug-message enable/disable flag now controlled by a switch in addition to CMOS
+        location. Debug is turned on by switch #1 of the SMIC switches being set to the off
+        position. <br>
+        Removal of Intel and Shogun references from WHAT string. Now just displays &quot;SMIC User
+        Binary&quot;.<br>
+        Added more meaningful description to the .USR file header. The version number and the date
+        are now displayed when FMUP.EXE is run and user binary update is selected.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Known omissions</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">New known problems</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Additional information</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This version of the user-binary must be
+        used in conjunction with SMIC BIOS 1.00.07 or later </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Testing</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Problem of a maximum of 8 entries in
+        each scan point being called - tested by loading the new userbin.usr into a machine and
+        turning on debug via the cmos and checking that security is called.</font><p><font
+        size="2">Code now checks for the presence of the standard option ROM signature in page 0
+        after detecting the presence of a valid page 1 signature - tested by checking no error
+        reported by new code.</font></p>
+        <p><font size="2">SMIC BIOS debug-message enable/disable flag controlled by a switch -
+        tested by disabling debug via cmos and setting switch #1 on and making sure security does
+        not display debug then switching #1 off and checking security displays debug messages.</font></p>
+        <p><font size="2">Removal of Intel and Shogun references from WHAT string, now displays
+        SMIC User Binary - tested by running the what.exe program on userbin.usr. See results
+        below.</font></p>
+        <p><font size="2">More meaningful description in the file header - tested by running the
+        FMUP.EXE program and loading the new userbin.usr and checking the message and date string
+        were correct.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">What string</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">SMIC User Binary<br>
+        Version 1.00.09, 10th August 1995<br>
+        Copyright (C) 1995 Apricot Computers Ltd</font></td>
+</tr>
+    </table>
+    <p><a name="smic"></a><strong><font size="3">Shogun SMIC BIOS</font></strong></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+<tr>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Section</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">version 1.00.02 BETA<br>
+        PN 123554SW<br>
+        checksum 4100.</font></td>
+<td valign="top" bgcolor="#EBEBEB"></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Please note that this BIOS will only
+        work on rev. A cards and NOT rev. B.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="4"><font size="2">version 1.00.05 BETA<br>
+        PN 123554SW<br>
+        checksum F600</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Included in this release,</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Inventory reporting (CPU, L2 cache,
+        memory, EISA &amp; PCI cards, serial, . parallel and FDU).<br>
+        Time synchronisation (FPSC clo<br>
+        Inventory reporting (CPU, L2 cache, memory, EISA &amp; PCI cards, serial, . parallel and
+        FDU).<br>
+        Time synchronisation (FPSC clock set from m/b RTC).<br>
+        Sub-system control (CPU enable/disable).<br>
+        Ethernet card node address reporting (3COM 3C509, 3C579 and 3C595).<br>
+        Boot control (&quot;Press F2 to boot from Flash disk&quot;).<br>
+        Flash disk (2Mb drive C: emulation).<br>
+        AIS Manager (SMIC detection API for Flash disk install S/W).<br>
+        FPSC and pass-through serial port configuration (from SMIC switches)<br>
+        32Kb option ROM header (to prevent m/b Adaptec BIOS locating over SMIC SRAM).<br>
+        CMOS check/set (to ensure that &#145;user binary&#146; calling is always enabled, and
+        D000-D800 shadowing is disabled.<br>
+        Missing &#145;user binary&#146; detection and reporting.<br>
+        ck set from m/b RTC).<br>
+        Sub-system control (CPU enable/disable).<br>
+        Ethernet card node address reporting (3COM 3C509, 3C579 and 3C595).<br>
+        Boot control (&quot;Press F2 to boot from Flash disk&quot;).<br>
+        Flash disk (2Mb drive C: emulation).<br>
+        AIS Manager (SMIC detection API for Flash disk install S/W).<br>
+        FPSC and pass-through serial port configuration (from SMIC switches)<br>
+        32Kb option ROM header (to prevent m/b Adaptec BIOS locating over SMIC SRAM).<br>
+        CMOS check/set (to ensure that &#145;user binary&#146; calling is always enabled, and
+        D000-D800 shadowing is disabled.<br>
+        Missing &#145;user binary&#146; detection and reporting.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Known omissions,</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Further inventory reporting (SMIC, m/b
+        and &#145;user binary&#146; BIOS version numbers).<br>
+        Further boot control (from FPSC variable choice).<br>
+        Further Ethernet card node address reporting (support for more cards).<br>
+        Security (boot disable when FPSC security variable is set and chassis doo<br>
+        Further inventory reporting (SMIC, m/b and &#145;user binary&#146; BIOS version numbers).<br>
+        Further boot control (from FPSC variable choice).<br>
+        Further Ethernet card node address reporting (support for more cards).<br>
+        Security (boot disable when FPSC security variable is set and chassis door is locked /
+        unlocked).<br>
+        Console redirection (remote display of POST messages and running of BIOS setup / SCU).<br>
+        Further self tests (SMIC SRAM, serial ports and Flash disk device).<br>
+        AIS Manager &#145;boot reason&#146; function.<br>
+        Serial port configuration from SCU menu option (cf switches).<br>
+        Fatal error handler.<br>
+        CPU speed independent timing for message delays.<br>
+        Product name (FT//mp ?) display.<br>
+        Further CMOS check/setting (C800-D000 shadowing control for alternate SMIC address).<br>
+        POST progress monitoring (FPSC &#145;3000&#146; series LCD codes).<br>
+        Non-fatal POST error reporting (to FPSC).<br>
+        r is locked / unlocked).<br>
+        Console redirection (remote display of POST messages and running of BIOS setup / SCU).<br>
+        Further self tests (SMIC SRAM, serial ports and Flash disk device).<br>
+        AIS Manager &#145;boot reason&#146; function.<br>
+        Serial port configuration from SCU menu option (cf switches).<br>
+        Fatal error handler.<br>
+        CPU speed independent timing for message delays.<br>
+        Product name (FT//mp ?) display.<br>
+        Further CMOS check/setting (C800-D000 shadowing control for alternate SMIC address).<br>
+        POST progress monitoring (FPSC &#145;3000&#146; series LCD codes).<br>
+        Non-fatal POST error reporting (to FPSC).</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Known problems,</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">DOS FPSC utilities, such as TEST434
+        (Front panel test) or FPSCVAR.EXE (debug variable reading program), do not work with
+        certain SMIC serial port IRQ settings.<br>
+        The machine will hang if Flash disk boot is selected before the SMIC 28F016 device has
+        been initialised.<br>
+        &#145;CPU x failure&#146; messages will be displayed by POST when CPUs are disabled via
+        the SMA.<br>
+        There is a long delay between VGA BIOS signon and SMIC serial port messages when no FPSC
+        is present.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">NOTES</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This BIOS must be used in conjunction
+        with &#145;user binary&#146; version 1.00.02 or later.<br>
+        Debug message output from some modules can be enabled by setting CMOS location 033h, bit
+        6.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="7"><font size="2">version 1.00.06 BETA<br>
+        PN 123554SW<br>
+        checksum 2600.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Changes from version 1.00.05</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Added sub-system control (CPU enable /
+        disable)<br>
+        Added missing user-binary reporting<br>
+        Added motherboard BIOS version number reporting (to FPSC)<br>
+        Added Flash Disk boot control from FPSC variable choice, and moved earlier in POST (before
+        Adaptec SCSI BIOS signon)<br>
+        Added security (boot disable when FPSC &#145;security&#146; variable is set, chassis door
+        is l<br>
+        Added sub-system control (CPU enable / disable)<br>
+        Added missing user-binary reporting<br>
+        Added motherboard BIOS version number reporting (to FPSC)<br>
+        Added Flash Disk boot control from FPSC variable choice, and moved earlier in POST (before
+        Adaptec SCSI BIOS signon)<br>
+        Added security (boot disable when FPSC &#145;security&#146; variable is set, chassis door
+        is locked, and the reboot / power-on was instigated locally)<br>
+        Added self-tests for SMIC SRAM, serial port I/O for Console Redirection, and Flash Disk
+        device<br>
+        Added AIS manager &#145;boot reason&#146; function<br>
+        Added fatal error handler (memory only - awaiting further details from Intel for adapters)<br>
+        Added POST progress monitoring (FPSC &#145;3000&#146; series LCD codes)<br>
+        Added non-fatal POST error reporting (to FPSC)<br>
+        SMIC serial port configuration now controlled from SCU menu options (cf switches)<br>
+        Fixed SMIC code and SRAM page selects after a flash disk boot. This was leaving code page
+        7, SRAM page 3 and 16k page size selected. <br>
+        Now reset to code &amp; SRAM page 0 and 32k page size.<br>
+        Fixed a number of inventory reporting bugs (symptom = incorrect SMA sub-system display)<br>
+        ocked, and the reboot / power-on was instigated locally)<br>
+        Added self-tests for SMIC SRAM, serial port I/O for Console Redirection, and Flash Disk
+        device<br>
+        Added AIS manager &#145;boot reason&#146; function<br>
+        Added fatal error handler (memory only - awaiting further details from Intel for adapters)<br>
+        Added POST progress monitoring (FPSC &#145;3000&#146; series LCD codes)<br>
+        Added non-fatal POST error reporting (to FPSC)<br>
+        SMIC serial port configuration now controlled from SCU menu options (cf switches)<br>
+        Fixed SMIC code and SRAM page selects after a flash disk boot. This was leaving code page
+        7, SRAM page 3 and 16k page size selected. <br>
+        Now reset to code &amp; SRAM page 0 and 32k page size.<br>
+        Fixed a number of inventory reporting bugs (symptom = incorrect SMA sub-system display)</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Known omissions</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Console redirection (remote display of
+        POST messages and running of BIOS Setup / SCU)<br>
+        Further inventory reporting (SMIC and user-binary BIOS version numbers)<br>
+        Possibly further ethernet card note address reporting (supporting more cards)<br>
+        CPU-speed independent timing for message delays<br>
+        Self test for FPSC serial port I/O<br>
+        Product name (FT//mp ?) display</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Additional information</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This BIOS must be used in conjunction
+        with user-binary version 1.00.04 or later. The system will hang when attempting to boot
+        from flash disk with earlier versions of the user-binary.<br>
+        Debug message output from some modules can be enabled by setting CMOS location 33h, bit 6 </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">Testing</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Time synchronisation has been tested but
+        ethernet card node address reporting has not been fully verified. Inventory reporting has
+        been tested further with the SMA but should still be thoroughly checked against a
+        &#145;golden&#146; FPSC variable dump. Sub-system control is not yet supported by the SMA,
+        so has not been tested. AIS manager has now been tested (by calling it from debug). The
+        self-tests have not been run against faulty hardware. </font><p><font size="2">All recent
+        development has been on Rev/B SMIC&#146;s, in Fab-5 XX motherboards, mostly with a single
+        CPU and memory card, Intel BIOS version 0.02.03.BG0 (&#145;Beta-15&#146;), and SCU version
+        3.09 / overlay 34.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Switch setting information<br>
+        No longer relevant - SMIC serial ports now configured by the SCU. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">LCD codes</font></td>
+<td valign="top" bgcolor="#EBEBEB"><table border="0" cellpadding="2" bordercolor="#FFFFFF">
+<tr>
+<td bgcolor="#CCCCCC"><font size="2">Function</font></td>
+<td bgcolor="#CCCCCC"><font size="2">Entry</font></td>
+<td bgcolor="#CCCCCC"><font size="2">Exit</font></td>
+</tr>
+<tr>
+<td><font size="2">Boot control decision logic</font></td>
+<td><font size="2">31 0 0</font></td>
+<td><font size="2">39 0 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Console redirect decision logic</font></td>
+<td><font size="2">31 1 0</font></td>
+<td><font size="2">39 1 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Initialise FPSC communications</font></td>
+<td><font size="2">32 0 0</font></td>
+<td><font size="2">3A 0 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Write inventory information</font></td>
+<td><font size="2">32 1 0</font></td>
+<td><font size="2">3A 1 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Enable / Disable CPUs</font></td>
+<td><font size="2">32 2 0</font></td>
+<td><font size="2">3A 2 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Fatal error handler</font></td>
+<td><font size="2">32 3 0</font></td>
+<td><font size="2">3A 3 0 </font></td>
+</tr>
+<tr>
+<td><font size="2">Console redirection</font></td>
+<td><font size="2">33 0 0</font></td>
+<td><font size="2">3B 0 0</font></td>
+</tr>
+<tr>
+<td><font size="2">FPSC and pass-through serial port configuration</font></td>
+<td><font size="2">35 0 0</font></td>
+<td><font size="2">3D 0 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Ethernet card node address reporting</font></td>
+<td><font size="2">35 1 0</font></td>
+<td><font size="2">3D 1 0 </font></td>
+</tr>
+<tr>
+<td><font size="2">Time synchronisation</font></td>
+<td><font size="2">35 2 0</font></td>
+<td><font size="2">3D 2 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Non-fatal POST errors reporting</font></td>
+<td><font size="2">35 3 0</font></td>
+<td><font size="2">3D 3 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Security </font></td>
+<td><font size="2">35 4 0</font></td>
+<td><font size="2">3D 4 0</font></td>
+</tr>
+<tr>
+<td><font size="2">SMIC SRAM test </font></td>
+<td><font size="2">36 0 0</font></td>
+<td><font size="2">3E 0 0</font></td>
+</tr>
+<tr>
+<td><font size="2">SMIC serial port test</font></td>
+<td><font size="2">36 1 0</font></td>
+<td><font size="2">3D 1 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Flash Disk initialisation</font></td>
+<td><font size="2">37 0 0</font></td>
+<td><font size="2">3F 0 0 </font></td>
+</tr>
+<tr>
+<td><font size="2">Flash Disk boot</font></td>
+<td><font size="2">37 1 0</font></td>
+<td><font size="2">3F 1 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Flash Disk self-test</font></td>
+<td><font size="2">37 2 0</font></td>
+<td><font size="2">3F 2 0</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">What strings</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Shogun SMIC BIOS Page 0 Version 1.00.06,
+        16th June 1995<br>
+        Shogun SMIC BIOS Page 1 Version 1.00.03, 23rd June 1995<br>
+        Shogun SMIC BIOS Page 2 Version 1.00.04, 22nd June 1995<br>
+        Shogun SMIC BIOS Page 3 Version 1.00.01, 1st June 1995<br>
+        Shogun SMIC BIOS Page 4 Version 1.00.02, 7th June 1995<br>
+        SMICPG5.BIN version 1.00.05, 22nd June 1995<br>
+        Shogun SMIC BIOS Page 6 Version 1.00.03, 22nd June 1995<br>
+        Shogun SMIC BIOS Page 7 Version 1.0.04, 22nd June 1995</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="8"><font size="2">version 1.00.07 BETA<br>
+        PN 123554SW<br>
+        checksum 1100.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Changes from version 1.00.06</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Added the long-awaited console
+        redirection (aka pass-through mode: <br>
+        remote display of POST messages and running of BIOS Setup / SCU) conditional on an FPSC
+        variable set / cleared by the SMA. Speed is automatically set from the ModemPortBaudRate
+        variable. <br>
+        Added sub-system control (CPU enable / disable). Machine has to be rebooted for the
+        changes to take effect, so a message that this is occurring is printed. Note that Intel
+        use the same CMOS location for CPU disable and failure, so when you disable a CPU from the
+        SMA it will actually be reported as having failed (red cross next to picture on SMA
+        &#145;tree&#146; display, plus error message printed / logged by POST). There&#146;s
+        nothing really we can do about this, apart from to document it. <br>
+        Extended fatal-error reporting to include PCI (PERR and SERR) and ISA / EISA (I/O channel
+        check and bus timeout). Note, we are working with incomplete specifications from Intel
+        here, so this needs extensive testing.<br>
+        Moved serial port address / IRQ setup and reporting to before FPSC comms initialisation
+        (actually to before serial self-tests, which are in turn before this), and therefore had
+        to remove the 3500 / 3D00 LCD outputs<br>
+        Added SMIC BIOS version number reporting (to FPSC)<br>
+        Added self-tests and for both SMIC serial ports (basic I/O, loopback, interrupt, and FIFO)<br>
+        Added clear-screen and SMIC BIOS signon at first available user-binary scan point (between
+        Cirrus and Intel BIOS signons), and added logic to suppress the option-ROM signon if the
+        earlier one has occurred<br>
+        Added SMIC ROM paging and checksum self-test error reporting (formerly done by the
+        user-binary)<br>
+        Suppressed individual ROM page WHAT strings - the overall SMIC BIOS version number and
+        date is now set by &#145;branding&#146; the combined image just before release (allowing
+        consecutive version numbers to be guaranteed)<br>
+        Moved all SMIC self-test error reporting into a separate routine towards the end of POST
+        (may be some time after the corresponding test, but necessary for the messages not to be
+        erased by the clear-screen before Intel&#146;s BIOS signon), and added &quot;Press F1 to
+        continue&quot; prompt / wait when an error occurs<br>
+        Added test and error message for SMIC serial port IRQ&#146;s being set to none (currently
+        a valid option in the hardware and CFG file) <br>
+        Removed simulated user-binary scan point 40h (work-round for Intel BIOS bug, fixed in
+        1.00.03.BG0 and later)<br>
+        Moved Flash Disk boot prompt and action back to later in POST (undoing the change made
+        between SMIC BIOS versions 1.00.05 and 1.00.06). <br>
+        Although this means you have to now have to sit through the Adaptec signons again it
+        appears to be necessary for the SCU to run reliably. <br>
+        Moved EISA card inventory reporting to earlier in POST (int 15 function D801 call was
+        failing for some unknown reason at the later position, causing incorrect adapter
+        configuration information to be sent to the FPSC)<br>
+        Added a routine which sends &quot;2000&quot; to the front-panel LCD (NextBootStage FPSC
+        variable) at the end of POST. The intention of this is to stop the PostExectionTimer
+        watchdog from expiring when the OS loads, but there is currently some confusion about
+        which value should be used, so the number may need to be changed in the next SMIC BIOS or
+        FPSC firmware release. <br>
+        Extended inventory reporting validity checking to include Intel &#145;CMOS&#146; failures
+        in addition to &#145;NVRAM&#146;<br>
+        Added support for bus numbers changing when a card with a PCI bridge device (e.g. the
+        Adaptec 3940) is present, to the PCI-card inventory reporting and ethernet node address
+        reporting code<br>
+        Fixed bug which caused machines to hang early in POST, with 3200 on the front-panel LCD,
+        if the Intel error log was corrupted in a particular way (record length of zero) <br>
+        Added error message for front-panel communication failures (printed immediately, and
+        logged, if occurs during initial &#145;presence&#146; test, logged for printing / Press F1
+        later if occurs at any other time)<br>
+        Reduced the number of retries in the FPSC test, from 20 to 4, eliminating the impression
+        of a system hang (was actually something like a 2 minute timeout, now approx 20 seconds)
+        when the SMIC-to-FPSC ribbon cable is disconnected<br>
+        Extended an internal delay count in the low-level FPSC comms to eliminate the danger of
+        timeouts on machines with faster CPUs<br>
+        Reversed the byte ordering of the FPSC ethernet node address variables (as requested by
+        s/w dev for compatibility with their released demons and MACADDR utility)<br>
+        Added test / non-fatal error message for SMIC CFG file not having been loaded (when the
+        SCU was run)<br>
+        Fixed problem with false SRAM failure reporting when SMIC base address set to C800h (cf
+        D000h)<br>
+        Removed &quot;Testing SMIC SRAM&quot; message (test still included though, just
+        doesn&#146;t print anything)<br>
+        Fixed incorrect Flash Disk self-test LCD codes (was 3620 / 3D20, is now 3720 / 3F20)</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Known omissions</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Remote running of BIOS Setup (awaiting
+        details of F1-pressed flag location from Intel)<br>
+        Skipping of SMIC &quot;Press F1 to continue&quot; prompt when automatic failure recovery
+        is enabled <br>
+        FPSC POST execution timer cancellation when booting from Flash Disk<br>
+        Bus number translation (due to bridge card presence) in the PCI fatal error reporting
+        module <br>
+        Debug message flag controlled by SMIC switch in addition to CMOS location (this will
+        actually be a user-binary change)<br>
+        Debug message output from FPSC comms and inventory reporting modules <br>
+        Logging of Flash Disk device self-test errors<br>
+        Making the serial port information printing a debug-only message ? <br>
+        SMI handler self-test (deliberate generation of a single-bit memory error)<br>
+        Possible checking / setting of CMOS location to automatically enable <br>
+        Intel&#146;s SMI handler (error logging)<br>
+        Possible improvements to the way the inventory reporting and fatal error code looks for
+        the Intel error log (we currently bypass one of their pointer tables)<br>
+        Clearing of Intel error log when it becomes [nearly ?] full <br>
+        Error message text review / tidy-up (e.g. for consistency of names with SMA and
+        documentation)<br>
+        Possibly further ethernet card note address reporting (supporting more cards)<br>
+        CPU-speed independent timing for message delays and test timeouts<br>
+        User-binary BIOS version number reporting (to FPSC)<br>
+        Logic to prevent the console redirection code being called when no IRQ has been assigned
+        to the pass-through serial port<br>
+        Check that all code supports alternate SMIC address (i.e. no hard-coded D000h segment
+        assumptions)<br>
+        Product name (FT//mp and/or Shogun ?) display</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">Additional information</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This BIOS must be used in conjunction
+        with user-binary version 1.00.07 or later, and Intel XX BIOS version 0.01.01BG0S (Beta
+        1.01)</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">New known problems<br>
+        Possible OS unreliability due to SMIC BIOS extending the duration of Intel&#146;s periodic
+        SMI (see email to Risk User, 21/7/95)<br>
+        Unexpected &quot;CMOS changed by SMIC BIOS&quot; message (at totally the wrong place in
+        POST) observed on one development machine. This may be a page-switching [timing / hardware
+        ?] problem.<br>
+        Some SMIC ROM errors, from self-tests performed by the user-binary, may not be reported
+        [too much error reporting moved out of the user-binary into the option-ROM] <br>
+        Addition of CPU enable / disable code probably means that genuine CPU failures are not
+        reported (or are only reported once). Extra SMIC BIOS &amp; SMA work is being considered
+        to fix this. <br>
+        BIOS version reporting does not work with FPSC firmware version 3.003 (incorrect variable
+        attributes). Tak is aware of this and is has been / will be fixed in his next release.<br>
+        Floppy errors (apparently causing disc corruption, even when just reading), possibly
+        related to console redirection being enabled. This may not be an issue if the Flash Disk
+        AUTOEXEC.BAT always loads it&#146;s own int-60 handler. <br>
+        Machine hangs if you run JFLASH (to update the SMIC BIOS) when the Intel BIOS error
+        logging option is enabled. This is understandable, since the SMIC BIOS includes code which
+        is in the SMI chain, and would presumably also happen when you update the user binary
+        (unless FMUP / BIOSUP are clever enough to disable the periodic SMI during this time ?).
+        This will be fixed in a future release of JFLASH. <br>
+        Serial port FIFO tests do not fail on a board fitted with PC16550DV UARTS, which are
+        claimed not to have a FIFO ! Production boards will not be using this part, but people
+        should be aware that not all beta-build <br>
+        SMICs have been reworked to the correct device (TL16C550AFN)<br>
+        The PERR switch on Dave Wright&#146;s PCI error-generation card has no effect (latest
+        indications from Intel are that this signal is not connected to their error monitoring
+        hardware - ESC / INCA), and the SERR switch causes the machine to hang without apparently
+        calling the SMIC BIOS <br>
+        SMI handler (although this may be due to Intel&#146;s event logging being disabled - menu
+        option has been removed from latest SCU and there is uncertainty about what it gets
+        defaulted to). </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Testing</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Most changes and additions have been
+        tested (although nowhere near exhaustively, due to the pressures of time) during
+        development, but none apart from version number signon and Flash Disk boot have been
+        re-verified with the final released binary. <br>
+        We continue to use Rev/B SMIC&#146;s, in Fab-5 XX motherboards, mostly with a single CPU
+        and memory card, but now with Intel BIOS version 0.01.01BG0S (Beta 1.01), and Apricot SCU
+        disk Rel 1D Beta (Intel SCU Version 3.09, Overlay Beta 00.35). SMA and FPSC versions vary.
+        <br>
+        Lest it be forgotten, I repeat again what was said in the last two SMIC BIOS release
+        notes, that inventory reporting needs to be thoroughly checked against a
+        &#145;golden&#146; FPSC variable dump. There is a significant risk of this containing
+        errors due to incomplete specification of all the enumerated values, and of things going
+        wrong when the Intel BIOS or silicon changes (e.g. Fab-5 to 5-A). </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">LCD codes</font></td>
+<td valign="top" bgcolor="#EBEBEB"><table border="0" cellpadding="2" bordercolor="#FFFFFF">
+<tr>
+<td bgcolor="#CCCCCC"><font size="2">Function</font></td>
+<td bgcolor="#CCCCCC"><font size="2">Entry</font></td>
+<td bgcolor="#CCCCCC"><font size="2">Exit</font></td>
+</tr>
+<tr>
+<td><font size="2">Boot control decision logic</font></td>
+<td><font size="2">31 0 0</font></td>
+<td><font size="2">39 0 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Console redirect decision logic</font></td>
+<td><font size="2">31 1 0</font></td>
+<td><font size="2">39 1 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Initialise FPSC communications</font></td>
+<td><font size="2">32 0 0</font></td>
+<td><font size="2">3A 0 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Write inventory information (CPU, cache, memory, PCI, &amp; I/O)</font></td>
+<td><font size="2">32 1 0</font></td>
+<td><font size="2">3A 1 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Enable / Disable CPUs</font></td>
+<td><font size="2">32 2 0</font></td>
+<td><font size="2">3A 2 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Fatal error handler</font></td>
+<td><font size="2">32 3 0</font></td>
+<td><font size="2">3A 3 0 </font></td>
+</tr>
+<tr>
+<td><font size="2">Write inventory information (EISA)</font></td>
+<td><font size="2">32 4 0</font></td>
+<td><font size="2">3A 4 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Console redirection</font></td>
+<td><font size="2">33 0 0</font></td>
+<td><font size="2">3B 0 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Ethernet card node address reporting</font></td>
+<td><font size="2">35 1 0</font></td>
+<td><font size="2">3D 1 0 </font></td>
+</tr>
+<tr>
+<td><font size="2">Time synchronisation</font></td>
+<td><font size="2">35 2 0</font></td>
+<td><font size="2">3D 2 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Non-fatal POST errors reporting</font></td>
+<td><font size="2">35 3 0</font></td>
+<td><font size="2">3D 3 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Security </font></td>
+<td><font size="2">35 4 0</font></td>
+<td><font size="2">3D 4 0</font></td>
+</tr>
+<tr>
+<td><font size="2">Flash Disk initialisation</font></td>
+<td><font size="2">37 0 0</font></td>
+<td><font size="2">3F 0 0 </font></td>
+</tr>
+<tr>
+<td><font size="2">Flash Disk boot</font></td>
+<td><font size="2">37 1 0</font></td>
+<td><font size="2">-</font></td>
+</tr>
+<tr>
+<td><font size="2">Flash Disk self-test</font></td>
+<td><font size="2">37 2 0</font></td>
+<td><font size="2">3F 2 0</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">WHAT strings</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Public WHAT string<br>
+        SMIC BIOS Version 1.00.07 27th July 1995<br>
+        Copyright (C) 1995 Apricot Computers Ltd</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Internal WHAT strings<br>
+        SMICPG0.BIN version 1.00.10, 27th July 1995<br>
+        SMICPG1.BIN version 1.00.05, 27th July 1995<br>
+        SMICPG2.BIN version 1.00.07, 27th July 1995<br>
+        SMICPG3.BIN version 1.00.02, 25th July 1995<br>
+        SMICPG4.BIN version 1.00.03, 25th July 1995<br>
+        SMICPG5.BIN version 1.00.08, 26th July 1995<br>
+        SMICPG6.BIN version 1.00.07, 27th July 1995<br>
+        SMICPG7.BIN version 1.00.06, 25th July 1995</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="12"><font size="2">version 1.00.08 BETA<br>
+        PN 123554SW<br>
+        checksum 6D00.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">File details</font></td>
+<td valign="top" bgcolor="#EBEBEB"><div align="left"><table border="0" cellpadding="2">
+<tr>
+<td><font size="2">Name:</font></td>
+<td><font size="2">SMIC.BIN</font></td>
+<td><font size="2">Part number:</font></td>
+<td><font size="2">123554SW</font></td>
+</tr>
+<tr>
+<td><font size="2">Version number:</font></td>
+<td><font size="2">1.00.08</font></td>
+<td><font size="2">Date: </font></td>
+<td><font size="2">22nd August 1995</font></td>
+</tr>
+<tr>
+<td><font size="2">Length:</font></td>
+<td><font size="2">128kB</font></td>
+<td><font size="2">Checksum:</font></td>
+<td><font size="2">6D00</font></td>
+</tr>
+        </table>
+        </div></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Programming</font></td>
+<td valign="top" bgcolor="#EBEBEB"><div align="left"><table border="0" cellpadding="2">
+<tr>
+<td><font size="2">Target device:</font></td>
+<td><font size="2">AMD 29F010 (Apricot part # 12327230)</font></td>
+</tr>
+<tr>
+<td><font size="2">Utility:</font></td>
+<td><font size="2">JFLASH.EXE (Version 2.13.02 or later)</font></td>
+</tr>
+        </table>
+        </div></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Notes</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">The purpose of this release is to allow
+        SVG testing of pass-though mode / console redirection to begin. Accordingly it does not
+        include any IPR fixes or recently developed code in other areas of the SMIC BIOS (e.g. all
+        WHAT strings except page 3 are identical to the last release). <br>
+        The &#145;know omissions&#146; section below has been organised under 3 headings, the
+        meaning of which are explained in the footnotes. Shaded rows represent completed items of
+        work. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Changes from version 1.00.07</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Added logic to disable console
+        redirection whilst the DOS file-transfer utility is running <br>
+        Added support for screen update request function to console redirection code (to allow the
+        SMA to get redraws when first connected, or if image becomes corrupted)<br>
+        Fixed &quot;floppy errors (causing disc corruption, even when just reading), when console
+        redirection is enabled&quot; problem<br>
+        Added a new int-60 function to return the original BIOS timer-tick vector (allowing the
+        Flash Disk menu s/w to remove the SMIC BIOS / user-binary from the interrupt chain before
+        reprogramming them)<br>
+        Added debug output (ASCII characters at top left of screen) to pass-through comms module,
+        conditional on the user-binary debug flag <br>
+        [CMOS or SMIC switch] </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Known omissions</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Functional <br>
+        SMI handler self-test (deliberate generation of a single-bit memory error)<br>
+        Remote running of BIOS Setup (awaiting SMA and FPSC support)<br>
+        Skipping of SMIC &quot;Press F1 to continue&quot; prompt when automatic failure recovery
+        is enabled <br>
+        FPSC POST execution timer cancellation when booting from Flash Disk<br>
+        Check that all code supports alternate SMIC address (i.e. no hard-coded D000h segment
+        assumptions)<br>
+        Debug message output from FPSC comms and inventory reporting modules <br>
+        Logging of Flash Disk device self-test errors<br>
+        Flash Disk version number reporting (to FPSC)<br>
+        Change end of POST NextBootStage marker from 2000 to 7FF0 (awaiting FPSC support)<br>
+        Clearing of Intel error log when it becomes nearly full <br>
+        User-binary BIOS version number reporting (to FPSC)<br>
+        Logic to prevent the console redirection code being called when no IRQ has been assigned
+        to the pass-through serial port</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Cosmetic</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Making the serial port information
+        printing a debug-only message<br>
+        Error message and serial port naming review / tidy-up (e.g. for consistency of names with
+        SMA and documentation)<br>
+        Removal of clear-screen from option-ROM signon (partially explains unexpected &quot;CMOS
+        changed by SMIC BIOS&quot; message mentioned in 1.00.07 release note)<br>
+        Product name (FT//mp and/or Shogun ?) display</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Dormant</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Further ethernet card node address
+        reporting (supporting more cards)<br>
+        CPU-speed independent timing for message delays and test timeouts<br>
+        Improvements to the way the inventory reporting and fatal error code looks for the Intel
+        error log (we currently bypass one of their pointer tables)<br>
+        Bus number translation (due to bridge card presence) in the PCI fatal error reporting
+        module </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Additional information</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This BIOS must be used in conjunction
+        with user-binary version 1.00.09 or later, and Intel XX BIOS version 0.01.01BG0S (Beta
+        1.01)</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">New known problems</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">CMOS corruption from CPU enable /
+        disable reboot (IPR 1465, &quot;Disabling 2nd CPU causes continuous reboot&quot;)<br>
+        Potential false serial-port test failures (-&gt; no console redirection etc) when spurious
+        data present n the UART receive buffer<br>
+        SMIC BIOS FPSC communications failures when no front-panel serial port IRQ selected<br>
+        Possible deficiencies in SMIC ROM checksum / page-validity test ? (system seen to hang on
+        reboot after JFLASH failure)</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Testing</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Console redirection was run on an SVG
+        machine in the Chapel (the one furthest from the photocopier) with Intel BIOS version
+        0.01.01BG0S (Beta 1.01), Flash Disk Rel 1D, and SMA Rel 1F. </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">WHAT strings</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Public WHAT string<br>
+        SMIC BIOS Version 1.00.08, 22nd August 1995<br>
+        Copyright (C) 1995 Apricot Computers Ltd</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Internal WHAT strings<br>
+        SMICPG0.BIN version 1.00.10, 27th July 1995<br>
+        SMICPG1.BIN version 1.00.05, 27th July 1995<br>
+        SMICPG2.BIN version 1.00.07, 27th July 1995<br>
+        SMICPG3.BIN version 1.00.04, 18th August 1995<br>
+        SMICPG4.BIN version 1.00.03, 25th July 1995<br>
+        SMICPG5.BIN version 1.00.08, 26th July 1995<br>
+        SMICPG6.BIN version 1.00.07, 27th July 1995<br>
+        SMICPG7.BIN version 1.00.06, 25th July 1995</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="9"><font size="2">version 1.00.09 BETA<br>
+        PN 123554SW<br>
+        checksum E100.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Changes from version 1.00.08</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Added skipping of SMIC &quot;Press F1 to
+        continue&quot; prompt when automatic failure recovery is enabled<br>
+        Added logic to prevent console redirection being run when no IRQ has been assigned to the
+        pass-through serial port (also logs a non-fatal error message, &quot;Pass through port has
+        no IRQ allocated&quot;)<br>
+        Added SMI handler &amp; error-logging self-test (deliberate generation of a single-bit
+        memory error)<br>
+        Extended Flash Disk tests to include check for device not being formatted<br>
+        Removed clear screen from option-ROM signon <br>
+        Added erasing of Intel error log when it becomes nearly full <br>
+        Added Flash Disk version number reporting (to FPSC). Also corrected possible bug in SMIC
+        BIOS version number reporting.<br>
+        Console redirection now disabled at the end of POST if not booting from Flash Disk (o/w
+        causes problems with graphical OS&#146;s)<br>
+        Changed inventory-reporting code (floppy, parallel, serial, &amp; memory) to be more
+        tolerant of incomplete error log<br>
+        Extended PCI SERR fatal error handler - now acts on the bus ID (previously just set
+        FatalErrorType variable)<br>
+        Fixed &quot;SMIC BIOS FPSC communications failures when no front-panel serial port IRQ
+        selected&quot; problem <br>
+        Added debug message output from FPSC comms and inventory reporting modules <br>
+        Fixed IPR 1465, &quot;Disabling 2nd CPU causes continuous reboot&quot;<br>
+        Fixed unreliability in serial and parallel inventory reporting code (particularly when
+        ports set to auto-configuration in the SCU) by getting information from chipset registers
+        instead of CMOS. Also changed FPSC variable type for serial from choice to a count for
+        consistency with the SMA. <br>
+        Changed end of POST NextBootStage marker from 2000 to 7FF0 <br>
+        Fixed IPR 1484, &quot;BIOS does not report that SMIC is connected in EISA slot&quot;<br>
+        Added forced screen update at the end of POST in pass-through mode to fix corruption
+        caused by OS&#146;s resetting the COM3/4 UART<br>
+        Added support for remote running of BIOS Setup (controlled by the FPSC SetUpStartRequest
+        variable)<br>
+        Made the serial port information printing a debug-only message<br>
+        Fixed potential problems in the SMIC UART self-tests (disable loopback on completion of
+        poll test, and interrupts after interrupt test) <br>
+        Fixed potential false serial-port test failures (-&gt; no console redirection etc) when
+        spurious data present n the UART receive buffer<br>
+        Added FPSC POST execution timer cancellation when booting from Flash Disk<br>
+        Added user-binary BIOS version number reporting (to FPSC)<br>
+        Added logging of Flash Disk device self-test errors [check this]</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="3"><font size="2">Known omissions</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Functional<br>
+        None </font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Cosmetic<br>
+        Error message and serial port naming review / tidy-up (e.g. for consistency of names with
+        SMA and documentation)<br>
+        Product name (FT//mp and/or Shogun ?) display</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Dormant<br>
+        Further ethernet card node address reporting (supporting more cards)<br>
+        CPU-speed independent timing for message delays and test timeouts<br>
+        Improvements to the way the inventory reporting and fatal error code looks for the Intel
+        error log (we currently bypass one of their pointer tables)<br>
+        Bus number translation (due to bridge card presence) in the PCI fatal error reporting
+        module <br>
+        Check that all code supports alternate SMIC address (i.e. no hard-coded D000h segment
+        assumptions)</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">Additional information</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This BIOS must be used in conjunction
+        with user-binary version 1.00.09 or later, and Intel XX BIOS version 0.01.01BG0S (Beta
+        1.01) or later.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">New known problems<br>
+        FPSC communications failures when SMIC has not been configured (via ECU / !ACL0100.CFG)<br>
+        SMA only displays one of the SMIC resources (I/O, IRQ, etc) reported in the EISA
+        descriptor</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">LCD codes</font></td>
+<td valign="top" bgcolor="#EBEBEB"><table border="0" cellpadding="2" width="100%"
+        bordercolor="#FFFFFF">
+<tr>
+<td valign="top" width="34%" bgcolor="#CCCCCC"><font size="2">Function</font></td>
+<td valign="top" width="33%" bgcolor="#CCCCCC"><font size="2">Entry</font></td>
+<td valign="top" width="33%" bgcolor="#CCCCCC"><font size="2">Exit</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Boot control decision logic</font></td>
+<td valign="top"><font size="2">31 0 0</font></td>
+<td valign="top"><font size="2">39 0 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Console redirect decision logic</font></td>
+<td valign="top"><font size="2">31 1 0</font></td>
+<td valign="top"><font size="2">39 1 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Initialise FPSC communications</font></td>
+<td valign="top"><font size="2">32 0 0</font></td>
+<td valign="top"><font size="2">3A 0 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Write inventory information (CPU, cache, memory, PCI,
+            &amp; I/O)</font></td>
+<td valign="top"><font size="2">32 1 0</font></td>
+<td valign="top"><font size="2">3A 1 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Enable / Disable CPUs</font></td>
+<td valign="top"><font size="2">32 2 0</font></td>
+<td valign="top"><font size="2">3A 2 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Fatal error handler</font></td>
+<td valign="top"><font size="2">32 3 0</font></td>
+<td valign="top"><font size="2">3A 3 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Write inventory information (EISA)</font></td>
+<td valign="top"><font size="2">32 4 0</font></td>
+<td valign="top"><font size="2">3A 4 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Error log nearly-full check / clear</font></td>
+<td valign="top"><font size="2">32 5 0</font></td>
+<td valign="top"><font size="2">3A 5 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Console redirection</font></td>
+<td valign="top"><font size="2">33 0 0</font></td>
+<td valign="top"><font size="2">3B 0 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Ethernet card node address reporting</font></td>
+<td valign="top"><font size="2">35 1 0</font></td>
+<td valign="top"><font size="2">3D 1 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Time synchronisation</font></td>
+<td valign="top"><font size="2">35 2 0</font></td>
+<td valign="top"><font size="2">3D 2 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Non-fatal POST errors reporting</font></td>
+<td valign="top"><font size="2">35 3 0</font></td>
+<td valign="top"><font size="2">3D 3 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Security </font></td>
+<td valign="top"><font size="2">35 4 0</font></td>
+<td valign="top"><font size="2">3D 4 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Flash Disk initialisation</font></td>
+<td valign="top"><font size="2">37 0 0</font></td>
+<td valign="top"><font size="2">3F 0 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Flash Disk self-test</font></td>
+<td valign="top"><font size="2">37 2 0</font></td>
+<td valign="top"><font size="2">3F 2 0</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Flash Disk boot, &amp; end of POST</font></td>
+<td valign="top"><font size="2">7FF0</font></td>
+<td valign="top"></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB" rowspan="2"><font size="2">WHAT strings</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Public WHAT string<br>
+        SMIC BIOS Version 1.00.09, 4th September 1995</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Internal WHAT strings<br>
+        SMICPG0.BIN version 1.00.11, 4th September 1995<br>
+        SMICPG1.BIN version 1.00.06, 4th September 1995<br>
+        SMICPG2.BIN version 1.00.08, 4th September 1995<br>
+        SMICPG3.BIN version 1.00.05, 4th September 1995<br>
+        SMICPG4.BIN version 1.00.03, 25th July 1995<br>
+        SMICPG5.BIN version 1.00.09, 4th September 1995<br>
+        SMICPG6.BIN version 1.00.08, 4th September 1995<br>
+        SMICPG7.BIN version 1.00.07, 4th September 1995</font></td>
+</tr>
+    </table>
+    <p><a name="fpsc"></a><strong><font size="3">Shogun FPSC firmware disk</font></strong></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+<tr>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">BETA 1A<br>
+        PN 155222SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This is the initial release of the
+        Shogun Front Panel Systems Controller (FPSC) firmware and contains the following binaries,<br>
+        A) Systems Controller Firmware, version 3.001<br>
+        Customising EPROM,<br>
+        IC3 - 155083SW.BIN Even, checksum AB10<br>
+        IC2 - 155084SW.BIN Odd, checksum 6FF0<br>
+        Flash - to be used when programming function is carried out by SMA. (Same contents as
+        above files), SMC3001.BIN, checksum 1B00<br>
+        B) Diagnostics Processor Firmware, version 3.00<br>
+        87C51,<br>
+        SMIB006A.BIN, checksum 8E00<br>
+        NOTES<br>
+        Reset control has been deleted.<br>
+        &#145;Port80&#146; capturing added.<br>
+        M/B &#145;Warm reset&#146; monitor added.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">BETA 1B</font><p><font size="2">PN
+        155222SW</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Systems Controller Firmware, version
+        3.003<br>
+        Customising EPROM,<br>
+        IC3 - 155083SW.BIN Even, checksum 2599<br>
+        IC2 - 155084SW.BIN Odd, checksum D467<br>
+        Flash - to be used when programming function is carried out by SMA. <br>
+        (Same contents as above files), SMC3003BIN, checksum FA<br>
+        Changes since previous release,<br>
+        Attributes of NonFatalPOSTError2-6 have been changed to not generate a trap and not to be
+        logged.<br>
+        The default username and password of User1 &amp; User2 have been changed.<br>
+        The default upper threshold of TimeOnCharge has been changed.<br>
+        Terminates S/W WDT when diagnostics processor captures Port80 writes.<br>
+        Does not terminate pass-through mode even if DTR of pass-through goes off during
+        Pass-through value of 2.<br>
+        F/W exits PTM when it detects H/W break during length of ESC-seq = 0 and direct PTM is not
+        specified. In other cases, F/W will handle the break, but if a value of 2 is specified in
+        the pass-through variable and BIOS does not complete, F/W does not pass the break from
+        pass-through port to modem port.<br>
+        F/W adds &#145;F&#146; to LSD of LCD when F/W detects POST timeout and LSD of previous LCD
+        code was zero.<br>
+        Attribute of FPSCVariableValid has been changed.<br>
+        Reset reason is not changed when M/B reset is executed as the result of POST execution
+        timeout.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">BETA 1C<br>
+        PN 155222SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This is BETA 3.005 of the Shogun FPSC
+        Firmware<br>
+        SC Firmware <br>
+        Binary file name for customising EPROM =&gt; as follows;<br>
+        IC3 = 155083SW.BIN (even address, checksum = 8870)<br>
+        IC2 = 155084SW.BIN (odd address, checksum = 5D90)<br>
+        Binary file for FLASH upgrade =&gt; 155175SW.BIN (checksum = E600)<br>
+        (This will be used when FLASH upgrading function is executed by SMA. The content of this
+        file is same as above files.)<br>
+        Changes Since Last Release<br>
+        Changed portion from previous version 3.003 =&gt; as follows;<br>
+        F/W doesn't turn on Security LED even if the system is in security locked state.<br>
+        Registered IR-card silences the alarm sound and clears LCD when security is enabled and
+        front door is locked.<br>
+        F/W terminates push-button security alarm if the button is pushed for shorter than
+        ShutdownSwitchHoldOffTime.<br>
+        Default attribute of BIOSVersion and SMICBIOSVersion have been changed.<br>
+        F/W stores monitored analog values but does not execute error checking during motherboard
+        DC power is not provided.<br>
+        F/W executes reset instantly when resetting motherboard is requested and WDT over-flow or
+        BIOS time-out occurs.<br>
+        F/W displays system dead code only when motherboard reset does not proceed at all.<br>
+        F/W accepts 0 for length byte of username and call-back number of user type variable.<br>
+        F/W displays its version when CTRL+SHUTDOWN+RESET are pushed repeatedly.<br>
+        F/W checks the existence of remote log-in user in main-loop.<br>
+        Default attribute setting of next variables have been changed. <br>
+        Boot_Device, Power_Mode, SCACVoltage, SCACCurrent<br>
+        User_BIOS_Version (0x0054) variable has been added.<br>
+        F/W copies default shutdown hold off time to reset and shutdown hold off time when it
+        receives POST Progress code.<br>
+        To prevent the case of battery voltage is 0, F/W predicts DC current by assuming that
+        battery voltage is 48000 [mV].<br>
+        Default setting of battery full charge time and upper threshold of time on charge have
+        been changed to 108000 sec.<br>
+        Default setting of MODEM and PassThrough port have been changed to 19200bps.<br>
+        Default setting of Escape Sequence has been changed to none.<br>
+        Direct pass through mode that is invoked from pass-through port has been deleted.<br>
+        Next bug of F/W has been fixed.<br>
+        F/W suspends trap generation to MODEM port till it receives some command when it detects
+        power good becomes active.<br>
+        When battery voltage becomes too low, F/W executes power off only when the motherboard
+        power is on. (Bug fix)<br>
+        F/W re-calculate time on charge when motherboard power off is done during the system is
+        battery backed up. (Bug fix)<br>
+        The ways of AC voltage, current and DC current calculation have been changed based on the
+        calibration data.<br>
+        MODEM related variables can be changed without executing FPSC reset.<br>
+        (F/W executes MODEM related hardware re-programming when MODEM user off from FPSC.)<br>
+        Default thresholds of DC voltage variables have been changed.<br>
+        F/W ticks during shutdown is in progress.<br>
+        F/W terminates shutdown hold off timer and reset hold off timer when it receives End
+        Marker code, Device Driver Attached code or Client Attached code.<br>
+        Changed portion from previous version (3.002) =&gt; as follows;<br>
+        Attributes of NonFatalPOSTError2-6 are changed not to generate a trap and do not log.<br>
+        Default username and password of User1 and 2 have been changed.<br>
+        Default upper threshold of TimeOnCharge variable is changed.<br>
+        Terminates S/W WDT when Diag-P captures port80 writing.<br>
+        Do not terminate pass-through mode even if DTR of pass-through becomes off during
+        Pass_Through's content is 2.<br>
+        F/W exit PTM when it detects H/W Break during length of esc-seq is zero and direct PTM is
+        not specified. In other case, F/W will handle the break.<br>
+        But, if 2 is specified in the Pass_through variable and BIOS does not finish, F/W does not
+        pass break from Passthrough port to MODEM port.<br>
+        Correction of mistake. F/W adds 'F' to LSD of LCD when F/W detects POST time-out and LSD
+        of previous LCD code was zero.<br>
+        Attribute of FPSCVariableValid is changed.<br>
+        Reset reason is not changed when motherboard reset is executed as the result of POST
+        execution time-out.<br>
+        PRFs/IPRs<br>
+        No PRFs or IPRs have been resolved with this release.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">BETA 1D<br>
+        PN 155222SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This is BETA 3.006 of the Shogun FPSC
+        Firmware<br>
+        Binary file name for customising EPROM =&gt; as follows;<br>
+        IC3 = 155083SW.BIN (even address, checksum = D9A3)<br>
+        IC2 = 155084SW.BIN (odd address, checksum = 825D)<br>
+        Binary file for customising FLASH =&gt; 155175.BIN (checksum = 5C00)<br>
+        (This will be also used when FLASH upgrading function is executed by SMA. The content of
+        this file is same as above files.)<br>
+        Firmware version =&gt; 3.006 (Variable table = 3.006, protocol version = 2.000)<br>
+        Changes Since Last Release<br>
+        Changes from previous version (3.005) are as follows;<br>
+        Initial value of battery back-up table is changed.<br>
+        In addition to the shutdown hold off timer, F/W ticks during reset hold off timer is
+        active.<br>
+        SetUpStart, FlashDiskVersion and LCDCurrentCode variables are added.<br>
+        SetUpStart : Choice, 0x022c, attribute1 = --------, attribute2 = -GSGS---<br>
+        FlashDiskVersion : String, 0x022d, attribute1 = --------, attribute2 = -<br>
+        GSGS---<br>
+        LCDCurrentCode : Count, 0x00e5, attribute1 = --------, attribute2 = -G-G-<br>
+        M--<br>
+        During motherboard power is off, F/W sets fan stopped code in the FanNStatus variables
+        without execute error checking.<br>
+        F/W switches off the machine only when it detects battery voltage exceeds threshold
+        boundary and shutdown is requested in the attribute1 and circuit breaker is closed and AC
+        good is off.<br>
+        Default threshold of ACVoltage variable is changed. Default attribute of AC15ALatch is
+        changed to log and generate traps.<br>
+        Initial value of Latch15AAction is changed to pulse p-on signal when AC voltage is lower
+        than 264V (always).<br>
+        Power off/on is added to the POST error action as follows.<br>
+        POSTErrorAction = 0 : Do nothing.<br>
+        = 1 : Sound alarm.<br>
+        = 2 : Sound alarm and Reset or P-off/on M/B. (Repeat Reset 2 times and p-off/on 1 time.)<br>
+        = 3 : Sound alarm and Reset M/B.<br>
+        = 4 : Sound alarm and P-off/on M/B.<br>
+        Default setting of POSTErrorAction is changed to alarm and its attribute1 (error acton) is
+        changed to write log.<br>
+        FPSC F/W treats both 2000 and 7FF0 for NextBootStage as end of POST.<br>
+        In addition to time stamp, event type and variable number are cleared when AuditPointer is
+        written to 0 by some client.<br>
+        To prevent confusing, the content of event log of invalid power good off always indicates
+        PowerGood variable being false.<br>
+        PRFs/IPRs<br>
+        The following IPRs have been resolved with this release; 1397,1400, 1440, 1441, 1442,
+        1446, 1447, 1456.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">BETA 2A</font><p><font size="2">PN
+        155222SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Introduction<br>
+        This is the first beta release of version 3.007 of the Shogun FPSC processor firmware.<br>
+        EPROM Part No. is as follows;<br>
+        IC3 = 15508331 (even address)<br>
+        IC2 = 15508431 (odd address)<br>
+        Binary file name for customising EPROM =&gt; as follows;<br>
+        IC3 = 155083SW.BIN (even address, checksum = F30E)<br>
+        IC2 = 155084SW.BIN (odd address, checksum = B0F2)<br>
+        Binary file for customising FLASH is 155175.BIN (checksum = A400)<br>
+        (This will be also used when FLASH upgrading function is executed by SMA. The content of
+        this file is same as above files.)<br>
+        Firmware version is 3.007, FPSC variable table version is 3.007, FPSC Client I/F Protocol
+        version is 2.000.<br>
+        Changes Since Last Release<br>
+        FPSC F/W does not execute error action when it detects POST execution time-out and 2A70 is
+        set in NextBootStage variable because 2A70 indicates that setup is started.<br>
+        FPSC F/W executes power off instead of motherboard reset when reset hold off timer expires
+        and AC fails.<br>
+        FPSC F/W rings off the call when ringing up succeeded but SMA does not execute auth1
+        within Authenticate 1 time-out period during force trap process.<br>
+        FPSC F/W forces log off a user when non-zero time-out value (1 - 65535 sec) is specified
+        in the FPSC variable and the specified period passed. <br>
+        Time-out value is specified in the next variables.<br>
+        Both initial values are zero (disabled).<br>
+        FPSC : FPSCUserForceTimeOut,0x00e6,count,--------,-GSGS---<br>
+        MODEM : MODEMUserForceTimeOut,0x00e7,count,--------,-GSGS---<br>
+        FPSC F/W does not check error condition of next signals from PSU during F/W regards power
+        mode as Power-off mode. In that case, F/W just copies current state into FPSC variables
+        (PSUTemperature and BatteryChargeMonitor). Signals are Thermal Alarm signal and Battery
+        Charge Monitor signal. Logging is added to default error action setting of
+        BatteryChargeMonitor variable.<br>
+        PRFs/IPRs<br>
+        No IPRs have been addressed with this release.<br>
+        Testing<br>
+        This version of FPSC firmware has been tested under the following conditions.<br>
+        Revision of hardware : SC-board = B, FP-board = D (must be D or later)<br>
+        Used machine : PSU simulator board and Shogun#8 of ISEC<br>
+        Used O/S : UnixWare<br>
+        Tested portion : All changed portions</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">BETA 2B<br>
+        PN 155222SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">EPROM Part No. =&gt; as follows;<br>
+        IC3 = 15508331 (even address)<br>
+        IC2 = 15508431 (odd address)<br>
+        Binary file name for customising EPROM =&gt; as follows;<br>
+        IC3 = 155083SW.BIN (even address, checksum = F6B8)<br>
+        IC2 = 155084SW.BIN (odd address, checksum = B047)<br>
+        Binary file for customising FLASH =&gt; 155175.BIN (checksum = A700) <br>
+        (This will be also used when FLASH upgrading function is executed by SMA. The content of
+        this file is same as above files.)<br>
+        Changes Since Last Release<br>
+        Firmware version = 3.008, FPSC variable table version = 3.008, FPSC <br>
+        Client I/F Protocol version = 2.000.<br>
+        Changed portion from previous version 3.007 =&gt; as follows;<br>
+        In order to generate NMI during SMI is enabled by SCU, FPSC F/W requests diag-processor to
+        pulse IOCHK signal instead of NMI signal. <br>
+        Because SMIC BIOS issues 3A30 POST progress code at that time, FPSC F/W does nothing when
+        POST execution time-out is detected during NextBootStage code is 3A30.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">BETA 2C<br>
+        PN 155222SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">EPROM Part Nos<br>
+        IC3 = 15508331 (even address)<br>
+        IC2 = 15508431 (odd address)<br>
+        Binary file name for customising EPROM<br>
+        IC3 = 155083SW.BIN (even address, checksum = F351)<br>
+        IC2 = 155084SW.BIN (odd address, checksum = F6AF)<br>
+        Binary file for customising FLASH<br>
+        155175.BIN (checksum = EA00) (This will be also used when FLASH upgrading function is
+        executed by SMA. The content of this file is same as above files.)<br>
+        Changes Since Last Release<br>
+        Firmware version = 3.010<br>
+        FPSC variable table version = 3.010<br>
+        FPSC Client I/F Protocol version = 2.000<br>
+        Modem controlling problem.<br>
+        Setting RTC to binary mode during DO_SELF_TEST command execution.<br>
+        New mode for ResetConvert [=2: Power on], FPSC automatically executes power on when AC
+        power is returned following an AC failure.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">release 2</font><p><font size="2">PN
+        155222SW.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This is the REL 2 of the Shogun FPSC
+        processor firmware (Version 3.008).<br>
+        EPROM Part No. =&gt; as follows;<br>
+        IC3 = 15508331 (even address)<br>
+        IC2 = 15508431 (odd address)<br>
+        Binary file name for customising EPROM =&gt; as follows;<br>
+        IC3 = 155083SW.BIN (even address, checksum = F6B8)<br>
+        IC2 = 155084SW.BIN (odd address, checksum = B047)<br>
+        Binary file for customising FLASH =&gt; 155175.BIN (checksum = A700) <br>
+        (This will be also used when FLASH upgrading function is executed by SMA. The content of
+        this file is same as above files.)<br>
+        Changes Since Last Release<br>
+        Firmware version = 3.008, FPSC variable table version = 3.008, FPSC <br>
+        Client I/F Protocol version = 2.000.<br>
+        Changed portion from previous version 3.007 =&gt; as follows;<br>
+        In order to generate NMI during SMI is enabled by SCU, FPSC F/W requests diag-processor to
+        pulse IOCHK signal instead of NMI signal. <br>
+        Because SMIC BIOS issues 3A30 POST progress code at that time, FPSC F/W does nothing when
+        POST execution time-out is detected during NextBootStage code is 3A30.</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">version 3.011<br>
+        PN 155222SW<br>
+        checksum see text.</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Introduction<br>
+        This is Beta 3 of the Shogun FPSC processor firmware (Version 3.011).<br>
+        The object of this release is to provide the latest firmware to the field. <br>
+        This current version includes changes to prevent automatic power down of Shogun computers
+        at 11:59 on 31/12/199?<br>
+        This bug is not thought to have been seen in the UK because the Japanese FT Manager is not
+        shipped by ACL.<br>
+        Following is Tak Saito&#146;s readme doc on the FPSC firmware. <br>
+        EPROM Part No. =&gt; as follows;<br>
+        IC3 = 15508331 (even address)<br>
+        IC2 = 15508431 (odd address)<br>
+        Binary file name for customising EPROM =&gt; as follows;<br>
+        IC3 = 155083SW.BIN (even address, checksum = F02A)<br>
+        IC2 = 155084SW.BIN (odd address, checksum = 05D6)<br>
+        Binary file for FLASH upgrade =&gt; 155175SW.BIN (checksum = F600)<br>
+        (This will be used when FLASH upgrading function is executed by SMA. The content of this
+        file is same as above files.)<br>
+        Firmware version =&gt; 3.011<br>
+        (FPSC variable table version =&gt; 3.011)<br>
+        (FPSC Client I/F Protocol version =&gt; 2.000)<br>
+        Changed portion from version 3.010 =&gt; as follows;<br>
+        Bug fix for scheduled power-on/off and reset.<br>
+        FPSC executes scheduled power-on/off or motherboard_reset instantly when FPSC detects
+        current time having passed Next Power On / Off or Reset Time.<br>
+        FPSC regards year of '00 - '94 as 2000 - 2094. (In previous versions, FPSC regards year of
+        '00 - '93 as 2000 - 2093.)<br>
+        Related IPR =&gt; none</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Release 1<br>
+        <br>
+        12/03/97<br>
+        <br>
+        PN 155222SW</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Introduction<br>
+        <br>
+        This is a FPSC firmware release for the Shogun Server System.<br>
+        <br>
+        Binary for EVEN address EPROM (IC3): 155083SW.BIN<br>
+        Binary for ODD address EPROM (IC2): 155084SW.BIN<br>
+        Binary for FLASH ROM (IC1): 155175SW.BIN<br>
+        <br>
+        Changes Since Last Release<br>
+        <br>
+        No alterations have been made since the last beta which incorporated the following
+        changes:<br>
+        <br>
+        Bug fix for elapsed scheduled Power-On/Off and Reset times.<br>
+        <br>
+        Compliance for turn of the century date and time.<br>
+        <br>
+        File List<br>
+        <br>
+        Disk #1 /1<br>
+        <br>
+        Volume in drive A is 155222SW<br>
+        Volume Serial Number is 98EF-1F15<br>
+        <br>
+        Directory of A:\<br>
+        11/03/97 16:36 131,072 155083SW.BIN<br>
+        11/03/97 16:36 131,072 155084SW.BIN<br>
+        11/03/97 16:36 131,072 155175SW.BIN<br>
+        <br>
+        3 File(s) 393,216 bytes<br>
+        <br>
+        1,064,448 bytes free</font></td>
+</tr>
+    </table>
+    <p>&nbsp;</p>
+    <p><a href="#top"><img src="../../../graphics/redarr01.gif" align="left" border="0" hspace="0"
+    width="14" height="10"><img src="../../../graphics/redarr01.gif" align="right" border="0"
+    hspace="0" width="14" height="10"></a></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

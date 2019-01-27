@@ -1,0 +1,764 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>Archive 4584NP Autoloader DDS_DC</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../../products/main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../../products/prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../../products/timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../../products/desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../../products/servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../../products/notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../../products/monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+    <td valign="top"><h3><font size="2"><br>
+    </font><strong><font face="Arial,Helvetica" size="4" color="#D60029">Archive 4584NP
+    Autoloader DDS-DC </font><font face="Arial,Helvetica" size="3" color="#D60029">(Rev&nbsp;1.7.1)</font></strong></h3>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center"><font size="2"><img src="graphics/ar4584f2.gif" width="423"
+        height="257"></font></td>
+        <td valign="top"><font size="2"><a href="#spec">Specification</a></font><p><font size="2"><a
+        href="#using">Using the Drive</a></font></p>
+        <p><font size="2"><a href="#enviro">Environment</a></font></p>
+        <p><font size="2"><a href="#jumper">Drive configuration</a></font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <h3><font size="2"><a name="spec"></a></font><font size="3">Specification</font></h3>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="3" valign="top"><font size="2">Data Transfer</font></td>
+        <td bgcolor="#EBEBEB" rowspan="3" valign="top"><font size="2">Sustained</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">366 Kbytes/s (1:1 base)</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">732 Kbytes/s (2:1 typical)</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">1464 Kbytes/s (4:1 max)</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="6" valign="top"><font size="2">Nominal Capacity</font></td>
+        <td bgcolor="#EBEBEB" rowspan="3" valign="top"><font size="2">60-metre cartridge</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">1.3 Gbyte (1:1 base)</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">2.6 Gbyte (2:1 typical)</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">5.2 Gbyte (4:1 max)</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="3" valign="top"><font size="2">90-metre cartridge</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">2.0 Gbyte (1:1 base)</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">4.0 Gbyte (2:1 typical)</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">8.0 Gbyte (4:1 max)</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">Unrecoverable Errors</font></td>
+        <td colspan="2" bgcolor="#EBEBEB"><font size="2">Less than 1 in 10<sup>15</sup> data bits</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">Recording Format</font></td>
+        <td colspan="2" bgcolor="#EBEBEB"><font size="2">ANSI/ECMA Digital Storage with Data
+        Compression (DDS-DC) </font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="left"><font size="2">Media (ten)</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">1.3GB DDS tape </font></td>
+        <td bgcolor="#EBEBEB"><font size="2">DA44990</font></td>
+      </tr>
+    </table>
+    </center></div><hr>
+    <h3><font size="2"><a name="using"></a></font><font size="3">Using the Drive</font></h3>
+    <h3><font size="2">Front Panel</font></h3>
+    <p><font size="2">The front panel of the Autoloading DDS-DC drive includes a eight
+    character display, four LEDs and two buttons. The front panel is illustrated below.</font></p>
+    <p align="center"><font size="2"><img src="graphics/ar4584f1.gif" width="460" height="348"></font></p>
+    <h3><font size="3">Front Panel Display</font><font size="2"> </font></h3>
+    <p><font size="2">The front panel display is used to display eight alphanumeric characters
+    indicating the status of the drive. If the drive is installed with the display horizontal,
+    text is oriented to read from left to right. If the drive is installed with the display
+    vertical, text is oriented to read from top to bottom.</font></p>
+    <p><font size="2"><em><strong>Warning</strong></em> </font></p>
+    <p><font size="2">When the drive drawer is closed and a magazine present the display
+    identifies the magazine slot that is positioned for use. the drive drawer is closed
+    without a magazine present no message is displayed. When the drawer is open and a other
+    magazine than a four cartridge magazine is present, the drive identifies the magazine and
+    it locks it and the drawer in place. display The indicates which slot is positioned for
+    use. If the slot positioned for use does not contain a cartridge the display flashes
+    rapidly. If the slot contains a correctly inserted cartridge the display flashes slowly
+    identifying the slot. The slow flash continues for five seconds after the magazine is
+    stepped using the STEP button. Once the cartridge is loaded the slot number is displayed
+    continuously. If a cartridge is not correctly inserted in the magazine the display shows
+    the CHECK MAGAZINE message. Whenever the drive needs operator intervention the display
+    flashes OPERATOR.</font></p>
+    <p><em><strong><font size="2">Warning</font></strong></em></p>
+    <p><font size="2">It is vital that the text reads left to right when the display is
+    horizontal, and top to bottom when the display is vertical. The drive must not be operated
+    with the text incorrectly oriented.</font></p>
+    <p><font size="2">If text is displayed incorrectly, open the drive drawer, eject the
+    magazine, power the system down and refer to Drawer switches for information on changing
+    the orientation.</font></p>
+    <p><font size="2">Messages that the drive can display&nbsp;</font></p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td width="50%" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Message</strong></font></td>
+        <td width="50%" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Meaning</strong></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">MAG ERR</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Magazine is jammed</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">ILLEGAL</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Button has no function</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">NO CASS</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">A cartridge is no present</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">CASS IN</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">A cartridge is in the drive</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">CLEANING</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Cleaning cycle is occurring</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">OPERATOR</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Operator action is required</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">EJECTING</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Cartridge is being ejected</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">INSERT</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Cartridge is being inserted</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">SCAN MAG</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Magazine is being initialised</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">DISMOUNT</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Magazine is being dismounted</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">SLOT-nn</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Slot number nn is in position</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">OPENING</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Drawer is opening</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">CLOSING</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Drawer is closing</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">CHK MAG</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">The cartridge is not correctly</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB">&nbsp;</td>
+        <td bgcolor="#EBEBEB"><font size="2">inserted in the magazine</font></td>
+      </tr>
+    </table>
+    </center></div><h3><font size="3">Front Panel Buttons</font></h3>
+    <p><strong><font size="2">EJECT Button</font></strong></p>
+    <p><font size="2">The EJECT button ejects the currently loaded cartridge and , if a
+    magazine is being used, dismounts the magazine, opening the drawer if necessary.</font></p>
+    <p><strong><font size="2">STEP Button</font></strong></p>
+    <p><font size="2">This button allows you to step through the cartridges in the magazine in
+    turn, until you reach the one you require.</font></p>
+    <p><font size="2">&nbsp;Pressing the STEP button returns the current cartridge to the
+    magazine and moves the magazine to the next cartridge. If a cartridge is present in that
+    slot it is loaded into the drive after a five second delay.</font></p>
+    <p><font size="2">&nbsp;The delay allows you to step the magazine to the next cartridge if
+    the current one is not the one you require.</font></p>
+    <p><font size="2">When the magazine is stepped beyond the last slot it moves back to the
+    first slot.</font></p>
+    <h3><font size="3">Front Panel LEDs</font></h3>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td width="24%" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>LED</strong></font></td>
+        <td width="24%" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Action</strong></font></td>
+        <td width="52%" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Meaning</strong></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="2" valign="top"><font size="2">Drive Status</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">The drive is reading or writing the cartridge.</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">Flashing rapidly</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">A hardware fault has occurred, or dew has been
+        detected.</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="4" valign="top"><font size="2">Cartridge Status</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">A cartridge is in the drive and is not generating
+        excess errors.</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">Flashing slowly</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">A cartridge is in the drive and is generating excess
+        errors (Warning). Use a cleaning cartridge to clean the heads.</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">Flashing slowly (with drive status LED flashing)</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">A pre-recorded audio cartridge is in the drive.</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">Flashing rapidly</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">The drive cannot write to the tape (Error). Use a
+        cleaning cartridge to clean the heads.</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">Data compression</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">A data compression or decompression operation is in
+        progress.</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">Write protect</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">The cartridge in the drive is write protected.</font></td>
+      </tr>
+    </table>
+    </center></div><h3><font size="3">Write-protecting a cartridge</font></h3>
+    <p><font size="2">A cartridge can be write-protected by sliding the white tab on the
+    cartridge so that the recess is revealed. In this position, data can be read from the tape
+    but not written to it.</font></p>
+    <p align="center"><font size="2"><img src="graphics/ar4584wp.gif" width="400" height="250"></font></p>
+    <h3><font size="3">Magazine operation</font></h3>
+    <p><strong><font size="2">Loading cartridges</font></strong></p>
+    <p><font size="2">To load cartridges hold the magazine with the flat side towards you, so
+    that the cartridge slots face away from you. Then insert a cartridge with the write
+    protect tab facing you at the right end of the cartridge.</font></p>
+    <p align="center"><font size="2"><img src="graphics/ar4584cr.gif" width="410" height="348"></font></p>
+    <p><font size="2">The cartridge should seat firmly in the slot. Repeat the process for the
+    remaining cartridges.</font></p>
+    <p><strong><font size="2">Inserting a magazine</font></strong></p>
+    <p><font size="2">The drive senses when a four cartridge magazine is used, and
+    automatically closes the drawer and loads the first (top) cartridge. To load a four
+    cartridge magazine:</font></p>
+    <p><font size="2">&nbsp;1, Press the EJECT button to open the drawer. The drawer will open
+    and the display will indicate that operator action is required.</font></p>
+    <p><font size="2">&nbsp;2, Align the loaded magazine over the open drawer with the flat
+    side of the magazine towards you, and the protrusions on the sides of the magazine
+    matching the cut-outs in the drawer.</font></p>
+    <p><font size="2">&nbsp;3, Place the magazine gently in the drawer. Do not force it. The
+    drive senses its presence, positions it and closes the drawer automatically.</font></p>
+    <p align="center"><font size="2"><img src="graphics/ar4584im.gif" width="530" height="502">&nbsp;</font></p>
+    <p><strong><font size="2">Using a single cartridge</font></strong></p>
+    <p><font size="2">The drive can be operated with a single cartridge. To load a single
+    cartridge:</font></p>
+    <p><font size="2">&nbsp;1, Press the EJECT button to open the drawer. The drawer will open
+    and the display will indicate that operator action is required.</font></p>
+    <p><font size="2">&nbsp;2, Insert the cartridge into the slot as shown in the following
+    illustration, with the write protect tab facing you at the right end of the cartridge.</font></p>
+    <p align="center"><font size="2"><img src="graphics/ar4584ic.gif" width="570" height="502">&nbsp;</font></p>
+    <p><font size="2">3, Gently push the cartridge into the drive until the drive pulls the
+    cartridge into the opening.</font></p>
+    <p><font size="2">Once the cartridge is in the drive you may close the drawer if you wish.</font></p>
+    <h3><font size="2">Cleaning the drive</font></h3>
+    <p><font size="2">Head cleaning </font></p>
+    <p><font size="2">There are two points at which the drive heads should be cleaned.</font></p>
+    <p><font size="2">1, As routine maintenance after every 25 hours of read/write activity.</font></p>
+    <p><font size="2">2, Whenever the cartridge status LED flashes.</font></p>
+    <p><em><strong><font size="2">Note</font></strong></em></p>
+    <p><font size="2">To clean the heads insert a cleaning cartridge. These are available from
+    Apricot (GH46865).</font></p>
+    <p><em><strong><font size="2">Note</font></strong></em></p>
+    <p><font size="2">The drive automatically recognises the cleaning cartridge, loads it and
+    runs it for approximately 10 seconds, before it is ejected. Each time the cleaning
+    cartridge is used a clean unused portion of the tape is advanced. After approximately 30
+    uses the entire tape is used and a new cartridge is required.</font></p>
+    <p align="center"><font size="2"><img src="graphics/ar4584ro.gif" width="530" height="502">&nbsp;</font></p>
+    <p><em><strong><font size="2">Note</font></strong></em></p>
+    <p><font size="2">The flashing of the cartridge status LED could refer to a damaged tape,
+    or a tape nearing the end of its life. If cleaning the heads does not correct the flashing
+    LED condition, replace the tape.</font></p>
+    <p><em><strong><font size="2">Note</font></strong></em></p>
+    <p><font size="2">Do not use an audio DAT cleaning cartridge, the drive will not recognise
+    it as a cleaning cartridge.</font></p>
+    <h3><font size="2">Cleaning the cartridge rollers </font></h3>
+    <p><font size="2">To clean the cartridge rollers:</font></p>
+    <p><font size="2">1. Press the EJECT button and, once the drawer is open, remove the
+    magazine or cartridge.</font></p>
+    <p><font size="2">2. Dip one end of a cotton swab in ethyl alcohol.</font></p>
+    <p><font size="2">3. Press the STEP button three times within three seconds. CLEAN 1 will
+    appear on the display, and the cartridge rollers will rotate for 10 seconds.</font></p>
+    <p><font size="2">4. As the cartridge rollers begin to rotate extend the swab into the
+    drawer and wipe the rollers with the wet end of the swab.</font></p>
+    <p><font size="2">5. While the rollers are still rotating wipe them with the dry end of a
+    cotton swab.</font></p>
+    <h3><font size="2">Cleaning the magazine rollers </font></h3>
+    <p><font size="2">Cleaning the left magazine rollers </font></p>
+    <p><font size="2">To clean the left magazine rollers:</font></p>
+    <p><font size="2">1. Press the EJECT button and, once the drawer is open, remove the
+    magazine or cartridge.</font></p>
+    <p><font size="2">2. Dip one end of a cotton swab in ethyl alcohol.</font></p>
+    <p><font size="2">3. Press the STEP button three times within three seconds. CLEAN 2 will
+    appear on the display, and the left magazine rollers will rotate for 10 seconds.</font></p>
+    <p><font size="2">4. As the left magazine rollers begin to rotate extend the swab into the
+    drawer and wipe the rollers with the wet end of the swab.</font></p>
+    <p><font size="2">5. While the rollers are still rotating wipe them with the dry end of a
+    cotton swab.</font></p>
+    <p><font size="2">Cleaning the right magazine rollers </font></p>
+    <p><font size="2">To clean the right magazine rollers:</font></p>
+    <p><font size="2">1. Press the EJECT button and, once the drawer is open, remove the
+    magazine or cartridge.</font></p>
+    <p><font size="2">2. Dip one end of cotton swab in ethyl alcohol.</font></p>
+    <p><font size="2">3. Press the STEP button three times within three seconds. CLEAN 3 will
+    appear on the display, and the right magazine rollers will rotate for 10 seconds.</font></p>
+    <p><font size="2">4. As the right magazine rollers begin to rotate extend the swab into
+    the drawer and wipe the rollers with the wet end of the swab.</font></p>
+    <p><font size="2">5. While the rollers are still rotating wipe them with the dry end of a
+    cotton swab.</font></p>
+    <h3><font size="2">Display cleaning </font></h3>
+    <p><font size="2">If necessary the front panel display can be cleaned with a damp cloth
+    and soapy water.</font></p>
+    <p><em><strong><font size="2">Warning</font></strong></em></p>
+    <p><font size="2">Do not use detergents or any proprietary cleaning solutions. These may
+    damage the display.</font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <h3><font size="2"><a name="enviro"></a></font><font size="3">Environment</font></h3>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="6" valign="top"><font size="2">Power</font></td>
+        <td bgcolor="#EBEBEB" rowspan="2" valign="top"><font size="2">Voltage</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">+12Vdc ± 10% </font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">+5Vdc ± 7% </font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="2" valign="top"><font size="2">Ripple</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">+12V: 100mV pk-pk </font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">+5V : 50mV pk-pk </font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="2" valign="top"><font size="2">Current (max)</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">3.7A @ + 12V </font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">2.2A @ + 5V </font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <h3><font size="2"><a name="jumper"></a></font><font size="3">Drive Configuration</font><font
+    size="2"> </font></h3>
+    <h3><font size="2">Drawer switches</font></h3>
+    <p align="center"><img src="graphics/ar4584ds.gif" width="500" height="398"></p>
+    <p><strong><font size="2">Switch 1</font></strong></p>
+    <p><font size="2">Switch 1 determines the orientation of the characters on the display.
+    When switch 1 is off the display reads from left to right, when switch1 is on the display
+    reads from top to bottom.</font></p>
+    <p><font size="2">It is vital that switch 1 is set in the correct position, in addition to
+    the display orientation the position of this switch also changes the operation of the
+    drive mechanism.</font></p>
+    <p><font size="2"><strong>Switch 2</strong> </font></p>
+    <p><font size="2">Switch 2 determines whether the first cartridge in the magazine is
+    automatically loaded into the drive. When switch 2 is off the cartridge is not loaded,
+    when switch 2 is on the cartridge is loaded.</font></p>
+    <h3><font size="3">Top panel switches</font><font size="2"> </font></h3>
+    <p><font size="2">With the drive out of the system a bank of seven switches is available
+    on the circuit board at the top of the drive. The location of the switches can be seen in
+    the illustration.</font></p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Switch</strong></font></td>
+        <td bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Function</strong></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">1</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">Display language</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">2</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">Display language</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">3</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">Continuous cycle</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">4</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">Display intensity</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">5</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">Power on self test</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">6</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">Reserved</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">7</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">Reserved</font></td>
+      </tr>
+    </table>
+    </center></div><p align="center"><img src="graphics/ar4584ts.gif" width="425" height="417"></p>
+    <p><strong><font size="2">Switches 1 and 2 </font></strong></p>
+    <p><font size="2">These two switches determine the language used by the display as
+    follows.</font></p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td colspan="2" bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Switch</strong></font></td>
+        <td bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Language</strong></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>2</strong></font></td>
+        <td bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>1</strong></font></td>
+        <td bgcolor="#D60029">&nbsp;</td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">English</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">French</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">German</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">Spanish</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><strong>Switch 3</strong> </font></p>
+    <p><font size="2">Switch 3 determines the action of the drive after it accesses the last
+    cartridge in the magazine. When switch 3 is off the drive stops. When switch 3 is on the
+    drive returns to the first cartridge.</font></p>
+    <p><font size="2"><strong>Switch 4</strong> </font></p>
+    <p><font size="2">Switch 4 controls the intensity of the display. When switch 4 is off
+    display intensity is normal. When switch 4 is on display intensity is high.</font></p>
+    <p><font size="2"><strong>Switch 5</strong> </font></p>
+    <p><font size="2">Switch 5 controls whether the drive runs its self test sequence on power
+    up. When switch 5 is off the drive does not run the self test sequence. When switch 5 in
+    on the drive does run the self test sequence.</font></p>
+    <h3><font size="3">Rear panel switches</font><font size="2"> </font></h3>
+    <p><font size="2">With the drive out of the system a bank of eight switches is available
+    on the circuit board at the rear of the drive. The location of the switches is indicated
+    in the illustration below.</font></p>
+    <p><font size="2">The functions of these switches are given in the following table.</font></p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Switch</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Function</strong></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">1</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">SCSI ID bit 0</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">2</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">SCSI ID bit 1</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">3</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">SCSI ID bit2</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">4</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">SCSI mode</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">5</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Parity</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">6</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">DDS pass through</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">7</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reserved</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">8</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Power on self test</font></td>
+      </tr>
+    </table>
+    </center></div><p align="center"><font size="2"><img src="graphics/ar4584rs.gif"
+    width="450" height="450"></font></p>
+    <p><strong><font size="2">Switch 1, 2 and 3 </font></strong></p>
+    <p><font size="2">These three switches determine the identity of the drive on the SCSI
+    bus.</font></p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td colspan="3" bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Switch</strong></font></td>
+        <td bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Identity</strong></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">3</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">2</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">1</font></td>
+        <td bgcolor="#EBEBEB">&nbsp;</td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">0</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">1</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">2</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">3</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">4</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">5</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">OFF</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">6</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">ON</font></td>
+        <td bgcolor="#EBEBEB"><p align="center"><font size="2">7</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2">In Apricot system it is recommended that tape drives use
+    SCSI identity 2.</font></p>
+    <p><font size="2"><strong>Switch 4</strong> </font></p>
+    <p><font size="2">This switch is used to select whether the drive uses a SCSI-1 or SCSI-2
+    interface. When the switch is off SCSI-1 is selected, when the switch is on SCSI-2 is
+    selected.</font></p>
+    <p><strong><font size="2">Switch 5 </font></strong></p>
+    <p><font size="2">This switch is used to select whether the drive enables parity and
+    parity checking on the SCSI bus. When the switch is off parity is disabled, when the
+    switch is on parity is enabled.</font></p>
+    <p><strong><font size="2">Switch 6 </font></strong></p>
+    <p><font size="2">This switch is used to enable DDS pass-through mode. When the switch is
+    off DDS pass-through mode is disabled, when the switch is on DDS pass-through is enabled.</font></p>
+    <p><font size="2">When DDS pass-through mode is disabled data written to cartridges is
+    compressed, unless the drive finds uncompressed data already present on the cartridge.</font></p>
+    <p><font size="2">When DDS pass-through mode is enabled data written to cartridges is
+    uncompressed.</font></p>
+    <p><em><strong><font size="2">Note</font></strong></em></p>
+    <p><font size="2">The function of this switch can be overridden by SCSI command</font></p>
+    <p><font size="2"><strong>Switch 8</strong> </font></p>
+    <p><font size="2">Switch 8 controls whether the drive runs its self test sequence on power
+    up. When switch 8 is off the drive does not run the self test sequence. When switch 8 is
+    on the drive does run the self test sequence.</font></p>
+    <h3><font size="3">SCSI termination</font><font size="2"> </font></h3>
+    <p><font size="2"><strong>Termination resistors</strong> </font></p>
+    <p><font size="2">The rear of the drive provides two sockets for SIP termination
+    assemblies. If you are installing termination assemblies make sure that you align pin 1 of
+    the assemblies with pin 1 of the sockets.</font></p>
+    <p><font size="2"><strong>Termination power jumper</strong> </font></p>
+    <p><font size="2">A two pin jumper on the rear of the drive determines whether the drive
+    supplies termination power to the SCSI bus. When a jumper is across both pins termination
+    power is enabled.</font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

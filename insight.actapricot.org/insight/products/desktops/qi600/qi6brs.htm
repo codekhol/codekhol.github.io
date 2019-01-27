@@ -1,0 +1,426 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<title>Qi 600 BIOS Revision Summary </title>
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><p align="left"><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">Qi 600 BIOS Revision Summary </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.1.11)</font></strong></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><strong><font size="2" color="#FFFFFF">Release</font></strong></td>
+        <td valign="top" bgcolor="#D60029"><strong><font size="2" color="#FFFFFF">Date</font></strong></td>
+        <td valign="top" width="75%" bgcolor="#D60029"><strong><font size="2" color="#FFFFFF">Changes</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.07</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">17/2/89</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Reset all write protect bits
+        on soft reset (cures problem with AMODE LOCK and SECURITY.SYS). Check Revision of 451
+        chip, if less than 3 (451-A revision) then disable Fast Cycles, else enable Fast Cycles in
+        VGA and Chipset. Set I/O to 16-bit - this should provide optimum performance with the 451A
+        part.<br>
+        <br>
+        Added flush into the software invalid interrupt routine. This is just a temp fix, may be
+        removed at a later date. Put here in case a cache upset caused invalid code to be
+        executed.<br>
+        <br>
+        Set VGA Memory Cycles to 8-bit for modes 0Dh-12h, 16-bit for all other modes - this
+        provides optimum performance for windows and other Graphics programs on the 451, no action
+        is performed on the 451A or later as the best performance is available using 16-bit Fast
+        memory and I/O cycles.<br>
+        <br>
+        SPLIT RAM disabling in now supported by the Split RAM use bit in extended CMOS address
+        700h bit 1 set by the reference diskette.<br>
+        <br>
+        If a ROM was found in the address 0C0000-0C8000h then the default video mode was reset.
+        This resulted in the machine booting in 40 column mode if some non-video cards were placed
+        in this area. This code has now been removed.<br>
+        <br>
+        Problems with resetting the machine while running the ROM BIOS from RAM corrected by
+        ensuring ROM enabled at start of POS. <br>
+        <br>
+        Sequence of video initialisation changed to better support 8514/A.<br>
+        <br>
+        New Bitmap Qi logo included.<br>
+        <br>
+        Support structure for Encryption included.<br>
+        <br>
+        Changed the fast reset to a CR0 reset. Fast reset not working properly for some unknown
+        reason. This will be reversed when/if we/chips find the answer.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.08</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7/3/89</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Correction to split memory
+        control logic to prevent 'Memory Size Error' on soft reboot.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.09</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/3/89</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Support provided for Rev E
+        memory options(1MB base with 2MB &amp; 4MB RAM card) - Rev E detection is by test of
+        Extended CMOS address 7FFh.<br>
+        <br>
+        Reset all write protect bits on soft reset (cures problems with AMODE LOCK &amp;
+        SECURITY.SYS). Check Revision of 451 chip, if less than 3 (451-a revision) then disable
+        Fast Cycles, else enable Fast Cycles in VGA and Chipset. <br>
+        <br>
+        Set I/O to 16-bit - this should provide optimum performance with the 451A part.<br>
+        <br>
+        Set VGA Memory Cycles to 8-bit for modes 0Dh012h, 16-bit for all other modes - this
+        provides optimum performance for Windows and other graphics programs on the 451, no action
+        is performed on the 451A or later as the best performance is available using 16-bit Fast
+        memory and I/O cycles.<br>
+        <br>
+        Incorporation of Phoenix V1.02.01 8/3/89 sources.<br>
+        <br>
+        Main fix is to WD1006V-MCR + IBM OS/2 code - OS/2 now installs correctly on 300 and 600
+        series.<br>
+        <br>
+        Correction to Adapter ROM initialisation sequence - V1.02.01 release did not initialise
+        non-video ROM's in the range C0000h-C7FFFh.<br>
+        <br>
+        Printer time-outs increased for higher speed machines.<br>
+        <br>
+        Chipset initialisation modified so that NDP generates ready whether fitted or not - fixes
+        problems with SCO XENIX.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.10</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/3/89</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Int. 15h function 89h
+        modified to write BH int. mask to Master PIC and BL int. mask to Slave PIC during
+        protected mode entry. Cures problems with Novell Netware and Soft Bytes 386.<br>
+        <br>
+        Underline position for Mode 7 corrected - Corrected WORD /h bug on monochrome systems
+        (Italic &amp; Underline characters now appear with underline instead of normal
+        attributes).<br>
+        <br>
+        Return EGA information sub function 10 returns AL unmodified - corrects Video
+        identification problems with Display Write 4.<br>
+        <br>
+        IRQ 5 enabled 'by POST, Phoenix data area moved from 4B0h-4BFh to 4D0h-4DFh, Timer ISR
+        explicitly clears carry &amp; enables ints. on return. <br>
+        <br>
+        These fixes correct problems with IBM WORM drive unit.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.11</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">25/4/89</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">POS[3] - port 105h on each
+        card now has bit 7 explicitly set by POST - corrects problems with cards which would
+        generate an NMI if this bit was set to 0.<br>
+        <br>
+        POS[0] - port 102h bit 0 (card enable) is now set to the value held in CMOS rather than
+        explicitly - this allows cards with suitable ADF's to be disabled.<br>
+        <br>
+        Mode switch 16 or 8 bit memory logic ensures all cards out of set-up mode before setting
+        VGA into set-up mode, ensures no clash with cards left in set-up mode.<br>
+        <br>
+        Weitek Co-processor detection code would leave FS with invalid limit and access rights. We
+        now use ES instead and ensure that access rights are preserved. This corrects problem with
+        QEMM and Qi 600.<br>
+        <br>
+        When the 451 chip is set to 16-bit I/O interface OS/2 does not correctly save/restore the
+        DOS compatibility box. 451 parts are now set to 8-bit I/O 451A's and 452's are still set
+        to 16-bit). To ensure correct operation of 8-bit I/O with 387 fitted on 280 Chipset the
+        NDP Present bit must be set to 0 (Bit 4 of Register 8Eh).<br>
+        <br>
+        Added Cache enable disable functions for VX FT Server.<br>
+        <br>
+        Changed signon.<br>
+        <br>
+        Changed Software Delay routines to allow for faster 386 &amp; 486 machines (delay doubles
+        on 386, quadruples on 486).<br>
+        <br>
+        5MB 280 Chipset now set to Page Mode - corrects problems with RAM corruption on some 5MB
+        machines (Incorrect C&amp;T Spec.).<br>
+        <br>
+        ABIOS Request Block Sizes corrected for Hard Disk and Floppy - corrects problems with
+        MS-OS/2.<br>
+        <br>
+        Video ROM search modified to initialise card POS registers to 0 before searching for ROM,
+        ALSO modified to miss cards with ID's in the range 6000-6FFFh (temp. fix for SPECIALIX
+        card, note that Video or RAM cards which have ID's in this range will not be initialised
+        until after that card such as the SPECIALIX card which do not reset POS settings on reset
+        will not crash the system when enabled.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.12</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">30/4/89</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Further modifications to
+        video search code to avoid crashing cards - in this case National Instruments IEEE GPIB
+        card. Now only cards with ID's above 7000h are enabled &amp; tested.<br>
+        <br>
+        VGA code modified so that it does not use/modify Int. 42h &amp; 6Dh vectors (as with AT
+        card implementation). Corrects problems with software which uses reserved 6Xh int. vectors
+        (DECNET DOS).<br>
+        <br>
+        Cylinder-1 variants of CDC/MiniScribe/Seagate drive types for Defect Cylinder support
+        included as Types 37, 39, 47 (old type +1).<br>
+        <br>
+        Switch to protect mode now only sets protect mode bit rather than clearing down rest of
+        Machine Status Word.<br>
+        <br>
+        i486 detection code now uses Intel approved method of testing settability of AM bit in
+        CR0.<br>
+        <br>
+        Initial support for 1MB RAM daughter card on Qi 300.<br>
+        <br>
+        Inclusion of Encryption support.<br>
+        <br>
+        Bug Fix for 280 Chipset DMA Controller, if 16MB RAM found then size of RAM in CMOS (found
+        and expected) is set to 16MB-128K to prevent crashes due to DMA not operating correctly in
+        the top 128K of a 16MB system (82C322 Memory Controller bug).<br>
+        <br>
+        100MB CDC Drive type 35 added to tables - with defect map.<br>
+        <br>
+        Drive parameter initialisation routine corrected to wait for only one interrupt from Hard
+        Disk Controller. Corrects problems with VM/386.<br>
+        <br>
+        Inclusion of Phoenix bug fix for OS/2 on ESDI - change read transfer count from 40h to
+        50h.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.13</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3/8/89</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Screen now cleared on VX FT
+        Server before security box displayed.<br>
+        <br>
+        Pointing device presence bit now correctly set - was being set id CMOS bit set, now only
+        set if actually present. Corrects problems with Windows.<br>
+        <br>
+        Qi 300 build now uses CR0 to get out of protected mode, this cures the ACAD cursor problem
+        as port 92 method causes reset of the 387 as well.<br>
+        <br>
+        Qi 600/VX FT now uses switch 6 to specify whether paging is enabled or disabled in memory
+        config. Cures lots of UNIX/XENIX problems with parity errors.<br>
+        <br>
+        VX FT - Cache enable bits inverted to comply with B3 stepping of the 486.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.14</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/9/89</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.15</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">11/12/89</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Changed sync polarities for
+        dual sync Sony to both positive and also changed horizontal sync position to move the
+        picture to centre of screen.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.16</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7/2/90</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Added the code for second
+        processor start-up in VX FT models.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.17</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">14/2/90</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Added Imprimis 66.5MB drive
+        as type 40. Removed RLL Toshiba.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.21</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/2/91</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Added dual boot facility
+        added to all MCA machines. This is mainly to cater for Western Digital Ethernet remote
+        boot.<br>
+        <br>
+        Init. 128 bits of memory before we read it, this stops NMI parity errors on 486 hypercache
+        systems. Hypertec memory board in particular. <br>
+        <br>
+        Corrected dual processor start-up for prom card.<br>
+        <br>
+        Deleted VX FT checking on keycard logon time-out on machines other than VX FT.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.22</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">17/12/91</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">Moved extended memory
+        detect/configure code to before video initialisation to prevent video slots being
+        disabled.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.23I</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/9/92</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">OS/2 Keyboard fixes (extra
+        calls to WFIBE in KEYBRD.ASM)<br>
+        <br>
+        IBM SCSI card fixes (move Apricot extended CMOS info from 500 to 300h and change ABIOS DMA
+        table entry from FFFF to 0005)</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-02-23</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">30/4/93</font></td>
+        <td valign="top" width="75%" bgcolor="#EBEBEB"><font size="2">IBM SCSI - Moved Apricot
+        extended CMOS information from 0500 to 0300H, and changed ABIOS DMA table entry from 0FFFF
+        to 00005H.<br>
+        <br>
+        OS/2 Remote Access Service - implemented new 'SERIAL.ASM' from Phoenix.<br>
+        <br>
+        OS/2 'Mad' or, as IBM refer to it, 'Wild' mouse - include an extra call to 'wfibe' (Wait
+        for input buffer empty) in 'KEYBRD.ASM'.<br>
+        <br>
+        Relocated Petrel / ESDI BIOS from 0E000:08000H to 0E000:0C000H to make room for a larger
+        BIOS.</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

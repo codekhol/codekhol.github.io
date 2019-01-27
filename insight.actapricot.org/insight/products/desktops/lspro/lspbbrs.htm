@@ -1,0 +1,522 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>LS Pro (Bonsai) BIOS Revision Summary</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><p align="left"><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">LS Pro (Bonsai) BIOS Revision Summary </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.6.2)</font></strong></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" colspan="3" bgcolor="#CCCCCC"><strong><font size="2">Rev 'C' Boards</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-01</font></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-02</font></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-03-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">New drive type 24 added - Maxtor 540 AT.<br>
+        <br>
+        Support for CE revision of the CL5410 video controller.<br>
+        <br>
+        Signon and copyright date changed.<br>
+        <br>
+        Implement various revision made to the XEN-LS II BIOS.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-04</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/2/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A fix for systems reporting an invalid
+        floppy drive configuration at power-on. Date and version number updated.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-05-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">17/3/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for Quantum ELS170AT drives has
+        been added.<br>
+        <br>
+        'Setup' in ROM can now be disabled by using the 'LOCKSET.EXE' program.<br>
+        <br>
+        The optional ROM is now 'visible at address C000, for remote booting. this fixes a problem
+        introduced with silicon revision 'CE' of the LS Pro.<br>
+        <br>
+        The date and version strings have been changed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-05-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">30/3/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Occasionally, hard disks were not 'seen'
+        by the BIOS when added to a system configured for no drives. This has been fixed.<br>
+        <br>
+        Drive type 26, Quantum LPS525, is now supported.<br>
+        <br>
+        A soft reboot used to hang the machine if APRUMB.SYS was being used with anything loaded
+        high. This has been fixed.<br>
+        <br>
+        Occasionally, hard disks were being 'lost' on power up. This has been fixed.<br>
+        <br>
+        The version number and date strings have been changed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-05-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">11/5/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Machines with Monochrome monitors would
+        hang if security was used. This has now been fixed.<br>
+        <br>
+        A modification has been made to the Auxiliary device reset logic. This should provide a
+        fix for 'mad' mouse.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-05</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">11/5/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This is a release of 1-05-03 BETA</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-06-01</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/7/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A number of 'mad' mouse fixes have been
+        incorporated into the keyboard and mouse modules.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-06-02</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/7/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A bug which prevented the keyboard from
+        working in Set-up' mode has been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-06-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/3/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for the following drives has
+        been added,<br>
+        <br>
+        a) Quantum 'Roadrunner' LPS 170 AT<br>
+        b) Quantum 'Thunderbolt' LPS 270 AT<br>
+        c) Quantum 'Roadrunner' LPS 340 AT<br>
+        d) Quantum 'Thunderbolt' LPS 540 AT (Max. capacity: 504MB)</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-06</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">12/7/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Chipset programming has been modified to
+        handle the new '3 chip' SIMM's, as in LS Pro Rev 'D'.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-07-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">29/11/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The latest Ethernet RPL code has been
+        included from LS Pro Rev 'D'.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-07-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/2/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for the following HDU types has
+        been added,</font><table border="0">
+          <tr>
+            <td><font size="2">31</font></td>
+            <td><font size="2">Quantum Maverick 540A (Max. capacity: 504MB)</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">32</font></td>
+            <td><font size="2">Quantum Maverick 270A</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">33</font></td>
+            <td><font size="2">Quantum Lightning 365A - <a
+            href="../../../kbase/ipb/hardware/ipb4143.htm">Please See IPB4143</a></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">34</font></td>
+            <td><font size="2">Quantum Lightning 730A - <a
+            href="../../../kbase/ipb/hardware/ipb4143.htm">Please See IPB4143</a></font></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.07.03<br>
+        BETA<br>
+        checksum</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7/3/96<br>
+        <br>
+        5BD1</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for IDE Enhancer has been
+        provided. If a hard drive cannot be identified, it is set to &#145;Type 1&#146; to allow
+        the IDE Enhancer software to operate.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" colspan="3" bgcolor="#CCCCCC"><strong><font size="2">Rev 'D' Boards</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-00-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">30/3/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Occasionally, hard disks were not 'seen'
+        by the BIOS when added to a system configured for no drives. This has been fixed.<br>
+        <br>
+        The 'setup' button is ungreyed on graphical boot / the 'setup' message is not displayed on
+        text boot, if 'setup' has been displayed.<br>
+        <br>
+        The power on password code is not executed if security is enabled<br>
+        <br>
+        Drive type 26, Quantum LPS525, is now supported.<br>
+        <br>
+        Occasionally, hard disks were being 'lost' on power up. This has now been fixed.<br>
+        <br>
+        The version number and date strings have been changed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-00-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">11/5/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.6MB floppy support now works correctly
+        on warm boot.<br>
+        <br>
+        ROM Setup text for monitors type has been corrected.<br>
+        <br>
+        POST error messages will now be displayed on graphical boot.<br>
+        <br>
+        Print Screen is now supported.<br>
+        <br>
+        A 'mad' mouse fix has been implemented.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-00-05<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">15/7/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Various graphical boot 'POST' messages
+        have been altered.<br>
+        <br>
+        Various 'mad mouse' fixes have been implemented.<br>
+        <br>
+        If an Apricot boot ROM was fitted then screen corruption would occur on graphical boot.
+        This has been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/8/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This is the first release BIOS for LS
+        Pro Rev D.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/11/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for drive type 27 Quantum LPS
+        270A and drive type 28 <br>
+        <br>
+        Quantum LPS 540A has been added.<br>
+        <br>
+        Support for the SLC2 50MHz processor has been added.<br>
+        <br>
+        Disk drive power save mode is now supported.<br>
+        <br>
+        Support for the CL5428 has been included.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/11/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for Quantum 170 &amp; 340 Mb
+        drives has been added.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/12/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release should now support
+        CL5422/24, 5426 &amp; 5428 VGA controllers correctly.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2/12/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">There are no changes over release
+        2-01-04. Please note however, the change in the part number to indicate that this BIOS is
+        intended for use in 486SLC systems only.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-02-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/12/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Some machines would incorrectly report
+        the processor type as being a 50MHz 486 SLC2. This has now been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/11/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for drive type 27 Quantum LPS
+        270A and drive type 28<br>
+        <br>
+        Quantum LPS 540A has been added (Max. supported capacity: 504MB).<br>
+        <br>
+        Support for the SLC 2 50MHz processor has been added.<br>
+        <br>
+        Disk drive power save mode is now supported.<br>
+        <br>
+        Support for the CL5428 has been included.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/11/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for Quantum 170 &amp; 340 Mb
+        drives has been added.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/12/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release should now support
+        CL5422/24, 5426 &amp; 5428 VGA controllers correctly.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-01</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2/12/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">There are no changes over release
+        2-01-04. Please note however, the change in the part number to indicate that this BIOS is
+        intended for use in 486SLC systems only.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-02-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/12/93</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Some machines would incorrectly report
+        the processor type as being a 50MHz 486 SLC2. This has now been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-03-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3/5/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">An intermittent problem encountered with
+        the RPL option has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-03-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9/5/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Memory errors were being experienced
+        with certain brands of SIMM. This was caused by excessive drive current and has now been
+        resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-03</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/5/94</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">RIPL problems were being encountered
+        when several machines were on a network. This has now been resolved.<br>
+        <br>
+        Memory errors were being experienced with certain brands of SIMM. This was caused by
+        excessive drive current and has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2-04-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/2/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for the following HDU types has
+        been added,</font><table border="0">
+          <tr>
+            <td><font size="2">31</font></td>
+            <td><font size="2">Quantum Maverick 540A (Max. capacity: 504MB)</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">32</font></td>
+            <td><font size="2">Quantum Maverick 270A</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">33</font></td>
+            <td><font size="2">Quantum Lightning 365A -<a
+            href="../../../kbase/ipb/hardware/ipb4143.htm"> Please See IPB4143</a></font></td>
+          </tr>
+          <tr>
+            <td><font size="2">34</font></td>
+            <td><font size="2">Quantum Lightning 730A - <a
+            href="../../../kbase/ipb/hardware/ipb4143.htm">Please See IPB4143 </a></font></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2.04.02<br>
+        BETA<br>
+        checksum</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/3/96<br>
+        <br>
+        8893</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for IDE Enhancer has been
+        provided. If a hard drive cannot be identified, it is set to &#145;Type 1&#146; to allow
+        the IDE Enhancer software to operate.</font></td>
+      </tr>
+    </table>
+    <p><font size="2">&nbsp;<a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

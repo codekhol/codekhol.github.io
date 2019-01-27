@@ -1,0 +1,1114 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>VS660 (Thor) Motherboard Layout</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><font size="2"><br>
+    </font><font size="4" color="#D60029"><strong>VS660 (Thor) Motherboard (Rev&nbsp;1.9.1)</strong></font></h2>
+    <div align="center"><center><table border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td><font size="2"><img src="graphics/vsf6mbd.gif" border="0" width="314" height="377"
+        usemap="#BoardMap"></font></td>
+        <td><font size="2"><img src="graphics/vsf6opt.gif" border="0" width="254" height="340"
+        usemap="#MainMap"></font></td>
+      </tr>
+    </table>
+    </center></div><p align="center"><font size="2"><!--webbot bot="HTMLMarkup" startspan --><MAP NAME="BoardMap">
+	<AREA SHAPE=RECT COORDS="279,121,288,20634" HREF="#CABLES">
+</MAP><!--webbot
+    bot="HTMLMarkup" endspan --><!--webbot bot="HTMLMarkup" startspan --><MAP NAME="MainMap">
+	<AREA SHAPE=RECT COORDS="2,0,33,34" HREF="#RAM">
+	<AREA SHAPE=RECT COORDS="1,34,33,68" HREF="#ETHERNET">
+	<AREA SHAPE=RECT COORDS="2,68,33,100" HREF="#DRIVES">
+	<AREA SHAPE=RECT COORDS="0,102,34,135" HREF="#VIDEO">
+	<AREA SHAPE=RECT COORDS="1,136,33,170" HREF="#JUMPERS">
+	<AREA SHAPE=RECT COORDS="2,171,34,205" HREF="#OPTIONS">
+	<AREA SHAPE=RECT COORDS="1,204,33,238" HREF="#REAR">
+	<AREA SHAPE=RECT COORDS="1,238,34,271" HREF="#CMOS">
+	<AREA SHAPE=RECT COORDS="1,272,33,305" HREF="#IRQ">
+	<AREA SHAPE=RECT COORDS="2,305,34,339" HREF="vs6err.htm">
+</MAP><!--webbot
+    bot="HTMLMarkup" endspan --></font></p>
+    <hr>
+    <p><font size="2"><a name="ram"></a><br>
+    </font><font size="3"><strong>RAM CONFIGURATION</strong></font><font size="2"> </font></p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><p align="center"><strong><font size="2">Total Memory</font></strong></td>
+        <td align="center" valign="top"><p align="center"><strong><font size="2">Bank 0<br>
+        Sockets J7K3 + J7K2</font></strong></td>
+        <td align="center" valign="top"><p align="center"><strong><font size="2">Bank 1<br>
+        Sockets J7K1 + J6K1</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">8 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">8 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">8 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">8 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">24 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">8 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">40 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">8 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">48 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">32 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">72 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><a name="dde_link2"></a><font size="2">8
+        Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">80 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">96 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">32 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">128 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">64 Mb</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="ethernet"></a><br>
+    </font><font size="3"><strong>ETHERNET OPTIONS</strong></font><font size="2"> </font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td width="83%"><font size="2">3Com triple-combo (thin/thick/UTP) Ethernet card, (3C509B)</font></td>
+        <td width="17%"><font size="2">XB55742</font></td>
+      </tr>
+      <tr>
+        <td width="83%"><font size="2">3Com 10/100 PCI Ethernet card (3C595TX) </font></td>
+        <td width="17%"><font size="2">XB54991</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="drives"></a><br>
+    </font><font size="3"><strong>HARD DRIVES</strong></font><font size="2"> </font></p>
+    <table border="0" cellpadding="4" cellspacing="0" width="500">
+      <tr>
+        <td align="center" valign="top"><strong><font size="2">MB</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Make</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Model</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Type</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Part Number</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">545</font></td>
+        <td align="center" valign="top"><font size="2">Quantum</font></td>
+        <td align="center" valign="top"><font size="2"><a
+        href="../../../common/drives/hard/qmv540at.htm">MV 540 AT</a></font></td>
+        <td align="center" valign="top"><font size="2">IDE</font></td>
+        <td align="center" valign="top"><font size="2">SU53460</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">640</font></td>
+        <td align="center" valign="top"><font size="2">Quantum</font></td>
+        <td align="center" valign="top"><font size="2"><a
+        href="../../../common/drives/hard/qfb640at.htm">FB 640 AT</a></font></td>
+        <td align="center" valign="top"><font size="2">IDE</font></td>
+        <td align="center" valign="top"><font size="2">SU56070</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">850</font></td>
+        <td align="center" valign="top"><font size="2">Quantum</font></td>
+        <td align="center" valign="top"><font size="2"><a
+        href="../../../common/drives/hard/qtb850at.htm">TB 850 AT</a></font></td>
+        <td align="center" valign="top"><font size="2">IDE</font></td>
+        <td align="center" valign="top"><font size="2">SU54941</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">1,000</font></td>
+        <td align="center" valign="top"><font size="2">Quantum</font></td>
+        <td align="center" valign="top"><font size="2"><a
+        href="../../../common/drives/hard/qfb1080a.htm">FB 1080 AT</a></font></td>
+        <td align="center" valign="top"><font size="2">IDE</font></td>
+        <td align="center" valign="top"><font size="2">SU54858</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">1,200</font></td>
+        <td align="center" valign="top"><font size="2">Quantum</font></td>
+        <td align="center" valign="top"><font size="2"><a
+        href="../../../common/drives/hard/qfb1280a.htm">FB 1280 AT</a></font></td>
+        <td align="center" valign="top"><font size="2">IDE</font></td>
+        <td align="center" valign="top"><font size="2">SU55760</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">2 GB</font></td>
+        <td align="center" valign="top"><font size="2">IBM</font></td>
+        <td align="center" valign="top"><font size="2"><a
+        href="../../../common/drives/hard/idfhss2f.htm">DFHS S2F</a></font></td>
+        <td align="center" valign="top"><font size="2">SCSI II</font></td>
+        <td align="center" valign="top"><font size="2">SU54096 </font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Tape</font></strong></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">400 - 800MB</font></td>
+        <td align="center"><font size="2">Conner</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/tape/co800t.htm">CTT800R-F</a></font></td>
+        <td align="center"><font size="2">FDD</font></td>
+        <td align="center"><font size="2">SU56352</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">4-16GB</font></td>
+        <td align="center"><font size="2">Conner</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/tape/co8000t.htm">CTD8000R-S</a></font></td>
+        <td align="center"><font size="2">SCSI II</font></td>
+        <td align="center"><font size="2">SU54778</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">1.6-3.2GB</font></td>
+        <td align="center"><font size="2">Conner</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/tape/co3200t.htm">CTM3200R-S</a></font></td>
+        <td align="center"><font size="2">SCSI II</font></td>
+        <td align="center"><font size="2">XB54027</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Floppy</font></strong></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+      </tr>
+      <tr>
+        <td align="center"></td>
+        <td align="center"><font size="2">Mitsubishi</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/floppy/mi355ff.htm">355F</a></font></td>
+        <td align="center"><font size="2">3.5&quot;</font></td>
+        <td align="center"></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">CD-ROM</font></strong></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+        <td align="center"></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">Quad</font></td>
+        <td align="center"><font size="2">Sony</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/cd/so76sc.htm">CDU76S</a></font></td>
+        <td align="center"><font size="2">SCSI</font></td>
+        <td align="center"><font size="2">SU54768</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">Quad</font></td>
+        <td align="center"><font size="2">Sony</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/cd/so77ec.htm">CDU77E</a></font></td>
+        <td align="center"><font size="2">IDE</font></td>
+        <td align="center"><font size="2">SU56156</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="jumpers"></a><br>
+    </font><font size="3"><strong>JUMPER SETTINGS</strong></font></p>
+    <p align="center"><font size="2"><img src="graphics/vsf6jump.gif" width="415" height="281"></font></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td valign="top"><p align="center"><strong><font size="2">JUMPER</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">FUNCTION</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">PINS JUMPERED</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">J7B1</font></td>
+        <td valign="top"><font size="2">Recovery boot enable jumper: If the BIOS is corrupted
+        during an upgrade, this jumper allows you to boot the system and recover the BIOS.</font></td>
+        <td align="center" valign="top"><font size="2">1 - 2 = Normal (Default)</font><p><font
+        size="2">2 - 3 = Recovery boot enable</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <div align="center"><center><table border="1" cellpadding="2" width="559">
+      <tr>
+        <td valign="top"><p align="center"><strong><font size="2">JUMPER</font></strong></td>
+        <td valign="top"><p align="center"><strong><font size="2">FUNCTION</font></strong></td>
+        <td valign="top"><strong><font size="2">PINS JUMPERED</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">J10C2</font></p>
+        <p align="center">&nbsp;</td>
+        <td valign="top"><p align="center"><font size="2">Bus Frequency Multiplier</font></td>
+        <td valign="top"><font size="2">2 - 3 4 - 5 1.5 x</font><p><font size="2">1 - 2 4 - 5 2.0
+        x</font></p>
+        <p><font size="2">1 - 2 5 - 6 2.5 x</font></p>
+        <p><font size="2">1 - 2 4 - 5 Reserved</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">J2G1</font></td>
+        <td valign="top"><p align="center"><font size="2">Clock Frequency</font></td>
+        <td valign="top"><font size="2">1 - 2 5 - 6 50 MHz</font><p><font size="2">1 - 2 4 - 5 60
+        MHz</font></p>
+        <p><font size="2">2 - 3 5 - 6 66 MHz</font></p>
+        <p><font size="2">2 - 3 4 - 5 Reserved</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td valign="top"><p align="center"><strong><font size="2">JUMPER</font></strong></td>
+        <td valign="top"><strong><font size="2">FUNCTION</font></strong></td>
+        <td valign="top"><strong><font size="2">PINS JUMPERED</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">J10C3</font></td>
+        <td valign="top"><font size="2">Reset CMOS settings to default CMOS RAM values</font></td>
+        <td valign="top"><font size="2">2 - 3 = Normal mode (Default)</font><p><font size="2">1 -
+        2 = Reset CMOS settings</font></td>
+      </tr>
+      <tr>
+        <td valign="top">&nbsp;</td>
+        <td valign="top"><font size="2">Clear password</font></td>
+        <td valign="top"><font size="2">5 - 6 = Normal mode (Default)</font><p><font size="2">4 -
+        5 = Clear password</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td valign="top"><p align="center"><strong><font size="2">JUMPER</font></strong></td>
+        <td valign="top"><strong><font size="2">FUNCTION</font></strong></td>
+        <td valign="top"><strong><font size="2">PINS JUMPERED</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">J10C4</font></td>
+        <td valign="top"><font size="2">ISA bus clock speed: Sets the ISA bus to a slower or
+        faster setting.</font></td>
+        <td valign="top"><font size="2">2 - 3 = 8.33 MHz (75MHz CPU)(Default)</font><p><font
+        size="2">7.5MHz (90MHz CPU)</font></p>
+        <p><font size="2">8.25MHz (100MHz CPU)</font></p>
+        <p><font size="2">7.5MHz (120MHz CPU)</font></p>
+        <p><font size="2">1 - 2 = 8.33MHz (75MHZ CPU)</font></p>
+        <p><font size="2">10MHz (90MHZ CPU)</font></p>
+        <p><font size="2">11MHz (100MHz CPU)</font></p>
+        <p><font size="2">10MHz (120MHz CPU)</font></td>
+      </tr>
+      <tr>
+        <td valign="top">&nbsp;</td>
+        <td valign="top"><font size="2">Enables/disables access to Setup Progam</font></td>
+        <td valign="top"><font size="2">5 - 6 = Setup program can be accessed (Default)</font><p><font
+        size="2">4 - 5 = Setup program access disabled</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td valign="top"><p align="center"><strong><font size="2">JUMPER</font></strong></td>
+        <td valign="top"><strong><font size="2">FUNCTION</font></strong></td>
+        <td valign="top"><strong><font size="2">PINS JUMPERED</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">J10K1</font></td>
+        <td valign="top"><font size="2">CPU Voltage Regulator: some upgrade processors may require
+        changing from the default VR setting to the VRE setting</font></td>
+        <td valign="top"><font size="2">2 - 3 = VR mode (3.3V - 3.465V)(Default)</font><p><font
+        size="2">1 - 2 = VRE mode (3.465V - 3.63V)</font></p>
+        <p>&nbsp;</p>
+        <p><font size="2">Caution: This jumper should ony be changed to the VRE setting if
+        documentation that came with your upgrade CPU indicates that the required voltage must be
+        between 3.465V and 3.63V.</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="options"></a><br>
+    </font><font size="3"><strong>OTHER OPTIONS</strong></font><font size="2"> </font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td><strong><font size="2">Modems</font></strong></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">Voice/Data modem </font></td>
+        <td><font size="2">XB55987</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Add-in Cards</font></strong></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">SCSI card add-in </font></td>
+        <td><font size="2">SA50160</font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">Adaptec 2940 PCI SCSI Card </font></td>
+        <td><font size="2">UD55556</font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">Matrox MGA Millenium PCI, 2MB WRAM </font></td>
+        <td><font size="2">XB57211</font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">Matrox MGA Millenium PCI, 4MB WRAM </font></td>
+        <td><font size="2">XB57212</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Video RAM</font></strong></td>
+        <td><font size="2">1MB to 2MB upgrade </font></td>
+        <td><font size="2">XB56217</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Cache</font></strong></td>
+        <td><font size="2">256K Asynch Cache </font></td>
+        <td><font size="2">XB56993</font></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><font size="2">256K Pipeline Burst Cache </font></td>
+        <td><font size="2">XB56994</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="video"></a><br>
+    </font><font size="3"><strong>ON-BOARD VIDEO</strong></font></p>
+    <p><font size="2">The on-board S3 Trio64V+ integrated PCI graphics controller is a system
+    component. The S3 controller provides the following features:</font></p>
+    <blockquote>
+      <p><font size="2">Standard 1 MB of graphics memory, expandable to 2 MB</font></p>
+      <p><font size="2">Support for 16-bit bidirectional VESA advanced feature connector</font></p>
+      <p><font size="2">Support for VESA Display Power Management Signaling (DPMS) monitor power
+      saving mode.</font></p>
+    </blockquote>
+    <p><strong><font size="2">Available Resolutions</font></strong></p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><p align="center"><strong><font size="2">Pixel Resolution</font></strong></td>
+        <td align="center" valign="top"><p align="center"><strong><font size="2">Number of Colours</font></strong></td>
+        <td align="center" valign="top"><p align="center"><strong><font size="2">Refresh Rate (Hz)</font></strong></td>
+        <td align="center" valign="top"><p align="center"><strong><font size="2">Memory Required</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">640 x 480</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">1 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">640 x 480</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">256</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">1 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">640 x 480</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">32768</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">1 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">640 x 480</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16.7 million</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">1 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">640 x 480</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">4.2 billion</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">2 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">800 x 600</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">256</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">56, 60, 72, 75, 85</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">1 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">800 x 600</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">32768</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">1 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">800 x 600</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">65536</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">1 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">800 x 600</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16.7 million</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">2 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">800 x 600</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">4.2 billion</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">2 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">1024 x 768</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">256</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">43(I), 60, 70, 75, 85</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">1 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">1024 x 768</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">32768</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">43(I), 60, 70, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">2 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">1024 x 768</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">65536</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">43(I), 60, 70, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">2 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">1024 x 768</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16.7 million</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">2 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">1280 x 1024</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">16</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">43(I), 45(I), 60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">1MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">1280 x 1024</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">256</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">45(I), 60, 72, 75</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">2 MB</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">(I) = Interlaced</font></td>
+        <td align="center" valign="top"></td>
+        <td align="center" valign="top"></td>
+        <td align="center" valign="top"></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="rear"></a><br>
+    </font><font size="3"><strong>REAR PANEL</strong></font></p>
+    <p align="center"><font size="2"><img src="graphics/vsf6rpnl.gif" border="0" width="430"
+    height="439"></font></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td><font size="2">A - Input voltage select switch</font></td>
+        <td><font size="2">G - Line-in jack</font></td>
+        <td><font size="2">M - <a href="../../../common/ports/ports.htm#parallel">Parallel port</a></font></td>
+      </tr>
+      <tr>
+        <td><font size="2">B - <a href="../../../common/ports/ports.htm#serial9">9-pin Serial Port</a>
+        COM 1</font></td>
+        <td><font size="2">H - Line-out/Speaker jack</font></td>
+        <td><font size="2">N - Knock outs for I/O ports</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">C - <a href="../../../common/ports/ports.htm#serial9">9-pin Serial Port</a>
+        COM 2</font></td>
+        <td><font size="2">I - Microphone jack</font></td>
+        <td><font size="2">O - MIDI and dual game port</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">D - <a href="../../../common/ports/ports.htm#keyboard">PS/2
+        Mouse/Keyboard</a></font></td>
+        <td><font size="2">J - Expansion slots</font></td>
+        <td><font size="2">P - Padlock slot</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">E - <a href="../../../common/ports/ports.htm#keyboard">PS/2
+        Mouse/Keyboard</a></font></td>
+        <td><font size="2">K - AC power input</font></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">F - <a href="../../../common/ports/ports.htm#video">Video Connector</a></font></td>
+        <td><font size="2">L - Power supply fan</font></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="cmos"></a><br>
+    </font><font size="3"><strong>CMOS</strong></font></p>
+    <p><strong><font size="2">Clear CMOS - Jumper J10C3</font></strong></p>
+    <p><font size="2">Allows CMOS settings to be reset to default values by jumpering pins 1-2
+    in J10C3. The system should then be turned off and the jumper returned to pins 2-3 to
+    restore normal operation. This procedure should be done whenever the system BIOS is
+    updated.</font></p>
+    <p><strong><font size="2">To enter CMOS Setup Press <a href="#setup">F1</a> during BOOT.</font></strong></p>
+    <p><font size="2"><a name="setup"></a></font><font size="3"><strong>Configuration / Setup</strong></font></p>
+    <p align="center"><font size="2"><img src="graphics/vs6mnset.gif" width="543" height="369"></font></p>
+    <p align="center"><font size="2"><img src="graphics/vs6adset.gif" width="543" height="369"></font></p>
+    <p align="center"><font size="2"><img src="graphics/vs6scset.gif" width="543" height="369"></font></p>
+    <p align="center"><font size="2"><img src="graphics/vs6exset.gif" width="543" height="369"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="irq"></a><br>
+    </font><font size="3"><strong>INTERRUPTS, MEMORY and I/O PORTS </strong></font></p>
+    <p><strong><font size="2">Interrupts (IRQ) </font></strong></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><p align="center"><strong><font size="2">Interrupts</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Default Function</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">NMI</font></td>
+        <td align="center" valign="top"><font size="2">I/O Channel Check</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 0</font></td>
+        <td align="center" valign="top"><font size="2">Reserved, Interval Timer</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 1</font></td>
+        <td align="center" valign="top"><font size="2">Reserved, Keyboard buffer full</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 2</font></td>
+        <td align="center" valign="top"><font size="2">Reserved, Cascade interrupt</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 3</font></td>
+        <td align="center" valign="top"><font size="2">Serial port 2</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 4</font></td>
+        <td align="center" valign="top"><font size="2">Serial port 1</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 5</font></td>
+        <td align="center" valign="top"><font size="2">User available</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 6</font></td>
+        <td align="center" valign="top"><font size="2">Floppy</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 7</font></td>
+        <td align="center" valign="top"><font size="2">Parallel port 1</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 8</font></td>
+        <td align="center" valign="top"><font size="2">Real time clock</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 9</font></td>
+        <td align="center" valign="top"><font size="2">User available</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 10</font></td>
+        <td align="center" valign="top"><font size="2">User available</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 11</font></td>
+        <td align="center" valign="top"><font size="2">User available</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 12</font></td>
+        <td align="center" valign="top"><font size="2">On-board Mouse port</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 13</font></td>
+        <td align="center" valign="top"><font size="2">Reserved, Math co processor</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 14</font></td>
+        <td align="center" valign="top"><font size="2">Primary ATA/IDE interface</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><p align="center"><font size="2">IRQ 15</font></td>
+        <td align="center" valign="top"><font size="2">Secondary ATA/IDE interface</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2">&nbsp;<strong>Memory Map</strong> </font></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td valign="top"><p align="center"><strong><font size="2">Address Range (Decimal)</font></strong></td>
+        <td valign="top"><p align="center"><strong><font size="2">Address Range (Hex.)</font></strong></td>
+        <td valign="top"><p align="center"><strong><font size="2">Size</font></strong></td>
+        <td valign="top"><strong><font size="2">Description</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">1024K-131072K</font></td>
+        <td valign="top"><p align="center"><font size="2">100000-8000000</font></td>
+        <td valign="top"><p align="center"><font size="2">127M</font></td>
+        <td valign="top"><font size="2">Extended Memory</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">960K-1023K</font></td>
+        <td valign="top"><p align="center"><font size="2">F0000-FFFFF</font></td>
+        <td valign="top"><p align="center"><font size="2">64K</font></td>
+        <td valign="top"><font size="2">AMI System BIOS</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">952K-959K</font></td>
+        <td valign="top"><p align="center"><font size="2">EE000-EFFFF</font></td>
+        <td valign="top"><p align="center"><font size="2">8K</font></td>
+        <td valign="top"><font size="2">FLASH Boot Block (Available as UMB)</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">948K-951K</font></td>
+        <td valign="top"><p align="center"><font size="2">ED000-EDFFF</font></td>
+        <td valign="top"><p align="center"><font size="2">4K</font></td>
+        <td valign="top"><font size="2">ECSD (Plug and Play configuration area)</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">944K-947K</font></td>
+        <td valign="top"><p align="center"><font size="2">EC000-ECFFF</font></td>
+        <td valign="top"><p align="center"><font size="2">4K</font></td>
+        <td valign="top"><font size="2">OEM LOGO (available as UMB)</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">896K-943K</font></td>
+        <td valign="top"><p align="center"><font size="2">E0000-EBFFF</font></td>
+        <td valign="top"><p align="center"><font size="2">48K</font></td>
+        <td valign="top"><font size="2">BIOS RESERVED (Currently available as UMB)</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">800K-895K</font></td>
+        <td valign="top"><p align="center"><font size="2">C8000-DFFFF</font></td>
+        <td valign="top"><p align="center"><font size="2">96K</font></td>
+        <td valign="top"><font size="2">Available HI DOS memory (open to ISA and PCI bus)</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">640K-799K</font></td>
+        <td valign="top"><p align="center"><font size="2">A0000-C7FFF</font></td>
+        <td valign="top"><p align="center"><font size="2">160K</font></td>
+        <td valign="top"><font size="2">Video Memory and BIOS</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2">&nbsp;<strong>I/O Ports</strong> </font></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td><p align="center"><strong><font size="2">I/O ports (Hex)</font></strong></td>
+        <td><strong><font size="2">Used by</font></strong></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">000 - 00F</font></td>
+        <td><font size="2">DMA controller 1</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">020 - 021</font></td>
+        <td><font size="2">Interrupt controller 1</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">02E - 02F</font></td>
+        <td><font size="2">Ultea I/O configuration registers</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">040 - 043</font></td>
+        <td><font size="2">Timer 1</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">048 - 04B</font></td>
+        <td><font size="2">Timer 2</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">060</font></td>
+        <td><font size="2">Keyboard controller data byte</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">061</font></td>
+        <td><font size="2">NMI, speaker control</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">064</font></td>
+        <td><font size="2">Keyboard controller, CMD/STAT Byte</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">070 bit 7</font></td>
+        <td><font size="2">Enable NMI</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">070 bits 6:0</font></td>
+        <td><font size="2">Real Time Clock, Address</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">071</font></td>
+        <td><font size="2">Real Time Clock, Data</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">078</font></td>
+        <td><font size="2">Reserved - Brd config</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">079</font></td>
+        <td><font size="2">Reserved - Brd config</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">080 - 08F</font></td>
+        <td><font size="2">DMA Page Register</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">0A0 - 0A1</font></td>
+        <td><font size="2">Interrupt Controller 2</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">0C0 - 0DE</font></td>
+        <td><font size="2">DMA 2</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">0F0</font></td>
+        <td><font size="2">Reset Numeric Error</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">170 - 177</font></td>
+        <td><font size="2">Secondary IDE Channel</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">1F0 - 1F7</font></td>
+        <td><font size="2">Primary IDE Channel</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">278 - 27B</font></td>
+        <td><font size="2">Parallel Port 2</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">2F8 - 2FF</font></td>
+        <td><font size="2">On-Board Serial Port 2</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">376</font></td>
+        <td><font size="2">Second IDE Channel Command Port</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">377</font></td>
+        <td><font size="2">Second IDE Channel Stat Port</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">378 - 37F</font></td>
+        <td><font size="2">Parallel Port 1</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">3BC - 3BF</font></td>
+        <td><font size="2">Parallel Port x</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">3E8 - 3EF</font></td>
+        <td><font size="2">Serial port 3</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">3F0 - 3F5</font></td>
+        <td><font size="2">Floppy Channel 1</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">3F6</font></td>
+        <td><font size="2">Primary IDE Channel Command Port</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">3F7 (Write)</font></td>
+        <td><font size="2">Floppy Channel 1 Command</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">3F7, bit 7</font></td>
+        <td><font size="2">Floppy Disk Change Channel 1</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">3F7, bits 6:0</font></td>
+        <td><font size="2">Primary IDE Channel Status Port</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">3F8 - 3FF</font></td>
+        <td><font size="2">On-Board Serial Port 1</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">LPT + 400</font></td>
+        <td><font size="2">ECP port, LPT + 400</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">4D0 - 4D1</font></td>
+        <td><font size="2">Edge/Level INTR Control Register</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2">&nbsp;<strong>Direct memory access (DMA) channel </strong></font></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td><p align="center"><strong><font size="2">DMA</font></strong></td>
+        <td><p align="center"><strong><font size="2">Data Width</font></strong></td>
+        <td><strong><font size="2">System Resource</font></strong></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">DMA 0</font></td>
+        <td><p align="center"><font size="2">8 or 16 bits</font></td>
+        <td><font size="2">Open</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">DMA 1</font></td>
+        <td><p align="center"><font size="2">8 or 16 bits</font></td>
+        <td><font size="2">Open</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">DMA 2</font></td>
+        <td><p align="center"><font size="2">8 or 16 bits</font></td>
+        <td><font size="2">Diskette Controller</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">DMA 3</font></td>
+        <td><p align="center"><font size="2">8 or 16 bits</font></td>
+        <td><font size="2">Parallel Port (ECP/EPP)</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">DMA 4</font></td>
+        <td>&nbsp;</td>
+        <td><font size="2">System</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">DMA 5</font></td>
+        <td><p align="center"><font size="2">16 bits </font></td>
+        <td><font size="2">Open</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">DMA 6</font></td>
+        <td><p align="center"><font size="2">16 bits</font></td>
+        <td><font size="2">Open</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">DMA 7</font></td>
+        <td><p align="center"><font size="2">16 bits</font></td>
+        <td><font size="2">Open</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="cables"></a><br>
+    </font><font size="3"><strong>LED Cable Connections</strong></font></p>
+    <p align="center"><font size="2"><img src="graphics/vsf6led.gif" width="180" height="510"></font></p>
+    <p align="left"><strong><font size="2">Other Motherboard Conections</font></strong></p>
+    <p align="center"><font size="2"><img src="graphics/vs6label.gif" width="471" height="369"></font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

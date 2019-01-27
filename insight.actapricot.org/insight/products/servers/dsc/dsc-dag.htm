@@ -1,0 +1,1463 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FT4200 Diagnostic Codes Reference Guide</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h3><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">FT4200 Diagnostic Codes Reference Guide </font><font
+    color="#D60029" size="3">(Rel&nbsp;1.8.8)</font></strong></h3>
+    <p><font size="2">This document lists the diagnostic codes that your server can produce.
+    Some of these codes indicate errors or malfunctions; others are simply way-markers that
+    indicate normal progress. The codes can appear in the server&#146;s front panel LCD
+    display or on the screen in the System Management Application software.</font></p>
+    <p><strong><font size="2">Note</font></strong></p>
+    <p><font size="2">Some codes described in this guide will seem obscure to less experienced
+    users, particularly those codes which appear on the Front Panel LCD. If you cannot
+    understand the meaning of a code, ask an authorised engineer for help.</font></p>
+    <p><font size="3"><strong>Codes that appear on the Front Panel LCD</strong></font></p>
+    <p><font size="2">When you press the <a href="#power%20on">Power On</a> button from Standby
+    mode, the server initiates several phases in the boot process. During these phases the
+    system performs the following operations:</font></p>
+    <blockquote>
+      <p><font size="2">Checks the Diagnostic Processor.</font></p>
+      <p><font size="2">Checks the System Management Controller (SMC).</font></p>
+      <p><font size="2">Checks the BIOS, which executes the Power On Self Test (POST).</font></p>
+      <p><font size="2">Loads the Operating System.</font></p>
+      <p><font size="2">Attaches the Device Driver and associated clients.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="2">There is a set of diagnostic codes, expressed as hexadecimal numbers,
+    associated with each phase. If your server fails to complete any of these phases, the
+    system will halt and one of the codes will flash on and off on the front panel LCD
+    display. The code represents the point at which the power-on sequence came to a stop and
+    may indicate what element of the system could be at fault.</font></p>
+    <p><font size="2">&nbsp;The appearance of some codes may require an engineer to deal with
+    the problem. In this case, be sure to do the following:</font></p>
+    <blockquote>
+      <p><font size="2">1. Note down the code to help the engineer diagnose the fault.</font></p>
+      <p><font size="2">2. Clear the LCD (and silence the alarm if it is sounding) by using the
+      key to turn the front drive bay door lock to the Unlock position (door closed). If it is
+      already in the Unlock position, turn it to Lock and then to Unlock again.</font></p>
+    </blockquote>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top"><font size="2"><a name="power on"></a>Note </font></td>
+        <td valign="top"><font size="2">Power On</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">Press this button to switch the system on from Standby
+        Mode. The Power LED will light up and the system will initiate its boot sequence.
+        Diagnostic codes, expressed as hexadecimal numbers, will appear as a matter of course on
+        the LCD screen on the Front Panel. What happens after this depends on how your Shogun has
+        been configured, i.e. which operating system or other software may be installed</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>Power Failure Codes</strong></font></p>
+    <p><font size="2">The LCD will display these codes if the mains electricity supply fails.
+    These codes, shown in brackets below, represent three power failure modes. In each mode,
+    the power supply battery pack powers the system. Each code uses a countdown timer,
+    indicated by nnn, to indicate the number of seconds before its mode expires and the next
+    mode begins. If the countdown begins at 1000 or greater, the LCD will display 999 and hold
+    until the countdown actually reaches 999. The LCD will display the progress of the
+    countdown from then on.</font></p>
+    <blockquote>
+      <p><font size="2"><strong>Brownout</strong> (A.nnn) This mode indicates a temporary
+      reduction or even absence of the AC electric power. If it turns out that full power is not
+      restored after approximately five seconds, Brownout will change to Battery Mode. If the
+      battery charge is already low and power consumption is high, the system may skip Battery
+      Mode altogether and jump to Power Fail mode. On the other hand, if power is fully restored
+      before the countdown reaches zero, system function will return to normal and the batteries
+      will recharge.</font></p>
+      <p><font size="2"><strong>Battery Mode</strong> (b.nnn) This mode results because power
+      has not been restored in Brownout Mode. The system warns users to save their work,
+      terminate their applications and log off the network. System shutdown is initiated in this
+      mode. If power is fully restored before the countdown reaches zero, the system will return
+      to normal function and recharge the batteries; otherwise Power Fail mode begins.</font></p>
+      <p><font size="2"><strong>Power Fail</strong> (F.nnn) In this mode, power has not yet been
+      restored; system shutdown should be in progress to prevent deep battery discharge.
+      Shutdown continues even if power should be restored at this late stage.</font></p>
+    </blockquote>
+    <p><font size="2">Under normal conditions, the server deals with the power failure itself
+    by means of the Event Manager and, when necessary, initiates system shutdown. You will
+    probably only see the Power Fail code on the LCD if the brownout lasts that long. However,
+    if a brownout occurs and persists when the Event Manager is not loaded, then the LCD will
+    display each of the codes described above. Under these conditions the system is not able
+    to initiate system shutdown. You, or some other person who is local to the server, will
+    need to do it yourself while the system is in Battery Mode. The precise steps you need to
+    take to shut down the system, after instructing network users to close their applications
+    and log off, will depend on the operating system you are using. When the operating system
+    is at the point where it is safe to switch the machine to Standby, press and hold the
+    Standby (see note below) button on the front panel until the system switches off (see
+    Chapter 2, Operating Your System, in the Owner&#146;s Handbook for more information about
+    switching off).</font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top"><strong><font size="2">Note</font></strong></td>
+        <td valign="top"><font size="2">STANDBY</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">After you have instructed all network users to close their
+        applications down and log off the network, hold this button down for a specific period of
+        time before the system initiates a shutdown sequence to Standby Mode. The system will
+        display the code 1200 on the LCD and sound a tone. </font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">Continue to hold down the STANDBY button until the tone
+        stops, at which time the shutdown sequence begins. In Standby Mode, the mains electricity
+        supply keeps the battery pack fully charged, but there is no DC power supplied to the
+        system.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">Press STANDBY and CONTROL simultaneously to cancel the
+        current shutdown sequence.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2"><a href="#control%20standby%20&amp;%20reset">Special Button
+        Functions</a></font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>System Management Controller (SMC) Error Codes</strong></font></p>
+    <p><font size="2">This section contains SMC error codes. These codes fall into two groups,
+    the range 0F01-0F0F and the range 0F10-0F4F.</font></p>
+    <p><font size="2"><strong>0F01-0F0F</strong> </font></p>
+    <p><font size="2">These are initialisation codes for the SMC which will only appear
+    immediately after power-up. If the system stops and the LCD flashes one of these codes, it
+    means that there is a serious hardware problem with the SMC board and it probably needs
+    replacing. The following table defines these codes:</font></p>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="2" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Error Code</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Error Factor</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F01</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">80C186EB internal H/W (general purpose
+        register) error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F02</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">80C186EB internal H/W (flag register)
+        error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F03</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">80C186EB internal H/W (timer) error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F04</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SC&#146;s SRAM write/read test error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F05</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SC&#146;s EPROM checksum error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F06</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SC&#146;s FLASH checksum error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F07</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Copy from FLASH to SRAM failed</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F08</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Copy from EPROM to SRAM failed</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F09</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">RTC&#146;s RAM write/read test error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F0A</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A/D converter&#146;s busy bit error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F0B</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SC&#146;s FLASH is not programmed</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F0D</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">UART1 internal loop test failed</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F0E</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">UART2 internal loop test failed</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">0F0F</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">UART1 and UART2 internal loop test both
+        failed</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p><font size="2"><strong>0F10-0F4F</strong> </font></p>
+    <blockquote>
+      <p><font size="2">These codes indicate various other errors and could appear on the LCD at
+      any point. The following list defines the codes and indicates what action you should take
+      if these errors occur. If an error persists and efforts to solve the problem prove
+      ineffective, you should contact a service engineer.</font></p>
+      <p><font size="2"><strong>0F10 Power On Error</strong> - This code appears when the
+      firmware does not detect a power-on signal from the Power button within one second.
+      Possible faulty items are the motherboard, the SMC board, the SMIC or the cabling between
+      them. Try pressing the Power button again.</font></p>
+      <p><font size="2"><strong>0F11 Power Off Error</strong> - Appears when the system will not
+      shut down after pressing the Standby button on the front panel. Possible faulty items are
+      the main circuit board, the SMC board or the cable between them. If it is absolutely
+      necessary to shut down the server, you can switch the circuit breaker switch on the rear
+      panel to the Off position and unplug the mains lead. Only do this, however, as a last
+      resort.</font></p>
+      <p><font size="2"><strong>0F12 SMC Watchdog Timer over-flow error</strong> - Indicates a
+      faulty SMC board or the SMC firmware. If this code appears, first try resetting the SMC by
+      doing the following:</font></p>
+      <blockquote>
+        <p><font size="2">1. Unlock the removable drive bay door to deactivate the security alarm
+        (see chapter 2 in the Owner&#146;s Handbook).</font></p>
+        <p><font size="2">2. Press the <a href="#control%20standby%20&amp;%20reset">Control, Standby and
+        Reset</a> buttons simultaneously. This action displays &quot;8888&quot; on the LCD.</font></p>
+        <p><font size="2">3. Press Standby and Reset simultaneously. This clears the LCD and
+        resets the SMC. If the error code persists, contact a service engineer.</font></p>
+      </blockquote>
+      <p><font size="2"><strong>0F13 Too many time-out errors</strong> - Indicates faulty SMC
+      board. Try resetting the SMC using the same procedure as for 0F12.</font></p>
+      <p><font size="2"><strong>0F15 Invalid interrupt</strong> - Indicates a fault in either
+      the SMC board or firmware.</font></p>
+      <p><font size="2"><strong>0F20 Diagnostic Processor communication error</strong> -
+      Indicates an error in the diagnostic processor on the System Management Interface Card
+      (SMIC), the power distribution board or the cable between them.</font></p>
+      <p><font size="2"><strong>0F30 SMC port retry-error occurred</strong> - Indicates an error
+      in the SMC board, the SMIC board, the motherboard power distribution board, the cable
+      between them, firmware or the setting of the SMC (or FPSC) variables. First check the
+      settings of the FPSCResponseTimeOut and FPSCReceiptTimeOut variables in the System
+      Management Application (SMA).</font></p>
+      <p><font size="2"><strong>0F31 SMC port Response time-out occurred</strong> - Same as for
+      0F30.</font></p>
+      <p><font size="2"><strong>0F32 SMC port Transmit time-out occurred</strong> - Indicates
+      faulty SMC board or firmware.</font></p>
+      <p><font size="2"><strong>0F40 Modem port retry-over occurred</strong> - Indicates a
+      faulty modem, modem cable, telephone line, SMC board, settings of SMC (or FPSC) variables
+      in the SMA. You should check the following items first:</font></p>
+      <blockquote>
+        <p><font size="2">1. The modem is connected correctly.</font></p>
+        <p><font size="2">2. The modem is switched on.</font></p>
+        <p><font size="2">3. The modem is connected to the telephone line correctly.</font></p>
+        <p><font size="2">4. The modem works correctly. To double-check this, connect a different
+        modem that you know is in working order.</font></p>
+        <p><font size="2">5. The serial port settings for the modem (e.g. baud rate) are correct.</font></p>
+        <p><font size="2">6. Settings of the MODEMResponseTimeOut and MODEMReceiptTimeOut
+        variables, in the SMA, are correct.</font></p>
+      </blockquote>
+      <p><font size="2"><strong>0F41 MODEM port Response time-out</strong> - Same as 0F40.</font></p>
+      <p><font size="2"><strong>0F42 MODEM port Transmit time-out</strong> - Same as 0F40.</font></p>
+      <p><font size="2"><strong>0F4D MODEM AT command result code time-out occurred </strong>-
+      Indicates faulty modem, modem cable, SMC board or SMC (FPSC) variable settings. You should
+      check the following items first:</font></p>
+      <blockquote>
+        <p><font size="2">1. The modem is connected correctly.</font></p>
+        <p><font size="2">2. The modem is switched on.</font></p>
+        <p><font size="2">3. The modem connection to the telephone is in order.</font></p>
+        <p><font size="2">4. The modem functions properly. To double-check this, connect a
+        different modem that you know is in working order.</font></p>
+        <p><font size="2">5. The serial port settings for the modem (e.g. baud rate) are correct.</font></p>
+        <p><font size="2">6. The settings of the ModemATOriginal, ModemATCommands and
+        MODEMPortBaudRate variables, in the SMA, are correct.</font></p>
+      </blockquote>
+      <p><font size="2"><strong>0F4E MODEM AT command failed</strong> - Same as 0F4D.</font></p>
+      <p><font size="2"><strong>0F4F MODEM AT command unexpected result code is received</strong>&nbsp;-
+      Same as 0F4D.</font></p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td valign="top"><font size="2"><a name="control standby &amp; reset"></a>Note</font></td>
+        <td valign="top"><font size="3"><strong>Control Standby &amp; Reset</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" rowspan="5"></td>
+        <td valign="top"><font size="2">Special Button Functions</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2">Pressing Standby, Control and Reset simultaneously while
+        the front drive bay door is unlocked switches the system into a mode in which these three
+        buttons have special functions. The LCD displays 8888 to indicate this mode.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2"><img
+        src="../../../../bridging/timeline/dsc/graphics/shggrnar.gif.html" width="10" height="10">STANDBY
+        or RESET - Pressing one of these buttons initiates a memory dump to the central processing
+        unit by activating and then deactivating the Non-Maskable Interrupt (NMI) signal via the
+        diagnostic processor. You can then use the appropriate function of the network operating
+        system to examine the contents of the dump.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2"><img
+        src="../../../../bridging/timeline/dsc/graphics/shggrnar.gif.html" width="10" height="10">CONTROL
+        - Pressing this button initialises the modem, which is connected to the SMC serial port on
+        the backplane of the Shogun. If the modem initialisation is successful, the LCD displays
+        the code 0000. If the initialisation is unsuccessful, the LCD displays 0F4D or 0F4E.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><font size="2"><img
+        src="../../../../bridging/timeline/dsc/graphics/shggrnar.gif.html" width="10" height="10">STANDBY
+        + RESET - Pressing these buttons simultaneously clears the LCD and then releasing them
+        executes an independent Front Panel System Controller (FPSC) reset. This would only be
+        necessary if a major problem or error had occurred in the system.</font></td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td valign="top"><font size="2">If you do not press any buttons for ten seconds, the
+        system returns to normal mode.</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>Progress Control (NextBootStage) Codes</strong></font></p>
+    <p><font size="2">A single SMC (FPSC) variable, NextBootStage, records the progress of all
+    phases of the boot process. These phases are:</font></p>
+    <blockquote>
+      <p><font size="2">Power-On Self Test (POST), executed by the BIOS.</font></p>
+      <p><font size="2">SMC Device Driver Attachment (i.e. initialisation).</font></p>
+      <p><font size="2">SMC Client Loading. </font></p>
+    </blockquote>
+    <p><font size="2">The SMC Last Client sends a message to the SMC that it has loaded.</font></p>
+    <p><font size="2">The NextBootStage variable can take values in the range 1000-FFFF. The
+    most significant digits of this variable (i.e. the first three) are progress codes and are
+    allocated as follows:</font></p>
+    <blockquote>
+      <p><font size="2">100-1FF Diagnostic Processor and SMC</font></p>
+      <p><font size="2">200-2FF Motherboard BIOS</font></p>
+      <p><font size="2">300-3FF System Management Interface Card (SMIC) BIOS</font></p>
+      <p><font size="2">400-7FF Unallocated</font></p>
+      <p><font size="2">800-8FF Device Driver</font></p>
+      <p><font size="2">900-EFF Unallocated</font></p>
+      <p><font size="2">F00-FFF Last Client</font></p>
+    </blockquote>
+    <p><font size="2">The least significant digit (i.e. the fourth) indicates whether there is
+    an error condition, according to the following scheme:</font></p>
+    <blockquote>
+      <p><font size="2">0 No error</font></p>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">F Used by SMC to indicate an error</font></p>
+    </blockquote>
+    <p><font size="2">&nbsp;The following codes have special meaning to the SMC:</font></p>
+    <blockquote>
+      <p><font size="2">&nbsp;0001 is issued, accompanied by an alarm, under the following
+      circumstances:</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <p><font size="2">The nickel-cadmium battery on the SMC board has fully discharged. This
+        will happen if the server is disconnected from the mains electricity for at least one
+        month.</font></p>
+        <p><font size="2">The SMC firmware which controls the Front Panel is updated.</font></p>
+        <p><font size="2">A fatal error occurs on the SMC and the SMC executes a self-reset. This
+        means that any changes you have made to the configuration settings within the SMA have
+        been lost. Use the SMA to restore these settings (see the SMA User&#146;s Guide and the
+        SMA&#146;s own on-line help system).</font></p>
+      </blockquote>
+      <p><font size="2">2000 must be issued by the BIOS when it starts execution before
+      configuration testing has taken place.</font></p>
+      <p><font size="2">7FF0 is the POST completion code. It is sent by the BIOS when the POST
+      completes successfully. When the code is received, the POST watchdogs are disabled.</font></p>
+      <p><font size="2">8FE0 is the code sent by the SMC Device Driver to indicate that it will
+      be absent.</font></p>
+      <p><font size="2">8FF0 is the code sent by the SMC Device Driver to indicate that it has
+      initialised successfully.</font></p>
+      <p><font size="2">FFE0 is the code sent by the SMC Last Client to indicate that all
+      clients will be unloaded. The Trap generator is disabled.</font></p>
+      <p><font size="2">FFF0 is the code sent by the SMC Last Client to indicate that all
+      clients are now loaded. The Trap generator is enabled.</font></p>
+    </blockquote>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>SMC-specific codes and NextBootStage codes</strong></font></p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td align="center" valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Code</strong></font></td>
+        <td valign="top" width="56%" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Meaning</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Source</strong></font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">0000</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">Reset or Shutdown has been
+        cancelled by S/W.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Device drivers or clients</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">1000</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">Reset is issued to
+        Diag-Processor</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SMC</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">100F</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">POST has not started its
+        execution. (SMC detected time-out)</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SMC</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">1200</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">Shutdown_request is issued
+        to S/W</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SMC</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">1400</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">Normal Reset_request issued
+        to S/W</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SMC</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">1600</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">NMI request is issued to
+        Diag-processor</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SMC</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">1800</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">Dump (INIT) request is
+        issued to Diag-processor</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">SMC</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">1FFF</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">System dead is reported by
+        Diagnostic processor</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Diagnostic processor</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">2000</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">POST has started its
+        execution</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">POST</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">2001-2FFF</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">POST indicates the number or
+        error of test being executed </font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">POST</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">7FF0</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">POST completes its execution</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">POST</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">8000-FFFF</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">These codes are issued by
+        device driver or clients</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Device driver or client</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">8FE0</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">Device driver is detached</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Device driver</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">8FF0</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">Device driver is attached</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Device driver</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">FFE0</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">Clients are detached</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Last Client</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" bgcolor="#EBEBEB"><font size="2">0000</font></td>
+        <td valign="top" width="56%" bgcolor="#EBEBEB"><font size="2">Clients are attached.</font><p><font
+        size="2">This code also appears when a Reset or Shutdown has been cancelled by S/W.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Last Client</font><p><font size="2">Device
+        drivers or clients</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p><strong><font size="2">POST beep codes</font></strong></p>
+    <p><font size="2">Certain tests are performed before the video subsystem is initialised,
+    thus requiring the codes speaker to emit beep codes in the case of a failure. The
+    following table describes the various and their meaning.</font></p>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Diagnostic
+        code</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Number
+        of beeps</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Meaning</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">02h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 1 - 3</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">CMOS write/read test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">03h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 1 - 4</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">BIOS ROM checksum failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">04h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 2 - 1</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programmable Interval Timer test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">05h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 2 - 2</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">DMA initialisation failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">06h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 2 - 3</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">DMA page register read/write test
+        failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">07h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 2 - 4</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">RAM refresh verification failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">08h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 3 - 1</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">First 64K RAM test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">09h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 3 - 2</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">First 64K RAM parity test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">10h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 3 - 3</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Slave DMA register test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">11h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 3 - 4</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Master DMA register test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">12h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 4 - 1</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Master interrupt mask register test
+        failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">13h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 4 - 2</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Slave interrupt mask register test
+        failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">15h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1 - 4 - 4</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Keyboard controller test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1Bh</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">2 - 2 - 2</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Search for video ROM test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1Ch</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">2 - 2 - 3</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Screen believed inoperable</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">20h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">2 - 2 - 4</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Timer tick interrupt test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">21h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">2 - 3 - 1</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Interval timer channel 2 test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">23h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">2 - 3 - 3</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Time-of-day clock test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">27h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">2 - 4 - 3</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">CMOS memory size against actual compare
+        failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">28h</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">2 - 4 - 4</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Memory size mismatch occurred</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2">&nbsp;<a href="#top"><img
+    src="../../../graphics/redarr01.gif" align="left" border="0" hspace="0" width="14"
+    height="10"><img src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>Other BEEP Codes</strong></font></p>
+    <p><font size="2">There are a few other codes that occur, but please note that some are
+    system beeps that will be heard during normal operation.</font></p>
+    <p><font size="2"><strong>No beeps</strong>. If no beeps are heard at all the speaker may
+    be disconnected or there may be a speaker cicuitry fault.</font></p>
+    <p><font size="2"><strong>One short beep</strong>. Marks the completion of POST and no
+    functional errors found. You will also get a single beep if you press an invalid key for a
+    power-on password.</font></p>
+    <p><font size="2"><strong>Two short beeps</strong>. Indicates and draws your attention to
+    an error during POST. This should be accompanied by an error code from the table below.</font></p>
+    <p><font size="2"><strong>Three short beeps</strong>. System memory error, normally
+    accompanied by code 201, but beeps are used when the video cannot display the code.</font></p>
+    <p><font size="2"><strong>Continuous beep</strong>. Could indicate a serious failure of
+    the system motherboard, or a failure of the speaker circuitry.</font></p>
+    <p><font size="2"><strong>Repeating short beeps</strong>. Usually indicative of a keyboard
+    key stuck down, may be due to the keyboard interface failing.</font></p>
+    <p><font size="2"><strong>One Long and one short beep</strong>. POST has detected an error
+    on the video adapter in the system. There may well be no display on the screen.</font></p>
+    <p><font size="2"><strong>One long and two short beeps</strong>. This means that either
+    the video subsystem is faulty or that a video I/O adapter ROM is not readable.</font></p>
+    <p><font size="2"><strong>Two long and two short beeps</strong>. The video subsystem
+    cannot be supported by the main system POST. This can occur when the video subsystem is
+    replaced or changed on site.</font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>POST codes</strong></font></p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><p align="center"><font size="2" color="#FFFFFF"><strong>Code</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Meaning</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">0</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Default config in use (last 3 boots
+        failed)</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">101</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Timer tick interrupt failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">102</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Timer 2 test failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">106</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Diskette controller failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">110</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">System board memory parity error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">111</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">I/O Channel card error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">114</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Option ROM checksum failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">121</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Unexpected hardware type 2 interrupt
+        occurred</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">129</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Internal cache error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">151</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Real time clock failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">161</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Real time clock battery failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">162</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">CMOS RAM checksum failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">162</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Invalid configuration inforamtion</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">163</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Time of day not set</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">164</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Memory size does not match</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">175</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Bad EEPROM CRC1</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">176</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">System tampered, covers removed</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">177</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Bad administrator password checksum</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">178</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">System tampered</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">182</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">EEPROM is not functional</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">183</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Administrator password is needed</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">184</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Bad power-on password checksum</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">185</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Corrupted boot sequence</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">186</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Hardware problem</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">189</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Excessive password attempts</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">201</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Memory error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">229</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Internal cache error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">262</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">DRAM parity configuration</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">301</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Keyboard/keyboard controller failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">604</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Diskette drive failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">605</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Diskette unlocked problem</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">662</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Diskette drive configuration</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">762</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Coprocessor configuration</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">962</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Parallel port configuration</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1162</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Serial port configuration</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1762</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Fixed disk configuration</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1780</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Fixed disk 0 failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1781</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Fixed disk 1 failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1782</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Fixed disk 2 failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1783</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Fixed disk 3 failure</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1800</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">PCI - no more IRQ available</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1801</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">PCI - no more room for option ROM</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1802</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">PCI - no more I/O space available</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1803</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">PCI - no more memory (above 1MB)
+        available</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1804</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">PCI - no more memory (below 1MB)
+        available</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1805</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">PCI - checksum error or 0 size Option
+        ROM</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">1962</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">No bootable device</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">2400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Display adapter failed, using alternate</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">2462</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Video memory configuration error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">5962</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">CD-ROM configuration error</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><p align="center"><font size="2">8603</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Pointer device has been removed</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2">&nbsp;<a href="#top"><img
+    src="../../../graphics/redarr01.gif" align="left" border="0" hspace="0" width="14"
+    height="10"><img src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>Codes Generated by the SMIC BIOS</strong></font></p>
+    <p><font size="2">The following table contains codes that the System Management Interface
+    Card (SMIC) BIOS generates during POST. The codes, which can appear on the LCD or within
+    the System Management Application, define the start and end points of each action. The
+    appearance of one of these codes does not indicate an error unless it flashes.</font></p>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2" width="550"
+    bordercolor="#FFFFFF">
+      <tr>
+        <td align="center" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Start</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Definition</strong></font></td>
+        <td align="center" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>End</strong></font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3100</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Boot control decision logic</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3900</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3110</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Console redirect decision logic</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3910</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3200</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initialise FPSC communications</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3A00</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3210</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Write inventory information</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3A10</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3220</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Enable / Disable CPUs</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3A20</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3230</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Fatal error handler</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3A30 </font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3240</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Write inventory information</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3A40</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3300</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Console redirection</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3B00</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3510</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Ethernet card node address reporting</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3D10 </font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3520</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Time synchronisation</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3D20</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3530</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Non-fatal POST errors reporting</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3D30</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3540</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Security </font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3D40</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3700</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Flash Disk initialisation</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3F00 </font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3710</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Flash Disk boot</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3F10</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3720</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Flash Disk self-test</font></td>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">3F20</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2">&nbsp;<a href="#top"><img
+    src="../../../graphics/redarr01.gif" align="left" border="0" hspace="0" width="14"
+    height="10"><img src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>Codes that appear in the SMA</strong></font></p>
+    <p><strong><font size="2">POST error codes and messages</font></strong></p>
+    <p><font size="2">The BIOS indicates errors by writing an error code to the PS/2 standard
+    logging area in the Extended BIOS Data Area, and by displaying a message on the screen,
+    which is preceded by the POST Error Code. The error code will also be logged to the
+    Critical Event Logging area. The following codes will appear inside the System Management
+    Application (SMA) and not on the front panel LCD.</font></p>
+    <p>&nbsp;</p>
+    <div align="center"><div align="center"><center><table border="0" cellpadding="2"
+    width="550" bordercolor="#FFFFFF">
+      <tr>
+        <td align="center" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Code</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Error Message</strong></font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0002</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Primary Boot Device Not Found</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0010</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Cache Memory Failure, Do Not Enable Cache</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0015</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Primary Output Device Not Found</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0016</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Primary Input device Not Found</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0041</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">EISA ID Mismatch for Slot</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0043</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">EISA Invalid configuration for Slot</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0044</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">EISA config NOT ASSURED!</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0045</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">EISA Expansion Board Not Ready in Slot</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0047</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">EISA CMOS Configuration Not Set</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0048</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">EISA CMOS Checksum Failure</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0049</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">EISA NVRAM Invalid</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0060</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Keyboard Is Locked ... Please Unlock It</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0070</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">CMOS Time &amp; Date Not Set </font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0080</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Option ROM has bad checksum</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0083</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Shadow of PCI ROM Failed</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0084</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Shadow of EISA ROM Failed</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0085</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Shadow of ISA ROM Failed</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0131</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Floppy Drive A:</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0132</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Floppy Drive B:</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0135</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Floppy Disk Controller Failure</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0140</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Shadow of System BIOS Failed</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0170</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Disabled CPU slot #</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0171</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">CPU Failure - Slot 1, CPU #1</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0172</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">CPU Failure - Slot 1, CPU #2</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0173</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">CPU Failure - Slot 2, CPU #1</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0174</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">CPU Failure - Slot 2, CPU #2</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0171</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Previous CPU Failure - Slot 1, CPU #1</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0172</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Previous CPU Failure - Slot 1, CPU #2</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0173</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Previous CPU Failure - Slot 2, CPU #1</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0174</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Previous CPU Failure - Slot 2, CPU #2</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0175</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">CPU modules are incompatible</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0180</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Attempting to boot with failed CPU</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0191</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">CMOS Battery Failed</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0195</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">CMOS System Options Not Set</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0198</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">CMOS Checksum Invalid</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0289</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">System Memory Size Mismatch</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0295</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Address Line Short Detected</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0297</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Memory Size Decreased</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0299</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ECC ErrorCorrection Failure</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0301</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ECC Single bit correction failed, Correction disabled</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0302</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ECC Double Bit Error</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0310</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ECC Address Failure, Partition #</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0370</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Keyboard Controller Error</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0373</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Keyboard Stuck Key Detected</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0375</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Keyboard and Mouse Swapped</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0380</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ECC SIMM failure, Board in slot 1 SIMM #</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0392</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ECC SIMM failure, Board in slot 2 SIMM #</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0430</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Timer Channel 2 Failure</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0440</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Gate-A20 Failure</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0441</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Unexpected Interrupt in Protected Mode</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0445</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Master Interrupt Controller Error</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0446</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Slave Interrupt Controller Error</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0450</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Master DMA Controller Error</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0451</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Slave DMA Controller Error</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0452</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">DMA Controller Error</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0460</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Fail-safe Timer NMI Failure</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0461</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Software Port NMI Failure</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0465</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Bus Timeout NMI in Slot</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0467</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Expansion Board NMI in slot</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0501</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">PCI System Error</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0510</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">PCI Parity Error</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0710</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">System Board Device Resource Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0711</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Static Device Resource Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0800</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">PCI I/O Port Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0801</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">PCI Memory Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0802</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">PCI IRQ Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0803</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">PCI Error Log is Full</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0810</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Floppy Disk Controller Resource Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0811</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Primary IDE Controller Resource Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0812</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Secondary IDE Controller Resource Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0815</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Parallel Port Resource Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0816</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Serial Port 1 Resource Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0817</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Serial Port 1 Resource Conflict</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0820</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Expansion Board Disabled in Slot</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0900</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">NVRAM Checksum Error, NVRAM Cleared</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0903</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">NVRAM Data Invalid, NVRAM Cleared</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0905</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">NVRAM Cleared By Jumper</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0982</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">I/O Expansion Board NMI in Slot</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0984</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Expansion Board Disabled in Slot</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0985</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Fail-safe Timer NMI</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0986</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">System Reset Caused by Watchdog Timer</font></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#EBEBEB"><font size="2">0987</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Bus Timeout NMI in Slot</font></td>
+      </tr>
+    </table>
+    </center></div><p align="center">&nbsp;</p>
+    </div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

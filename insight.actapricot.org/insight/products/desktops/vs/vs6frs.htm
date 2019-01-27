@@ -1,0 +1,520 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>VS660 'Intel Thor' ROM BIOS Summary</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+    <td valign="top"><br>
+    <strong><font face="Arial,Helvetica" size="4" color="#D60029">VS660 'Thor' ROM BIOS
+    Summary </font><font face="Arial,Helvetica" color="#D60029" size="3">(Rev&nbsp;1.10.1)</font></strong><p><strong><font
+    size="2">About This Release</font></strong><ul>
+      <li><font size="2">BIOS 1.00.02.CN0 THOR.</font></li>
+      <li><font size="2">S3 Trio64 V+ video. Video BIOS version 1.00-09-09. </font></li>
+      <li><font size="2">Crystal Audio code update.</font></li>
+    </ul>
+    <p><strong><font size="2">Features / Errata Fixed In This Release</font></strong></p>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 2.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Update the S3 video version to 1.00-09-09.</font></li>
+      <li><font size="2">Update the crystal firmware. Crystal update moved to Plug n Play code.</font></li>
+      <li><font size="2">Token ring remote boot problem fixed.</font></li>
+      <li><font size="2">CMOS corruption problem is fixed.</font></li>
+      <li><font size="2">Fixed the problem where the numeric keys did not work for date update in
+        'SETUP'.</font></li>
+      <li><font size="2">The ATA/ATAPI drive detection code is updated.</font></li>
+      <li><font size="2">Hardisk Pre-delay setup option added in the setup.</font></li>
+      <li><font size="2">Fixed the 306B com port programming problem.</font></li>
+      <li><font size="2">CD-ROM is the first boot device option only.</font></li>
+      <li><font size="2">Gate-A20 race condition fixed.</font></li>
+      <li><font size="2">Int-15 function Dah subfunction 8Ch carry flag fix.</font></li>
+      <li><font size="2">CPU Autohalt fix.</font></li>
+      <li><font size="2">APM serial port mouse detection fixed.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 1.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Fixed problem where a non-system disk would hang the system during BOOT
+        when a CD-ROM was ahead of the HDD in the boot sequence. </font></li>
+      <li><font size="2">CD-ROM is only selectable as a bot device in the first boot device list.</font></li>
+      <li><font size="2">Fixed CPU AutoHalt feature, results in about 5 additional watts of power
+        being saved during a low power state.</font></li>
+      <li><font size="2">Updated the S3 Trio64 V+ to version 1.00-09-00.</font></li>
+      <li><font size="2">Fixed password problem where back spacing would not erase the last
+        character.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.02</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Video DDC fixed.</font></li>
+      <li><font size="2">Game port fixed.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.01</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None.</font></li>
+    </ul>
+    <p><font size="2">&nbsp;<strong>Features Included In This Release</strong></font></p>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 2.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Updated the S3 video to version 1.00-09-09 V+ LPB.</font></li>
+      <li><font size="2">Crystal audio firmware update.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 1.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Updated the S3 Trio64 V+ to version 1.00-09-00.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.02</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">No new features.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.01</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Intel Corporation's Phase III - BIOS&#153;.</font></li>
+      <li><font size="2">Intel Corporation's POSThaste&#153;.</font></li>
+      <li><font size="2">Intel Corporation's Product Information Storage and Retrieval Revision
+        1.1 (February 6, 1995).</font></li>
+      <li><font size="2">No Recovery BIOS.</font></li>
+      <li><font size="2">Supports Boot With PnP OS (allows Plug and Play Operating Systems to
+        configure all non-bootable ISA Plug and Play devices).</font></li>
+      <li><font size="2">Plug and Play BIOS Specification Version 1.0A (May 5, 1994) compliant.</font></li>
+      <li><font size="2">Plug and Play ISA Specification Version 1.0A (May 5, 1994)
+        compliant/support.</font></li>
+      <li><font size="2">PCI BIOS Specification 2.1 compliant.</font></li>
+      <li><font size="2">PCI to PCI Bridge Architecture Specification Revision 1.0 (April 5, 1994)
+        compliant.</font></li>
+      <li><font size="2">Supporting PCI Expansion Bridges, Tim Mostad, PCI SIG Technical Marketing
+        (December 19, 1994) compliant.</font></li>
+      <li><font size="2">Extended System Configuration Data (ESCD) Specification Version 1.03
+        (November 30, 1994) compliant.</font></li>
+      <li><font size="2">Advanced Power Management (APM) BIOS Interface Specification Revision 1.1
+        (September 1993) compliant (also Revision 1.0 compliant).</font></li>
+      <li><font size="2">ATA (IDE Hard Disk) interface support (Mode 4 and below timing support).</font></li>
+      <li><font size="2">ATAPI (IDE, CD-ROM, TAPE, etc.) interface support.</font></li>
+      <li><font size="2">&quot;El Torito&quot; Bootable CD-ROM Format Specification Version 1.0
+        (July 8, 1994) compliant.</font></li>
+      <li><font size="2">Keyboard / Mouse Swap support.</font></li>
+      <li><font size="2">National Semiconductor PC87306B Super I/O support.</font></li>
+      <li><font size="2">AMI Keyboard Controller support.</font></li>
+      <li><font size="2">Intel Triton Chipset support.</font></li>
+      <li><font size="2">Pentium Overdrive Ready (P55CT Socket 7) support.</font></li>
+      <li><font size="2">S3 Trio64 V+ Video BIOS version 1.00-05-00.</font></li>
+    </ul>
+    <p><strong><font size="2">Setup Changes</font></strong></p>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 2.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Hard disk pre-delay option added.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 1.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Boot options changed so that CD-ROM is only available in the &quot;First
+        Boot Device&quot; list. It has been removed from Second, Third, and Fourth boot device
+        lists.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.02</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.01</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">BIOS defaults</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2">Floppy Options</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <ul>
+          <li><font size="2">Floppy A: Type 1.44 MB, 3.5 inch</font></li>
+          <li><font size="2">Floppy B: Type Disabled</font></li>
+          <li><font size="2">Floppy Access Read/Write</font></li>
+        </ul>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Boot Options</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <ul>
+          <li><font size="2">First Boot Device Floppy</font></li>
+          <li><font size="2">Second Boot Device Hard Drive</font></li>
+          <li><font size="2">Third Boot Device CD-ROM</font></li>
+          <li><font size="2">Fouth Boot Device Disabled</font></li>
+          <li><font size="2">System Cache Enabled</font></li>
+          <li><font size="2">Boot Speed Turbo</font></li>
+          <li><font size="2">Num Lock Off</font></li>
+          <li><font size="2">Setup Prompt Enabled</font></li>
+          <li><font size="2">Typematic Rate Prog. Default</font></li>
+          <li><font size="2">Typematic Rate Delay 250 msec</font></li>
+          <li><font size="2">Typematic Rate 6 characters/sec</font></li>
+        </ul>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Peripheral Configuration</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <ul>
+          <li><font size="2">Configuration Mode Auto</font></li>
+          <li><font size="2">PCI IDE Interface Enabled</font></li>
+          <li><font size="2">Floppy Interface Enabled</font></li>
+          <li><font size="2">Serial Port 1 Address COM1 3F8h, IRQ 4</font></li>
+          <li><font size="2">Serial Port 2 Address COM2 2F8h, IRQ 3</font></li>
+          <li><font size="2">Serial Port 2 IR Mode Enabled</font></li>
+          <li><font size="2">Parallel Port Address LPT1 378h, IRQ 7</font></li>
+          <li><font size="2">Parallel Port Mode Compatible</font></li>
+        </ul>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Advanced Chipset Config</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <ul>
+          <li><font size="2">Base Memory Size 640 KB</font></li>
+          <li><font size="2">ISA LFB Size Disabled</font></li>
+          <li><font size="2">Video Palette Snoop Disabled</font></li>
+          <li><font size="2">Latency Timer (PCI Clock) 66</font></li>
+          <li><font size="2">PCI Burst Enabled</font></li>
+        </ul>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Power Management</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <ul>
+          <li><font size="2">IDE Drive Power Down Enabled</font></li>
+          <li><font size="2">VESA Video Power Down Sleep</font></li>
+          <li><font size="2">Inactivity Timer 10 minutes</font></li>
+        </ul>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Plug &amp; Play Configuration</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <ul>
+          <li><font size="2">Configuration Mode Use Setup Utility</font></li>
+          <li><font size="2">ISA Shared Memory Size Disabled</font></li>
+          <li><font size="2">ISA Shared Memory Base Add. C8000h</font></li>
+          <li><font size="2">Boot with PnP OS Windows 95</font></li>
+        </ul>
+      </blockquote>
+    </blockquote>
+    <blockquote>
+      <p><font size="2">Security</font></p>
+    </blockquote>
+    <blockquote>
+      <blockquote>
+        <ul>
+          <li><font size="2">Unattended Start Disabled</font></li>
+        </ul>
+      </blockquote>
+    </blockquote>
+    <p><strong><font size="2">Password Changes</font></strong></p>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 2.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 1.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Fixed password problem where back spacing would not erase the last
+        character.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.02</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.01</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <p><strong><font size="2">Language Support</font></strong></p>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 2.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 1.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Single language support (French, Italian, German, and Spanish available
+        for Flash Update).</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.02</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">US English only</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.01</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None.</font></li>
+    </ul>
+    <p><strong><font size="2">Hard Disk Changes</font></strong></p>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 2.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Hard disk pre-delay option added in the setup.</font></li>
+      <li><font size="2">ATA/ATAPI drive detection code updated.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 1.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.02</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.01</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <p><strong><font size="2">Plug and Play (Windows 95, ISA Configuration Utility, etc.)</font></strong></p>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 2.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 1.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">No changes</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.02</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">Parallel port node ID changed from 0400h to 0401h.</font></li>
+      <li><font size="2">Game port treated as ISA legacy device</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.01</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <p><strong><font size="2">APM 1.1</font></strong></p>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 2.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">APM serial port mouse detection code fixed.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Release 1.0</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">No changes</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.02</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None.</font></li>
+    </ul>
+    <blockquote>
+      <p><font size="2" color="#0000FF">Beta 1.01</font></p>
+    </blockquote>
+    <ul>
+      <li><font size="2">None</font></li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

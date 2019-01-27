@@ -1,0 +1,2604 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>'Lightning' ROM BIOS Summary</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+<td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+<td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+<td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+<td valign="top"><p align="left"><font size="1"><br>
+    </font><strong><font face="Arial,Helvetica" size="4" color="#D60029">'Lightning' ROM BIOS
+    Summary</font><font face="Arial,Helvetica" size="3" color="#D60029"> (Rev 1.17) </font></strong></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+<tr>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+<td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>12<br>
+        Beta</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">22/9/97</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This disk is a collection of utilities
+        and the binary images required to update all the Flash-based firmware on Lightning. It is
+        primarily intended for use by Apricot by which BIOS updates are released from R&amp;D for
+        distribution to the field. </font><table border="0" cellpadding="2" width="100%"
+        bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">File</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Description</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Version</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><p align="center"><strong><font size="2">Part num</font></strong></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">160601SW.BIN</font></td>
+<td valign="top"><font size="2">Main BIOS release</font></td>
+<td valign="top"><font size="2">12.00.06</font></td>
+<td valign="top"><p align="center"><font size="2">160601SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161479SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) NTSC TV Video binary &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.074</font><p><font size="2">Apricot rev1.00.05</font></td>
+<td valign="top"><p align="center"><font size="2">161479SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161526SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Consumer Crystal PnP Info.
+            - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.09</font></td>
+<td valign="top"><p align="center"><font size="2">161526SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">162424SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Corporate Crystal PnP
+            Info. - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.09</font></td>
+<td valign="top"><p align="center"><font size="2">162424SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPNAF.COM</font></td>
+<td valign="top"><font size="2">To signal a failure of recovery process a tone is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPOK.COM</font></td>
+<td valign="top"><font size="2">To signal a end of recovery process a short series of
+            tones is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">0.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to reset machine</font></td>
+<td valign="top"></td>
+<td valign="top"></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">1.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">2.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main BIOS</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">3.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">C.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add corporate PNP CS2436 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">B.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add consumer PNP CS4237 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">REC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">VREC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">OFF.exe</font></td>
+<td valign="top"><font size="2">Utility to switch off Machine (Not recovery mode)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">TEMPV.BIN</font></td>
+<td valign="top"><font size="2">Temp copy of Video Binary</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB???.BIN</font></td>
+<td valign="top"><font size="2">TEMP Boot block binaries</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CNV.EXE</font></td>
+<td valign="top"><font size="2">Utility used by merge.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by b.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CORP.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by c.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">RECMODE.EXE</font></td>
+<td valign="top"><font size="2">To check if we are in recovery or update mode used in
+            autoexec.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AUTOEXEC.BAT</font></td>
+<td valign="top"><font size="2">Used to automate recovery process</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AFLASH.EXE</font></td>
+<td valign="top"><font size="2">Flash programming utility used by autoexec.bat</font></td>
+<td valign="top"><font size="2">1.00.19</font></td>
+<td valign="top"><p align="center"><font size="2">not released</font></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Operation</font></strong></p>
+        <p><font size="2">As mentioned above there are two potential users of the disk, engineers
+        or possibly end-users in the field. They should simply boot from it, the rest of the
+        process is automated. There are two ways the disk will operate </font><ol>
+          <li><font size="2">As a BIOS recovery disk if the firmware is somehow corrupted so that the
+            machine will not boot to the DOS prompt. To do this the floppy must be in the drive and
+            the power removed so that AC is disconnected.</font></li>
+        </ol>
+        <ol start="2">
+          <li><font size="2">As a firmware upgrade disk to upgrade to a later or earlier version of
+            the BIOS. This mode of operation will only work if the floppy is not inserted until video
+            is displayed otherwise method 1 will prevail.</font></li>
+        </ol>
+        <p><font size="2">The Screen should display after DOS has loaded :-<br>
+        Apricot Computers Ltd. Copyright 1997<br>
+        Lightning Firmware Upgrade Disk (PN 160578)<br>
+        Release: 12 (16/09/97)<br>
+        Recovery Code is version 1.00.XX</font></p>
+        <p><font size="2">Getting Environment variables</font><ol>
+          <li><ol>
+              <li><font size="2">Update Main BIOS and Video BIOS</font></li>
+              <li><font size="2">Update Main BIOS.</font></li>
+              <li><font size="2">Update Video BIOS.<br>
+                <br>
+                </font></li>
+            </ol>
+          </li>
+          <li><ol>
+              <li><font size="2">Reset Machine</font></li>
+            </ol>
+          </li>
+        </ol>
+        <ol type="A" start="2">
+          <li><ol type="A">
+              <li><font size="2">Update Bootblock. (Consumer 161526SW - CS4237)</font></li>
+              <li value="1"><font size="2">Update Bootblock. (Corporate 162424SW - CS4236)</font></li>
+            </ol>
+          </li>
+        </ol>
+        <p><font size="2">The difference between 1) and 2) is that 1) will have no video and the
+        user must wait until the machine beeps a tune 2) the user will be informed via on screen
+        messages when the process is complete. Note: For this Release 2) will just boot to DOS
+        mode and initiate a menu system.</font></p>
+        <p><font size="2">Below is a list for Error codes for 1)</font></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" width="20%" bgcolor="#CCCCCC"><font size="2">Port 80 Code</font></td>
+<td valign="top" width="80%" bgcolor="#CCCCCC"><font size="2">Meaning</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E2</font></td>
+<td valign="top" width="80%"><font size="2">Chipset Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E3</font></td>
+<td valign="top" width="80%"><font size="2">Refresh Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E4</font></td>
+<td valign="top" width="80%"><font size="2">Check for Forced Recovery</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E5</font></td>
+<td valign="top" width="80%"><font size="2">Check HW state of ROM</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E6</font></td>
+<td valign="top" width="80%"><font size="2">BIOS is Okay</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E7</font></td>
+<td valign="top" width="80%"><font size="2">RAM Test</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E8</font></td>
+<td valign="top" width="80%"><font size="2">OEM Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E9</font></td>
+<td valign="top" width="80%"><font size="2">Interrupt Controller Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EA</font></td>
+<td valign="top" width="80%"><font size="2">Reading BootStrap Code</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EB</font></td>
+<td valign="top" width="80%"><font size="2">Initialise all Vectors</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EC</font></td>
+<td valign="top" width="80%"><font size="2">Boot the Flash Program</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">ED</font></td>
+<td valign="top" width="80%"><font size="2">Initialise the Boot Device</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EE</font></td>
+<td valign="top" width="80%"><font size="2">Boot Code was read Okay</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EF</font></td>
+<td valign="top" width="80%"><font size="2">CPU Initialisation</font></td>
+</tr>
+        </table>
+        <p><font size="2">Once the recovery process has booted AFLASH.EXE will run to start
+        programming the new BIOS. Please refer to the Latest AFLASH.EXE release notes for Further
+        Port 80 codes.</font></p>
+        <p><font size="2"><strong>What string<br>
+        </strong><br>
+        File: AFLASH.EXE <br>
+        Identification: Flash Programming Utility, Version 1.00.19, 21st August 1997<br>
+        <br>
+        File: 161479SW.BIN <br>
+        Identification: ATI Rage Pro Video BIOS (AGP - NTSC TV out - 100/75.0Mhz) v3.074<br>
+        Part Number 161479SW<br>
+        Version Number 1.00.05<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 160601SW.BIN <br>
+        Apricot BIOS Version 12.00.06, 16th September 1997<br>
+        Part Number 160601SW<br>
+        <br>
+        File: 161526SW.BIN<br>
+        Identification: Apricot PN161526SW Bootblock Version 1.00.09<br>
+        <br>
+        File: 162424SW.BIN<br>
+        Identification: Apricot PN162424SW Bootblock Version 1.00.09</font></p>
+        <p><strong><font size="2">Changes from Last Release </font></strong><ul>
+          <li><font size="2">BootBlock Release 1.00.09</font></li>
+          <li><font size="2">Main BIOS Release 12.00.06</font></li>
+        </ul>
+        <p><strong><font size="2">Notes</font></strong></p>
+        <p><font size="2">If the Revision A BIOS is blown into a Revision B or later board, memory
+        will not be found as the SPD information is incorrect. A beep code will follow and the
+        Port80 card will read 28. This can be corrected by inserting the correct Recovery disk for
+        this motherboard and recovering.</font></p>
+        <p><font size="2">&nbsp;</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>13<br>
+        Beta</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">29/9/97</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">The MAIN BIOS needs updating from
+        Release 12. If changing from a different release update the video, bootblock and main
+        BIOS.<br>
+        The main BIOS is at 12.00.07<br>
+        The BootBlock is at 1.00.09<br>
+        <br>
+        Create the floppy using the image utility then boot into DOS using this disk. (Insert the
+        disk when the Video signs on or recovery will happen which is not wanted.)<br>
+        <br>
+        This disk is a collection of utilities and the binary images required to update all the
+        Flash-based firmware on Lightning. It is primarily intended for use by Apricot by which
+        BIOS updates are released from R&amp;D for distribution to the field. </font><p><strong><font
+        size="2">Contents</font></strong></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">File</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Description</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Version</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><p align="center"><strong><font size="2">Part num</font></strong></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">160601SW.BIN</font></td>
+<td valign="top"><font size="2">Main BIOS release</font></td>
+<td valign="top"><font size="2">12.00.07</font></td>
+<td valign="top"><p align="center"><font size="2">160601SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161479SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) NTSC TV Video binary &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.06</font></td>
+<td valign="top"><p align="center"><font size="2">161479SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161531SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) PAL TV Video binary &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.01</font></td>
+<td valign="top"><p align="center"><font size="2">161531SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161526SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Consumer Crystal PnP Info.
+            - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.09</font></td>
+<td valign="top"><p align="center"><font size="2">161526SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">162424SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Corporate Crystal PnP
+            Info. - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.09</font></td>
+<td valign="top"><p align="center"><font size="2">162424SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPNAF.COM</font></td>
+<td valign="top"><font size="2">To signal a failure of recovery process a tone is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPOK.COM</font></td>
+<td valign="top"><font size="2">To signal a end of recovery process a short series of
+            tones is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">0.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to reset machine</font></td>
+<td valign="top"></td>
+<td valign="top"></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">1.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">2.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main BIOS</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">3.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">C.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add corporate PNP CS2436 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">B.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add consumer PNP CS4237 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">REC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">VREC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">OFF.exe</font></td>
+<td valign="top"><font size="2">Utility to switch off Machine (Not recovery mode)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">TEMPV.BIN</font></td>
+<td valign="top"><font size="2">Temp copy of Video Binary</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB???.BIN</font></td>
+<td valign="top"><font size="2">TEMP Boot block binaries</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CNV.EXE</font></td>
+<td valign="top"><font size="2">Utility used by merge.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by b.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CORP.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by c.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">RECMODE.EXE</font></td>
+<td valign="top"><font size="2">To check if we are in recovery or update mode used in
+            autoexec.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AUTOEXEC.BAT</font></td>
+<td valign="top"><font size="2">Used to automate recovery process</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AFLASH.EXE</font></td>
+<td valign="top"><font size="2">Flash programming utility used by autoexec.bat</font></td>
+<td valign="top"><font size="2">1.00.20</font></td>
+<td valign="top"><p align="center"><font size="2">not released</font></td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top"></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Operation</font></strong></p>
+        <p><font size="2">As mentioned above there are two potential users of the disk, engineers
+        or possibly end-users in the field. They should simply boot from it, the rest of the
+        process is automated. There are two ways the disk will operate </font><ol>
+          <li><font size="2">As a BIOS recovery disk if the firmware is somehow corrupted so that the
+            machine will not boot to the DOS prompt. To do this the floppy must be in the drive and
+            the power removed so that AC is disconnected.</font></li>
+        </ol>
+        <ol start="2">
+          <li><font size="2">As a firmware upgrade disk to upgrade to a later or earlier version of
+            the BIOS. This mode of operation will only work if the floppy is not inserted until video
+            is displayed otherwise method 1 will prevail.</font></li>
+        </ol>
+        <p><font size="2">The Screen should display after DOS has loaded :-<br>
+        Apricot Computers Ltd. Copyright 1997<br>
+        Lightning Firmware Upgrade Disk (PN 160578)<br>
+        Release: 13 (29/09/97)<br>
+        Recovery Code is version 1.00.XX<br>
+        <br>
+        Getting Environment variables</font><ol>
+          <li><ol>
+              <li><font size="2">Update Main BIOS and Video BIOS</font></li>
+              <li><font size="2">Update Main BIOS.</font></li>
+              <li><font size="2">Update Video BIOS.<br>
+                <br>
+                </font></li>
+            </ol>
+          </li>
+          <li><ol>
+              <li><font size="2">Reset Machine</font></li>
+            </ol>
+          </li>
+        </ol>
+        <ol type="A" start="2">
+          <li><ol type="A">
+              <li><font size="2">Update Bootblock. (Consumer 161526SW - CS4237)</font></li>
+              <li value="1"><font size="2">Update Bootblock. (Corporate 162424SW - CS4236)</font></li>
+            </ol>
+          </li>
+        </ol>
+        <p><font size="2">The difference between 1) and 2) is that 1) will have no video and the
+        user must wait until the machine beeps a tune 2) the user will be informed via on screen
+        messages when the process is complete. Note: For this Release 2) will just boot to DOS
+        mode and initiate a menu system.</font></p>
+        <p><font size="2">Below is a list for Error codes for 1)</font></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" width="20%" bgcolor="#CCCCCC"><strong><font size="2">Port 80 Code</font></strong></td>
+<td valign="top" width="80%" bgcolor="#CCCCCC"><strong><font size="2">Meaning</font></strong></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E2</font></td>
+<td valign="top" width="80%"><font size="2">Chipset Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E3</font></td>
+<td valign="top" width="80%"><font size="2">Refresh Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E4</font></td>
+<td valign="top" width="80%"><font size="2">Check for Forced Recovery</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E5</font></td>
+<td valign="top" width="80%"><font size="2">Check HW state of ROM</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E6</font></td>
+<td valign="top" width="80%"><font size="2">BIOS is Okay</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E7</font></td>
+<td valign="top" width="80%"><font size="2">RAM Test</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E8</font></td>
+<td valign="top" width="80%"><font size="2">OEM Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">E9</font></td>
+<td valign="top" width="80%"><font size="2">Interrupt Controller Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EA</font></td>
+<td valign="top" width="80%"><font size="2">Reading BootStrap Code</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EB</font></td>
+<td valign="top" width="80%"><font size="2">Initialise all Vectors</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EC</font></td>
+<td valign="top" width="80%"><font size="2">Boot the Flash Program</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">ED</font></td>
+<td valign="top" width="80%"><font size="2">Initialise the Boot Device</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EE</font></td>
+<td valign="top" width="80%"><font size="2">Boot Code was read Okay</font></td>
+</tr>
+<tr>
+<td valign="top" width="20%"><font size="2">EF</font></td>
+<td valign="top" width="80%"><font size="2">CPU Initialisation</font></td>
+</tr>
+        </table>
+        <p><font size="2">Once the recovery process has booted AFLASH.EXE will run to start
+        programming the new BIOS. Please refer to the Latest AFLASH.EXE release notes for Further
+        Port 80 codes.</font></p>
+        <p><font size="2"><strong>What string</strong><br>
+        <br>
+        File: AFLASH.EXE <br>
+        Identification: Flash Programming Utility, Version 1.00.20, 24th September 1997<br>
+        <br>
+        File: 161479SW.BIN <br>
+        Identification: ATI Rage Pro Video BIOS (AGP - NTSC TV out - 100/75.0Mhz) v3.076<br>
+        Part Number 161479SW<br>
+        Version Number 1.00.06<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 161531SW.BIN <br>
+        Identification: ATI Rage Pro Video BIOS (AGP - PAL TV out - 100/75.0Mhz) v3.076<br>
+        Part Number 161531W<br>
+        Version Number 1.00.01<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 160601SW.BIN <br>
+        Apricot BIOS Version 12.00.07, 29th September 1997<br>
+        Part Number 160601SW<br>
+        <br>
+        File: 161526SW.BIN<br>
+        Identification: Apricot PN161526SW Bootblock Version 1.00.09<br>
+        <br>
+        File: 162424SW.BIN<br>
+        Identification: Apricot PN162424SW Bootblock Version 1.00.09</font></p>
+        <p><strong><font size="2">Changes from Last Release </font></strong><ul>
+          <li><font size="2">NTSC Video BIOS - 161479SW Version 1.00.06</font></li>
+          <li><font size="2">PAL Video BIOS - 161531SW Version 1.00.01</font></li>
+          <li><font size="2">Main BIOS Release 12.00.07</font></li>
+          <li><font size="2">AFLASH Version 1.00.20</font></li>
+        </ul>
+        <blockquote>
+          <blockquote>
+          </blockquote>
+        </blockquote>
+        <p><strong><font size="2">Notes</font></strong></p>
+        <p><font size="2">If the Revision A BIOS is blown into a Revision B or later board, memory
+        will not be found as the SPD information is incorrect. A beep code will follow and the
+        Port80 card will read 28. This can be corrected by inserting the correct Recovery disk for
+        this motherboard and recovering.</font></p>
+        <p><font size="2">&nbsp;</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>14<br>
+        Beta</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">2/10/97</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">The MAIN BIOS and Corporate Bootblock
+        need updating from Release 13. If changing from a different release update the video,
+        bootblock and main BIOS.<br>
+        The main BIOS is at 12.00.08<br>
+        The Consumer BootBlock is at 1.00.09<br>
+        The Corporate BootBlock is at 1.00.10<br>
+        <br>
+        Create the floppy using the image utility then boot into DOS using this disk. (Insert the
+        disk when the video signs on or recovery will happen which is not wanted.)</font><p><strong><font
+        size="2">Contents</font></strong></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">File</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Description</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Version</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><p align="center"><strong><font size="2">Part num</font></strong></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">160601SW.BIN</font></td>
+<td valign="top"><font size="2">Main BIOS release</font></td>
+<td valign="top"><font size="2">12.00.08</font></td>
+<td valign="top"><p align="center"><font size="2">160601SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161479SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) NTSC TV Video binary &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.06</font></td>
+<td valign="top"><p align="center"><font size="2">161479SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161531SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) PAL TV Video binary &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.01</font></td>
+<td valign="top"><p align="center"><font size="2">161531SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161526SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Consumer Crystal PnP Info.
+            - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.09</font></td>
+<td valign="top"><p align="center"><font size="2">161526SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">162424SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Corporate Crystal PnP
+            Info. - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.10</font></td>
+<td valign="top"><p align="center"><font size="2">162424SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPNAF.COM</font></td>
+<td valign="top"><font size="2">To signal a failure of recovery process a tone is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPOK.COM</font></td>
+<td valign="top"><font size="2">To signal a end of recovery process a short series of
+            tones is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">0.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to reset machine</font></td>
+<td valign="top"></td>
+<td valign="top"></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">1.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">2.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main BIOS</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">3.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">C.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add corporate PNP CS2436 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">B.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add consumer PNP CS4237 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">REC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">VREC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">OFF.exe</font></td>
+<td valign="top"><font size="2">Utility to switch off Machine (Not recovery mode)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">TEMPV.BIN</font></td>
+<td valign="top"><font size="2">Temp copy of Video Binary</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB???.BIN</font></td>
+<td valign="top"><font size="2">TEMP Boot block binaries</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CNV.EXE</font></td>
+<td valign="top"><font size="2">Utility used by merge.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by b.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CORP.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by c.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">RECMODE.EXE</font></td>
+<td valign="top"><font size="2">To check if we are in recovery or update mode used in
+            autoexec.bat</font></td>
+<td  <td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AUTOEXEC.BAT</font></td>
+<td valign="top"><font size="2">Used to automate recovery process</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AFLASH.EXE</font></td>
+<td valign="top"><font size="2">Flash programming utility used by autoexec.bat</font></td>
+<td valign="top"><font size="2">1.00.20</font></td>
+<td valign="top"><p align="center"><font size="2">not released</font></td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top"></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Operation</font></strong></p>
+        <p><font size="2">As mentioned above there are two potential users of the disk, engineers
+        or possibly end-users in the field. They should simply boot from it, the rest of the
+        process is automated. There are two ways the disk will operate </font><ol>
+          <li><font size="2">As a BIOS recovery disk if the firmware is somehow corrupted so that the
+            machine will not boot to the DOS prompt. To do this the floppy must be in the drive and
+            the power removed so that AC is disconnected.</font></li>
+        </ol>
+        <ol start="2">
+          <li><font size="2">As a firmware upgrade disk to upgrade to a later or earlier version of
+            the BIOS. This mode of operation will only work if the floppy is not inserted until video
+            is displayed otherwise method 1 will prevail.</font></li>
+        </ol>
+        <p><font size="2">The Screen should display after DOS has loaded :-<br>
+        Apricot Computers Ltd. Copyright 1997<br>
+        Lightning Firmware Upgrade Disk (PN 160578)<br>
+        Release: 14 (02/10/97)<br>
+        Recovery Code is version 1.00.XX<br>
+        <br>
+        Getting Environment variables</font><ol>
+          <li><ol>
+              <li><font size="2">Update Main BIOS and Video BIOS</font></li>
+              <li><font size="2">Update Main BIOS.</font></li>
+              <li><font size="2">Update Video BIOS.<br>
+                <br>
+                </font></li>
+            </ol>
+          </li>
+          <li><ol>
+              <li><font size="2">Reset Machine</font></li>
+            </ol>
+          </li>
+        </ol>
+        <ol type="A" start="2">
+          <li><ol type="A">
+              <li><font size="2">Update Bootblock. (Consumer 161526SW - CS4237)</font></li>
+              <li value="1"><font size="2">Update Bootblock. (Corporate 162424SW - CS4236)</font></li>
+            </ol>
+          </li>
+        </ol>
+        <p><font size="2">The difference between 1) and 2) is that 1) will have no video and the
+        user must wait until the machine beeps a tune 2) the user will be informed via on screen
+        messages when the process is complete. Note: For this Release 2) will just boot to DOS
+        mode and initiate a menu system.</font></p>
+        <p><font size="2">Below is a list for Error codes for 1)</font></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Port 80 Code</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Meaning</font></strong></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E2</font></td>
+<td valign="top"><font size="2">Chipset Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E3</font></td>
+<td valign="top"><font size="2">Refresh Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E4</font></td>
+<td valign="top"><font size="2">Check for Forced Recovery</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E5</font></td>
+<td valign="top"><font size="2">Check HW state of ROM</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E6</font></td>
+<td valign="top"><font size="2">BIOS is Okay</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E7</font></td>
+<td valign="top"><font size="2">RAM Test</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E8</font></td>
+<td valign="top"><font size="2">OEM Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E9</font></td>
+<td valign="top"><font size="2">Interrupt Controller Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EA</font></td>
+<td valign="top"><font size="2">Reading BootStrap Code</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EB</font></td>
+<td valign="top"><font size="2">Initialise all Vectors</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EC</font></td>
+<td valign="top"><font size="2">Boot the Flash Program</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">ED</font></td>
+<td valign="top"><font size="2">Initialise the Boot Device</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EE</font></td>
+<td valign="top"><font size="2">Boot Code was read Okay</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EF</font></td>
+<td valign="top"><font size="2">CPU Initialisation</font></td>
+</tr>
+        </table>
+        <p><font size="2">Once the recovery process has booted AFLASH.EXE will run to start
+        programming the new BIOS. Please refer to the Latest AFLASH.EXE release notes for Further
+        Port 80 codes.</font></p>
+        <p><strong><font size="2">What string</font></strong></p>
+        <p><font size="2">File: AFLASH.EXE <br>
+        Identification: Flash Programming Utility, Version 1.00.20, 24th September 1997<br>
+        <br>
+        File: 161479SW.BIN <br>
+        Identification: ATI Rage Pro Video BIOS (AGP - NTSC TV out - 100/75.0Mhz) v3.076<br>
+        Part Number 161479SW<br>
+        Version Number 1.00.06<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 161531SW.BIN <br>
+        Identification: ATI Rage Pro Video BIOS (AGP - PAL TV out - 100/75.0Mhz) v3.076<br>
+        Part Number 161531W<br>
+        Version Number 1.00.01<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 160601SW.BIN <br>
+        Apricot BIOS Version 12.00.08, 2nd October 1997<br>
+        Part Number 160601SW<br>
+        <br>
+        File: 161526SW.BIN<br>
+        Identification: Apricot PN161526SW Bootblock Version 1.00.09<br>
+        <br>
+        File: 162424SW.BIN<br>
+        Identification: Apricot PN162424SW Bootblock Version 1.00.10</font></p>
+        <p><strong><font size="2">Changes from Last Release </font></strong><ul>
+          <li><font size="2">Main BIOS Release 12.00.08</font></li>
+          <li><font size="2">Corporate Bootblock 1.00.10</font></li>
+        </ul>
+        <p><strong><font size="2">Notes</font></strong></p>
+        <p><font size="2">If the Revision A BIOS is blown into a Revision B or later board, memory
+        will not be found as the SPD information is incorrect. A beep code will follow and the
+        Port80 card will read 28. This can be corrected by inserting the correct Recovery disk for
+        this motherboard and recovering.</font></p>
+        <p><font size="2">&nbsp;</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>15</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">15/10/97</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This disk is a collection of utilities
+        and the binary images required to update all the Flash-based firmware on Lightning. It is
+        primarily intended for use by Apricot by which BIOS updates are released from R&amp;D for
+        distribution to the field. </font><p><strong><font size="2">Contents</font></strong></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">File</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Description</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Version</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><p align="center"><strong><font size="2">Part num</font></strong></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">160601SW.BIN</font></td>
+<td valign="top"><font size="2">Main BIOS release</font></td>
+<td valign="top"><font size="2">12.00.09</font></td>
+<td valign="top"><p align="center"><font size="2">160601SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161479SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) NTSC TV Video binary &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.06</font></td>
+<td valign="top"><p align="center"><font size="2">161479SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161531SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) PAL TV Video binary &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.01</font></td>
+<td valign="top"><p align="center"><font size="2">161531SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161526SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Consumer Crystal PnP Info.
+            - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.09</font></td>
+<td valign="top"><p align="center"><font size="2">161526SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">162424SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Corporate Crystal PnP
+            Info. - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.10</font></td>
+<td valign="top"><p align="center"><font size="2">162424SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPNAF.COM</font></td>
+<td valign="top"><font size="2">To signal a failure of recovery process a tone is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPOK.COM</font></td>
+<td valign="top"><font size="2">To signal a end of recovery process a short series of
+            tones is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">0.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to reset machine</font></td>
+<td valign="top"></td>
+<td valign="top"></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">1.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">2.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main BIOS</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">3.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">C.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add corporate PNP CS2436 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">B.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add consumer PNP CS4237 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">REC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">VREC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">OFF.exe</font></td>
+<td valign="top"><font size="2">Utility to switch off Machine (Not recovery mode)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">TEMPV.BIN</font></td>
+<td valign="top"><font size="2">Temp copy of Video Binary</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB???.BIN</font></td>
+<td valign="top"><font size="2">TEMP Boot block binaries</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CNV.EXE</font></td>
+<td valign="top"><font size="2">Utility used by merge.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by b.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CORP.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by c.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">RECMODE.EXE</font></td>
+<td valign="top"><font size="2">To check if we are in recovery or update mode used in
+            autoexec.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AUTOEXEC.BAT</font></td>
+<td valign="top"><font size="2">Used to automate recovery process</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AFLASH.EXE</font></td>
+<td valign="top"><font size="2">Flash programming utility used by autoexec.bat</font></td>
+<td valign="top"><font size="2">1.00.20</font></td>
+<td valign="top"><p align="center"><font size="2">not released</font></td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top"></td>
+<td valign="top"></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Operation</font></strong></p>
+        <p><font size="2">As mentioned above there are two potential users of the disk, engineers
+        or possibly end-users in the field. They should simply boot from it, the rest of the
+        process is automated. There are two ways the disk will operate </font><ol>
+          <li><font size="2">As a BIOS recovery disk if the firmware is somehow corrupted so that the
+            machine will not boot to the DOS prompt. To do this the floppy must be in the drive and
+            the power removed so that AC is disconnected.</font></li>
+        </ol>
+        <ol start="2">
+          <li><font size="2">As a firmware upgrade disk to upgrade to a later or earlier version of
+            the BIOS. This mode of operation will only work if the floppy is not inserted until video
+            is displayed otherwise method 1 will prevail.</font></li>
+        </ol>
+        <p><font size="2">The Screen should display after DOS has loaded :-<br>
+        Apricot Computers Ltd. Copyright 1997<br>
+        Lightning Firmware Upgrade Disk (PN 160578)<br>
+        Release: 15 (10/10/97)<br>
+        Recovery Code is version 1.00.XX<br>
+        <br>
+        Getting Environment variables</font><ol>
+          <li><ol>
+              <li><font size="2">Update Main BIOS and Video BIOS</font></li>
+              <li><font size="2">Update Main BIOS.</font></li>
+              <li><font size="2">Update Video BIOS.<br>
+                <br>
+                </font></li>
+            </ol>
+          </li>
+          <li><ol>
+              <li><font size="2">Reset Machine</font></li>
+            </ol>
+          </li>
+        </ol>
+        <ol type="A" start="2">
+          <li><ol type="A">
+              <li><font size="2">Update Bootblock. (Consumer 161526SW - CS4237)</font></li>
+              <li value="1"><font size="2">Update Bootblock. (Corporate 162424SW - CS4236)</font></li>
+            </ol>
+          </li>
+        </ol>
+        <p><font size="2">The difference between 1) and 2) is that 1) will have no video and the
+        user must wait until the machine beeps a tune 2) the user will be informed via on screen
+        messages when the process is complete. Note: For this Release 2) will just boot to DOS
+        mode and initiate a menu system.</font></p>
+        <p><font size="2">Below is a list for Error codes for 1)</font></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><font size="2">Port 80 Code</font></td>
+<td valign="top" bgcolor="#CCCCCC"><font size="2">Meaning</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E2</font></td>
+<td valign="top"><font size="2">Chipset Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E3</font></td>
+<td valign="top"><font size="2">Refresh Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E4</font></td>
+<td valign="top"><font size="2">Check for Forced Recovery</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E5</font></td>
+<td valign="top"><font size="2">Check HW state of ROM</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E6</font></td>
+<td valign="top"><font size="2">BIOS is Okay</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E7</font></td>
+<td valign="top"><font size="2">RAM Test</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E8</font></td>
+<td valign="top"><font size="2">OEM Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E9</font></td>
+<td valign="top"><font size="2">Interrupt Controller Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EA</font></td>
+<td valign="top"><font size="2">Reading BootStrap Code</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EB</font></td>
+<td valign="top"><font size="2">Initialise all Vectors</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EC</font></td>
+<td valign="top"><font size="2">Boot the Flash Program</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">ED</font></td>
+<td valign="top"><font size="2">Initialise the Boot Device</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EE</font></td>
+<td valign="top"><font size="2">Boot Code was read Okay</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EF</font></td>
+<td valign="top"><font size="2">CPU Initialisation</font></td>
+</tr>
+        </table>
+        <p><font size="2">Once the recovery process has booted AFLASH.EXE will run to start
+        programming the new BIOS. Please refer to the Latest AFLASH.EXE release notes for Further
+        Port 80 codes.</font></p>
+        <p><strong><font size="2">What string</font></strong></p>
+        <p><font size="2">File: AFLASH.EXE <br>
+        Identification: Flash Programming Utility, Version 1.00.20, 24th September 1997<br>
+        <br>
+        File: 161479SW.BIN <br>
+        Identification: ATI Rage Pro Video BIOS (AGP - NTSC TV out - 100/75.0Mhz) v3.076<br>
+        Part Number 161479SW<br>
+        Version Number 1.00.06<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 161531SW.BIN <br>
+        Identification: ATI Rage Pro Video BIOS (AGP - PAL TV out - 100/75.0Mhz) v3.076<br>
+        Part Number 161531W<br>
+        Version Number 1.00.01<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 160601SW.BIN <br>
+        Apricot BIOS Version 12.00.09, 10th October 1997<br>
+        Part Number 160601SW<br>
+        <br>
+        File: 161526SW.BIN<br>
+        Identification: Apricot PN161526SW Bootblock Version 1.00.09<br>
+        <br>
+        File: 162424SW.BIN<br>
+        Identification: Apricot PN162424SW Bootblock Version 1.00.10</font></p>
+        <p><strong><font size="2">Changes from Last Release </font></strong><ul>
+          <li><font size="2">Main BIOS Release 12.00.09</font></li>
+          <li><font size="2">Corporate Bootblock 1.00.10</font></li>
+        </ul>
+        <p><strong><font size="2">Notes</font></strong></p>
+        <p><font size="2">If the Revision A BIOS is blown into a Revision B or later board, memory
+        will not be found as the SPD information is incorrect. A beep code will follow and the
+        Port80 card will read 28. This can be corrected by inserting the correct Recovery disk for
+        this motherboard and recovering.</font></p>
+        <p><font size="2">&nbsp;</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>16</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">15/10/97</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">This disk is a collection of utilities
+        and the binary images required to update all the Flash-based firmware on Lightning. It is
+        primarily intended for use by Apricot by which BIOS updates are released from R&amp;D for
+        distribution to the field. </font><p><strong><font size="2">Contents</font></strong></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">File</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Description</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Version</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><p align="center"><strong><font size="2">Part num</font></strong></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">160601SW.BIN</font></td>
+<td valign="top"><font size="2">Main BIOS release</font></td>
+<td valign="top"><font size="2">12.00</font></td>
+<td valign="top"><p align="center"><font size="2">160601SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161479SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) NTSC TV Video binary. &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.06</font></td>
+<td valign="top"><p align="center"><font size="2">161479SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161531SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) PAL TV Video binary. &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.01</font></td>
+<td valign="top"><p align="center"><font size="2">161531SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161532SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) NO TV Video binary. &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.01</font></td>
+<td valign="top"><p align="center"><font size="2">161532SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161526SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Consumer Crystal PnP Info.
+            - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.09</font></td>
+<td valign="top"><p align="center"><font size="2">161526SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">162424SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Corporate Crystal PnP
+            Info. - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.10</font></td>
+<td valign="top"><p align="center"><font size="2">162424SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPNAF.COM</font></td>
+<td valign="top"><font size="2">To signal a failure of recovery process a tone is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPOK.COM</font></td>
+<td valign="top"><font size="2">To signal a end of recovery process a short series of
+            tones is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">0.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to reset machine</font></td>
+<td valign="top"></td>
+<td valign="top"></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">1.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">2.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main BIOS</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">3.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">C.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add corporate PNP CS2436 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">B.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add consumer UK PNP CS4237 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">J.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add consumer Japan PNP CS4237 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">REC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">VREC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">OFF.exe</font></td>
+<td valign="top"><font size="2">Utility to switch off Machine (Not recovery mode)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">TEMPV.BIN</font></td>
+<td valign="top"><font size="2">Temp copy of Video Binary</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB???.BIN</font></td>
+<td valign="top"><font size="2">TEMP Boot block binaries</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CNV.EXE</font></td>
+<td valign="top"><font size="2">Utility used by merge.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CONSUK.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by b.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CONSJP.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by j.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CORP.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by c.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">RECMODE.EXE</font></td>
+<td valign="top"><font size="2">To check if we are in recovery or update mode used in
+            autoexec.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AUTOEXEC.BAT</font></td>
+<td valign="top"><font size="2">Used to automate recovery process</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AFLASH.EXE</font></td>
+<td valign="top"><font size="2">Flash programming utility used by autoexec.bat</font></td>
+<td valign="top"><font size="2">1.00.20</font></td>
+<td valign="top"><p align="center"><font size="2">not released</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BUSTCMOS.COM</font></td>
+<td valign="top"><font size="2">To ensure that new defaults are loaded following BIOS
+            update</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">160601SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161479SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161531SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161532SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161526SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">162424SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">GETPARTS.EXE</font></td>
+<td valign="top"><font size="2">Utility to obtain part numbers from bootblock</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Operation</font></strong></p>
+        <p><font size="2">As mentioned above there are two potential users of the disk, engineers
+        or possibly end-users in the field. They should simply boot from the disk, the rest of the
+        process is automated. There are two ways the disk will operate </font><ol>
+          <li><font size="2">As a BIOS recovery disk if the firmware is somehow corrupted so that the
+            machine will not boot to the DOS prompt. To do this the floppy must be in the drive and
+            the power removed so that AC is disconnected.</font></li>
+        </ol>
+        <ol start="2">
+          <li><font size="2">As a firmware upgrade disk to upgrade to a later or earlier version of
+            the BIOS. This mode of operation will only work if the floppy is not inserted until video
+            is displayed otherwise method 1 will prevail.</font></li>
+        </ol>
+        <p><font size="2">The difference between 1) and 2) is that 1) will have no video and the
+        user must wait until the machine beeps a tune and in 2) the user will be informed via on
+        screen messages when the process is complete. </font></p>
+        <p><font size="2"><strong>Note</strong>: For this Release 2) will just boot to DOS mode
+        and initiate a menu system. The screen display after DOS has loaded should be as follows:-<br>
+        Apricot Computers Ltd. Copyright 1997<br>
+        Lightning Firmware Upgrade Disk (PN 160578)<br>
+        Release: 16 (10/10/97)<br>
+        Recovery Code is version 1.00.XX<br>
+        <br>
+        Getting Environment variables<br>
+        1) Update Main BIOS and Video BIOS<br>
+        2) Update Main BIOS.<br>
+        3) Update Video BIOS.<br>
+        0) Reset Machine<br>
+        B) Update Bootblock (Consumer, UK, 161526SW - CS4237).<br>
+        J) Update Bootblock (Consumer, Japan, 161526SW - CS4237).<br>
+        C) Update Bootblock (Corporate, 162424SW - CS4236).<br>
+        <br>
+        This release will check the existing bootblock for part numbers. If part numbers do not
+        exist then the following menu will be displayed:-<br>
+        <br>
+        Apricot Computers Ltd. Copyright 1997<br>
+        Lightning Firmware Upgrade Disk (PN 160578)<br>
+        Release: 16 (10/10/97)<br>
+        Recovery Code is version 1.00.XX<br>
+        <br>
+        Getting Environment variables<br>
+        One or more part numbers are missing from the bootblock.<br>
+        It is recommended that the bootblock is updated<br>
+        before the main BIOS or video BIOS.<br>
+        <br>
+        0) Reset Machine<br>
+        B) Update Bootblock (Consumer, UK, 161526SW - CS4237).<br>
+        J) Update Bootblock (Consumer, Japan, 161526SW - CS4237).<br>
+        C) Update Bootblock (Corporate, 162424SW - CS4236).<br>
+        <br>
+        The appropriate selection should then be used to update the bootblock to include correct
+        part numbers. This will ensure that the correct video BIOS is used in future updates.
+        After the bootblock has been updated the first menu will be displayed to allow update of
+        the main and/or video BIOS.</font></p>
+        <p><font size="2">Below is a list of Port 80 error codes for 1)</font></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Port 80 Code</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Meaning</font></strong></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E2</font></td>
+<td valign="top"><font size="2">Chipset Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E3</font></td>
+<td valign="top"><font size="2">Refresh Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E4</font></td>
+<td valign="top"><font size="2">Check for Forced Recovery</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E5</font></td>
+<td valign="top"><font size="2">Check HW state of ROM</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E6</font></td>
+<td valign="top"><font size="2">BIOS is Okay</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E7</font></td>
+<td valign="top"><font size="2">RAM Test</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E8</font></td>
+<td valign="top"><font size="2">OEM Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E9</font></td>
+<td valign="top"><font size="2">Interrupt Controller Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EA</font></td>
+<td valign="top"><font size="2">Reading BootStrap Code</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EB</font></td>
+<td valign="top"><font size="2">Initialise all Vectors</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EC</font></td>
+<td valign="top"><font size="2">Boot the Flash Program</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">ED</font></td>
+<td valign="top"><font size="2">Initialise the Boot Device</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EE</font></td>
+<td valign="top"><font size="2">Boot Code was read Okay</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EF</font></td>
+<td valign="top"><font size="2">CPU Initialisation</font></td>
+</tr>
+        </table>
+        <p><font size="2">Once the recovery process has booted AFLASH.EXE will run to start
+        programming the new BIOS. Please refer to the latest AFLASH.EXE release notes for further
+        Port 80 codes.</font></p>
+        <p><font size="2"><strong>What strings</strong><br>
+        <br>
+        File: AFLASH.EXE <br>
+        Identification: Flash Programming Utility, Version 1.00.20, 24th September 1997<br>
+        <br>
+        File: 160601sw.bin 10-10-1997 18:27:36 245760 bytes<br>
+        Checksum: 89C2<br>
+        Identification: Apricot BIOS Version 12.00, 10th October 1997<br>
+        Part Number 160601SW<br>
+        <br>
+        File: 161479sw.bin 18-09-1997 09:34:04 50176 bytes<br>
+        Checksum: 0000<br>
+        Identification: ATI Rage Pro Video BIOS (AGP - NTSC TV - 100/75.0Mhz) v3.076<br>
+        Part Number 161479SW<br>
+        Version Number 1.00.06<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 161531sw.bin 26-09-1997 12:43:54 50176 bytes<br>
+        Checksum: 3200<br>
+        Identification: ATI Rage Pro Video BIOS (AGP - PAL TV - 100/75.0Mhz) v3.076<br>
+        Part Number 161531SW<br>
+        Version Number 1.00.01<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 161532sw.bin 03-10-1997 15:44:52 50176 bytes<br>
+        Checksum: 8100<br>
+        Identification: ATI Rage Pro Video BIOS (NO TV 100/75.0Mhz) v3.076<br>
+        Part Number 161532SW<br>
+        Version Number 1.00.01<br>
+        Length of Video Binary 32 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 162424sw.bin 02-10-1997 10:18:08 16384 bytes<br>
+        Checksum: 5026<br>
+        Identification: Apricot PN162424SW Bootblock Version 1.00.10<br>
+        <br>
+        File: 161526sw.bin 16-09-1997 13:14:06 16384 bytes<br>
+        Checksum: 49FA<br>
+        Identification: Apricot PN161526SW Bootblock Version 1.00.09<br>
+        <br>
+        <strong>Changes from Last Release </strong></font><ul>
+          <li><font size="2">Main BIOS, Release 12.00</font></li>
+          <li><font size="2">Video BIOS NO TV for corporate builds, Release 1.00.01</font></li>
+          <li><font size="2">Update of part numbers in bootblock</font></li>
+        </ul>
+        <p><strong><font size="2">Known Omissions</font></strong><ul>
+          <li><font size="2">Does not support Micron flash devices.</font></li>
+          <li><font size="2">Does not support Revision A motherboards.</font></li>
+        </ul>
+        <p><font size="2">&nbsp;</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>17</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">17/10/97</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">The main BIOS needs updating from
+        Release 16. If changing from a different release, update the video, bootblock and main
+        BIOS.<br>
+        Main BIOS 12.01.01 Updated for Micron<br>
+        Consumer BootBlock 1.00.09<br>
+        Corporate BootBlock 1.00.10<br>
+        <br>
+        This disk is a collection of utilities and the binary images required to update all the
+        Flash-based firmware on Lightning. It is primarily intended for use by Apricot by which
+        BIOS updates are released from R&amp;D for distribution to the field. </font><p><strong><font
+        size="2">Contents</font></strong></p>
+        <table border="0" cellpadding="2" bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">File</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Description</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Version</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><p align="center"><strong><font size="2">Part num</font></strong></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">160601SW.BIN</font></td>
+<td valign="top"><font size="2">Main BIOS release</font></td>
+<td valign="top"><font size="2">12.01.01</font></td>
+<td valign="top"><p align="center"><font size="2">160601SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161479SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) NTSC TV Video binary. &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.06</font></td>
+<td valign="top"><p align="center"><font size="2">161479SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161531SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) PAL TV Video binary. &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.01</font></td>
+<td valign="top"><p align="center"><font size="2">161531SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161532SW.BIN</font></td>
+<td valign="top"><font size="2">AGP RAGE PRO (100/75 Mhz) NO TV Video binary. &#145;This
+            can be updated on its own to blow a different video binary into the machine without a
+            MAIN.BIN update&#146;</font></td>
+<td valign="top"><font size="2">v3.076</font><p><font size="2">Apricot rev1.00.01</font></td>
+<td valign="top"><p align="center"><font size="2">161532SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161526SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Consumer Crystal PnP Info.
+            - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.09</font></td>
+<td valign="top"><p align="center"><font size="2">161526SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">162424SW.BIN</font></td>
+<td valign="top"><font size="2">Boot Block recovery code : With Corporate Crystal PnP
+            Info. - These are only for development.</font></td>
+<td valign="top"><font size="2">1.00.10</font></td>
+<td valign="top"><p align="center"><font size="2">162424SW</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPNAF.COM</font></td>
+<td valign="top"><font size="2">To signal a failure of recovery process a tone is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BEEPOK.COM</font></td>
+<td valign="top"><font size="2">To signal a end of recovery process a short series of
+            tones is played</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">0.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to reset machine</font></td>
+<td valign="top"></td>
+<td valign="top"></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">1.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">2.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Main BIOS</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">3.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to update Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">C.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add corporate PNP CS2436 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">B.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add consumer UK PNP CS4237 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">J.BAT</font></td>
+<td valign="top"><font size="2">Bat file used to preserve the header of the bootblok and
+            add consumer Japan PNP CS4237 info.</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">REC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Main &amp; Video Bios</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">VREC.BAT</font></td>
+<td valign="top"><font size="2">Bat file used for recovering Video BIOS (NTSC)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">OFF.exe</font></td>
+<td valign="top"><font size="2">Utility to switch off Machine (Not recovery mode)</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">TEMPV.BIN</font></td>
+<td valign="top"><font size="2">Temp copy of Video Binary</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BB???.BIN</font></td>
+<td valign="top"><font size="2">TEMP Boot block binaries</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CNV.EXE</font></td>
+<td valign="top"><font size="2">Utility used by merge.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CONSUK.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by b.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CONSJP.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by j.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">CORP.CNV</font></td>
+<td valign="top"><font size="2">Convert file used by c.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">RECMODE.EXE</font></td>
+<td valign="top"><font size="2">To check if we are in recovery or update mode used in
+            autoexec.bat</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AUTOEXEC.BAT</font></td>
+<td valign="top"><font size="2">Used to automate recovery process</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">AFLASH.EXE</font></td>
+<td valign="top"><font size="2">Flash programming utility used by autoexec.bat</font></td>
+<td valign="top"><font size="2">1.00.20</font></td>
+<td valign="top"><p align="center"><font size="2">not released</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">BUSTCMOS.COM</font></td>
+<td valign="top"><font size="2">To ensure that new defaults are loaded following BIOS
+            update</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">160601SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161479SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161531SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161532SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">161526SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">162424SW.PRT</font></td>
+<td valign="top"><font size="2">Part number file</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">GETPARTS.EXE</font></td>
+<td valign="top"><font size="2">Utility to obtain part numbers from bootblock</font></td>
+<td valign="top"><font size="2">None</font></td>
+<td valign="top"><p align="center"><font size="2">None</font></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Operation</font></strong></p>
+        <p><font size="2">As mentioned above there are two potential users of the disk, engineers
+        or possibly end-users in the field. They should simply boot from the disk, the rest of the
+        process is automated. There are two ways the disk will operate </font><ol>
+          <li><font size="2">As a BIOS recovery disk if the firmware is somehow corrupted so that the
+            machine will not boot to the DOS prompt. To do this the floppy must be in the drive and
+            the power removed so that AC is disconnected.</font></li>
+        </ol>
+        <ol start="2">
+          <li><font size="2">As a firmware upgrade disk to upgrade to a later or earlier version of
+            the BIOS. This mode of operation will only work if the floppy is not inserted until video
+            is displayed otherwise method 1 will prevail.</font></li>
+        </ol>
+        <p><font size="2">The difference between 1) and 2) is that 1) will have no video and the
+        user must wait until the machine beeps a tune and in 2) the user will be informed via on
+        screen messages when the process is complete. </font></p>
+        <p><font size="2">Note: For this Release 2) will just boot to DOS mode and initiate a menu
+        system. The screen display after DOS has loaded should be as follows:-<br>
+        Apricot Computers Ltd. Copyright 1997<br>
+        Lightning Firmware Upgrade Disk (PN 160578)<br>
+        Release: 17 (16/10/97)<br>
+        Recovery Code is version 1.00.XX<br>
+        <br>
+        Getting Environment variables<br>
+        1) Update Main BIOS and Video BIOS<br>
+        2) Update Main BIOS.<br>
+        3) Update Video BIOS.<br>
+        0) Reset Machine<br>
+        B) Update Bootblock (Consumer, UK, 161526SW - CS4237).<br>
+        J) Update Bootblock (Consumer, Japan, 161526SW - CS4237).<br>
+        C) Update Bootblock (Corporate, 162424SW - CS4236).<br>
+        <br>
+        This release will check the existing bootblock for part numbers. If part numbers do not
+        exist then the following menu will be displayed:-<br>
+        <br>
+        Apricot Computers Ltd. Copyright 1997<br>
+        Lightning Firmware Upgrade Disk (PN 160578)<br>
+        Release: 17 (16/10/97)<br>
+        Recovery Code is version 1.00.XX<br>
+        <br>
+        Getting Environment variables<br>
+        One or more part numbers are missing from the bootblock.<br>
+        It is recommended that the bootblock is updated<br>
+        before the main BIOS or video BIOS.<br>
+        0) Reset Machine<br>
+        B) Update Bootblock (Consumer, UK, 161526SW - CS4237).<br>
+        J) Update Bootblock (Consumer, Japan, 161526SW - CS4237).<br>
+        C) Update Bootblock (Corporate, 162424SW - CS4236).<br>
+        <br>
+        The appropriate selection should then be used to update the bootblock to include correct
+        part numbers. This will ensure that the correct video BIOS is used in future updates.
+        After the bootblock has been updated the first menu will be displayed to allow update of
+        the main and/or video BIOS.</font></p>
+        <p><font size="2">Below is a list of Port 80 error codes for 1)</font></p>
+        <table border="0" cellpadding="2" width="100%" bordercolor="#000000">
+<tr>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Port 80 Code</font></strong></td>
+<td valign="top" bgcolor="#CCCCCC"><strong><font size="2">Meaning</font></strong></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E2</font></td>
+<td valign="top"><font size="2">Chipset Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E3</font></td>
+<td valign="top"><font size="2">Refresh Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E4</font></td>
+<td valign="top"><font size="2">Check for Forced Recovery</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E5</font></td>
+<td valign="top"><font size="2">Check HW state of ROM</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E6</font></td>
+<td valign="top"><font size="2">BIOS is Okay</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E7</font></td>
+<td valign="top"><font size="2">RAM Test</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E8</font></td>
+<td valign="top"><font size="2">OEM Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">E9</font></td>
+<td valign="top"><font size="2">Interrupt Controller Initialisation</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EA</font></td>
+<td valign="top"><font size="2">Reading BootStrap Code</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EB</font></td>
+<td valign="top"><font size="2">Initialise all Vectors</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EC</font></td>
+<td valign="top"><font size="2">Boot the Flash Program</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">ED</font></td>
+<td valign="top"><font size="2">Initialise the Boot Device</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EE</font></td>
+<td valign="top"><font size="2">Boot Code was read Okay</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">EF</font></td>
+<td valign="top"><font size="2">CPU Initialisation</font></td>
+</tr>
+        </table>
+        <p><font size="2">Once the recovery process has booted AFLASH.EXE will run to start
+        programming the new BIOS. Please refer to the latest AFLASH.EXE release notes for further
+        Port 80 codes.</font></p>
+        <p><font size="2"><strong>What strings</strong><br>
+        <br>
+        File: AFLASH.EXE <br>
+        Identification: Flash Programming Utility, Version 1.00.20, 24th September 1997<br>
+        <br>
+        File: 160601sw.bin <br>
+        Checksum: F0B2<br>
+        Identification: Apricot BIOS Version 12.01.01, 16th October 1997<br>
+        Part Number 160601SW<br>
+        <br>
+        File: 161479sw.bin 18-09-1997 09:34:04 50176 bytes<br>
+        Checksum: 0000<br>
+        Identification: ATI Rage Pro Video BIOS (AGP - NTSC TV - 100/75.0Mhz) v3.076<br>
+        Part Number 161479SW<br>
+        Version Number 1.00.06<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 161531sw.bin 26-09-1997 12:43:54 50176 bytes<br>
+        Checksum: 3200<br>
+        Identification: ATI Rage Pro Video BIOS (AGP - PAL TV - 100/75.0Mhz) v3.076<br>
+        Part Number 161531SW<br>
+        Version Number 1.00.01<br>
+        Length of Video Binary 48 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 161532sw.bin 03-10-1997 15:44:52 50176 bytes<br>
+        Checksum: 8100<br>
+        Identification: ATI Rage Pro Video BIOS (NO TV 100/75.0Mhz) v3.076<br>
+        Part Number 161532SW<br>
+        Version Number 1.00.01<br>
+        Length of Video Binary 32 kB<br>
+        Length of area reserved for Video Binary 48 kB<br>
+        <br>
+        File: 162424sw.bin 02-10-1997 10:18:08 16384 bytes<br>
+        Checksum: 5026<br>
+        Identification: Apricot PN162424SW Bootblock Version 1.00.10<br>
+        <br>
+        File: 161526sw.bin 16-09-1997 13:14:06 16384 bytes<br>
+        Checksum: 49FA<br>
+        Identification: Apricot PN161526SW Bootblock Version 1.00.09</font></p>
+        <p><strong><font size="2">Changes from Last Release </font></strong><ul>
+          <li><font size="2">Main BIOS, Release 12.01.01</font></li>
+        </ul>
+        <blockquote>
+          <blockquote>
+          </blockquote>
+        </blockquote>
+        <p><strong><font size="2">Known Omissions</font></strong><ul>
+          <li><font size="2">Does not support Revision A motherboards.</font></li>
+        </ul>
+        <p><font size="2">&nbsp;</font></td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>12.01<br>
+        Release<br>
+        <br>
+        Checksum:<br>
+        <br>
+        PN 160601SW</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">10/11/97<br>
+        <br>
+        <br>
+        6FC3</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Sign on: Apricot BIOS Version 12.01, 4th
+        November 1997.</font><p><strong><font size="2">Programming</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td><font size="2">Target device:</font></td>
+<td><font size="2">Alliance AS29F002T / Micron MT28F002T</font></td>
+</tr>
+<tr>
+<td><font size="2">Utility:</font></td>
+<td><font size="2">AFLASH on update disk ( normally an automated process)</font></td>
+</tr>
+<tr>
+<td><font size="2">Command&nbsp;line:</font></td>
+<td><font size="2">AFALSH -w -m -f:160601SW.BIN</font></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Changes since 12.01.03</font></strong><ul>
+          <li><font size="2">Version sign on only.</font></li>
+        </ul>
+        <p><strong><font size="2">Known problems</font></strong></p>
+        <p><strong><font size="2">Known omissions</font></strong></p>
+        <p><strong><font size="2">What string</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="1">
+<tr>
+<td><font size="2">File:</font></td>
+<td><font size="2">160601sw.bin 04-11-97 14:22:56 245760 bytes</font></td>
+</tr>
+<tr>
+<td><font size="2">Checksum:</font></td>
+<td><font size="2">6FC3</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Identification:</font></td>
+<td><font size="2">Apricot BIOS Version 12.01, 4th November 1997<br>
+            Part Number 160601SW</font><p><font size="2">&nbsp;</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>12.03<br>
+        Release<br>
+        <br>
+        Checksum:<br>
+        <br>
+        PN 160601SW</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">22/01/98<br>
+        <br>
+        <br>
+        1B28</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Sign on: Apricot BIOS Version 12.03,
+        20th January 1998.</font><p><strong><font size="2">Programming</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td><font size="2">Target device:</font></td>
+<td><font size="2">Alliance AS29F002T / Micron MT28F002T</font></td>
+</tr>
+<tr>
+<td><font size="2">Utility:</font></td>
+<td><font size="2">AFLASH on update disk ( normally an automated process)</font></td>
+</tr>
+<tr>
+<td><font size="2">Command&nbsp;line:</font></td>
+<td><font size="2">AFALSH -w -m -f:160601SW.BIN</font></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Changes since 12.03.01</font></strong><ul>
+          <li><font size="2">Version sign on.</font></li>
+          <li><font size="2">Keyboardless operation now default for manufacturing &amp; Normal Boot.</font></li>
+          <li><font size="2">SMBIOS now reports max CPU Speed as 333MHz.</font></li>
+        </ul>
+        <p><strong><font size="2">What string</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="1">
+<tr>
+<td><font size="2">File:</font></td>
+<td><font size="2">160601sw.bin 20-01-1998 09:23:44 245760 bytes</font></td>
+</tr>
+<tr>
+<td><font size="2">Checksum:</font></td>
+<td><font size="2">1B28</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Identification:</font></td>
+<td><font size="2">Apricot BIOS Version 12.03, 20th January 1998<br>
+            Part Number 160601SW</font><p><font size="2">&nbsp;</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>12.04<br>
+        Release<br>
+        <br>
+        Checksum:<br>
+        <br>
+        PN 160601SW</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">23/03/98<br>
+        <br>
+        <br>
+        A84B</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Sign on: Apricot BIOS Version 12.04,
+        20th March 1998.</font><p><strong><font size="2">Programming</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td><font size="2">Target device:</font></td>
+<td><font size="2">Alliance AS29F002T / Micron MT28F002T</font></td>
+</tr>
+<tr>
+<td><font size="2">Utility:</font></td>
+<td><font size="2">AFLASH on update disk ( normally an automated process)</font></td>
+</tr>
+<tr>
+<td><font size="2">Command&nbsp;line:</font></td>
+<td><font size="2">AFALSH -w -m -f:160601SW.BIN</font></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Changes since 12.04.01</font></strong><ul>
+          <li><font size="2">Version sign on.</font></li>
+        </ul>
+        <p><strong><font size="2">What string</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="1">
+<tr>
+<td><font size="2">File:</font></td>
+<td><font size="2">160601sw.bin 20-03-1998 12:19 245760 bytes</font></td>
+</tr>
+<tr>
+<td><font size="2">Checksum:</font></td>
+<td><font size="2">A84B</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Identification:</font></td>
+<td><font size="2">Apricot BIOS Version 12.04, 20th March 1998<br>
+            Part Number 160601SW</font><p><font size="2">&nbsp;</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>12.05.01<br>
+        BETA<br>
+        <br>
+        Checksum:<br>
+        <br>
+        PN 160601SW</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">21/04/98<br>
+        <br>
+        <br>
+        64F6</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Sign on: Apricot BIOS Version 12.05.01,
+        20th April 1998.</font><p><strong><font size="2">Programming</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td><font size="2">Target device:</font></td>
+<td><font size="2">Alliance AS29F002T / Micron MT28F002T</font></td>
+</tr>
+<tr>
+<td><font size="2">Utility:</font></td>
+<td><font size="2">AFLASH on update disk ( normally an automated process)</font></td>
+</tr>
+<tr>
+<td><font size="2">Command&nbsp;line:</font></td>
+<td><font size="2">AFALSH -w -m -f:160601SW.BIN</font></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Changes since 12.04</font></strong><ul>
+          <li><font size="2">Version sign on.</font></li>
+          <li><font size="2">Added support for turning off L2 Cache ECC checking.</font></li>
+          <li><font size="2">Added microcod update patch 27 for A0 Deschutes (and Celeron).</font></li>
+          <li><font size="2">Modified post sequence so that L2 Cache detection/sizing happens after
+            microcode update (as per Intel specification).</font></li>
+          <li><font size="2">Modified cache initialisation to support Celeron.</font></li>
+          <li><font size="2">Modified cache initialisation to respect Cache Disable in Setup.</font></li>
+        </ul>
+        <p><strong><font size="2">What string</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="1">
+<tr>
+<td><font size="2">File:</font></td>
+<td><font size="2">160601sw.bin 20-04-1998 13:32:24 245760 bytes</font></td>
+</tr>
+<tr>
+<td><font size="2">Checksum:</font></td>
+<td><font size="2">64F6</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Identification:</font></td>
+<td><font size="2">Apricot BIOS Version 12.05.01, 20th April 1998<br>
+            Part Number 160601SW</font><p><font size="2">&nbsp;</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>12.05.02<br>
+        BETA<br>
+        <br>
+        Checksum:<br>
+        <br>
+        PN 160601SW</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">13/05/98<br>
+        <br>
+        <br>
+        64F6</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Applies to Revision B Boards and Later
+        Only, Pentium II and Celeron Procesors.</font><p><font size="2">Sign on: Apricot BIOS
+        Version 12.05.02, 12th May 1998.</font></p>
+        <p><strong><font size="2">Programming</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td><font size="2">Target device:</font></td>
+<td><font size="2">Alliance AS29F002T / Micron MT28F002T</font></td>
+</tr>
+<tr>
+<td><font size="2">Utility:</font></td>
+<td><font size="2">AFLASH on update disk ( normally an automated process)</font></td>
+</tr>
+<tr>
+<td><font size="2">Command&nbsp;line:</font></td>
+<td><font size="2">AFALSH -w -m -f:160601SW.BIN</font></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Changes</font></strong><ul>
+          <li><font size="2">Version sign on.</font></li>
+          <li><font size="2">Added fix for IPR 010287 - Unable to FDISK HDD after system branded.</font></li>
+          <li><font size="2">Added fix for IPR 010282 - HCT Test Failure : Int 13 Extensions.</font></li>
+          <li><font size="2">Added fix for IPR 010280 - Microsoft HCT 7.5 - Unreported memory failure.</font></li>
+          <li><font size="2">Added fix for IPR 010278 - Disabling Memory Cache does not have any
+            effect on Celeron.</font></li>
+          <li><font size="2">Added fix for IPR 010261 - Windows Hanging with CD-ROM CDU711 when set to
+            UltraDMA in the BIOS.</font></li>
+          <li><font size="2">Added fix for IPR 010260 - BIOS does not auto detect UltraDMA mode in
+            CDU711 drive.</font></li>
+          <li><font size="2">Added fix for IPR 010249 - Printer Mode default ECP instead EPP.</font></li>
+          <li><font size="2">Added fix for IPR 004271 - so the system will obey the Win95
+            &quot;Wake-On-Ring&quot; setting in the Power Control Panel Applet.</font></li>
+          <li><font size="2">Added OEM enhancement request - Facility for HARD PSU to leave
+            &quot;...ready to turn off...&quot; message when shutting dowm Windows.</font></li>
+          <li><font size="2">Added OEM enhancement request - Some Danish/German characters where not
+            available for branding.</font></li>
+          <li><font size="2">Added MFG enhancement request - Fix problem in manufacturing mode were
+            COM Port Clashes with COM3 when modem in system.</font></li>
+          <li><font size="2">Added fix for problem where PCI Slot Number was not displayed when a PCI
+            Configuration Error was detected.</font></li>
+        </ul>
+        <p><strong><font size="2">What string</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="1">
+<tr>
+<td><font size="2">File:</font></td>
+<td><font size="2">160601sw.bin 12-05-1998 14:11:04 245760 bytes</font></td>
+</tr>
+<tr>
+<td><font size="2">Checksum:</font></td>
+<td><font size="2">9DC4</font></td>
+</tr>
+<tr>
+<td valign="top"><font size="2">Identification:</font></td>
+<td><font size="2">Apricot BIOS Version 12.05.02, 12th May 1998<br>
+            Part Number 160601SW</font><p><font size="2">&nbsp;</font></td>
+</tr>
+        </table>
+        </td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>12.05<br>
+        Release<br>
+        <br>
+        Checksum:<br>
+        <br>
+        PN 160601SW</strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2" color="#000000">09/06/98<br>
+        <br>
+        <br>
+        0B5D</font></td>
+<td valign="top" bgcolor="#EBEBEB"><font size="2">Sign on: Apricot BIOS Version 12.05.</font><p><strong><font
+        size="2">Programming</font></strong></p>
+        <table border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td><font size="2">Target device:</font></td>
+<td><font size="2">Alliance AS29F002T / Micron MT28F002T</font></td>
+</tr>
+<tr>
+<td><font size="2">Utility:</font></td>
+<td><font size="2">AFLASH on update disk ( normally an automated process)</font></td>
+</tr>
+<tr>
+<td><font size="2">Command&nbsp;line:</font></td>
+<td><font size="2">AFALSH -w -m -f:160601SW.BIN</font></td>
+</tr>
+        </table>
+        <p><strong><font size="2">Changes since 12.05.03</font></strong><ul>
+          <li><font size="2">Version sign on only.</font></li>
+        </ul>
+        <p>&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" bgcolor="#EBEBEB"><font size="2"><strong></strong></font></td>
+<td valign="top" bgcolor="#EBEBEB"></td>
+<td valign="top" bgcolor="#EBEBEB"></td>
+</tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

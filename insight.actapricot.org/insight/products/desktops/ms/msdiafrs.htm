@@ -1,0 +1,1583 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>'Diamond' ROM BIOS Summary</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><font size="2"><br>
+    </font><strong><font face="Arial,Helvetica" size="4" color="#D60029">'Diamond' ROM BIOS
+    Summary </font><font face="Arial,Helvetica" size="3" color="#D60029">(Rev1.17)</font></strong></h2>
+    <h2 align="center"><font size="2"><strong><a href="#5434">5434 BIOS</a> | <a href="#5436">5436 BIOS</a></strong></font></h2>
+    <p align="left"><font size="3"><strong><a name="5434"></a>5434 BIOS</strong></font></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td bgcolor="#D60029"><p align="left"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="left"><font size="2">16/5/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The PCI IDE timings have been corrected
+        to prevent problems encountered with floppy drive initialisation.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-05<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="left"><font size="2">7/6/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The IBM Surepath BIOS version number has
+        been corrected to 1.3, rather than 0.02.<br>
+        <br>
+        A basic version of the AIS manager has been included to allow certain diagnostic programs
+        to identify the motherboard type.<br>
+        <br>
+        IPR 1158 - The PCI video controller was not being programmed correctly resulting in
+        Windows failing to work with more than 16 colour video modes. This has now been resolved.<br>
+        <br>
+        IPR 1209 - Standard HDU CHS was being used all the time, resulting in drives greater than
+        504Mb not being used at full capacity. This has now been resolved.<br>
+        <br>
+        IPR 1150 - SIMM sizing was incorrect for certain SIMM combinations. This has now been
+        resolved.<br>
+        <br>
+        Video cards were not being detected, as our on-board video was always 'found' at C000.
+        This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-06<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><p align="left"><font size="2">28/6/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for mode-2 IDE drives has been
+        included (SETUP=COMPATIBLE), in addition to high performance mode-3 &amp; mode-4 drives
+        (SETUP-HIGH PERFORMANCE)<br>
+        <br>
+        Various IPRs concerned the 'loss' of CD-ROM drives following a warm boot. This has now
+        been resolved.<br>
+        <br>
+        ROM 'SETUP' had a menu for 'monitor timings'. This is now un-supported, and the menu has
+        been removed.<br>
+        <br>
+        IPR 1221 - ROM shadowing option for memory regions E8000h - EFFFFh not 'greyed out'. This
+        has been fixed.<br>
+        <br>
+        The 'alarm date' was in American date format. Now resolved.<br>
+        <br>
+        The IBM copyright and version number text was incorrect. This has now been resolved.<br>
+        <br>
+        IPR 1161 - Display font would change during POST. Resolved.<br>
+        <br>
+        If a monochrome video adapter was fitted, a colour video mode would still be selected on
+        exit from POST. This has now been fixed.<br>
+        <br>
+        IDE bus mastering is now enabled.<br>
+        <br>
+        APM functionality is now provided.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-07<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/7/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR1255 Adaptec AHA1542 BIOS did not
+        work at address C8000. This was caused by the memory region being shadowed by VPD. This
+        has now been resolved.<br>
+        <br>
+        IPR1242 FDU or HDU failures occurred if power management was enabled. This was caused by
+        the SMI handler corrupting MS-DOS memory regions and has now been resolved.<br>
+        <br>
+        The BIOS signed on as &#145;Xen PC&#146;. This has been changed to &#145;Apricot
+        BIOS&#146;.<br>
+        <br>
+        &#145;SETUP&#146; has been modified to handle our power management implementation.<br>
+        <br>
+        If CMOS was cleared, &#145;SETUP&#146; would be entered on every boot, reporting a
+        configuration mismatch. This has now been resolved.<br>
+        <br>
+        Monitor blanking did not work. This has now been implemented.<br>
+        <br>
+        HDU power-down did not work. This has now been implemented.<br>
+        <br>
+        The SMI handler was not installed if SMI was disabled. This would cause the
+        &#145;Standby&#146; switch and power management support to not function at all. This has
+        now been resolved.<br>
+        <br>
+        The SMI handler was powering down the CPU after a period of inactivity, even if SMI was
+        disabled. Also, if monitor power management was disabled, the monitor would not be turned
+        off when the &#145;Standby&#146; switch was pressed. These problems have now been
+        resolved.<br>
+        <br>
+        The &#145;SETUP&#146; system summary screen should now report &#145;Pentium
+        Overdrive&#146; when a P55CT is fitted. Please note that this has not been tested.<br>
+        <br>
+        The &#145;Standby&#146; LED would not be lit when in power saving mode. This has now been
+        implemented.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-08<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">17/7/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR1216 - resolved. The power-on
+        password will now be requested before 'SETUP' can be entered.<br>
+        <br>
+        IPR1318 - TES140 hangs. Now resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-09<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">31/7/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR11335 - Machine hangs if memory
+        sockets MM1 &amp; MM2 are empty, but MM3 &amp; MM4 are occupied. Modified SIMM detection
+        code resolves this issue.<br>
+        <br>
+        IPR1150 - Certain SIMM combinations were not sized correctly. This has now been fixed.<br>
+        <br>
+        EDO SIMMs are now supported.<br>
+        <br>
+        A potential problem could occur with SMIs being 'missed'. This has been resolved.<br>
+        <br>
+        Default setting for HDU translation was Standard CHS. This has been changed to Extended
+        CHS.<br>
+        <br>
+        The 'Standby' light was on when it should have been off. This has now been resolved.<br>
+        <br>
+        IPR1349 - 'SETUP' always reported the processor speed as 90 MHz. This has now been fixed.<br>
+        <br>
+        In 'Standby' mode the LED was constantly on. It now flashes, to be consistent with the
+        'home' machine.<br>
+        <br>
+        PnP support is now provided for the NS306 part.<br>
+        <br>
+        The Mitsubishi 3-mode floppy is now supported.<br>
+        <br>
+        The CPU was not being slowed down when either the 'Standby' switch was pressed or the
+        inactivity timer expired. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-10<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/8/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">'SETUP' was being invoked on some
+        machines with a 262/162 error code - 'Memory parity configuration mismatch'. This was
+        caused by the parity option being removed from 'SETUP' and hence leaving the CMOS location
+        undefined, but code remained to actually read this location. This has now been fixed.<br>
+        <br>
+        The base address of the NS306 device has changed from 0x398H to 0x02EH. <br>
+        <br>
+        This has been addressed by BIOS code changes.<br>
+        <br>
+        A potential problem could occur if an SMI happened when reading or writing CMOS - the
+        address offset into CMOS could be lost. This has been resolved.<br>
+        <br>
+        The CPU was not being slowed down when the inactivity timer expired or the 'standby'
+        switch was pressed. This has now been fixed.<br>
+        <br>
+        Potentially, an application or operating system could be 'aware' of the Triton chipset and
+        subsequently alter the SMI handler. The SMM RAM is now totally 'locked' to prevent this
+        happening.<br>
+        <br>
+        The BIOS internal functions 'smi_setInactivity' and 'smi_getInactivity' would hang the
+        machine. This was caused by a coding problem and has been fixed.<br>
+        <br>
+        The BIOS internal function 'smi_SlowCPU' was not slowing down the CPU. This has been
+        resolved.<br>
+        <br>
+        A previous code change resulted in the wrong GPIO bit being set for 3-mode floppy support.
+        This has now been fixed.<br>
+        <br>
+        The 'Prefetch' and 'Posting' enable bits for the secondary IDE interface are now cleared,
+        as these features are not supported by ATAPI devices. <br>
+        <br>
+        This may fix IPR1350 - 'Hard drive disappears on warm boot', but has not been tested.<br>
+        <br>
+        'Palette snooping' has been added as an option in 'SETUP'.<br>
+        <br>
+        NOTE: Some PnP code has been removed for this release</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-11<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">17/8/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Diagnostics required a method for
+        determining whether a machine is a 'normal' PC or 'multimedia ready', i.e. is there a
+        remote control front panel fitted. A CMOS location has now been defined to provide this
+        information.<br>
+        <br>
+        PCI interrupts were not being routed. This has now been fixed.<br>
+        <br>
+        The AIS manager was not returning the machine ID. This has now been resolved.<br>
+        <br>
+        The CPU power management SETUP options were not being 'greyed out' when a front panel
+        board was fitted. This has now been implemented.<br>
+        <br>
+        BIOS power management was not working. This has now been fixed.<br>
+        <br>
+        Cards fitted in PCI slot 2 were not having PCI interrupts routed correctly. This has now
+        been fixed.<br>
+        <br>
+        Win95 power management was losing break events. This has now been resolved.<br>
+        <br>
+        PCI bus master cards were experiencing problems on warm boot. This has been fixed.<br>
+        <br>
+        Power management was always being 'greyed out'. This has now been resolved.<br>
+        <br>
+        Unexpected NMIs were occurring during an FERR# (floating point) exception. This has now
+        been fixed.<br>
+        <br>
+        If EMM386 was configured with 'NOEMS' the machine would hang as it went into power save.
+        This has now been resolved.<br>
+        <br>
+        An internal BIOS routine to stop the CPU clock was not working. It has now been fixed.<br>
+        <br>
+        The parallel port was defaulting to ECP. This has now been changed to 'standard'.<br>
+        <br>
+        The second IDE interface was defaulting to 'High performance'. This has now been changed
+        to 'Compatible'.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-12<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">31/8/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The standby LED would not flash if the
+        standby button was pressed but power management was not enabled.<br>
+        <br>
+        The BIOS signon copyright message was '1995-1994'. This has been changed to '1985-1995'.<br>
+        <br>
+        SMIs for the Win95 app. were disabled. This has been fixed.<br>
+        <br>
+        3-mode floppy support may not have worked correctly. This has been addressed by setting
+        bits 4 and 5 GPIO.<br>
+        <br>
+        For debug, an PCI routines would cause a write to port 0x80. This code has been removed.<br>
+        <br>
+        Disabling the parallel port via PnP services would disable the NS306 completely. This has
+        been resolved.<br>
+        <br>
+        When the CPU had been halted by the Win95 app. it would 'wake' up after a fixed period of
+        time, rather than after a 'break' event. This has been fixed.<br>
+        <br>
+        The RTC alarm was setting the 'periodic' alarm bit. This has been resolved.<br>
+        <br>
+        The RTC alarm has been enabled as a 'break' event.<br>
+        <br>
+        The power management code has been altered to allow correct operation with the Win95 app.
+        and 'break' events.<br>
+        <br>
+        IPRs fixed in this release.<br>
+        <br>
+        IPR1217 - The password prompt would not appear at boot if only an administration password
+        was defined.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-13<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/9/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR 1498 fixed - System fails to warm
+        boot with no mouse fitted.<br>
+        <br>
+        IDE2 Interface now defaults to &#145;Compatible&#146; instead of &#145;High
+        Performance&#146;.<br>
+        <br>
+        Power Management is now disabled correctly.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-14<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/9/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR1554 - BIOS power management does not
+        work on 75Mhz processor if standby timeout is set to three minutes. This has now been
+        resolved.<br>
+        <br>
+        PCI palette snooping does not work. Reported by ISEC. This has now been fixed.<br>
+        <br>
+        TES640 was failing on &#145;COM2:&#146; test. This has now been resolved.<br>
+        <br>
+        Various problems existed with &#145;stopping&#146; the CPU for power management. These
+        have been addressed, but a potential problem may now exist with 3-mode floppy support </font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-15<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">11/9/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR1569 - RTC alarm was not &#145;waking
+        up&#146; system from power saving mode. This feature has now been removed.<br>
+        <br>
+        Windows 95 was failing to install due to problems with the PnP code for NS306 UART and LPT
+        ports in protected mode. The code from Ruby has been ported across.<br>
+        <br>
+        If COM2: was disabled in &#145;SETUP&#146; then power management was &#145;greyed
+        out&#146;. This has been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">15/9/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from version 5.00.15 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-01-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Windows 95 fix for EMM386.EXE and 16Mb
+        RAM.<br>
+        <br>
+        Fix for Windows NT and &gt;64Mb RAM.<br>
+        <br>
+        Various power management fixes.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-01</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-02-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Various problems existed concerning
+        power management, e.g. when using BIOS power management the system would not always enter
+        or exit 'deep' green mode using the 'standby' switch and when using the Windows power
+        management application the system would timeout and enter 'light'/'dark' green mode even
+        when the system is in use. These problems have now been resolved.<br>
+        <br>
+        3COM PnP Ethernet cards would try to allocate IRQ 15 to themselves, causing a conflict
+        with the PCI IDE. This has now been resolved by insuring the IRQ 15 does not appear as
+        available to PnP devices.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-02-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The previous BETA was built with a rogue
+        Cirrus Logic video BIOS and exhibited screen corruption and problems with Windows 95. This
+        has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-02</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from version 5-02-02 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">18/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The IR detection code has been
+        temporarily disabled due to intermittent problems with BIOS power management.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A problem existed with the PCI IRQ
+        allocation (3COM &#145;590 Ethernet card). This has now been resolved.<br>
+        <br>
+        If the &#145;standby&#146; button was pressed repeatedly during BIOS POST the machine
+        would hang. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">If the &#145;standby&#146; button was
+        pressed during BIOS &#145;SETUP&#146; or the &#145;virus detection&#146; screen being
+        displayed, the machine could hang. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The monitor standby feature of power
+        management was not correctly setting the Hsync &amp; Vsync signals to allow the monitor to
+        enter a low power state. This has now been resolved.<br>
+        <br>
+        After CMOS was cleared and &#145;SETUP&#146; entered, the machine did not recognise the
+        floppy on a subsequent boot. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">25/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from version 5-03-04 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/11/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support has been re-introduced for
+        detecting the remote control front panel.<br>
+        <br>
+        The BIOS now reports the date and time of an RTC alarm event to the Windows Power
+        Management application.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/11/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release has been made to correct a
+        build fault which occurred with version 5-04-01 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/11/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">When CMOS was cleared, machines would
+        not boot. This has been fixed.<br>
+        <br>
+        The CMOS default for the remote control was 'Installed'. This has now been changed to 'Not
+        installed'.<br>
+        <br>
+        There is now support for 'Recovery BIOS' for SST flash devices.<br>
+        <br>
+        The Cumana parallel port CD-ROM drive would not work with ECP mode. This has been fixed.<br>
+        <br>
+        The 'Standby' button now works with a front panel fitted.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/12/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Melco PRF DIA-0006, parallel port is set
+        to IRQ 7 in 'SETUP', but actually uses IRQ 5. This was caused by the IRQ not being
+        properly set during POST and has been resolved.<br>
+        <br>
+        Support for 150 &amp; 166 MHz processors has been included.<br>
+        <br>
+        The power management application timing was inaccurate when using the BIOS power
+        management function to set the Fast Off timer enabling power-down after a period of time.
+        This was caused by integer maths errors in the BIOS and has been resolved.<br>
+        <br>
+        The BIOS recovery code has been altered to support PROM boards containing recovery code.<br>
+        <br>
+        Following a CMOS cleardown, the processor speed was reported as 0MHz following an
+        automatic configuration. This has been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/12/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/12/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for the Adaptec AHA2940 PCI SCSI
+        card has been added.<br>
+        <br>
+        Support for the AT&amp;T backplane has been added.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/1/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Bus mastering PCI IDE for Windows 95 now
+        works, with an appropriate driver.<br>
+        <br>
+        Changes have been made for AT&amp;T Dundee, regarding backplane.<br>
+        <br>
+        The remote IR detection code has been altered to address problems encountered with faulty
+        NS306 Silicon (not setting the 'Bad battery bit').</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">26/1/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR 1522 - A problem concerning power-on
+        passwords for user and administrator has been resolved.<br>
+        <br>
+        BIOS recovery code.<br>
+        <br>
+        Fix to power down IDE drives under the Windows 95 power management application.<br>
+        <br>
+        Free up IRQ12 if no mouse is installed.<br>
+        <br>
+        'Setup' options to disable floppy and both primary and secondary IDE controllers to free
+        up resources if required (Windows 95 requirement).<br>
+        <br>
+        IPR 1224 - PnP memory resource problem.<br>
+        <br>
+        Various changes for AT&amp;T.<br>
+        <br>
+        Support for DIVA card.<br>
+        <br>
+        Melco PRF DIA-0009 - Windows 95 losing 'time' when in power saving mode.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2/2/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IRQs are now freed up properly. Reported
+        by AT&amp;T, the PC would hang while initialising the SCSI BIOS if the secondary IDE
+        controller is disabled.<br>
+        <br>
+        The PnP node information has been corrected for disabled floppy and IDE interfaces.<br>
+        <br>
+        IPR 2014 - ROM 'SETUP' was not being called on F1 if a Diva or Adaptec SCSI card is fitted
+        to the machine. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-05<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/2/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A problem existed when a Diva security
+        card was installed into a machine which had it's CMOS cleared. A message, 'Enter old SIN
+        number', would appear. This has now been resolved.<br>
+        <br>
+        Another problem existed when a Diva security card was removed from a system. A message,
+        'Diva card removed', would appear. The message has now been changed to 'Apricot LocTech
+        2.1 Security System ...'.<br>
+        <br>
+        Machines would not 'wake up' from standby mode on incoming messages (fax / modem) via
+        COM1: and COM2:. This has now been resolved.<br>
+        <br>
+        ***** 5436 build only ***** A new video BIOS binary from Cirrus Logic has been
+        incorporated. This binary does not display the Cirrus Logic video BIOS signon message.<br>
+        <br>
+        Support for bus mastering IDE drives has been removed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-06<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/3/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A fix for PnP option ROM search/execute
+        has been incorporated for Diva security cards.<br>
+        <br>
+        PRF 00013 PCI IRQ routing for Apricot backplane has been corrected.<br>
+        <br>
+        A change has been made for AT&amp;T to display 'Press a key to continue ...' when a
+        configuration change has been detected.<br>
+        <br>
+        The 'official' Cirrus Logic 5436 binary has been included.<br>
+        <br>
+        ***** This is for 5436 builds only *****</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-07<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">23/2/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The setup options to disable floppy and
+        IDE controllers have been removed.<br>
+        <br>
+        Errors were occurring when trying to execute PCI card option ROMs. This has now been
+        resolved. </font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05<br>
+        <br>
+        CheckSUM</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">29/2/96<br>
+        <br>
+        F800</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA release.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.06.01<br>
+        BETA<br>
+        <br>
+        CheckSUM</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/3/96<br>
+        <br>
+        <br>
+        A000</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">AT&amp;T request - hard drive CMOS value
+        setup has been altered.<br>
+        <br>
+        AT&amp;T request - enabling / disabling of secondary IDE controller is now dependant upon
+        whether a device is connected or not.<br>
+        <br>
+        AT&amp;T request - base address of parallel port now cannot be changed.<br>
+        <br>
+        PCI IDE bus mastering is now re-enabled.<br>
+        <br>
+        AT&amp;T request - boot sector virus checking is now disabled regardless of SETUP options.<br>
+        <br>
+        AT&amp;T request - keyboardless mode is enabled regardless of SETUP options.<br>
+        <br>
+        From Windows 95, restarting the system in MS-DOS mode would cause the floppy drive to
+        'disappear' on some systems. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.06<br>
+        <br>
+        CheckSUM</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3/4/96<br>
+        <br>
+        A000</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous beta version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.07.01<br>
+        BETA<br>
+        <br>
+        Checksum<br>
+        <br>
+        P/N&nbsp;154662SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">26/4/96<br>
+        <br>
+        D500</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The object of this release is to provide
+        the latest software to the field.<br>
+        <br>
+        Diamond BIOS V5.07.01 includes all the mods since V5.05 which were turned off for V5.06 of
+        the BIOS. Therefore the addition since V5.06 are :-</font><blockquote>
+          <p><font size="2">Support for 200MHz processor<br>
+          <br>
+          PCI IDE Bus mastering support for Win95 added (driver required to enable this)<br>
+          <br>
+          Ability to free up IRQ&#146;s 6,14 and 15 by being able to disable the floppy, primary IDE
+          and secondary IDE controllers from setup.<br>
+          <br>
+          Fix for PCI Video cards that require extra IO (e.g. ATI card)<br>
+          <br>
+          Various NCR (AT &amp; T) specific fixes that only come into effect when their
+          `personality&#146; card is installed.<br>
+          <br>
+          The CMOS must be cleared when upgrading to this BIOS - due to the extra option in the
+          setup the floppy /IDE controllers MAY be disabled - clearing CMOS will eliminate this
+          potential problem.</font></p>
+        </blockquote>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.07<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;154662SW </font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">17/5/96<br>
+        <br>
+        C900</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous beta version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.01<br>
+        BETA<br>
+        <br>
+        checksum</font><p><font size="2">PN&nbsp;154662SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/6/96<br>
+        <br>
+        <br>
+        3800</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A problem encountered with an
+        &#145;Accel/2&#146; PCI video graphics adapter has been resolved.<br>
+        <br>
+        A fix for NCR has been provided to address a problem with OS/2 and invalid CMOS contents.<br>
+        <br>
+        A fix for NCR has been provided to address a problem with 8Mb systems.<br>
+        <br>
+        Support for two VGA controllers has been provided for NCR only.<br>
+        <br>
+        There was a problem with PCI video card resources clashing with PCI SCSI card. This has
+        been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.02<br>
+        BETA<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;154662SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">25/6/96<br>
+        <br>
+        <br>
+        9300</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        CMOS defaults have been changed for NCR systems only.<br>
+        <br>
+        Memory configuration has been changed for NCR systems only.<br>
+        <br>
+        &#145;Memory hole&#146; support has been added for NCR VROP video cards fitted as a
+        secondary VGA device.<br>
+        <br>
+        The game port is now disabled for NCR systems.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.04<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;154662SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">17/9/96<br>
+        <br>
+        <br>
+        FB00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Problem : The Diamond Stealth 1000 card
+        causes the machine to hang after the memory test with a port 80 code 0f 75h.<br>
+        Cause : The stealth card does not seem to be PCI 2.01 complient and is causing a phantom
+        PCI device to appear which contains rubbish and has a BARD containing all F's hence the
+        FMD can't accomodate the required space.<br>
+        Cure : Only scan physically present slots and PCI devices.<br>
+        <br>
+        Problem : The Matrox Millenium card causes the machine to hang after the memory test with
+        a port code of 075h<br>
+        Cause : The PCIVideo routine builds a prefetchable BARD list but does not pre-configure
+        the prefetchable address space, hence when the remaining PCI space is configured it
+        expects to find the space allocated in the FMD list but doesn't and hangs.<br>
+        Cure : As the Diamond chipset does not seem to support the prefetch capability we can
+        ignore this and use the GEN_MEM_BARD_LIST which the PCIVideo does configure.<br>
+        <br>
+        NOTE : Also, Mod 370 saves the context of di as it gets corrupted throughout PCI
+        configuration, there was one invocation that had been missed. This has been corrected in
+        this mod.<br>
+        <br>
+        Problem : Intel 100MB/s PCI Ethernet Card did not function correctly<br>
+        Cause : Memory space was being disabled <br>
+        Cure : Fix from IBM preserved the memory space setting in the command register<br>
+        <br>
+        Note : This fix is on a switch called PCIETHERCARDFIX which is set to TRUE in
+        PCI_POST.ASM.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.05<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;154662SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/10/96<br>
+        <br>
+        <br>
+        8200</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        PRF 1710 - virus detection code not working. A &#145;fix&#146; for AT&amp;T was
+        implemented incorrectly, thereby disabling this functionality. This has now been resolved.<br>
+        <br>
+        The NCR VEROP card would hang with port 80 code 075. This was caused by a programming
+        error and has now been resolved.<br>
+        <br>
+        PRF1725 - administrator password behaving like the power-on password. This has now been
+        resolved and will only be requested if the F1 setup key is pressed.<br>
+        <br>
+        PRF1614 - LPT1 detected as ECP printer port by Windows 95 when disabled in BIOS setup.
+        This was caused by Windows 95 reading the chipset directly and ignoring CMOS settings. Now
+        resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.06<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;154662SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">24/10/96<br>
+        <br>
+        <br>
+        2C00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        PRF 1636 - Adaptec 2940 card and DIVA fail to boot together. This was caused by the DIVA
+        option ROM returning the processor from protected mode to real mode rather than
+        &#145;big&#146; real mode, as required by the PCI configuration code. The result being a
+        general protection fault as the PCI code attempts to examine the FE000000h ROM space -
+        this being above the FFFFh address limit imposed by real mode. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;154662SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/11/96<br>
+        <br>
+        <br>
+        2C00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.09.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;154662SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">28/11/96<br>
+        <br>
+        <br>
+        0F00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        The GEM line parallel port &#145;Genius&#146; LAN adapter would occasionally fail to
+        connect to the network. This was caused by a coding error in modifications applied for the
+        RTC &#145;century roll-over&#146; issue and has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.09.02<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 154662SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/01/97<br>
+        <br>
+        <br>
+        B200</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        Booting with Diva card, BIOS revision 5.08.05 and later with 5434 video binary caused a
+        security card change error and the Diva card would request the SIN number of the
+        non-existent &#145;old&#146; card. This was caused by the compresssed video binary
+        over-running the AIS variables and has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.09.04<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 154662SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/07/97<br>
+        <br>
+        <br>
+        7D00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        Year 2000 support added.<br>
+        Hard disk drives &gt;4GB support added.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.09<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 154662SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">14/11/97<br>
+        <br>
+        <br>
+        7D00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA version (5.09.04).</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <h3><a name="5436"></a><font size="3"><strong>5436 BIOS</strong></font></h3>
+    <table border="0" cellpadding="2" bordercolor="#FFFFFF" width="620">
+      <tr>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td bgcolor="#D60029"><p align="left"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-00-15<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">15/9/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for the 5436 VGA controller part
+        c/w EDO RAM with 80Mhz &#145;MCLK&#146;.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-01-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The Cirrus Logic 5436 video BIOS was
+        incorrectly setting MCLK to 50Mhz on a warm boot. This has now been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-02-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Various problems existed concerning
+        power management, e.g. when using BIOS power management the system would not always enter
+        or exit 'deep' green mode using the 'standby' switch and when using the Windows power
+        management application the system would timeout and enter 'light'/'dark' green mode even
+        when the system is in use. These problems have now been resolved.<br>
+        <br>
+        3COM PnP Ethernet cards would try to allocate IRQ 15 to themselves, causing a conflict
+        with the PCI IDE. This has now been resolved by insuring the IRQ 15 does not appear as
+        available to PnP devices.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-02</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">18/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The IR detection code has been
+        temporarily disabled due to intermittent problems with BIOS power management.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A problem existed with the PCI IRQ
+        allocation (3COM &#145;590 Ethernet card). This has now been resolved.<br>
+        <br>
+        If the &#145;standby&#146; button was pressed repeatedly during BIOS POST the machine
+        would hang. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">If the &#145;standby&#146; button was
+        pressed during BIOS &#145;SETUP&#146; or the &#145;virus detection&#146; screen being
+        displayed, the machine could hang. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The monitor standby feature of power
+        management was not correctly setting the Hsync &amp; Vsync signals to allow the monitor to
+        enter a low power state. This has now been resolved.<br>
+        <br>
+        After CMOS was cleared and &#145;SETUP&#146; entered, the machine did not recognise the
+        floppy on a subsequent boot. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-03</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">25/10/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from version 5-03-04 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/11/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support has been re-introduced for
+        detecting the remote control front panel.<br>
+        <br>
+        The BIOS now reports the date and time of an RTC alarm event to the Windows Power
+        Management application.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/11/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release has been made to correct a
+        build fault which occurred with version 5-04-01 BETA.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/11/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">When CMOS was cleared, machines would
+        not boot. This has been fixed.<br>
+        <br>
+        The CMOS default for the remote control was 'Installed'. This has now been changed to 'Not
+        installed'.<br>
+        <br>
+        There is now support for 'Recovery BIOS' for SST flash devices.<br>
+        <br>
+        The Cumana parallel port CD-ROM drive would not work with ECP mode. This has been fixed.<br>
+        <br>
+        The 'Standby' button now works with a front panel fitted.<br>
+        <br>
+        A new 5436 video BIOS from Cirrus Logic has been incorporated. This fixes the cold start
+        problem.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/12/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Melco PRF DIA-0006, parallel port is set
+        to IRQ 7 in 'SETUP', but actually uses IRQ 5. This was caused by the IRQ not being
+        properly set during POST and has been resolved.<br>
+        <br>
+        Support for 150 &amp; 166 MHz processors has been included.<br>
+        <br>
+        The power management application timing was inaccurate when using the BIOS power
+        management function to set the Fast Off timer enabling power-down after a period of time.
+        This was caused by integer maths errors in the BIOS and has been resolved.<br>
+        <br>
+        The BIOS recovery code has been altered to support PROM boards containing recovery code.<br>
+        <br>
+        Following a CMOS cleardown, the processor speed was reported as 0MHz following an
+        automatic configuration. This has been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-04</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/12/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-01<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/12/95</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Support for the Adaptec AHA2940 PCI SCSI
+        card has been added.<br>
+        <br>
+        Support for the AT&amp;T backplane has been added.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-02<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/1/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Bus mastering PCI IDE for Windows 95 now
+        works, with an appropriate driver.<br>
+        <br>
+        Changes have been made for AT&amp;T Dundee, regarding backplane.<br>
+        <br>
+        The remote IR detection code has been altered to address problems encountered with faulty
+        NS306 Silicon (not setting the 'Bad battery bit').</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-03<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">26/1/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IPR 1522 - A problem concerning power-on
+        passwords for user and administrator has been resolved.<br>
+        <br>
+        BIOS recovery code.<br>
+        <br>
+        Fix to power down IDE drives under the Windows 95 power management application.<br>
+        <br>
+        Free up IRQ12 if no mouse is installed.<br>
+        <br>
+        'Setup' options to disable floppy and both primary and secondary IDE controllers to free
+        up resources if required (Windows 95 requirement).<br>
+        <br>
+        IPR 1224 - PnP memory resource problem.<br>
+        <br>
+        Various changes for AT&amp;T.<br>
+        <br>
+        Support for DIVA card.<br>
+        <br>
+        Melco PRF DIA-0009 - Windows 95 losing 'time' when in power saving mode.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-04<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2/2/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">IRQs are now freed up properly. Reported
+        by AT&amp;T, the PC would hang while initialising the SCSI BIOS if the secondary IDE
+        controller is disabled.<br>
+        <br>
+        The PnP node information has been corrected for disabled floppy and IDE interfaces.<br>
+        <br>
+        IPR 2014 - ROM 'SETUP' was not being called on F1 if a Diva or Adaptec SCSI card is fitted
+        to the machine. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-05<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/2/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A problem existed when a Diva security
+        card was installed into a machine which had it's CMOS cleared. A message, 'Enter old SIN
+        number', would appear. This has now been resolved.<br>
+        <br>
+        Another problem existed when a Diva security card was removed from a system. A message,
+        'Diva card removed', would appear. The message has now been changed to 'Apricot LocTech
+        2.1 Security System ...'.<br>
+        <br>
+        Machines would not 'wake up' from standby mode on incoming messages (fax / modem) via
+        COM1: and COM2:. This has now been resolved.<br>
+        <br>
+        ***** 5436 build only ***** A new video BIOS binary from Cirrus Logic has been
+        incorporated. This binary does not display the Cirrus Logic video BIOS signon message.<br>
+        <br>
+        Support for bus mastering IDE drives has been removed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-06<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/3/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A fix for PnP option ROM search/execute
+        has been incorporated for Diva security cards.<br>
+        <br>
+        PRF 00013 PCI IRQ routing for Apricot backplane has been corrected.<br>
+        <br>
+        A change has been made for AT&amp;T to display 'Press a key to continue ...' when a
+        configuration change has been detected.<br>
+        <br>
+        The 'official' Cirrus Logic 5436 binary has been included.<br>
+        <br>
+        ***** This is for 5436 builds only *****</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05-07<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">23/2/96</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The setup options to disable floppy and
+        IDE controllers have been removed.<br>
+        <br>
+        Errors were occurring when trying to execute PCI card option ROMs. This has now been
+        resolved. </font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5-05<br>
+        <br>
+        CheckSUM</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">29/2/96</font><p><font size="2">EC00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA release.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.06.01<br>
+        BETA<br>
+        <br>
+        CheckSUM</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/3/96</font><p><font size="2">9400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">AT&amp;T request - hard drive CMOS value
+        setup has been altered.<br>
+        <br>
+        AT&amp;T request - enabling / disabling of secondary IDE controller is now dependant upon
+        whether a device is connected or not.<br>
+        <br>
+        AT&amp;T request - base address of parallel port now cannot be changed.<br>
+        <br>
+        PCI IDE bus mastering is now re-enabled.<br>
+        <br>
+        AT&amp;T request - boot sector virus checking is now disabled regardless of SETUP options.<br>
+        <br>
+        AT&amp;T request - keyboardless mode is enabled regardless of SETUP options.<br>
+        <br>
+        From Windows 95, restarting the system in MS-DOS mode would cause the floppy drive to
+        'disappear' on some systems. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.06<br>
+        BETA<br>
+        <br>
+        CheckSUM</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3/4/96</font><p><font size="2">8300</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous beta version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.07.01<br>
+        BETA<br>
+        <br>
+        Checksum<br>
+        <br>
+        P/N&nbsp;156009SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">26/4/96</font><p><font size="2">C600</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">The object of this release is to provide
+        the latest software to the field.<br>
+        <br>
+        Diamond BIOS V5.07.01 includes all the mods since V5.05 which were turned off for V5.06 of
+        the BIOS. Therefore the addition since V5.06 are :-</font><blockquote>
+          <p><font size="2">Support for 200MHz processor.<br>
+          <br>
+          PCI IDE Bus mastering support for Win95 added (driver required to enable this).<br>
+          <br>
+          Ability to free up IRQ&#146;s 6,14 and 15 by being able to disable the floppy, primary IDE
+          and secondary IDE controllers from setup.<br>
+          <br>
+          Fix for PCI Video cards that require extra IO (e.g. ATI card).<br>
+          <br>
+          Various NCR (AT &amp; T) specific fixes that only come into effect when their
+          `personality&#146; card is installed.<br>
+          <br>
+          The CMOS must be cleared when upgrading to this BIOS - due to the extra option in the
+          setup the floppy /IDE controllers MAY be disabled - clearing CMOS will eliminate this
+          potential problem.</font></p>
+        </blockquote>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.07.02<br>
+        BETA<br>
+        <br>
+        Checksum<br>
+        <br>
+        PN&nbsp;156009SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/5/96</font><p><font size="2">C000</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A new Cirrus Logic 5436 video binary has
+        been incorporated. This fixes the issue where the video BIOS was previously writing to an
+        IDE disk controller port.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.07<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;156009SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">17/5/96</font><p><font size="2">B800</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous beta version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.01<br>
+        BETA<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;156009SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/6/96</font><p><font size="2">2200</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">A problem encountered with an
+        &#145;Accel/2&#146; PCI video graphics adapter has been resolved.<br>
+        <br>
+        A fix for NCR has been provided to address a problem with OS/2 and invalid CMOS contents.<br>
+        <br>
+        A fix for NCR has been provided to address a problem with 8Mb systems.<br>
+        <br>
+        Support for two VGA controllers has been provided for NCR only.<br>
+        <br>
+        There was a problem with PCI video card resources clashing with PCI SCSI card. This has
+        been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.02<br>
+        BETA<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;156009SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">25/6/96</font><p><font size="2">9300</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        CMOS defaults have been changed for NCR systems only.<br>
+        <br>
+        Memory configuration has been changed for NCR systems only.<br>
+        <br>
+        &#145;Memory hole&#146; support has been added for NCR VROP video cards fitted as a
+        secondary VGA device.<br>
+        <br>
+        The game port is now disabled for NCR systems.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.03<br>
+        BETA<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;156009SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">20/8/96</font><p><font size="2">5C00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release<br>
+        <br>
+        Due to incorrect CMOS bank 2 configuration, setting IRQs to &#145;not available&#146; was
+        not completely correct. This has now been resolved.<br>
+        <br>
+        Due to incorrect CMOS bank 2 configuration, PCI error 1801 was being reported when Adaptec
+        2940 PCI SCSI controllers were present. This has now been resolved.<br>
+        <br>
+        The LogiTech cordless mouse no longer hangs the system during POST.<br>
+        <br>
+        The NCR VEROP (secondary VGA card) now works.<br>
+        <br>
+        After clearing CMOS, IRQ 15 was not available on first boot. This has now been resolved.<br>
+        <br>
+        Floppy drive auto-detection was not completely correct. This has been resolved.<br>
+        <br>
+        The century byte was not being updated on a rollover to the year 2000. This has now been
+        resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.04<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 156009SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">17/9/96<br>
+        <br>
+        <br>
+        E800</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Problem : The Diamond Stealth 1000 card
+        causes the machine to hang after the memory test with a port 80 code 0f 75h.<br>
+        Cause : The stealth card does not seem to be PCI 2.01 complient and is causing a phantom
+        PCI device to appear which contains rubbish and has a BARD containing all F's hence the
+        FMD can't accomodate the required space.<br>
+        Cure : Only scan physically present slots and PCI devices.<br>
+        <br>
+        Problem : The Matrox Millenium card causes the machine to hang after the memory test with
+        a port code of 075h <br>
+        Cause : The PCIVideo routine builds a prefetchable BARD list but does not pre-configure
+        the prefetchable address space, hence when the remaining PCI space is configured it
+        expects to find the space allocated in the FMD list but doesn't and hangs.<br>
+        Cure : As the Diamond chipset does not seem to support the prefetch capability we can
+        ignore this and use the GEN_MEM_BARD_LIST which the PCIVideo does configure.<br>
+        <br>
+        NOTE : Also, Mod 370 saves the context of di as it gets corrupted throughout PCI
+        configuration, there was one invocation that had been missed. This has been corrected in
+        this mod.<br>
+        <br>
+        Problem : Intel 100MB/s PCI Ethernet Card did not function correctly<br>
+        Cause : Memory space was being disabled<br>
+        Cure : Fix from IBM preserved the memory space setting in the command register <br>
+        <br>
+        Note : This fix is on a switch called PCIETHERCARDFIX which is set to TRUE in
+        PCI_POST.ASM.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.05<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 156009SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/10/96<br>
+        <br>
+        <br>
+        6000</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        PRF 1710 - virus detection code not working. A &#145;fix&#146; for AT&amp;T was
+        implemented incorrectly, thereby disabling this functionality. This has now been resolved.<br>
+        <br>
+        The NCR VEROP card would hang with port 80 code 075. This was caused by a programming
+        error and has now been resolved.<br>
+        <br>
+        PRF1725 - administrator password behaving like the power-on password. This has now been
+        resolved and will only be requested if the F1 setup key is pressed.<br>
+        <br>
+        PRF1614 - LPT1 detected as ECP printer port by Windows 95 when disabled in BIOS setup.
+        This was caused by Windows 95 reading the chipset directly and ignoring CMOS settings. Now
+        resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08.06<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 156009SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">24/10/96<br>
+        <br>
+        <br>
+        1200</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        PRF 1636 - Adaptec 2940 card and DIVA fail to boot together. This was caused by the DIVA
+        option ROM returning the processor from protected mode to real mode rather than
+        &#145;big&#146; real mode, as required by the PCI configuration code. The result being a
+        general protection fault as the PCI code attempts to examine the FE000000h ROM space -
+        this being above the FFFFh address limit imposed by real mode. This has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.08<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 156009SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/11/96<br>
+        <br>
+        <br>
+        1300</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA version.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.09.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 156009SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">28/11/96<br>
+        <br>
+        <br>
+        F900</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        The GEM line parallel port &#145;Genius&#146; LAN adapter would occasionally fail to
+        connect to the network. This was caused by a coding error in modifications applied for the
+        RTC &#145;century roll-over&#146; issue and has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.09.02<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 156009SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/01/97<br>
+        <br>
+        <br>
+        9E00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        Booting with Diva card, BIOS revision 5.08.05 and later with 5434 video binary caused a
+        security card change error and the Diva card would request the SIN number of the
+        non-existent &#145;old&#146; card. This was caused by the compresssed video binary
+        over-running the AIS variables and has now been resolved.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.09.04<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 156009SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/07/97<br>
+        <br>
+        <br>
+        7700</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        Year 2000 support added.<br>
+        Hard disk drives &gt;4GB support added.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5.09<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 156009SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">14/11/97<br>
+        <br>
+        <br>
+        7700</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous BETA version (5.09.04).</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

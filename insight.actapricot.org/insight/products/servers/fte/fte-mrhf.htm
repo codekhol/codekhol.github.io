@@ -1,0 +1,568 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FTe Panther Rev 'F' Motherboard Revision History</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">FTe Panther Rev 'F' Motherboard Revision History </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.6.4)</font></strong></h2>
+    <div align="left"><table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Item</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Build<br>
+        Ref</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Reason For Change</strong></font></td>
+        <td bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Rev.</strong></font></td>
+        <td align="right" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="3" valign="top"><font size="2">I/O Board + ROM<br>
+        P/N 14918731<br>
+        Rev F</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">20893</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial Release</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">01</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">16/1/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21091</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Update Firmware to V 1.02.23</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">02</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">25/3/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21940</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Update BIOS to V 1.02.25</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">03</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">4/3/93</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="8" valign="top"><font size="2">I/O Board (F1)<br>
+        P/N 12220131<br>
+        Rev F</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">20831</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial Release by R and D</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">04</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">20/12/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20885</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Various Res. &amp; Diode Changes</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">05</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">19/2/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20878</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Cut Track to Res. S2</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">06</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">11/1/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21018</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Item 121, Remove Ref. R503</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">07</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">26/2/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21048</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Change Res. R124, and Cap C51</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">08</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">6/3/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21298</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">ECO 21336 Removes ECO 21298</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">09</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">19/6/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21966</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Update 121874SW to V 1.20.02</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">10</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">22/3/93</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">16323</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Change Filter from 12190130 to 12294230 </font></td>
+        <td bgcolor="#EBEBEB"><font size="2">11</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">4/7/94</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="6" valign="top"><font size="2">486SX 25MHz<br>
+        CPU Board<br>
+        P/N 14987231<br>
+        Rev F</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">20831</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial release by R &amp; D</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">01</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">10/12/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20885</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Release GALs and Resistor changes.</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">02</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">19/2/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20989</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Various resistor changes</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">03</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">26/2/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21319</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832S</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">04</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">22/6/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21513</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832C</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">05</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">9/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21523</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832C</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">06</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">16/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="4" valign="top"><font size="2">486DX 25MHz<br>
+        CPU Board<br>
+        P/N 12239831<br>
+        Rev F</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">21160</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial release</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">01</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">7/5/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21319</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832S</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">02</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">22/6/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21513</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832C</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">03</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">9/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21523</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832D</font></td>
+        <td bgcolor="#EBEBEB"></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">16/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="7" valign="top"><font size="2">486 DX 33 MHz<br>
+        CPU Board<br>
+        P/N 14897531<br>
+        Rev F</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">20831</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial release by R &amp; D</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">02</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">10/12/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20885</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Release GALs and Resistor changes</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">03</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">19/2/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20989</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Various resistor changes</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">04</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">26/2/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21319</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832S</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">05</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">22/6/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21327</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Fit two diodes</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">06</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">1/7/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21513</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832C</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">07</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">9/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21523</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832C</font></td>
+        <td bgcolor="#EBEBEB"></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">16/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="6" valign="top"><font size="2">486DX2-50 Pan/F1<br>
+        CPU Board<br>
+        P/N 14987031<br>
+        Rev F</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">21320</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial release by R and D</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">01</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">17/6/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21423</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Fit Two Diodes 11436621</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">02</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">2/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21513</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">03</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">9/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21523</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832C</font></td>
+        <td bgcolor="#EBEBEB"></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">16/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21728</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Remove DX2-50 Add DX2-66</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">04</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">9/1/93</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">16342</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Replace Processor 1225130 with 12296030</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">05</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">24/6/94</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="7" valign="top"><font size="2">486DX2-66 Pan/F<br>
+        CPU Board<br>
+        P/N 15017231<br>
+        Rev F</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">21373</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial release by R&amp;D</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">01</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">10/8/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21423</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Fit Two Diodes 11436621</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">02</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">2/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21513</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832C</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">03</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">9/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21523</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Reprogram IC832 with WBFC832D</font></td>
+        <td bgcolor="#EBEBEB"></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">16/9/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21557</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Add Heatsink 14941731 </font></td>
+        <td bgcolor="#EBEBEB"><font size="2">04</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">8/10/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"></td>
+        <td bgcolor="#EBEBEB"><font size="2">Remove, Rev 04 - Vendor Fitting Heatsink at Rev 03</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">03</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">18/11/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">16342</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Replace Processor 1225130 with 12296030</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">04</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">24/6/94</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="14" valign="top"><font size="2">Front Panel Board<br>
+        Rev E<br>
+        P/N 12215531</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">20326</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial release</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">01</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">22/7/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20366</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Cut tracks etc.</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">02</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">28/8/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20449</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Release 148448SW 1.00.03</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">03</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">3/9/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20548</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Change item 401 to 11850981</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">04</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">24/9/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20585</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Release 148448SW 1.00.05</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">05</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">10/10/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20730</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Change R12/R13 to 100K/2R7</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">06</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">2/11/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20726</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Release 148448SW 1.00.06</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">07</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">11/11/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">20947</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Replace C33, C39 with 12109921</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">08</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">11/2/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21070</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Add capacitor 22nF 12155130</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">09</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">14/3/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21188</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Remove 12155130 Add 14980931</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">10</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">27/4/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21674</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Add Resistor 12005421 + 11017421</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">11</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">18/2/93</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">22141</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Update 12211831 to V 1-00-07</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">12</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">14/5/93</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">22257</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Update 12211831 to V 1-00-08</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">13</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">11/6/93</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">22382</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Add IR Sensor Label 15193831</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">14</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">1/10/93</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="2" valign="top"><font size="2">PCB Keyboard<br>
+        Mouse FTe<br>
+        P/N 14655831</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">20196</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial release</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">01</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">18/6/91</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">15552</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Remove row of connectors in PL1</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">02</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">10/3/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB" rowspan="3" valign="top"><font size="2">IDT Cache<br>
+        Daughter Board<br>
+        P/N 12240831</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">21216</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Initial Release</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">01</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">20/5/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">15721</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Add item 101 12004421</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">02</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">22/6/92</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EBEBEB"><font size="2">21312</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">Various changes</font></td>
+        <td bgcolor="#EBEBEB"><font size="2">03</font></td>
+        <td align="right" bgcolor="#EBEBEB"><font size="2">22/6/92</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    </div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

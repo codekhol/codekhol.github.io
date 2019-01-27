@@ -1,0 +1,308 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>Qi 486 BIOS Revision Summary</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><p align="left"><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">Qi 486 BIOS Revision Summary </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.1.7)</font></strong></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td valign="top" colspan="4" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB" rowspan="7"><font size="2">1.02.23</font></td>
+        <td valign="top" bgcolor="#EBEBEB" rowspan="7"><font size="2">4/3/92</font></td>
+        <td valign="top" colspan="4" bgcolor="#EBEBEB"><font size="2">Security adds international
+        keyboard support.<br>
+        <br>
+        AOX, DEC Ethernet card fixes.<br>
+        <br>
+        Fixes 1791 error in OS/2 after pressing CTRL-ALT-NUM-NUM.<br>
+        <br>
+        OS/2 serial printing handshaking fixed.<br>
+        <br>
+        Error 1791 after warm boot with 2 RLL drives<br>
+        <br>
+        Incorrect polarity of video sync signals causing wrong picture size in mode 79 on the
+        Tatung monitor.<br>
+        <br>
+        DAC palettes different between mode 12 and 72 (red colours).<br>
+        <br>
+        ESDI Petrel BIOS - OS/2 HPFS formatting, non unique error codes.<br>
+        <br>
+        Support for PC225 CPU modules (486SX/25, DX/33 and DX/33+485).<br>
+        <br>
+        Added Adaptec/IBM SCSI slow-down (abort able by shift-F12).<br>
+        <br>
+        Support for Qi and Titan boxes (signon, slot numbers and front panel type), based on
+        motherboard switch settings -</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#CCCCCC"><font size="2">SW4-8</font></td>
+        <td valign="top" bgcolor="#CCCCCC"><font size="2">SW4-6</font></td>
+        <td valign="top" bgcolor="#CCCCCC"><font size="2">BOX TYPE</font></td>
+        <td valign="top" bgcolor="#CCCCCC"><font size="2">SIGNON</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">ON</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">ON</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">TITAN</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">FTs 486 Series Computer</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">ON</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">OFF</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">PANDORA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">FTe 486 Series Computer</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">OFF</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">OFF</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Qi</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Qi 486 Series Computer</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">OFF</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">ON</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">RESERVED</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Qi 486 Series Computer</font></td>
+      </tr>
+      <tr>
+        <td valign="top" colspan="4" bgcolor="#EBEBEB"><font size="2"><br>
+        Made channel reset signal and beep routine timing independent of CPU speed.<br>
+        <br>
+        Moved 'Port E2' set-up to before ROM checksum test (fixes Rev F logic problem which caused
+        early part of POST to run slowly).<br>
+        <br>
+        Moved Prom board test/jump to before enabling 486 cache.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.24</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">5/3/92</font></td>
+        <td valign="top" colspan="4" bgcolor="#EBEBEB"><font size="2">Support for 4MB floppy disk
+        drives on revision F machines. Drive 0 only.<br>
+        <br>
+        Always enable ROM shadowing unless a reference disk with feature level 3 or greater is
+        used (which does not have the option of disabling shadowing).</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1.02.25I</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/9/92</font></td>
+        <td valign="top" colspan="4" bgcolor="#EBEBEB"><font size="2">OS/2 Keyboard fixes (extra
+        calls to WFIBE in KEYBRD.ASM)<br>
+        <br>
+        IBM SCSI card fixes (move Apricot extended CMOS info from 500 to 300h and change ABIOS DMA
+        table entry from FFFF to 0005)</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-02-25</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">30/4/93</font></td>
+        <td valign="top" colspan="4" bgcolor="#EBEBEB"><font size="2">IBM SCSI - Moved Apricot
+        extended CMOS information from 0500 to 0300H, and changed ABIOS DMA table entry from 0FFFF
+        to 00005H.<br>
+        <br>
+        OS/2 Remote Access Service - implemented new 'SERIAL.ASM' from Phoenix.<br>
+        <br>
+        OS/2 'Mad' or, as IBM refer to it, 'Wild' mouse - include an extra call to 'wfibe' (Wait
+        for input buffer empty) in 'KEYBRD.ASM'.<br>
+        <br>
+        Relocated Petrel / ESDI BIOS from 0E000:08000H to 0E000:0C000H to make room for a larger
+        BIOS.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-02-26d<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1/3/94</font></td>
+        <td valign="top" colspan="4" bgcolor="#EBEBEB"><font size="2">Windows NT hanging with
+        Petrel card has been fixed.<br>
+        <br>
+        OS/2 2.1 with 16Mb onboard + adapter memory problem has been fixed.<br>
+        <br>
+        Serial printing problem with OS/2 1.3 has been fixed.<br>
+        <br>
+        Reset during POST just after Ctl-Alt-Del problem has been fixed.<br>
+        <br>
+        Windows NT with monochrome monitor 'Install' hang has been fixed.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-02-26e<br>
+        BETA</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">18/3/94</font></td>
+        <td valign="top" colspan="4" bgcolor="#EBEBEB"><font size="2">Windows NT hanging with
+        Petrel card has been fixed.<br>
+        <br>
+        OS/2 2.1 with 16Mb onboard + adapter memory problem has been fixed.<br>
+        <br>
+        Serial printing problem with OS/2 1.3 has been fixed.<br>
+        <br>
+        Reset during POST just after Ctl-Alt-Del problem has been fixed.<br>
+        <br>
+        Windows NT with monochrome monitor 'Install' hang has been fixed.<br>
+        <br>
+        Extended Memory Size is now reported correctly.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">1-02-26</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">18/3/94</font></td>
+        <td valign="top" colspan="4" bgcolor="#EBEBEB"><font size="2">This release is functionally
+        unchanged from version 1-02-26e BETA.</font></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

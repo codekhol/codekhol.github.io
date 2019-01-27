@@ -1,0 +1,1499 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>'Trent' ROM BIOS Summary</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../../servers/svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><font size="2"><br>
+    </font><strong><font face="Arial,Helvetica" size="4" color="#D60029">'Trent' ROM BIOS
+    Summary </font><font face="Arial,Helvetica" size="3" color="#D60029">(Rev&nbsp;1.13)</font></strong></h2>
+    <p><font size="3"><strong>VT BIOS</strong></font></p>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Release</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Date</strong></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><strong>Changes</strong></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.02.03<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN&nbsp;159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">25/9/96<br>
+        <br>
+        <br>
+        9D00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.03<br>
+        Command line: TFLASH B W ????????.BIN - depending on ATI Video Chip<br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        Support added into the makefile to support GT and VT machines.<br>
+        <br>
+        Potential DIVA Flash corruption problem fixed.<br>
+        <br>
+        Mitsubishi logo now complies with corporate style.<br>
+        <br>
+        Known problems <br>
+        <br>
+        Video corruption on GT-B EDO machines (12411931 Bombay)<br>
+        <br>
+        IPR02828 (ENCRWIN.DRV will not load)<br>
+        <br>
+        Some DMI values incorrect, or not yet implemented<br>
+        <br>
+        Video corruption in 16 colour mode on GT with 1M SDRAM (is this still true ?)<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.02.03, 24th September 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.02.04<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">4/10/96<br>
+        <br>
+        <br>
+        4100</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W ?.BIN<br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        TFLASH only writing 192K of binary problem fixed.<br>
+        <br>
+        IPR 2828: ENCRWIN driver problem fixed.<br>
+        <br>
+        IPR 2875: DIVA Problem fixed.<br>
+        <br>
+        Diamond riser should now work in a Trent motherboard.<br>
+        <br>
+        BIOS DMI support added.<br>
+        <br>
+        Known problems <br>
+        <br>
+        Video corruption on GT-B EDO machines (12411931 Bombay)<br>
+        <br>
+        Video corruption in 16 colour mode on GT with 1M SDRAM (is this still true ?)<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.02.04, 4th October 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.02.05<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><br>
+        <br>
+        <br>
+        5200</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        Trent riser routing problem fixed.<br>
+        <br>
+        IPR 2873: Disabling floppy causing EMM386.EXE to hang is fixed.<br>
+        <br>
+        Known problems <br>
+        <br>
+        Video corruption on GT-B EDO machines (12411931 Bombay)<br>
+        <br>
+        Video corruption in 16 colour mode on GT with 1M SDRAM (is this still true ?)<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.02.05, 7th October 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.02.05, 7th October 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.02<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">8/10/96<br>
+        <br>
+        <br>
+        3E00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        Signon changed for factory release<br>
+        <br>
+        Known problems <br>
+        <br>
+        Video corruption on GT-B EDO machines (12411931 Bombay)<br>
+        <br>
+        Video corruption in 16 colour mode on GT with 1M SDRAM (is this still true ?)<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.02, 7th October 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.02, 7th October 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.03.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/10/96<br>
+        <br>
+        <br>
+        3C00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Changes since last release,<br>
+        <br>
+        The hard disk power management functions have been moved from SMI to POST.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.03<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/10/96<br>
+        <br>
+        <br>
+        ED00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W ??????31.BIN - depending on ATI Video Chip <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        WFW 3.11 power management with hard disk and ide enhancer fix<br>
+        <br>
+        MEDELEC PCI card not working fix<br>
+        <br>
+        Known problems <br>
+        <br>
+        Video corruption on GT-B EDO machines (12411931 Bombay)<br>
+        <br>
+        Video corruption in 16 colour mode on GT with 1M SDRAM (is this still true ?)<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.03, 10th October 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.04.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">6/11/96<br>
+        <br>
+        <br>
+        8900</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W ????????.BIN - depending on ATI Video Chip<br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        IPR 2844 GT-BIOS with EDO corruption -fixed<br>
+        <br>
+        IPR 2908 EDO and FP memory mix issues -fixed<br>
+        <br>
+        IPR 2481 Diva and PnP 3COM card hang -fixed<br>
+        <br>
+        IPR 2884 Diva and PCI cards hang -fixed<br>
+        <br>
+        IPR 2779 SCO Unix reboot problem -fixed<br>
+        <br>
+        IPR 2780 DPT card hangs in POST after CMOS discharge -fixed <br>
+        <br>
+        Mode 4 now changed to automatic in the HD configuration<br>
+        <br>
+        Help text for setup password changed<br>
+        <br>
+        Plugging/Unplugging mouse display bullets on both menus in setup<br>
+        <br>
+        New DMI code included - Amongst other things the slots are now reported correctly<br>
+        <br>
+        Problem -70NS DRAMEC value incorrect -fixed<br>
+        <br>
+        Known problems <br>
+        <br>
+        IPR 2403 AHA1542 PnP issues (does this still exist or is it fixed by one of the above)<br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        IPR Slow printing on cannon printer under Windows 95<br>
+        <br>
+        Cannon printer d.n.w with plug through modem installed<br>
+        <br>
+        Text for HD Power Management incorrect<br>
+        <br>
+        PCI interrupt routing when USB enabled ( for factory)<br>
+        <br>
+        Medalec PnP card Problem<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        16 bit decode for Nat Semi 307<br>
+        <br>
+        P55C support<br>
+        <br>
+        Power Management defaults in CMOS for Dixons (might be done in factory CMOS download)<br>
+        <br>
+        Prevent HDD boot for factory<br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.04.01, 6th November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.04.02<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">13/11/96<br>
+        <br>
+        <br>
+        7100</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        Text for HD Power Management incorrect- fixed<br>
+        <br>
+        16 bit decode for Nat Semi 307<br>
+        <br>
+        DMI type 9 structure not returning &#145;In Use&#146; for PCI slots - fixed<br>
+        <br>
+        ? appearing in DMI browser at end of processor string - fixed<br>
+        <br>
+        &#145;Invalid handle&#146; in DMIBIOS.EXE at end of slot info - fixed<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled ( for factory)<br>
+        <br>
+        Medalec PnP card Problem<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        P55C support<br>
+        <br>
+        Power Management defaults in CMOS for Dixons (might be done in factory CMOS download)<br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.04.02, 12th November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.04.02, 12th November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.04.03<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">21/11/96<br>
+        <br>
+        <br>
+        C300</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        Video Binary for GT with EDO copied correctly - so should now work.<br>
+        <br>
+        Parallel port node declaration at 3BC now reports 4 bytes not 8.<br>
+        <br>
+        DMI cache resources not reported - fixed<br>
+        <br>
+        Tflash hanging on trent - fixed<br>
+        <br>
+        Invalid handles are skipped for gaps in slot data in DMI code<br>
+        <br>
+        Alias parallel ports at port + 400h in PnP nodes<br>
+        <br>
+        IDE Hard disks disabled via flash for the factory<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled ( for factory)<br>
+        <br>
+        Medalec PnP card Problem (Could have been card)<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        P55C support<br>
+        <br>
+        Power Management defaults in CMOS for Dixons (might be done in factory CMOS download)<br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.04.03, 21st November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.04.03, 21st November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.04.04<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">26/11/96<br>
+        <br>
+        <br>
+        E100</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        AISTEST not reporting IDE hard drive information - fixed<br>
+        <br>
+        Incorrect Parallel port address being displayed under W95 - fixed<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled ( for factory)<br>
+        <br>
+        Medalec PnP card Problem (Could have been card)<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        P55C support<br>
+        <br>
+        Power Management defaults in CMOS for Dixons (might be done in factory CMOS download)<br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.04.04, 26th November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.04.04, 26th November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.04.05<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">2/12/96<br>
+        <br>
+        <br>
+        1E00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        P55C support<br>
+        <br>
+        Windows SCT failure on 15C and 15D ports - fixed<br>
+        <br>
+        AISTEST writes returning error code ( not an issue because of fix in AISTEST.EXE) - fixed<br>
+        <br>
+        New Video code for GT rev B EDO SINGLE CYCLE rel 3.019<br>
+        <br>
+        Recovery code does not work at 75MHz (fixed with new recovery disk 1.00.04)<br>
+        <br>
+        Recovery code does not work with P55C (fixed with new recovery disk 1.00.04)<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled ( Duncan Pratt requesting factory download
+        different cmos to fix this)<br>
+        <br>
+        Medalec PnP card Problem (Could have been card awaiting response)<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.04.05, 29th November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.04.05, 29th November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.04<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">9/12/96<br>
+        <br>
+        <br>
+        DB00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        Change version number and date from 7.04.05 to 7.04<br>
+        <br>
+        Older version of ATI GT rev B BIOS with EDO Dual Cycle version 3.008<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled ( Duncan Pratt requesting factory download
+        different cmos to fix this)<br>
+        <br>
+        Medalec PnP card Problem (Could have been card awaiting response)<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.04, 2nd December 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.04, 2nd December 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.05.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW.</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">27/11/96<br>
+        <br>
+        <br>
+        8600</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        Mouse state on some machines after autoconfig -fixed<br>
+        <br>
+        Enclosure type no longer hard coded for DMI<br>
+        <br>
+        New Video Binary for GT with EDO single cycle 40ns<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled ( for factory)<br>
+        <br>
+        Medalec PnP card Problem (Could have been card)<br>
+        <br>
+        Recovery code does not work with P55C<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        PnP BIOS test fails SCT tests 5.10 / 5.20<br>
+        <br>
+        Recovery code does not work at 75MHz<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        P55C support<br>
+        <br>
+        Power Management defaults in CMOS for Dixons (might be done in factory CMOS download)<br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.05.01, 26th November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.05.01, 26th November 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.05.02<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">19/12/96<br>
+        <br>
+        <br>
+        7A00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since previous release<br>
+        <br>
+        DMIBIOS.EXE always reporting the machine as an pentium MMX - fixed<br>
+        <br>
+        New GT BIOS for rev B EDO with fix for screen corruption (NOTE: 40ns timings are still out
+        of spec but they work)<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled ( Duncan Pratt requesting factory download
+        different cmos to fix this)<br>
+        <br>
+        Medalec PnP card Problem (Could have been card awaiting response)<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        Testing<br>
+        <br>
+        Checked signon version number and date<br>
+        <br>
+        Checked WHAT string <br>
+        <br>
+        Checked DMIBIOS reports Pentium on Pentium machine (MMX not tested)<br>
+        <br>
+        Checked Branding string changed<br>
+        <br>
+        Checked DOS booted<br>
+        <br>
+        Checked Windows 95 booted and shutdown<br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.05.02, 18th December 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.05.02, 18th December 1996<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01&nbsp;</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Release 7.05<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">22/01/97<br>
+        <br>
+        4400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN<br>
+        <br>
+        Changes since previous release 7.04<br>
+        <br>
+        DMIBIOS.EXE always reporting the machine as an pentium MMX - fixed<br>
+        <br>
+        New GT BIOS for rev B EDO with fix for screen corruption<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled <br>
+        <br>
+        Medalec PnP card Problem (Could have been card awaiting response)<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Copyright says 1996 (should it say 1997)<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.05, 17th January 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.06.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">07/02/97<br>
+        <br>
+        <br>
+        4200</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        <br>
+        Changes since release 7.05<br>
+        <br>
+        IPR 03192 - Slow Printing on Canon BJ4100 printer fixed<br>
+        <br>
+        Added VT3 support into VT build including autodetection, signon, DMI and What string<br>
+        <br>
+        Added GTB+ support into VT build including autodetection, signon, DMI and What string<br>
+        <br>
+        DMI Type 10 Soundblaster text corruption problem - fixed<br>
+        <br>
+        IPR 03132 - Cyclone drive capacity reported by setup as 43MB instead of 4GB - fixed<br>
+        <br>
+        IPR 03223 - LDCM Memory Type not reported correctly (allways FPM) -fixed<br>
+        <br>
+        IPR 03228 - LDCM Supported Memory speeds show unknown - fixed<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled <br>
+        <br>
+        Medalec PnP card Problem ( Could have been card awaiting response)<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Copyright says 1996 (should it say 1997)<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT BIOS Version 7.06.01, 6th February 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.06<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">3/3/97<br>
+        <br>
+        <br>
+        2D00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002 <br>
+        Utility: TFLASH Version 1.00.04 or greater <br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip TFLASH B W
+        GT_TRENT.BIN <br>
+        <br>
+        Changes since release 7.05<br>
+        <br>
+        Version number changed <br>
+        <br>
+        IPR 03192 - Slow Printing on Canon BJ4100 printer fixed <br>
+        <br>
+        Added VT3 support into VT build including autodetection, signon, DMI and What string <br>
+        <br>
+        Added GTB+ support into VT build including autodetection, signon, DMI and What string <br>
+        <br>
+        DMI Type 10 Soundblaster text corruption problem - fixed <br>
+        <br>
+        IPR 03132 - Cyclone drive capacity reported by setup as 43MB instead of 4GB - fixed <br>
+        <br>
+        IPR 03223 - LDCM Memory Type not reported correctly (allways FPM) -fixed <br>
+        <br>
+        IPR 03228 - LDCM Supported Memory speeds show unknown - fixed <br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w <br>
+        <br>
+        PCI interrupt routing when USB enabled ( Duncan Pratt requesting factory download
+        different cmos to fix this) <br>
+        <br>
+        Medalec PnP card Problem ( Could have been card awaiting response) <br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it <br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02) <br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support <br>
+        <br>
+        Copyright says 1996 (should it say 1997) <br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT/GTB+ BIOS Version 7.06, 28th February 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.07.01<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">23/04/97<br>
+        <br>
+        <br>
+        9900</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since release 7.06<br>
+        <br>
+        PRF 1818 - GrafixStar 400 PCI video card now plays MPEG files<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled<br>
+        <br>
+        Medalec PnP card Problem ( Could have been card awaiting response)<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Copyright says 1996 (should it say 1997)<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        GT_TRENT.BIN<br>
+        <br>
+        Apricot GT BIOS Version 7.07.01, 17th April 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT/GTB+ BIOS Version 7.07.01, 17th April 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.07.02<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">12/05/97<br>
+        <br>
+        <br>
+        2A00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since release 7.06<br>
+        <br>
+        USB setup default is now disabled<br>
+        <br>
+        IPR 3349 - 233MHz processors not now reported as 240MHz by setup<br>
+        <br>
+        Pentium MMX L1 cache size now reported correctly as 32K<br>
+        <br>
+        PRF 1818 - GrafixStar 400 PCI video card now plays MPEG files<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled<br>
+        <br>
+        Medalec PnP card Problem ( Could have been card awaiting response)<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Copyright says 1996 (should it say 1997)<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT/GTB+ BIOS Version 7.07.02, 8th May 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.07.03<br>
+        Beta<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">02/06/97<br>
+        <br>
+        <br>
+        5400</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since release 7.07.02<br>
+        <br>
+        PRF-TRE-0004 - Power saving times have been corrected and now also adjusted for different
+        bus speeds <br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled<br>
+        <br>
+        Medalec PnP card Problem ( Could have been card awaiting response)<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Copyright says 1996 (should it say 1997)<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT/GTB+ BIOS Version 7.07.03, 29th May 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.07<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159039SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">10/06/97<br>
+        <br>
+        <br>
+        AD00</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN - depending on ATI Video Chip<br>
+        TFLASH B W GT_TRENT.BIN <br>
+        <br>
+        Changes since release 7.06<br>
+        <br>
+        PRF-TRE-0004 - Power saving times have been corrected and now also adjusted for different
+        bus speeds<br>
+        <br>
+        USB set-up default is now disabled<br>
+        <br>
+        IPR 3349 - 233MHz processors not now reported as 240MHz by setup<br>
+        <br>
+        Pentium MMX L1 cache size now reported correctly as 32K<br>
+        <br>
+        PRF 1818 - GrafixStar 400 PCI video card now plays MPEG files<br>
+        <br>
+        Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)<br>
+        <br>
+        Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Copyright says 1996 (should it say 1997)<br>
+        <br>
+        Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT/GTB+ BIOS Version 7.07, 9th June 1997<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">7.08<br>
+        Release<br>
+        <br>
+        checksum<br>
+        <br>
+        PN 159037SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">08/04/98<br>
+        <br>
+        <br>
+        </font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">Programming<br>
+        <br>
+        Target device: INTEL 28F002<br>
+        Utility: TFLASH Version 1.00.04 or greater<br>
+        Command line: TFLASH B W VT_TRENT.BIN <br>
+        <br>
+        Changes since release 7.07<br>
+        <br>
+        PRF 010059 Matrox Rainbow Runner makes POST display 102 System Board Failure - Fixed.</font><p><font
+        size="2">PRF 010143 Branding string not displayed when Jumper PL11 moved to write protect
+        the BIOS - Fixed</font></p>
+        <p><font size="2">SCO OpenServer 5 on FT1200 printing via parallel port is very erratic to
+        dot matrix devices - Fixed.</font></p>
+        <p><font size="2">PRF-AOS-97003. V35+ Adapter fails to install at D0000h under NetWare -
+        Fixed.</font></p>
+        <p><font size="2">Mitsubishi logo is displayed unconditionally Trent boards are to display
+        an OEM logo if required.</font></p>
+        <p><font size="2">Hard drives with 16 Hds and more than 8190 cyls fail with current
+        translation algorithm - Fixed.</font></p>
+        <p><font size="2">Known problems <br>
+        <br>
+        Reboot after 3COM software installed d.n.w<br>
+        <br>
+        PCI interrupt routing when USB enabled<br>
+        <br>
+        IPR 2914 Video Sometimes has IRQ assigned to it<br>
+        <br>
+        Recovery code does not work if memory in other banks (fix available in recovery code
+        1.00.02)</font></p>
+        <p><font size="2">Known omissions<br>
+        <br>
+        USB PS/2 keyboard emulation support<br>
+        <br>
+        Copyright should be 1998 not 1996</font></p>
+        <p><font size="2">Extended Cacheability (for &gt;64MB systems)<br>
+        <br>
+        &gt;64MB RAM API ? <br>
+        <br>
+        <br>
+        What string<br>
+        <br>
+        VT_TRENT.BIN<br>
+        <br>
+        Apricot VT/GTB+ BIOS Version 7.08, 6th April 1998<br>
+        Copyright (C) 1996 Apricot Computers Ltd<br>
+        Apricot Trent Recovery Code Version 1.00.01</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+        <td valign="top" bgcolor="#EBEBEB"></td>
+      </tr>
+    </table>
+    <p><font size="2">&nbsp;<a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,863 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FT4200 Upgrading and Expansion</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><font size="2"><br>
+    </font><strong><font size="4" color="#D60029">FT4200 Upgrading and Expansion </font><font
+    color="#D60029" size="3">(Rel&nbsp;1.12.1)</font></strong><p><font size="2">This explains
+    the procedure for upgrading the CPU to one of higher speed and also provides information
+    on upgrading the memory. You can also install expansion cards to increase your
+    system&#146;s capabilities. </font></p>
+    <p><strong><font size="2">Your system can support up to four CPUs. They all must be of the
+    same speed and type.</font></strong></p>
+    <p><strong><font size="2">Important Note</font></strong></p>
+    <p><em><font size="2">This system has been tested to comply with CE marking and its strict
+    legal requirements. Use only Apricot tested and approved parts. Failure to do so may
+    result in invalidating both the compliance and your warranty. All expansion cards must
+    carry CE approvals.</font></em></p>
+    <p><font size="3"><strong>Gaining Access to the Machine Interior</strong></font></p>
+    <p><font size="2">To gain access to the interior of the machine, you must remove the side
+    panels. The following illustration shows the securing screws and key lock which are
+    present on each side panel:</font></p>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><font size="2"><img src="graphics/dscspkey.gif"
+        width="227" height="269"></font></td>
+        <td align="center" valign="top"><div align="center"><center><table border="1"
+        cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">1</font></td>
+            <td valign="top"><font size="2">Floating Fasteners</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Keylock</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+    <p><strong><font size="2">To remove the side panel:</font></strong></p>
+    <blockquote>
+      <p><font size="2">1. Refer to the SMA and note down the value of the <em>TimeOnCharge</em>
+      variable. This value expresses, in seconds, the remaining charge in the UPS battery pack.
+      Since isolating the battery pack (see below) sets the <em>TimeOnCharge</em> variable to
+      zero, you will need to reset the variable in the SMA after you have completed the work and
+      set the switch back to the On position.</font></p>
+      <p><font size="2">2. Power down the system to Standby mode.</font></p>
+      <p><font size="2">3. Ensure that the battery pack is isolated (the circuit breaker switch
+      on the rear of the server must be in the Off position).</font></p>
+      <p><font size="2">4. Disconnect the system from the AC supply.</font></p>
+      <p><font size="2">5. Loosen the floating fasteners, located at the top left and right
+      corners of the panel, until they move in and out freely. These fasteners are mounted in a
+      spring fitting and should not be separated from the panel.</font></p>
+      <p><font size="2">6. Insert the side panel key into the keylock and turn it ¼ turn
+      clockwise to unlock the panel. Your system is equipped with one pair of side panel keys.
+      Both keys in the pair will unlock both side panels.</font></p>
+    </blockquote>
+    <p><font size="2">Press the panel firmly downwards, against the springs, in order to pull
+    it outward and then upward as shown:</font></p>
+    <p align="center"><font size="2">&nbsp;<img src="graphics/dscrmsid.gif" width="220"
+    height="246"></font></p>
+    <p><font size="2">&nbsp;<a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>Refitting the Side Panel</strong></font></p>
+    <p><font size="2">Use the following steps to refit the side panel:&nbsp;</font></p>
+    <blockquote>
+      <p><font size="2">1. Ensure that the lip on the inner surface of the side panel fits over
+      the chassis ridge at the panel bottom edge.</font></p>
+      <p><font size="2">2. Press the panel downwards against the springs, then fit it in under
+      the top edge.</font></p>
+      <p><font size="2">3. Tighten the floating fasteners.</font></p>
+      <p><font size="2">4. Insert the side panel key into the lock and turn it clockwise as far
+      as it will go.</font></p>
+      <p><font size="2">5. Push the lock inward until you feel the resistance of the metalwork.</font></p>
+      <p><font size="2">6. Turn the lock ¼ turn anti-clockwise and remove the key.</font></p>
+      <p><font size="2">7. Use the SMA and the front door key, as appropriate, to ensure that
+      Security is enabled.</font></p>
+    </blockquote>
+    <p><font size="2">&nbsp;<a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>Upgrading the CPU</strong></font></p>
+    <p><strong><font size="2">Important Note</font></strong></p>
+    <p><em><font size="2">The procedures explained in this section are for authorised
+    engineers only.</font></em></p>
+    <p><font size="2">The first two CPU positions are located on the motherboard, towards the
+    top of the electronics chamber. A second pair of processors can be located on an
+    additional card which may be fitted at the top of the motherboard. </font></p>
+    <p><font size="2">To gain access, it is required to remove the protective metal plate
+    which covers the upper part of the electronics chamber. On completion of any work it is
+    important to replace this panel for airflow integrity.</font></p>
+    <p><font size="2">Remove the securing screws as shown in the following diagram:</font></p>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><font size="2"><img src="graphics/dscprmpl.gif"
+        width="223" height="222"></font></td>
+        <td align="center" valign="top"><div align="center"><center><table border="1"
+        cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">1</font></td>
+            <td valign="top"><font size="2">Protective Metal Plate </font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Securing Screws</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><font size="2">2. Lift the metal plate away from the metalwork.</font></p>
+    </blockquote>
+    <p><font size="2">&nbsp;<a href="#top"><img src="../../../graphics/redarr01.gif"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" align="right" border="0" hspace="0" width="14"
+    height="10"></a></font></p>
+    <hr>
+    <p><font size="3"><strong>Memory and CPU locations</strong></font></p>
+    <p><font size="2">This diagram shows the positions of the CPUs and main memory:</font></p>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><font size="2"><img src="graphics/dscmcpck.gif"
+        width="225" height="252"></font></td>
+        <td align="center" valign="top"><div align="center"><center><table border="1"
+        cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">1</font></td>
+            <td valign="top"><font size="2">VRM for processor &#145;B&#146;</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">2</font></td>
+            <td valign="top"><font size="2">DIMM sockets 1-4 </font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">3</font></td>
+            <td valign="top"><font size="2">Processor &#145;B&#146;</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">4</font></td>
+            <td valign="top"><font size="2">Processor &#145;A&#146; </font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">5</font></td>
+            <td valign="top"><font size="2">DIMM sockets 5-8</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">6</font></td>
+            <td valign="top"><font size="2">VRM for processor &#145;A'</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">7</font></td>
+            <td valign="top"><font size="2">Clock and multiplier SWs</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><p><strong><font size="2">Caution</font></strong></p>
+    <p><em><font size="2">All electronic computer components are sensitive to static
+    electricity. Always take antistatic precautions before handling such components (see the
+    Appendix for more details). An earthing stud is provided at the rear of the server.</font></em></p>
+    <p><font size="3"><strong>To remove the existing processor</strong></font></p>
+    <blockquote>
+      <p><font size="2">1. If the system was in use just before starting this procedure, the
+      processor will be hot, wait at least 15 minutes for it to cool down. </font></p>
+      <p><font size="2">2. If there is no processor fan, a strong spring clip secures the large
+      heatsink to the processor. Release the end of the spring from the hook on the front of the
+      ZIF socket with care and slide the heatsink clear. Handle carefully as there may be heat
+      transfer compound on the heatsink face. </font></p>
+    </blockquote>
+    <p><font size="2">There may be a power lead for a fan if the processor has one fitted in
+    the place of a simple heatsink. Take note of the fan power lead polarity before releasing
+    it from its board connection.</font></p>
+    <p align="center"><font size="2">&nbsp;<img src="graphics/dscprzif.gif" width="266"
+    height="108"></font></p>
+    <p><font size="2">A lever attached to the ZIF socket secures the processor in the socket.
+    Unhook the lever from the locked position. Lift it upright (at right-angles to the
+    motherboard). There may be a little stiffness at the beginning and end of the lever&#146;s
+    movement.</font></p>
+    <blockquote>
+      <p><font size="2">4. Lift the processor out of the socket and place it on an anti-static
+      surface outside the system unit. Hold the processor by its edges and avoid touching any of
+      the metal pins.</font></p>
+    </blockquote>
+    <p><strong><font size="2">Warning</font></strong></p>
+    <p><em><font size="2">If the processor does not easily lift out of, or fit into the
+    socket, do not force it or damage may be caused to the processor and the socket. Consult
+    your supplier or an Apricot dealer.</font></em></p>
+    <p><strong><font size="2">To fit the upgrade processor</font></strong></p>
+    <p><font size="2">Complete kits of Processor, Spring clip, Heatsink and Voltage Regulator
+    Module (VRM8) are available from your Apricot dealer.</font></p>
+    <blockquote>
+      <p><font size="2">1. Ensure that the securing lever on the ZIF socket is still in the
+      upright position. </font></p>
+    </blockquote>
+    <p><font size="2">&nbsp;<strong>Caution</strong></font></p>
+    <p><em><font size="2">If the computer has more than one CPU fitted it requires all CPUs to
+    be upgraded. <strong>They must all be of the same speed and type.</strong></font></em></p>
+    <p><font size="2">Take the upgrade processor out of its anti-static packaging. Hold the
+    processor by its edges and avoid touching the metal pins. The processor and ZIF socket are
+    designed to ensure that the processor can only install in the correct orientation. (The
+    pin pattern is totally different at one end.) It will only fit into the socket one way. </font></p>
+    <p align="center"><font size="2">&nbsp;<img src="graphics/dscprfit.gif" width="149"
+    height="284"></font></p>
+    <p><font size="2">Place the processor in the socket, making sure that it is correctly
+    aligned and that you do not bend or otherwise damage the pins. <strong>Do not use
+    excessive force</strong>. </font></p>
+    <blockquote>
+      <p><font size="2">4. Move the ZIF socket lever to the locked position. Apply just enough
+      pressure to overcome the resistance offered by the lever. Ensure that it is firmly locked
+      into its down position. </font></p>
+      <p><font size="2">5. Refit the heatsink if the new processor was supplied without one and
+      secure correctly the retaining spring. <strong>Ensure the heatsink is central on the
+      processor and is securely held</strong>. </font></p>
+    </blockquote>
+    <p><font size="2">If the spring is no longer required, remove it completely by disengaging
+    it from its hook on the rear of the ZIF socket. </font></p>
+    <p><font size="2">The upgrade processor may have a fan power lead to be connected to the
+    pins on the board. The &#145;Overdrive&#146; type processor however may have its own
+    internal connection for the fan power supply.</font></p>
+    <blockquote>
+      <p><font size="2">6. It is vital when fitting an additional processor, that the Voltage
+      Regulator Module (VRM8) is inserted into its socket/connector adjacent to the
+      processor&#146;s ZIF socket. It will only fit one way.</font></p>
+    </blockquote>
+    <p><font size="2"><strong>Now adjust the processor multiplier and external bus clock speed
+    switches</strong> on the motherboard (in conjunction with the new processor&#146;s data
+    sheet), as in the following tables. Note that all other switch positions are reserved.</font></p>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><strong><font size="2">External bus clock</font></strong><div
+        align="center"><center><table border="1" cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">Frequency</font></td>
+            <td align="center" valign="top"><font size="2">SW1-5</font></td>
+            <td align="center" valign="top"><font size="2">SW1-6</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">66Mhz</font></td>
+            <td align="center" valign="top"><font size="2">off</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">60Mhz</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">off</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">50Mhz</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+        <td align="center" valign="top"><strong><font size="2">Processor bus multiplier</font></strong><div
+        align="center"><center><table border="1" cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">SW1-1</font></td>
+            <td align="center" valign="top"><font size="2">SW1-2</font></td>
+            <td align="center" valign="top"><font size="2">SW1-3</font></td>
+            <td align="center" valign="top"><font size="2">SW1-4</font></td>
+            <td align="center" valign="top"><font size="2">Factor</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">x2</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">off</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">x2.5</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">off</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">x3</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">off</font></td>
+            <td align="center" valign="top"><font size="2">off</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">x3.5</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">on</font></td>
+            <td align="center" valign="top"><font size="2">off</font></td>
+            <td align="center" valign="top"><font size="2">x4</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><p><strong><font size="2">Warning</font></strong></p>
+    <p><font size="2"><em>Do not alter the processor or clock settings under normal operation
+    unless upgrading all the fitted processors. It could result in permanent damage to either
+    the motherboard or the processors</em>.</font></p>
+    <p><font size="3"><strong>Additional CPUs, &#145;C&#146; and &#145;D&#146;</strong></font></p>
+    <p><font size="2">If there are two processors fitted to the motherboard and if it is
+    required to fit a third+fourth processor, the extra processor board will need to be
+    fitted.</font></p>
+    <p><font size="2">The procedure for fitting processors to this extra board is identical to
+    that for the motherboard, but for safety and ease of assembly it is recommended to be
+    completed before installing the card in the system, on a suitable antistatic surface or
+    mat. The processors and VRMs <em><strong>must be exactly the same</strong></em> as the
+    ones fitted to the motherboard. The additional processor board must be inserted in the
+    slot at the top of the motherboard: </font></p>
+    <p align="center">&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><font size="2"><img src="graphics/dscadcpu.gif"
+        width="185" height="252"></font></td>
+        <td align="center" valign="top"><div align="center"><center><table border="1"
+        cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">1</font></td>
+            <td valign="top"><font size="2">VRM for processor &#145;D&#146;</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">2</font></td>
+            <td valign="top"><font size="2">VRM for processor &#145;C&#146;</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">3</font></td>
+            <td valign="top"><font size="2">ZIF socket for processor &#145;C&#146;</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">4</font></td>
+            <td valign="top"><font size="2">Fan connection (if required)</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">5</font></td>
+            <td valign="top"><font size="2">Fan connection (if required)</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">6</font></td>
+            <td valign="top"><font size="2">ZIF socket for processor &#145;D&#146;</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><blockquote>
+      <p><font size="2">1. Disengage the termination board from its slot at the top of the
+      motherboard and place it in suitable packaging. </font></p>
+      <p><font size="2">2. The additional CPU board then fits into the same socket, with the
+      processors facing downwards.</font></p>
+      <p><font size="2">3. Fit the metal support strut into place. Hooks at one end fit into the
+      fan housing and the other end is fixed with a screw at the chamber rear. Ensure that it is
+      firmly fitted onto the edge of the CPU board. </font></p>
+    </blockquote>
+    <p><font size="3"><strong>Upgrading Memory</strong></font></p>
+    <p><strong><font size="2">Important Note</font></strong></p>
+    <p><em><font size="2">The procedure explained in this section is for authorised engineers
+    only.</font></em></p>
+    <p><font size="2">There are two memory locations each with sockets for four Dual Inline
+    Memory Modules (DIMMs). Slots are numbered from 1 to 8 (top to bottom).</font></p>
+    <p><font size="2">Slots <strong>1, 3, 5, 7</strong>, form bank <strong>one</strong> and
+    slots <strong>2, 4, 6, 8</strong>, form bank <strong>two</strong>. </font></p>
+    <p><font size="2">You must populate the slots according to the following rules:</font></p>
+    <blockquote>
+      <p><font size="2">If more than 1 DIMMs is to be fitted in a bank, they must all be the
+      same capacity. (See the supported memory configuration table overleaf).</font></p>
+      <p><font size="2">EDO and FPM type DIMMs can be mixed.</font></p>
+      <p><font size="2">Bank two can have different capacity modules, but must have the same
+      population of modules as bank one. It must also match the supported configurations in the
+      table overleaf.</font></p>
+      <p><font size="2">Use only 3.3 volt, gold contact modules.</font></p>
+      <p><font size="2">All fitted modules should be the same speed. </font></p>
+      <p><font size="2">80ns, 70ns and 60ns are all supported, but 60ns may provide performance
+      benefits with some operating systems.</font></p>
+      <p><font size="2">The BIOS will adjust to the speed of the slowest module if they differ.</font></p>
+      <p><font size="2">The minimum configuration is one DIMM, but there are benefits in fitting
+      2 or 4 DIMMs, as 2 or 4 way interleave, respectively, then become available. The following
+      restrictions however, <strong>must</strong> be applied:</font></p>
+      <p><font size="2">If memory is to be fitted in both banks their interleave population <strong>must
+      be identical</strong>, e.g. populating sockets 2 and 3 is not allowed. (see the scheme
+      tabled below.)</font></p>
+      <p><font size="2">You must fill one, two or all four slots in bank one. Three DIMMs in a
+      bank is <strong>not supported</strong>. You must therefore fit 1, 2, 4, or 8 modules.</font></p>
+      <p><font size="2">When 2 or 4 modules are to be fitted it is preferable to keep them in
+      one bank.</font></p>
+    </blockquote>
+    <p><font size="3"><strong>Interleave scheme</strong></font></p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><strong><font size="2">Interleave</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">BANK ONE</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">BANK TWO</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">1 way</font></td>
+        <td align="center" valign="top"><font size="2">Socket <strong>1</strong></font></td>
+        <td align="center" valign="top"><font size="2">Socket <strong>2</strong></font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">2 way</font></td>
+        <td align="center" valign="top"><font size="2">Socket <strong>1+3</strong></font></td>
+        <td align="center" valign="top"><font size="2">Socket <strong>2+4</strong></font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">4 way</font></td>
+        <td align="center" valign="top"><font size="2">Socket <strong>1+3+5+7</strong></font></td>
+        <td align="center" valign="top"><font size="2">Socket <strong>2+4+6+8</strong></font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2">The following table lists the supported memory
+    configurations for <strong>bank one</strong>. Bank two when used <em>must have an
+    identical number of modules</em>. They may be of different value but must be a supported
+    configuration from this table.</font></p>
+    <div align="center"><center><table border="0" cellpadding="2" width="500">
+      <tr>
+        <td align="center" valign="top"><strong><font size="2">Total memory</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Socket 1 </font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Socket 3 </font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Socket 5</font></strong></td>
+        <td align="center" valign="top"><strong><font size="2">Socket 7</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">16-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">8 Mb</font></td>
+        <td align="center" valign="top"><font size="2">8 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">16-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">32-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">8 Mb</font></td>
+        <td align="center" valign="top"><font size="2">8 Mb</font></td>
+        <td align="center" valign="top"><font size="2">8 Mb</font></td>
+        <td align="center" valign="top"><font size="2">8 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">32-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">32-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">64-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><font size="2">16 Mb</font></td>
+        <td align="center" valign="top"><font size="2">16 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">64-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">64-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">128-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><font size="2">32 Mb</font></td>
+        <td align="center" valign="top"><font size="2">32 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">128-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">128-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">128 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">256-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><font size="2">64 Mb</font></td>
+        <td align="center" valign="top"><font size="2">64 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">256-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">128 Mb</font></td>
+        <td align="center" valign="top"><font size="2">128 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">256-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">256 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">512-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">128 Mb</font></td>
+        <td align="center" valign="top"><font size="2">128 Mb</font></td>
+        <td align="center" valign="top"><font size="2">128 Mb</font></td>
+        <td align="center" valign="top"><font size="2">128 Mb</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">512-Mbyte</font></td>
+        <td align="center" valign="top"><font size="2">256 Mb</font></td>
+        <td align="center" valign="top"><font size="2">256 Mb</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+        <td align="center" valign="top"><font size="2">-</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><font size="2">1-Gbyte</font></td>
+        <td align="center" valign="top"><font size="2">256 Mb</font></td>
+        <td align="center" valign="top"><font size="2">256 Mb</font></td>
+        <td align="center" valign="top"><font size="2">256 Mb</font></td>
+        <td align="center" valign="top"><font size="2">256 Mb</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p><font size="3"><strong>Removing DIMMs</strong></font></p>
+    <p><strong><font size="2">Caution</font></strong></p>
+    <p><em><font size="2">Before attempting to remove or fit a DIMM, be sure to take proper
+    antistatic precautions, such as using an antistatic strap. (See the Appendix for more
+    details on antistatic precautions). An earthing stud is provided at the rear of the
+    server.</font></em></p>
+    <p><font size="2">If you wish to install an upgrade in a bank which is already occupied
+    you may need to first remove the existing DIMMs. For each DIMM in the bank:</font></p>
+    <p align="center"><font size="2"><img src="graphics/dscrmdim.gif" width="297" height="91">&nbsp;</font></p>
+    <p><font size="2">Press gently the clips on each side of the socket gently outwards using
+    your forefingers. This will disengage the clips and lift the DIMM up and out of the
+    socket.</font></p>
+    <blockquote>
+      <p><font size="2">2. Taking care to avoid touching any of the components on the DIMM, grip
+      the top corners of the DIMM between thumb and first finger and carefully lift the module
+      out of the socket.</font></p>
+      <p><font size="2">3. Place the DIMM in a suitable antistatic package.</font></p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><font size="3"><strong>Inserting DIMMs</strong></font></p>
+    <p><strong><font size="2">Important</font></strong></p>
+    <p><em><font size="2">Apricot Computers Ltd extensively tests many types of memory
+    modules. DIMMs obtained from any other source cannot be guaranteed to operate correctly or
+    safely with the rest of the system and software. Non Apricot parts may invalidate both the
+    CE approvals and the system warranty.</font></em></p>
+    <p><font size="2">For each socket in the bank:</font></p>
+    <p><font size="2">The DIMM will only install in one orientation. There are indents along
+    the DIMM&#146;s edge connector as shown:</font></p>
+    <p align="center"><font size="2">&nbsp;<img src="graphics/dscdimm.gif" width="169"
+    height="34"></font></p>
+    <p><font size="2">&nbsp;Hold the DIMM with its metal connector strip nearest the board
+    surface.</font></p>
+    <p><font size="2">Press the DIMM gently into the socket and ensure the end clip at each
+    end clicks into place, retaining the module in the socket.</font></p>
+    <p align="center"><font size="2">&nbsp;<img src="graphics/dscpsdim.gif" width="253"
+    height="136"></font></p>
+    <p><font size="2">If the clips will not latch easily, remove the module and start again. </font></p>
+    <p><font size="2"><strong>Do not use excessive force</strong>.</font></p>
+    <p><font size="3"><strong>Installing and Removing Expansion Cards</strong></font></p>
+    <p><strong><font size="2">Important Note</font></strong></p>
+    <p><em><font size="2">The procedures explained in this section are for authorised
+    engineers only.</font></em></p>
+    <p><font size="2">&nbsp;The following illustration shows the positions of the expansion
+    card slots in the electronics chamber:</font></p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><font size="2"><img src="graphics/dscexcrd.gif"
+        width="214" height="250"></font></td>
+        <td align="center" valign="top"><div align="center"><center><table border="1"
+        cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">1</font></td>
+            <td valign="top"><font size="2">PCI Slots</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">2</font></td>
+            <td valign="top"><font size="2">EISA/ISA Slots</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">3</font></td>
+            <td valign="top"><font size="2">SMIC card (bottom slot)</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><p><strong><font size="2">Important</font></strong></p>
+    <p><em><font size="2">You must always replace the System Management Interface Card in its
+    original fitted position, i.e. the bottom EISA slot.</font></em></p>
+    <p><font size="3"><strong>Installing</strong></font></p>
+    <p><font size="2">1. Study the expansion board&#146;s installation guide and follow its
+    directions. The guide should tell you what kind of slot (i.e. PCI or EISA/ISA) you will
+    use and whether there are any jumpers or switches on the card that you need to configure
+    before fitting.</font></p>
+    <p><font size="2">2. Remove the blanking plate from the rear panel access opening that
+    corresponds to the chosen PCI or EISA slot. </font></p>
+    <p><font size="2">Remember that one EISA/PCI slot is shared and therefore can only accept
+    one card of either type.</font></p>
+    <p><font size="2">3. Detach the SMIC ribbon cable from the SMIC card temporarily, to allow
+    cards into the chamber.</font></p>
+    <p><font size="2">4. Now fit the expansion card carefully into the slot. You can only
+    install it in one orientation. If your card is full-length, be sure to insert one edge
+    into the slider guide, attached to the cooling fan assembly metalwork, as you fit the
+    card.</font></p>
+    <p><strong><font size="2">Position rules</font></strong></p>
+    <p><u><font size="2">Additional SCSI controllers</font></u></p>
+    <p><font size="2">These must be fitted in one of the bottom three PCI slots to avoid
+    boot-up conflicts with the onboard controllers.</font></p>
+    <p><u><font size="2">RAID controllers</font></u></p>
+    <p><font size="2">These should also be fitted to the lower slots</font></p>
+    <p><u><font size="2">PCI Ethernet cards</font></u></p>
+    <p><font size="2">Fit from the topmost PCI slot downwards</font></p>
+    <p><u><font size="2">EISA Ethernet cards</font></u></p>
+    <p><font size="2">Any slot bar the lowest, which is strictly reserved for the SMIC</font></p>
+    <p>&nbsp;</p>
+    <div align="center"><center><table border="0" cellpadding="2">
+      <tr>
+        <td align="center" valign="top"><font size="2"><img src="graphics/dscexcft.gif"
+        width="240" height="251"></font></td>
+        <td align="center" valign="top"><div align="center"><center><table border="1"
+        cellpadding="2">
+          <tr>
+            <td align="center" valign="top"><font size="2">1</font></td>
+            <td valign="top"><font size="2">Card end guide/support</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">2</font></td>
+            <td valign="top"><font size="2">Expansion Card</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">3</font></td>
+            <td valign="top"><font size="2">Securing Screw</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">4</font></td>
+            <td valign="top"><font size="2">Blanking plates</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><font size="2">5</font></td>
+            <td valign="top"><font size="2">SMIC cable</font></td>
+          </tr>
+        </table>
+        </center></div></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2">1. Ensure that the card is firmly seated in its slot, but
+    do not use excessive force.</font></p>
+    <p><font size="2">2. Fasten the card in place using the blanking plate securing screw.</font></p>
+    <p><font size="2">3. Fit any required cables to the board, ensuring their correct
+    orientation. Do not allow them to obstruct airflow from any of the cooling fans. </font></p>
+    <p><font size="2">4. Refit the SMIC ribbon cable to the SMIC card.</font></p>
+    <p><font size="2">5. Run the EISA Configuration Utility (ECU) to complete the installation
+    process. Full details are in the preceding chapter.</font></p>
+    <p><strong><font size="2">Caution</font></strong></p>
+    <p><em><font size="2">Remember to copy the RAMdrive back to the Flash disk on the ECU.
+    Otherwise any configuration files added or updated will be lost when you exit the ECU.</font></em></p>
+    <p><font size="3"><strong>Removing</strong></font></p>
+    <p><font size="2">1. Unplug all cables connected to the board and remove them completely.</font></p>
+    <p><font size="2">2. Remove the securing screw and pull the board out of the slot, leaving
+    an empty space on the rear panel for the blanking plate again.</font></p>
+    <p><font size="2">3. Replace the original blanking plate to cover the rear opening to
+    maintain airflow integrity.</font></p>
+    <p><font size="2">4. Run the EISA Configuration Utility (ECU) to inform the system that
+    you have removed the board.</font></p>
+    <p><strong><font size="2">Caution</font></strong></p>
+    <p><em><font size="2">Remember to copy the RAMdrive back to the Flash disk on the ECU.
+    Otherwise all the updated configuration files will still be present when you exit the ECU.</font></em></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" align="left"
+    border="0" hspace="0" width="14" height="10"><img src="../../../graphics/redarr01.gif"
+    align="right" border="0" hspace="0" width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

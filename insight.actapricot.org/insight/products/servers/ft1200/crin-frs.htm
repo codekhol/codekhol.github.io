@@ -1,0 +1,283 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FT1200 'Crinkle' DK440LX ROM BIOS History</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><strong><font size="2"><br>
+    </font><font size="4" color="#D60029">FT1200 'Crinkle' DK440LX ROM BIOS History </font><font
+    color="#D60029" size="3">(Rev&nbsp;1.17)</font></strong></h2>
+    <table border="0" cellpadding="2" width="620" bordercolor="#FFFFFF">
+      <tr>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><b>Release</b></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><b>Date</b></font></td>
+        <td valign="top" bgcolor="#D60029"><font size="2" color="#FFFFFF"><b>Changes</b></font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>1A<br>
+        Beta</strong><br>
+        <br>
+        P/N 162236SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">03/09/97</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This is the initial release of the
+        'Crinkle' DK440LX BIOS for test purposes. It includes the following features:<br>
+        </font><ul>
+          <li><font size="2">Added option in setup to allow control of SCSI channel B low byte
+            termination.</font></li>
+          <li><font size="2">Removed option for controlling the PCI IRQ router from setup.</font></li>
+          <li><font size="2">Enabled correct programming of the chipset registers when ECC is enabled.</font></li>
+          <li><font size="2">Correction of NT warm boot problem.</font></li>
+          <li><font size="2">Correction of possible network driver installation and operation issues.</font></li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>1B<br>
+        Beta</strong><br>
+        <br>
+        P/N 162236SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">07/10/97</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>Changes since last release:<br>
+        </strong></font><ul>
+          <li><font size="2">Fixed problem with the system hanging when booting with SCSI and LAN
+            disabled.</font></li>
+          <li><font size="2">Display BIOS ID without time/date for production BIOS.</font></li>
+          <li><font size="2">Fixed problem with PnP BIOS function calls from 32-bit protected mode
+            operating systems.</font></li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>1C<br>
+        Beta</strong><br>
+        <br>
+        P/N 162236SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">14/10/97</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>Changes since last release:<br>
+        </strong></font><ul>
+          <li><font size="2">Includes five language support (US English, French, German, Italian and
+            Spanish) without the need to flash in separately.</font></li>
+          <li><font size="2">Added support for detection of next generation Pentium II processors.</font></li>
+        </ul>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>1<br>
+        Release</strong><br>
+        <br>
+        P/N 162236SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">14/11/97</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">This release is functionally unchanged
+        from the previous Beta, 1C.</font></td>
+      </tr>
+      <tr>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>2<br>
+        Release</strong><br>
+        <br>
+        P/N 162236SW</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2">18/12/97</font></td>
+        <td valign="top" bgcolor="#EBEBEB"><font size="2"><strong>Changes since last release:<br>
+        </strong></font><ul>
+          <li><font size="2">Added support for 3Mode floppies.</font></li>
+          <li><font size="2">Fixed issue of inability to install 3Mode driver 1024fxd.exe if no media
+            is inserted in the drive.</font></li>
+          <li><font size="2">Added a setup option to enable/disable the execution of the embedded PXE
+            support. The option &quot;Embedded PXE Support:&quot; is added to the Advanced Peripheral
+            Configuration menu. Selecting &quot;Enabled&quot; allows the embedded PXE option ROM to be
+            executed for all onboard/add-in Intel EtherExpress<sup>TM</sup> PRO/100B LAN Adapters.
+            Selecting &quot;Disabled&quot; prevents the execution of the embedded PXE option ROM for
+            onboard/add-in Intel EtherExpress<sup>TM</sup> PRO/100B LAN Adapters. This allows LSA boot
+            to be disabled, without completely disabling the onboard EtherExpress PRO/100B LAN
+            adapter.</font></li>
+          <li><font size="2">Added an option to enable/disable the L2 Cache ECC support.</font></li>
+          <li><font size="2">Turn on the power LED earlier.</font></li>
+          <li><font size="2">Changes FAN Mux monitor default to the REAR Chassis fan.</font></li>
+          <li><font size="2">Initialise ECC memory after video is available.</font></li>
+          <li><font size="2">Fixed issue with system not booting when both LAN and SCSI are disabled.</font></li>
+          <li><font size="2">Fixed issue of system not booting without a video card.</font></li>
+          <li><font size="2">Fixed PC97 APM&nbsp;1.2 test issue with reporting Resume on Modem Ring
+            not supported.</font></li>
+          <li><font size="2">Fixed keyclick functionality.</font></li>
+          <li><font size="2">Fixed intermittent crash when scanning an option ROM greater than 64K
+            Bytes.</font></li>
+          <li><font size="2">AddedHard Drive pre-delay for improving compatibilty with some hard
+            drives and CD-ROM drives.</font></li>
+          <li><font size="2">Fixed issue which caused intermittent failures with Int&nbsp;13h
+            function41h (Check Extensions Present).</font></li>
+          <li><font size="2">Improved handling of LS-120 on Windows boot.</font></li>
+          <li><font size="2">Added legacy USB support.</font></li>
+          <li><font size="2">Enable USB legacy during POST, and disable before Int&nbsp;19h if
+            disabled in setup.</font></li>
+          <li><font size="2">Fixed issue with invalid PCI memory or I/O requires not being roperly
+            rejected.</font></li>
+          <li><font size="2">Added support for ECC event logging.</font></li>
+          <li><font size="2">Changed DMI type 4 structure for processor upgrade to
+            &quot;SLOT&nbsp;1&quot;.</font></li>
+          <li><font size="2">Fixed issue with APM&nbsp;1.2 HCT failing because Resume on Timer from
+            STANDBY is not supported.</font></li>
+          <li><font size="2">Fixed issue with Wake on Modem header always waking the system.</font></li>
+          <li><font size="2">Fixed issue where IRQ&nbsp;14 or IRQ&nbsp;15 were not properly freed when
+            IDE channel(s) are disabled in setup.</font></li>
+          <li><font size="2">Added &quot;Dual&quot; in POST messages before processor ID to indicate
+            when two processors are installed.</font></li>
+          <li><font size="2">Fixed issue of no beep codes when VGA card is not installed.</font></li>
+          <li><font size="2">Fixed Wake on External Modem Ring functionality.</font></li>
+        </ul>
+        </td>
+      </tr>
+    </table>
+    <p><font size="2">&nbsp;</font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top"
+    align="left" border="0" hspace="0" width="14" height="10"></a> <a href="#top"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a> </font></p>
+    <hr>
+    <p>&nbsp;
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1073 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css"><!--
+	body { font-family: Arial, Helvetica, sans-serif; }
+
+//-->
+</style>
+<meta name="generator" content="Microsoft FrontPage 3.0">
+<title>FT//ex 1000 (M5) Motherboard Layout</title>
+</head>
+
+<body background="../../../images/mits-bg5.gif" bgcolor="#ffffff" link="#d60029"
+alink="#d60029" vlink="#800080" leftmargin="0" marginwidth="0" marginheight="6">
+<!-- Header - start of top table -->
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+<!-- The top table has the Mitsubishi logo and Home button -->
+  <tr>
+    <td valign="top"><img src="../../../images/m-logo-s.gif" width="193" height="70" alt="Mitsubishi Electric - Computing for a Connected World"></td>
+        <td valign="bottom" align="right"><a href="../../../default.htm"><img width="41" height="32" src="../../../images/bt-home.gif" alt="Insight CD Home Page" border="0"></a></td>
+  </tr>
+  <tr>
+    <td width="98%" colspan="2" bgcolor="#000000"><img width="1" height="1" src="../../../images/space.gif"><br>
+    </td>
+  </tr>
+</table>
+<!-- end of top table -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tr>
+    <td width="10" bgcolor="#000000"><img width="10" height="10"
+    src="../../../images/space.gif"></td>
+    <td width="120" valign="top" align="left" bgcolor="#000000"><script LANGUAGE="JavaScript">
+
+<!--
+
+        if (document.images) {
+
+          var product1 = new Image()
+          product1.src = "/insight/images/product1.gif"
+          var product2 = new Image()
+          product2.src = "/insight/images/product2.gif"
+
+          var service1 = new Image()
+          service1.src = "/insight/images/service1.gif"
+          var service2 = new Image()
+          service2.src = "/insight/images/service2.gif"
+
+          var kbase1 = new Image()
+          kbase1.src = "/insight/images/kbase1.gif"
+          var kbase2 = new Image()
+          kbase2.src = "/insight/images/kbase2.gif"       
+
+          var upgrade1 = new Image()
+          upgrade1.src = "/insight/images/upgrade1.gif"
+          var upgrade2 = new Image()
+          upgrade2.src = "/insight/images/upgrade2.gif"       
+
+          var downlo1 = new Image()
+          downlo1.src = "/insight/images/downlo1.gif"
+          var downlo2 = new Image()
+          downlo2.src = "/insight/images/downlo2.gif"       
+
+          var inserv1 = new Image()
+          inserv1.src = "/insight/images/inserv1.gif"
+          var inserv2 = new Image()
+          inserv2.src = "/insight/images/inserv2.gif"       
+
+          var email1 = new Image()
+          email1.src = "/insight/images/email1.gif"
+          var email2 = new Image()
+          email2.src = "/insight/images/email2.gif"       
+
+          var search1 = new Image()
+          search1.src = "/insight/images/search1.gif"
+          var search2 = new Image()
+          search2.src = "/insight/images/search2.gif"       
+
+          var y20001 = new Image()
+          y20001.src = "/insight/images/y2001.gif"
+          var y20002 = new Image()
+          y20002.src = "/insight/images/y2002.gif"
+
+          var osites1 = new Image()
+          osites1.src = "/insight/images/osites1.gif"
+          var osites2 = new Image()
+          osites2.src = "/insight/images/osites2.gif"
+
+          var disclaim1 = new Image()
+          disclaim1.src = "/insight/images/disclam1.gif"
+          var disclaim2 = new Image()
+          disclaim2.src = "/insight/images/disclam2.gif"
+
+        }
+
+
+
+        function act(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '2.src')
+        }
+
+
+
+        function inact(imgName) {
+          if (document.images)
+            document[imgName].src = eval(imgName + '1.src')
+        }
+
+        // -->
+</script>
+
+
+    <a HREF="../../main.htm"><img width="113" height="22" src="../../../images/product2.gif" name="product" alt="Products" border="0"></a><br>
+       <a HREF="../../prodid/idmenu.htm"><img width="113" height="17" src="../../../images/s_prodid.gif" alt="Product Identification" border="0"></a><br>
+       <a HREF="../../timeline/timeline.htm"><img width="113" height="17" src="../../../images/s_time.gif" alt="Product Timeline" border="0"></a><br>
+       <a HREF="../../desktops/dskmenu.htm"><img width="113" height="17" src="../../../images/s_desk.gif" alt="Desktop Systems" border="0"></a><br>
+       <a HREF="../svrmenu.htm"><img width="113" height="17" src="../../../images/s_server.gif" alt="Server Systems" border="0"></a><br>
+       <a HREF="../../notebook/ntemenu.htm"><img width="113" height="17" src="../../../images/s_notebk.gif" alt="Notebooks" border="0"></a><br>
+       <a HREF="../../monitors/monpdc.htm"><img width="113" height="17" src="../../../images/s_mon.gif" alt="Monitors" border="0"></a><br>
+       <a HREF="../../../common/addin/addmain.htm"><img width="113" height="17" src="../../../images/s_addin.gif" alt="Add-in Cards" border="0"></a><br>
+       <a HREF="../../../common/drives/storage.htm"><img width="113" height="17" src="../../../images/s_drives.gif" alt="Sorage Devices" border="0"></a><br>
+
+    <a HREF="../../../services/main.htm" onMouseOver="act('service')" onMouseOut="inact('service')"><img width="113" height="22" src="../../../images/service1.gif" name="service" alt="Services" border="0"></a><br>
+
+    <a HREF="../../../kbase/main.htm" onMouseOver="act('kbase')" onMouseOut="inact('kbase')"><img width="113" height="22" src="../../../images/kbase1.gif" name="kbase" alt="Knowledgebase" border="0"></a><br>
+
+    <a HREF="../../../upgrades/main.htm" onMouseOver="act('upgrade')" onMouseOut="inact('upgrade')"><img width="113" height="22" src="../../../images/upgrade1.gif" name="upgrade" alt="Upgrades" border="0"></a><br>
+
+    <a HREF="../../../download/main.htm" onMouseOver="act('downlo')" onMouseOut="inact('downlo')"><img width="113" height="22" src="../../../images/downlo1.gif" name="downlo" alt="Downloads" border="0"></a><br>
+
+    <a HREF="../../../insindex.exe" onMouseOver="act('search')" onMouseOut="inact('search')"><img width="113" height="22" src="../../../images/search1.gif" name="search" alt="Search Insight" border="0"></a><br>
+    <a HREF="mailto:insight@mitsubishi-computers.com" onMouseOver="act('email')" onMouseOut="inact('email')"><img width="113" height="22" src="../../../images/email1.gif" name="email" alt="E-Mail us" border="0"></a><br>
+    <a HREF="http://www.mitsubishi-computers.com/support/service/" onMouseOver="act('inserv')" onMouseOut="inact('inserv')"><img width="113" height="22" src="../../../images/inserv1.gif" name="inserv" alt="Insight Service" border="0"></a><br>
+
+    <a HREF="../../../common/year2000/year2000.htm" onMouseOver="act('y2000')" onMouseOut="inact('y2000')"><img width="113" height="21" src="../../../images/y2001.gif" name="y2000" alt="Year 2000" border="0"></a><br>
+    <a HREF="../../../common/oth-site/oth-site.htm" onMouseOver="act('osites')" onMouseOut="inact('osites')"><img width="113" height="38" src="../../../images/osites1.gif" name="osites" alt="Other Mitsubishi Sites" border="0"></a><br>
+    <a HREF="../../../common/disclaim.htm" onMouseOver="act('disclaim')" onMouseOut="inact('disclaim')"><img width="113" height="24" src="../../../images/disclam1.gif" name="disclaim" alt="Site Disclaimer" border="0"></a><br>
+      
+    <img width="113" height="120" src="../../../images/space.gif"><br>
+</td>
+    <td width="10" valign="top" width="10" height="10" src="/insight/images/space.gif"
+    alt="10 pixel Gap" border="0"></td>
+
+    <td valign="top"><h2><font size="2"><br>
+    </font><strong><font face="Arial,Helvetica" size="4" color="#D60029">FT//ex 1000 (M5)
+    Motherboard </font><font face="Arial,Helvetica" color="#D60029" size="3">(Rev&nbsp;1.7.1)</font></strong></h2>
+    <div align="center"><center><table border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td><font size="2"><img src="graphics/f2xmblk.gif" border="0" width="309" height="206"></font></td>
+        <td><font size="2"><img src="graphics/f2xmopt.gif" border="0" width="248" height="237"
+        usemap="#MainMap"></font></td>
+      </tr>
+    </table>
+    </center></div><p align="center"><font size="2">&nbsp;<!--webbot bot="HTMLMarkup"
+    startspan --><MAP NAME="MainMap">
+			<AREA SHAPE=RECT COORDS="1,1,33,33" HREF="#RAM">
+			<AREA SHAPE=RECT COORDS="1,35,33,67" HREF="#ETHERNET">
+			<AREA SHAPE=RECT COORDS="1,67,34,100" HREF="#DRIVES">
+			<AREA SHAPE=RECT COORDS="1,102,33,134" HREF="#JUMPERS">
+			<AREA SHAPE=RECT COORDS="1,137,33,170" HREF="#OPTIONS">
+			<AREA SHAPE=RECT COORDS="1,171,33,204" HREF="#REAR">
+			<AREA SHAPE=RECT COORDS="1,205,34,238" HREF="#CMOS">
+</MAP>
+<!--webbot bot="HTMLMarkup" endspan --></font></p>
+    <hr>
+    <p><font size="2"><a name="ram"></a><br>
+    </font><font size="3"><strong>RAM Configuration</strong></font><font size="2"> </font></p>
+    <div align="center"><center><table border="0" cellpadding="2" width="500">
+      <tr>
+        <td align="center" colspan="2"><p align="center"><strong><font size="2">Bank 0</font></strong></td>
+        <td align="center" colspan="2"><strong><font size="2">Bank 1</font></strong></td>
+        <td align="center"><strong><font size="2">Total Memory</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center"><p align="center"><strong><font size="2">Socket 0</font></strong></td>
+        <td align="center"><p align="center"><strong><font size="2">Socket 1</font></strong></td>
+        <td align="center"><p align="center"><strong><font size="2">Socket 0</font></strong></td>
+        <td align="center"><p align="center"><strong><font size="2">Socket 1</font></strong></td>
+        <td align="center"><font size="2">&nbsp; </font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td></td>
+        <td></td>
+        <td><p align="center"><font size="2">8 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td></td>
+        <td></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">24 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">8 Mb</font></td>
+        <td><p align="center"><font size="2">32 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td></td>
+        <td></td>
+        <td><p align="center"><font size="2">32 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">40 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">48 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">64 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td></td>
+        <td></td>
+        <td><p align="center"><font size="2">64 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">4 MB</font></td>
+        <td><p align="center"><font size="2">72 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">8 MB</font></td>
+        <td><p align="center"><font size="2">80 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">16 MB</font></td>
+        <td><p align="center"><font size="2">96 MB</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">32 MB</font></td>
+        <td><p align="center"><font size="2">128 MB</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="ethernet"></a><br>
+    </font><font size="3"><strong>Ethernet Options</strong></font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td><font size="2">3Com 10/100 PCI card (3C595TX)</font></td>
+        <td><font size="2">XB54991</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">3Com EISA Combo card (3C592)</font></td>
+        <td><font size="2">XB54993</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">3Com EISA card (3C579-TP)</font></td>
+        <td><font size="2">XB52591</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">3Com AUI to UTP Transceiver (3C583)</font></td>
+        <td><font size="2">XB50900</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">IBM Token Ring LAN card</font></td>
+        <td><font size="2">XB42148</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="drives"></a><br>
+    </font><font size="3"><strong>Disk Drives</strong></font></p>
+    <table border="0" cellpadding="2" width="500">
+      <tr>
+        <td align="center"><strong><font size="2">MB</font></strong></td>
+        <td align="center"><strong><font size="2">Make</font></strong></td>
+        <td align="center"><strong><font size="2">Model</font></strong></td>
+        <td align="center"><strong><font size="2">Type</font></strong></td>
+        <td align="center"><strong><font size="2">Part Number</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">540</font></td>
+        <td align="center"><font size="2">Quantum</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/hard/qlps540s.htm">LPS
+        540 S</a></font></td>
+        <td align="center"><font size="2">SCSI II</font></td>
+        <td align="center"><font size="2">SU52869 </font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">1 GB</font></td>
+        <td align="center"><font size="2">IBM</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/hard/i31080sc.htm">DPES
+        31080</a></font></td>
+        <td align="center"><font size="2">SCSI II</font></td>
+        <td align="center"><font size="2">SU54094 </font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">2 GB</font></td>
+        <td align="center"><font size="2">IBM</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/hard/idfhss2f.htm">DFHS
+        S2F</a></font></td>
+        <td align="center"><font size="2">SCSI II</font></td>
+        <td align="center"><font size="2">SU54096 </font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">4 GB</font></td>
+        <td align="center"><font size="2">Quantum</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/hard/qxp34300.htm">Atlas
+        XP34300</a></font></td>
+        <td align="center"><font size="2">SCSI II</font></td>
+        <td align="center"><font size="2">SU56855</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">5 GB</font></td>
+        <td align="center"><font size="2">IBM</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/hard/idfmss5f.htm">DFHS
+        S5F</a></font></td>
+        <td align="center"><font size="2">SCSI II</font></td>
+        <td align="center"><font size="2">SU54099 </font></td>
+      </tr>
+      <tr>
+        <td align="left" colspan="5"><strong><font size="2">Tape</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">4-16GB</font></td>
+        <td align="center"><font size="2">Conner</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/tape/co8000t.htm">CTD8000R-S</a></font></td>
+        <td align="center"><font size="2">SCSI</font></td>
+        <td align="center"><font size="2">SU54778</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">525</font></td>
+        <td align="center"><font size="2">Archive</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/tape/ar2525t.htm">Viper525</a></font></td>
+        <td align="center"><font size="2">SCSI</font></td>
+        <td align="center"><font size="2">SU52601</font></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">1.6-3.2GB</font></td>
+        <td align="center"><font size="2">Conner</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/tape/co3200t.htm">CTM3200R-S</a></font></td>
+        <td align="center"><font size="2">SCSI II</font></td>
+        <td align="center"><font size="2">XB54027</font></td>
+      </tr>
+      <tr>
+        <td align="left" colspan="5"><strong><font size="2">Floppy</font></strong></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="2">1.2Mb</font></td>
+        <td align="center"><font size="2">Panasonic</font></td>
+        <td align="center"><font size="2"><a href="../../../common/drives/floppy/pa475-5f.htm">JU-475-5</a></font></td>
+        <td align="center"><font size="2">5.25&quot;</font></td>
+        <td align="center"><font size="2">SU52600</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2">&nbsp;<a name="jumpers"></a><br>
+    </font><font size="3"><strong>Jumper Settings</strong></font></p>
+    <p><strong><font size="2">Motherboard Jumper Settings</font></strong></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmmbd1.gif" width="448" height="311"></font></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td valign="top"><p align="center"><font size="2">Jumper</font></td>
+        <td align="center" valign="top"><p align="center"><font size="2">Setting</font></td>
+        <td valign="top"><p align="center"><font size="2">Function</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP1</font></td>
+        <td align="center" valign="top"><font size="2">1 - 2</font></td>
+        <td valign="top"><font size="2">Reserved</font></td>
+      </tr>
+      <tr>
+        <td valign="top">&nbsp;</td>
+        <td align="center" valign="top"><font size="2">2 - 3 *</font></td>
+        <td valign="top"><font size="2">Default</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP2</font></td>
+        <td align="center" valign="top"><font size="2">1 - 2</font></td>
+        <td valign="top"><font size="2">Power-on password enabled</font></td>
+      </tr>
+      <tr>
+        <td valign="top">&nbsp;</td>
+        <td align="center" valign="top"><font size="2">2 - 3 *</font></td>
+        <td valign="top"><font size="2">Power-on password disabled</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP3</font></td>
+        <td align="center" valign="top"><font size="2">1 - 2 *</font></td>
+        <td valign="top"><font size="2">DMA request 1 (DREQ1)</font></td>
+      </tr>
+      <tr>
+        <td valign="top">&nbsp;</td>
+        <td align="center" valign="top"><font size="2">2 - 3</font></td>
+        <td valign="top"><font size="2">DMA request 3 (DREQ3)</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP4</font></td>
+        <td align="center" valign="top"><font size="2">1 - 2 *</font></td>
+        <td valign="top"><font size="2">DMA acknowledge 1 (DACK1)</font></td>
+      </tr>
+      <tr>
+        <td valign="top">&nbsp;</td>
+        <td align="center" valign="top"><font size="2">2 - 3</font></td>
+        <td valign="top"><font size="2">DMA acknowledge 3 (DACK3)</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP5</font></td>
+        <td align="center" valign="top"><font size="2">Open</font></td>
+        <td valign="top"><font size="2">Reset button disabled</font></td>
+      </tr>
+      <tr>
+        <td valign="top">&nbsp;</td>
+        <td align="center" valign="top"><font size="2">Closed *</font></td>
+        <td valign="top"><font size="2">Reset button enabled</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP6</font></td>
+        <td align="center" valign="top"><font size="2">1 - 2 *</font></td>
+        <td valign="top"><font size="2">Audio to buzzer</font></td>
+      </tr>
+      <tr>
+        <td valign="top">&nbsp;</td>
+        <td align="center" valign="top"><font size="2">2 - 3</font></td>
+        <td valign="top"><font size="2">Audio to speaker</font></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" colspan="3"><font size="2">* - default setting.</font></td>
+      </tr>
+    </table>
+    </center></div><p><strong><font size="2">Single Pentium (3.3V) CPU Board</font></strong></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmcpu.gif" width="257" height="148"></font></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td><p align="center"><strong><font size="2">Jumper</font></strong></td>
+        <td><p align="center"><strong><font size="2">Setting</font></strong></td>
+        <td><strong><font size="2">Function</font></strong></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">CPU Type<br>
+        JP1</font></td>
+        <td valign="top"><p align="center"><font size="2">1 - 2 (default)<br>
+        2 - 3</font></td>
+        <td><font size="2">For Pentium 60/90 or Pentium 66/100<br>
+        Pentium 50/100<br>
+        Note:<br>
+        60/90 means that the external bus frequency is 60 MHz <br>
+        and the CPU internal operating frequency is 90 MHz . <br>
+        Similarly for 66/100 and 50/100.</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <p><strong><font size="2">Dual Pentium (3.3V) CPU Board</font></strong></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmcpu2.gif" width="460" height="173"></font></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td><p align="center"><strong><font size="2">Jumper</font></strong></td>
+        <td><p align="center"><strong><font size="2">Setting</font></strong></td>
+        <td><strong><font size="2">Function</font></strong></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">Cache Size<br>
+        JP1</font></td>
+        <td><p align="center"><font size="2">1 - 2<br>
+        2 - 3</font></td>
+        <td valign="top"><font size="2">256 KB<br>
+        512 KB</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP13</font></td>
+        <td valign="top"><p align="center"><font size="2">1 - 2<br>
+        2 - 3</font></td>
+        <td valign="top"><font size="2">512 KB<br>
+        256 KB</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td><p align="center"><strong><font size="2">Jumper</font></strong></td>
+        <td><p align="center"><strong><font size="2">Setting</font></strong></td>
+        <td valign="top"><strong><font size="2">Function</font></strong></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">CPU Type<br>
+        JP2</font></td>
+        <td><p align="center"><font size="2">1 - 2 (default)<br>
+        2 - 3</font></td>
+        <td valign="top"><font size="2">For Pentium 60 / 90, Pentium 66 / 100<br>
+        For Pentium 50 / 100 120, 133, 150, 166</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">JP3</font></td>
+        <td><p align="center"><font size="2">1 - 2</font></td>
+        <td valign="top"><font size="2">90, 100, 120, 133MHz</font></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><p align="center"><font size="2">2 - 3</font></td>
+        <td valign="top"><font size="2">150, 166MHz</font></td>
+      </tr>
+    </table>
+    </center></div><p>&nbsp;</p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td><p align="center"><strong><font size="2">Jumper</font></strong></td>
+        <td><p align="center"><strong><font size="2">Setting</font></strong></td>
+        <td><strong><font size="2">Function</font></strong></td>
+      </tr>
+      <tr>
+        <td><p align="center"><font size="2">SRAM Type<br>
+        JP12</font></td>
+        <td><p align="center"><font size="2">1 - 2 (default)<br>
+        2 - 3</font></td>
+        <td valign="top"><font size="2">Standard<br>
+        Synchronous</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP14</font></td>
+        <td><p align="center"><font size="2">Closed (default)<br>
+        Open</font></td>
+        <td valign="top"><font size="2">Standard<br>
+        Synchronous</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP15</font></td>
+        <td><p align="center"><font size="2">Closed (default)<br>
+        Open</font></td>
+        <td valign="top"><font size="2">Standard<br>
+        Synchronous</font></td>
+      </tr>
+      <tr>
+        <td valign="top"><p align="center"><font size="2">JP17, JP18</font></td>
+        <td valign="top"><p align="center"><font size="2">1 - 2 (default)<br>
+        1 - 1, 2 - 2</font></td>
+        <td><font size="2">Standard<br>
+        Synchronous<br>
+        Note: Setting 1 - 1 means to <br>
+        short pin 1 of JP17 and <br>
+        pin 1 of JP18 together.<br>
+        Setting 2 - 2 means to <br>
+        short pin 2 of the two <br>
+        jumpers together.</font></td>
+      </tr>
+    </table>
+    </center></div><p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif"
+    alt="Back to Top" align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="options"></a><br>
+    </font><font size="3"><strong>Additional Options</strong></font></p>
+    <table border="0" cellpadding="2">
+      <tr>
+        <td><strong><font size="2">Specialix serial cards</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">32-port ISA SI/XIO serial card</font></td>
+        <td><font size="2">XB54693</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">4 port terminal adapter</font></td>
+        <td><font size="2">XB43319</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">8 port terminal adapter</font></td>
+        <td><font size="2">XB43320</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">32-port EISA XIO serial card</font></td>
+        <td><font size="2">XB54610</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">8 port modular terminal adapter</font></td>
+        <td><font size="2">XB54611</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">8 port modular terminal adapter (7 RS232, 1 parallel)</font></td>
+        <td><font size="2">XB54612</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">128-port EISA RIO serial card</font></td>
+        <td><font size="2">XB54613</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">8 port remote terminal adapter</font></td>
+        <td><font size="2">XB54614</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">8 port remote terminal adapter (7 RS232, 1 parallel)</font></td>
+        <td><font size="2">XB54615</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Raid</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">DPT PM 3224 SmartRaid upgrade for FT//ex 1000<br>
+        comprising controller card and hot plug backplane.</font></td>
+        <td valign="top"><font size="2">UD54666</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">DPT PM3224 SCSI SmartRAID PCI connector <br>
+        3 channel &amp; hot swap drive backplane</font></td>
+        <td valign="top"><font size="2">UE56125</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">SCSI Controller</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">SCSI Controller card for over four drives</font></td>
+        <td><font size="2">UD55556</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">UPS power supply</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">APC Smart UPS AP9001 (900VA)</font></td>
+        <td><font size="2">UD54642</font></td>
+      </tr>
+      <tr>
+        <td><strong><font size="2">Processor Upgrades</font></strong></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><font size="2">Single to dual Pentium at 90MHz</font></td>
+        <td><font size="2">UE56135</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Single to dual Pentium at 120MHz</font></td>
+        <td><font size="2">UE56136</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Single to dual Pentium at 150MHz</font></td>
+        <td><font size="2">UE56699</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Single 120MHz upgrade for 90MHz</font></td>
+        <td><font size="2">UE56700</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Single 150MHz upgrade for 90/120MHz</font></td>
+        <td><font size="2">UE56698</font></td>
+      </tr>
+    </table>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="rear"></a><br>
+    </font><font size="3"><strong>Rear Panel</strong></font></p>
+    <p align="center"><font size="2"><img src="graphics/f2xrear.gif" border="0" width="300"
+    height="320"></font></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    <p><font size="2"><a name="cmos"></a><br>
+    </font><font size="3"><strong>CMOS Setup</strong></font></p>
+    <p><font size="2">To enter the CMOS Setup screens press CTRL+ALT+ESC after boot-up. The
+    BIOS Setup Utility main menu appears:</font></p>
+    <p>&nbsp;</p>
+    <p align="center"><font size="2"><img src="graphics/f2xmset1.gif" width="543" height="369"></font></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmset2.gif" width="543" height="369"></font></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmset3.gif" width="543" height="369"></font></p>
+    <p><strong><font size="2">Date and Time</font></strong></p>
+    <p><font size="2">The real time clock keeps the system date and time. After setting the
+    date and time, you need not enter them every time you turn on the system unit. As long as
+    the internal battery remains good and connected, the clock continues to keep the date and
+    time accurately even when the power is off.</font></p>
+    <p><strong><font size="2">Diskette Drives</font></strong></p>
+    <p><font size="2">To enter the configuration value for the first diskette drive (drive A),
+    highlight the Diskette Drive A parameter. Press the left or right arrow key to view the
+    options and select the appropriate value.</font></p>
+    <p><font size="2">The Diskette Drive parameters have the following options:</font></p>
+    <blockquote>
+      <blockquote>
+        <p><font size="2">Not present<br>
+        360 KB, 5.25-inch<br>
+        1.2 MB, 5.25-inch<br>
+        720 KB, 3.5-inch<br>
+        1.44 MB, 3.5-inch<br>
+        2.88 MB, 3.5-inch</font></p>
+      </blockquote>
+    </blockquote>
+    <p><font size="2">Follow the same procedure for the Diskette Drive B parameter. Choose
+    None if you don't have a second diskette drive.</font></p>
+    <p><strong><font size="2">Fixed Disk Drives</font></strong></p>
+    <p><font size="2">In this implementation all systems are equipped with a SCSI controller
+    and hard disk drive, all settings in this section are ignored.</font></p>
+    <p><strong><font size="2">System Memory</font></strong></p>
+    <p><font size="2">The system automatically detects the total amount of on-board memory
+    during the power-on self test (POST) and sets the memory parameters accordingly. If you
+    install additional memory, the system automatically adjusts the Total Memory parameter to
+    show the new memory size.</font></p>
+    <p><strong><font size="2">Math Coprocessor</font></strong></p>
+    <p><font size="2">The CPU includes a math coprocessor so this parameter shows installed by
+    default.</font></p>
+    <p><strong><font size="2">Video Display</font></strong></p>
+    <p><font size="2">The video display is the monitor on which the operating system prompt
+    appears when you boot the system. The system automatically detects the video mode of your
+    primary display and sets the configuration value accordingly.</font></p>
+    <p><strong><font size="2">Communication Status</font></strong></p>
+    <p><font size="2">The Communication Status parameters let you set the baud rate, parity,
+    stop bit and data length for the first serial port (COM 1). The values for this parameters
+    are:</font></p>
+    <blockquote>
+      <blockquote>
+        <p><font size="2">Baud Rate: 110 to 9600 bits per second (BPS)<br>
+        Parity: odd, even, or none<br>
+        Stop bit: 1 or 2 stop bits<br>
+        Data length: 7 or 8-bit data word</font></p>
+      </blockquote>
+    </blockquote>
+    <p><font size="2">There is one restriction on the options available for the communication
+    status parameters. If your data length parameter is an 8-bit data word, you must select
+    one of the following combinations:</font></p>
+    <blockquote>
+      <blockquote>
+        <p><font size="2">1 stop bit and odd or even parity<br>
+        2 stop bits and no parity</font></p>
+      </blockquote>
+    </blockquote>
+    <p><font size="2">The default values are 9600 BPS, odd parity, 1 stop bits, and 8-bit data
+    word.</font></p>
+    <p><strong><font size="2">Enhanced IDE Features</font></strong></p>
+    <p><strong><font size="2">IDE Fixed Disk Block Mode</font></strong></p>
+    <p><font size="2">This option has no effect on SCSI systems.</font></p>
+    <p><strong><font size="2">Large Hard Disk Capability</font></strong></p>
+    <p><font size="2">This option has no effect on SCSI systems.</font></p>
+    <p><strong><font size="2">Advanced PIO Mode</font></strong></p>
+    <p><font size="2">This option has no effect on SCSI systems.</font></p>
+    <p><strong><font size="2">Num Lock After Boot</font></strong></p>
+    <p><font size="2">This parameter allows you to activate the Num Lock upon booting.</font></p>
+    <p><strong><font size="2">Memory Test</font></strong></p>
+    <p><font size="2">When set to Enabled, this parameter lets the system perform a RAM test
+    during the power-on self test (POST) routine. Set to Disabled, the system detects only the
+    memory size and bypasses the test routine. The default setting is Enabled.</font></p>
+    <p><strong><font size="2">Auto-configuration Mode</font></strong></p>
+    <p><font size="2">Set this parameter to Enabled if you do not know the fixed disk drive
+    type parameters and the onboard communication port configuration. When enabled, this
+    parameter sets to the optimised system configuration values. The default setting is
+    Enabled.</font></p>
+    <p><strong><font size="2">Fast Boot Mode</font></strong></p>
+    <p><font size="2">This parameter allows the system to boot faster by skipping some POST
+    routines. If enabled, it sets the system speed to High, and enabled Shadow RAM, and
+    primary and secondary-level cache. The default setting is Disabled.</font></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmset4.gif" width="543" height="369"></font></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmset5.gif" width="543" height="369"></font></p>
+    <p><strong><font size="2">Shadow RAM</font></strong></p>
+    <p><font size="2">The system reserves 384 KB of random access memory (RAM) for the shadow
+    RAM function. This parameter has five range addresses. The address F0000h - FFFFFh is for
+    system BIOS and C0000h - C7FFFh is for shadowing video BIOS. The remaining address ranges
+    are for I/O ROM functions. When you set these addresses to Enabled, the system BIOS, video
+    BIOS and I/O ROM functions run directly from the shadow RAM for faster operation. When set
+    to Disabled, the functions run normally from ROM</font></p>
+    <p><strong><font size="2">Internal Cache (CPU Cache)</font></strong></p>
+    <p><font size="2">This parameter enables or disabled the internal cache memory. The
+    default setting is Enabled.</font></p>
+    <p><strong><font size="2">External Cache</font></strong></p>
+    <p><font size="2">This parameter enables or disables the external cache memory. The
+    default setting is Enabled.</font></p>
+    <p><strong><font size="2">Cache Scheme</font></strong></p>
+    <p><font size="2">This parameter sets the cache to Write-through or Write-back modes.
+    Write-back updates the cache but not the memory when there is a write instruction. It
+    updates the memory only when there is an inconsistency between the cache and the memory.
+    Write-through updates both the cache and the memory whenever there is a write instruction.</font></p>
+    <p><strong><font size="2">System Memory Parity</font></strong></p>
+    <p><font size="2">This parameter allows you to enable or disable the optional parity DRAM
+    onboard. However, you must disable this parameter if you installed SIMM's without parity
+    in the system.</font></p>
+    <p><strong><font size="2">Memory at 15MB - 16MB</font></strong></p>
+    <p><font size="2">To prevent memory address conflicts between the system and expansion
+    boards, reserve this memory range for the use of either the system or an expansion board.
+    Before setting this parameter, check your add-on card manual to determine if your add-on
+    card needs this memory space. If not set this parameter to System Use.</font></p>
+    <p><strong><font size="2">E0000h - FFFFFh (System BIOS)</font></strong></p>
+    <p><font size="2">If the System BIOS parameter is set to Enabled, you may select Cacheable
+    or Non-cacheable for the E0000h - FFFFFh parameter. When set to Cacheable, it allows the
+    system BIOS to run directly from the cache memory. The system operates faster. When set to
+    Non-cacheable, it lets the system BIOS run from RAM.</font></p>
+    <p><strong><font size="2">C0000h - C7FFFh (Video BIOS)</font></strong></p>
+    <p><font size="2">If the Video BIOS parameter is set to Enabled, you may select Cacheable
+    or Non-cacheable for the C0000h - C7FFFh parameter. When set to Cacheable, it allows the
+    video BIOS to run directly from the cache memory. The system operates faster. When set to
+    Non-cacheable, it lets the video BIOS run from RAM.</font></p>
+    <p>&nbsp;</p>
+    <p><strong><font size="2">BIOS Version less than R03-B0 </font></strong></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmset6.gif" width="543" height="369"></font></p>
+    <p align="center">&nbsp;</p>
+    <p align="left"><strong><font size="2">BIOS Version equal or greater than R03-B0</font></strong></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmset8.gif" width="543" height="369"></font></p>
+    <p align="center">&nbsp;</p>
+    <p><strong><font size="2">PCI Slot Number</font></strong></p>
+    <p><font size="2">This parameter lets you specify the PCI slot to configure based on the
+    following sub items. When you have set the values for the PCI slots, each selection
+    displays the values that you set for the sub items.</font></p>
+    <p><strong><font size="2">Function Number of Device</font></strong></p>
+    <p><font size="2">This parameter tells the system if a single-function or multifunction
+    card is installed. If you installed a single-function card in the system, this parameter
+    is automatically set to 0. The other function number settings are reserved for
+    multifunction cards.</font></p>
+    <p><strong><font size="2">Device Function</font></strong></p>
+    <p><font size="2">When set to Enable, the system activates the PCI device function
+    specified in the parameter Function Number of Device upon booting. When set to Disabled,
+    the system boots without activating the device even if it is installed in the slot.</font></p>
+    <p><strong><font size="2">Bus Master</font></strong></p>
+    <p><font size="2">This item lets you control the PCI device's ability to act as a bus
+    master. Set this to Enabled to allow the device to act as a bus master. Set to Disabled,
+    the device cannot generate PCI accesses.</font></p>
+    <p><strong><font size="2">IRQ Level for INTA Pin</font></strong></p>
+    <p><font size="2">This parameter assigns the IRQ level for each interrupt pin of the PCI
+    slots. You can assign any of the following available IRQ levels: 3, 5, 9, 10, 11, 14, and
+    15.</font></p>
+    <p><font size="2">Each PCI slot supports 4 interrupt pins. The INTA pin is automatically
+    reserved for Function Number 0 (master function). The remaining interrupt pins (INTB,
+    INTC, and INTD) are reserved for multifunction cards. Refer to your card manual for the
+    interrupt pin assignments.</font></p>
+    <p><strong><font size="2">Onboard SCSI AIC-7870</font></strong></p>
+    <p><font size="2">This parameter allows you to enable or disable the onboard SCSI
+    function. Enable this parameter if you installed a SCSI device. The default is Disabled.</font></p>
+    <p><strong><font size="2">Boot Device</font></strong></p>
+    <p><font size="2">During POST, the normal booting procedure starts with the initialisation
+    of the ISA card, followed by the PCI card, then the onboard SCSI, if present. Enabling
+    this parameter changes the normal booting sequence of the system, doing the SCSI
+    initialisation prior to add-on PCI card initialisation. You can only set this parameter if
+    the Onboard SCSI parameter is set to Enabled. The default setting is Disabled.</font></p>
+    <p><strong><font size="2">IRQ Level for INTA Pin</font></strong></p>
+    <p><font size="2">This item assigns the IRQ for the onboard SCSI interrupt pin. To avoid
+    IRQ conflicts, make sure that the assigned IRQ for the onboard SCSI has not been assigned
+    to other devices.</font></p>
+    <p><strong><font size="2">VGA Palette Snoop</font></strong></p>
+    <p><font size="2">PCI devices support the &quot;palette snooping&quot; technique that
+    enables the device control access to their palette registers.</font></p>
+    <p><font size="2">Set this parameter to Enabled to activate the palette snooping function
+    in the PCI VGA devices installed in your system. Check your VGA card manual for more
+    information about this function.</font></p>
+    <p align="center"><font size="2"><img src="graphics/f2xmset7.gif" width="543" height="369"></font></p>
+    <p><strong><font size="2">Disk Drive Control</font></strong></p>
+    <p><font size="2">The disk drive control features allow you to enable or disable the
+    read/write functions of a disk drive. These features can also control the diskette drive
+    or fixed disk drive boot function to prevent loading operating systems or other programs </font></p>
+    <p><strong><font size="2">Diskette Drive</font></strong></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td><p align="center"><strong><font size="2">Setting</font></strong></td>
+        <td><p align="center"><strong><font size="2">Description</font></strong></td>
+      </tr>
+      <tr>
+        <td><font size="2">Normal</font></td>
+        <td><font size="2">Diskette drive functions normally</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Write Protect All Sectors</font></td>
+        <td><font size="2">Disables the write function on all sectors</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Write Protect Boot Sector</font></td>
+        <td><font size="2">Disables the write function only on the boot sector</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Disabled</font></td>
+        <td><font size="2">Disables all diskette functions</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Fixed Disk Drive</font></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Normal</font></td>
+        <td><font size="2">Fixed disk drive functions normally</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Write Protect All Sectors</font></td>
+        <td><font size="2">Disables the write function on all sectors</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Write Protect Boot Sector</font></td>
+        <td><font size="2">Disables the write function only on the boot sector</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Disabled</font></td>
+        <td><font size="2">Disables all fixed disk functions</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">System Boot Drive</font></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><font size="2">Drive A then C</font></td>
+        <td><font size="2">System boots from drive A to C</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Drive C then A</font></td>
+        <td><font size="2">System boots from drive C to A</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">C:</font></td>
+        <td><font size="2">System always boots from drive C</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">A:</font></td>
+        <td><font size="2">System always boots from drive A</font></td>
+      </tr>
+    </table>
+    </center></div><p><strong><font size="2">Onboard Communication Ports</font></strong></p>
+    <p><strong><font size="2">Serial Ports</font></strong></p>
+    <p><font size="2">This parameter enables the serial ports and sets their address.</font></p>
+    <div align="center"><center><table border="1" cellpadding="2">
+      <tr>
+        <td colspan="2"><p align="center"><strong><font size="2">Setting</font></strong></td>
+        <td colspan="2"><p align="center"><strong><font size="2">Function</font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="2"><font size="2">Serial 1 (3F8h)</font></td>
+        <td colspan="2"><font size="2">COM 1 with address 3F8h</font></td>
+      </tr>
+      <tr>
+        <td colspan="2"><font size="2">Serial 2 (2F8h)</font></td>
+        <td colspan="2"><font size="2">COM 2 with address 2F8h</font></td>
+      </tr>
+      <tr>
+        <td colspan="2"><font size="2">Serial 3 (3E8h)</font></td>
+        <td colspan="2"><font size="2">COM 3 with address 3E8h</font></td>
+      </tr>
+      <tr>
+        <td colspan="2"><font size="2">Serial 4 (2E8h)</font></td>
+        <td colspan="2"><font size="2">COM 4 with address 2E8h</font></td>
+      </tr>
+      <tr>
+        <td colspan="2"><font size="2">Disabled</font></td>
+        <td colspan="2"><font size="2">Disables serial port 1</font></td>
+      </tr>
+      <tr>
+        <td colspan="4"><font size="2">NOTE: If an UPS is fitted, serial port 2 is used by the UPS
+        interface.</font></td>
+      </tr>
+      <tr>
+        <td colspan="4"><strong><font size="2">Parallel Port</font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="4"><font size="2">The system has one parallel port. The table below lists the
+        options for selecting the parallel port address.</font></td>
+      </tr>
+      <tr>
+        <td><p align="center"><strong><font size="2">Setting</font></strong></td>
+        <td colspan="3"><p align="center"><strong><font size="2">Function</font></strong></td>
+      </tr>
+      <tr>
+        <td><font size="2">3BCh</font></td>
+        <td colspan="3"><font size="2">Corresponds to the parallel port with address 3BCh</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">378h</font></td>
+        <td colspan="3"><font size="2">Corresponds to the parallel port with address 378h</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">278h</font></td>
+        <td colspan="3"><font size="2">Corresponds to the parallel port with address 278h</font></td>
+      </tr>
+      <tr>
+        <td><font size="2">Disabled</font></td>
+        <td colspan="3"><font size="2">Disables the parallel port</font></td>
+      </tr>
+      <tr>
+        <td colspan="4"><strong><font size="2">Parallel Port Operation Mode Settings</font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="3"><p align="center"><strong><font size="2">Setting</font></strong></td>
+        <td><p align="center"><strong><font size="2">Function</font></strong></td>
+      </tr>
+      <tr>
+        <td colspan="3"><font size="2">Standard Parallel Port (SPP)</font></td>
+        <td valign="top"><font size="2">Allows normal speed operation but in one direction only</font></td>
+      </tr>
+      <tr>
+        <td colspan="3"><font size="2">Enhanced Parallel Port (EPP)</font></td>
+        <td valign="top"><font size="2">Allows bi-directional parallel port operation at maximum
+        speed</font></td>
+      </tr>
+      <tr>
+        <td colspan="3"><font size="2">Extended Capabilities Port (ECP)</font></td>
+        <td><font size="2">Allows parallel port to operate in bi-directional mode and at a speed
+        higher than the maximum data transfer rate</font></td>
+      </tr>
+      <tr>
+        <td colspan="3"><font size="2">Standard and Bi-directional</font></td>
+        <td valign="top"><font size="2">Allows normal speed operation in a two-way mode</font></td>
+      </tr>
+    </table>
+    </center></div><p><strong><font size="2">Setup Password</font></strong></p>
+    <p><font size="2">The Setup Password prevents unauthorised access to the Setup Utility.</font></p>
+    <p><strong><font size="2">Power-on Password</font></strong></p>
+    <p><font size="2">The Power-on Password secures your system against unauthorised use. Once
+    you set this password, you have to type it whenever you boot the system.</font></p>
+    <p><strong><font size="2">Load Setup Default Settings</font></strong></p>
+    <p><font size="2">This option loads the default values of the system configuration
+    parameters. These values are the optimised system configuration settings.</font></p>
+    <p><font size="2">Enabling the Auto Configuration Mode and the Fast Boot Mode parameters
+    under the Basic System Configuration menu allows this function to set the system speed,
+    shadow RAM, cache, and other system parameters to their default settings.</font></p>
+    <p><font size="2"><a href="#top"><img src="../../../graphics/redarr01.gif" alt="Back to Top"
+    align="left" border="0" hspace="0" width="14" height="10"><img
+    src="../../../graphics/redarr01.gif" alt="Back to Top" align="right" border="0" hspace="0"
+    width="14" height="10"></a></font></p>
+    <hr>
+    
+    <p>&nbsp;</p>
+    <p align="center"><img width="486" height="25" src="../../../images/connectd.gif"
+    alt="Computing for a Connected World"> </td>
+  </tr>
+</table>
+</body>
+</html>
