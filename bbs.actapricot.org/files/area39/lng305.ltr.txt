@@ -1,0 +1,169 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) lng305b will provide you
+with conformance to the X/Open Portability Guide Issue 3 and to
+POSIX 1003.1 for the SCO UNIX System V/386 Development System.
+
+This SLS is for use with the SCO Open Desktop Development System Release 1.0.0,
+1.1.0, and SCO UNIX System V/386 Release 3.2 Development System Version 2.0.
+
+It will install new include files as well as new functions/utilities or ones
+whose functionality has been modified.  SLS lng305b can be installed either
+before or after MS1.
+
+To install, follow the steps below:
+
+1. Boot/reboot the machine and enter into single-user mode.
+
+   It is required that the user be in single-user mode when installing
+   SLS lng305b.  The reason for this is that the SLS supplies a new shared
+   library (/shlib/libc_s), and because most utilities are compiled using
+   shared libraries, there is potential for problems if the SLS is installed
+   in multiuser mode.  SLS lng305b installs a new shared library,
+   /shlib/libc_s, which you will need to install in place of the original.
+   To do this, SLS lng305b provides a copy of mv which has been compiled
+   using archive as opposed to shared libraries.  The new shared library,
+   libc_s, is installed into /tmp.  mv then moves the old library to
+   /tmp/libc_s.old and the new library to /shlib/libc_s.  All this is
+   done automatically by the install script.
+
+2. Insert SLS lng305b into the floppy drive.
+
+3. Use custom to install the files by entering the command:
+
+      custom
+
+4. Choose the option to install "A New Product."
+
+5. Choose the option for "Entire Product."
+
+6. Press <Enter> to continue.
+
+7. Next you will be prompted for a serial number and activation key.
+   Enter the serial number and activation key supplied with the SCO
+   System V Development System product.
+
+8. Remove the old library in /tmp/libc_s.old.
+
+   In order to remove the /tmp/libc_s.old library from the system, it is first
+   necessary to reboot the system, since the invoking shell will still use the
+   text image of /tmp/libc_s.old.
+
+
+
+The following files are supplied as part of SLS lng305b:
+
+A set of updated header files:
+
+     /usr/include/cpio.h
+     /usr/include/fcntl.h
+     /usr/include/grp.h
+     /usr/include/limits.h
+     /usr/include/math.h
+     /usr/include/memory.h
+     /usr/include/nl_types.h
+     /usr/include/pwd.h
+     /usr/include/search.h
+     /usr/include/setjmp.h
+     /usr/include/signal.h
+     /usr/include/stdio.h
+     /usr/include/stdlib.h
+     /usr/include/string.h
+     /usr/include/tar.h
+     /usr/include/termios.h
+     /usr/include/time.h
+     /usr/include/ulimit.h
+     /usr/include/unistd.h
+     /usr/include/utime.h
+     /usr/include/sys/dirent.h
+     /usr/include/sys/fcntl.h
+     /usr/include/sys/file.h
+     /usr/include/sys/nami.h
+     /usr/include/sys/proc.h
+     /usr/include/sys/signal.h
+     /usr/include/sys/stat.h
+     /usr/include/sys/stream.h
+     /usr/include/sys/stropts.h
+     /usr/include/sys/termio.h
+     /usr/include/sys/times.h
+     /usr/include/sys/types.h
+     /usr/include/sys/ulimit.h
+     /usr/include/sys/utsname.h
+     /usr/include/sys/unistd.h
+     /usr/include/sys/wait.h
+     /usr/include/sys/ci/cidefs.h
+     /usr/include/sys/ci/cilock.h
+
+
+A set of updated archive, shared and link libraries:
+
+     /lib/libc.a
+     /lib/libc_s.a
+     /lib/libcrypt_i.a
+     /lib/libintl.a
+     /lib/libm.a
+     /usr/lib/libmalloc.a
+     /shlib/libc_s
+     /usr/lib/llib-lc
+     /usr/lib/llib-lc.ln
+     /usr/lib/llib-lm
+     /usr/lib/llib-lm.ln
+     /usr/lib/llib-port
+     /usr/lib/llib-port.ln 
+
+Message catalog utilities:
+
+     /usr/bin/gencat
+     /usr/bin/dumpmsg
+     /usr/bin/mar
+     /usr/bin/iconv
+     /usr/bin/findstr
+     /usr/bin/insertmsg 
+     
+New compiler pass:
+
+     /lib/386/p2_386
+
+Math Functions:
+
+A number of math functions have changed slightly with regard to return
+errors.  The following functions now return HUGE_VAL (instead of HUGE)
+if overflow occurs:
+
+       ldexp()
+       exp()
+       gamma()
+       hypot()
+       pow()
+
+The following functions now return HUGE_VAL (instead of HUGE) in the case
+of negative arguments:
+
+       log()
+       j0()
+       j1()
+       jn()
+       sinh().
+
+
+A number of manual pages are provided for functions whose functionality
+has been either added to or modified.  New functions are also documented.
+The functions provided as new or added to the SLS are:
+
+       findstr(CP)    find strings in C source code
+       gencat(CP)     generates formatted message catalog
+       insertmsg(CP)  separate strings from program logic
+       catgets(S)     read a program message
+       catopen(S)     open or close a message catalog
+       fsync(S)       synchronise a file's state
+       gamma(S)       log gamma function
+       printf(S)      print formatted output
+       regexp(S)      regular expression compile and match routines
+       scanf(S)       convert formatted input
+       sysconf(S)     get configurable system variables
+
+
+If you have any questions regarding SLS lng305b please contact your supplier.
+
+SCO Support Services
+

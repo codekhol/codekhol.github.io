@@ -1,0 +1,154 @@
+==========================================================================
+Monster 3D                                                      README.TXT
+Diamond Multimedia Systems, Inc.
+==========================================================================
+
+Release Notes
+-------------
+This is version 4.10.01.1600 of the Monster 3D driver.
+
+
+
+Features Added 
+--------------
+Glide 2.x upgraded to version 2.46
+Glide 3.x support added
+DirectX 5.0 support added
+
+
+
+Software Installation: Win 9x
+-----------------------------
+These instructions assume that the Monster 3D is already installed and
+functioning, and that this web-based driver is being used as an upgrade.  
+Otherwise, please refer to the Starter Pack that came with the Monster 3D 
+for first time installation instructions.
+
+    1. Download drivers to your computer.
+
+    2. Double click on the executable (.exe) to extract to a temporary 
+       directory.
+
+    3. Right-click on My Computer and choose Properties.
+ 
+    4. Choose the Device Manager tab and double click on Sound, Video, and 
+       Game Controllers (or Multimedia).
+
+    5. Double click on the Monster 3D PCI Video Multimedia Device.
+    
+    6. Click on the Driver tab and then click the Change Driver button.  
+       Monster 3D PCI Video Multimedia Device should be highlighted.
+    
+    7. Click on the Have Disk button.
+ 
+    8. Type the appropriate path to the Monster 3D Windows 95 drivers 
+       (where the extracted files-#2 above, reside)
+	    
+    9. When files begin copying, Windows may ask you for the location of
+       the drivers a second time.  Simply type in the same path that was
+       entered in step #8, above.  After the files have been copied, click 
+       the OK to Restart your computer.
+    
+
+	
+
+    
+Running MOJO.EXE
+----------------
+Mojo is a version application.  It will printout the version information
+about the Monster 3D board.
+
+It will not run without DirectDraw 5 installed.  If DirectDraw 5 is
+not installed then a dialog appears stating that DDRAW.DLL cannot be
+found.  To fix this problem install DirectDraw 5.
+
+  An example follows:
+
+HARDWARE
+    Virtual Base Address:		0x???????? (depends on system)
+    Physical Base Address:		0x???????? (depends on system)
+    PCI Device Number:			0x? (depends on system)
+    Vendor ID:				0x121a
+    Device ID:				0x1
+    FBI Revision:			1 or 2
+    FBI Memory:				2 MB
+    FBI Video Display Type:		0x0
+    Scan-Line Interleaved?		no
+    TMU Revision:			1
+    Number TMUs:			1
+SYSTEM LIBRARIES
+    C:\WINDOWS\SYSTEM\GLIDE.DLL		263168	1/21/97		Glide(tm) Version 2.1.1
+    C:\WINDOWS\SYSTEM\SST1INIT.DLL	132096	1/21/97 	InitCode $Revision: 3 $
+    C:\WINDOWS\SYSTEM\DD3DFX.DRV	13088	10/23/97 	4.10.01.0013
+    C:\WINDOWS\SYSTEM\DD3DFX16.DLL	4384	10/23/97 	4.10.01.0013
+    C:\WINDOWS\SYSTEM\DD3DFX32.DLL	299520	10/23/97 	4.10.01.0013
+    C:\WINDOWS\SYSTEM\FXMEMMAP.VXD	7584	10/23/97 	4.10.01.0013
+
+Known Limitations
+-----------------
+  Refresh Rate in GLIDE Games:
+
+  Refresh rate is completely under the control of the GLIDE games.
+  However, the refresh selection in the panel sets an MSDOS environment
+  variable that modifies the refresh rate according to the user
+  selection at 640x480 only.  Click the Apply to DOS... check button to
+  reboot the system and apply the refresh rate to GLIDE games.
+
+  Gamma Correction in GLIDE Games:
+  Gamma correction is completely under the control of the GLIDE games. 
+  However, the gamma selection in the panel sets an MSDOS environment variable
+  that modifies the red, green, and blue gamma values according to the user
+  selection at 640x480 only.  Click the Apply to DOS... check button to
+  reboot the system and apply the gamma selection to GLIDE games.
+ 
+  Monster 3D Settings Panel:
+
+  The "Test" button in the gamma area of the Monster 3D Settings panel
+  purposely uses 640x480 at 60 Hz. This way the user can test gamma with
+  a consistent resolution and refresh rate that works correctly on any
+  VGA monitor.
+
+  The "Test" button in the resolution/refresh area brings the display up
+  in the selected resolution/refresh using the current selected gamma.
+
+  The "Test" buttons effectively change the settings before running the
+  test application.  Therefore the meaning of Cancel changes to be the
+  last time any "Test" button was used.
+
+NOTE:
+Glide games have control over resolution/refresh and gamma.  Thus,
+resolution/refresh and gamma selections in the Monster 3D panel may
+not apply to Glide games.
+
+NOTE:
+Gamma correction does not apply to the following resolutions:
+	512x384 at 85 Hz and greater
+	640x400 at 85 Hz and greater
+	640x480 at 85 Hz and greater
+	800x600 at 60 Hz and greater
+
+
+Direct3D
+--------
+Some games do not find the dd3dfx drivers.  They only run on the
+software version of Direct3D or the Direct3D HAL associated with the
+Primary DirectDraw device.
+
+When running the DirectX SDK applications, you cannot get to the menus
+because the 3DFX Direct3D does not turn off pass-thru mode for a menu
+command.
+
+Technology Demos and the Joystick
+---------------------------------
+The 3DFX Flip/Rotate demos will not work properly if your system has a 
+joystick port configured without a joystick connected. To remedy the problem, 
+either connect a joystick to the port or disable and/or remove the port from 
+your system configuration.
+
+
+All product names listed are trademarks or copyrights of their
+respective owners.
+
+=======================================================================
+Diamond Multimedia Systems, Inc.       (c) 1993-99, All Rights Reserved
+=======================================================================

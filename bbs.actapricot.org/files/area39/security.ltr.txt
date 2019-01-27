@@ -1,0 +1,568 @@
+           SCO Security Bulletin 95:02a : SCO RESPONSE TO SATAN
+           ----------------------------------------------------
+
+                             April 13, 1995
+
+
+The following statement is an official response by SCO to the release of 
+SATAN 1.0.  It is SCO's second Security Bulletin this year (95:02a), and
+is made to directly address issues contained in CERT Advisory CA-95:06 
+on SATAN.
+
+==========================================================================
+SCO Security Bulletin 95:02a
+
+SCO response to CERT Advisory CA-95:06, 
+"Security Administrator Tools for Analyzing Networks (SATAN)"
+
+The information in the advisory from the Computer Emergency Response
+Team (CERT) contained herein has prompted attention recently in the
+media and throughout the Internet Community. This article offers 
+a response to SATAN from The Santa Cruz Operation.
+
+
+
+I. Concerns about SATAN
+
+The wide availability and ease of use of the SATAN software makes it
+imperative that network administrators become aware of the issues
+surrounding the security of their networks, whether or not these
+networks are connected to the Internet.  While SATAN poses no new
+technical issues, the ability to easily probe the network for previously
+published vulnerabilities makes SATAN a serious issue for network
+administrators. 
+
+Prior to the release of SATAN, a user with malicious intent would have to
+know the details of a particular vulnerability in order to take advantage
+of it at a particular site. With SATAN, novice users can probe the network
+for these vulnerabilities and list possible avenues of attack on a 
+system-by-system basis without having to know the technical details of 
+each issue.
+
+While SATAN can be used to help discover the relative security issues
+inherent in one's own network, it can also be used to scan for security faults
+on other networks not in one's own control.  The possible consequences
+of such a scan are what is of most concern.  SATAN users should be careful
+not to probe networks outside of their control, since this type of activity
+is obviously against network etiquette.
+
+
+II. SCO Vulnerabilities and Corresponding Fixes
+
+The CERT advisory below discusses several vulnerabilities that SATAN
+makes an active attempt to discover.  However, there are only two 
+vulnerabilities known to be inherent to SCO system software.  These are
+described below:
+
+1) If you are running the sendmail mail transfer agent on your SCO system 
+instead of the default Multi-Channel Memorandum Distribution Facility (MMDF) 
+system, then the sendmail vulnerability, mentioned in section 4 of the 
+CERT advisory will apply to you:
+
+    6.Sendmail vulnerabilities
+      See CERT advisory CA-95:05 and CA-95:05.README for the latest information
+      CERT has published about sendmail. 
+
+This sendmail vulnerability has been addressed in (S)upport (L)evel
+(S)upplement (SLS) NET382e, which is available for download (see section IV
+below).
+
+2) Additionally, the following advisory
+
+             CA-94:02.REVISED.SunOS.rpc.mountd.vulnerability
+
+may be relevant to a few people who use NFS (the issue pertains to lines
+over 255 characters long in the /etc/exports file). A properly configured
+firewall provides a layer of protection against this. Nevertheless, SCO 
+has created an SLS to address this issue, NET398a, which is available 
+for download (see section IV below).
+
+The rest of the vulnerabilities listed in the advisory either represent
+issues that do not exist on SCO systems or are a result of improper 
+configurations. Some pertinent configuration issues are discussed
+below.  See the advisory and its references for other important details.
+
+
+
+III. Additional Security Concerns and Corresponding Fixes, Recommendations
+
+1) Other Available Security-Related Fixes
+
+While SATAN currently is not known to probe for security issues relating
+only to SCO systems, SCO recommends the installation of the following
+(S)upport (L)evel (S)upplements to protect against known SCO security
+issues:
+
+SLS ODA377a, "System Security Enhancements for SCO Open Desktop"
+SLS UOD368b, "Security Supplement"
+SLS UOD392a, "System Security Enhancements"
+
+Of course, the following SLSs, already discussed, should also be installed:
+
+SLS NET382e, "Enhanced TCP/IP 1.2.1 Drivers" 
+SLS NET398a, "NFS Supplement"
+
+
+2) Configuration Issues
+
+Below are some recommendations for SCO systems using network services
+supplied by SCO but not configured and activated by default.
+
+TFTP file access
+If you activate TFTP, it is recommended that you do so in a secured area,
+which contains only those files that you allow to be publicly distributed
+(see comments in /etc/inetd.conf for details).  See also CERT advisory
+CA-91:18 for other security measures.
+
+anonymous FTP
+When setting up anonymous FTP services, be very certain that the home
+directory of the FTP user (/usr/ftp by default) is not writeable by
+the ftp user.  We suggest root ownership of this directory, with a mode
+of 755.  See also CERT advisory CA-93:10.
+
+rexd access
+We recommend not turning on rexd in /etc/nfs.  Also, to limit access by
+rexd and other programs which may NFS-mount filesystems, avoid exporting
+filesystems read/write; world-exported filesystems should never be 
+read/write.  
+
+other NFS export issues
+When exporting filesystems, be certain that the list of hosts does not 
+include the local system (either "localhost" or what the 'hostname' command
+reports).  Also keep the list below 256 characters to avoid the /etc/exports
+vulnerability discussed above, if possible.  Please see CERT advisory
+CA-94:15 for further guidance.
+
+3) Specific CERT-Recommended Tools Against SATAN
+
+The Santa Cruz Operation has created a (T)echnical (L)ibrary (S)upplement, 
+(TLS) "System Security Monitoring Tools", TLS076a, which is publicly
+available for download (see section IV below).  This TLS contains much 
+of the software recommended by CERT to both help thwart an unwelcome 
+network attack as well as help to detect when such an attack has or 
+is occuring.  The TLS contains both buildable source code and binaries 
+for The SCO Open Server and Open Desktop Release 3.0 bundles, as well as 
+for SCO Unix System V/386 Release 3.2 Release 4.2 with SCO TCP/IP 
+Release 1.2.1.  A list of software provided follows:
+
+	tcp_wrappers 7.2: A daemon that "wraps" itself around other
+			  network service daemons such as telnetd, 
+			  rlogind, and others, which checks for 
+			  authorized access before allowing 
+			  a request for service to proceed.
+
+	md5:		  A checksum utility published in the Public
+			  Domain by RSA Data Security. It is useful
+			  for verifying the authenticity of files.
+
+	lsof:		  A utility which displays files currently
+                          open by processes on the system, including
+                          TCP/IP sockets.  It is useful for monitoring
+                          systems which are suspected to have been
+                          compromised.
+
+        COPS:             A set of utilities to detect common procedural 
+                          errors or malicious and purposeful changes 
+                          to several key UNIX subsystems.  COPS provides 
+                          a wrapper which allows the convenient inclusion 
+                          of other security modules.
+
+        Tripwire:         By building a digital signature database 
+                          (using from one to six state-of-the-art secure 
+                          hashing functions) based on a user configurable 
+                          list of key files, Tripwire has the ability to 
+                          regularly compare and record changes to the
+                          contents of those files.  Specifically, this 
+                          would be useful for monitoring changes to 
+                          setuid programs or shell scripts.
+
+			  
+
+The software  provided on the TLS has been built to run on the listed
+platforms.  The Santa Cruz Operation has verified that the software
+performs as expected, but no comprehensive testing has been done.  The
+TLS provides source code for all modules so that changes to the software
+can freely be made.  All original source code is freely available in the
+public domain or for "free use" on the Internet. SCO makes no claim of
+supportability regarding this software, and it is strictly provided only
+as a courtesy to our customers. 
+
+
+
+IV. How to acquire an SLS or TLS
+
+THE TLS and SLSs mentioned above are freely available.
+Below we will only consider SLS NET382e, NET398a, and TLS TLS076a; 
+however, the other SLSs mentioned can be similarly downloaded.  
+Please download the file "file.list" in the same subdirectories as listed 
+below in order to obtain a complete list of all downloadable files.
+Also download the file "info" or "README" to obtain instructions on 
+how to apply the downloaded file images to your SCO System.
+
+Anonymous ftp on the Internet:
+
+	ftp://ftp.sco.COM/SLS/net382e.Z		(compressed disk image)
+	ftp://ftp.sco.COM/SLS/net382e.ltr.Z	(cover letter)
+
+	ftp://ftp.sco.COM/SLS/net398a.Z		(compressed disk image)
+	ftp://ftp.sco.COM/SLS/net398a.ltr.Z	(cover letter)
+
+	ftp://ftp.sco.COM/TLS/tls076a.cops.tar.Z 
+	ftp://ftp.sco.COM/TLS/tls076a.lsof.tar.Z 
+	ftp://ftp.sco.COM/TLS/tls076a.md5.tar.Z  	
+	ftp://ftp.sco.COM/TLS/tls076a.tcp_wrappers.tar.Z
+	ftp://ftp.sco.COM/TLS/tls076a.tripwire.tar.Z
+						(compressed disk images)
+	ftp://ftp.sco.COM/TLS/tls076a.ltr.Z	(cover letter)
+
+Anonymous UUCP:
+
+USA:
+	sosco!/usr/spool/uucppublic/SLS/net382e.Z
+	sosco!/usr/spool/uucppublic/SLS/net382e.ltr.Z
+	sosco!/usr/spool/uucppublic/SLS/net398a.Z
+	sosco!/usr/spool/uucppublic/SLS/net398a.ltr.Z
+	sosco!/usr/spool/uucppublic/TLS/tls076a.cops.tar.Z
+	sosco!/usr/spool/uucppublic/TLS/tls076a.lsof.tar.Z
+	sosco!/usr/spool/uucppublic/TLS/tls076a.md5.tar.Z
+	sosco!/usr/spool/uucppublic/TLS/tls076a.tcp_wrappers.tar.Z
+	sosco!/usr/spool/uucppublic/TLS/tls076a.tripwire.tar.Z
+	sosco!/usr/spool/uucppublic/TLS/tls076a.ltr.Z
+
+United Kingdom:
+
+	scolon!/usr/spool/uucppublic/SLS/net382e.Z
+	scolon!/usr/spool/uucppublic/SLS/net382e.ltr.Z
+	scolon!/usr/spool/uucppublic/SLS/net398a.Z
+	scolon!/usr/spool/uucppublic/SLS/net398a.ltr.Z
+	scolon!/usr/spool/uucppublic/TLS/tls076a.cops.tar.Z
+	scolon!/usr/spool/uucppublic/TLS/tls076a.lsof.tar.Z
+	scolon!/usr/spool/uucppublic/TLS/tls076a.md5.tar.Z
+	scolon!/usr/spool/uucppublic/TLS/tls076a.tcp_wrappers.tar.Z
+	scolon!/usr/spool/uucppublic/TLS/tls076a.tripwire.tar.Z
+	scolon!/usr/spool/uucppublic/TLS/tls076a.ltr.Z
+
+The telephone numbers for the machines sosco and scolon are listed in
+the /usr/lib/uucp/Systems file shipped with every SCO system.
+
+All of these files will be available on Compuserve in the SCOFORUM.
+
+Please note that the TLS cannot be shipped on a floppy disk, but is
+only available for download.  
+
+MD5 checksums for the software components listed above:
+
+MD5 (net382e.Z) = 41efeaaa855e4716ed70c12018014092
+MD5 (net398a.Z) = 28be6c228f9de4ef59cb5e3ad385c883
+MD5 (tls076a.cops.tar.Z) = 74a6be90221d3292555e6402d907682c
+MD5 (tls076a.lsof.tar.Z) = 64f25d7a9ed26c879b324f7fcb27193d
+MD5 (tls076a.md5.tar.Z) = c16b2fc5a3306550204f79cc007de61f
+MD5 (tls076a.tcp_wrappers.tar.Z) = de6414b73402a92565338a0001a44f4a
+MD5 (tls076a.tripwire.tar.Z) = bdaa4286bb74680e75b41fa15f9f9490
+
+
+
+
+V. Release of a SCO Version of SATAN
+
+SATAN is primarily a problem discovery tool; while it can find 
+vulnerabilities on remote systems, it neither offers further information on,
+nor takes explicit action toward, the exploitation of those vulnerabilities.
+Since it is easy-to-use, extensible, and widely available, SATAN can offer
+a great deal of legitimate value to network system administration.
+
+On the other hand, because of these same qualities, SATAN offers a wide
+avenue to malicious intent; furthermore, in exploratory mode it can  
+probe remote systems without deliberate user intent.  Finally, the current
+SATAN version appears to have its own security vulnerabilities and
+instabilities.
+
+The Santa Cruz Operation understands the value of offering a SCO
+port of SATAN in the near future, under the terms of a limited release
+and availability mechanism.  However, this issue is still being 
+carefully discussed and scrutinized, and SCO is not directly supplying
+SATAN at this time.  Further announcements by SCO will be made promptly 
+as new developments arise.
+
+In the meantime, the attached CERT advisory will give SCO system
+administrators the appropriate pointers to the currently available
+versions of SATAN including full source code and build instructions.
+
+
+
+=============================================================================
+CA-95:06                        CERT Advisory
+                                April 3, 1995
+         Security Administrator Tool for Analyzing Networks (SATAN)
+-----------------------------------------------------------------------------
+
+The CERT Coordination Center staff has examined beta version 0.51 of the
+Security Administrator Tool for Analyzing Networks (SATAN). This advisory
+contains information based on our review of this pre-release version. When the
+official release is available, we will distribute an updated advisory. SATAN
+is scheduled for release on April 5, 1995, at 14:00 GMT.
+
+1. What is SATAN?
+------------------
+SATAN is a testing and reporting tool that collects a variety of information
+about networked hosts. The currently available documentation can be found at
+         ftp://ftp.win.tue.nl/pub/security/satan_doc.tar.Z
+
+SATAN gathers information about specified hosts and networks by examining
+network services (for example, finger, NFS, NIS, ftp, and rexd).  It can then
+report this data in a summary format or, with a simple rule-based system,
+investigate potential security problems. Problems are described briefly and
+pointers provided to patches or workarounds. In addition to reporting
+vulnerabilities, SATAN gathers general network information (network topology,
+network services run, types of hardware and software being used on the
+network).  As described in the SATAN documentation, SATAN has an exploratory
+mode that allows it to probe hosts that have not been explicitly specified.
+Thus, SATAN could probe not only targeted hosts, but also hosts outside your
+administrative domain.
+
+Section 4 below lists the vulnerabilities currently probed by SATAN.
+
+
+2. Potential Impact of SATAN
+----------------------------
+SATAN was designed as a security tool for system and network administrators.
+However, given its wide distribution, ease of use, and ability to scan remote
+networks, SATAN is also likely to be used to locate vulnerable hosts for
+malicious reasons. It is also possible that sites running SATAN for a
+legitimate purpose will accidentally scan your system via SATAN's exploratory
+mode.
+
+Although the vulnerabilities SATAN identifies are not new, the ability to
+locate them with a widely available, easy-to-use tool increases the level of
+threat to sites that have not taken steps to address those vulnerabilities. In
+addition, SATAN is easily extensible. After it is released, modified versions
+might scan for other vulnerabilities as well and might include code to
+compromise systems. 
+
+
+3. How to Prepare for the Release of SATAN
+------------------------------------------
+
+* Examine your systems for the vulnerabilities described below and implement
+  security fixes accordingly.
+
+* In addition to reading the advisories cited for specific vulnerabilities
+  below, consult the following documents for guidance on improving the
+  security of your systems:
+          ftp://info.cert.org/tech_tips/security_info
+          ftp://info.cert.org/tech_tips/anonymous_ftp
+          ftp://info.cert.org/tech_tips/packet_filtering
+
+* Contact your vendor for information on available security patches, and
+  ensure that all patches have been installed at your site.
+
+* Use the tools listed in Section 5 to assist you in assessing and improving
+  the security of your systems.
+
+
+4. Vulnerabilities Probed by SATAN
+----------------------------------
+Listed below are vulnerabilities that beta version 0.51 of SATAN tests for,
+along with references to CERT advisories and other documents where applicable.
+
+Administrators should verify the state of their systems and perform corrective
+actions as necessary. We cannot stress enough the importance of good network
+configuration and the need to install all available patches.
+
+   1. NFS export to unprivileged programs
+   2. NFS export via portmapper
+   3. Unrestricted NFS export
+
+      See CERT advisory CA-94:15 and CA-94:15.README for security measures you
+      can take to address NFS vulnerabilities.
+
+      The following advisories also address problems related to NFS:
+             CA-94:02.REVISED.SunOS.rpc.mountd.vulnerability
+             CA-94:02.README
+             CA-93:15.SunOS.and.Solaris.vulnerabilities
+             CA-92:15.Multiple.SunOS.vulnerabilities.patches
+             CA-92:12.REVISED.SunOS.rpc.mountd.vulnerability
+             CA-91:21.SunOS.NFS.Jumbo.and.fsirand
+
+   4. NIS password file access
+      See CERT advisory CA-92:13 for information about SunOS 4.x machines using
+      NIS, and CA-93:01 for information about HP machines.
+
+   5. rexd access
+      We recommend filtering the rexd service at your firewall and commenting
+      out rexd in the file /etc/inetd.conf. 
+      
+      See CERT advisory CA-92:05 for more information about IBM AIX machines
+      using rexd, and CA-91:06 for information about NeXT.
+   
+   6. Sendmail vulnerabilities
+      See CERT advisory CA-95:05 and CA-95:05.README for the latest information
+      we have published about sendmail. 
+
+   7. TFTP file access
+      See CERT advisory CA-91:18 for security measures that address TFTP access
+      problems. In addition, CA-91:19 contains information for IBM AIX users.
+
+   8. Remote shell access
+      We recommend that you comment out rshd in the file /etc/inetd.conf or
+      protect it with a TCP wrapper.
+
+   9. Unrestricted X server access
+      We recommend filtering X at your firewall. Additional advice about
+      packet filtering is available by anonymous FTP from
+             ftp://info.cert.org:/pub/tech_tips/anonymous_ftp
+
+   10. Writable FTP home directory
+       See CERT advisory CA-93:10. 
+       Guidance on anonymous FTP configuration is also available from
+             ftp://info.cert.org:/pub/tech_tips/anonymous_ftp
+
+   11. wu-ftpd vulnerability
+       See CA-93:06, CA-94:07, and CA-94:07.README for more information about
+       ftpd.
+
+
+Note: In addition to our FTP archive at info.cert.org, CERT documents are
+      available from the following sites, and others which you can locate
+      by using archie:
+
+          ftp://coast.cs.purdue.edu:/pub/mirrors/cert.org/cert_advisories 
+          ftp://unix.hensa.ac.uk:/pub/uunet/doc/security/cert_advisories
+          ftp://ftp.luth.se:/pub/misc/cert/cert_advisories
+          ftp://ftp.switch.ch:/network/security/cert_advisories
+          ftp://corton.inria.fr:/CERT/cert_advisories
+          ftp://ftp.inria.fr:/network/cert_advisories
+          ftp://nic.nordu.net:/networking/security/cert_advisories
+
+5. Currently Available Tools
+-----------------------------
+The following tools are freely available now and can help you improve your
+site's security before SATAN is released.
+
+COPS and ISS can be used to check for vulnerabilities and configuration
+weaknesses. 
+
+     COPS is available from ftp://info.cert.org:/pub/tools/cops/*
+
+     ISS is available from
+     ftp://ftp.uu.net:/usenet/comp.sources.misc/volume39/iss  
+     CERT advisory CA-93:14 and CA-93:14.README contain information about ISS.
+
+TCP wrappers can provide access control and flexible logging to most network
+services. These features can help you prevent and detect network attacks. This
+software is available by anonymous FTP from
+
+          ftp://info.cert.org:/pub/tools/tcp_wrappers/*
+
+The TAMU security package includes tools to check for vulnerabilities and
+system configuration weaknesses, and it provides logging and filtering of
+network services. This software is available by anonymous FTP from
+
+          ftp://net.tamu.edu:/pub/security/TAMU/*
+
+The Swatch log file monitor allows you to identify patterns in log file entries
+and associate them with actions. This tool is available from
+
+          ftp://ee.stanford.edu:/pub/sources/swatch.tar.Z
+
+
+6. Detecting Probes
+-------------------
+One indication of attacks by SATAN, and other tools, is evidence of a heavy
+scan of a range of ports and services in a relatively short time.  Many UNIX
+network daemons do not provide sufficient logging to determine if SATAN is
+probing the system. TCP wrappers, the TAMU tools, and Swatch can provide the
+logging you need.
+
+
+7. Using SATAN
+---------------
+Running SATAN on your systems will provide you with the same information an
+attacker would obtain, allowing you to correct vulnerabilities. If you choose
+to run SATAN, we urge you to read the documentation carefully. Also,
+note the following:
+
+* It is easy to accidentally probe systems you did not intend to. If this
+  occurs, the probed site may view the probe(s) as an attack on their
+  system(s).
+
+* Take special care in setting up your configuration file, and in selecting the
+  probe level when you run SATAN. 
+
+* Explicitly bound the scope of your probes when you run SATAN. Under "SATAN
+  Configuration Management," explicitly limit probes to specific hosts and
+  exclude specific hosts.  
+
+* When you run SATAN, ensure that other users do not have read access to your
+  SATAN directory.
+
+* In some cases, SATAN points to CERT advisories. If the link does not work
+  for you, try getting the advisories by anonymous FTP.
+
+
+8. Getting more information about SATAN
+---------------------------------------
+As noted above, SATAN documentation is available from
+          ftp://ftp.win.tue.nl/pub/security/satan_doc.tar.Z
+
+Additional documents are available through a mail server set up by one of the
+authors. 
+
+Send mail to
+          majordomo@wzv.win.tue.nl
+
+Put the following text in the body (not subject):
+        get satan mirror-sites
+        get satan release-plan
+        get satan description
+        get satan admin-guide-to-cracking.101
+
+The last document contains "Improving the Security of Your Site by Breaking
+Into It," a 1993 paper in which the authors give their rationale for creating
+SATAN.
+
+---------------------------------------------------------------------------
+The CERT Coordination Center staff thanks Dan Farmer and Wieste Venema for the
+the opportunity to examine pre-release versions of SATAN. We also appreciate
+the interaction with the response teams at AUSCERT, CIAC, and DFN-CERT, and
+feedback from Eric Allman.
+---------------------------------------------------------------------------
+
+If you believe that your system has been compromised, contact the CERT
+Coordination Center or your representative in the Forum of Incident
+Response and Security Teams (FIRST).
+
+If you wish to send sensitive incident or vulnerability information to
+CERT staff by electronic mail, we strongly advise that the e-mail be
+encrypted.  The CERT Coordination Center can support a shared DES key, PGP
+(public key available via anonymous FTP on info.cert.org), or PEM (contact
+CERT staff for details).
+
+Internet E-mail: cert@cert.org
+Telephone: +1 412-268-7090 (24-hour hotline)
+           CERT personnel answer 8:30 a.m.-5:00 p.m. EST(GMT-5)/EDT(GMT-4),
+           and are on call for emergencies during other hours.
+Fax: +1 412-268-6989
+
+Postal address:  CERT Coordination Center
+                 Software Engineering Institute
+                 Carnegie Mellon University
+                 Pittsburgh, PA 15213-3890
+                 USA
+
+CERT advisories and bulletins are posted on the USENET newsgroup
+comp.security.announce. If you would like to have future advisories and
+bulletins mailed to you or to a mail exploder at your site, please send mail
+to cert-advisory-request@cert.org.
+
+Past advisories, CERT bulletins, information about FIRST representatives, and
+other information related to computer security are available for anonymous 
+FTP from info.cert.org. 
+
+
+
+Copyright 1995 Carnegie Mellon University
+This material may be reproduced and distributed without permission provided it
+is used for noncommercial purposes and the copyright statement is included.
+
+CERT is a service mark of Carnegie Mellon University.

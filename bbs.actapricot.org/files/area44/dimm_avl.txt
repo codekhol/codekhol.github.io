@@ -1,0 +1,23 @@
+     Approved Vendor List for FT4200 DIMMs
+-------------------------------------------------
+PT12361930        16Mb  (2M*72) EDO, 3V, Buffered
+(Limited Availability)
+Micron Europe Ltd               MT9LD272G-6X
+-------------------------------------------------
+HA57829           32Mb  (4M*72) EDO, 3V, Buffered
+Micron Europe Ltd               MT18LD472G-6X
+-------------------------------------------------
+HA57830           64Mb  (8M*72) EDO, 3V, Buffered
+Micron Europe Ltd               MT36LD872G-6X
+-------------------------------------------------
+HA61089          128Mb (16M*72) EDO, 3V, Buffered
+Samsung Semiconductor Eur Ltd   KMM372F1600AK-6U
+-------------------------------------------------
+HA61090          256Mb (32M*72) EDO, 3V, Buffered
+Samsung Semiconductor Eur Ltd   KMM372F3200AK-6U
+				KMM372F3200AK2-6U
+				KMM372F3200AK3-6U
+-------------------------------------------------
+
+NOTE:  128 and 256MB DIMMs are only supported by
+       Motherboard BIOS ver 8.03.00 or later.

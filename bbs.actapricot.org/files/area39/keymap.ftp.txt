@@ -1,0 +1,91 @@
+# 
+# Entries in this file are of two types:
+#
+#    1. Lines beginning with a non-numeric character are comment lines
+#    2. Lines beginning with a number are re-mapping lines and should have
+#       the following syntax:
+#           x, y, z
+#
+#       where <x> denotes whether the character is normal, shifted, etc. in 
+#       line with the following table:
+#
+#           0	Normal
+#	    1   Shift
+#           2   Ctrl
+#           3   Ctrl-Shift
+#           4	Alt
+#           5	Alt-Shift
+#           6   Alt-Ctrl
+#           7   Alt-Ctrl-Shift
+#
+#       y denotes the scancode of the key that is to be changed.
+#       z denotes the new character to be returned. The character will be
+#       in the appropriate character set, e.g. for VT220 this will be
+#       described by the DEC VT220 character set. In most cases, i.e. for
+#       most characters this will probably be ASCII.
+#
+#    Numbers can be given in decimal, hex, or octal and follows 'c'
+#    conventions.
+#
+# Map \/| key to </>   SEE MY OWN SECTION AT END OF FILE
+# 0, 0x56, 0x3c        #
+# 1, 0x56, 0x3e        #
+#
+# Map numeric keypad + to <tab>
+0, 0x4e, 0x09
+1, 0x4e, 0x09
+#
+# Map PF1 - PF4 keys to the Num Lock, /, * and - keys
+0, 0x45, 0x150
+1, 0x45, 0x150
+0, 0x95, 0x151
+1, 0x95, 0x151
+0, 0x37, 0x152
+1, 0x37, 0x152
+0, 0x4a, 0x153
+1, 0x4a, 0x153
+#
+# Map logical F1..F10 to the ATE F1..F10 keys
+0, 0x3b, 0x150
+0, 0x3c, 0x151
+0, 0x3d, 0x152
+0, 0x3e, 0x153
+0, 0x3f, 0x531
+0, 0x40, 0x311
+0, 0x41, 0x312
+0, 0x42, 0x313
+0, 0x43, 0x314
+0, 0x44, 0x315
+#
+# Map logical F11..F20 to shifted ATE F1..F10 keys
+1, 0x3b, 0x317
+1, 0x3c, 0x318
+1, 0x3d, 0x319
+1, 0x3e, 0x31a
+1, 0x3f, 0x31c
+1, 0x40, 0x31d
+1, 0x41, 0x31f
+1, 0x42, 0x320
+1, 0x43, 0x321
+1, 0x44, 0x322
+#
+# Map Help to the ATE F11 key
+0, 0x57, 0x31c
+1, 0x57, 0x31c
+#
+# Map Do to the ATE F12 key
+0, 0x58, 0x31d
+1, 0x58, 0x31d
+#
+# Map emulator escape key to Scroll Lock key
+0, 0x46, 0x70a
+1, 0x46, 0x70a
+#
+# Map various UK AT keyboard specific keys  J.D.E.
+#
+1, 0x3,  0x22  /*  2/" key
+0, 0x56, 0x5c  /*  \/| key   \ char
+1, 0x56, 0x7c  /*  \/| key   | char
+1, 0x28, 0x40  /*  '/@ key   @ char
+0, 0x2b, 0x23  /*  #/~ key   # char
+1, 0x2b, 0x7e  /*  #/~ key   ~ char 

@@ -1,0 +1,35 @@
+Apricot Shogun.  Approved Vendor List for SIMMs
+
+PART: 13235431                  4Mb (1M*36) TIN 1" HIGH
+-------------------------------------------------------------
+HYUNDAI                         HYM536100AM-70
+MICRON EUROPE LTD               MT9D136M-70
+SAMSUNG SEMICONDUCTOR EUROPE	KMM5361003C-70
+                                KMM5361203AW-70
+                                KMM5361003C-60
+TEXAS INSTRUMENTS LTD           TM124MBK36A-70
+
+PART: 13235531                  8Mb (2Mb*36) TIN 1" HIGH
+-------------------------------------------------------------
+MICRON EUROPE LTD               MT18D236M-70
+SAMSUNG SEMICONDUCTOR EUROPE	KMM5362003C-6
+                                KMM5362003C-7
+                                KMM5362203AW-70
+TEXAS INSTRUMENTS LTD           TM24BNBK36R-70
+                     
+PART: 13235631                  16Mb (4M*36) TIN 1" HIGH
+-------------------------------------------------------------
+HYUNDAI                         HYM536410AM-70
+MICRON EUROPE LTD               MT12D436DM-70
+NEC ELECTRONICS (UK) LTD	MC-424000A36BE-7
+SAMSUNG SEMICONDUCTOR EUROPE	KMM5364103AK-6
+                                KMM5364103AK-7
+                                KMM5364100A-70
+TEXAS INSTRUMENTS LTD           TM497MBK36Q-70
+                                TM497MBK3Q-70
+
+PART: 13235731                  32Mb (8M*36) TIN 1" HIGH
+-------------------------------------------------------------
+MITSUBISHI ELEC (UK) LTD	MH8M36BNJ-70
+SAMSUNG SEMICONDUCTOR EUROPE	KMM5368103AK-70
+TOSHIBA ELECTRONICS (UK) LTD	THM3680G0B5-60

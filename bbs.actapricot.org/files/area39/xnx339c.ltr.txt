@@ -1,0 +1,154 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) xnx339c contains modified kernel
+modules that address the six issues listed below.  
+        
+
+         (1)  Bus corruption and kernel PANIC if:
+              (A)   A driver is configured at spl7 on the second PIC;
+              (B)   The same driver is being used under heavy interrupt load;
+              (C)   DMA is being used.
+
+         (2)  Drivers that make use of the secondary PIC by using IRQ 30 
+	      through 37 octal, or 24 through 31 decimal, may have the 
+	      interrupt blocked until the SPL in the kernel is at level 0
+              (SCO XENIX 386 Operating System Release 2.3.4 specific).
+	      Under heavy load this may result in data loss for non-intelligent
+	      serial cards that are attached to the second PIC.
+              There are two PICs on a typical PC platform.   The diagram
+              below shows the number of the IRQ and where they are assigned.
+              Please note that, on your system, not all IRQ's may be used.
+
+                       PIC 1                      PIC  2
+                      +-----+
+              CPU <---|  0  |-- clock          octal  decimal
+                      |  1  |-- keyboard      +--------------+
+                      |  2  |<----------------|  30     24   |--
+                      |  3  |-- tty2a         |  31     25   |--  tape/net
+                      |  4  |-- tty1a         |  32     26   |--
+                      |  5  |-- lp2 or tape   |  33     27   |--  serial
+                      |  6  |-- floppy        |  34     28   |--  serial
+                      |  7  |-- lp0 or lp1    |  35     29   |--  FPU
+                      +-----+                 |  36     30   |--  hdisk
+                                              |  37     31   |--  hdisk/scsi
+                                              +--------------+
+
+         (3)  Under SCO XENIX Release 2.3.4 386 GT, the use of DMA
+	      Channel 3 will fail unless the kernel has been modified
+	      with adb(CP), as instructed in the SCO XENIX System V
+	      Operating System Release Notes dated "12 August 1991."
+	      Previous releases of the Release Notes will not have
+	      this information.  The adb patch was:
+
+                /etc/_fst -w /xenix
+                dma_param+e ?w c033
+                dma_enable+d ?w c033
+                dma_resid+d ?w c033
+                \$q
+
+	      In addition, the Release Notes ensure that the above 
+	      adb patch is applied each time you relink the kernel 
+	      by adding the following lines to the bottom of the file 
+	      /usr/sys/conf/hdinstall:
+
+                /etc/_fst -w /xenix << EOF
+                dma_param+e ?w c033
+                dma_enable+d ?w c033
+                dma_resid+d ?w c033
+                \$q
+		EOF
+
+              NOTE:  This patch is not needed if SLS xnx339c is installed.
+                     SLS xnx339c will test for the presence of this adb
+		     patch in /usr/sys/conf/hdinstall.  If the patch is
+		     detected, the installation of SLS xnx339c will abort
+		     and will not install until you delete the above
+		     adb patch from /usr/sys/conf/hdinstall.
+
+         (4)  File system corruption in the form of unreferenced files.
+
+         (5)  Shared memory problems.  For example, as found in SCO uniPATH 
+	      SNA-3270 Release 2.1.
+
+         (6)  Kernel/machine hangs during boot or installation due to
+	      spurious interrupts.
+
+         NOTE: Item 1 and 2 above would seem to conflict.  The kernel was
+               changed in SCO XENIX Release 2.3.4 to behave as in item 2 to 
+	       prevent the possibility of a panic listed in item 1.  This 
+	       SLS provides a correct solution to both problems.
+
+
+INSTALLATION:
+
+Before attempting to install this SLS, you must be running one of the following
+releases:
+
+         SCO XENIX 386 Operating System Release 2.3.2 with xnx155
+         SCO XENIX 386 Operating System Release 2.3.2 with xnx296
+         SCO XENIX 386 Operating System Release 2.3.4
+
+	 Note:  Support Level Supplements xnx155 and xnx296 apply to
+		SCO XENIX 386 Operating System Release 2.3.2 only.
+		Each will upgrade the system from Release 2.3.2 to
+		Release 2.3.3.  SLS xnx339c will not install on
+		Release 2.3.2 unless SLS xnx155 or SLS xnx296 have
+		been installed.
+
+To verify the correct release of the operating system look at the boot screen 
+or use the command:
+
+        uname -r 
+
+from the shell prompt.  It should respond with either 2.3.3 or 2.3.4.
+The LINK kit must be installed; this can be verified with custom(ADM).
+
+        (1)   From the "#" prompt, type "custom" followed by <Return>.
+
+        (2)   Select option "1" from the custom(ADM) menu to select
+              "Operating System".
+
+        (3)   Select option "3" from the custom menu to "List the available
+              packages".
+
+        (4)   The "LINK" package must have a "yes" beside it.
+
+Next you need to be in single-user mode.  Please follow the instructions
+below to install SLS xnx339c.
+
+
+        (1)   From the "#" prompt, type "custom" followed by <Return>.
+
+        (2)   Select option 4 from the custom(ADM) menu to  "Add a
+              Supported Product".
+
+        (3)   Insert the floppy when prompted and press <Return>.
+
+        (4)   Answer "y" followed by <Return> to continue the installation.
+         
+        (5)   Select option "1" from the custom menu to "Install one or
+              more packages".
+
+        (6)   Enter "all" followed by <Return>.
+
+        (7)   Press <Return> again since the floppy is already in the drive.
+        
+        (8)   Answer "y" to the prompt "Do you want this kernel to boot by
+              default (y/n)?" and press <Return>.
+
+        (9)   Select "q" to quit from the custom(ADM) menu.
+
+        (10)  Now remove the floppy from the drive.
+
+        (11)  Reboot the system with the reboot command:
+              "reboot <Return>"
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

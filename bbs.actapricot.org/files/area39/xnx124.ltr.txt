@@ -1,0 +1,45 @@
+
+Dear Customer:
+
+The enclosed Support Level Supplement contains a new /bin/fsck which
+solves problems experienced with fsck quitting silently under SCO XENIX
+386 Operating System Releases 2.3.0, 2.3.1, or 2.3.3 for AT architecture
+machines. It is engineered specifically for these releases of the Operating
+System, and should not be installed on a system running a release other
+than these.
+
+To install the new /bin/fsck file:  
+
+	1.  Log in as root (super-user).
+
+	2.  Insert the xnx124 floppy.
+
+	3.  Run the utility "install":  
+
+		/etc/install 
+
+	3.  Answer 'y' to the "First Floppy (y/n)" question.
+
+	4.  Answer 'n' to the "Next Floppy (y/n)" question.
+
+	5.  Remove the xnx124 floppy and store in a safe place. You
+	    will need to reinstall this supplement if you ever reinstall
+	    from the original media.
+
+	Your previous /bin/fsck file has been replaced with a new one.
+	The following commands bring the machine to single user mode and
+	run fsck to clean the file system(s):
+
+	6.  /etc/shutdown su
+
+	7.  fsck
+
+	See FSCK(ADM) for details and explanations of any messages generated
+	by fsck.  Operation of the system should proceed normally at this point.
+
+Yours sincerely
+
+
+Technical Support Department
+
+ref: xnx124

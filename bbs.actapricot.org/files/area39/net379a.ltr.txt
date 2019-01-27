@@ -1,0 +1,152 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) NET379A contains new
+sendmail binaries for the following products:
+
+SCO TCP/IP Release 1.2.0 for SCO XENIX Systems
+SCO TCP/IP Release 1.2.0 for SCO UNIX System V/386 Release 3.2 Version 4.1
+SCO TCP/IP Release 1.2.1 for SCO UNIX System V/386 Release 3.2 Version 4.2
+SCO Open Desktop Release 2.0 and 3.0
+SCO Open Desktop Lite Release 3.0
+SCO Open Server Network System Release 3.0
+SCO Open Server Enterprise System Release 3.0
+
+The new sendmail binaries correct problems which might allow a user to gain 
+unauthorized access to system resources, programs, and files.  SLS NET379A 
+only installs on systems that already have sendmail configured.  Those systems
+using MMDF as the mail system do not need to install this SLS.
+
+To install SLS NET379A on all systems listed above except SCO TCP/IP Release
+1.2.0 for SCO XENIX Systems, take the following steps:
+
+1. Shutdown and reboot your system.  Enter System Maintenance mode by 
+   typing your root password at the prompt:
+
+   Type CONTROL-d to proceed with normal startup,
+   (or give root password for System Maintenance)
+
+2. Type:
+
+   /etc/custom
+
+3. The main custom "menu" will appear.  The "Install" option will
+   be highlighted.  Press <Return> to select the "Install" option.
+
+4. A list of installed products will appear.  The first item in 
+   the list, "A New Product", is highlighted.  Press <Return> 
+   to select "A New Product".
+
+5. Custom will now display your installation options.  By default,
+   "Entire Product" is highlighted.  Press <Return> to select
+   "Entire Product".
+
+6. Custom will prompt you to insert "Distribution Floppy 1".  Insert
+   the enclosed diskette into the drive and press <Return> while 
+   "Continue" is highlighted.
+
+7. After extracting some information from the diskette, custom 
+   will once again prompt you to insert volume 1.
+   Press <Return> while "Continue" is highlighted.
+
+8. After custom has completed extracting and installing the new
+   sendmail binary, you will be returned to the main custom menu.  
+   You may quit out of custom at this time.  For the changes to take
+   effect, bring the system to multiuser mode by typing ^D <Control-D> 
+   at the shell prompt. 
+
+To install this SLS on SCO TCP/IP Release 1.2.0 for SCO XENIX Systems, 
+take the following steps while in System Maintenance mode:
+
+Execute:
+
+     # /etc/custom
+
+Custom will display a menu and a prompt similar to the following:
+
+     1. Operating System
+     2. Development System
+     3. Text Processing System
+     4. Add a Supported Product
+     5. SCO Streams Runtime
+     6. SCO TCP/IP Runtime System
+     7. SCO TCP/IP 1.2.0 Maintenance Supplement
+
+     Select a set to customize or enter q to quit: 
+
+Enter "4" at the prompt and press <Return>.  Custom will then prompt you
+as follows:
+
+     Insert distribution volume 1
+     and press <RETURN> or enter q to quit: 
+
+Insert the SLS disk into the floppy drive and press <Return>.
+
+Custom will then display another menu and a prompt similar to the following:
+
+     1. Install one or more packages
+     2. Remove one or more packages
+     3. List the available packages
+     4. List the files in a package
+     5. Install a single file
+     6. Select a new set to customize
+     7. Display current disk usage
+     8. Help
+
+     Select an option or enter q to quit: 
+
+Enter "1" at this prompt to "Install one or more packages."
+
+Custom next displays a list, followed by a prompt, similar to the following:
+
+     Name    Inst    Size    Support Level Supplement net379a packages
+     --------------------------------------------------------------------
+     ALL     No      916     Entire Support Level Supplement net379a Set
+     net379a No      906     Support Level Supplement net379a
+
+     Enter the package(s) to install
+     or enter q to return to the menu: 
+
+Enter "all" at this prompt.
+
+Custom will again prompt you to insert the SLS diskette into the drive:
+
+     Insert Support Level Supplement net379 volume 1
+     and press <RETURN> or enter q to return to the menu: 
+
+As the disk is already in the drive, just press <Return>.
+
+Custom will display the following messages and then return to a menu followed
+by a prompt:
+
+     Extracting files ... 
+     Installing new sendmail...
+     Checking file permissions ... 
+
+     1. Install one or more packages
+     2. Remove one or more packages
+     3. List the available packages
+     4. List the files in a package
+     5. Install a single file
+     6. Select a new set to customize
+     7. Display current disk usage
+     8. Help
+
+     Select an option or enter q to quit: 
+
+Enter "q" at the prompt to exit the installation process.
+
+At this point, type a ^D <Control-D> at the shell prompt to enter
+multiuser mode so that the changes can take effect.
+
+If you ever update SCO TCP/IP or SCO Open Desktop, remove this SLS prior 
+to doing so.  If the new version of SCO TCP/IP or SCO Open Desktop requires 
+this SLS, it should be reinstalled after doing the update.  Removal of this 
+SLS should only take place in System Maintenance mode via the custom program.
+
+If you have any questions, please call our SCO Customer Services Department
+at (408) 425-4726.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time. 
+
+We appreciate your business.
+
+SCO Support Services

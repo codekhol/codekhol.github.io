@@ -1,0 +1,166 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) lng321 contains several new
+drivers and utilities for SCO TCP/IP Release 1.1.3, SCO NFS Release 1.1.1 
+or SCO Open Desktop Release 1.1.  This SLS requires that either SCO TCP/IP
+Release 1.1.3 be installed or that the ODT-NET TCP/IP portion of SCO Open
+Desktop Release 1.1 be installed prior to installing this SLS. 
+
+Although not required for installation, the features supplied in SLS lng321
+for SCO NFS are only available if SCO NFS Release 1.1.1 or the ODT-NET 
+NFS portion of SCO Open Desktop Release 1.1 is installed prior to installing 
+this SLS. 
+
+The new drivers are as follows:
+
+- /etc/conf/pack.d/nb/Driver.o:
+- /etc/conf/pack.d/udp/space.c:
+
+	These drivers allow the NetBios daemon, /etc/nbd, to
+  	work properly when there are older versions of /etc/nbd
+	on other machines running an earlier release of SCO TCP/IP. 
+	The following error, normally seen at the startup of /etc/nbd, 
+	is prevented by this new driver:
+	
+
+		nb: namesvc: ud error 115
+		dest 00000000:00000000
+		nb: namesvc:expected unit data_ind got type 18
+
+- /etc/conf/pack.d/socket/Driver.o:
+
+	This new driver allows multiple nameserver lines to be listed 
+	in the file /etc/resolv.conf.  With the original driver,
+	only the first nameserver line in the file /etc/resolv.conf 
+	was used.
+
+        This new driver allows the Remote Procedure Call (RPC)
+	clnt_broadcast() to work properly.  The original socket 
+	driver had a problem which caused this function to fail 
+	with the error "out of streams resources".
+
+- /etc/conf/pack.d/vty/Driver.o:
+
+	This driver fixes a problem in the original driver which
+	caused the system to panic under certain circumstances
+	when using the lprint(C) command across a telnet session.
+
+- /etc/conf/pack.d/tcp/Driver.o:
+
+	This driver prevents the following error from occurring on
+	the console of systems with an extreme network load:
+
+		so_receive:not M_PROTO, found 0
+
+	
+Along with these new drivers is a new /etc/rlogind binary which allows
+user equivalency to function properly with eight character user names.
+Additionally, SLS lng321 changes the allowable number of UDP and TCP
+connections each to 256.
+
+For users of SCO NFS Release 1.1.1, or the ODT-NET NFS portion of SCO Open
+Desktop Release 1.1, this SLS provides a more robust /etc/portmap which is 
+able to recover from network errors that caused the original /etc/portmap 
+to fail. 
+
+
+To install SLS lng321, take the following steps:
+
+	1. Shutdown and reboot your system.  Enter System Maintenance 
+	   mode by typing your root password at the prompt:
+
+	   Type CONTROL-d to proceed with normal startup,
+	   (or give root password for system maintenance)
+
+	2. Type:
+
+		   /etc/custom
+
+	3. The main custom "menu" will appear.  The "Install" option will
+	   be highlighted.  Press <Return> to select the "Install" option.
+
+	4. A list of installed products will appear.  The first item in 
+	   the list, "A New Product", is highlighted.  Press <Return> 
+	   to select "A New Product".
+
+	5. Custom will now display your installation options.  By default,
+	   "Entire Product" is highlighted.  Press <Return> to select
+	   "Entire Product".
+
+	6. Custom will prompt you to insert "Distribution Floppy 1".  Insert
+	   the enclosed floppy disk into the drive and press <Return> while 
+	   "Continue" is highlighted.
+
+	7. After extracting some information from the floppy disk, custom
+	   will display information indicating that it is saving some files.
+	   Custom will once again prompt you to insert volume 1.  Press 
+	   <Return> while "Continue" is highlighted.
+
+	8. After extracting some files, custom will display messages
+	   indicating that it is installing the new drivers and utilities.
+	   Custom will then prompt you for a serial number and activation
+	   key.  Enter the appropriate serial number and activation key 
+	   based on the information displayed on the screen. 
+
+	   If you are running SCO Open Desktop Release 1.1, you will only be
+	   asked for one serial number and activation key pair.  If you are
+	   running both SCO TCP/IP Release 1.1.3 and SCO NFS Release 1.1.1,
+	   apart from SCO Open Desktop, you will be asked to enter the serial
+	   number and activation key for both of these products in sequence.
+
+	9. Custom will display information indicating that it is adjusting 
+	   the NTCP and NUDP system parameters.  An error at this point 
+	   indicates that the parameters to be changed have previously been 
+	   changed and does not necessarily indicate a problem.  The next 
+	   prompt will be:
+
+		"Do you wish to relink the kernel now? (y/n)"
+
+	   Type "y" at this prompt.
+	
+       10. After linking the kernel, custom will prompt you:
+
+	   	"Do you want this kernel to boot by default? (y/n)"
+
+	   Type "y" at this prompt.
+
+       11. Custom will then prompt you:
+
+		"Do you want the kernel environment rebuilt? (y/n)"
+
+	   Type "y" at this prompt. 
+	   
+       12. Custom will prompt you to "Press any key to continue".
+	   Press <Return>.  Custom will then display the message:
+
+		"Checking file permissions...".
+
+       13. After completing these steps, you will be returned to the
+	   main custom menu.  You may quit out of custom at this time. 
+           Type:
+
+		/etc/reboot
+
+	   to reboot the system so that the changes take effect.
+
+Should you install SCO NFS Release 1.1.1 or the ODT-NET NFS portion of SCO
+Open Desktop Release 1.1 at a later time, execute the following commands
+while in System Maintenance mode to install the new /etc/portmap binary
+that is supplied with SLS lng321:
+
+	1. copy -om /usr/lib/lng321/etc/portmap /etc/portmap
+	2. /etc/serialize /etc/perms/nfsrt
+
+
+If you ever need to remove or update SCO TCP/IP or SCO NFS, please remember
+to use custom while in System Maintenance mode to remove this SLS first.
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

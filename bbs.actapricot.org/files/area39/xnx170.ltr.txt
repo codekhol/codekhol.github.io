@@ -1,0 +1,59 @@
+
+Dear Customer,
+
+The enclosed Support Level Supplement (SLS) xnx170 corrects problems
+with installing a second Adaptec SCSI host adaptor with SCO XENIX 386
+Operating System Release 2.3.2 for computers based on Micro Channel
+Architecture (MCA).  These problems caused mkdev hd to fail when trying
+to access the first disk on the second adapter.
+
+To install SLS xnx170, log in as "root" and type:
+
+	/etc/install
+
+The installation will update the Adaptec drivers and relink the kernel.
+You will then need to run the following commands in order to install the
+new XENIX kernel as the default:
+
+	cd /usr/sys/conf
+	./hdinstall
+
+Once the installation is complete the system should be rebooted off the
+new XENIX kernel.  To reboot your system, enter the command:
+
+	/etc/shutdown
+
+It should then be possible to install the disks on the second SCSI host
+adapter.
+
+To install a disk on a second SCSI host adapter, jumper the disk to
+be SCSI id 0 on the second adapter.  Once the disk is installed, issue
+the command:
+
+	mkdev hd 0 1
+
+In the above command, 0 refers to the SCSI id and 1 refers to the
+second adapter.
+
+Please note that there are a number of configuration issues to be aware
+of when installing a second SCSI host adaptor. The first adapter must be
+in a higher priority slot number than the second.  Also, only the first
+card may have the BIOS enabled.  The second card must have a lower base
+address than the first and should be configured to use interrupt vector
+10 (the first adapter is configured for interrupt vector 15).  There are
+6 addresses available for use with the 1640 SCSI host adapter:
+
+	0x330	0x230	0x130	- with/without the BIOS enabled
+	0x334	0x234	0x134	- with the BIOS disabled
+
+Normally, 0x330 would be used for the first SCSI host adapter and 0x230
+for the second SCSI host adapter.
+
+If you have any questions, please contact your supplier.
+
+Yours sincerely,
+
+
+Technical Support Department
+
+ref: xnx170

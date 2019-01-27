@@ -1,0 +1,1355 @@
+
+
+_____________________________________________________________________________
+        
+        
+        
+   SCO(r) Advanced Hardware Supplement (AHS)
+
+   Release 5.2.0
+   Release and Installation Notes
+
+   for SCO OpenServer(TM)
+        
+        
+        
+
+_____________________________________________________________________________
+   
+ Table of Contents
+  
+_____________________________________________________________________________
+  
+ About this book                                                            
+      How this book is organized 
+      Related documentation 
+      Typographical conventions 
+      How can we improve this book? 
+
+ Chapter 1
+ Before installing AHS                                                      
+      System requirements 
+      About AHS components 
+      About  releases 
+      Downloading AHS components 
+         WWW 
+         ftp 
+         telnet 
+         Dial-up connections 
+      Creating installation floppy disks 
+      Creating a BTLD disk 
+
+ Chapter 2
+ Installing the AHS 5.2.0 software                                         
+      Installing from the CD-ROM distribution 
+      Installing from downloaded files 
+      Installing from floppy disks 
+      Installing BTLD and mass storage drivers 
+         Using BTLDs at installation time 
+         Installing over previously-installed BTLDs 
+      Installing multiprocessing drivers 
+
+ Chapter 3
+ Removing the AHS software                                                 
+      Restoring software after removing AHS Release 5.2.0 
+
+
+
+_____________________________________________________________________________
+
+ About this book
+
+_____________________________________________________________________________
+
+    You will find the information you need more quickly if you are familiar
+    with:
+
+    +  ``How this book is organized''
+
+    +  ``Related documentation''
+
+    +  ``Typographical conventions''
+
+    Although we try to present information in the most useful way, you are
+    the ultimate judge of how well we succeed.  Please let us know how we can
+    improve this book.
+
+ How this book is organized
+
+    After introducing SCO(r) system products, this book includes the
+    following:
+
+    +  Chapter  1, ``Before installing AHS''
+
+    +  Chapter  2, ``Installing the AHS 5.2.0 software''
+
+    +  Chapter  3, ``Removing the AHS software''
+
+ Related documentation
+
+    The AHS documentation set includes the following online books:
+
+    AHS Release and Installation Notes
+        contains notes about installing AHS components and system
+        requirements.  PostScript(r) and ASCII versions of the Advanced
+        Hardware Supplement Release 5.2 are also available.
+
+    AHS Features and Limitations
+        describes new features, supported devices, and known limitations for
+        AHS components.
+
+    Configuring Video Adapters
+        provides information about configuring graphics drivers.
+
+    Configuring Network Connections
+        provides information about configuring network drivers.
+
+ Typographical conventions
+
+    This publication presents commands, filenames, keystrokes, and other
+    special elements as shown here:
+
+    Example:     Used for:
+
+    lp or lp(C)  commands, device drivers, programs, and utilities (names,
+                 icons, or windows);  the letter in parentheses indicates the
+                 reference manual section in which the command, driver,
+                 program, or utility is documented
+
+    /new/client.list
+                 files, directories, and desktops (names, icons, or windows)
+
+    root         system, network, or user names
+
+    filename     placeholders  (replace with appropriate name or value)
+
+    <Esc>        keyboard keys
+
+    Exit program?
+                 system output  (prompts, messages)
+
+    yes or yes   user input
+
+    ``Description''
+                 field names or column headings  (on screen or in database)
+
+    Cancel       button names
+
+    Edit         menu names
+
+    Copy         menu items
+
+    File != Find != Text
+                 sequences of menus and menu items
+
+    open or open(S)
+                 library routines, system calls, kernel functions, C
+                 keywords;  the letter in parentheses indicates the reference
+                 manual section in which the file is documented
+
+    $HOME        environment or shell variables
+
+    SIGHUP       named constants or signals
+
+    ``adm3a''    data values
+
+    employees    database names
+
+    orders       database tables
+
+    buf          C program structures
+
+    b_b.errno    structure members
+
+ How can we improve this book?
+
+    What did you find particularly helpful in this book?  Are there mistakes
+    in this book?  Could it be organized more usefully?  Did we leave out
+    information you need or include unnecessary material?  If so, please tell
+    us.
+
+    To help us implement your suggestions, include relevant details, such as
+    book title, section name, page number, and system component.  We would
+    appreciate information on how to contact you in case we need additional
+    explanation.
+
+    To contact us, use the card at the back of the SCO OpenServer Handbook or
+    write to us at:
+
+       Technical Publications
+       Attn:  Customer Feedback Team
+       The Santa Cruz Operation, Inc.
+       PO Box 1900
+       Santa Cruz, California  95061-9969
+       USA
+
+    or e-mail us at:
+
+       techpubs@sco.com  or   ...  uunet!sco!techpubs
+
+    Thank you.
+
+
+
+_____________________________________________________________________________
+
+ Chapter 1
+ Before installing AHS
+
+_____________________________________________________________________________
+
+    Advanced Hardware Supplement (AHS) Release 5.2.0 provides device drivers
+    and documentation to support the latest hardware on SCO OpenServer(TM)
+    systems for:
+
+    +  graphics devices
+
+    +  network adapters
+
+    +  mass storage devices
+
+    +  multiprocessing systems
+
+    AHS software and documentation is available on:
+
+    CD-ROM distribution
+         You can install the entire AHS 5.2.0 product or individual AHS
+         components from the SCO OpenServer Release 5.0.2 CD-ROM
+         distribution.
+
+    SCO Online Support
+         You can download the entire AHS 5.2.0 product or individual AHS
+         components from the SCO Online Support (SOS) system using:
+
+         +  WWW access
+
+         +  ftp
+
+         +  telnet
+
+         +  dial-up access
+
+         See ``Downloading AHS components''.
+
+    Floppy disk distribution
+         You can install the entire AHS 5.2.0 product or individual AHS
+         components from the AHS Release 5.2.0 floppy disk distribution or
+         from disk images downloaded from the SOS system.
+
+         See also ``Creating installation floppy disks''.
+
+    Before installing AHS components, familiarize yourself with:
+
+    +  AHS 5.2.0 system requirements
+
+    +  AHS 5.2.0 system components
+
+    +  SSOs and AHS 5.2.0
+
+    Then, see Chapter  2, ``Installing the AHS 5.2.0 software''.
+
+    _________________________________________________________________________
+       NOTE  After installation, we recommend that you review AHS Features
+       and Limitations before configuring individual device drivers.  AHS
+       Release and Installation Notes and AHS Features and Limitations are
+       installed by default when any AHS 5.2.0 component is installed.
+    _________________________________________________________________________
+
+ System requirements
+
+    AHS Release 5.2.0 is supported on these platforms:
+
+    +  SCO OpenServer Release 5.0.2
+
+    +  SCO OpenServer Release 5.0.0d with the Network Maintenance Supplement
+       installed
+
+    If AHS Release 5.1.0 is installed on an SCO OpenServer Release 5.0.0d
+    system, AHS Release 5.2.0 will update it.
+
+    Installing the entire AHS Release 5.2.0 product requires approximately
+    13MB of disk space; the Graphics and Network Drivers components each
+    require about 5MB, and the Mass Storage and Multiprocessing components
+    together require about 2.5MB.
+
+    _________________________________________________________________________
+       WARNING
+
+       +  Do not install AHS Release 5.2.0 on a system that is a server
+          for networked operating system installation (initial system
+          load, or ISL).  If you do, networked ISLs will no longer be
+          possible from that machine.
+
+       +  If you intend to add local language support for SCO OpenServer
+          Release 5.0.2, do so before installing AHS Release 5.2.0.  If
+          you install language support after installing AHS, screen
+          messages and documentation may not correspond to installed
+          software.  Reinstalling AHS Release 5.2.0 will correct this
+          problem.
+
+    _________________________________________________________________________
+
+ About AHS components
+
+    AHS Release 5.2.0 includes these technology components:
+
+    Graphics Drivers
+         Includes graphics drivers, grafinfo files, and moninfo files for all
+         supported graphics devices, plus an updated version of the Video
+         Configuration Manager, a revised Configuring Video Adapters book,
+         and new context-sensitive help for the video configuration software.
+
+         Installing this component will update any configured devices on your
+         system.  Additional devices can be configured with the Video
+         Configuration Manager after the AHS software is installed.
+
+         See Chapter  1, ``Graphics drivers: features and limitations'' in
+         the AHS Features and Limitations.
+
+    Network Drivers
+         Includes driver binaries and support files for all supported network
+         devices, plus an updated version of the Network Configuration
+         Manager, a revised Configuring Network Connections book, and new
+         context-sensitive help for the network configuration software.
+
+         Installing this component will update any configured devices on your
+         system.  Additional devices can be configured with the Network
+         Configuration Manager after the AHS software is installed.
+
+         See Chapter  2, ``Network drivers: features and limitations'' in the
+         AHS Features and Limitations.
+
+    Mass Storage Drivers
+         Includes driver binaries and support files for SCSI host adapters,
+         the SCSI jukebox peripheral drive, the Irwin tape drive, and ESDI
+         and WD (EIDE and ATAPI CD-ROM) disk drives.
+
+         The boot-time loadable drivers (BTLDs) that are included in the Mass
+         Storage Drivers component can be installed directly at boot time
+         using the link(HW) or ahslink commands; see ``Using BTLDs at
+         installation time''.
+
+         _________________________________________________________________________
+            NOTE  See ``Creating a BTLD disk'' if you are downloading the
+            Mass Storage Drivers component and you want to use a boot-time
+            loadable driver BTLD at installation time.
+         _________________________________________________________________________
+
+         See Chapter  3, ``Mass storage drivers: notes and limitations'' in
+         the AHS Features and Limitations.
+
+    Multiprocessing Drivers
+         Software to support the Tricord PowerFrame and APIC (Intel MPS)
+         platforms.
+
+         See Chapter  4, ``Multiprocessing drivers: notes and limitations''
+         in the AHS Features and Limitations.
+
+    AHS Base Documentation and Tools
+         Provides support for other AHS components.  Do not select this
+         component for installation; it is automatically installed by the
+         other components that require it.  Selecting this component installs
+         only documentation.
+
+ About SSOs and AHS releases
+
+    AHS Release 5.2.0 components use the SCO OpenServer software storage
+    object (SSO) architecture.  For SCO OpenServer Release 5.0.0, each of
+    these components was contained in a single SSO.  In subsequent AHS
+    releases, these large SSOs are replaced by a collection of smaller SSOs
+    to allow for more modular upgrades in future releases.  The Graphics and
+    Network Drivers were reorganized in AHS Release 5.1.0, and the Mass
+    Storage Drivers were reorganized in AHS Release 5.2.0.
+
+    You will not be affected by this SSO reorganization if you are installing
+    AHS Release 5.2.0 components as an entire product or a technology
+    component.
+    If you install a single driver package, you must first install the
+    appropriate configuration tool:
+
+    Video Configuration Manager
+         for the Graphics Drivers component
+
+    Network Configuration Manager
+         for the Network Drivers component
+
+    AHS Base Documentation and Tools
+         for the Mass Storage Drivers Component
+
+    _________________________________________________________________________
+       WARNING  If you install the AHS Release 5.2.0 graphics or network
+       single driver packages on SCO OpenServer systems without AHS
+       Release 5.1.0 installed and without first installing the
+       appropriate configuration tool, you will remove existing drivers of
+       that technology.
+
+       You will lose configuration information:
+
+       +  when you update the Network Configuration Manager.
+
+       +  if you install graphics or network single driver packages when
+          two or more drivers are configured in the system.  Configuration
+          information will be lost for at least one of the drivers.
+
+       If you need to install single driver packages under these
+       conditions, write down your network configuration information
+       before installing new drivers.
+
+       The mass storage drivers are not affected by these problems.
+    _________________________________________________________________________
+
+    The Multiprocessing Drivers component is not affected by the SSO
+    reorganization, so single driver packages can be installed from this
+    component on all supported platforms.
+
+ Downloading AHS components
+
+    To download AHS components or the entire AHS product from the SCO Online
+    Support (SOS) system:
+
+    1.  Create a /tmp/ahs5_2 directory (or other directory of your choice)
+        and change directories to it:
+
+           mkdir /tmp/ahs5_2
+           cd /tmp/ahs5_2
+
+    2.  Download AHS components using one of these methods:
+
+        +  WWW access
+
+        +  ftp
+
+        +  telnet
+
+        +  dialup access
+
+    3.  Install the AHS components you downloaded according to the
+        instructions in Chapter  2, ``Installing the AHS 5.2.0 software''.
+        The components will appear as ``media images'' on the local host
+        during the installation process.
+
+    _________________________________________________________________________
+       NOTE  It is not necessary to transfer downloaded AHS disk images to
+       floppy disk before installing the components.  Doing so will
+       considerably lengthen the installation process.  However, if you
+       need to install AHS components from floppy disks, see ``Creating
+       installation floppy disks''.
+
+       If you are downloading BTLD components and you want to use a BTLD
+       at installation time, you must first create a BTLD floppy disk. See
+       ``Creating a BTLD disk''.
+    _________________________________________________________________________
+
+    For more information about the SCO Online Support (SOS) system, see ``SCO
+    Online Support'' in the introduction to the printed version of the SCO
+    OpenServer Release Notes.  Also, consult the README files included in SOS
+    system directories before downloading AHS components.
+
+ WWW
+
+    To download AHS components from the SCO World Wide Web (WWW) site, point
+    your WWW browser (such as scohelp, Netscape, or NCSA Mosaic) to this URL
+    (Uniform Resource Locator):
+
+       http://www.sco.com/
+
+    To access current information about AHS and other SCO support services,
+    click on ``Services.''
+
+ ftp
+
+    To download AHS components using anonymous ftp(TC):
+
+    1.  Establish an ftp connection by entering:
+
+           ftp -i ftp.sco.com
+
+    2.  Log in as anonymous, giving your e-mail address for the password.
+
+    3.  Enter:
+
+           cd AHS
+
+    4.  After consulting READMEs for current information, download the
+        desired components and exit ftp.
+
+ telnet
+
+    To download AHS components using telnet(TC):
+
+    1.  Establish a telnet connection by entering:
+
+           telnet SOS.sco.com
+
+    2.  After entering the appropriate terminal type, select ``Toolchest''
+        from the SOS system menu, then ``AHS.''
+
+    3.  After consulting the ``List'' to determine the files you need, follow
+        the menu instructions to download files.
+
+        When you enter the name of a file, you will be given a list of
+        transfer protocols.  Depending on the transfer protocol selected, you
+        may be required to enter a receive command before proceeding.
+
+    4.  After when downloading is complete, return to the main menu and exit.
+
+ Dial-up connections
+
+    When downloading from the SOS system using a dialup modem line, two
+    choices are available:
+
+    +  an interactive login from a DOS-based PC, followed by download via the
+       XMODEM, YMODEM, ZMODEM, or KERMIT protocols
+
+    +  a non-interactive download using UUCP file transfer protocol from an
+       SCO system (probably the machine on which the AHS software is to be
+       installed)
+
+    Downloading from a DOS-based PC
+
+    _________________________________________________________________________
+       NOTE  You must have a serial communication package that includes
+       one of the following transfer protocols:
+
+       +  XMODEM
+
+       +  XMODEM-1K
+
+       +  YMODEM
+
+       +  ZMODEM
+
+       +  kermit (binary mode)
+    _________________________________________________________________________
+
+    To download AHS components using dial-up connections:
+
+    1.  Use your modem and communications software to call either the US or
+        the UK, depending on location:
+
+        For the US site:
+          (408) 426-9495 (for 300 to 14.4K baud modems).
+          (408) 426-9525 (if you have a Telebit modem, 19.2K or lower)
+
+        For the UK site:
+          +44 (0) 1923 210 888 (up to 2,400 baud)
+
+    2.  After a welcome message, enter sos when prompted for an SOS login.
+
+    3.  Set your terminal type or choose line-by-line mode.
+    4.  At the SOS system menu, select ``Toolchest,'' then ``AHS.''
+
+    5.  After consulting the ``List'' to determine the files you need, choose
+        ``Download'' and enter the name of the file to be downloaded.
+
+        You will then be given the list of transfer protocols mentioned
+        above. Depending on the transfer protocol selected, you may be
+        required to enter a receive command before downloading proceeds.
+
+        _________________________________________________________________________
+           NOTE  Some of the download protocols transmit the filename
+           along with the file data.  Since some of the filenames on the
+           SOS system are not compatible with DOS filename conventions,
+           this may cause the download to fail.  To work around this
+           problem, use a protocol such as XMODEM that does not transmit
+           the filename, giving you the opportunity to manually enter a
+           different name.
+        _________________________________________________________________________
+
+    6.  When downloading is complete, copy the file to a floppy disk.
+
+    7.  Use doscp(C) to copy the file to the SCO OpenServer target machine
+        and convert it to a UNIX file by entering:
+
+           doscp -r DOS.files .
+
+        The -r option prevents newline conversions and forces a true byte
+        copy, regardless of file type.
+
+    Downloading from an SCO system using UUCP
+
+    1.  After configuring your modem for dialing out, configure UUCP
+        recognize the SCO system that contains the files.  Add one of the
+        following lines to the end of the Systems configuration file in the
+        directory /usr/lib/uucp (if they do not already exist):
+
+        +  v.32 compatible modem:
+           sosco Any ACU Any 14084253502 -\r\d-ogin:-\K\d-ogin:-\K\d-ogin:
+           uusls
+
+        +  Telebit modem (PEP mode only):
+           sosco Any ACU Any 14084291786 -\r\d-ogin:-\K\d-ogin:-\K\d-ogin:
+           uusls
+
+    2.  Once the system is configured, use the uucp(C) command to request
+        files from the remote system.  All files for AHS Release 5.2.0 reside
+        in /usr/spool/uucppublic/AHS/5.0/sco/5.2.
+
+        First, download the README for a list of files and other relevant
+        information:
+
+        uucp  sosco!/usr/spool/uucppublic/AHS/5.0/sco/5.2/README  /tmp/README
+
+    3.  Download other files as necessary.
+
+        If you are using the C shell command interpreter, you must enter a
+        backslash character (\) before the exclamation mark (``!'')  to
+        prevent the C shell history mechanism from intercepting the rest of
+        the command line.
+
+        _________________________________________________________________________
+           NOTE  In general, a local directory other than /tmp is not
+           accessible using UUCP for downloading without configuring the
+           /usr/lib/uucp/Permissions file.  See the uucp(C) manual page
+           about downloading directly to local directories.
+        _________________________________________________________________________
+
+ Creating installation floppy disks
+
+    To create a set of floppy disks for installing AHS:
+
+    1.  If the AHS software is not yet accessible (on a local or remote
+        machine), download media images according to the instructions in
+        ``Downloading AHS components''
+
+    2.  Copy the media images to formatted floppy disks using the dd(C)
+        command, for example:
+
+           dd if=/image_directory/images of=/dev/rfd0
+
+        The directory containing the media images will be located on your
+        CD-ROM or in a directory on a hard disk (such as /tmp/ahs5_2.
+
+    3.  Install AHS components according to the instructions in ``Installing
+        from floppy disks''.
+
+ Creating a BTLD disk
+
+    If you downloaded mass storage drivers and you want to use a BTLD driver
+    at installation time, you must create a BTLD disk to use as your boot
+    disk.
+
+    _________________________________________________________________________
+       NOTE  If you have the AHS Release 5.2.0 CD-ROM distribution, you do
+       not need to create a BTLD disk; one is included with the
+       distribution.
+    _________________________________________________________________________
+
+    To create a BTLD disk:
+
+    1.  Download the media image marked ``BTLD disk''.
+
+    2.  Copy the media image to a formatted floppy disk using the dd(C)
+        command, for example:
+
+           dd if=/tmp/ahs5_2/btld_disk_image of=/dev/rfd0
+
+    3.  Use the BTLD disk as your boot disk as described in ``Using BTLDs at
+        installation time''.
+
+
+
+_____________________________________________________________________________
+
+ Chapter 2
+ Installing the AHS 5.2.0 software
+
+_____________________________________________________________________________
+
+    You can intall the AHS 5.2.0 software and documentation:
+
+    +  complete product, containing all types of supported drivers
+
+    +  technology component, containing single types of supported drivers:
+
+       -  graphics drivers
+
+       -  network drivers
+
+       -  mass storage drivers; see special instructions in ``Installing BTLD
+          and mass storage drivers''
+
+       -  multiprocessor drivers; see special instructions in ``Installing
+          multiprocessing drivers''
+
+    +  as single driver packages
+
+    Install AHS 5.2.0 software and documentation from:
+
+    +  the CD-ROM distribution
+
+    +  downloaded files
+
+    +  floppy disks
+
+    If you install graphics or network drivers, you must configure them using
+    the:
+
+    Video Configuration Manager
+         see Chapter  1, ``Configuring video adapters'' in Configuring Video
+         Adapters.
+
+    Network Configuration Manager
+         see Chapter  1, ``Configuring network connections'' in Configuring
+         Network Connections.
+
+    _________________________________________________________________________
+       CAUTION
+
+       +  If you remove the Graphics Drivers or Network Drivers components
+          of the AHS software from the system after it is installed, you
+          must reinstall some software from the original SCO OpenServer
+          Release 5 release media.  See ``Restoring software after
+          removing AHS Release 5.2.0''.
+
+       +  Installing single driver or documentation packages may remove
+          previously configured drivers.  See ``About SSOs and AHS
+          releases''.
+
+    _________________________________________________________________________
+
+ Installing from the CD-ROM distribution
+
+    To install AHS software from the CD-ROM distribution:
+
+    1.  As root, run the Software Manager from the desktop, or enter scoadmin
+        software from the command line.
+
+        You can significantly shorten the installation process by installing
+        AHS software from the command line using custom(ADM) instead of
+        running the Software Manager.  As root, enter:
+
+           custom -i -p component_name -m /dev/cd0
+
+        Replace component_name with the symbol for the AHS software component
+        you want to install:
+
+        +  SCO:AHS -- the entire AHS product
+
+        +  SCO-aga:XDrivers -- the Graphics Drivers technology component
+
+        +  SCO:lli -- the Network Drivers technology component
+
+        +  SCO:OS_drivers -- the Mass Storage and Multiprocessing Drivers
+           technology components
+
+        Go to Step 6 when the command line installation process is complete.
+
+    2.  Select Install New from the Software menu.
+
+    3.  Select the current host and specify the correct CD-ROM Drive.  Insert
+        your CD-ROM and click on Continue.  When presented with the contents
+        of the CD-ROM, select Advanced Hardware Supplement Release 5.2.0 as
+        the product to install.
+
+    4.  Choose a Full or Partial installation:
+
+        +  To install the entire AHS product, click on Full.
+
+        +  To install a single technology or single drivers, click on
+           Partial.  Then select the components you want from the list of
+           available software and click on Install.  The components are
+           described in ``About AHS components''.
+
+        _________________________________________________________________________
+           CAUTION  Installing single driver or documentation packages may
+           remove previously configured drivers.  See ``About SSOs and AHS
+           releases''.
+        _________________________________________________________________________
+
+    5.  When the installation is complete, select Exit from the Host menu.
+
+    6.  If the kernel was relinked, you must reboot your system for the
+        changes to take effect.  Type init 6, then press <Enter> to reboot
+        your system.
+
+    When the system comes up, the new drivers are installed.  Store the
+    distribution media in a safe place.
+
+ Installing from downloaded files
+
+    To install AHS software from downloaded files:
+
+    1.  Download software according to instructions in ``Downloading AHS
+        components''.
+
+    2.  As root, run the Software Manager from the desktop, or enter scoadmin
+        software from the command line.  Select Install New from the Software
+        menu.
+
+        You can significantly shorten the installation process by installing
+        AHS software from the command line using custom(ADM) instead of
+        running the Software Manager.  As root, enter:
+
+           custom -i -p component_name -z /tmp/ahs5_2
+
+        Replace component_name with the symbol for the AHS software component
+        you want to install:
+
+        +  SCO:AHS -- the entire AHS product
+
+        +  SCO-aga:XDrivers -- the Graphics Drivers technology component
+
+        +  SCO:lli -- the Network Drivers technology component
+
+        +  SCO:OS_drivers -- the Mass Storage and Multiprocessing Drivers
+           technology components
+
+        Go to Step 6 when the command line installation process is complete.
+
+    3.  Identify the installation source:
+
+        +  To install from files on the local host, select the current host
+           and specify Media Images as the media device.  Then, enter the
+           name of the directory containing the media images (for example,
+           /tmp/ahs5_2).
+
+        +  To install from another host, select From another host.  Specify
+           the host that contains the AHS software files, and enter the
+           swadmin password for that host when prompted.
+
+           -  If AHS is installed on the remote host, specify Hard Disk as
+              the media device, then select SCO OpenServer Advanced Hardware
+              Supplement.
+
+           -  If the AHS images are loaded onto the remote host, but are not
+              installed, specify Media Images as the media device.  Then,
+              enter the full pathname of the directory containing the media
+              images.
+
+    4.  Choose a Full or Partial installation based on the files you
+        downloaded:
+
+        +  If you downloaded the entire AHS distribution,
+
+           -  Click on Full to install the entire AHS product.
+
+           -  Click on Partial to install a technology component.  Then,
+              select the component you want from the list of available
+              software and click on Install.  The components are described in
+              ``About AHS components''.
+
+           -  Click on Partial to install individual drivers, then expand the
+              component that contains the drivers you want to install.  From
+              the list of available drivers, select the ones you want and
+              click on Install.
+
+        +  If you downloaded a single technology component:
+
+           -  Click on Full to install all drivers of that hardware type
+              (such as Graphics Drivers or Network Drivers).
+
+           -  Click on Partial to install one or more individual drivers,
+              then expand the component that contains the drivers you want to
+              install.  From the list of available drivers, select the ones
+              you want and click on Install.
+
+        +  If you downloaded a single technology component, click on Full to
+           install the single driver package.
+
+           _________________________________________________________________________
+              CAUTION  Installing single driver or documentation packages
+              may remove previously configured drivers.  See ``About SSOs
+              and AHS releases''.
+           _________________________________________________________________________
+
+    5.  When the installation is complete, select Exit from the Host menu.
+
+    6.  When the system prompt returns, you can delete the AHS Release 5.2.0
+        volume image files from your system if they are not required for
+        other installations.
+
+    7.  If the kernel was relinked, you must reboot your system for the
+        changes to take effect.  Type init 6, then press <Enter> to reboot
+        your system.
+
+    When the system comes up, the new drivers are installed.
+
+ Installing from floppy disks
+
+    To install AHS software from floppy disks:
+
+    1.  Create a set of floppy disks according to instructions in ``Creating
+        installation floppy disks'' if you do not already have a set.
+
+        _________________________________________________________________________
+           NOTE  We recommend that you copy your AHS media images from
+           floppy disks to your hard drive before installing AHS software.
+           To do so, use the dd(C) command, for example:
+
+              dd if=/dev/rfd0 of=/tmp/ahs5_2/VOL.00N.000
+
+           The volume names must correspond exactly to the media image
+           names (N is a number from 0-5).  Then install AHS software
+           according to the instructions in ``Installing from downloaded
+           files''.  Doing so will significantly simplify and shorten the
+           installation procedure.
+        _________________________________________________________________________
+
+    2.  As root, run the Software Manager from the desktop, or enter scoadmin
+        software from the command line.
+
+    3.  Select Install New from the Software menu.
+
+    4.  Select the current host and specify the correct Floppy Disk Drive.
+        Insert your floppy disk and click on Continue.
+
+    5.  Choose a Full or Partial installation:
+
+        +  To install the entire AHS product, click on Full.
+
+        +  To install a single technology or single drivers, click on
+           Partial.  Then select the components you want from the list of
+           available software and click on Install.  The components are
+           described in ``About AHS components''.
+
+        _________________________________________________________________________
+           CAUTION  Installing single driver or documentation packages may
+           remove previously configured drivers.  See ``About SSOs and AHS
+           releases''.
+        _________________________________________________________________________
+
+    6.  When the installation is complete, select Exit from the Host menu.
+
+    7.  If the kernel was relinked, you must reboot your system for the
+        changes to take effect.  Type init 6, then press <Enter> to reboot
+        your system.
+
+    When the system comes up, the new drivers are installed.  Store the
+    floppy disks in a safe place.
+
+ Installing BTLD and mass storage drivers
+
+    The mass storage boot-time loadable drivers (BTLD) included with AHS
+    Release 5.2.0 are:
+
+    alad  Adaptec 7870 and 7850 Host Adapter Driver; see alad(AHS)
+
+    ams   Advanced Micro Devices; see ams(AHS)
+
+    arad  Adaptec 7770 Host Adapter Driver; see arad(AHS)
+
+    blc   BusLogic SCSI Driver; see blc(AHS)
+
+    dptr  DPT - entire card line; see dptr(AHS)
+
+    esdi  IBM Fixed Disk Adapter/A; see esdi(AHS)
+
+    iiop  Tricord ES5000 Motherboards; see iiop(AHS)
+
+    slha  Symbios Logic Host Adapter Driver; see slha(AHS)
+
+    smad  Adaptec AIC-6x60 Host Adapter Driver; see smad(AHS)
+
+    wd    EIDE Driver; see wd(AHS)
+
+    The Sjk SCSI device (SCSI jukebox driver) and Irwin (mc) tape driver
+    cannot be linked at boot time.  Instead, use the Software Manager as
+    described in ``Installing from the CD-ROM distribution'', ``Installing
+    from downloaded files'', or ``Installing from floppy disks''.
+
+    There are two scenarios in which you might need to install the Mass
+    Storage Drivers component:
+
+    +  To install new hardware that is required for your system at
+       installation time, you may need to add one of the drivers included in
+       the Mass Storage Drivers component before you can install the
+       operating system.  See ``Using BTLDs at installation time''.
+
+    +  To install new hardware after installing the operating system, the
+       Mass Storage Drivers component is treated as a package of drivers that
+       are added to the Link Kit by the Software Manager.  See ``Installing
+       from the CD-ROM distribution'', ``Installing from downloaded files'',
+       or ``Installing from floppy disks''.
+
+       _________________________________________________________________________
+          NOTE  BTLD drivers installed at ISL are not visible to the
+          Software Manager even though they are installed in the link kit.
+          It is possible to custom-install a driver that has already been
+          BTLD-installed and this may become recommended practice in
+          future releases of AHS.
+       _________________________________________________________________________
+
+    See ``Installing over previously-installed BTLDs'' if you are updating a
+    previously-installed BTLD driver.
+
+    After installing a driver, read the manual page for that driver.
+    Driver-specific manual pages in the AHS section contain configuration
+    notes and known limitations for the individual drivers.
+
+    _________________________________________________________________________
+       NOTE  If you installed individual drivers from the SCO Online
+       Support system, only documentation for the installed drivers is
+       available on your system.
+    _________________________________________________________________________
+
+ Using BTLDs at installation time
+
+    This section describes how to install the new driver which is required
+    for the installation of the SCO OpenServer system.  If you need to use
+    your BTLD disk at installation time, you should have already inserted
+    your boot disk.  After inserting the boot disk, the boot prompt is
+    displayed; this is the point at which you begin the installation
+    procedure for this SCO BTLD package.
+
+    _________________________________________________________________________
+       NOTE  If you downloaded BTLDs from the SOS system, you must first
+       create a BTLD disk; see ``Creating a BTLD disk''.
+    _________________________________________________________________________
+
+    At this stage, the boot floppy disk should be in the drive, and the
+    system displays:
+
+    SCO OpenServer(tm) Release 5
+
+    Boot
+    :
+
+    1.  What you enter at the ``:''prompt depends on the driver you are
+        installing:
+
+        ams, slha, or iiop drivers
+             Enter link at the ``:'' prompt.
+
+        alad, arad, dptr, esdi or wd drivers
+             Enter ahslink.
+
+        smad driver
+             Enter defbootstr link disable=spad (the smad driver replaces the
+             older spad driver).
+
+        blc driver
+             Enter defbootstr link disable=ad (the blc adapter may be
+             mistaken for the ad driver).
+        If you are installing more than one driver, enter the link commands
+        that are appropriate for your drivers:
+
+           defbootstr link="driver_name other-btld"
+           defbootstr ahslink="driver_name other-btld"
+
+    2.  At the prompt, enter only the packages that are required by the
+        installation. To install the other packages on the disk, use the
+        post-installation procedure as described in ``Installing from the
+        CD-ROM distribution'', ``Installing from downloaded files'', or
+        ``Installing from floppy disks''.
+
+        Next, you see a boot line similar to the following:
+
+        fd(64)unix ramdisk=f(64) rootfs root=ram(7) ram.preload=7 swap=none
+        dump=none nbuf=100 link=pkg btld=fd(x)
+
+        Memory found: 0k - 640k, 1m - 9600k
+
+        pkg in the line above is replaced by the actual name of the driver
+        package for boot-time loading and x is replaced by the minor number
+        for your floppy device.
+
+        After a moment, a series of prompts are displayed with trailing dots;
+        these messages progress as software is loaded.
+
+    3.  Insert the requested volume (the SCO BTLD disk) when prompted. The
+        system prompts for and extracts the contents of the package.
+
+        If the wrong volume is inserted or the drive is empty, the system
+        displays the following:
+
+        Sorry, that volume does not contain the pkg package
+
+    4.  link(HW) and ahslink perform the linking of the extracted drivers
+        into the kernel and might require more information for the extracted
+        drivers.  If the system prompts you for more information about
+        configuring in these drivers, refer to the link(HW) manual page.
+
+        _________________________________________________________________________
+           NOTE  If there are any errors during this extraction (linking)
+           process, the process is aborted and you are forced to reboot.
+        _________________________________________________________________________
+
+    5.  After a series of messages culminating in a notice that your driver
+        loaded successfully, you will see a message prompting you to re-
+        insert the boot disk.
+
+        _________________________________________________________________________
+           NOTE  You can safely ignore the following message if it
+           appears:
+
+           ... Characteristic '...' not supported;
+
+        _________________________________________________________________________
+
+        The Mass Storage Drivers component has been installed, and you return
+        to the installation procedure for SCO OpenServer.
+
+        During the installation of the SCO OpenServer system you will be
+        asked whether you want to customize your operating system.  At the
+        very least, you must install the SCO OpenServer Run Time System (RTS)
+        and the BASE and LINK packages of the SCO OpenServer Extended
+        Utilities.
+
+ Installing over previously-installed BTLDs
+
+    If a different version of a driver with the same name as an AHS driver is
+    found during installation using the Software Manager, you will be
+    prompted to keep the driver already installed or overwrite it with the
+    AHS version.
+
+    If you answer yes to overwrite the driver, the third-party driver and its
+    configuration information is overwritten.  However, the new AHS driver
+    will not be configured into the kernel.  You will need to turn on the
+    driver by changing `N' in the driver's entry in /etc/conf/sdevice.d to
+    `Y'.  Relink the kernel before rebooting.
+
+ Installing multiprocessing drivers
+
+    Before installing the multiprocessing component, you must have:
+
+    +  The SCO OpenServer system installed with SCO Symmetrical
+       Multiprocessing Support (SMP(r)).  This product can be found on the
+       original installation media tape or CD-ROM and accessed using the
+       Software Manager).
+
+    +  If you are installing the Tricord PowerFrame (TPF) package, you must
+       have already installed and configured the iiop BTLD package.  If it is
+       not, the MP component will be installed, but the TPF driver will be
+       disabled.  In this case, install the iiop package, then enable the TPF
+       driver by changing the setting the second field of the
+       /etc/conf/sdevice.d/tpf file from N to Y.  For information about
+       installing the iiop package, see ``Using BTLDs at installation time''.
+
+    You can install on one of the following configurations:
+
+    +  a clean distribution (SCO OpenServer and no MP drivers)
+
+    +  a distribution which already has a vendor EFS (it is not generally
+       necessary to remove the EFS prior to installing the SCO Multi-
+       processing Drivers Release 5.2.0)
+
+    The AHS Multiprocessing Drivers component can be removed and any vendor
+    EFS or SCO OpenServer files will be restored (if you want to save them).
+
+    To install AHS Multiprocessing Drivers components, see ``Installing from
+    the CD-ROM distribution'', ``Installing from downloaded files'', or
+    ``Installing from floppy disks''.
+
+
+
+_____________________________________________________________________________
+
+ Chapter 3
+ Removing the AHS software
+
+_____________________________________________________________________________
+
+    The Advanced Hardware Supplement (AHS) Release 5.2.0 software is not
+    normally removed once it is installed from the system and full roll-back
+    capability is not supported.  The software can be removed using the
+    Software Manager, but you will then need to reinstall portions of
+    software from the original SCO OpenServer Release 5 media.
+
+    _________________________________________________________________________
+       WARNING  The system should be in system maintenance mode when
+       removing and restoring AHS software.  Specifically, be sure that no
+       NFS automounts are active when removing these components.  During
+       the removal process, TCP will be deconfigured, which can cause
+       problems if there are active NFS mounts.
+    _________________________________________________________________________
+
+    To remove AHS Release 5.2.0 software:
+
+    1.  As root, enter the following to bring your machine into system
+        maintenance mode:
+
+           /etc/shutdown -i1
+
+    2.  In the Software Manager, select SCO Advanced Hardware Supplement from
+        the list of installed software, then select Remove from the Software
+        menu.  Click on OK to confirm the removal.
+
+    3.  Select Exit from the Host menu.  AHS Release 5.2.0 software has now
+        been removed.
+
+    _________________________________________________________________________
+       NOTE  If you remove a large number of drivers from an SCO
+       OpenServer Release 5.0.0 system using the Software Manager or you
+       allow the Software Manager to run for an extended period, the
+       removal procedure may fail with a cannot fork process message.
+       This is caused by a known memory problem with the Software Manager.
+       To work around this problem, restart the Software Manager and
+       remove drivers in smaller groups, restarting the Software Manager
+       if necessary.
+    _________________________________________________________________________
+
+ Restoring software after removing AHS Release 5.2.0
+
+    After removing the Graphics Drivers or Network Drivers packages from AHS
+    Release 5.2.0 as described in Chapter  3, ``Removing the AHS software'',
+    you will need to restore files from the original SCO OpenServer Release 5
+    release media to return your system to the state it was in before
+    installing the AHS software.
+
+    1.  From the list of available software in the Software Manager, record
+        which SCO OpenServer Release 5 system you are using (Enterprise,
+        Host, or Desktop).
+
+    2.  Select Install New from the Software menu.  Select the current host,
+        identify the media device (tape or CD-ROM), and insert your original
+        SCO OpenServer Release 5 distribution media.
+
+    3.  The media contains several SCO products.  Select the SCO OpenServer
+        Release 5 system that you already have installed (recorded from the
+        main window of the Software Manager).
+
+    4.  Specify a Partial installation, then:
+
+        +  restore the Graphics Drivers by expanding  the SCO OpenServer
+           Graphics item and selecting Graphics Drivers.
+
+        +  restore the Network Drivers by expanding  the SCO OpenServer
+           Connectivity item and selecting Network Drivers.
+
+    5.  Click on the Install button.  The Software Manager will install just
+        these two components, restoring your system to the original SCO
+        OpenServer Release 5 versions.
+
+    6.  Reconfigure your network and graphics software using the:
+
+        +  Video Configuration Manager; see Chapter  1, ``Configuring video
+           adapters'' in Configuring Video Adapters.
+
+        +  Network Configuration Manager; see Chapter  1, ``Configuring
+           network connections'' in Configuring Network Connections.
+
+  
+_____________________________________________________________________________
+  
+  
+ (c)1983-1996 The Santa Cruz Operation, Inc.  All rights reserved.
+
+ No part of this publication may be  reproduced,  transmitted,  stored  in  a
+ retrieval system, nor translated into any human or computer language, in any
+ form or by any means, electronic, mechanical, magnetic,  optical,  chemical,
+ manual,  or otherwise, without the prior written permission of the copyright
+ owner, The Santa Cruz Operation,  Inc.,  400  Encinal  Street,  Santa  Cruz,
+ California,  95060,  USA.   Copyright infringement is a serious matter under
+ the United States and foreign Copyright Laws.
+
+ Information in this document is subject to change without  notice  and  does
+ not represent a commitment on the part of The Santa Cruz Operation, Inc.
+
+ SCO, the SCO logo, The Santa Cruz Operation, Open Desktop, ODT, Panner,  SCO
+ Global  Access,  SCO  MultiView,  SCO  Visual  Tcl,  Skunkware,  VP/ix,  SCO
+ OpenServer, UnixWare, SCO  OK,  and  the  SCO  OK  logo  are  trademarks  or
+ registered trademarks of The Santa Cruz Operation, Inc. in the United States
+ and other countries.  Windows Friendly and  Wintif  are  trademarks  of  IXI
+ Limited.   Visionware is a registered trademark of Visionware Limited.  UNIX
+ is a registered trademark in the United States and other countries, licensed
+ exclusively  through  X/Open  Company  Limited.   Cheyenne  and ARCserve are
+ registered trademarks of Cheyenne Software, Inc.  All other brand or product
+ names  are  or  may  be  trademarks of, and are used to identify products or
+ services of, their respective owners.
+
+ The SCO software that accompanies this publication  is  commercial  computer
+ software  and,  together  with  any related documentation, is subject to the
+ restrictions on US Government use as set forth below. If this procurement is
+ for a DOD agency, the following DFAR Restricted Rights Legend applies:
+
+ RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the Government
+ is subject to restrictions as set forth in subparagraph (c)(1)(ii) of Rights
+ in Technical Data  and  Computer  Software  Clause  at  DFARS  252.227-7013.
+ Contractor/Manufacturer  is  The  Santa  Cruz  Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA  95060.
+
+ If this procurement is for a civilian government agency, this FAR Restricted
+ Rights Legend applies:
+
+ RESTRICTED  RIGHTS  LEGEND:   This  computer  software  is  submitted   with
+ restricted  rights  under Government Contract No. _________ (and Subcontract
+ No.  ________,  if  appropriate).   It  may  not  be  used,  reproduced,  or
+ disclosed by the Government except as provided in paragraph (g)(3)(i) of FAR
+ Clause 52.227-14 alt III or as otherwise expressly stated in  the  contract.
+ Contractor/Manufacturer  is  The  Santa  Cruz  Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA  95060.
+
+ The copyrighted software that accompanies this publication  is  licensed  to
+ the  End  User  only  for use in strict accordance with the End User License
+ Agreement, which should be read  carefully  before  commencing  use  of  the
+ software.  This  SCO  software  includes software that is protected by these
+ copyrights:
+ (c)  1983-1996  The  Santa  Cruz  Operation,  Inc.;   (c)   1992-1996   3COM
+ Corporation;  (c)  1989-1994  Acer  Incorporated; (c) 1989-1994 Acer America
+ Corporation; (c) 1990-1995 Adaptec, Inc.; (c) 1988-1989 Adobe Systems, Inc.;
+ (c) 1993-1995 Advanced Micro Devices, Inc.; (c) 1990 Altos Computer Systems;
+ (c) 1992-1994 American Power Conversion, Inc.;  (c)  1987  Apollo  Computer,
+ Inc.;  (c) 1988-1991 Apple Computer, Inc.; (c) 1988 Archive Corporation; (c)
+ 1990-1996 ATI Technologies, Inc.; (c) 1976-1992  AT&T;  (c)  1992-1994  AT&T
+ Global  Information  Solutions  Company;  (c) 1993 Berkeley Network Software
+ Consortium; (c) 1985-1986 Bigelow & Holmes; (c)  1994-1995  BusLogic,  Inc.;
+ (c)   1988-1991  Carnegie  Mellon  University;  (c)  1989-1990  Cipher  Data
+ Products, Inc.; (c) 1985-1992 Compaq  Computer  Corporation;  (c)  1986-1987
+ Convergent   Technologies,  Inc.;  (c)  1990-1993  Cornell  University;  (c)
+ 1985-1994 Corollary, Inc.; (c) 1994 Dell Computer Corporation; (c) 1988-1993
+ Digital  Equipment  Corporation;  (c)  1989-1994 Dirk Koeppen EDV-Beratungs-
+ GmbH; (c) 1993 D.I.S. - Universita'  di  Pavia;  (c)  1990-1994  Distributed
+ Processing  Technology;  (c)  1991  D.L.S.  Associates;  (c)  1988  Evans  &
+ Sutherland Computer Corporation; (c) 1990 Free  Software  Foundation,  Inc.;
+ (c)  1991-1992  Fuji Xerox Co.; (c) 1991-1992 Fujitsu Limited; (c) 1989-1991
+ Future  Domain  Corporation;  (c)  1994  Gradient  Technologies,  Inc.;  (c)
+ 1990-1993  Groupe  Bull;  (c) 1992 Hal Computer Systems International, Ltd.;
+ (c) 1986-1996 Hewlett-Packard Company; (c) 1987-1996  IBM  Corporation;  (c)
+ 1990-1996 Intel Corporation;
+
+ (c) 1989 Irwin Magnetic  Systems,  Inc.;  (c)  1988-1994  IXI  Limited;  (c)
+ 1988-1991  JSB  Computer Systems Ltd.; (c) 1987-1994 Legent Corporation; (c)
+ 1988-1995 Locus Computing Corporation; (c) 1989-1993 Massachusetts Institute
+ of   Technology;   (c)   1989   Matra   Datavision  Inc.;  (c)  1996  Matrox
+ International; (c) 1990  Megatek  Corporation;  (c)  1985-1992  Metagraphics
+ Software Corporation; (c) 1980-1994 Microsoft Corporation; (c) 1990 Motorola
+ Inc.; (c) 1984-1989 Mouse Systems Corporation; (c) 1989 Multi-Tech  Systems,
+ Inc.;  (c)  1989-1991  National Computer Graphics Association; (c) 1991-1995
+ National Semiconductor Corporation; (c) 1990-1993 NCR Corporation; (c)  1990
+ NEC  Technologies,  Inc.; (c) 1989-1993 Network Computing Devices, Inc.; (c)
+ 1989-1992 Novell, Inc.; (c) 1990-1991 NTT  Software  Corporation;  (c)  1989
+ Object  Design, Inc.; (c) 1990 Oki Electric Industry Co., Ltd.; (c) 1992 Oki
+ Technosystems Laboratory, Inc.; (c) 1990 Ing. C.  Olivetti  &  C.  SpA;  (c)
+ 1990-1991  OMRON  Corporation; (c) 1989-1994 Open Software Foundation, Inc.;
+ (c) 1989  Prentice  Hall;  (c)  1992  Prior  Data  Sciences;  (c)  1993-1994
+ Programmed  Logic  Corporation;  (c)  1989-1995  Racal  InterLan,  Inc.; (c)
+ 1988-1989 Retix; (c)  1990-1992  RSA  Data  Security,  Inc.;  (c)  1987-1994
+ Secureware,  Inc.;  (c)  1988  Sequent Computer Systems, Inc.; (c) 1987-1990
+ Siemens Nixdorf Informationssysteme  AG;  (c)  1991-1992  Silicon  Graphics,
+ Inc.; (c) 1987-1991 SMNP Research, Inc.; (c) 1991-1992 Sony Corporation; (c)
+ 1990-1992  SORD  Computer  Corp.;  (c)   1987-1995   Standard   Microsystems
+ Corporation;  (c)  1984-1994 Sun Microsystems, Inc.; (c) 1995 Symbios Logic,
+ Inc.; (c)  1987  Tandy  Corporation;  (c)  1990-1991  Tektronix,  Inc.;  (c)
+ 1990-1992  Toshiba Corp.; (c) 1990-1995 Tricord Systems, Inc.; (c) 1989-1992
+ Unifi Communications Corporation; (c) 1990-1991 UniSoft Group  Limited;  (c)
+ 1990  Unisys Corporation; (c) 1987 United States Army; (c) 1979-1994 Regents
+ of the  University  of  California;  (c)  1993  Board  of  Trustees  of  the
+ University  of  Illinois;  (c)  1989-1991  University  of Maryland; (c) 1986
+ University  of  Toronto;  (c)  1987  University  of  Utah;  (c)  1990   UNIX
+ International;  (c)  1976-1994 UNIX System Laboratories, Inc.; (c) 1988 Wyse
+ Technology; (c) 1992 X Consortium, Inc.; (c) 1990  X/Open  Company  Limited.
+ (c)  1992-1993  Xware;  (c)  1983-1992  Eric  P.  Allman;  (c) 1987-1988 Don
+ Bennett; (c) 1987-1989 Jeffery D. Case and Kenneth W. Key; (c)  1985  Andrew
+ Cherenson;  (c)  1989  Mark H. Colburn; (c) 1993 Michael A. Cooper; (c) 1982
+ Pavel Curtis; (c) 1987 Owen DeLong; (c) 1989-1990 Jim  Frost,  Steve  Losen,
+ and  others; (c) 1984 Todd W. Fuqua; (c) 1988 Dan Heller; (c) 1989-1990 Kirk
+ L. Johnson; (c) 1989-1993 Frank Kardel; (c)  1993  Carlos  Leandro  and  Rui
+ Salgueiro; (c) 1991-1994 Karl Lehenbauer and Mark Diekhans; (c) 1989 Michael
+ Mauldin; (c) 1986-1988 Larry McVoy; (c) 1990 Larry Medwin; (c) 1992 David L.
+ Mills;  (c)  1989  Jef  Poskanzer; (c) 1992 Ranier Pruy; (c) 1988-1989 Scott
+ Sherman; (c) 1982-1986 Spencer W. Thomas; (c) 1986-1988 Larry Wall; (c) 1992
+ Q.  Frank  Xia.   All  rights  reserved.   NFS  was  developed  by  Computer
+ Associates, Inc. (formerly Lachman Associates, Inc.) based on LACHMAN SYSTEM
+ V  NFS.  TCP/IP was developed by Computer Associates, Inc. (formerly Lachman
+ Associates, Inc.) based on LACHMAN SYSTEM V STREAMS TCP, a joint development
+ of  Lachman  Associates  and  Convergent Technologies.  MPX was developed by
+ Corollary, Inc.  VP/ix is  a  product  developed  and  licensed  by  Phoenix
+ Technologies,   Ltd./Lachman  Technology,  Inc.   XRemote  is  a  registered
+ trademark of Network Computing Devices, Inc.  Netscape, Netscape  Navigator,
+ Netscape  Communications  Server,  Netscaper  Commerce  Server, and Netscape
+ Proxy Server are trademarks of Netscape Communications Corporation.
+
+ Document Version: 5.2.0
+ 15 April 1996
+

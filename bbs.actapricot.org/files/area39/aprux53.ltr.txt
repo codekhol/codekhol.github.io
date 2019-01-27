@@ -1,0 +1,101 @@
+
+APRICOT UNIX SUPPORT UTILITIES DISK
+
+Disk revision:  5.3
+Notes revision: 8
+
+Note:   This disk is supplied without warranty or support.  It is
+        designed to be of assistance to Apricot's UNIX reseller base.
+        Suggestions on useful utilities are most welcome.  Please note
+        that a number of the programs are inapplicable to SCO Xenix
+        based systems. The changes from 5.2 to 5.3 included a u386mon
+	without a time limit.
+
+The following selections are available as packages under custom
+
+BACKUP  Apricot example backup script with configuration file
+
+IPB     This provides on-line all Intermediate product bulletins
+        issued in MS-DOS, Network, Unix and Hardware sections. Due
+        to the document header it may be unsuitable to run this
+        on some terminals. A search option has been added to this
+        script.
+
+KERMIT  This is the Xenix/Unix kermit binary only, full documentation
+        is available from Lancaster University.  The size of the
+        available documentation regretably precludes us from supplying
+        it.
+
+LABEL   This option consists of two binaries which allow labels to be
+        printed to dot matrix printers with reels of 3.5" and 5.25"
+        labels.  Printers will be automatically installed called
+        label3 and label5. You will be prompted for the devices to
+        use, please have these answers ready.
+
+MAN	The disk now includes manual pages for a number of the 
+	utilities.
+
+MISC    Miscellaneous utilities and scripts.
+
+MON     This option provides a system monitor for SCO UNIX systems.
+        This release of the product (3.74) includes streams, winchester
+        and users reporting (inactivity for 1-5 minutes for example),
+        it is best used on a colour monitor.  The file link_unix is
+        edited to provide a utility kupdate, kupdate can be used to
+        add adb patches as well as keep the monitor up to date.
+        In addition the two commands below have manual pages installed
+        so the UNIX man command can be used with them.
+
+PACK	Zip, gzip and zoo archiving/pacjing utilities.
+
+RLP     This is a remote lineprinter command, documents are not
+        spooled locally but passed across ethernet to the specified
+        target printer. The user rlp is created locally, this user
+        should also be created on the remote machine, possibly by
+        using the same installation. Otherwise the user id should be
+        72 for user rlp with a group lp and a home directory of
+        /usr/spool/rlp.
+
+        rlp <remote host> -d<printer name> -s <filename>
+
+        will print <filename> on the remote printer with <filename>
+        already residing on the remote machine.
+
+        cat <filename> | rlp <remote host> -d<printer name> -s
+
+        will result in the local <filename> being printed on the
+        remote printer <printer name>.
+
+SERNO	Gets the SCO serial number out of some binaries.
+
+SFIND   This is a basic version of find which allows files greater
+        than a specified size to be found. To find all files greater
+        than 300000 bytes the command would be
+
+        sfind / -gsize 300000 -print
+
+SPORT   This is the original sleepport utility which allows a
+        serial line to be kept permanently open.
+
+        e.g sleepport <device> <speed>
+
+
+Several of the utilities on this disk make use of a window/panel
+mechanism.  It is essential that your terminal/console is running
+ansi, vt100, vt220 or Wyse 60 for most of the options.
+
+All files are placed in the directories below /usr/apricot (excluding
+the files created for spooler devices and temporary files) so there is
+no worry about where this disk inserts files.  It may be necessary to
+amend your path to include /usr/apricot/bin although the file
+/etc/default/login is edited by the installation procedure.
+
+Please e-mail any suggestions to peterw@apricot.co.uk or
+peterw@apricot.UUCP as appropriate. 
+
+One final point a version of u386mon which supports 10 SCSI disks is 
+available on request.
+
+Good Luck
+
+Peter White.

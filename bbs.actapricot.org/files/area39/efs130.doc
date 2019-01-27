@@ -1,0 +1,207 @@
+
+
+
+Dear Customer,
+
+The enclosed IBM Compatibility EFS (Extended Functionality Supplement)
+contains a new /boot program and is intended for use with the SCO UNIX 
+System V/386 Release 3.2 Operating System Version 4.0, 4.1 and SCO Open 
+Desktop Version 2.0.
+
+This EFS is required to install SCO Unix and Open Desktop on the 
+following IBM hardware as it supplies a new boot program which allows 
+the hard disk to be recognised.
+
+PS/2 Model 56 SLC, 57 SLC (8556, 9556, 8557, 9557)
+PS/2 Model 76, 77 (9576, 9577)
+PS/2 Model 85 (9585)
+PS/ValuePoint 6384 Model 325T, 425SX, 433DX (Model C, F, M)
+ThinkPad 700 and 700C portables
+
+Please read the entire letter before beginning the installation of this EFS 
+to insure proper configuration of your system.
+
+This EFS is supplied in the form of a bootable, custom-installable diskette
+i.e the diskette is used to boot the system and is then custom installed to
+get the new boot program installed on the hard disk. 
+
+The new boot supplied with this EFS correctly identifies the on-board SCSI
+on the above PS/2 machines.  It also recognizes the IDE disk on the ValuePoint 
+6384 series of AT-bus machines, and the disk on the ThinkPad portable.
+
+To fully install this EFS, you need to:
+
+    1.  Boot from the EFS (instructions in section I. below)
+    2.  Custom install the EFS (instructions in sections II or III)
+
+
+I.  BOOTING 
+
+
+Use the following procedure to initially boot SCO Unix System V/386 or 
+Open Desktop using the EFS:
+
+1.  Insert the diskette labeled 'IBM Compatibility EFS for Unix/Open
+    Desktop' in the floppy drive.
+
+2.  Manually reset the system or turn the power on.
+
+3.  When the boot prompt is displayed:
+
+        Boot
+        :
+
+    remove the EFS and insert the N1 diskette into the floppy drive.
+
+
+4.  Press <Return>, to continue the installation as instructed in the 
+    Installation Guide and follow the instructions below for installing 
+    the EFS on a Unix or Open Desktop system.
+
+
+II. INSTALLATION UNDER UNIX VERSION 4.0
+
+1.  Once the minimum Unix Runtime System is installed, you will be prompted
+    to:
+
+        1.  Install additional software (Extended Utilities or applications)
+        2.  Proceed with system configuration
+
+
+    IMPORTANT: You MUST choose option 1, "Install additional software"
+
+   The installation program custom(ADM) is then invoked and will allow you
+   to carry on with the installation.
+
+   - If you wish to install :
+
+                . the Extended Utilities, do so now as documented in the 
+                  Installation Guide.  
+
+                . Maintenance Supplement Version 4.1, do so now as documented
+                  in the Maintenance Supplement letter.  (See note below on
+                  the Unix Maintenance Supplement for more information).
+
+    The EFS should be installed last as it provides a new boot program which 
+    must be installed on the hard disk for the system to work correctly.
+
+   - When ready to install the EFS, position the cursor so that 'Install' is 
+     highlighted and press <Enter>.
+
+   - Make sure that the words 'A New Product' are highlighted in the window
+     found in the lower right hand corner of the screen; press <Enter>.
+
+   - Make sure the words 'Entire Product' are highlighted in the 'Choose an
+     option' section of the screen; press <Enter>.
+
+   - You will be prompted to 'Insert distribution Volume 1 and press <Return>'.
+     Insert the diskette labeled 'IBM Compatibility EFS for Unix/Open Desktop'
+     and press <Enter>.
+
+   - You will see the following messages:
+
+       Installing custom data files
+       Executing Product Prep Script
+
+       Saving file /boot into 
+           /usr/lib/custom/save/boot.ibm
+
+   - At the bottom of the screen, you will be prompted to 'Press any key to
+     continue'.  Press <Enter>
+
+   - The message 'Creating file lists' will flash on the screen.  You will
+     be prompted to 'Insert the requested Volume and press <Return>'.  The
+     diskette is already in the drive, therefore press <Enter>
+
+   - You will see the following message:
+
+       Extracting Files
+
+   - After the EFS has been installed, you can continue with normal OS
+     installation.
+
+2.  Continue with the rest of the normal operating system installation
+    process as described in the Installation Guide.
+
+
+Note on the Unix Maintenance Supplement:
+
+If you plan on installing the Unix Maintenance Supplement, MSv4.1, you 
+must remember to install the IBM Compatibility EFS _after_ the Maintenance 
+Supplement.  If you install a Maintenance Supplement and reboot without 
+installing the EFS,  you should follow the procedure outlined below
+in section III (Installation Under Open Desktop) to reboot the machine and
+install the EFS. (The Unix Maintenance Supplement also contains a new boot
+program but without the support provided by the IBM Compatibility EFS.)
+
+If you install Unix Version 4.0 using the EFS and at a later date wish to
+install MSv4.1,  you must remember to re-install the EFS after you install
+MSv4.1. (Note: when /etc/custom prompts for the package to install,  you
+should choose "IBM Compatibility EFS for Unix/Open Desktop" as opposed to
+"A New Product".)
+
+
+III.  INSTALLATION UNDER OPEN DESKTOP
+
+As there is no stage during Open Desktop installation where the user can install
+additional software,  you must carry out the following steps to ensure that
+the EFS is loaded onto the hard disk:
+
+1.  Upon completion of the Open Desktop installation, you are prompted to 
+    reboot the machine.  At this stage, re-insert the EFS into the floppy 
+    drive and reboot.
+
+2.  At the boot prompt, type the following command:
+
+        hd(40)unix
+
+3.  When the system boots up,  go into System Maintenance Mode, invoke the 
+    command "/etc/custom" and carry out the following steps:
+
+
+   - Position the cursor so that 'Install' is highlighted and
+     press <Enter>.
+
+   - Make sure that the words 'A New Product' are highlighted in the window
+     found in the lower right hand corner of the screen; press <Enter>.
+
+   - Make sure the words 'Entire Product' are highlighted in the 'Choose an
+     option' section of the screen; press <Enter>.
+
+   - You will be prompted to 'Insert the requested volume and press <Return>'.
+     If you have removed the EFS from the floppy drive, you should re-insert it
+     and press <Enter>.
+
+   - You will see the following messages:
+
+       Installing custom data files
+       Executing Product Prep Script
+
+       Saving file /boot into 
+               /usr/lib/custom/save/boot.ibm
+
+   - At the bottom of the screen, you will be prompted to 'Press any key to
+     continue'.  Press <Enter>
+
+   - The message 'Creating file lists' will flash on the screen.  You will
+     be prompted to 'Insert the requested Volume and press <Return>'.  The
+     diskette is already in the drive, therefore press <Enter>
+
+   - You will see the following message:
+
+       Extracting Files
+
+4.  When complete, exit custom and remove the EFS diskette from the floppy 
+    drive.
+
+5.  Reboot the system.
+
+The system is now installed properly and ready for use.
+
+If you have any further questions, please contact your supplier.
+
+Yours sincerely,
+
+TECHNICAL SUPPORT DEPARTMENT
+
+Ref : efs130.eap

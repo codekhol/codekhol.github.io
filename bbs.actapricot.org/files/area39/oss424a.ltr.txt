@@ -1,0 +1,91 @@
+Dear SCO Customer,
+
+This Support Level Supplement (SLS) OSS424A will allow the installation of 
+SCO system software on systems implemented with faster CPUs and an AMI 
+keyboard BIOS.  In this case, faster CPUs can generally be defined as 
+systems employing a Pentium processor executing at 75Mhz or faster.  The
+problem occurs when the keyboard locks up and no longer handles keyboard
+events.
+
+SLS OSS424A can be installed on these SCO products:
+
+    SCO MPX Release 3.0
+    SCO SMP (Symmetrical Multiprocessing) Release 5.0.0
+    SCO Open Server Enterprise System Release 3.0
+    SCO Open Server Network System Release 3.0
+    SCO Open Desktop Release 3.0
+    SCO Open Desktop Lite Release 3.0
+    SCO UNIX System V/386 Release 3.2 Operating System Version 4.2
+    SCO OpenServer Enterprise System Release 5.0.0
+    SCO OpenServer Desktop System Release 5.0.0
+    SCO OpenServer Host System Release 5.0.0
+
+
+A Boot Time Loadable Driver (BTLD), the "kbp" BTLD, is contained in SLS 
+OSS424A.  BTLDs are used by entering a command at the "Boot:" prompt. 
+To properly install this BTLD, follow these directions:
+
+If the kbp BTLD is the only BTLD being used, use this command:
+
+                 Boot
+                 : defbootstr link="kbp"
+
+If more than one BTLD will be used, use this command:
+
+                 Boot
+                 : defbootstr link="kbp other-btld"
+
+For example, if the system software is installed from a CD-ROM on an Adaptec 
+2940, this command line would be used:
+
+                 Boot
+                 : defbootstr link="kbp alad"
+
+If you have SCO OpenServer Release 5, and are using another BTLD that 
+requires you to use ahslink, use this command:
+
+                 Boot
+                 : defbootstr ahslink="kbp other-btld"
+
+For example, if the system software is installed from a CD-ROM on the IDE 
+bus, this command line would be used:
+
+                 Boot
+                 : defbootstr ahslink="kbp ATAPI"
+
+The message "Characteristic 'B' not supported; ignored" may be displayed.
+This message can be safely ignored and will not adversely affect the operation 
+of the BTLD.
+
+Note:  Wait for the installation program to prompt for disk changes.  Do not 
+change floppies until instructed.
+
+When a BTLD is installed, the appropriate components are installed into the 
+link kit.  By placing the components in the link kit all subsequent kernel 
+links will contain the BTLD modules.  Therefore, when a driver is added or 
+removed from the system, the proper BTLD components continue to be present 
+in newly built kernels.
+
+If your system has already been installed and you want to add the kbp package,
+use the "installpkg" command.  Insert the kbp BTLD disk, SLS OSS424A, in your 
+floppy drive and type "installpkg."
+
+After the driver is installed, activate it by editing the file 
+/etc/conf/sdevice.d/kbp.  The file will contain one line like this:
+
+              kbp    N     1     5     0     0     0     0     0     0
+
+Change the "N" to a "Y" so it looks like this:
+
+              kbp    Y     1     5     0     0     0     0     0     0
+
+Link a new kernel by typing /etc/conf/cf.d/link_unix.  The new driver will 
+take effect the next time you reboot.
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services
+

@@ -1,0 +1,218 @@
+
+              NOVELL TECHNICAL INFORMATION DOCUMENT
+
+TITLE:              SAA 1.3A & NetWare 4.0
+DOCUMENT ID:        TID250004
+DOCUMENT REVISION:  B
+DATE:               23SEP93
+ALERT STATUS:       Yellow
+INFORMATION TYPE:   Symptom Solution
+README FOR:         NA
+
+NOVELL PRODUCT and VERSION:
+NetWare for SAA 1.3
+
+ABSTRACT:
+NetWare for SAA 1.3A can be used with NetWare 4.0 only if these
+instructions are followed. NOTE: 1. Do not apply PTF 400, PTF 401, PTF 402,
+PTF 403, PTF 404, or PTF 406 to NetWare for SAA 1.3A.  2. Do not use
+NetWare for SAA 1.3A on a NetWare 4.01 server until we issue the
+"Authorized User List" until we issue a patch for SAA 1.3A.
+_________________________________________________________________
+
+DISCLAIMER
+THE ORIGIN OF THIS INFORMATION MAY BE INTERNAL OR EXTERNAL TO NOVELL. 
+NOVELL MAKES EVERY EFFORT WITHIN ITS MEANS TO VERIFY THIS INFORMATION. 
+HOWEVER, THE INFORMATION PROVIDED IN THIS DOCUMENT IS FOR YOUR INFORMATION
+ONLY.  NOVELL MAKES NO EXPLICIT OR IMPLIED CLAIMS TO THE VALIDITY OF THIS
+INFORMATION.
+_________________________________________________________________
+
+ISSUE
+How to install NetWare for SAA 1.3A on NetWare 4.0
+
+A. Bindery Emulation
+--------------------
+Bindery Emulation must be enabled on the NetWare 4.0 server on which
+NetWare for SAA 1.3 installed.  The SET BINDERY CONTEXT command in
+AUTOEXEC.NCF or STARTUP.NCF enables bindery emulation.  In addition, the
+NetWare 4.0 server must have a READ/WRITE, or master replica of its
+partition, in order for bindery emulation to be enabled.  Please refer to
+the NetWare 4.0 System Administration Guide.
+  
+CAUTION: Do not change the Bindery Context (Bindery Emulation) once NetWare
+for SAA 1.3 is installed.  Doing so will require you to reinstall NetWare
+for SAA 1.3 again.
+
+B. Sample AUTOEXEC.NCF for NetWare 4.0
+--------------------------------------
+In this sample AUTOEXEC.NCF for a NetWare 4.0 installation, the same
+adapter card is used for both LAN and host access.  Lowercase indicates
+items that you must fill in with your own values (for the bindery context
+and the file server name and the IPX internal network number.)
+  SET BINDERY CONTEXT = bindery_context
+  FILE SERVER NAME file_server_name
+  IPX INTERNAL NET internal_network_number
+  LOAD CLIB
+  LOAD BTRIEVE -U=1 -P=4096 -F=20 -H=60 -L=20 -C
+  SET MAXIMUM PACKET RECEIVE BUFFERS=2000
+  ; LAN CONNECTION:
+  LOAD NE2000 INT=3 PORT=300 FRAME=ETHERNET_802.3
+  ; HOST CONNECTION:
+  LOAD NE2000 INT=3 PORT=300 FRAME=ETHERNET_802.2 NAME= xxxx
+  ; where xxxx is the Logical Adapter Name from CSCON              
+
+C. NetWare for SAA Installation 
+-------------------------------
+Do not install SNMP, since it is already present on the system.  The
+procedure below assumes you have already followed the instructions on the
+SAA 1.3A "Quick Install Card" for XCOPYing the product files to a NetWare
+partition on the NetWare 4.0 server.
+To install the Communication Executive update, issue the following commands
+at the NetWare console:
+  1.  Type LOAD INSTALL <Enter>.
+  2.  Select Maintenance/Selective Install <Enter>.
+  3.  Select Product Options <Enter>.
+  4.  Press <Insert>.
+  5.  Enter the full pathname to the Communication Executive subdirectory
+on your SYS: volume, and press <ENTER>. 
+      For example:   SYS:CE13
+  6.  Select "Install on this server".
+
+Perform a similar operation to install NetWare for SAA:
+  1.  Type LOAD INSTALL <Enter>.
+  2.  Select Maintenance/Selective Install <Enter>.
+  3.  Select Product Options <Enter>.
+  4.  Press <Insert>.
+  5.  Enter the full pathname to the NetWare for SAA subdirectory on the
+SYS: volume, and press <Enter>. 
+      For example:   SYS:NWSAA13
+  6.  Select "Install on this server".  
+  7.  After you have installed the Communication Executive and NetWare for
+SAA, down the server and restart it (with the SERVER command).  You must do
+this to ensure proper operation of the Communications Server after you have
+installed NetWare for SAA.
+
+D. SPECIAL NETWARE 4.0 INFORMATION
+----------------------------------
+1.  Multiple Communication Executives can now simultaneously exist in the
+same NetWare 4.0 Organizational Unit.
+
+2. Create a User for CSCON.  In order for a user to be able to log in to
+CSCON and configure the CS under NetWare 4.0
+ a. Create a user under the Organizational Unit (context) where SAA has
+been installed.  
+ b. The user must then be given 'Supervisor Equivalent' rights (in the
+NetWare 3.11 sense).  This can be accomplished by making the user's
+security equivalent to the File Server object.  
+ c. Use the NWADMIN utility running on a workstation to:
+ I.    Log in as NetWork Administrator (Admin) to the NetWare 4.0 server.
+ II.   Load NWADMIN from Windows. 
+ III.  Select the Organizational Unit (context) where SAA is installed.
+ IV.   Click on OBJECT from the NetWare Administrator screen.
+ V.    Click on CREATE.
+ VI.   Select USER from the NEW OBJECT LIST, and click OK.
+ VII.  Fill in the user information
+     	- login name
+        - last name
+ VIII. Select the ADDITIONAL PROPERTIES box and click OK.
+ IX.   Click on the PASSWORD RESTRICTIONS box on the right of the screen;
+ X.    Check the REQUIRE PASSWORD box 
+ XI.   Click on the CHANGE PASSWORD bar.  
+ XII.  Type the password in both boxes
+ XIII. Click OK.
+ XIV.  From the same screen, click on the SECURITY EQUIVALENCIES box in the
+right lower corner of the screen.
+ XV.   Click on the ADD box.
+ XVI.  Select the FILE SERVER OBJECT where SAA is installed from the
+OBJECTS LIST.  
+ XVII. Click OK.
+ XVIII.The file server object will now be shown in the SECURITY EQUAL TO
+window.  Click OK to exit.
+
+The user just generated will now be able to log in to the server and run
+CSCON to configure SAA service profiles.
+
+3.  OS Ring Protection
+NetWare for SAA 1.3 can only be loaded and executed in the OS Domain at
+Ring 0 under NetWare 4.0.  NetWare for SAA 1.3 cannot exist in the OS
+Protected Domain at rings 1, 2, or 3.
+
+4.  Do not create a user called SUPERVISOR in NetWare 4.0.  SUPERVISOR has
+a special meaning and is maintained by the NetWare 4.0 operating system for
+the purpose of 3.11 compatibility.
+
+5.  You must not change the NetWare 4.0 server's Internal IPX Net number
+while NetWare for SAA 1.3 is installed.  If you do, you will be unable to
+load COMMEXEC.  To recover, change the Internal IPX Net number back to the
+one used when NetWare for SAA 1.3 was first installed.  If you need to
+change the number:
+ a. Backup the existing service profiles.
+ b. Remove NetWare for SAA 1.3.
+ c. Change the Internal IPX Net number.
+ d. Reboot the server.
+ e. Reinstall NetWare for SAA 1.3.
+
+6.  To bind a transport protocol manually, issue the following command at
+the NetWare console:
+    CSBIND [spx|appletalk|tcp-ip]
+To unbind a transport protocol manually, issue the following command at the
+NetWare console:
+    CSUNBIND [spx|appletalk|tcp-ip]
+
+Under NetWare 4.0, CSUNBIND is the only method of unloading a transport
+protocol while workstations are connected to NetWare for SAA.
+
+IMPORTANT 
+1.  If you need to remove Directory Services from a server that has NetWare
+for SAA installed on it:
+ a. Backup the profiles (using SAACOPY),
+ b. Remove NWSAA and COMMEXEC from the server.
+ c. Remove Directory Services  
+ d. Reinstall Directory Services
+ e. Reinstall COMMEXEC and NWSAA
+ f. Use SAACOPY to copy the profiles back to the server.
+
+2.  If NetWare for SAA is unloaded (CSUNLOAD) and then reloaded immediately
+(CSLOAD) while a large number (i.e., approximately 100) of downstream PUs
+are connected to it, NetWare for SAA may abend with the error:
+         FSM_XID3_NEG_PROTO.
+
+This occurs only if the downstream Pus are also running NetWare for SAA on
+a server.
+
+To avoid this problem, wait for about two minutes between unloading and
+reloading NetWare for SAA.
+
+3.  Do not put the  CSSTATUS statement immediately after the LOAD COMMEXEC
+statement in an AUTOEXEC.NCF file.  You may either issue the CSSTATUS
+statement manually, or insert another statement between the CSSTATUS and
+the LOAD COMMEXEC.
+
+4. Remote installation from a local server's diskette drive may cause
+problems.  If you attempt to do a remote installation and use the local
+server's diskette drive to install NWSAA 1.3 the following error message
+may appear in certain situations:
+        "Error , BuildCDProductsList returned -1
+              Press Any Key To Continue".
+
+At this point NWSAA installation fails.  The problem is caused by diskette
+drive access slow enough to cause the SPX connection to the remote server
+to timeout, in which case the install process can't write to the
+PRODUCTS.DAT file.  This also depends on network traffic.  In some
+situations this remote install procedure from diskette will work with no
+problems.
+
+There are two possible solutions.
+ a. Do the remote install from a DOS hard drive or NetWare volume.  
+     OR
+ b. Increase both the remote and local server's SPX timeout values, "SPX 
+WATCHDOG ABORT TIMEOUT" and "SPX ACK WAIT TIMEOUT", using SPXCONFG.NLM.
+
+NMA for NetView (NetView Ready) experiences the same problems as above for
+remote installs from diskette drive.
+
+NIC DRIVERS
+We recommend the use of ODI drivers, for both the host connection and the
+LAN connection.
+y

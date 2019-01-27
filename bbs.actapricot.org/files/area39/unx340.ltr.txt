@@ -1,0 +1,55 @@
+
+               SCO UNIX 3.2v2 Maintenance Supplement and UNX340
+
+
+SCO have produced a major supplement to their existing 3.2v2.0 release of the 
+UNIX operating system. Whilst 3.2v4.0 will ship within the next 3 months, this 
+supplement updates existing systems at no charge with a number of changes.   
+Installation of this supplement  on any new 3.2v2 installations will take care 
+of all existing fixes which Apricot routinely advises to be installed. 
+
+To summarise the Maintenance Supplement includes or supercedes:-
+
+    1.  UNX257 Security Enhancement
+
+    2.  UNX251 Kernel Locking/Inode supplement for ISA bus machines
+
+    3.  UNX279 Kernel Supplement for ISA bus machines
+
+    4.  UNX304 X/Open Portability Guide release 3 compatibility.
+
+    5.  EFS102 Scoterm Supplement for SCO XSight
+
+    6.  Double Panic fix also known as the console driver fix.
+
+The supplement must only be installed on 3.2v2.0 systems.  A system which runs 
+3.2.0 revision of UNIX must not have this supplement installed until a full 
+3.2v2 operating system has replaced the 3.2.0. 
+
+The following items have been extracted as features of this supplement:-
+
+    1.  Enhanced security handling and recovery including  removal and 
+        unretiring of users 
+
+    2.  Introduction of "hushlogin" to prevent copyright and  other messages 
+        during login. Works with TCP/IP. 
+
+    3.  Allows minimum password length to be more easily controlled.
+
+    4.  Heavy serial line input no longer hangs the machine.
+
+    5.  Console keyboard handling anomalies corrected.
+
+    6.  NFS performance optimisation.
+
+    7.  Double Panic fix as notified above.
+
+    8.  Allows su to work to other than root logins.
+
+Unfortunately a minor error exists with the Maintenance Supplement  involving 
+/bin/login.  To remedy this issue UNX340 should be custom installed before 
+taking the system multi-user but after  rebooting on the new 3.2v2.1 kernel 
+built from the Maintenance Supplement installation. 
+
+The Maintenance Supplement consists of three HD 3.5" diskettes and UNX340 uses 
+one DD 3.5" diskette. 

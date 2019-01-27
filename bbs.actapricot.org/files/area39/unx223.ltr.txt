@@ -1,0 +1,314 @@
+Dear Customer,
+
+Enclosed is the SCO Security Supplement, consisting of three diskettes which
+may be installed on SCO UNIX System V/386  Release 3.2.0 or SCO UNIX System 
+V/386 release 3.2.1.
+
+This supplement adds the following new features to SCO UNIX System V/386
+Release 3.2.0 and Release 3.2.1:
+
+*	C2 related crash recovery.
+
+*	Null password support.
+
+*	New sysadmsh selections for checking password database consistency.
+
+*	Home directory management in the Accounts-User-Examine: Identity
+	sysadmsh selection.
+
+* 	Ability for users to view their own audit records.
+
+*	New features in crontab: (a) The use of the -r option  (which 
+	removes a user's crontab file) no longer requires any authorisations
+	and (b)  New -ru option which allows root to delete other user's
+	crontab files.
+
+*	Customising of the environment of all processes via /etc/initscript.
+
+*	New utility for adding groups of XENIX users, addxusers.
+
+*	Number of processes init can start raised from 100 to 400.
+
+The supplement also corrects the following in SCO UNIX System V/386 Release
+3.2.1:
+
+*	Inability of protected subsystem utilities to submit audit records.
+
+*	pstat displaying arbitrary kernel data when passed an out of range
+	u-page address.
+
+* 	Support for dialup  passwords and forcing a user to change his 
+	password at next login where documented in passwd(C) but were not
+	implemented.  See new manual page for further details.
+
+*	Goodpw(C) was documented, but not implemented.
+
+*	Security related problem in the Jobs-Authorise selections of 
+	sysadmsh.
+
+*	Various problems in both System-Audit and System-Backup selections
+	of sysadmsh.
+
+* 	Security related problems in getty, uugetty and login.
+
+*	sulogin overwriting in the 'sulog' log file.
+
+*	Inability for usernames to begin with an eight bit character.
+
+*	lpmove and cancel generating audit records logged under the cron
+	subsystem instead of the lp subsystem.
+
+The supplement also corrects the following in SCO UNIX System V/386 Release
+3.2.1:
+
+*	Only root or user lp could use lpstat(C), lpadmin(ADM), lpfilter(ADM)
+	and lpforms(ADM).
+
+Before you install the supplement, identify any changes you have made to the 
+file control database (/etc/auth/system/files).  You will need to remake these
+changes to the new version of the file control database which will be installed
+from the supplement.  If you have only made changes for installing new login
+shells (such as the korn shell), then entries for these will not have to be 
+made in the new file control database.
+
+Install the supplement in the following way:
+
+1.	Boot up and enter single-user mode.
+
+2.	Run custom by typing 'custom' and <Return>.  It is important that 
+	you do not use any of the ex(C) editors between entering single-user 
+	mode and running custom.  If an ex editor is used then some files may 
+	not be extracted from the supplement diskettes.
+
+3.	Select 'install' followed by 'A New Product".
+
+4.	Select 'Entire Product' and insert the diskettes as prompted.
+
+5.	When all the diskettes have been read, you may edit the file control
+	database to remake any changes you identified earlier.
+
+6.	Now run sysadmsh and select the Accounts-Default-Password selection.
+	A warning will appear at the bottom of the screen stating that some
+	of the values from the system database are missing.  The missing 
+	value is the default for the new 'Password required to login' 
+	parameter.  Sysadmsh will assume a value of [yes] in the absence of a
+	real default.  Executing the form will cause a real default to be 
+	written to the system defaults database.
+
+7.	Now select the Accounts-Defaults-Logins selection.  Again a message may
+	appear at the bottom of the screen stating that values are missing from
+	the system defaults database.  The missing value in this case is the 
+	new "time to complete successful login" parameter.  In the absence of a 
+	real default, sysadmsh assumes a value of 40 (seconds), however you may
+	change this to a more suitable value.  Again, executing the form will 
+	cause a real default to be written to the database.
+
+8.	Take the system multi-user.
+
+The installation supplement is now complete.
+
+
+NOTES
+
+1.	The defaults you have just chosen for the two new parameters will 
+	now apply to all users on the system.  You may wish to chose specific
+	values for particular users.  these specific values may be set in either
+	Accounts-User-Examine:Logins for "Time to complete successful login".
+
+2.	Should you run the fixperm command to reset the permissions of the files
+	in your system, it is necessary to reinstall this  supplement.
+
+3.	Removal of the supplement is not supported.
+
+4.	The international supplement must not be installed after this supplement
+	Always install the international supplement first and then the security
+	supplement. This will not cause any loss of international functionality
+
+5. 	This supplement does not address MMDF's inability to handle mail 
+	addresses containing eight bit characters.  Creating usernames with     
+	eight bit characters will still cause MMDF to issue error messages when
+	greetings mail is sent by sysadmsh.
+   
+6.	The newly implemented -f option in passwd can only be used by a user 
+	with the auth kernel authorisation.  This is so that ordinary users
+	cannot circumvent the minimum time between password changes restriction
+	on their account.
+
+7.	Page 5-54 of the system administrator's guide says that  passwd -d
+	dialname is used to set a dialup password for a shell.  The correct 
+	syntax is passwd -msh dialname, where sh is the shell listed in 
+	/etc/d_passwd and dialname is the dialup password.
+
+
+Description of new features
+
+1.	C2 Crash Recovery
+
+This consists of a number of shell scripts which are run by init during system
+startup.  These scripts attempt to analyse and where possible repair damage to 
+the C2 database.  During a normal startup two new messages will appear:
+"Checking TCB" and "Check protected subsystem databases (y/n)?". Checking the 
+databases may take some time, so you may answer no, when the system has been 
+brought down cleanly to save time when bringing the system up.  If however the 
+system has crashed and the C2 databases have been damaged and repairs cannot be
+made automatically then messages will appear indicating the problem.  The 
+system will attempt to enter single user mode to allow you to repair the damage.
+In some cases the system cannot enter System Maintenance mode, so the repair 
+must be carried out by	logging in on the OVERRIDE terminal.  To set up an 
+OVERRIDE terminal add the line "OVERRIDE=ttyxx" to etc/default/login, where xx 
+is the terminal of your choice.
+
+2.	Null Password Support
+
+The new null password support allows user accounts which do not have a password
+to be logged into by just giving the account name to login, ie a password will
+not be prompted for.  This feature is configured by a new account parameter,
+Password Required, which is set with sysadmsh selections.
+
+Password Required may be set on each account to either YES, NO or SYSTEM 
+DEFAULT. The system default may be set to either YES or NO.  When logging in
+a password is not prompted for if:
+
+	1.	The account has not been assigned a password
+	2.	Password Required is set to NO, or Password required is set
+		to system default and the default is set to NO.
+
+If an account has been assigned a password, but the setting of password required
+is YES, or SYSTEM DEFAULT and the default is set to YES, then the login will 
+succeed, but the user will be asked to set a password on the account.
+
+If you had configured an account so that a password was required, but you now
+wish to configure the account so that a password is not required, you must set
+Password Required appropriately and then delete the account's password with 
+either "passwd -d" or with the Accounts-User-Examine:Password sysadmsh 
+selection.
+
+When setting the initial password for a newly created user, sysadmsh offers 
+four options:
+
+Now.	Allows the administrator to set a password on the account now, the user
+	will be asked for this when he logs in.
+
+Later	Selecting this allows you to postpone assigning a password, in the 
+	meantime the account cannot be successfully logged into.
+
+Blank	This assigns the account to a null password, the account may be logged
+	into but a password will have to be set if the system default for 
+	Password Required is YES.
+
+Remove	This also assigns the account a blank password and also sets Password
+	Required on the account specifically to NO.  Selecting this option 
+	always allows the account to be logged into by just supplying the 
+	account name to login.
+
+It should be noted that null passwords expire in the same way as ordinary 
+passwords, and when an account's password expiration time has passed, a new 
+password will be requested.  Of course the expiration time may be set to 
+infinite on accounts such as the UUCP account, where a null password expiring 
+would be undesirable.
+
+In addition to selecting how the initial password on the account is assigned, 
+you can also choose that the password be changed when the account is first 
+logged into (except when you select the Later option).  The system achieves 
+this by setting the accounts last successful password change "expiration" time
+in the past.
+
+For compatibility with other UNIX systems, the ability for accounts to be logged
+into without asking for a password can be configured on a system wide basis with
+the "PASSREQ" variable in /etc/default/login.  Placing "PASSREQ=NO" enables 
+accounts with null passwords to be logged into and "PASSREQ=YES" to disable 
+accounts with null passwords being logged into.  This entry only overrides the 
+system default as set up with sysadmsh.  Accounts that have been explicitly
+allowed or disallowed to have a null password are not affected by the setting of
+PASSREQ.
+
+3.	Password consistency checking
+
+This comprises two sysadmsh selections, Accounts-Check-Password which checks
+the consistency of /etc/passwd and /etc group, and Accounts-Check-Databases
+which checks the consistency of other C2 databases.
+
+4.	Viewing Audit Trails
+
+Users must have the "audit trail" secondary subsystem authorisation in order to
+view their own audit records.  This authorisation allows a user access all the 
+sysadmsh selections under System-Audit-Report, to manipulate report templates
+and generate audit reports, and access to System-Audit-Files-List selection to
+view the date and times of audit sessions.  In addition to creating his own
+report templates, a user may use any other report template on the system, but
+only the owner of a template may modify or delete it.
+
+5.	Home Directory Management.
+
+Home directories of existing users may now be changed via the sysadmsh 
+Accounts-User-Examine:Identity selection.  The fields for configuring home
+directories are HOME DIRECTORY, which consists of five radio buttons and VALUE.
+The radio buttons are:
+
+Keep	Select this button if you do not wish to change the home directory of 
+	the user.  The current home directory is shown in the VALUE field, which
+	cannot be changed.  This option cannot be chosen when the home directory
+	does not exist for the user.
+
+Edit	Select this button if you wish to change the user's home directory to a
+	different, already existing directory.  The new directory is entered in
+	to the VALUE field.  The new value is stored in /etc/passwd.
+
+Create	Select this button if you wish to change the user's home directory to a
+	new, non-existent directory, and you want the new home directory created
+	the new home directory is entered in the VALUE field, which is created
+	and appropriate startup files for the user's shell are copied into it.
+	The user's old home directory, and its contents are left unchanged.
+
+Move	Select this button if you wish to change a user's home directory to a 
+	new, non existent directory which you want created, and the contents 
+	of the old directory copied into the new directory.  Again the new 
+	directory is entered in the VALUE field.
+
+Restore	Select this button if you have entered a new directory in the value
+	field, but you have changed your mind .  Selecting this button will
+	restore the original directory path.
+
+Accounts may be configured to share home directories by "Edit"ing an accounts
+home directory to that of another account.  Remember that the mode on the shared
+directory must be altered from sysadmsh value so that all accounts sharing this
+directory have at least read permissions.
+
+There are a number of restrictions imposed by sysadmsh when changing home 
+directories, these are summarised below:
+						   	    MOVE
+Restriction				KEEP	EDIT	CREATE	OLD	NEW
+
+Absolute path name			NO	YES	YES	YES	YES
+Path leading to home must exist		NO	YES	YES	YES	YES
+No colons or newlines			YES	YES	YES	YES	YES
+Usr can search path leasing to home dir	NO	YES	YES	YES	NO
+Administrator can create home dir	NO	NO	YES	YES	YES	
+The home directory must not exist	NO	NO	YES	NO	YES
+No other user may have same home	NO	NO	YES	YES	YES
+
+WHERE
+
+OLD	Means the original directory  to move from
+NEW	Means the new directory to move to 
+
+
+6.	New Crontab Features
+
+See new crontab(C) manual page supplied with this supplement for further
+details
+
+7.	Customising of the environment of init started processes
+
+See new init(C) manual page supplied with this supplement for further details.
+
+8.	Addxusers
+
+See new addxusers(ADM) manual page supplied with this supplement for further
+details.   If you have any further questions please contact your supplier.
+
+
+
+
+TECHNICAL SUPPORT DEPARTMENT				Ref:Security Supplement
+ 

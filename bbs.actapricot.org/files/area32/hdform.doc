@@ -1,0 +1,172 @@
+
+DIAGNOSTICS  -  SOFTWARE UPDATE DOCUMENTATION
+
+S/W REF:        HDFORM
+
+S/W TITLE:      Winchester Hard Formatter
+
+VERSION:        (FROM)  Vd 3.40.0   (TO)  VR 3.40.1
+
+DATE:           14/10/88
+
+PROGRAM DESCRIPTION
+
+HDFORM is a low-level formatter and interleave optimiser for ST506/RLL disks 
+on Apricot IBM compatible machines (both AT and MCA class). It does not 
+support the formatting of Floppy, SCSI, or ESDI drives. The human interface is 
+via a simple question/answer dialogue system, with answers consisting of Y, N, 
+number, ESC, RETURN responses. The program can format completely new drives 
+allowing the user to enter bad track information; It can re-format a disk 
+obtaining bad track information from the previous format; It can calculate the 
+optimum interleave factor for the disk/controller combination; It can re-
+format a disk with a new interleave whilst preserving the old data; It can 
+place an IBM compatible drive type record on track 2,head 0,cylinder 0 of the 
+formatted drive. 
+
+Options:
+
+The program supports a number of optional command line parameters (which can 
+be combined if required): 
+
+1)      HDFORM          - Normal operation
+
+2)      HDFORM /F       - Factory Format version (restricted choice)
+
+3)      HDFORM /I n     - Set Interleave factor to n
+
+4)      HDFORM /V       - Verbose mode - prints out internal status/timings
+
+5)      HDFORM /L n m   - Format only between Cylinder n (highest) 
+                                                   and m (lowest)
+
+OPERATIONAL SUMMARY
+
+When run without the /F command line option the sequence of operations is:
+
+1       Signs on with version & date and asks which drive to format.
+        (enter 1 or 2).
+2       Shows Drive Name and size (if known), and number of heads, 
+        cylinders,tracks - asks for confirmation (enter Y or N - n aborts 
+        to DOS)
+
+3       Asks if you wish to continue (enter Y or N - n aborts to DOS)
+
+4       Asks whether to Format new drive with bad tracks entered by 
+        operator (1), or to scan drive for previously formatted bad 
+        tracks (2) (enter 1 or 2)
+
+5       If first choice then the program asks if the user has any bad 
+        tracks to enter (enter Y or N) - If Y then asks for up to 144 
+        Cylinder,Head details terminated by entering ESC - onscreen prompts 
+        show how to edit and make corrections.
+        If second choice then the program scans the disk for bad sector 
+        marks and builds a table which the user can edit (as in choice 1) 
+        before proceeding.
+
+6       Asks if the user wishes to optimise the interleave factor (enter Y 
+        or N).
+        If Y then the program performs read write tests on the test cylinder 
+        to find the optimum interleave factor for the disk/controller (if 
+        the /V option is set then the data transfer times are displayed for 
+        the Interleave factors tested).
+
+7       Asks if the user wishes to override the Interleave factor (enter Y 
+        or N)
+        If Y then the user can enter a single digit in the range 1 to 8.
+
+8       Asks if the user wishes to use the SaveData option (enter Y or N)
+        If Y then the following format will read the existing data, format 
+        the track, and replace the data - thus preserving the contents of 
+        the drive.
+
+9       Asks the user if he wishes to continue (enter Y or N - N escapes to 
+        DOS) 
+        If Y then the drive is formatted starting at the highest cylinder and 
+        stepping down to cylinder 0 (if the /L option is used then it formats 
+        from the first cylinder number entered, down to the second one). 
+
+10      Once the format is complete the program returns to DOS.
+
+When run with the /F command line option the sequence of operations is:
+
+1       Signs on with version & date and shows Drive 1 Name and size (if 
+        known), and number of heads,cylinders,tracks, and Interleave Factor - 
+        asks for confirmation (enter Y or N - N reboots the machine) 
+
+2       If Y then the program asks if the user has any bad tracks to enter 
+        (enter Y or N) - If Y then asks for up to 144 Cylinder,Head details 
+        terminated by entering ESC - onscreen prompts show how to edit and make 
+        corrections. If N then moves on to step 3. 
+
+3       Asks the user if he wishes to continue (enter Y or N - N reboots the 
+        machine) If Y then the drive is formatted starting at the highest 
+        cylinder and stepping down to cylinder 0. 
+
+4       Once the format is complete the program prompts for the ESC key, and 
+        reboots the machine when entered. 
+
+DESCRIPTION OF CHANGES
+
+HDFORM.EXE VR 3.40.1  13th Oct 88
+
+Changes since VR 3.40.0
+
+1)      Support for MCA architecture machines, inluding drive type 255 (CMOS 
+        holds drive configuration data). 
+
+2)      Default Interleave Factor on MCA and XEN-s machines set to 1:1, all 
+        other machines set to 2:1. 
+
+3)      Automatically places an IBM compatible Drive Type Record on Head 0, 
+        Track 0, Sector 2 on newly formatted drive. 
+
+VR 3.40.0
+
+1.      Initial version for Qi and XEN-s range.
+
+Vb 3.30.0
+
+1.      Modified to allow formatting of ST506/RLL winchesters on MCA  
+        Architecture machines (checked by looking at bit 1 of FLAG1 byte  
+        returned by Int 15h function C0h) - this involves using other  CMOS RAM 
+        storage locations for Drive Type. 
+
+2.      Corrected bug introduced in Vd 3.20.0 which disallowed operator entry 
+        of errors on last cylinder. 
+
+Vd 3.20.0
+
+1.      Inclusion of the factory format utility (FCFORM) into the  program - 
+        specified with the /F switch. 
+
+2.      Change of the bad track input routine to provide on-screen  editing 
+        and up to 120 entries. 
+
+3.      Return of the default interleave factor to 2.
+
+4.      /I implementation of interleave switch.
+
+Vc 3.20.0
+
+1.      Default interleave factor reduced to 1.
+
+2.      FCFORM - the provision of a command line input for the  interleave 
+        factor. 
+
+Vb 3.20.0
+
+1.      Order of head formatting changed for the type 3 30M.
+
+Va 3.20.0
+
+1.      If no bad tracks are input, it does not ask if changes are required.
+
+2.      ESC must be pressed before system re-boots, to avoid type ahead 
+        problems. 
+
+3.      Interrupt protection around CMOS ram accesses.
+
+4.      Winchester types up to 47 supported.
+
+
+

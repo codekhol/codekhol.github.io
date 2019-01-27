@@ -1,0 +1,293 @@
+
+Dear Customer,
+
+Enclosed is Support Level Supplement (SLS) xnx149.  This SLS contains
+a device driver for the following Tecmar and Wangtek tape drive/controller
+combinations running with the SCO XENIX 386AT Operating System Release 2.3.1
+or 2.3.2:
+
+
+Tape Drive                            Tape Controller 
+==========                            =============== 
+QT  60E   60 Megabyte External        Tecmar AT Single Chip Qic-02 Host Adaptor
+QT  90E   90 Megabyte External        Tecmar AT Single Chip Qic-02 Host Adaptor
+QT 125E  125 Megabyte External        Tecmar AT Single Chip Qic-02 Host Adaptor
+QT 150E  150 Megabyte External        Tecmar AT Single Chip Qic-02 Host Adaptor
+
+5099EG    60 Megabyte Internal        Wangtek PC-02 Single Chip Host Adaptor
+5125EG   125 Megabyte Internal        Wangtek PC-02 Single Chip Host Adaptor
+5150EG   150 Megabyte Internal        Wangtek PC-02 Single Chip Host Adaptor
+
+LS5099EN  60 Megabyte External        Wangtek PC-02 Single Chip Host Adaptor
+LS5150EQ 150 Megabyte External        Wangtek PC-02 Single Chip Host Adaptor
+
+
+To install SLS xnx149, boot up your machine and enter System Maintenance mode.
+Put the Tecmar/Wangtek driver diskette (xnx149) in your floppy drive and type
+the following at a root prompt:
+
+     /etc/install
+
+You will see the message:
+
+     First Floppy? (y/n)
+
+Answer "y" and then enter <RETURN>.
+
+At the next menu pick the option to:                                     
+
+     Install a Tape Driver
+
+A second menu will come up and you should pick the option to:
+
+     Install Cartridge Tape Driver
+
+At the final menu, pick the option to:
+
+     Modify current tape parameters
+
+and the following will be displayed:
+
+
+  Tape Parameters          Values      Comments
+  ---------------          ------      --------
+
+1. Controller Type           0         1 = type A, 3 = type W, 4 = type E
+                                       5 = type M, 6 = type T or 7 = type X
+2. DMA Channel               0         1 or 3
+3. Interrupt Vector          0         logical vector number 
+4. Base Address              0H        i/o addresses start here
+
+You will be asked to:
+
+     Enter a parameter to modify or 'q' to return to the main menu
+
+Enter a value for each of the four categories listed above.  Included here
+are some basic explanations of each category:
+
+(1) Controller Type
+    ===============
+
+What kind of tape drive/controller is being installed?  The values 
+correspond to the following:
+
+type A (type 1) = Archive 
+type W (type 3) = Wangtek
+type E (type 4) = Emerald
+type M (type 5) = Mountain
+type T (type 6) = Tecmar
+type X (type 7) = Everex
+
+With the Tecmar/Wangtek AT Single Chip Qic-02 Host Adaptor, you can use
+either type "T" or type "W."
+
+
+(2) DMA Channel
+    ===========
+
+What is the Direct Memory Access (DMA) Channel that is being used?
+The choices are DMA Channel 1 or DMA Channel 3.  On a typical tape   
+controller card, you will have a set of jumper pins for DACK and 
+another set for DRQ.  Each of these should have three pairs of pins
+labeled 1, 2, and 3.  The DACK and DRQ pins should each be jumpered
+for the appropriate value (1 or 3) as they combine to give you your DMA
+value.  In other words, if you want a DMA value of 3, you should jumper
+DACK for 3 and DRQ for 3.  Either DMA 1 or 3 are acceptable and neither
+provides any particular advantage over the other.
+
+
+(3) Interrupt Vector
+    ================
+
+What is the interrupt value being used?  On a tape controller card, there
+will be an IRQ set of jumper pins, typically labeled 2 - 7.  You can use
+any interrupt you choose, as long as it is not being used by another
+device on your system.  Standard interrupts are as follows:
+
+Interrupt         Used For
+---------         --------
+    0             Clock
+    1             Console
+    2 (25)        Network Cards
+    3             Serial COM2
+    4             Serial COM1
+    5             Parallel LP2
+    6             Floppy Drive
+    7             Parallel LP0 or LP1
+
+Never use interrupts 0,1, or 6, as they are always used for standard
+devices on your system.  The rest are potentially available, unless
+devices that typically use them are installed on your system.  For
+example, if you have a COM1 serial port on your system and it is
+recognized on the SCO XENIX boot screen, then interrupt 4 is not an
+available interrupt, unless you disable your COM1 port.  The rule of
+thumb is that if a device is recognized by SCO XENIX on the boot screen,
+the interrupt it uses is taken even if you are not actively using the 
+device.  In this case, you must either use another free interrupt, or
+physically disable the device which is using the interrupt you want to
+use for the tape controller.
+
+The most commonly available interrupts are 2 and 5, as most systems do
+not come standard with an LP2 port or a network card.  Be aware that if
+you do choose to use interrupt 2, you need to indicate a value of 25
+when asked for the "Interrupt Vector" in the "mkdev tape" program.  This
+is the only case where a value other the actual value is given.
+
+When you determine what interrupt you will be using, jumper the appropriate
+IRQ pins on your tape controller card and then indicate the same value
+(except in the case of interrupt 2 where you should indicate 25), in the
+"mkdev tape" program.
+
+
+(4) Base Address
+    ============
+
+What is the I/O address that your tape controller card is configured for?
+A typical tape controller card will have either jumper pins or switches
+for configuring the address.  Check your tape hardware documentation to
+determine what the available address settings are.  Again, SCO XENIX does
+not really care what address you are using, as long as it is not being
+used by another device on your system.  This is not usually an issue, as
+common tape controller addresses are not often used by other devices.
+
+After setting an address (or finding out what has already been set) on 
+your tape controller card, indicate the same address in the "mkdev tape"
+program.  You should always enter the address with a preceeding "0" and
+a succeeding "H."  For example, if your address is 300 (hexadecimal), you
+should indicate "0300H" in the "mkdev tape" program.
+
+
+After indicating your four values in "mkdev tape," quit out of the menus
+and you will see the message:
+
+     You must create a new kernel to effect the driver change you specified.
+     Do you wish to create a new kernel now? (y/n)
+
+Choose "y" and you will see the message:
+
+     Re-linking the kernel...
+
+This will take a moment and then you will be asked:
+
+     Do you want this kernel to boot by default? (y/n)
+
+Answer "y" and when you receive a root prompt, type:
+
+     /etc/haltsys
+
+to reboot your system and activate the new kernel with the tape driver
+linked in.
+
+Your original kernel has been renamed "xenix.old."  If you ever need to
+boot your original kernel, after a system crash for example, just type
+"xenix.old" at the "boot:" prompt.
+
+
+Setting Up Your Tar and Backup Default Files 
+============================================
+
+(1) /etc/default/tar
+    ---------------- 
+
+There is a default file for tar that is very useful for writing to tape
+devices.  To make use of it, edit the file to indicate what size your 
+tape is.  The default file is "/etc/default/tar."  An example is included 
+below:
+
+
+#	@(#) def96.src 1.5 88/05/27 
+#	 device     		block   size	tape
+archive0=/dev/rfd048ds9		18	360	n	
+archive1=/dev/rfd148ds9		18	360	n
+archive2=/dev/rfd096ds15	10	1200	n
+archive3=/dev/rfd196ds15	10	1200	n
+archive4=/dev/rfd096ds9		18	720	n
+archive5=/dev/rfd196ds9		18	720	n
+archive6=/dev/rfd0135ds18	18	1440	n
+archive7=/dev/rfd1135ds18	18	1440	n
+archive8=/dev/rct0		20	0	y
+archive9=/dev/rctmini		20	0	y
+# The default device in the absence of a numeric or "-f device" argument
+archive=/dev/rfd096ds15		10	1200	n
+
+
+Notice that the device "/dev/rct0" for cartridge tapes already exists
+within the "/etc/default/tar" file.  You need to go into the file
+with an editor (/bin/vi for example) and put in a size for the 
+"/dev/rct0" entry.  The size should be stated in 1 Kilobyte blocks,
+so that for a 60 Megabyte drive the size would be 60000 and your entry
+would look like the following:
+
+     archive8=/dev/rct0              20      60000   y
+
+The reason this is useful is that it greatly simplifies your tar command
+because the default file provides a device name, a blocking factor and
+a tape size.  Thus, your tar command can be condensed to the following:
+
+     tar cv8 /etc
+
+Again, a 60 Megabyte tape drive  and the "/etc" directory has been used
+as an example.  As you can see, simply using the "8" acts as a pointer to
+the default file, so that you don't need to specify as much on the 
+command line.  To list your tape after writing to the tape drive, the
+command would be:
+
+     tar tv8
+
+and to extract your files the command would be:
+
+     tar xv8 /etc
+
+which would bring over the whole "/etc" directory from tape, or as a
+variation, you can specify any particular file.  For example, your command
+could be:
+
+     tar xv8 /etc/termcap
+
+
+(2) /etc/default/archive
+    --------------------
+
+Another very useful file, "/etc/default/archive" is used by "sysadmin," a
+menu driven "front end" to the command "/etc/backup."  Again, all you need
+to do is edit the file "/etc/default/archive" and indicate a size for the
+"/dev/rct0" entry.  The "/etc/default/archive" file entry for a cartridge
+tape drive using a standard 600 foot tape is included below:
+
+
+#	@(#) archive.src 1.6 88/03/21 
+#
+#	Copyright (C) The Santa Cruz Operation, 1986.
+#	This Module contains Proprietary Information of
+#	The Santa Cruz Operation, Microsoft Corporation
+#	and AT&T, and should be treated as Confidential.
+#
+
+cdev=/dev/rct0 desc="Cartridge Drive (600 ft tape)"	\
+blocking=20 size=600 density=20000
+
+
+The actual file on your system will have many entries for various floppy
+devices as well.  You will need to locate the above entry in the file.
+Again, using a 60 Megabyte tape drive as our example, your edited entry
+should look like the following:
+
+cdev=/dev/rct0 desc="Cartridge Drive (600 ft tape)"      \
+blocking=20 size=60000
+
+
+NOTE:  It is recommended that you use somewhat less than the full tape
+====   capacity when you indicate a size.  This is to compensate for
+       potential bad spots on the physical tape that need to be mapped
+       out.  The following values are recommended:
+    
+          60 Megabyte =  59000
+         125 Megabyte = 123000 
+         150 Megabyte = 148000
+
+Yours sincerely,
+
+
+Technical Support Department
+
+ref: xnx149

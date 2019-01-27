@@ -1,0 +1,105 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) UOD391A contains a replacement
+parallel driver for SCO UNIX System V/386 Release 3.2 Operating System 
+Version 4.0, 4.1 and 4.2 and SCO Open Desktop Release 2.0 and 3.0.
+
+All known timing problems that can be encountered when using parallel printers
+on fast machines, such as 486/66's, have been addressed in SLS UOD391A.  This
+SLS also addresses some known problems, such as hanging parallel ports and slow
+parallel printing.
+
+If you require further information on the enhancements contained in SLS
+UOD391A, please see the README file in the /etc/conf/pack.d/pa directory.
+
+Installation Instructions:
+==========================
+
+To install SLS UOD391A, take the following steps:
+
+(1)  Bring your system into single user mode.  To do this, log in as root 
+     on the console.  After warning users that the system will be down for
+     some time, enter the following command:
+
+           shutdown -y -g0
+
+     The system will display a safe to power off message when the shutdown
+     process has completed:
+
+           **   Safe to Power Off  **
+                      -or-
+           ** Press Any Key to Reboot **
+             
+     Reboot the system.  When the system reboots, you will see the message:
+     
+           Type CONTROL-d to proceed with normal startup,
+           (or give root passwd for System Maintenance) 
+           
+      Enter the root password and press <Enter>.  
+      Wait until the '#' prompt appears.
+
+      You are now in single user (or System Maintenance) mode.
+
+(2)  At the prompt '#', type "custom".
+ 
+     The custom menu will appear.  Select the following:
+
+            Install -> A New Product -> Entire Product
+
+     Insert the requested volume and press <Enter>.
+
+     You will then see:
+     
+            Installing.."Executing Product Prep Script"
+      
+     You will be prompted again to "Insert the requested Volume and enter";
+     press <Enter>.
+
+     The message "Executing PA Driver Enhancements Init Script" will then 
+     appear.
+
+     Next, you will see the message:
+     
+     "You must relink the kernel to allow the changes to take effect."
+     
+     Answer 'y' if you wish to relink the kernel.  
+
+     You must answer 'y' when asked if you want to rebuild the environment.
+
+     Reboot the system.  SLS UOD391A, the Parallel Driver Enhanced Supplement,
+     is now installed.
+
+
+ Removal Instructions:
+ =====================
+
+     To remove SLS UOD391A, follow the instructions outlined above in step 
+     one (1).  Bring your system into single user mode.
+
+     Enter custom following the instructions in step two (2) and select 
+     "Remove".
+
+     Then highlight and select "PA Driver Enhancements".
+
+     You will next be asked to verify the removal.  To do so, press <Enter>.
+       
+     Your "PA Driver Enhancements" will then be removed and you will be asked 
+     if you want to relink the kernel and rebuild the environment.  Answer 'y'
+     to both questions.
+     
+     Reboot the system; your kernel will contain the original PA driver.
+
+
+If you have questions regarding this SLS, or the product on which it is
+installed, and are located outside the U.S. or Canada, please contact your 
+software supplier.  
+
+If you are located within the U.S. or Canada, please call our SCO Customer 
+Services Department at (408) 425-4726.  SCO Customer Service is available 
+Monday through Friday, 6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+
+

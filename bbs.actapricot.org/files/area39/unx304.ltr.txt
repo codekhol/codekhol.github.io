@@ -1,0 +1,161 @@
+
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) unx304 provides conformance to 
+the X/Open Portability Guide Issue 3 (XPG3) and to POSIX 1003.1 for the SCO 
+UNIX System V/386 Release 3.2 Operating System Version 2.0.
+
+It is for use with both the SCO UNIX System V/386 Release 3.2 Operating System
+Version 2.0 and SCO Open Desktop Release 1.1.
+
+To install SLS unx304, take the following steps:
+
+1. Boot/reboot the machine and enter single user mode.
+
+2. Insert SLS unx304 into the floppy drive.
+
+3. Use custom to install the files by entering the command:
+
+        custom
+
+4. Choose the option to install a new product.
+
+It is important that the user is in single-user mode when installing SLS 
+unx304.  The main reason for this is that this SLS supplies a new shared 
+library (/shlib/libc_s), and because most utilities are compiled using shared
+libraries, there is potential for problems if the SLS is installed in multi-
+user mode.  In order to install the new shared library correctly, SLS unx304
+provides a copy of mv (/tmp/mv) which has been compiled using archive as 
+opposed to shared libraries.  The new libc_s is initially installed under 
+/tmp and the new mv is used to move the old /shlib/libc_s to /tmp/libc_s.old
+and the new libc_s (in /tmp/libc_s) to /shlib/libc_s.  All this is done for 
+you by the install script.
+
+5. Remove the old library in /tmp/libc_s.old.
+
+In order to remove /tmp/libc_s.old from the system, it will be necessary to 
+reboot the machine first.  This is because the invoking shell will still be 
+using the text image of /tmp/libc_s.old until the machine is rebooted.
+
+
+This SLS supplies a set of locale files (under /usr/lib/lang) which define the 
+C locale, as defined by the X/Open Portability Guide Issue 3.  The default 
+language file (/etc/default/lang) is modified automatically during the 
+installation to insert the following line:
+
+    LANG=C_C.C
+
+Before the line is added, the user will be asked the question:
+
+    Do you want the C language to be the system default?
+
+If the user replies "y", the C locale will become the default for any program 
+(as per the XPG3 standard).  Should the user reply "n", the default locale of 
+the system will not be altered, but the C locale will be available to programs 
+that request it, for example, by setting the environment variable LANG or 
+using setlocale().
+
+The following files are supplied as part of SLS unx304:
+
+  + Kernel modules
+    /etc/conf/pack.d/kernel/io.o
+    /etc/conf/pack.d/kernel/os.o
+    /etc/conf/pack.d/kernel/space.c
+    /etc/conf/pack.d/s5/Driver.o
+    /etc/conf/pack.d/sio/Driver.o
+    /etc/conf/pack.d/Sdsk/Driver.o
+
+  + Header files
+    /usr/include/sys/dirent.h
+    /usr/include/sys/fcntl.h
+    /usr/include/sys/nami.h
+    /usr/include/sys/proc.h
+    /usr/include/sys/signal.h
+    /usr/include/sys/stat.h
+    /usr/include/sys/termio.h
+    /usr/include/sys/times.h
+    /usr/include/sys/types.h
+    /usr/include/sys/ulimit.h
+    /usr/include/sys/unistd.h
+    /usr/include/sys/utsname.h
+    /usr/include/sys/wait.h
+
+  + Updated utilities
+    /bin/cpio
+    /bin/login
+    /bin/su
+    /bin/sg
+    /bin/mkfifo
+    /etc/fscmd.d/AFS/fsck
+    /etc/fscmd.d/S51K/fsck
+    /usr/bin/coltbl
+    /usr/bin/ptar
+
+  + C locale files
+    /usr/lib/lang/C/C/C/collate
+    /usr/lib/lang/C/C/C/ctype
+    /usr/lib/lang/C/C/C/currency
+    /usr/lib/lang/C/C/C/messages
+    /usr/lib/lang/C/C/C/numeric
+    /usr/lib/lang/C/C/C/time
+    /usr/lib/lang.src/chr.C.src
+    /usr/lib/lang.src/col.C.src
+    /usr/lib/lang.src/cur.C.src
+    /usr/lib/lang.src/mes.C.src
+    /usr/lib/lang.src/num.C.src
+    /usr/lib/lang.src/tim.C.src
+
+  + Shared Library
+    /shlib/libc_s
+
+  + Documentation Files
+    /usr/man/cat.C/cpio.C.z
+    /usr/man/cat.C/mkfifo.C.z
+    /usr/man/cat.C/ptar.C.z
+    /usr/man/cat.C/sg.C.x
+    /usr/man/cat.M/login.M.z
+    /usr/man/index.xpg3os
+
+Notes
+
+The utility ptar(C) is a POSIX and XPG3 conforming version of the utility 
+tar(C).  It has been updated to become fully XPG3 conformant.
+
+The utility cpio(C) has been updated.  Now, when it is used to copy files by 
+a process without appropriate privileges, the access permissions are set in 
+the same fashion that creat() would have set them when given the "mode" 
+argument, matching the file permissions supplied by the "c_mode" field of the 
+cpio format.
+
+login(M) and su(C) now start the shell with the supplemental group list set. 
+The supplemental group ID list is used in addition to the effective group ID 
+(EGID) in determining file access permissions.  The EGID is still used in file 
+creation.  The maximum number of groups in the supplemental groups list is 
+defined by the tunable kernel parameter NGROUPS_MAX.
+
+It can be changed by running sysadmsh(ADM), selecting
+System->Configure->Kernel->Parameters and selecting option 3, 
+"Files, Inodes, and Filesystems". The parameter is NGROUPS.
+
+login and su set the supplemental group list to the login GID 
+(from /etc/passwd), followed by successive groups (read from /etc/group) 
+of which the user is a member (excluding the login group). If a user is 
+listed as a member of a group more than once, the group ID will appear 
+more than once in the supplemental group list.  When the list is full, 
+or the end of the group file is reached, the supplemental group list is 
+set.
+
+This behaviour is functionally equivalent to BSD's, except that BSD     
+uses a fixed, instead of configurable, size list.
+
+The utilities fsck(ADM) and coltbl(M) have been updated to include 
+a number of enhancements.
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services

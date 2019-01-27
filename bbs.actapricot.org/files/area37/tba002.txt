@@ -1,0 +1,98 @@
+Technical Bulletin==================
+Title:	         Using Microsoft Access with Btrieve Files
+Document ID:     TB.A.0002
+Date:	         May 5, 1993
+Product:         Btrieve
+Product Version: v5.x
+Supersedes:	 N/A
+Symptom:	 See below.
+The Data Dictionary-------------------
+Microsoft Access can access (read or modify) a Btrieve file only 
+through that file's data dictionary. A data dictionary is a set of
+files that define fields for each record of a Btrieve file. To
+produce the data dictionary files (DDFs) for a Btrieve file, you must
+know the starting offset, length, and type of each portion of a
+file's records that corresponds to a field. You can then use NetWare
+SQL, Xtrieve PLUS, or a similar product to define the DDFs for that
+Btrieve file. Access cannot create DDFs for a Btrieve file.
+File Owner Names----------------
+Access opens DDFs with the Novell default DDF owner name; therefore,
+if security is defined on a set of DDFs, Access cannot read the DDFs.
+In this situation, Access returns the error Couldn't Decrypt File.
+If a Btrieve file has an owner name, but does not require you to 
+specify the name in order to read the file (level 1 or 3), Access
+does not prompt you for the owner name. Although Access can read the
+data from the file, attempting to edit the file's data causes Access
+to return the following error: Couldn't update; database is
+read-only.
+If a Btrieve file has an owner name, and that file requires that you 
+specify the owner name in order to read or modify the file (level 0 
+or 2), Access prompts you for the owner name. If you are using 
+Btrieve v5.x, Access opens the file for normal use after you specify
+the owner name. However, if you are using Btrieve v6.x, Access cannot
+open the file even after you specify the owner name. Instead, Access
+returns the error Couldn't Decrypt File. This error occurs because
+Btrieve v6.x requires that the data buffer length be set to the
+length of the owner name plus the null terminator on an Open
+operation. Access sets the data buffer length only to the length of
+the owner name.
+Tables and the Btrieve File Format----------------------------------
+Access can create a Btrieve file and define it to a set of DDFs that 
+have been previously defined by Xtrieve PLUS, NetWare SQL, or a 
+similar application. Access refers to this action as exporting a
+table in Btrieve format.
+When exporting a table in Btrieve format, Access always adds the 
+4-byte integer field 'M_I_C_R_O_S_O_F_T' as the first field of the 
+table. Access also makes this field the only index in the table.
+Access translates its own data types into specific Btrieve data types
+when it exports a table in Btrieve format. The following list shows 
+the data types that result when Access exports data to a Btrieve DDF 
+file. 
+           Access Data Type          DDF Data Type
+           ================          =============
+           Text                      string
+           Number                    float
+           Date/Time                 date
+           Currency                  money
+           Counter                   integer
+           Yes/No                    logical
+           Memo                      note
+           OLE Object                lvar
+You can use Access to read a Btrieve file's format from one set of 
+DDFs and then export the table for that Btrieve file to another set
+of DDFs. You can also use Access to join, query, or update the tables
+for Btrieve files that are defined in different sets of DDFs. 
+Access allows you to join Btrieve-based tables to tables that use 
+other formats (such as Access, Paradox, or dBASE IV). However, you 
+cannot export the data from such a joined view or restricted query to
+a Btrieve file. You can export only single unrestricted tables to 
+Btrieve format.
+Transaction Processing----------------------
+Access operations occur mainly inside transactions; therefore, you 
+must configure Btrieve for transaction processing.
+Btrieve for Windows-------------------
+WBTRCALL.DLL, the Btrieve for Windows DLL, is no longer packaged with
+Access. You can purchase this DLL from Novell in the Btrieve for
+Windows Developer's Kit.
+The Requester version of this DLL is available from CompuServe in the
+NOVLIB forum, in Lib7, in the file BTRREQ.ZIP. You can use this 
+Requester with Access to access Btrieve files that reside on a 
+NetWare v2.x, v3.x, or v4.0 server running the Btrieve engine. For 
+information about how to install the Btrieve engine packaged with 
+your version of NetWare, see the Btrieve Installation and Operation 
+manual included in the NetWare documentation.
+Access returns error -5001 if you are using the Btrieve v6.x
+Requester and WBTRVRES.DLL is not available in your path. Access also
+returns error -5001 whenever it receives a Btrieve status code that
+it has not been programmed to handle. Most of these Btrieve status
+codes are greater than 90.
+Access can also return the error Disk or Network Error.  This error
+occurs if Access tries to read a Btrieve file's associated DDFs using
+a pre-v6.x version of WBTRCALL.DLL, but the DDFs have been created by
+Xtrieve PLUS, NetWare SQL, or other application that used Btrieve
+v6.x to create those DDFs. This error resembles Btrieve Status Code
+2, which Btrieve returns when an application attempts to access a
+v6.x-formatted file with a client (v5.x) engine. To solve this
+problem, either run the Btrieve v6.x NLM with the v6.x version of
+BREQUEST or WBTRCALL.DLL, or make sure that all files accessed with
+the client WBTRCALL.DLL are stored in v5.x format. 

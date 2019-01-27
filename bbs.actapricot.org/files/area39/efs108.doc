@@ -1,0 +1,4933 @@
+
+      NOTE:  This file consists of two documents, the ``SCO Xsight 2.3
+             Server EFS Additional Notes'' (a supplement to the
+             release notes) and the ``SCO Xsight 2.3 Server EFS
+             Release and Installation Notes.'' 
+
+             Because of the length of these documents, and the importance
+             of the information contained within them, it is recommended
+             that you print a copy of this file for your reference.
+     
+
+
+
+
+
+                          SCO Xsight 2.3 Server EFS
+
+
+
+                               ADDITIONAL NOTES
+
+
+                       For The SCO Xsight 2.3 Server EFS
+
+
+
+
+
+	1.  Introduction
+
+	This document contains important information regarding the SCO Xsight 
+        2.3 Server EFS (Extended Functionality Supplement) product.  This 
+        information supplements the contents of the ``SCO Xsight 2.3 Server EFS 
+        Release and Installation Notes'' and should be read in conjunction with
+	these notes, before you begin installation of this product.
+
+
+	2.  Addendum to the Xsight 2.3 Server Limitations Section
+
+	This section supplements the information described in the ``Xsight 2.3 
+        Server Limitations'' section, beginning on page 2-5 in the ``SCO Xsight 
+        2.3 Server EFS Release and Installation Notes.''  The following list 
+        describes additional limitations to the Xsight 2.3 server of which you
+        should be aware:
+
+	  o If you are using an ATI WONDER +(R) graphics adapter on a system 
+            running Open Desktop(R) 1.0, do not run your server in high 
+            resolution mode (800x600).  Using this card in high resolution 
+            mode causes your screen to either display black streaks or turns 
+            your screen completely black when you execute the server.  If you
+	    experience this problem, press <Alt><SysReq> to end your current 
+            session and then reconfigure your adapter to use 640x480 resolution.
+            Note that this problem does not apply if you are running Open 
+            Desktop 1.1.
+
+	  o If you are using the XENIX(R) operating system, version 2.3.2 with 
+            UFJ, you cannot successfully run COFF binaries on your machine.  If
+            you need to use COFF binaries, obtain and install UFM on your 
+            system.
+
+	  o The ``Xsight 2.3 Server Limitations'' section in the release notes 
+            indicates that the COMPAQ(R) VGC grafinfo entry causes the server 
+            to fail on a system running MPX 1.1.  This is not completely 
+            accurate in that the limitation is not related or restricted to 
+            the presence of MPX 1.1.  The COMPAQ VGC grafinfo entry simply
+	    causes the server to fail.  To avoid this limitation, use the 
+            IBM(R) VGA grafinfo entry instead.
+
+
+
+
+        The Santa Cruz Operation            1            Xsight 2.3 Server EFS
+
+	  o If you run startx when TCP/IP is not installed on your system, 
+            you see the following warning:
+
+                 libsocket: open (/dev/socksys) failure: no such file or
+                 directory
+
+	    Your X session then executes without any further problems.
+
+	  o When you install the Xsight 2.3 Server EFS on a machine running 
+            any of the supported operating system environments (Open Desktop 
+            1.0, Open Desktop 1.1, SCO UNIX(R) System V 3.2.2, or XENIX 2.3.2 
+            or later), the installation process removes a few grafinfo files 
+            that are now obsolete and renames a few other grafinfo files.  
+            However, these grafinfo files remain listed in their original form 
+            in the operating system runtime perms file.  These two factors 
+            result in the appearance of a partially installed runtime system, 
+            when in fact, your operating system is completely installed.  
+            Because of this inconsistency, it is possible that you may
+	    experience problems with future installations.
+
+	    If, in the future, you experience a failed installation due to the 
+            appearance of a partially installed operating system, you need to 
+            log in to your system as the Super User (root) and edit the 
+            /etc/perms/rts file.  Locate and delete the following lines from 
+            the file:
+
+                 /usr/lib/grafinfo/olivetti
+                 /usr/lib/grafinfo/olivetti/evc-1.xgi
+
+	    Note that if you are running Open Desktop 1.1 with Update F, you 
+            also need to edit /etc/perms/rts.UF (also as the Super User) and 
+            delete every occurrence of the following lines from the file:
+
+                 /usr/lib/grafinfo/olivetti
+                 /usr/lib/grafinfo/hp
+                 /usr/lib/grafinfo/olivetti/evc-1.xgi
+                 /usr/lib/grafinfo/hp/igc.xgi
+
+	    Making these modifications to /etc/perms/rts and, if necessary, to 
+            /etc/perms/rts.UF, resolves any perms list inconsistencies on your 
+            system.  You can now run installations that rely on a fully 
+            installed operating system.
+
+
+	3.  Addendum to the TI34010 Graphics Adapter Limitations Section
+
+	This section supplements the information on card-specific limitations, 
+        described in the ``TI34010 Graphics Adapters'' section, beginning on 
+        page 2-7 in the ``SCO Xsight 2.3 Server EFS Release and Installation 
+        Notes.''  The following item describes an additional TI34010 limitation:
+
+	  o You cannot run the 2.3 server on a COMPAQ AG1024 graphics adapter 
+            that is installed on a COMPAQ SystemPro machine.  If you are using 
+            this hardware configuration and you attempt to run the server, your
+	    screen display is severely distorted, to the point of being 
+            unusable.
+
+
+        The Santa Cruz Operation            2            Xsight 2.3 Server EFS
+
+	4.  Addendum to the 8514/A Graphics Adapter Limitations Section
+
+	This section supplements the information on card-specific limitations, 
+        described in the ``8514/A Graphic Adapters'' section, beginning on page
+        2-13 in the ``SCO Xsight 2.3 Server EFS Release and Installation 
+        Notes.''  The following list describes additional limitations when 
+        using an 8514/A graphics adapter with the 2.3 server:
+
+	  o If you are using an 8514/A graphics adapter and you are running 
+            multiple ODT-DOS windows in which you need to zoom applications, 
+            there is a limitation regarding the method in which you end your 
+            ODT-DOS sessions.  If you zoom an application in an ODT-DOS window 
+            and then close that window by pressing <Alt>4 or by double-clicking
+            on the Window menu button, the server will crash the next time you 
+            zoom an application in one of your other ODT-DOS windows.
+
+	    To avoid this problem, do not use <Alt>4 or the Window menu button 
+            to close an ODT-DOS window in which you have zoomed an application.
+            Instead, exit your application as you would normally.  Then, at the
+            DOS prompt in the window, type quit and press <Return> to end the 
+            ODT-DOS session.
+
+	  o If you are using an 8514/A or 8514-compatible graphics adapter on 
+            a system running Open Desktop 1.1, you may notice that, on some 
+            displays, the background of Directory windows shimmers such that 
+            the screen is difficult to view.  If you experience this problem, 
+            you need to edit the /usr/lib/X11/app-defaults/Xhibit file and
+	    search for the following lines:
+
+                 ! Set texture of directory windows
+                 Xhibit*directory*container*back*backgroundPixmap :
+                          /usr/include/X11/bitmaps/xdt_textures/dir_w_bg.px
+
+	    When you locate these lines, replace the default resource 
+	    specification, /usr/include/X11/bitmaps/xdt_textures/dir_w_bg.px,
+	    with the entry displayed below:
+
+                 /usr/include/X11/bitmaps/xdt_textures/blank.px
+
+
+
+	__________
+
+	SCO Part Number: 076-03C-030
+
+	(C) 1991, The Santa Cruz Operation, Inc.  All Rights Reserved.
+	(R) SCO, the SCO Logo, and Open Desktop are registered
+	    trademarks of The Santa Cruz Operation, Inc.
+	(R) XENIX is a registered trademark of Microsoft Corporation.
+	(R) UNIX is a registered trademark of AT&T in the U.S.A. and
+	    other countries.
+	(R) ATI WONDER + is a registered trademark of ATI Technologies Inc.
+	(R) COMPAQ is a registered trademark of Compaq Computer Corporation.
+	(R) IBM is a registered trademark of International Business
+	    Machines Corporation.
+	(R) Xsight is a registered trademark of Locus Computing Corporation.
+
+
+        The Santa Cruz Operation            3            Xsight 2.3 Server EFS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        SCO(R) Xsight(R) 2.3 Server EFS
+
+                         Release and Installation Notes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         The Santa Cruz Operation, Inc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    (C) 1986 - 1991 The Santa Cruz Operation, Inc.  All rights reserved.
+
+    No part of this publication	may be reproduced, transmitted,	stored in
+    a retrieval	system,	nor translated into any	human or computer
+    language, in any form or by	any means, electronic, mechanical, mag-
+    netic, optical, chemical, manual or	otherwise, without the prior writ-
+    ten	permission of the copyright owner, The Santa Cruz Operation, Inc.,
+    400	Encinal, Santa Cruz, California, 95061,	USA.  Copyright	infringe-
+    ment is a serious matter under the United States and foreign Copyright
+    Laws.
+
+    The	copyrighted software that accompanies this manual is licensed to
+    the	End User only for use in strict	accordance with	the End	User
+    License Agreement, which License should be read carefully before com-
+    mencing use	of the software.  Information in this document is subject
+    to change without notice and does not represent a commitment on the
+    part of The	Santa Cruz Operation, Inc.
+
+    The	following legend applies to all	contracts and subcontracts
+    governed by	the Rights in Technical	Data and Computer Software Clause
+    of the United States Department of Defense Federal Acquisition Regula-
+    tions Supplement:
+
+    RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the
+    government is subject to restrictions as set forth in subparagraph (c)
+    (1)	(ii) of	the Rights in Technical	Data and Computer Software Clause
+    at DFARS 52.227-7013.  The Santa Cruz Operation, Inc., 400 Encinal
+    Street, Santa Cruz,	California 95061, U.S.A.
+
+
+    SCO, the SCO logo and The Santa Cruz Operation are registered trade-
+    marks of The Santa Cruz Operation, Inc. in the U.S.A. and other countries.
+    ALR	is a trademark of Advanced Logic Research, Inc.
+    AT&T is a trademark	of American Telephone &	Telegraph Information Systems.
+    COMPAQ is a	registered trademark of	Compaq Computer	Corporation.
+    Cornerstone	is a registered	trademark of Cornerstone Technology.
+    Corollary is a registered trademark	of Corollary, Inc.
+    GRiD is a registered trademark of GRiD Systems Corporation.
+    Hercules is	a registered trademark of Hercules Computer Corporation, Inc.
+    HP is a registered trademark of Hewlett-Packard Corporation.
+    IBM	is a registered	trademark of International Business Machines Cor-
+    poration.
+    Open Desktop is a trademark	of The Santa Cruz Operation, Inc.
+    Paradise and Paradise VGA are registered trademarks	of Paradise Systems Inc.
+    Renaissance	Rendition is a trademark of Systems Solutions Inc.
+    Texas Instruments is a registered trademark	of Texas Instruments.
+    Toshiba is a registered trademark of Toshiba Corporation.
+    UNIX is a registered trademark of Unix System Laboratories Inc. in the
+    U.S.A and other countries.
+    Video Seven	is a trademark of Headland Technology, Inc.
+    XENIX, Microsoft, and MS-DOS are registered	trademarks of Microsoft
+    Corporation	in the U.S.A. and other	countries.
+    X Window Systems is	a trademark of the Massachusetts Institute of
+    Technology.
+    Xsight is a	registered trademark of	Locus Computing	Corporation.
+
+    Document version: 2.3.0D
+
+    Date: 3 April 1991
+
+
+
+    Contents
+    _____________________________________________________________________
+
+
+
+         Preface
+
+
+    1    Installing Your Software
+
+       Introduction  1-1
+       Installation Overview  1-3
+       Installation Checklist  1-5
+       Installing on the UNIX System or Open Desktop  1-10
+       Installing on XENIX  1-25
+       Removing the Xsight 2.3 Server EFS Product  1-31
+
+    2    Release Information
+
+       Introduction  2-1
+       Server Improvements  2-2
+       Vendor-Specific Graphics Adapter Information  2-7
+       VGA grafinfo File Note  2-14
+       International Keyboard Support  2-16
+
+    A    Video Configuration
+
+       Introduction  A-1
+       Manual Graphics Adapter Configuration  A-2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Preface
+    _____________________________________________________________________
+
+
+    These Release and Installation Notes document the SCO
+    Xsight 2.3 Server EFS (Extended Functionality Supplement) product.
+    Use this product with SCO UNIX(R) System V/386 Release 3.2v2, SCO Open
+    Desktop(TM) 1.0, SCO Open Desktop 1.1, and with SCO XENIX(R) 2.3.2 and
+    later versions.
+
+    Use of this product without ODT-VIEW installed requires the previous
+    installation of SCO Xsight 2.2.
+
+    The software provided in this release replaces the existing Xsight
+    server and includes additional functionality for vendor-specific
+    graphics adapters and for international keyboard support.
+
+    The software contained in this release has these features:
+
+       o a new, faster, and improved Xsight Server
+
+       o new server support for TI34010, IBM(R) 8514/A, and Cornerstone(R)
+         graphics adapters, as well as enhanced VGA support
+
+       o international keyboard support
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    SCO Xsight 2.3 Server EFS Release and Installation Notes          iii
+
+
+
+    0.1  Contents of This Package
+
+    The SCO Xsight 2.3 Server EFS consists of the following:
+
+       o two SCO Xsight 2.3 Server EFS diskettes, the first containing the
+         X Window Runtime System, grafinfo files, and the international
+         keyboard development support and the second containing more
+         grafinfo files and more files related to the international key-
+         board package
+
+       o these Release and Installation Notes
+
+
+    0.1.1  Hardware Requirements
+
+    The SCO Xsight 2.3 Server EFS requires 4636 512K disk blocks to
+    install all of the EFS packages, including the runtime system, the new
+    grafinfo support, and the international keyboard development support.
+    The runtime component by itself requires approximately 3000 512K
+    blocks to be installed.  It is recommended for efficient execution
+    that 8 Mbytes of RAM be installed.
+
+
+    0.1.2  Software Requirements
+
+    Refer to the Xsight 2.2 or Open Desktop Release Notes for additional
+    software requirements.
+
+
+    ************************************************************************
+
+    NOTE
+
+        Currently, you cannot use this server EFS on either an ALR(R) or
+        Corollary(R) multi-processor machine that is running both Open
+        Desktop and MPX(TM).  If you install the new server on a machine of
+        this configuration, you first see mouse tracks on your screen when
+        you start an X session, and then the server fails.  To recover from
+        this failure, you must reboot your system.
+
+    *************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    iv          SCO Xsight 2.3 Server EFS  Release and Installation Notes
+
+
+
+    0.1.3  About the Release Notes
+
+    The ``SCO Xsight 2.3 Server EFS Release and Installation Notes'' include
+    the following:
+
+       o Chapter 1, ``Installing Your Software,'' describes how to install
+         or remove the software provided in the SCO Xsight 2.3 Server EFS.
+
+       o Chapter 2, ``Release Information,'' describes features and
+         enhancements specific to this release.  Also lists graphics
+         adapter support and international keyboard support.
+
+       o Appendix A, ``Video Configuration,'' lists reference information
+         used during some versions of the installation activity.
+
+       o The index lists concepts and keywords described in these notes.
+
+
+    0.1.4  Conventions Used in This Guide
+
+    This guide uses the following notational conventions:
+
+    bold      represents commands, command options, parameters in files,
+              and data structures
+
+    italics   represents files, directories, and variables that you sup-
+              ply; for example, in the command argument path:pathname, the
+              variable pathname is replaced with an actual pathname when
+              you type the command
+
+    < >       represents special keys that you press; for example, <Ctrl>x
+              means to hold down the Control key and press the x key
+              simultaneously, then release them
+
+    Courier   represents system responses, excerpts from files, and pro-
+              gramming examples
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    SCO Xsight 2.3 Server EFS Release and Installation Notes            v
+
+
+
+    Chapter 1
+
+    Installing Your Software
+    _____________________________________________________________________
+
+
+    Introduction  1-1
+
+    Installation Overview  1-3
+                 Prerequisites for Installation  1-3
+                 Serialization for the Xsight 2.3 Server EFS  1-4
+                 Installing the International Keyboard Supplement  1-4
+                 Video Graphics Support under XENIX  1-4
+                 Replacing Modified .Xsight.cfg Files  1-4
+
+    Installation Checklist  1-5
+
+    Installing on the UNIX System or Open Desktop  1-10
+
+    Installing on XENIX  1-25
+
+    Removing the Xsight 2.3 Server EFS Product  1-31
+        Removing the Xsight 2.3 Server EFS from the UNIX System or
+            Open Desktop  1-31
+        Removing the Xsight 2.3 Server EFS from XENIX  1-36
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1.1  Introduction
+
+    This chapter describes how to install and configure the Xsight 2.3
+    Server EFS.
+
+    To facilitate the installation process, this chapter includes a check-
+    list that you can use to record crucial pieces of information ahead of
+    time.  This way you already have the answers to major prompts when you
+    run the installation.
+
+    The Xsight 2.3 Server EFS installation uses a utility called
+    custom(ADM).  When custom installs a software product, the files that
+    comprise the product are transferred from the media on which the
+    software product is distributed and stored on disk.  Using the infor-
+    mation supplied in a parameter list, custom places the files in the
+    correct locations, assigns permissions, and performs optional tasks
+    such as making device nodes.
+
+    The custom utility also gives you the flexibility to install packages
+    (sets of files grouped logically) instead of the entire Xsight 2.3
+    Server EFS product.  This EFS includes three packages, two of which
+    (XRT and GRF) you definitely want to install.  You should only install
+    the third package, (INL), if you have the development system and are
+    planning to create internationalized X applications.  If you have only
+    the runtime system, installing the INL package would only be a waste
+    of your disk space.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                              1-1
+
+
+
+    The following table lists information locations about each package:
+
+
+    Package          Description                   Information Location
+    ______________________________________________________________________
+    XRT              runtime system                Chapter 2
+
+    GRF              grafinfo file support         Appendix A
+
+    INL              international X support       Chapter 2
+
+
+    Keep the two floppy diskettes containing the EFS packages until the
+    next release of Open Desktop or your operating system.  You may be
+    called upon to install or reinstall the packages if you upgrade the
+    software or hardware on your system.
+
+    Please read these notes completely before you begin installing the
+    Xsight 2.3 Server EFS.  The information contained within these
+    chapters is crucial to the proper installation and operation of the
+    new server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-2              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    1.2  Installation Overview
+
+    You can install the Xsight 2.3 Server EFS on any one of the following
+    environments:
+
+       o XENIX 2.3.2 or later with Xsight 2.2
+
+       o SCO Open Desktop 1.0
+
+       o SCO Open Desktop 1.1
+
+       o SCO UNIX System V 3.2.2 with Xsight 2.2
+
+    Before installing the Xsight 2.3 Server EFS, you should observe the
+    precautions and information described in the following sections.
+
+
+    1.2.0.1  Prerequisites for Installation
+
+       o Please read all chapters in this document before installing the
+         Xsight 2.3 Server EFS.
+
+       o Fill out the installation checklist found in the next section of
+         this chapter.  Information on how to fill out the checklist is
+         also included in the next section.
+
+       o After you fill out the checklist, log in as root and bring the
+         system to single-user mode.
+
+       o Be certain that you are in the root (/) directory before you
+         start the installation procedure.
+
+       o Do not remove any previously installed versions of ODT-VIEW or
+         Xsight before installing the Xsight 2.3 Server EFS as this pro-
+         duct does not replace all of the files that are removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                              1-3
+
+
+
+    1.2.0.2  Serialization for the Xsight 2.3 Server EFS
+
+    This EFS does not come with its own serialization card (information
+    sheet).  To serialize this product, you must enter the serial number
+    and activation key that were provided with your Open Desktop product
+    or your Xsight 2.2 product.  You are prompted for this information
+    during the installation process.
+
+
+    1.2.0.3  Installing the International Keyboard Supplement
+
+    The International Keyboard Development Supplement (INL) package pro-
+    vides files for developers who want to extend the keyboard support for
+    their X applications.  You do not need to install the INL package
+    unless you intend to perform this kind of development.
+
+    Note that this package is only useful if you have the development sys-
+    tem for your specific operating system and either the Open Desktop
+    development system or the Xsight 2.2 development system.
+
+
+    1.2.0.4  Video Graphics Support under XENIX
+
+    If you are using a XENIX system, the new video graphics card support
+    provided by the Xsight 2.3 Server EFS is not apparent when you install
+    the product.  The list of supported graphics adapters displayed during
+    the video configuration portion of the installation is incomplete.  If
+    your particular graphics adapter is not listed, but it is included in
+    Table A.1, ``Graphics Adapter Card Designations,'' in Appendix A in
+    these notes, you have to add the definition line for your adapter to
+    the /usr/lib/grafinfo/grafinfo.def file.  Refer to the section ``Ins-
+    talling on XENIX'' for information on how to do this.
+
+
+    1.2.0.5  Replacing Modified .Xsight.cfg Files
+
+    The Xsight 2.3 Server EFS product includes a new version of the
+    /usr/lib/X11/.Xsight.cfg file.  This new version of the file is
+    required for successful use of the new Xsight server supplied in this
+    release.  Be sure to inform all users on your system who may have
+    created a custom version of .Xsight.cfg in their home directories to
+    remove their copy of the file, replace it with the new version, and
+    reincorporate their modifications before invoking the server.  Failure
+    to do this can cause the server to fail when started.
+
+
+
+
+
+
+
+
+
+
+
+
+    1-4              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    1.3  Installation Checklist
+
+    Before you begin the installation of the Xsight 2.3 Server EFS, use
+    the checklist that follows to write down the information you need to
+    respond to prompts during the installation procedure.
+
+    The sections following the actual checklist describe the categories on
+    the checklist and explain how to fill out each of the items.  Some
+    sections may refer you to another chapter in these ``Release and Instal-
+    lation Notes,'' where the information for an item is contained.
+
+    Record all of the necessary information for the Xsight 2.3 Server EFS
+    installation on this checklist now, before you begin the actual ins-
+    tallation process. Using the checklist saves you the time and confu-
+    sion of trying to answer the prompts as you go.  As a result, the ins-
+    tallation proceeds much more quickly and smoothly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                              1-5
+
+
+
+                            Installation Checklist
+    _________________________________________________________________________
+
+
+     1.  Operating System                     []  SCO UNIX    []  SCO XENIX
+
+                                              []  SCO Open Desktop
+
+     2.  Packages to Install                  []  Packages:
+
+                                                   []  XRT
+                                                   []  GRF
+                                                   []  INL
+
+                                              []  Entire Product
+
+     3.  Serialization
+
+          Serial Number:                      ______________________________
+
+          Activation Key:                     ______________________________
+
+     4.  Video Adapter
+
+          Adapter Type:                       ______________________________
+
+          Adapter Mode:                       ______________________________
+
+          Devices to Associate with Adapter:  []  Console     []  Specify
+
+              Which tty Devices:              ______________________________
+                                              ______________________________
+
+     5.  Manual Video Adapter Configuration
+
+          grafinfo.def Entry (XENIX only):    ______________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-6              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    The following sections describe each of the categories on the check-
+    list and explain how to fill out the checklist items.
+
+
+        1. Operating System
+
+           The type of operating system your computer runs determines
+           which installation procedure you use to install the Xsight 2.3
+           Server EFS.
+
+           If you are running the UNIX operating system or Open Desktop,
+           use the installation procedure described in the section ``Ins-
+           talling on the UNIX System or Open Desktop.''  If you are run-
+           ning the XENIX system, use the installation procedure
+           described in the section ``Installing on XENIX.''
+
+        2. Packages to Install
+
+           You need to decide which portions of the Xsight 2.3 Server EFS
+           product you want to install.  The Xsight 2.3 Server EFS con-
+           sists of three distinct packages of files:
+
+               o XRT - SCO Xsight Server Runtime files
+
+               o GRF - Grafinfo files
+
+               o INL - International Keyboard Development Supplement files
+
+           In all cases, you should install the XRT and GRF packages.
+           If you intend to write your own international X clients,
+           install the INL package.  This package also permits you to
+           extend the functionality of international keyboard keymaps.
+
+           Note that you must have the Open Desktop or Xsight 2.2
+           development system, as well as the development system for your
+           operating system installed on your computer to use the INL
+           package for development purposes.
+
+           You only need to install the entire product if you have use
+           for all of the packages included on the EFS distribution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                              1-7
+
+
+
+        3. Serialization
+
+           You cannot completely install the Xsight 2.3 Server EFS
+           without entering the correct serial number and activation key.
+           However, the Xsight 2.3 Server EFS product does not come with
+           its own specific serial number and activation key.  Instead,
+           you must enter the codes that were provided on the Serializa-
+           tion Card (information sheet) included with either your Open
+           Desktop product or, if you are running the UNIX operating sys-
+           tem or XENIX system, with your Xsight 2.2 product.
+
+        4. Video Adapter
+
+           As part of the installation procedure, you must configure your
+           video graphics adapter and its mode, or resolution, for your
+           system.  See Appendix A, ``Video Configuration,'' for a list
+           of supported graphics adapters and modes to verify that your
+           adapter and the resolution you desire is available.  Refer to
+           your video adapter documentation for specific information on
+           your card's capabilities.
+
+           If you are using Open Desktop, version 1.1 or later, you can
+           also assign the adapter you are configuring to terminal dev-
+           ices on your system.  You can select either Default, in which
+           case all devices on your system are associated with the
+           current adapter, or you can select Specify, in which case you
+           list the specific terminal devices that you want associated
+           with the adapter.  Generally, you should select Default; how-
+           ever, there are special circumstances under which you might
+           choose Specify.  For example, if your system has both mono-
+           chrome and VGA graphics adapters, you can assign several ter-
+           minal devices to the monochrome adapter and several other ter-
+           minal devices to the VGA adapter.  If you want to assign
+           specific terminals, list the desired devices on the checklist.
+
+        5. Manual Video Adapter Configuration under XENIX
+
+           If you are using the XENIX system, your adapter type may not
+           be displayed during the video configuration portion of the
+           installation, and you may have to configure your adapter your-
+           self.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-8              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+            After you complete the Xsight 2.3 Server EFS installation, you
+            need to include the appropriate adapter type and mode entry in
+            the grafinfo.def file, located in the /usr/lib/grafinfo direc-
+            tory.  The grafinfo.def entries follow a specific format.
+            Refer to Table A.1, ``Graphics Adapter Card Designations,'' in
+            Appendix A, ``Video Configuration,'' for your graphics
+            adapter, its supported modes of operation, and the related
+            grafinfo.def entry.
+
+    ************************************************************************
+
+    NOTE
+
+        If your adapter type and the desired mode is not listed in Table A.1
+        in Appendix A, it is not supported by the SCO Xsight Server.
+
+    *************************************************************************
+
+            As an example, the grafinfo.def entry for an ATI Wonder graph-
+            ics adapter and a monitor that supports 640x480 resolution
+            would be:
+
+                 ati.wonder.vga.640x480-16
+
+            The grafinfo.def entry should be lowercase and the file can
+            only contain one entry.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                              1-9
+
+
+
+    1.4  Installing on the UNIX System or Open Desktop
+
+    The following procedure explains how to install the Xsight 2.3 Server
+    EFS on a computer running the UNIX operating system or SCO Open Desk-
+    top.  Fill out the installation checklist on page 1-6 before you begin
+    this procedure.
+
+     1.  Log in as root.
+
+     2.  Bring the system to single-user mode after informing your users
+         to log off.  To enter single-user mode, type init 1 and press
+         <Return>.
+
+     3.  Enter the root password at the password prompt.
+
+     4.  Enter custom directly from the command line by typing custom and
+         pressing <Return>, or from sysadmsh by making the following
+         sysadmsh selection:
+
+              System-->Software
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-10             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+     5.  You see the main custom menu:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                 Custom |
+    | Install Remove List Quit                                               |
+    | Install software                                                       |
+    | /                                          Monday April 1, 1991  10:11 |
+    |                                                                        |
+    |                                                                        |
+    |      ----------------Products Currently Installed----------------      |
+    |      |                                                          |      |
+    |      |   The Operating System                                   |      |
+    |      |   Software Development System                            |      |
+    |      |   ODT Xsight RTS                                         |      |
+    |      |                                                          |      |
+    |      |                                                          |      |
+    |      |                                                          |      |
+    |      |                                                          |      |
+    |      ------------------------------------------------------------      |
+    |                                                                        |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+         The software list on your screen may be different from the list
+         shown here.  Use the arrow keys to highlight the Install option
+         and press <Return>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                             1-11
+
+
+
+     6.  The Install screen appears with a list of software superimposed:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                Install |
+    | Select a product to install and press <Return>                         |
+    | Press <ESC> to cancel, movement keys are active                        |
+    | /                                          Monday April 1, 1991  10:11 |
+    |                                                                        |
+    |                                                                        |
+    |    -----------------------------Install-----------------------------   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |  Select a product  :  [                                    ]  |   |
+    |    |                                                               |   |
+    |    |  Choose an option  :  [Entire Product]    Packages    Files   |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                               ----------------------------------- |
+    |    |                               |                                 | |
+    |    |                               | * A New Product                 | | 
+    |    |                               |   The Operating System          | |
+    |    |                               |   Software Development System   | |
+    |    |_______________________________|   ODT Xsight RTS                | |
+    |                                    |                                 | |
+    |                                    ----------------------------------- |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+         Again, your software list may look different.  Select A New Pro-
+         duct and press <Return>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-12             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+     7.  The Install screen offers the choice of installing an Entire Pro-
+         duct, Packages, or Files:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                Install |
+    | Install the entire product                                             |
+    |                                                                        |
+    | /                                          Monday April 1, 1991  10:11 |
+    |                                                                        |
+    |                                                                        |
+    |    -----------------------------Install-----------------------------   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |  Select a product  :  [A New Product                       ]  |   |
+    |    |                                                               |   |
+    |    |  Choose an option  :  Entire Product     Packages     Files   |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    -----------------------------------------------------------------   |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+         Generally, you should select the Packages option, and press
+         <Return>.  If you have a use for all of the Xsight 2.3 Server EFS
+         packages, select the Entire Product option and press <Return>.
+         For more information on packages, refer to the ``Installation
+         Checklist'' earlier in this chapter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                             1-13
+
+
+
+     8.  Next, the Install screen directs you to insert the Xsight 2.3 Server 
+         EFS volume 1:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        | 
+    |                                                                Install |
+    |                                                                        |
+    | Insert the requested volume, and press <Return> to continue the        |
+    |                                                           installation |
+    | /                                          Monday April 1, 1991  10:12 |
+    |                                                                        |
+    |                                                                        |
+    |    -----------------------------------------------------------------   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |    Insert:  Distribution                                      |   |
+    |    |             Floppy Volume 1                                   |   |
+    |    |                                                               |   |
+    |    |          Continue   Quit                                      |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    -----------------------------------------------------------------   |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         Insert the proper volume and press <Return> to continue. The message
+         ``Installing custom data files. . .'' briefly appears on the screen.
+         Then the following message appears:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Executing Product Prep Script                                          |
+    |                                                                        |
+    | Backing up runtime configuration files.                                |
+    | (Refer to your Release Notes for a list of these files)                |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         During this installation, several important configuration files are
+         overwritten with new versions of the files.  Because you may have made
+         important modifications to these files that you do not want to lose,
+         custom creates backup copies of the files before they are overwritten.
+         The backup files are located in the same directories as the original
+         files, and the backup filenames consist of the original filename and a
+         .00 suffix.  After the installation process is complete, you can re-
+         customize the new configuration files, using the backup copies as a 
+         reference for the modifications you previously made.
+
+
+    1-14             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+         The following files are backed up:
+
+            o /usr/bin/startx
+
+            o /usr/lib/X11/xsconfig/kb101.kbd
+
+            o /usr/lib/X11/keymaps/kmap.language, where language is a
+              two-letter abbreviation of a particular language
+
+         If you are running Open Desktop, version 1.0, the following files
+         are also backed up:
+
+            o /etc/conf/pack.d/cn/class.h
+
+            o /usr/lib/grafinfo/modelist
+
+     9.  If you elected to install the entire product, the message ``Creat-
+         ing file lists. . .'' briefly appears at the top of the Install
+         screen.  Then the installation continues with step 10 in this
+         procedure.
+
+         If you chose to install parts of the Xsight 2.3 Server EFS pro-
+         duct, a list of the available packages appears:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                Install |
+    | Select package(s) to install and press <Return>                        |
+    | Press <ESC> to return, movement keys are active                        |
+    | /                                          Monday April 1, 1991  10:14 |
+    |                                                                        |
+    |                                                                        |
+    |                                                                        |
+    | ----------------------SCO Xsight 2.3 Server EFS---------------------   |
+    | |                                                                  |   |
+    | |  Name  Inst  Size   Description                                  |   |
+    | |* ALL   No    4690   All Available Packages                       |   |
+    | |  XRT   No    2904   SCO Xsight Server Runtime                    |   |
+    | |  GRF   No    1748   Grafinfo (required for Xsight runtime)       |   |
+    | |  INL   No    18     International Keyboard Development Supplement|   |
+    | --------------------------------------------------------------------   |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                             1-15
+
+
+
+         Highlight the line corresponding to the Xsight 2.3 Server EFS
+         package that you wish to install, and press <Return>. If you wish
+         to install several packages, highlight a package and press
+         <Space>.  Repeat this process until all desired packages are
+         marked, then press <Return>. Generally, you should install on a
+         package-by-package basis. In all cases, you should select the XRT
+         and GRF packages.  Only install INL if you need this package for
+         work with the development system.  When you press <Return>, the
+         message ``Creating file lists . . .'' briefly appears at the top
+         of the Install screen.
+
+    10.  The screen again instructs you to insert volume 1, which should
+         still be in the drive.  Press <Return>.  The message ``Extracting
+         files . . .'' appears and remains on the screen as long as custom
+         is extracting Xsight 2.3 Server EFS packages from the disk. You
+         are then prompted to load the second and final diskette.  For a
+         list of the distribution-media files, see /etc/perms/Xefs.
+
+    11.  When custom finishes extracting files from your distribution
+         media, you see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Executing SCO Xsight 2.3 Server EFS Init Script                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         A restricted rights legend displays and you are prompted to seri-
+         alize the Xsight 2.3 Server EFS.
+
+
+    -------------------------- begin screen display ----------------------------
+    |                                                                          |
+    | SCO Xsight 2.3 Server EFS Serialization                                  |
+    |                                                                          |
+    | When prompted, use the serial number and activation key from the previous|
+    | ODT or Xsight 2.2 installation.                                          |
+    |                                                                          |
+    | Enter your serial number or enter q to quit:                             |
+    |                                                                          |
+    -------------------------- end screen display ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-16             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    12.  Enter your Xsight 2.2 or Open Desktop serial number exactly as it
+         appears on the serialization card, including the three-letter
+         prefix.  Press <Return>.
+
+         The system then displays:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Enter your activation key, or enter q to quit:                         |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    13.  Enter your Xsight 2.2 or Open Desktop activation key exactly as
+         it appears on the serialization card.  Press <Return>.  The
+         activation key is in all lowercase letters and contains no
+         numbers.  If you mistype your serial number or activation key,
+         you are prompted to enter them both again.
+
+         Once the Xsight 2.3 Server EFS product has been correctly serial-
+         ized, custom runs the mkdev graphics script.  You see a menu for
+         this configuration utility.
+
+         If you are using Open Desktop 1.0, you see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                vidconf |
+    | Form Quit                                                              |
+    | Fill out configuration form                                            |
+    |                                            Monday April 1, 1991  10:20 |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         If you are using UNIX 3.2.2 or Open Desktop 1.1, the following
+         menu appears:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                vidconf |
+    | Update View Clear Restore Quit                                         |
+    | Update the current video adapter configuration                         |
+    |                                            Monday April 1, 1991  10:20 |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+
+
+
+
+    Installing Your Software                                             1-17
+
+
+
+    14.  If you are using Open Desktop 1.0, select Form and continue with
+         the configuration as you would when installing the ODT-VIEW win-
+         dowing service.  The procedure is similar to the one described
+         below, but you cannot specify the terminal devices associated
+         with each adapter.  For more information, see ``Installing the
+         ODT-VIEW Windowing Service,'' in Chapter 3, ``Running the Selec-
+         tive or Manual Installation,'' of the ``Open Desktop Installation
+         Guide.''
+
+         When you finish configuring your graphics adapter card, proceed
+         to step 21.  Steps 15 through 20 of this installation procedure
+         do not apply to Open Desktop 1.0.
+
+         If you are using UNIX 3.2.2 or Open Desktop 1.1, select Update to
+         configure your graphics adapter card to work with the new server
+         and press <Return>.  You see a screen similar to this:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                 Update |
+    | Select a video adapter type.  <ESC> to cancel                          |
+    |                                                                        |
+    |                                            Monday April 1, 1991  10:20 |
+    |                                                                        |
+    |   ------------------------Video Configuration-----------------------   |
+    |   | Select a video adapter type and mode that matches the hardware |   |
+    |   | installed on your system:                                      |   |
+    |   |                                                                |   |
+    |   |  Adapter T---------------------------------------------        |   |
+    |   |  Adapter M|* ATI VGA WONDER                           |        |   |
+    |   |           |  ATI VGA WONDER PLUS                      |        |   |
+    |   |           |  Chips 451                                |        |   |
+    |   | Specify th|  Chips 452                                |        |   |
+    |   |           |  Compaq Plasma                            |        |   |
+    |   |           |  Compaq VGC                               |        |   |
+    |   |           |  Compaq AG 1024                           |        |   |
+    |   |           |  EIZO MD-B07                              |        |   |
+    |   | Accept cur|  EIZO MD-B10                              |        |   |
+    |   |           |  Genoa SuperVGA                           |        |   |
+    |   |           ---------------------------------------------        |   |
+    |   |           [Accept]      Ignore                                 |   |
+    |   |                                                                |   |
+    |   ------------------------------------------------------------------   |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+
+
+
+
+
+
+    1-18             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    15.  Select the graphics adapter that is installed in your computer
+         from the point-and-pick list displayed on your screen.  You can
+         scroll through the list using the <Down Arrow> key.  When you
+         have highlighted the correct adapter, press <Return> to select
+         it.  When you make your selection, the adapter is placed in the
+         ``Adapter Type'' field.
+
+         After you make your selection, you see another point-and-pick
+         list displaying the supported modes for the adapter type you
+         selected.  For example:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                 Update |
+    | Select the adapter's operation mode.  <ESC> to cancel                  |
+    |                                                                        |
+    |                                            Monday April 1, 1991  10:20 |
+    |                                                                        |
+    |   ------------------------Video Configuration-----------------------   |
+    |   | Select a video adapter type and mode that matches the hardware |   |
+    |   | installed on your system:                                      |   |
+    |   |                                                                |   |
+    |   |  Adapter T---------------------------------------------        |   |
+    |   |  Adapter M|* VGA 640x350 16-color                     |        |   |
+    |   |           |  VGA 640x480 16-color                     |        |   |
+    |   |           |  VGA 800x600 16-color                     |        |   |
+    |   | Specify th|  SVGA 1024x768 16-color                   |        |   |
+    |   |           |                                           |        |   |
+    |   |           |                                           |        |   |
+    |   |           |                                           |        |   |
+    |   |           |                                           |        |   |
+    |   | Accept cur|                                           |        |   |
+    |   |           |                                           |        |   |
+    |   |           ---------------------------------------------        |   |
+    |   |           [Accept]      Ignore                                 |   |
+    |   |                                                                |   |
+    |   ------------------------------------------------------------------   |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+    16.  Select the mode for your graphics adapter from the point-and-pick
+         list by highlighting an option in the list and pressing <Return>.
+         When you make your selection, the mode is placed in the ``Adapter
+         Mode'' field.
+
+
+
+
+
+
+
+    
+    Installing Your Software                                             1-19
+
+
+
+         You now see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                 Update |
+    | Associate the console's tty devices with the selected adapter.         |
+    |                                                                        |
+    |                                            Monday April 1, 1991  10:20 |
+    |                                                                        |
+    |   ------------------------Video Configuration-----------------------   |
+    |   | Select a video adapter type and mode that matches the hardware |   |
+    |   | installed on your system:                                      |   |
+    |   |                                                                |   |
+    |   |  Adapter Type:      [paradise.vga1024               ]          |   |
+    |   |  Adapter Mode:      [vga.800x600-16                 ]          |   |
+    |   |                                                                |   |
+    |   |                                                                |   |
+    |   | Specify the devices to associate with the currently selected   |   |
+    |   |                                                       adapter: |   |
+    |   |           Default       Specify                                |   |
+    |   |                                                                |   |
+    |   |                                                                |   |
+    |   | Accept current configuration?                                  |   |
+    |   |                                                                |   | 
+    |   |                                                                |   |
+    |   |           [Accept]      Ignore                                 |   |
+    |   |                                                                |   |
+    |   ------------------------------------------------------------------   |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    17.  Now you can assign the current adapter to all devices (mul-
+         tiscreens and terminals) on your system by selecting Default, or
+         you can limit video adapter access to certain ttys by selecting
+         Specify.  Highlight the desired option and press <Return>.
+
+         If you select the Default option, proceed to step 19.  If you select
+         the Specify option, you see the following point-and-pick list:
+
+                                -------------------
+                                |  /dev/syscon    |
+                                |  /dev/tty01     |
+                                |  /dev/tty02     |
+                                |  /dev/tty03     |
+                                |  /dev/tty04     |
+                                |  /dev/tty05     |
+                                |  /dev/tty06     |
+                                |  /dev/tty07     |
+                                |  /dev/tty08     |
+                                |  /dev/tty09     |
+                                -------------------
+
+    
+    1-20             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    18.  Highlight the desired terminal device and press <Space>.  An
+         asterisk displays to the left of the device name, indicating it
+         has been marked for selection.  Repeat this process for any other
+         devices that you wish to associate with your graphics adapter.
+         When you are finished, press <Return>.
+
+    19.  The next message prompts you to Accept or Ignore the current con-
+         figuration.  Accept is already highlighted; press <Return> to
+         continue.  If you select Ignore, the changes that you made to the
+         graphics adapter configuration are ignored.
+
+    20.  You return to the Video Configuration menu. Select Quit to exit
+         this menu.  You are then prompted to save the video configuration
+         information; select Save.  To exit without saving the video con-
+         figuration information, select Exit.
+
+         Now, the screen displays:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Updating system configuration.  Please wait...                         |
+    | PARSING grafinfo files                                                 |
+    | The system configuration has been updated.                             |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    21.  If you selected a video configuration that requires adding infor-
+         mation to the console device driver in the kernel, you see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | You must create a new kernel to effect the driver change you specified.|
+    | Do you wish to create a new kernel now? (y/n)                          |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         If you do not see this screen, you do not need to relink the ker-
+         nel.  Proceed to step 24.  If you see this screen, type y and
+         press <Return>.  Then you see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |          The UNIX Operating System will now be rebuilt.                |
+    |          This will take a few minutes.  Please wait.                   |
+    |                                                                        |
+    |          Root for this system build is /.                              |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+    Installing Your Software                                             1-21
+
+
+
+         The configuration choices that you made during the installation
+         are added to your system.  This might take several minutes.  Soon
+         you see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | The UNIX kernel has been rebuilt.                                      |
+    | Do you want this kernel to boot by default? (y/n)                      |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    22.  Type y and press <Return>.  The screen displays:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Backing up /unix to /unix.old                                          |
+    | Installing new /unix                                                   |
+    |                                                                        |
+    | The kernel environment includes device node files and /etc/inittab.    |
+    | The new kernel may require changes to /etc/inittab or device nodes.    |
+    |                                                                        |
+    |                                                                        |
+    | Do you want the kernel environment rebuilt (y/n)?                      |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    23.  Again, type y and press <Return>.  You see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | The kernel has been successfully linked and installed.                 |
+    |         To activate it, reboot your system.                            |
+    |                                                                        |
+    | Setting up new kernel environment                                      |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    *********************************************************************
+
+    NOTE
+
+        You must exit custom before you reboot the system.
+
+    *********************************************************************
+
+
+
+
+
+
+    1-22             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    24.  Press <Return>.  A new message appears, prompting you to press
+         any key to continue.  Then you see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Checking file permissions...                                           |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    25.  You return to the main custom menu.  Select Quit to exit custom.
+         If you started custom from sysadmsh, exit sysadmsh now too.
+
+    26.  Remove the distribution media from the disk drive.
+
+    27.  If you changed from a monochrome-based adapter to a color adapter
+         or vice versa, or if you added a high resolution monitor to your
+         system, you now need to run the xconfigure utility.  If you did
+         not make any of these changes, proceed to step 29.
+
+
+    *********************************************************************
+
+    NOTE
+
+        When you run xconfigure, any changes that you previously made in
+        the /app-defaults resource files are overwritten.  If you want to
+        save these changes, you must copy them to another file before 
+        running the configuration script, then manually reapply them to 
+        those resource files after running the script.
+
+    *********************************************************************
+
+
+         At the prompt, enter /usr/bin/X11/xconfigure.  You see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Available display modes are:                                           |
+    |                                                                        |
+    |          [1] color                                                     |
+    |          [2] monochrome                                                |
+    |                                                                        |
+    | Please select a display mode [color]:                                  |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+
+
+
+
+
+    Installing Your Software                                             1-23
+
+
+
+    28.  Select the appropriate display mode, either color or monochrome.
+         If you simply press <Return> at the prompt, color is chosen by
+         default.  You return to your operating system prompt.
+
+         When you next run the Desktop, either from Xsight 2.2 or Open
+         Desktop, your icons and window manager are automatically adjusted
+         for use with your graphics adapter and monitor.
+
+    29.  You can now reboot your system.  Type init 6 at the operating
+         system prompt and press <Return>.  The system displays several
+         messages, then prompts you to press any key to reboot.  Do so,
+         and you return to multiuser mode.
+
+    Installation of the Xsight 2.3 Server EFS product is now complete.
+    After you finish using the Xsight 2.3 Server EFS distribution media,
+    you should store it in a safe place.  If an accident or a hardware
+    failure damages the Xsight 2.3 Server EFS files on your hard disk, you
+    need the distribution media to reinstall the Xsight 2.3 Server EFS
+    product.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-24             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    1.5  Installing on XENIX
+
+    The following procedure explains how to install the Xsight 2.3 Server
+    EFS on a computer running the XENIX operating system.  Fill out the
+    installation checklist on page 1-6 before you begin this procedure.
+
+
+     1.  Log in as root.
+
+     2.  Bring the system to single-user mode after informing your users
+         to log off.  To enter single-user mode, type:
+
+              /etc/shutdown 0
+
+         Now press <Return>.  Several system messages appear.
+
+     3.  Press any key to reboot the system when the reboot message
+         appears.
+
+     4.  Enter the root password at the password prompt.  You are now in
+         single-user mode.
+
+     5.  Enter custom directly from the command line by typing custom and
+         pressing <Return>, or from sysadmsh by making the following
+         sysadmsh selection:
+
+              System-->Add-->Software
+
+         You see a display similar to the following:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |          1. Operating System                                           |
+    |          2. Development System                                         |
+    |          3. Text Processing System                                     |
+    |          4. Add a Supported Product                                    |
+    |          5. ODT Xsight RTS                                             |
+    |                                                                        | 
+    | Select a set to customize or enter q to quit:                          |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                             1-25
+
+
+
+     6.  Select Add a Supported Product by typing the number that
+         corresponds to that selection.  You see:
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Installing custom data files...                                        |
+    |                                                                        |
+    | Insert distribution volume 1                                           |
+    | and press <RETURN> or enter q to quit:                                 |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+     7.  Insert the Xsight 2.3 Server EFS volume 1 into the disk drive and
+         press <Return>.  Then the following message appears:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Backing up runtime configuration files.                                |
+    | (Refer to your Release Notes for a list of these files)                |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         During this installation, several important configuration files
+         are overwritten with new versions of the files.  Because you may
+         have made important modifications to these files that you do not
+         want to lose, custom creates backup copies of the files before
+         they are overwritten.  The backup files are located in the same
+         directories as the original files, and the backup filenames con-
+         sist of the original filename and a .00 suffix.  After the ins-
+         tallation process is complete, you can recustomize the new confi-
+         guration files, using the backup copies as a reference for the
+         modifications you previously made.
+
+         The following files are backed up:
+
+            o /usr/bin/startx
+
+            o /usr/lib/X11/xsconfig/kb101.kbd
+
+            o /usr/lib/X11/keymaps/kmap.language, where language is a
+              two-letter abbreviation of a particular language
+
+
+
+
+
+
+
+
+
+
+
+
+    1-26             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+         You then see the following menu:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |          1. Install one or more packages                               |
+    |          2. Remove one or more packages                                |
+    |          3. List the available packages                                |
+    |          4. List the files in a package                                |
+    |          5. Install a single file                                      |
+    |          6. Select a new set to customize                              |
+    |          7. Display current disk usage                                 |
+    |          8. Help                                                       |
+    |                                                                        |
+    | Select an option or enter q to quit:                                   |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+     8.  Choose option 1 to install any or all of the packages in the pro-
+         duct.  The packages contained in the Xsight 2.3 Server EFS pro-
+         duct display on your screen.
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Name  Inst  Size  SCO Xsight 2.3 Server EFS packages                   |
+    |                                                                        |
+    | -----------------------------------------------------------------      |
+    | ALL    No   4690  All Available Packages                               |
+    | XRT    No   2904  SCO Xsight Server Runtime                            |
+    | GRF    No   1748  Grafinfo (required for Xsight runtime)               |
+    | INL    No   18    International Keyboard Development Supplement        |
+    |                                                                        |
+    | Enter the package(s) to install                                        |
+    | or enter q to return to the menu:                                      |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+     9.  Generally, you should install on a package-by-package basis.  In
+         all cases, you should enter xrt and grf at the prompt.  Only
+         enter inl if you need this development system package.  You only
+         need to install the entire product (type all) if you need all of
+         the packages.
+
+         When you have entered all the desired packages, press <Return>.
+         For more information about packages, refer to the ``Installation
+         Checklist'' section earlier in this chapter.
+
+
+
+
+
+
+
+    Installing Your Software                                             1-27
+
+
+
+         You then see:
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Insert SCO Xsight 2.3 Server EFS volume 1                              |
+    | and press <RETURN> or enter q to return to the menu:                   |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    10.  This volume should still be in the floppy drive.  Press <Return>
+         at this prompt.  You see:
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Extracting files...                                                    |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    11.  You are then prompted to load the second and final volume of the
+         Xsight 2.3 Server EFS.  For a list of the distribution media
+         files, see the file /etc/perms/Xefs.
+
+         After all the files are extracted, a Restricted Rights legend
+         displays.  You are prompted to enter your serial number:
+
+    -------------------------- begin screen display ----------------------------
+    |                                                                          |
+    | SCO Xsight 2.3 Server EFS Serialization                                  |
+    |                                                                          |
+    | When prompted, use the serial number and activation key from the previous|
+    | ODT or Xsight 2.2 installation.                                          |
+    |                                                                          |
+    | Enter your serial number or q to quit:                                   |
+    |                                                                          |
+    -------------------------- end screen display ------------------------------
+
+
+    12.  Enter your Xsight 2.2 serial number exactly as it appears on the
+         serialization card, including the three-letter prefix and press
+         <Return>.  You then see:
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Enter your activation key or q to quit :                               |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    13.  Enter your Xsight 2.2 activation key exactly as it appears on the
+         serialization card and press <Return>.  The activation key is in all
+         lowercase letters and contains no numbers.  If you mistype your serial
+         number or activation key, you are prompted to enter both again.
+
+
+    1-28             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+         You then see:
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                ****** Graphic Card Configuration ******                |
+    |                                                                        |
+    |                1.  Compaq Graphics Adapters                            |
+    |                2.  Eizo Graphics Adapters                              |
+    |                3.  Genoa Super VGA Graphics Adaptor                    |
+    |                4.  Hercules Monochrome Graphics Card                   |
+    |                5.  IBM Graphics Adaptors                               |
+    |                6.  Orchid Designer VGA Graphics Adaptor                |
+    |                7.  Video Seven                                         |
+    |                8.  Paradise VGA plus                                   |
+    |                9.  Quadram VGA Adaptor                                 |
+    |               10.  STB Extra/EM Adaptor                                |
+    |               11.  Tecmar VGA/AD Adaptor                               |
+    |               12.  Toshiba Grid 640x400 Laptop Display                 |
+    |               13.  Grid 1530 CGA 640x400 Laptop Display                |
+    |                                                                        |
+    |       Please select one or enter q to quit:                            |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+    14.  If your graphics adapter is listed on this screen, enter the
+         corresponding number and press <Return>.  After making this
+         selection, you see a list of graphics adapter modes.  Select the
+         desired mode of operation and press <Return>.
+
+         If your graphics adapter is not listed here, you must edit the
+         video configuration file manually for your adapter after you com-
+         plete this installation.  Type q to quit and press <Return>.
+
+    15.  Press any key to return to the custom main menu.  The installa-
+         tion is now complete.  To exit custom, type q.  If you started
+         custom from sysadmsh, exit sysadmsh now too.  Remember to remove
+         the distribution media from the drive.
+
+    16.  If you were able to configure your graphics adapter during the
+         installation, you are now finished.  Type <Ctrl>d to return the
+         system to multiuser mode.  You can disregard the remainder of
+         this procedure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                             1-29
+
+
+
+    17.  If, however, your graphics adapter was not listed during the ins-
+         tallation, you must now manually edit the grafinfo.def video con-
+         figuration file.  This file is located in the /usr/lib/grafinfo
+         directory; change to this directory now.  Refer to Appendix A,
+         ``Video Configuration,'' for more information on the grafinfo.def
+         file.
+
+    18.  Use an ASCII editor, such as vi(C), to edit the grafinfo.def
+         file.
+
+         If you filled in the installation checklist earlier, refer to
+         item 6 on the checklist for the correct grafinfo.def entry for
+         your graphics adapter.  Otherwise, see Table A.1, ``Graphics
+         Adapter Card Designations,'' in Appendix A, ``Video Configura-
+         tion,'' for the list of grafinfo.def entries.
+
+         Note that this file can contain only one line.  Replace any
+         existing entry in the file with the entry listed in Appendix A
+         for your adapter, using the appropriate syntax. Write and exit
+         the file when you are finished.
+
+    19.  Type <Ctrl>d to return the system to multiuser mode.
+
+
+    Installation of the Xsight 2.3 Server EFS product is now complete.
+    After you finish using the Xsight 2.3 Server EFS distribution media,
+    you should store it in a safe place.  If an accident or a hardware
+    failure damages the Xsight 2.3 Server EFS files on your hard disk, you
+    need the distribution media to reinstall the Xsight 2.3 Server EFS
+    product.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-30             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    1.6  Removing the Xsight 2.3 Server EFS Product
+
+    You can remove any one of the Xsight 2.3 Server EFS packages you have
+    installed on your system if you do not need the package and want to
+    save disk space, or if you are installing new software that supersedes
+    the package.
+
+    Note that when you remove any or all packages of the EFS, you only
+    remove specific files related to the chosen packages.  You do not
+    remove the new server.
+
+    To remove any or all packages of the Xsight 2.3 Server EFS, follow the
+    procedure described for your operating system.
+
+
+    1.6.1  Removing the Xsight 2.3 Server EFS from 
+           the UNIX System or Open Desktop
+
+     1.  Log in as root.
+
+     2.  Bring the system to single-user mode after informing your users
+         to log off.  To enter single-user mode, type init 1 and press
+         <Return>.
+
+     3.  Enter the root password at the password prompt.
+
+     4.  Enter custom directly from the command line by typing custom and
+         pressing <Return>, or from sysadmsh by making the following
+         sysadmsh selection:
+
+              System-->Software
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                             1-31
+
+
+
+     5.  You see the main custom menu, which displays a list of the
+         software currently installed on your system:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                 Custom |
+    | Install Remove List Quit                                               |
+    | Install software                                                       |
+    | /                                          Monday April 1, 1991  10:11 |
+    |                                                                        |
+    |      ----------------Products Currently Installed----------------      |
+    |      |                                                          |      |
+    |      |   The Operating System                                   |      |
+    |      |   Software Development System                            |      |
+    |      |   ODT Xsight RTS                                         |      |
+    |      |   SCO Xsight 2.3 Server EFS                              |      |
+    |      |                                                          |      |
+    |      |                                                          |      |
+    |      |                                                          |      |
+    |      ------------------------------------------------------------      |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         The software list on your screen may be different from the list
+         shown here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-32             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+     6.  Select Remove at the main custom menu and press <Return>.
+
+         The custom utility displays the Remove screen, with a list of the
+         software currently installed on the system at the bottom right-
+         hand corner of the screen:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                 Remove |
+    | Select a product to remove and press <Return>                          |
+    | Press <ESC> to cancel, movement keys are active                        |
+    |                                            Monday April 1, 1991  10:11 |
+    |                                                                        |
+    |    -----------------------------Remove------------------------------   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |  Select a product  :  [                                    ]  |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                               ----------------------------------- |
+    |    |                               |                                 | |
+    |    |                               | * The Operating System          | |
+    |    |                               |   Software Development System   | |
+    |    |                               |   ODT Xsight RTS                | |
+    |    --------------------------------|   SCO Xsight 2.3 Server EFS     | |
+    |                                    |                                 | |
+    |                                    ----------------------------------- |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         Again, the software list on your screen may be different from the
+         list shown above.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                             1-33
+
+
+
+     7.  Highlight SCO Xsight EFS Supplement and press <Return>.
+
+         The Remove screen appears, with a list of the Xsight 2.3 Server
+         EFS packages currently installed on your system at the bottom of
+         the screen.
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                 Remove |
+    | Select package(s) to remove and press <Return>                         |
+    | Press <ESC> to cancel, movement keys are active                        |
+    |                                            Monday April 1, 1991  10:11 |
+    |                                                                        |
+    |    -----------------------------Remove------------------------------   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |  Select a product  :  [SCO Xsight 2.3 Server EFS           ]  |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |  ----------------------SCO Xsight 2.3 Server EFS---------------------  |
+    |  |                                                                  |  |
+    |  |  Name  Inst  Size   Description                                  |  |
+    |  |* ALL   No    4690   All Available Packages                       |  |
+    |  |  XRT   No    2904   SCO Xsight Server Runtime                    |  |
+    |  |  GRF   No    1748   Grafinfo (required for Xsight runtime)       |  |
+    |  |  INL   No    18     International Keyboard Development Supplement|  |
+    |  --------------------------------------------------------------------  |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+     8.  If you want to remove all of the packages, highlight All and
+         press <Return>.  If you only want to remove some of the packages,
+         use the arrow keys to highlight the desired line and press
+         <Space>.  An asterisk (*) appears on the line, indicating the
+         package has been marked for deletion.  When you have marked all
+         of the desired packages, press <Return>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    1-34             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+         You see the following screen:
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |                                                                Remove  |
+    | Proceed                                                                |
+    |                                                                        |
+    |                                           Monday April 1, 1991  10:12  |
+    |                                                                        |
+    |                                                                        |
+    |    -----------------------------------------------------------------   |
+    |    |                                                               |   |
+    |    | Please verify the removal of the following packages:          |   |
+    |    |                                                               |   |
+    |    |   ALL                                                         |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |                                                               |   |
+    |    |   Do you wish to continue?      Yes      No                   |   |
+    |    |                                                               |   |
+    |    -----------------------------------------------------------------   |
+    |                                                                        |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         Note that the packages listed on your screen may be different
+         from the list shown above.
+
+     9.  To continue, select Yes and press <Return>.
+
+         You see the following message:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | Creating file list ...                                                 |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         When custom finishes removing the selected packages, you return
+         to the main custom menu.
+
+         If you selected the All option, the list of currently installed
+         products on your screen no longer includes the Xsight 2.3 Server
+         EFS.
+
+         You may continue removing other products or you can quit custom.
+
+
+
+    Installing Your Software                                             1-35
+
+
+
+    10.  Exit custom by selecting the Quit option and pressing <Return>.
+         You are asked to confirm that you want to quit; select Yes and
+         press <Return> again.
+
+         If you invoked custom from sysadmsh, select Quit from the
+         sysadmsh main menu to return to the operating system prompt.
+
+
+    1.6.2  Removing the Xsight 2.3 Server EFS from XENIX
+
+     1.  Log in as root.
+
+     2.  Bring the system to single-user mode after informing your users
+         to log off.  To enter single-user mode, type /etc/shutdown 0 and
+         press <Return>.  Several system messages appear.
+
+     3.  Press any key to reboot the system when the reboot message
+         appears.
+
+     4.  Enter the root password at the password prompt.  You are now in
+         single-user mode.
+
+     5.  Enter custom directly from the command line by typing custom and
+         pressing <Return>, or from sysadmsh by making the following
+         sysadmsh selection:
+
+              System-->Delete-->Software
+
+
+         You see a display similar to the following:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |          1. Operating System                                           |
+    |          2. Development System                                         |
+    |          3. Text Processing System                                     |
+    |          4. Add a Supported Product                                    |
+    |          5. ODT Xsight RTS                                             |
+    |          6. SCO Xsight 2.3 Server EFS                                  |
+    |                                                                        |
+    | Select a set to customize or enter q to quit:                          |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+    1-36             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+     6.  Enter the number that corresponds to the Xsight 2.3 Server EFS
+         product and press <Return>.  You see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |          1. Install one or more packages                               |
+    |          2. Remove one or more packages                                |
+    |          3. List the available packages                                |
+    |          4. List the files in a package                                |
+    |          5. Install a single file                                      |
+    |          6. Select a new set to customize                              |
+    |          7. Display current disk usage                                 |
+    |          8. Help                                                       |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+     7.  Enter 2 to select the Remove option. You see:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    |   Name  Inst  Size    SCO Xsight 2.3 Server EFS packages               |
+    |   ------------------------------------------------------------------   |
+    |   ALL   Yes   4690    All Available Packages                           |
+    |   XRT   Yes   2904    SCO Xsight Server Runtime                        |
+    |   GRF   Yes   1748    Grafinfo (required for Xsight runtime)           |
+    |   INL   Yes   18      International Keyboard Development Supplement    |
+    |                                                                        |
+    | Enter the package(s) to remove                                         |
+    | or enter q to return to the menu:                                      |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+     8.  If you want to remove all of the packages, type all at the prompt
+         and press <Return>.  If you only want to remove some of the pack-
+         ages, enter the package names at the prompt and press <Return>.
+
+     9.  When custom finishes removing the selected packages, you return
+         to the custom main menu.  Type q and press <Return> to exit cus-
+         tom.
+
+         If you invoked custom from sysadmsh, you are prompted to press
+         any key.  This returns you to sysadmsh.  Select Quit from the
+         sysadmsh main menu to return to the operating system prompt.
+
+
+
+
+
+
+
+
+
+    Installing Your Software                                             1-37
+
+
+
+    Chapter 2
+
+    Release Information
+    _____________________________________________________________________
+
+
+    Introduction  2-1
+
+    Server Improvements  2-2
+         Improvements Since Xsight 2.2  2-3
+         Xsight 2.3 Server Fixes  2-4
+         Xsight 2.3 Server Limitations  2-5
+
+    Vendor-Specific Graphics Adapter Information  2-7
+         TI34010 Graphics Adapters  2-7
+              Limitations  2-8
+              Memory Requirements  2-9
+              VGA Hardware Support  2-9
+              CRT Registers  2-9
+              I/O Addresses  2-10
+         Cornerstone Adapters  2-12
+              Limitations  2-12
+              Modes  2-12
+         8514/A Graphic Adapters  2-13
+              Modes  2-13
+              I/O Addresses  2-13
+
+    VGA grafinfo File Note  2-14
+
+    International Keyboard Support  2-16
+         Using the Keymaps  2-16
+         Using the New xterm Binary  2-18
+         Making a New XLib  2-18
+         Enhancing a Keymap  2-19
+         Adding Key Symbols to a Keymap  2-21  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2.1  Introduction
+
+    This chapter contains information specific to the
+    SCO Xsight 2.3 Server EFS release.  Topics covered include:
+
+       o improvements to the Xsight 2.3 server, including problems with
+         the Xsight 2.2 server that have been fixed
+
+       o vendor-specific information on new groups of graphics adapters
+         that are now supported by the new server, including Texas Instru-
+         ments 34010-type adapters, Cornerstone adapters, and 8514A-type
+         adapters
+
+       o information on how to determine if the correct DEVTECH value is
+         specified in your graphics adapter's grafinfo file
+
+       o the new international keyboard support, including information on
+         how to use the new xterm binary for running character-based pro-
+         grams under Xsight, a description of the keymap files that are
+         provided for different languages, a description of how to enhance
+         a keymap file to add new modifiers and specialized key symbols
+         for other regional languages, and information on how to make a
+         new XLib
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                   2-1
+
+
+
+    2.2  Server Improvements
+
+    Most graphics operations have been increased in speed, some of them by
+    as much as 200 times.  The following table provides improvement fac-
+    tors:
+
+            ______________________________________________________
+            |           |                          |             |
+            |Graphics   |                          | Improvement |
+            |Operation  | Type                     |   Factor    |
+            |___________|__________________________|_____________|
+            |Arcs       | Partial zero-width       |   5 - 50    |
+            |___________|__________________________|_____________|
+            |Circles    | Dashed                   |     200     |
+            |           | Filled                   |  1.5 - 40   |
+            |           | Wide                     |    2 - 4    |
+            |           | Zero-width               |  1.5 - 10   |
+            |___________|__________________________|_____________|
+            |Ellipses   | Dashed                   |     200     |
+            |           | Filled                   |  1.5 - 40   |
+            |           | Partial zero-width       |   5 - 50    |
+            |           | Wide                     |    2 - 4    |
+            |           | Zero-width               |  1.5 - 10   |
+            |___________|__________________________|_____________|
+            |Lines      | Double-dashed, wide      |     1.5     |
+            |           | Long double-dashed,      |      4      |
+            |           | zero-width               |             |
+            |           | Short solid, zero-width  |     60      |
+            |           | Solid, wide              |      4      |
+            |___________|__________________________|_____________|
+            |Pixmaps    | 1-Bit deep-plane copies  |      5      |
+            |           | of medium to large draw- |             |
+            |           | ables                    |             |
+            |___________|__________________________|_____________|
+            |Polygons   | Stippled                 |    2 - 4    |
+            |           | Tiled                    |    2 - 4    |
+            |___________|__________________________|_____________|
+            |Rectangles | Normal                   |  Up to 10   |
+            |           | Stippled                 |   5 - 10    |
+            |           | Tiled                    |      2      |
+            |___________|__________________________|_____________|
+            |Scrolls    |                          |   1.5 - 2   |
+            |___________|__________________________|_____________|
+            |Text       |                          |     1.5     |
+            |___________|__________________________|_____________|
+
+
+
+
+
+
+
+
+
+
+
+    2-2              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    2.2.1  Improvements Since Xsight 2.2
+
+    The changes that occurred between the last version of the server,
+    Xsight 2.2, and the current version of the server, Xsight 2.3,
+    include:
+
+       o Extended graphics adapter support is now available.  Specifi-
+         cally, the new server adds support for the following VGA
+         adapters, in 800x600 16-color mode:
+
+            - ATI VGA WONDER
+
+            - ATI WONDER PLUS
+
+            - Chips 451
+
+            - Chips 452
+
+            - Trident TVGA 8900
+
+            - Verticom MX/AT
+
+         Additionally, the new server also supports the Chips 452 and Tri-
+         dent TVGA 8900 adapters in 1024x768 mode.
+
+         The new server also supports 8514/A and TI34010-based graphics
+         adapters in 256-color mode and Cornerstone adapters in modes up
+         to 1600x1280 resolution.
+
+       o Graphics operations that did not conform to the X Window system
+         protocol in Xsight 2.2, but do conform in Xsight 2.3 are:
+
+              ArcChord        FillStippled   LineOnOffDash
+              CapButt         JoinBevel      LineDoubleDash
+              CapProjecting   JoinMiter      Plane mask
+              CapRound        JoinRound      WindingRule
+
+         Also, width-one wide lines, circles, and ellipses are now
+         correctly implemented; and wide LineOnOffDash dashed lines, cir-
+         cles, and ellipses now have cap style applied to dash ends.
+
+       o The server defaults to analog mode for VGA servers, providing a
+         greater color palette selection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                   2-3
+
+
+
+    2.2.2  Xsight 2.3 Server Fixes
+
+    The following problems with the Xsight server have been fixed:
+
+       o Fonts can now be specified without regard to upper- or lowercase
+         naming conventions.  In prior servers, font specifications had to
+         match exactly the name of the font file.
+
+       o Transparent stipples for a graphics context now work.
+
+       o Exposure regions are now being computed properly on subwindows
+         when an ancestor window is both resized and moved.
+
+       o All known memory leaks in the server have been fixed.  The server
+         process size no longer grows when running the same applications
+         repeatedly.
+
+       o Problems with the XSetTSOrigin X library function are fixed.
+
+       o The problem with the server sometimes becoming confused about the
+         state of the <Alt> or <Ctrl> keys and not recognizing keystroke
+         input after you switched screens has been fixed. Note, however,
+         that you may still see this problem if you simultaneously press
+         both right and left <Alt> or <Ctrl> keys while switching between
+         screens.
+
+       o You no longer need to release the <Alt> key to switch back and
+         forth between Xserver session and other multiscreens.
+
+       o The XSetPlaneMask X function now works correctly.
+
+       o The incorrect display of dashed lines is now fixed.
+
+       o You can now change the key sequences for switching multiscreens.
+
+       o The X font path includes all three font directories in
+         /usr/lib/X11/fonts including, misc, 75dpi, and 100dpi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2-4              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    2.2.3  Xsight 2.3 Server Limitations
+
+    The following limitations apply to the Xsight 2.3 server:
+
+       o The server does not support VGA monochrome systems.  If you want
+         a monochrome system, we recommend one of the following monochrome
+         graphics adapters:  COMPAQ(R) Plasma, Cornerstone, GRiD(R) System
+         1530 Display, Hercules(R), Toshiba(R) Grid 758 Plasma, or Toshiba
+         Grid Plasma Display.
+
+       o AT mode for a keyboard is not supported in Xsight.
+
+       o The xset command does not support the key click and bell volume
+         options.
+
+       o The 2.3 X server will not work with older versions of grafinfo
+         files, unless the DEVTECH field for VGA adapters is modified.
+
+       o If you are using the XENIX operating system, version 2.3.2 with
+         UFJ, you cannot run your server in high resolution mode (1024x768
+         and 800x600), regardless of the graphics adapter installed on
+         your system.  If you experience this problem, configure your
+         server to use 640x480 mode instead.
+
+         Note that even though you cannot currently use the new server in
+         high resolution mode, this EFS is still valuable to your system
+         because of the number of previous server limitations that have
+         been fixed.  For more information, see the ``Server Improve-
+         ments'' section, previously in this chapter.
+
+       o The COMPAQ VGC grafinfo entry causes the server to fail on a sys-
+         tem that is running MPX 1.1.  If you experience this problem, use
+         the IBM VGA grafinfo entry instead.
+
+       o The ODT-DOS colormap is unusable if you are using Open Desktop
+         1.0 and a graphics adapter in 256-color mode.  If you use this
+         colormap in 256-color mode, the cursor color and menu foreground
+         and background colors are the same as the window background
+         color, making the cursor and menus invisible.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                   2-5
+
+
+
+       o If you are using Open Desktop 1.0 and you accidentally press
+         <Ctrl><Left Mouse Button>, which is an invalid key sequence,
+         while in an ODT-DOS window, an I-beam sprite covers the entire
+         Workspace window.  To restore mouse input to other open X windows
+         and mwm, you must exit the ODT-DOS window.
+
+       o Unzooming an ODT-DOS window can kill your DOS process and close
+         the window.  This failure is much more likely if you are running
+         multiple X servers and you switch between multiscreens immedi-
+         ately after unzooming an ODT-DOS window.
+
+       o You are currently unable to zoom an ODT-DOS program that you
+         launch from the Desktop file manager.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    2-6              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    2.3  Vendor-Specific Graphics Adapter Information
+
+    This section lists all vendor-specific information about groups of
+    graphics adapters.  The groups are:
+
+       o Texas Instruments 34010-type Adapters
+
+       o Cornerstone Adapters
+
+       o 8514A-type Adapters
+
+
+    2.3.1  TI34010 Graphics Adapters
+
+    This section contains information about TI34010 cards for this EFS
+    release.
+
+    For Xsight 2.3, the following TI34010 cards are supported:  Renais-
+    sance Rendition(R) II, COMPAQ AG1024, HP(R) IGC 10.
+
+    Both the 1024x768 16-color mode and the 1024x768 256-color mode are
+    supported.  The 256-color mode requires at least 768K VRAM on the Ren-
+    dition II card and HP IGC 10 card.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                   2-7
+
+
+
+    2.3.1.1  Limitations
+
+    The following limitations apply to all of the TI34010 cards:
+
+       o Zero width arc accuracy is limited to the nearest degree.
+
+       o Only one Xsight server can be run in TI34010 mode at a time.
+
+       o The odd dashes in double-dashed stippled lines are now drawn in
+         the foreground color instead of the background color.
+
+       o The Zoom feature in ODT-DOS is currently unavailable.  If you
+         access the Dos menu, the Zoom option is grayed out so that you
+         cannot select it.
+
+
+    **********************************************************************
+    NOTE
+
+        When you run startx on a system using any of the TI34010 graphics
+        adapters, a message quickly flashes on your screen and then disap-
+        pears.  This is simply a MetaWINDOWS message; there is nothing 
+        wrong with your system.
+
+    **********************************************************************
+
+
+    The following limitation applies to HP IGC 10 cards only:
+
+       o You cannot use an HP IGC 10 card that is jumpered for 256-color
+         mode in 16-color mode.  If you configure such a card for 16-color
+         mode in mkdev graphics, you see the following message when you
+         run startx:
+
+         You requested 16 color mode.  However, the card is jumpered for
+         256 colors.  Do you want to run in 256 color mode (y/n)?
+
+         If you answer y at the prompt, you are switched to 256-color mode
+         and the server executes.  If, however, you answer n at the
+         prompt, the server automatically exits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2-8              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    2.3.1.2  Memory Requirements
+
+    The following are the minimum memory requirements for the cards:
+
+       o Renaissance Rendition-II card requires at least 384K DRAM.
+
+       o COMPAQ AG1024 requires a 512K memory expansion board.
+
+       o HP IGC 10 requires at least 512K DRAM.
+
+    For more information on the memory requirements for your specific
+    card, refer to your graphics adapter manual.
+
+
+    2.3.1.3  VGA Hardware Support
+
+       o The Rendition II card has a VGA daughterboard that can be
+         added.
+
+       o The COMPAQ AG1024 can be connected to any VGA card that has
+         a feature connector available. Under XENIX, if this option
+         is used, Xsight cannot be started in any of the VGA display
+         modes.
+
+       o The HP IGC 10 can be connected to the output of any VGA
+         card.
+
+    All cards can be run in a dual-display mode (for example, one
+    TI34010 card and monitor and a VGA card with an additional moni-
+    tor).  All cards have a single display alternative.
+
+
+    2.3.1.4  CRT Registers
+
+    CRT parameters are in /usr/lib/grafinfo/metload.dat.  The follow-
+    ing registers can be modified: HESYNC, HEBLNK, HSBLNK, HTOTAL,
+    VESYNC, VEBLNK, VSBLNK, VTOTAL, DPYCTL, DPYSTRT.  Complete
+    descriptions of these registers can be found in the TMS34010
+    User's Guide.  Descriptions of these registers refer to the VCLK
+    value.  For the Rendition II and AG1024 cards, VCLK is the value
+    of the pixel clock divided by 16.  For the HP IGC 10, VCLK is the
+    value of the pixel clock divided by 8.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                   2-9
+
+
+
+    The pixel clock is a value indicating the current pixel position
+    being displayed by the CRT controller as the CRT beam scans
+    across the display.  The CRT controller is on the graphics
+    adapter.  The pixel clock is defined by the hardware and is
+    determined by the resolution of the display.   The value in VCLK
+    is specified in the hardware reference manual.  Once you deter-
+    mine the value of VCLK, you can calculate the values for the
+    HESYNC, HEBLNK, HSBLNK, and HTOTAL, which are all multiples of
+    VCLK.  This information is used to adjust the horizontal position
+    of the screen for a particular monitor.
+
+    In general, the default values in metload.dat seem to work well
+    on multiple frequency monitors such as the Nanao Flexscan and
+    MultiSync 4D.  However, there may be some fixed frequency moni-
+    tors that require some adjustment of these parameters.
+
+    If you are using the COMPAQ AG1024 card with a multisync monitor,
+    you may notice that your screen display is fuzzy.  This is
+    because the AG1024 section in metload.dat contains a CONFIG
+    register whose default value (0x0018) is optimal for use on a
+    COMPAQ monitor.  To correct the fuzziness on your multisync moni-
+    tor, replace the default CONFIG value with 0x0040.
+
+
+    2.3.1.5  I/O Addresses
+
+    The AG1024 and IGC 10 cards have configurable I/O addresses.  The
+    values in metload.dat are set up for the default addresses for
+    those cards.  If I/O addresses are configured to other than the
+    defaults, then the values in metload.dat have to be adjusted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2-10             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    The AG1024 can be configured to use I/O addresses beginning at
+    0x290 or 0x280.  The factory default is 0x290.  The metload.dat
+    is set up to use the factory default.  If the I/O address on the
+    card is changed, then the following values in metload.dat under
+    the ``AGS'' heading has to be modified:
+
+
+                      HSTADRL                0x290
+                      HSTADRH                0x292
+                      HSTDATA                0x294
+                      HSTCTL                 0x296
+                      CPUCTL                 0x298
+
+
+    A ``0x28'' value has to replace the ``0x29.'' The last digit
+    remains the same.
+
+    The IGC 10 card can be configured to use any one of three dif-
+    ferent I/O address ranges that begin at 0x250, 0x290, or 0x350.
+    The factory default is 0x250.  If the I/O address on the card is
+    changed, then the following values under the ``IGC'' heading have
+    to be modified:
+
+
+                      HSTADRL                0x250
+                      HSTADRH                0x252
+                      HSTDATA                0x254
+                      HSTCTL                 0x256
+                      HSTAT                  0x258
+                      HRSID                  0x25A
+
+
+    The value ``0x29'' or ``0x35'' has to be substituted for
+    ``0x25.''  The last digit remains unchanged.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                  2-11
+
+
+
+    2.3.2  Cornerstone Adapters
+
+    The Xsight 2.3 server supports the following Cornerstone graphics
+    adapters for the PC:
+
+       o Cornerstone SinglePage, 768x1008
+
+       o Cornerstone PC1280, 1280x960
+
+       o Cornerstone DualPage, 1600x1280
+
+
+    2.3.2.1  Limitations
+
+    The following limitations apply to the Cornerstone adapters:
+
+       o The Cornerstone 1280x1024 and 2048x1664 PC adapters are not
+         supported and none of the Cornerstone PS/2 adapters are sup-
+         ported.
+
+       o A jumper allows the card to run in a different I/O space and
+         memory address.  The Cornerstone can then coexist with
+         another MDA or Hercules card.  However, Xsight does not
+         currently support this mode.
+
+       o In addition to the monochrome modes and graphics modes, the
+         Cornerstone adapters support additional memory, permitting
+         four or 16 shades of gray.  The server does not currently
+         support any of these gray-scale modes.
+
+       o If you are using your Cornerstone adapter in Text mode,
+         screen scrolling does not work properly.
+
+
+    2.3.2.2  Modes
+
+    The Cornerstone adapters are run in one of these modes:
+
+       o text mode
+
+       o Hercules graphics mode
+
+       o high-resolution graphics mode
+
+    Both text mode and the two graphics modes are supported.
+
+
+
+
+
+
+
+
+
+
+
+    2-12             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    2.3.3  8514/A Graphic Adapters
+
+    The 8514A is a high performance graphics adapter, which can
+    display 640x480 or 1024x768 pixels in 16- or 256-colors from a
+    palette of 262,144 colors.  You need to install extra memory if
+    you want to use the 256-color modes.  The 8514A has hardware sup-
+    port for fast line drawing and for rapid drawing or copying of
+    rectangular screen areas.  While drawing to the screen, pixels
+    can be combined in a large number of ways, including all 16 of
+    the standard binary raster operations, such as ANDing, exclusive
+    OR, and so on.
+
+
+    2.3.3.1  Modes
+
+    The 8514A is strictly a graphics device and must be connected to
+    the video expansion port on a VGA for text mode operations.  The
+    8514A can operate in VGA pass-through mode to allow the same mon-
+    itor to be used by both the 8514A and the VGA.
+
+
+    2.3.3.2  I/O Addresses
+
+    All access to the 8514A is through I/O registers.  None of its
+    display memory is mapped into the CPU's memory address space.
+    The color palette registers (called DACs) are similar to those on
+    a VGA.  These registers respond to the VGA DAC's I/O addresses
+    when the 8514A is in VGA  pass-through mode.  This allows the
+    color palette registers to shadow changes made to the contents of
+    the VGA DACs.  In 8514A mode, however, the registers respond to
+    their own I/O addresses and are completely independent from the
+    VGA DACs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                  2-13
+
+
+
+    2.4  VGA grafinfo File Note
+
+    While this EFS provides a new set of grafinfo files, there may be
+    situations where it makes more sense to continue using your
+    current grafinfo file.  For example, if you customized your
+    grafinfo file, you may not want to spend the time translating
+    your changes to the new grafinfo file.
+
+    It is important to note, however, that grafinfo files that worked
+    with X servers prior to Xsight 2.3 do not work with the 2.3
+    server unless the DEVTECH field for VGA adapters is changed from
+    a value of 2 to a hexadecimal value of 0x0D.
+
+    The DEVTECH field is a bit-masked value that describes the
+    features of the device display.  For example, 0x0D indicates that
+    the graphics adapter is for a VGA, flat, linear display.
+
+    You can determine if the correct value is set by examining the
+    file in the respective vendor's directory subordinate to the
+    /usr/lib/grafinfo directory.  Use an editing utility such as
+    vi(C).  Search for the DEVTECH field and ensure that the field is
+    correct.  The possible values for this field are:
+
+       0x0001              =       Monochrome, flat, interleaved
+       0x0002              =       Monochrome, bank-switched, linear
+       0x0003              =       Monochrome, bank-switched, interleaved
+       0x0004              =       Multibit, flat, linear
+       0x0005              =       Multibit, flat, interleaved
+       0x0006              =       Multibit, bank-switched, linear
+       0x0007              =       Multibit, bank-switched, interleaved
+       0x0008              =       Multiplane, flat, linear
+       0x0009              =       Multiplane, flat, interleaved
+       0x000A              =       Multiplane, bank-switched, linear
+       0x000B              =       Multiplane, bank-switched, interleaved
+       0x000C              =       EGA, flat, linear
+       0x000D              =       VGA, flat, linear
+       0x000E              =       VGA, bank-switched, linear
+       0x000F              =       VGA, segmented, linear
+       0x0010              =       TMS 34010, rowBytes, powers of 2
+       0x0011              =       TMS 34010, rowBytes, variable
+       0x0014              =       IBM 8514
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2-14             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+   When you are examining a grafinfo file, these lines precede the
+   DEVTECH field, in this case, from a Trident grafinfo file:
+
+     /*
+      *                  Copyright (C) The Santa Cruz Operation, 1990.
+      */
+
+      ...
+
+     VENDOR TRIDENT    "Trident"
+      MODEL  TVGA     "TVGA 8900"
+       CLASS  VGA         "VGA"
+        MODE   800x600-16   "800x600 16-color"  /* VGA 800x600 16 color */
+
+           MEMORY(0xA0000,0x10000);        /* Base Address, Length       */
+           PORT(0x3C2,0x3CA,0x3CC,0x3DA);  /* General/External registers  */
+           PORT(0x3C0,0x3C1);              /* Attribute                   */
+           PORT(0x3C4,0x3C5);              /* Sequencer                   */
+           PORT(0x3C7,0x3C8,0x3C9);        /* Color registers             */
+           PORT(0x3CE,0x3CF);              /* Graphics                    */
+           PORT(0x3D4,0x3D5);              /* CRTC                        */
+
+           PROCEDURE InitGraphics
+              {
+              DEVCLASS    = 99;
+              DEVTYPE     = 01;
+              DEVTECH     = 0x0D;            /* VGA */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                  2-15
+
+
+
+   2.5  International Keyboard Support
+
+   Support is provided in this EFS for international
+   keyboard mapping. The following features are provided:
+
+      o an xterm binary for running character-based terminal programs
+        under Xsight using a VT100 or tek4014 emulation mode
+
+      o keymap files for language support for US, French, German,
+        Italian, Spanish, and United Kingdom keyboards.  Additional
+        information describes how to enhance a keymap file to add new
+        modifiers and specialized key symbols for other regional
+        languages.
+
+      o an XKeyBind object module providing international key binding
+        to C programs.  This module is supplied in both the OMF and
+        COFF formats, for the XENIX operating system and the UNIX
+        operating systems, respectively.
+
+
+    2.5.1  Using the Keymaps
+
+    The keymap files provided in this release are:
+
+            __________________________________________________
+            |                 |                              |
+            |Language         | File                         |
+            |_________________|______________________________|
+            |American English | /usr/lib/X11/keymaps/kmap.us |
+            |_________________|______________________________|
+            |French           | /usr/lib/X11/keymaps/kmap.fr |
+            |_________________|______________________________|
+            |German           | /usr/lib/X11/keymaps/kmap.ge |
+            |_________________|______________________________|
+            |Italian          | /usr/lib/X11/keymaps/kmap.it |
+            |_________________|______________________________|
+            |Spanish          | /usr/lib/X11/keymaps/kmap.sp |
+            |_________________|______________________________|
+            |United Kingdom   | /usr/lib/X11/keymaps/kmap.uk |
+            |_________________|______________________________|
+
+
+    To use the new keymaps, run the xmodmap utility using this for-
+    mat:
+
+            xmodmap  /usr/lib/X11/keymaps/keymap-file
+
+    This call can be placed in your .startxrc file or executed any
+    time after the Xsight server is loaded.
+
+
+
+
+
+
+
+    2-16             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    If the keymap generates characters outside the scope of the ASCII
+    character set, you need to be sure the xterm font contains an
+    extended character set, such as ISO 8859.
+
+    Specify alternate fonts by entering this command:
+
+         xterm -fn font-name
+
+    Alternatively, you can add these lines to the /usr/lib/X11/app-
+    defaults/XTerm file:
+
+         XTerm*terminal-type*font: normal-font-name
+         XTerm*terminal-type*boldfont: bold-font-name
+
+    For example, for a VT100 terminal type specifying 14-point Courier
+    type, the lines are:
+
+         Xterm*vt100*font: \
+         -adobe-courier-medium-r-normal--14-100-100-100-m-90-iso8859-1
+         Xterm*vt100*boldfont: \
+         -adobe-courier-bold-r-normal--14-100-100-100-m-90-iso8859-1
+
+
+    *********************************************************************
+
+    NOTE
+
+        Always specify constant width fonts; proportional fonts are not
+        displayed correctly.
+
+    *********************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                  2-17
+
+
+
+    2.5.2  Using the New xterm Binary
+
+    The new xterm binary supplied with this release has been enhanced with
+    the addition of the -I option for international keyboard usage.  When
+    this option is not specified, pressing the <Alt> key and another key
+    causes an <Esc> character to be inserted before the other key value.
+    When the -I option is specified, no <Esc> character is inserted; how-
+    ever, the key that is emitted can be specified in the keymap file.
+
+
+    *********************************************************************
+
+    NOTE
+
+        You may find the Motif window manager captures keystrokes before
+        the keymap interprets a value.  For example, if you specify an 
+        <Alt> key as a modifier, and then assign a value to <Alt> 4, when 
+        this key string is entered, the current window closes without 
+        warning.  Ensure that you do not use these key sequences with the 
+        Motif window manager:
+
+                       <Alt> 4   <Alt> 8   <Alt> -
+                       <Alt> 5   <Alt> 9   <Alt> =
+                       <Alt> 7   <Alt> 0   <Alt> <Esc>
+
+    *********************************************************************
+
+
+    2.5.3  Making a New XLib
+
+    The XKeyBind.o file provided in this release requires the use of the
+    Xsight Development System.
+
+    The XLookupString routine in XLib has been changed for this release to
+    take into account all modifier keys that are enabled for the selected
+    keymap.  Previously, only the shifted case was handled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2-18             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    If you are creating X clients that need this feature, replace the
+    XKeyBind.o in both the libX.a and SlibX.a library files.  Follow these
+    commands to make the module replacement:
+
+     1.  Log in as root.
+
+     2.  Execute these commands:
+
+
+    -------------------------- begin screen display --------------------------
+    |                                                                        |
+    | # cd /usr/lib                                                          |
+    | # ar rv libX.a /usr/lib/XKeyBind.o                                     |
+    | # cd /usr/lib/386                                                      |
+    | # ar rv SlibX.a /usr/lib/386/XKeyBind.o                                |
+    | # ranlib SlibX.a                                                       |
+    |                                                                        |
+    -------------------------- end screen display ----------------------------
+
+
+         Refer to the ``Programmer's Reference'' manual for more information
+         about the ar(CP) and ranlib(CP) utilities.
+
+
+    2.5.4  Enhancing a Keymap
+
+    The Keymap files that are located in /usr/lib/X11/keymaps allow X
+    programs that have been compiled with the XKeyBind.o module, such
+    as the new xterm -I provided by this EFS, to utilize extended key
+    combinations supported by international keyboards.  The Keymap
+    files provide the necessary mechanism for mapping modified keys
+    to unique character symbols (keysyms).
+
+    To enhance the functionality of a keymap, you can use the XLook-
+    upString routine that is part of the XKeyBind module so that up
+    to five modifiers can be added to a keymap.  A modifier is a key
+    that, when pressed, causes the next key entered to generate a
+    character.  For example, you can specify that the left <Alt> key
+    be a modifier.
+
+    The following guidelines should be followed when enhancing a key-
+    map:
+
+     1.  Plan the layout of the keys that you wish to add.  Ensure
+         with a usability study that access to the keys meets the
+         needs of your users.
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                  2-19
+
+
+
+     2.  Examine a keymap file that contains modifier keys.  Keymap
+         files are in the /usr/lib/X11/keymaps directory.  The
+         kmap.ge file in this directory, for example, contains modif-
+         ier keys that produce characters available on a German key-
+         board.
+
+         The format for a keymap is:
+
+	 keycode value = base_keysym  shift_keysym  Mod1_keysym, Mod2_keysym...
+
+         The keycode designator indicates that the described key
+         entry is enabled.  You can disable keys by prefacing the
+         designator with an exclamation sign (!), as in !keycode.
+         The exclamation sign makes the key entry a comment.
+
+         The value field is a hexadecimal keycode number ranging from
+         0 to whatever range of values that the keyboard can gen-
+         erate.  This field must not be altered when enhancing a key-
+         map.
+
+         The base_keysym is the unshifted value of the key, and gen-
+         erally indicates the legend that is printed on the key.  The
+         shift_keysym is the shifted value of the key.
+
+    *********************************************************************
+
+    NOTE
+
+        The base_keysym and shift_keysym values should never be modified,
+        as they determine your keyboard layout.
+
+    *********************************************************************
+
+
+         Mod1_keysym is the first of up to five possible columns of
+         modifier keys.  The first modifier is typically the <Alt>
+         key.  Columns are separated by spaces.  Modifier keys are
+         added with the add command, which is described in the next
+         section.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2-20             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    ***********************************************************************
+
+    NOTE
+
+        The /usr/include/X11/keysymdef.h file is useful for choosing new
+        keysym names.  This file is provided with the Xsight Development
+        System and contains definitions for each possible key symbol, 
+        called keysyms in the keymap file format.  Each definition is pre-
+        faced with the string XK_, which you should omit when entering a 
+        key symbol in a keymap file.  For example, BackSpace is defined as 
+        XK_BackSpace in the keysymdef.h file.  Before adding a key symbol, 
+        ensure that your selected font can generate such a symbol.
+
+    ***********************************************************************
+
+
+     3.  Execute the /usr/bin/X11/xmodmap utility with the -help and
+         -grammar options to familiarize yourself with the informa-
+         tion in these screens.  The xmodmap utility lets you proto-
+         type key symbols into the current server keymap before com-
+         mitting the changes into a keymap file.  Refer to the
+         xmodmap(X) manual page for more information.
+
+     4.  Use the information in the next section to enhance a keymap.
+
+
+    2.5.5  Adding Key Symbols to a Keymap
+
+    You can add key symbols either by entering the key symbol in a
+    keymap file, or by using the xmodmap(X) utility.  Use the xmodmap
+    -grammar command to list the possible keymap commands that can be
+    added.  To prototype a command, use the xmodmap -e command.  Note
+    that any changes made with xmodmap are lost when the server
+    exits; therefore, commit changes to a keymap file or store the
+    changes in either the /usr/lib/X11/sys.startxrc file or in the
+    .startxrc file in each user's home directory.  Use xmodmap
+    without arguments to list the current status for the X server.
+
+    For example, you can designate the first modifier as accepting
+    input from both <Alt> keys with this command:
+
+            xmodmap -e "add Mod1 = Alt_L Alt_R"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Release Information                                                  2-21
+
+
+
+    When you are ready to place the command in the keymap file,
+    insert the add command at the top of the keymap file using an
+    editor such as vi(C).  In the keymap file, the command appears
+    like this:
+
+            add Mod1 = Alt_L Alt_R
+
+    Then insert key symbols in the first modifier column (shown as
+    Mod1_keysym in the previously described keymap file format).
+    Remember that some <Alt> key values, such as <Alt> 4 have special
+    meaning to the window manager, so do not assign key symbols to
+    those fields.
+
+    Another example of changing modifiers is that you might want to
+    designate each <Alt> key as a different modifier.  To achieve
+    this, use:
+
+            xmodmap -e "add Mod1 = Alt_L"
+            xmodmap -e "add Mod2 = Alt_R"
+
+    Again, adding modifiers does not have effect unless key symbols
+    are added to the modifier columns in the keymap file.  You can
+    add values from xmodmap -e by using the keycode command.
+
+    For example, to add key symbols to each modifier column for the
+    ``u'' key in the kmap.ge keymap to accompany the previous example
+    of designating the first two modifiers as being the left and
+    right <Alt> keys, use this command:
+
+            xmodmap -e "keycode 0x1d = u U braceright braceleft"
+
+    This command indicates that the U key on the German keyboard gen-
+    erates u unshifted, U when shifted, ] when the left <Alt> key is
+    pressed followed by the U key, and finally [ when the right <Alt>
+    key is pressed followed by the U key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2-22             SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    Appendix A
+
+    Video Configuration
+    _____________________________________________________________________
+
+
+    Introduction  A-1
+
+    Manual Graphics Adapter Configuration  A-2
+         Graphics Adapter Card Designation  A-3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    A.1  Introduction
+
+    This appendix explains how to configure a graphics adapter manually
+    for use on a XENIX system by editing the /usr/lib/grafinfo/grafinfo.def 
+    file.  Additionally, this appendix provides a table that lists all of 
+    the supported graphics adapters, the supported modes of resolution for 
+    each adapter, and the entry you need to make in grafinfo.def for each 
+    combination of adapter type and adapter mode.
+
+
+    ***********************************************************************
+
+    NOTE
+
+        The grafinfo files that worked with X servers prior to Xsight 
+        release 2.3 do not work with the 2.3 server unless the DEVTECH 
+        field for VGA adapters contains the correct value.  If your system 
+        contains grafinfo files that were not shipped with this release, 
+        refer to ``VGA grafinfo File Note'' section in Chapter 2 for more 
+        information.
+
+    ***********************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Video Configuration                                                   A-1
+
+
+
+    A.2  Manual Graphics Adapter Configuration
+
+    If you are using a XENIX system, the new graphics adapter support pro-
+    vided by this EFS will not be apparent from the list of adapters
+    displayed in the video configuration portion of the installation.  If
+    your adapter type is not displayed during the installation, but it is
+    listed in Table A.1, ``Graphics Adapter Card Designations,'' at the
+    end of this section, you can configure your system to use your graph-
+    ics card, but you need to perform this configuration manually.
+
+    The information about the type of graphics adapter in your computer
+    and the mode of resolution it is using is stored in a file called
+    grafinfo.def, located in /usr/lib/grafinfo.  This is the file that you
+    must edit to configure your adapter for use.
+
+    You supply the grafinfo.def file with the information your system
+    needs in a grafinfo.def entry.  The format of this entry is very
+    specific and comprised of the following pieces of information:
+
+         vendor.model.class.mode-colors
+
+                   or
+
+         vendor.model.class.mode-colors-comment
+
+
+    For example, the grafinfo.def entry for the Video Seven VEGA graphics
+    adapter is:
+
+         video7.vega.ega.640x350-16
+
+
+    The video7, vega, and ega information in the entry signifies the
+    manufacturer of the card, the model or type of card, and the card's
+    class, respectively.  The 640x350-16 information signifies the mode,
+    or resolution, and the number of simultaneous colors, available from
+    the card.  The first number (640) is the horizontal screen measurement
+    in pixels, the second number (350) is the vertical screen measurement
+    in pixels, and the third number (16) is the maximum number of colors
+    that can be simultaneously displayed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    A-2              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+    Other pieces of information that you might find in an entry include
+    the @ symbol followed by a value.  This value represents the speed of
+    the system clock in megahertz.   However, the speed value may be
+    represented in the comment field; for example, on the ATI VGA 72 HZ
+    adapter, the clock speed is specified with the -72 value.  If a -I
+    appears at the end of an entry, the image is interleaved.
+
+    The grafinfo.def entry is in all lowercase characters and the file can
+    only contain one entry.
+
+    Table A.1, ``Graphics Adapter Card Designations,'' in the following
+    section, lists the grafinfo.def entries for all of the supported
+    graphics adapters. Locate the entry for your particular adapter and
+    then perform the following procedure to configure the card for your
+    system:
+
+      1.  Log in as root.
+
+      2.  Edit /usr/lib/grafinfo/grafinfo.def using a text editor such as
+          vi(C).  Enter the grafinfo.def entry that relates to your graph-
+          ics adapter and desired mode of operation.  Replace any existing
+          entry with this new information; this file can contain only one
+          line.
+
+      3.  Write and exit the file.
+
+
+    A.2.1  Graphics Adapter Card Designation
+
+    Table A.1 provides three pieces of information:  all of the graphics
+    adapter cards that are supported for use with the server, all of the
+    modes of resolution that are supported for a particular adapter, and
+    the grafinfo.def entry for every combination of adapter type and
+    adapter mode.  The graphics adapters are listed in alphabetical order.
+
+    If you are using the XENIX system, your card is supported if it is
+    listed in this table, regardless of whether or not the adapter is
+    displayed during the video configuration part of the
+    SCO Xsight 2.3 Server EFS installation.
+
+    If you are using the SCO UNIX System V operating system or Open Desk-
+    top, check this table to verify that your graphics adapter and the
+    mode of resolution you want to use is supported.
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Video Configuration                                                   A-3
+
+
+
+                                    Table A.1
+
+                         Graphics Adapter Card Designations
+
+
+________________________________________________________________________________
+             |                                |
+ Adapter Type| Adapter Mode                   | grafinfo.def entry             
+_____________|________________________________|_________________________________
+             |                                |                                
+ ATI WONDER  | ATI VGA 640x480 16-color 72HZ  | ati.wonder+.ativga.640x480-16-72
+ PLUS        | ATI VGA 800x600 16-color 56HZ  | ati.wonder+.ativga.800x600-16-56
+             | ATI VGA 800x600 16-color 60HZ  | ati.wonder+.ativga.800x600-16-60
+             | ATI VGA 800x600 16-color 72HZ  | ati.wonder+.ativga.800x600-16-72
+             | (For DEC VRC 16 monitors)      |                                 
+_____________|________________________________|_________________________________
+ ATI VGA     | STD VGA 640x350 16-color       | ati.wonder.vga.640x350-16      
+ WONDER      | STD VGA 640x480 16-color       | ati.wonder.vga.640x480-16       
+             | ATI VGA V5 600x600 Rev 2 56HZ  | ati.wonder.ativga.v5-800x600-16 
+             | ATI VGA V4 600x600 Rev 2 56HZ  | ati.wonder.ativga.v4-800x600-16 
+             | ATI VGA V3 600x600 Rev 1 56HZ  | ati.wonder.ativga.v3-800x600-16 
+_____________|________________________________|_________________________________
+ Chips 451   | VGA 640x480 16-color           | chips.451.vga.640x480-16       
+             | C&T Super VGA 800x600 16-color | chips.451.ctsvga.800x600-16     
+_____________|________________________________|_________________________________
+ Chips 452   | Super VGA 640x480 16-color     | chips.452.640x480-16            
+             | C&T Super VGA 720x540 16-color | chips.452.ctsvga.720x540-16     
+             | C&T Super VGA 800x600 16-color | chips.452.ctsvga.800x600-16     
+             | C&T Super VGA 960x720 16-color | chips.452.ctsvga.960x720-16     
+             | C&T Super VGA 1024x768 16-color| chips.452.ctsvga.1024x768-16    
+_____________|________________________________|_________________________________
+ COMPAQ      | GSP 1024x768 16-color          | compaq.ag1024.ags.1024x768-16 
+ AG1024      | GSP 1024x768 256-color         | compaq.ag1024.ags.1024x768-256  
+_____________|________________________________|_________________________________
+ COMPAQ      | CGA 640x400 2-color            | compaq.plasma.cga.640x400   
+ Plasma      |                                |
+_____________|________________________________|_________________________________
+ COMPAQ VGC  | VGA 640x350 16-color           | compaq.vgc.vga.640x350-16  
+             | VGA 640x480 16-color           | compaq.vgc.vga.640x480-16       
+_____________|________________________________|_________________________________
+
+
+                             (Continued on next page.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+    A-4              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+                                    Table A.1
+
+                   Graphics Adapter Card Designations (Continued).
+
+
+
+________________________________________________________________________________
+                   |                         |
+ Adapter Type      | Adapter Mode            | grafinfo.def entry            
+___________________|_________________________|__________________________________
+ Cornerstone       | HGA 768x1008 monochrome | cnrstone.single.hga.768x1008-2
+ SinglePage        |                         |                              
+___________________|_________________________|__________________________________
+ Cornerstone       | HGA 1280x960 monochrome | cnrstone.pc1280.hga.1280x960-2
+ PC1280            |                         |
+___________________|_________________________|__________________________________
+ Cornerstone       | HGA 1600x1280 monochrome| cnrstone.dual.hga.1600x1280-2
+ DualPage          |                         |
+___________________|_________________________|__________________________________
+ EISA Video EVC-1  | VGA 640x480 16-color    | eisavideo.evc-1.vga.640x480-16
+                   | SVGA 1024x768 16-color  | eisavideo.evc-1.svga.1024x768-16
+                   | DVGA 1024x768 256-color | eisavideo.evc-1.dvga.1024x768-256
+___________________|_________________________|__________________________________
+ Eizo MD-B07       | VGA 640x350 16-color    | eizo.md-b07.vga.640x350-16    
+                   | VGA 640x480 16-color    | eizo.md-b07.vga.640x480-16    
+                   | VGA 800x600 16-color    | eizo.md-b07.vga.800x600-16   
+___________________|_________________________|__________________________________
+ Eizo Extra/EM     | VGA 640x350 16-color    | eizo.md-b10.vga.640x350-16    
+                   | VGA 640x480 16-color    | eizo.md-b10.vga.640x480-16    
+                   | VGA 800x600 16-color    | eizo.md-b10.vga.800x600-16    
+                   | SVGA 1024x768 16-color  | eizo.md-b10.svga.1024x768-16 
+                   | SVGA 1024x768 16-color  | eizo.md-b10.svga.1024x768-16-I
+                   |    interleaved          |                              
+___________________|_________________________|__________________________________
+ Genoa SuperVGA    | VGA 640x350 16-color    | genoa.supervga.vga.640x350-16  
+                   | VGA 640x480 16-color    | genoa.supervga.vga.640x480-16  
+                   | VGA 800x600 16-color    | genoa.supervga.vga.800x600-16  
+                   | SVGA 1024x768 16-color  | genoa.supervga.svga.1024x768-16 
+                   | SVGA 1024x768 16-color  | genoa.supervga.svga.1024x768-16-I
+                   |    interleaved          |                               
+___________________|_________________________|__________________________________
+ Grid System       | CGA 640x400 PLASMA      | grid.1530.cga.640x400-plasma   
+ 1530 Display      | CGA 640x400 LCD         | grid.1530.cga.640x400-lcd      
+___________________|_________________________|__________________________________
+ Hercules          | HGA 720x350 monochrome  | hercules.mono.hga.720x350-2    
+ Monochrome        |                         |
+___________________|_________________________|__________________________________
+ HP IGC            | EGA 640x350 16-color    | hp.igc.ega.640x350-16          
+___________________|_________________________|__________________________________
+ HP IGC-10         | IGC 1024x768 16-color   | hp.igc10.igc.1024x768-16       
+                   | IGC 1024x768 256-color  | hp.igc10.igc.1024x768-256      
+___________________|_________________________|__________________________________
+
+
+                             (Continued on next page.)
+
+    Video Configuration                                                   A-5
+
+
+
+                                    Table A.1
+
+                   Graphics Adapter Card Designations (Continued).
+
+
+________________________________________________________________________________
+               |                          |                                 
+ Adapter Type  | Adapter Mode             | grafinfo.def entry              
+_______________|__________________________|_____________________________________
+ IBM 8514/A    | 8514A 640x480 16-color   | ibm.8514a.vga.640x480-16       
+               | 8514A 640x480 256-color  | ibm.8514a.vga.640x480-256     
+               | 8514A 1024x768 16-color  | ibm.8514a.vga.1024x768-16       
+               | 8514A 1024x768 256-color | ibm.8514a.vga.1024x768-256      
+_______________|__________________________|_____________________________________
+ IBM EGA       | EGA 640x350 16-color     | ibm.ega.ega.640x350-16         
+_______________|__________________________|_____________________________________
+ IBM VGA       | VGA 640x350 16-color     | ibm.vga.vga.640x350-16          
+               | VGA 640x480 16-color     | ibm.vga.vga.640x480-16         
+_______________|__________________________|_____________________________________
+ Orchid        | VGA 640x350 16-color     | orchid.designer.vga.640x350-16  
+ Designer      | VGA 640x480 16-color     | orchid.designer.vga.640x480-16  
+               | VGA 800x600 16-color     | orchid.designer.vga.800x600-16 
+               | SVGA 1024x768 16-color   | orchid.designer.svga.1024x768-16
+               | SVGA 1024x768 16-color   | orchid.designer.svga.1024x768-16-I
+               |    interleaved           |                              
+_______________|__________________________|_____________________________________
+ Paradise      | 8514A 640x480 16-color   | paradise.8514apls.8514a.640x480-16
+ 8514/A Plus   | 8514A 640x480 256-color  | paradise.8514apls.8514a.640x480-256
+               | 8514A 1024x768 16-color  | paradise.8514apls.8514a.1024x768-16
+               | 8514A 1024x768 256-color | paradise.8514apls.8514a.1024x768-256
+_______________|__________________________|_____________________________________
+ Paradise      | VGA 640x350 16-color     | paradise.vga1024.vga.640x350-16
+ VGA 1024      | VGA 640x480 16-color     | paradise.vga1024.vga.640x480-16
+               | VGA 800x600 16-color     | paradise.vga1024.vga.800x600-16
+               | SVGA 1024x768 16-color   | paradise.vga1024.vga.1024x768-16
+_______________|__________________________|_____________________________________
+ Paradise      | VGA 640x350 16-color     | paradise.vgaplus.vga.640x350-16
+ VGA Plus      | VGA 640x480 16-color     | paradise.vgaplus.vga.640x480-16
+               | VGA 800x600 16-color     | paradise.vgaplus.vga.800x600-16
+_______________|__________________________|_____________________________________
+ Quadram       | VGA 640x350 16-color     | quadram.quadvga.vga.640x350-16  
+ QuadVGA       | VGA 640x480 16-color     | quadram.quadvga.vga.640x480-16 
+               | VGA 800x600 16-color     | quadram.quadvga.vga.800x600-16 
+               | SVGA 1024x768 16-color   | quadram.quadvga.svga.1024x768-16
+_______________|__________________________|_____________________________________
+
+
+                             (Continued on next page.)
+
+
+
+
+
+
+
+
+    A-5              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+                                    Table A.1
+
+                   Graphics Adapter Card Designations (Continued).
+
+________________________________________________________________________________
+                   |                        |                           
+ Adapter Type      | Adapter Mode           | grafinfo.def entry          
+___________________|________________________|___________________________________
+                   |                        |                            
+ Renaissance       | VGA 640x350 16-color   | renaissa.rendit-2.vga.640x350-16
+ Rendition II      | VGA 640x480 16-color   | renaissa.rendit-2.vga.640x480-16
+                   | GSP 1024x768 16-color  | renaissa.rendit-2.grx.1024x768-16
+                   | GSP 1024x768 256-color | renaissa.rendit-2.grx.1024x768-256
+___________________|________________________|___________________________________
+ STB Extra/EM      | VGA 640x350 16-color   | stb.extra-em.vga.640x350-16 
+                   | VGA 640x480 16-color   | stb.extra-em.vga.640x480-16
+                   | VGA 800x600 16-color   | stb.extra-em.vga.800x600-16
+                   | SVGA 1024x768 16-color | stb.extra-em.svga.1024x768-16
+                   | SVGA 1024x768 16-color | stb.extra-em.svga.1024x768-16-I
+                   |    interleaved         |                            
+___________________|________________________|___________________________________
+ Tecmar VGA/AD     | VGA 640x350 16-color   | tecmar.vga-ad.vga.640x350-16
+                   | VGA 640x480 16-color   | tecmar.vga-ad.vga.640x480-16
+                   | VGA 800x600 16-color   | tecmar.vga-ad.vga.800x600-16
+                   | SVGA 1024x768 16-color | tecmar.vga-ad.svga.1024x768-16
+                   | SVGA 1024x768 16-color | tecmar.vga-ad.svga.1024x768-16-I
+                   |    interleaved         |                            
+___________________|________________________|___________________________________
+ Toshiba Grid      | CGA 640x400 monochrome | toshiba.758.cga.640x400-2   
+ 758 Display       |                        |
+___________________|________________________|___________________________________
+ Toshiba Grid      | CGA 640x400 monochrome | toshiba.plasma.cga.640x400-2
+ Plasma Display    |                        |
+___________________|________________________|___________________________________
+ Trident TVGA 8900 | VGA 640x480 16-color   | trident.tvga.vga.640x480-16 
+                   | VGA 800x600 16-color   | trident.tvga.vga.800x600-16
+                   | SVGA 1024x768 16-color | trident.tvga.svga.1024x768-16
+                   | SVGA 1024x768 16-color | trident.tvga.svga.1024x768-16-I
+                   |    interleaved         |                           
+___________________|________________________|___________________________________
+ Verticom MX/AT    | VGA 640x350 16-color   | verticom.mx-at.vga.640x350-16
+                   | VGA 640x480 16-color   | verticom.mx-at.vga.640x480-16
+                   | VGA 800x600 16-color   | verticom.mx-at.vga.800x600-16
+___________________|________________________|___________________________________
+ Video Seven       | VGA 640x350 16-color   | video7.fwrite.vga.640x350-16
+ Fast Write        | VGA 640x480 16-color   | video7.fwrite.vga.640x480-16
+                   | VGA 800x600 16-color   | video7.fwrite.vga.800x600-16
+___________________|________________________|___________________________________
+ Video Seven       | EGA 640x350 16-color   | video7.vega-dlx.ega.640x350-16
+ VGA/Deluxe        | EGA 640x480 16-color   | video7.vega-dlx.ega.640x480-16
+___________________|________________________|___________________________________
+
+
+                             (Continued on next page.)
+
+
+    Video Configuration                                                   A-7
+
+
+
+                                    Table A.1
+
+                   Graphics Adapter Card Designations (Continued).
+
+________________________________________________________________________________
+                   |                       |                              
+ Adapter Type      | Adapter Mode          | grafinfo.def entry             
+___________________|_______________________|____________________________________
+                   |                       |                             
+ Video Seven VEGA  | EGA 640x350 16-color  | video7.vega.ega.640x350-16  
+___________________|_______________________|____________________________________
+ Video Seven       | VGA 640x350 16-color  | video7.vga1024i.vga.640x350-16   
+ VGA 1024i         | VGA 640x480 16-color  | video7.vga1024i.vga.640x480-16  
+                   | VGA 800x600 16-color  | video7.vga1024i.vga.800x600-16 
+                   | SVGA 1024x768 16-color| video7.vga1024i.svga.1024x768-16
+                   | SVGA 1024x768 44HZ    | video7.vga1024i.svga.1024x768@44-16
+                   | SVGA 1024x768 48HZ    | video7.vga1024i.svga.1024x768@48-16
+                   | SVGA 1024x768 65HZ    | video7.vga1024i.svga.1024x768@65-16
+___________________|_______________________|____________________________________
+ Video Seven VRAM  | VGA 640x350 16-color  | video7.vram.vga.640x350-16       
+                   | VGA 640x480 16-color  | video7.vram.vga.640x480-16      
+                   | VGA 800x600 16-color  | video7.vram.vga.800x600-16     
+___________________|_______________________|____________________________________
+
+
+   *********************************************************************
+
+   NOTE
+
+       The Video Seven entries that contain the @44, @48, and @65 
+       suffixes are for 44, 48, and 65-MHz adapters, respectively.
+
+   **********************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    A-8              SCO Xsight 2.3 Server EFS Release and Installation Notes
+
+
+
+
+    Index
+    _____________________________________________________________________
+
+
+                                              D
+
+    8514A type adapters 2-13              DPYCTL register 2-9
+                                          DPYSTRT register 2-9
+                                          DRAM requirements, TI34010
+                                             adapters 2-9
+        A                                 Dual-Display mode 2-9
+
+    Activation key 1-4, 1-8, 
+       1-17, 1-28                              
+    Adapters. See Graphics                    E
+       adapters                           
+    Alternate fonts 2-17                  EFS serialization 1-4, 1-8, 1-17, 1-28
+    app-defaults/XTerm 2-17
+    Arc accuracy 2-8
+                                               
+                                              F
+                                          
+        C                                 Files 
+                                             prep script backup files 1-14, 1-26
+    Cards. See Graphics adapters          Fixed frequency monitors 2-10
+    cfg file (.Xsight.cfg) 1-4            Font changes 2-17
+    Checklist, installation 1-5           Font specifications 2-17
+    COMPAQ AG1024 adapter 2-7                  
+    CONFIG register 2-10                       
+    Configurable I/O                                    
+       addresses 2-10                         G
+    Configuration files                      
+       backup files 1-14 , 1-26           grafinfo file 
+       .Xsight.cfg 1-4                       configuring graphics adapters 1-9,
+       Conventions v                            1-30, A-2
+       Cornerstone adapters 2-12             DEVTECH field 2-14, 2-15, A-1
+       Cornerstone adapters, modes           editing A-2
+          Hercules graphics mode 2-12        format A-2, A-3
+          High resolution graphics           grafinfo.def entry 1-9, 1-30,
+             mode 2-12                          A-2, A-3
+          Text mode 2-12                     server compatibility 2-14
+       CPUCTL register 2-11               Graphics adapters   
+       CRT registers 2-9                     assigning to terminals 1-8, 1-20
+       custom utility 1-1, 1-10, 1-25        changing 1-23
+                                             configuring 1-4, 1-8, 1-17, 1-18,
+                                                1-29, 1-30, A-2
+                                             list of supported adapters A-3
+
+
+
+
+
+
+
+
+    Index                                                                IN-1
+
+
+
+    Graphics adapters (continued)             J 
+       memory requirements 2-9 
+       selecting a mode 1-8, 1-19, 1-29   Jumper selectable modes 2-12
+       types of
+          8514A type 2-13
+          Cornerstone 2-12
+          TI34010 2-7                         K
+    Gray scale limit on server 2-12
+    GRF package 1-1, 1-6, 1-7,            Keymap files 2-16, 2-19
+       1-15 , 1-27                        Keymap files, enhancing keymaps 2-19
+
+
+
+        H                                     L
+
+    Hardware requirements iv              libX.a 2-19
+    HEBLNK register 2-9                   Limitations
+    HESYNC register 2-9                      Cornerstone adapters 2-12
+    HP IGC adapter 2-7                       general iv, 2-5, 2-6
+    HRSID register 2-11                      TI34010 adapters 2-8
+    HSBLNK register 2-9
+    HSTADRH register 2-11
+    HSTADRL register 2-11
+    HSTAT register 2-11                       M
+    HSTCTL register 2-11
+    HSTDATA register 2-11                 metload.dat file 2-9
+    HTOTAL register 2-9                   mkdev graphics utility 1-17
+                                          Mode selection, graphics adapter 1-19,
+                                             1-29
+                                          Modifier keys 2-18, 2-19, 2-20, 2-21,
+        I                                    2-22
+                                          Monitors, changing 1-23
+    IGC 10 adapter 2-11                   Monitors, fixed frequency 2-10
+    INL package 1-1, 1-4, 1-6, 1-7,
+       1-15 , 1-27
+    Installation
+       checklist 1-5                          O
+       packages 1-1, 1-4, 1-7, 1-13,
+          1-15 , 1-27                     Operating system installation
+       procedure                             procedure 1-7, 1-10, 1-25
+          Open Desktop 1-10
+          UNIX 1-10
+          XENIX 1-25
+       supported environments 1-3
+    International keyboards 2-16
+    I/O addresses 2-10
+
+
+
+
+
+
+
+
+
+
+    IN-2                                                                Index
+
+
+
+        P                                     V
+
+    Packages, explanation 1-7             VCLK value 2-9
+    Prep script                           VEBLNK register 2-9
+       backup configuration files         VESYNC register 2-9
+          1-14, 1-26                      VGA adapters and XENIX 2-9
+    Proportional fonts 2-17               Video card.  See Graphics adapters
+                                          VSBLNK register 2-9
+                                          VTOTAL register 2-9
+
+        R
+
+    RAM requirements, TI34010                 X
+       adapters 2-7
+    Registers, CRT 2-9                    X startup file 2-16
+    Removing the EFS                      xconfigure utility 1-23
+       from Open Desktop 1-31             XENIX and VGA adapters 2-9
+       from UNIX 1-31                     XKeyBind.o 2-18
+       from XENIX 1-36                    Xlib 2-18
+    Renaissance Rendition adapter 2-7     XLookupString 2-18
+                                          xmodmap utility 2-16
+                                          XRT package 1-1, 1-6, 1-7, 1-15, 1-27
+                                          Xsight configuration file
+        S                                    (.Xsight.cfg) 1-4
+                                          xterm binary 2-18
+    Serial number 1-4, 1-8, 1-17, 1-28    XTerm file in app-defaults 2-17
+    Server improvements 2-2, 2-3
+    Server limit, gray-scale 2-12
+    SlibX.a 2-19
+    Startup file (.startxrc) 2-16             Z
+
+                                          Zero-width arc accuracy 2-8
+
+        T
+
+    TI34010 type adapters 2-7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Index                                                                IN-3
+

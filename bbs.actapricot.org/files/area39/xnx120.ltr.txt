@@ -1,0 +1,28 @@
+
+Dear Customer,
+
+Enclosed please find a diskette containing Support Level Supplement
+xnx120, which installs the new /bin/ps file for your SCO XENIX
+386 Operating System Release 2.3.0 and 2.3.1.  This new file
+corrects a problem with "seek errors" exhibited by ps.  Seek
+errors will still occur and are a normal part of operation, but
+they should occur infrequently.   
+
+To install this file, please enter system maintenance
+mode and type the following command:
+
+# /etc/install <CR>
+
+You will then be prompted to insert the diskette.  The install
+program will save the old version of /bin/ps as /bin/ps-, and
+install the new version as /bin/ps.
+
+After the file has been extracted you may bring the system
+up in multiuser mode.
+
+Yours sincerely,
+
+
+Technical Support Department
+
+ref: xnx120

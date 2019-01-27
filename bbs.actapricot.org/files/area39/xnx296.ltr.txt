@@ -1,0 +1,1110 @@
+        Dear SCO Customer:
+        
+        Enclosed is Support Level Supplement (SLS) xnx296, the SCO XENIX
+        Maintenance Supplement UFN. It is essential to read this entire letter
+        before beginning to install this update in order to insure proper
+        configuration of your particular system.
+        
+        The SCO XENIX Maintenance Supplement UFN contains various
+        modifications for the SCO XENIX 386 Operating System Releases 2.3.2 or
+        2.3.3. However, there are some release specific issues that should be
+        taken into account. When considering the release of your operating
+        system, there are two sources to check. First check the release of the
+        kernel that is running, and then check the release of the files and
+        utilities of the operating system. These two releases are usually, but
+        not necessarily, the same.
+        
+        The release of the kernel may be obtained with the uname(C) command.
+        To determine the kernel release, type the following command (note that
+        the '#' character is the superuser's shell prompt; do not type it):
+        
+        	# uname -r
+        
+        To determine the release of the operating system files and utilities,
+        type the following command:
+        
+        	# grep rel= /etc/perms/inst
+        
+        The enclosed SCO XENIX Maintenance Supplement UFN only updates the
+        kernel release to 2.3.3, and does not update all files and utilities
+        to the latest release. It does update some files and utilities,
+        however, which are noted below. SLS xnx296 can only be applied to
+        systems running SCO XENIX 386 Operating System Release 2.3.2 or 2.3.3.
+        
+        SCO XENIX Maintenance Supplement UFN is the fourth supplement which
+        updates the kernel to release 2.3.3. The others are:
+        
+        UFJ       shipped with SCO VP/ix Update A and SCO Xsight Release 2.2
+        
+        UFM 2.0   (SLS xnx155) formerly available from SCO Support
+        
+        UFM 2.1   (SLS xnx155b) formerly available from SCO Support
+        
+        UFN 1.0   (SLS xnx296) replaces and supercedes these earlier
+                  supplements. UFN contains all the enhancements of
+                  these earlier supplements including support for SCO VP/ix
+                  and SCO Xsight, as well as new enhancements,
+                  including support for SCO Portfolio Release 2.0.
+        
+
+
+
+
+					1
+
+
+        IMPORTANT NOTES FOR UFN RELEASE 1.0
+        -----------------------------------
+        
+        Before installing UFN please read the following notes. When you are
+        ready to proceed with the installation follow the instructions in the
+        section entitled "Installation".
+        
+        Updating From UFJ
+        -----------------
+        
+        If you installed the Maintenance Disk UFJ prior to installing the SCO
+        XENIX Maintenance Supplement UFN, you should remove the perms file
+        "/etc/perms/xos.UFJ" from the system. This file is no longer required,
+        since the SCO XENIX Maintenance Supplement UFN is a superset of the
+        Maintenance Disk UFJ. Removing this file will prevent custom(ADM) from
+        needlessly asking you for the UFJ volumes if you ever reinstall the
+        LINK kit. To remove this file, type the following command at the root
+        prompt:
+        
+        	# rm /etc/perms/xos.UFJ
+        
+        Updating From UFM 2.0 and 2.1
+        -----------------------------
+        
+        If you are updating from SCO XENIX Maintenance Supplement UFM Release
+        2.0 or 2.1 (SLS xnx155 or xnx155b) you will need to first remove the
+        file /etc/perms/xos.UFM before installing the new SLS. This file is no
+        longer required, since the SCO XENIX Maintenance Supplement UFN is a
+        superset of the Maintenance Disk UFM. Removing this file will prevent
+        custom(ADM) from needlessly asking you for the UFM volumes if you ever
+        reinstall the LINK kit. To remove this file, type the following
+        command at the next root prompt:
+        
+        	# rm /etc/perms/xos.UFM
+
+        Color Console SLS xnx263
+        ------------------------
+
+        The color console SLS xnx263 is included in UFN. Because of this, the
+        color console SLS should NOT be applied after UFN.
+
+        
+        SunRiver Technical Support Note
+        -------------------------------
+        
+        If SCO XENIX Maintenance Supplement UFN is installed on SCO XENIX
+        Operating System Release 2.3.2, the SunRiver driver (release 1.0.5 or
+        earlier) will not install correctly. The result will be that the
+        system will panic the first time a key is pressed on a SunRiver
+        station.
+        
+        To correct this problem, follow these steps:
+        
+        Note:  The following instructions assume that release 1.0.5 of the
+        SunRiver driver is used. If release 1.0.5 is not available, please
+        contact SunRiver technical support.
+            
+            (1) Remove the SunRiver driver (if it is installed).
+            
+            (2) Install the SCO XENIX Maintenance Supplement UFN supplement
+                (if it is not already installed).
+            
+
+
+
+					2
+
+
+            (3) Install SunRiver driver release 1.0.5. Do not turn on any
+                stations (to avoid system panic).
+            
+            (4) Insert the SunRiver driver diskette and execute the following
+                commands (you must be root):
+                
+                cd /usr/sys/conf
+                tar -xv2 ./tmp/libsr3.a
+                mv ./tmp/libsr3.a libsr.a
+                rmdir ./tmp
+                ./link_xenix
+                ./hdinstall
+            
+            (5) Shutdown the system and reboot. The stations should work 
+                now.
+        
+        The next release of the SunRiver driver (1.0.6) will correct the
+        problem.
+        
+        Please note that no matter which release of the SunRiver driver is
+        used (1.0.5 or above), the SunRiver driver must be reinstalled after
+        SCO XENIX Maintenance Supplement UFN is installed.
+        
+        Parity Error Panics After Installing UFN
+        ----------------------------------------
+        
+        If your system PANICS with a "parity error" when rebooting, after
+        having installed SCO XENIX Maintenance Supplement UFN Release 1.0,
+        this may be the result of incorrect video adapter settings on your EGA
+        or VGA card. To eliminate this problem, you must disable the
+        autoswitch feature on the card. See your video card's documentation
+        for information on how to disable the autoswitch feature.
+        
+        Parity errors may also result from actual defective RAM chips. SCO
+        XENIX 2.3.2 does not detect these errors. When SLS UFN is installed,
+        the system may begin to panic due to a pre-existing memory problem
+        which was not being detected.
+        
+        If Your Kernel Relink Fails
+        ---------------------------
+        
+        If your installation of SCO XENIX Maintenance Supplement UFN Release
+        1.0 fails, it may be necessary to remove and reinstall your LINK kit
+        package before you will be able to achieve a proper installation. The
+        following is the recommended procedure for removing and re-installing
+        the operating system LINK kit package:
+        
+        This procedure will remove all the object modules that comprise the
+        LINK package, as well as any that have been added by the installation
+        of any device drivers from third party vendors. You will have to
+        reinstall third party device drivers after reinstalling the LINK kit.
+        This will also remove any changes you have made to tunable kernel
+        parameters via the configure(C) command. You may want to write down
+        the current value of any tunable parameters that you have changed.
+        
+
+
+
+
+
+
+
+
+					3
+
+
+        Log in as root and bring the machine into single user mode.
+        
+        Run any de-installation scripts or procedures provided by any third
+        party vendors to remove their drivers. In addition, if you know that
+        the third party software provides an "initialization" or "startup"
+        program that is run upon going into multi-user mode you may want to 
+	check the /etc/rc file or the files in the directory /etc/rc.d/8 for 
+	any such program and remove or comment it out if necessary; some 
+	de-installation scripts may fail to do this.
+        
+        Also, third party multi-port board drivers add entries to the
+        /etc/ttys file. You may need to disable these ttys if you relink a new
+        kernel after removing and reinstalling the LINK kit without
+        reinstalling these drivers. Otherwise, the following message may
+        appear on the console:
+        
+        	getty:  cannot open "tty..". errno:  6
+        
+        Next, type in the following command:
+        
+        	# mv /usr/sys /usr/sys.bak
+        
+        This will make a backup copy of your existing /usr/sys directory and
+        everything below it.
+        
+        Next, run custom. From the first custom menu, choose "The Operating
+        System." Next choose the option "Remove one or more packages,"
+        indicating the package 'LINK' as the package to remove. Custom will
+        now remove all files associated with the package LINK on the
+        filesystem. The reason you need to perform the first step of removing
+        the entire /usr/sys directory is to remove files that custom does not
+        show as part of the LINK kit, such as third party device driver
+        modules.
+        
+        The third step is to choose the option "Install one or more packages,"
+        and then type in 'LINK' as the package to install. Custom will then
+        prompt you for various floppies from the operating system diskettes.
+        
+        After extracting the appropriate files, it will perform the LINK Kit
+        serialization and ask you for the serial number and activation key.
+        Use the operating system serial number and activation key.
+        
+        You have now reinstalled the LINK kit. If you choose "List the
+        available packages," you should see a "Yes" under the 'Inst' column,
+        indicating that the LINK kit is entirely installed.
+        
+        You should now proceed with the installation of UFN after which you
+        will need to re-install your tape driver and other device drivers. You
+        may also need to run "configure" and make changes to tunable kernel
+        parameters which will have been reset to defaults in the new LINK kit.
+        
+        If you wish to free up the disk space occupied by the backup copy of
+        the /usr/sys directory, issue these commands:
+        
+        	# cd /usr
+        
+        	# rm -rf sys.bak
+        
+
+
+
+
+
+					4
+
+
+
+        Mouse Support
+        -------------
+        
+        o  A keyboard mouse on a Micro Channel Architecture (MCA) machine is
+           not supported with this Maintenance Supplement UFN.
+        
+        o  The following procedure should be performed if you intend to use
+           the Logitech C9 serial mouse with SCO XENIX Operating System
+           Release 2.3:
+
+        To use the Logitech C9 serial mouse you must run the mouse in mode #4.
+        To do this, you need to modify the file /usr/lib/event/devices. The
+        file /usr/lib/event/devices contains entries for the supported mouse
+        devices. Search for the line starting with "mousel4". Note that the
+        character is the letter 'l', not the number '1'. Uncomment this line
+        and the two lines following it by removing the "#" character from the
+        beginning of each line. A before and after example follow:
+        
+        Before
+        ------
+        
+        # Logitech serial mouse:  Mouse Systems Corp. PC Mouse Emulation mode
+        # mousel4 /dev/tty1a RELb lt4_serial \
+        # NAME="Logitech serial mouse" \
+        # INIT="*nNU" STTY="CS8 1200 -IXOFF" SENSITIVITY=2000
+        #
+        
+        After
+        -----
+        
+        # Logitech serial mouse:  Mouse Systems Corp. PC Mouse Emulation mode
+        mousel4 /dev/tty1a RELb lt4_serial \
+        NAME="Logitech serial mouse" \
+        INIT="*nNU" STTY="CS8 1200 -IXOFF" SENSITIVITY=2000
+        #
+        
+        
+        If you have previously installed a mouse on your system, you should
+        run mkdev mouse and choose to "Remove a mouse from the system" using
+        option 3. Also choose to "Remove the mouse drivers from the kernel"
+        using option 6. While running option 6, you may be asked:
+                
+                "Do you want to remove the mouse devices from the /dev
+                directory?  (y/n)".
+        
+        Answer 'y' to this question. To save time, do not relink the kernel at
+        this point.
+        
+        Next, "Add a mouse to the system" using option 2. Use the mouse called
+        "Logitech serial mouse:  Mouse Systems emulation mode(4)" as the mouse
+        to install. You must relink the kernel, make it the default kernel,
+        reboot and enter multi-user mode. 
+        
+        	cd /usr/sys/conf
+        	./link_xenix
+        	./hdinstall
+        	/etc/shutdown
+        
+        You can test the mouse with the following command:
+        
+        	# usemouse -t vi -c "view /etc/termcap"
+        
+					5
+
+
+
+        The cursor should move as the mouse moves, the left button should take
+        you to the top of the file, the middle button should delete the
+        current character and the right button should take you to the bottom
+        of the file.
+        
+        This will allow the Logitech C9 serial mouse to work correctly.
+        
+
+        INSTALLATION
+        ------------
+        
+        In order to install properly, you will need at least 4400 (512-byte)
+        blocks free on the root filesystem. The installation will
+        automatically abort if there is not sufficient disk space. You may
+        determine the number of free blocks on the root filesystem beforehand
+        by typing the command:
+        
+        	# df -v /dev/root
+        
+        To begin the installation of the SCO XENIX Maintenance Supplement UFN,
+        bring the system into single user mode and issue the command:
+        
+        	# /etc/custom
+        
+        If you are installing from a secondary floppy disk drive instead of
+        the primary (boot) drive, you must enter the command below. Note the
+        presence of the numeral '1' after the word "install" in the device
+        name:
+        
+        	# /etc/custom -m /dev/install1
+        
+        You will see a menu similar to the following:
+        
+        	1. Operating System
+        	2. Development System
+        	3. Text Processing System
+        	4. Add a Supported Product
+        
+        Choose selection 4, "Add a Supported Product". You will then be
+        prompted to insert distribution volume 1. At this point, insert the
+        diskette labeled UFN1 and press <Return>. If you are running SCO XENIX
+        386 Operating System Release 2.3.0 or 2.3.1, a warning will be printed
+        and you will be asked if you wish to continue. Answer "No". UFN can
+        only be installed on SCO XENIX 386 Operating System Release 2.3.2.
+        
+        You will be asked if you have a tape drive installed on your machine.
+        If you answer y(es) you will be prompted to remove it. It is strongly
+        recommended that you do remove your tape driver; failure to do so is
+        likely to result in problems with creating a new kernel during the
+        installation of UFN.
+        
+        Since the SCO XENIX Maintenance Supplement UFN contains a new
+        termcap(M) file, the current /etc/termcap will be backed up to
+        /etc/termcap.N where N is a two digit number. If you have made any
+        special modifications to the existing /etc/termcap file, you may
+        extract them from /etc/termcap.N and merge them into the new
+        /etc/termcap upon completion of the installation of UFN.
+        
+        It will then ask you for distribution volume UFN1. Since this is
+        already in the drive, press <Return>.
+        
+
+					6
+
+
+        It will then ask you for distribution volume UFN2. Remove volume UFN1,
+        insert volume UFN2 and press <Return>.
+        
+        After all files are extracted from volumes UFN1 and UFN2, you will be
+        asked if you wish to relink the kernel. Answer 'y'.
+        
+        You will then be asked if you wish this kernel to boot by default.
+        Answer 'y' to this question also.
+
+        If you are installing the SCO XENIX Maintenance Supplement UFN on a
+        computer based on Micro Channel Architecture (MCA), you will next be
+        asked if you are installing on an IBM PS/2 model P70 Portable with a
+        Plasma screen display. If you are installing the SCO XENIX Maintenance
+        Supplement UFN on this machine, answer 'y'.
+        
+        Upon completion, you will be returned to the following menu from
+        custom(ADM):
+                
+                1. Install one or more packages
+                2. Remove one or more packages
+                3. List the available packages
+                4. List the files in a package
+                5. Install a single file
+                6. Select a new set to customize
+                7. Display current disk usage
+                8. Help
+        
+        You have completed the update and you may now exit out of custom(ADM).
+        Type 'q' to quit.
+        
+        At this point you need to reinstall any tape driver that you removed in
+        the first part of the installation of UFN. See the following sections
+        on reinstalling IBM 6157 and Irwin Tape Drivers. For other types of
+        tape drives, simply execute "mkdev tape" as you did when first
+        installing the drive. After this tape reinstallation you will need to
+        reboot your system to activate the new kernel. To do this execute the
+        command:
+        
+        	# /etc/shutdown
+        
+        To Reinstall an IBM 6157 Tape Driver
+        ------------------------------------
+        
+        After installing the SCO XENIX Maintenance Supplement UFN Release 1.0,
+        you may reinstall your 6157 tape driver by invoking the "mkdev tape"
+        command at the next shell prompt.
+        
+        At the menu, select option "1" to "Install a Tape Driver".
+        
+        Now select option "1" again to "Install a Cartridge Tape Driver". You
+        will then be asked if you are installing a 6157 tape drive.
+        
+        Answer "y".
+        
+        
+        You will then see a Tape configuration menu. Quit out of this menu and
+        your 6157 tape driver will be automatically configured.
+        
+
+
+
+
+
+					7
+
+
+        Next you will be asked:
+               
+               You must create a new kernel to effect the driver
+               change you specified. Do you wish to create a new
+               kernel now?  (y/n)
+					        
+
+        Answer "y".
+
+        You will then be asked:
+        
+        	Do you want this kernel to boot by default?  (y/n)
+        
+        Answer "y".
+        
+        To Reinstall an IRWIN Mini-Cartridge Tape Driver
+        ------------------------------------------------
+        
+        Use the following procedures to install the mini-cartridge tape
+        driver. To install the Irwin driver, invoke the command:
+        
+        	# mkdev irwin
+        
+        At the menu pick the option to:
+        
+        	Install Tape Driver
+        
+        Next you will be asked:
+              
+              You must create a new kernel to effect the driver
+              change you specified. Do you wish to create a new
+              kernel now?  (y/n)
+        
+        Answer "y".
+        
+        You will then be asked:
+        
+        	Do you want this kernel to boot by default?  (y/n)
+        
+        Again, answer "y".
+        
+        You will be asked:
+               
+               Do you wish to update your emergency Boot/Root
+               floppy?  (y/n)
+        
+        You should answer "y" so that an emergency Boot/Root floppy with the
+        appropriate tape device on it can be created for you. This is vital in
+        the case of a system crash where you need to boot from your emergency
+        Boot/Root floppy and restore data from your backup tape.
+        
+        At the menu, pick the appropriate option for the type of floppy you
+        are using.
+        
+        At the next menu, pick the option for:
+               
+               Root and Boot (for 96ds15 and 135ds18 floppies only)
+        
+        unless you have 48ds9, or 135ds9 floppies, in which case you need to
+        first pick the option for:
+        
+        	Bootable only
+
+					8
+
+
+        
+        followed by the option for:
+        
+        	Root filesystem only
+        
+        This is because 48ds9 and 135ds9 floppies cannot fit the amount of
+        data needed for a single Root/Boot floppy. In either case, you will be
+        asked:
+        	Would you like to format the floppy first?  (y/n)
+        
+        in case your floppy is unformatted. When this process is complete,
+        remove the floppy from the drive and store it in a safe place.
+        
+        FEATURES OF UFN RELEASE 1.0
+        ---------------------------
+        
+        Below is a description of the features the SCO XENIX Maintenance
+        Supplement UFN Release 1.0 provides.
+        
+        Kernel Modifications:
+        ---------------------
+        
+        o Modifications that allow the kernel to identify parity errors in
+          memory on industry standard architecture (AT) machines. Upon
+          detection of this type of hardware problem, the kernel will panic
+          and print the message:
+          
+          	kernel:  PANIC:  memory failure - parity error
+          
+          The most common cause of this message is defective or
+          slow memory (RAM) chips on the motherboard or add-on
+          system memory.
+        
+        o Support for the select(S) system call on pipes. This obsoletes SLS
+          xnx129.
+        
+        o Serial driver modifications to support internal modems which cause
+          the system to print the message "Garbage or loose cable on dev
+          <number>" when the modem rings. The SCO XENIX Maintenance Supplement
+          UFN should be used in place of SLS xnx128 to correct this problem
+          for SCO XENIX 386 Operating System Release 2.3. SLS xnx128 is still
+          valid for SCO XENIX 386 Operating Systems Release 2.2.3 and SCO
+          XENIX 286 Operating Systems Releases 2.2.3 and 2.3.2.
+        
+        o Serial driver modifications that allow the last 8 ports on a
+          Digiboard PS-COM 16 Port Board to work correctly on MCA machines.
+        
+        o A modification that prevents the system from causing a panic and
+          generating the message:
+          
+          	"dfalloc:  PANIC:  frame not free at exit".
+        
+        o Properly identifies occurrence of DMA channel timeouts and memory
+          parity errors on computers based on MCA.
+        
+        o Corrects a problem that caused the 6157 tape drive to fail to write
+          the last 32K of data to tape on MCA computers which run at speeds
+          greater than 16 Mhz.
+        
+
+
+
+
+					9
+
+
+        o A new utility /etc/scopatch was added to the system. This command
+          invokes scripts in the directory /usr/lib/scopatch and maintains a
+          log of the application of patches in /usr/lib/scopatch/patch.log.
+          These scripts apply adb patches to the system, usually to the /xenix
+          kernel.
+        
+        o Corrects a screen flicker problem with the IBM PS/2 Model P70
+          Portable computer using the Plasma screen display. In order for the
+          video driver to work correctly with the Plasma screen display, it is
+          necessary to put the video adapter in EGA mode. 
+
+	  Since the video driver normally puts the video adapter in VGA mode 
+	  by default, a patch is supplied which will make the driver put the 
+	  adapter in EGA mode by default. This allows the modifications that 
+          correct the screen flicker problem to take affect.
+          
+          As mentioned above, during installation on MCA machines, you will be
+          prompted as to whether or not you have an IBM PS/2 Model P70
+          Portable system with the Plasma screen display. If you answer 'y',
+          then the patch will be automatically applied for you. If you are not
+          running on an IBM PS/2 Model P70 with the Plasma screen display, you
+          should answer 'n'.
+          
+          The command "scopatch p70" is automatically placed in the
+          "hdinstall" script if you install your system on an IBM PS/2 Model
+          P70 Portable. This will insure that the patch is applied each time
+          you link a new kernel.
+        
+        o A problem which caused peculiarities in the FIFO behavior of message
+          queues during periods of heavy swapping was corrected.
+        
+        o A problem which caused disk activity to cease when using a WD1007A,
+          Adaptec 2322B, or compatible ESDI hard disk controller card is
+          resolved by installing SCO XENIX Maintenance Supplement UFN Release
+          1.0. This support obsoletes SLS xnx133.
+        
+        o SCO XENIX Maintenance Supplement UFN Release 1.0 provides full
+          support for monochrome VGA graphics modes. In addition, support has
+          been added to allow the simulation of color modes through gray
+          shading on a monochrome VGA console. Many applications are not
+          designed to support monochrome VGA graphics. These applications can
+          still be used on the system by invoking the command:
+          
+          	$ vidi v80x25
+          
+          before running the applications.
+        
+        o A problem that caused the COMPAQ VDU video display adapters to come
+          up in low resolution mode, after SCO XENIX Maintenance Supplement
+          UFM Release 2.0 or 2.1 (SLS xnx155 or xnx155b) was installed, has
+          been fixed.
+        
+        o COFF binaries that utilize cxenix() system calls are now supported
+          by the kernel.
+        
+        o A new cartridge tape driver has been added to the system. The new
+          driver fixes problems with multi-volume tape backups and the ARCHIVE
+          QIC 02 series tape controllers (VP402/409). In addition, support is
+          now provided for the WANGTEC and TECMAR single chip QIC 02 tape
+          controllers.
+        
+
+
+					10
+
+
+
+        o A problem which resulted in dashed lines when line drawing
+          characters were used with VGA and EGA monitors under SCO XENIX 386
+          Operating System Release 2.3 has been fixed.
+        
+        o The Logitech C9 Bus mouse is now supported. This can be added as a
+          standard Logitech Busmouse through the "mkdev mouse" command. This
+          support obsoletes SLS unx204.
+        
+        o An option for the installation of QIC 80 tape drives has been added
+          to mkdev tape. The following QIC-40 and QIC-80 tape drives are now
+          supported by SCO XENIX Maintenance Supplement UFN Release 1.0:
+          
+          	Vendor		Qic-40		Qic-80
+          	------		------		------
+          
+          	Alloy		APT-40/Q	--
+          	Archive 	--- 		XL5580
+          	Mountain 	TD44-40 	TD8000
+          	Tecmar 		QT-40i 		--
+          	Wangtek	FAD 	3500		3080F
+          
+          Support for these drives is now included for the MCA version of the
+          operating system as well. This support obsoletes SLS xnx118.
+        
+        o A problem with properly recognizing some MFM, RLL, and IDE style
+          hard disk controllers was resolved.
+        
+        o A new Irwin mini-cartridge tape driver is supplied with this
+          supplement. Detailed documentation for this new driver is included
+          at the end of this document.
+        
+        o A new pseudo-tty driver was included that supports up to 256 pseudo
+          ttys and the mice associated with them.
+        
+        o A new configure that provides the ability to modify the value of
+          NSPTTYS (up to 256). NSPTTYS reflects the number of pseudo ttys
+          supported.
+        
+        o /usr/sys/conf/master and /usr/sys/conf/space.asm were modified and a
+          new /usr/sys/conf/sizeof.inc was included. These were necessary for
+          compatibility with the new configure which was included in UFN.
+        
+        o Additional ttys were included in /usr/lib/event/ttys.
+        
+        o The color console SLS xnx263 is included in UFN. Because of this,
+          the color console SLS should NOT be applied after UFN.
+        
+        o MS Windows 3 can now be run under SCO VP/ix.
+        
+        
+        Utility Modifications
+        ---------------------
+        
+        o New version of cron(C), derived from SLS xnx080.
+        
+        o New version of cpio(C), from SCO UNIX System V/386 Release 3.2
+          Operating System. This version of cpio(C) supports the use of the -K
+          option to specify the size of the volume to which it is writing.
+          Multiple volume archives can now be easily created with the -I and
+          -O options. 
+
+					11
+
+	  The manual page entry is included in the file /usr/man/cat.C/cpio.C.z.
+	  This file has been packed with the pack(C) utility.  To unpack it, 
+	  issue the following command:
+	
+          	# unpack /usr/man/cat.C/cpio.C.z
+        
+        o New version of badtrk(ADM), engineered especially to handle large
+          disks. This corrects problems where badtrk(ADM) aborts with the
+          message:
+          
+          	"can't malloc".
+        
+        o New version of boot(HW), engineered to boot larger kernels; derived
+          from SLS xnx126.
+        
+        o Version of uusched(ADM) that corrects occasional core dumping.
+        
+        o The uucico(C) from SCO XENIX 386 Operating System Release 2.3.2.
+        
+        o New version of uudemon.clean that does not inadvertently remove UUCP
+          users' home directories from /usr/spool/uucp.
+        
+        o Useful shell scripts that allow multiple file transfers to and from
+          MS-DOS, and allow conversion of filenames from upper-case to
+          lower-case. These scripts are located in /usr/bin and are named
+          fromdos, todos, lcase, ucase.
+        
+        o New version of tic(C) that understands new capabilities, such as
+          color.
+        
+        o New versions of /bin/tar and /usr/bin/compress (linked to
+          /usr/bin/uncompress and /usr/bin/zcat), to enable the uncompression
+          of compressed files as they are extracted from floppies.
+        
+        o New /usr/lib/mkdev/mouse and /usr/lib/event/devices to provide mouse
+          support while running on pseudo ttys.
+        
+        
+        File Modifications
+        ------------------
+        
+        o An entry in /usr/lib/uucp/Systems for the SCO Online Support
+          System (SOS). The entry is commented out, but may be made available 
+	  by removing the leading '#' and space.
+        
+        o The latest termcap(M) in /etc/termcap, including the latest dosansi
+          entry which corrects problems with SNA connections.
+        
+        o A new ansi terminfo(M) entry, including the characteristics rmacs,
+          smacs and function key definitions. This entry is located in the
+          file /usr/lib/terminfo/ansi.src, but is not compiled. To compile it,
+          log in as root and issue the following commands:
+        
+        	# cd /usr/lib/terminfo
+        
+        	# tic ansi.src
+        
+        Note that the SCO XENIX System V Operating System package TERMINF must
+        be installed in order to compile ansi.src with the tic(C) command.
+        
+
+
+
+
+					12
+
+
+
+        NEW IRWIN MINI-CARTRIDGE TAPE DRIVER DOCUMENTATION
+        --------------------------------------------------
+        
+        The following Irwin Tape Drives and controllers are supported by the
+        SCO XENIX Maintenance Supplement UFN Release 1.0 (SLS xnx 296).
+
+
+                Supported Tape Drives
+                ---------------------
+                110 	225 	2020
+                125 	245 	2040
+                145 	285 	2080
+                787	2120
+                
+                Supported Controllers 
+                ---------------------
+                Primary floppy disk controller
+                Irwin 4251 drive multiplexor board
+                Irwin 4100 bus controller card (For use with the
+                787 and 2120 drives; xnx298 required on MCA)
+        
+        Supported IRWIN and QIC40/80 Tapes
+        ----------------------------------
+        
+        The following is a chart of supported pre-formatted tapes available
+        from Irwin Magnetics and 3M Corporation for use with your Irwin
+        Mini-cartridge or QIC 40/80 Tape Drive and SCO XENIX Operating
+        Systems.
+        
+        Irwin		3M		Tape	Megs	Format
+        -----		--		----	----	------
+        
+        Accutrack 10	Deltamat	DC1000	10	Irwin
+        Accutrack 20	Alphamat	DC1000	20	Irwin
+        		Gammamat	DC2000	40	QIC100
+        Accutrack 40	Kappamat	DC2000	40	Irwin
+        		Thetamat	DC2000	40	QIC40
+        Accutrack 80	Rhomat(2080)	DC2000	80	Irwin
+        
+        In the Event of a System Crash on a System with an IRWIN
+        Mini-Cartridge Tape Drive
+        --------------------------------------------------------
+        
+        The emergency Boot/Root floppy that has been prepared for you contains
+        all you will need to boot up and issue a restore command after a
+        system crash. When you boot up using your emergency floppy, you will
+        be put in System Maintenance mode at a root prompt. You can then
+        restore your backup using the following two commands:
+        
+        	# /etc/mcdaemon
+        
+        	# /bin/restore rf /dev/rctmini /dev/hd0root
+        
+        The "/etc/mcdaemon" command starts a daemon process which is necessary
+        to the operation of the Irwin tape drive. When you boot up from the
+        hard disk this daemon is automatically started for you, but when you
+        boot up from your Boot/Root floppy, you need to issue the
+        "/etc/mcdaemon" command before your restore command. The restore
+        command itself restores a root filesystem backup from the Irwin tape
+        device. This command is used for tape backups that are made with the
+        "backup", or "sysadmin" utilities.
+        
+					13
+
+
+
+        New MCART Utility for IRWIN Drives
+        ----------------------------------
+        
+        The new Irwin utility "/bin/mcart" has also been added to your system.
+        It enables you to perform a number of useful functions on your Irwin
+        tape drive. They are summarized below:
+        
+
+        h         This is a help command which allows you to view a list of
+                  available "mcart" commands.
+        
+        drive     This command provides information about drive type,
+                  controller type and unit select.
+        
+        info      This command provides information about cartridge state,
+                  format and write protect slider position.
+        
+        capacity  This command shows the total cartridge capacity in 512 byte
+                  blocks after formatting.
+        
+        kapacity  This command shows the total cartridge capacity in 1024 byte
+                  blocks after formatting.
+        
+        format    This command enables you to prepare unformatted tape
+                  cartridges for use with your Irwin tape drive. If you are
+                  using Accutrack pre-formatted tape cartridges, you will not
+                  need to use this command.
+                  
+                  To use the "format" command, you need to make sure you are
+                  using either brand new, unformatted tapes, or bulk
+                  (magnetically) erased tapes.
+                  
+                  Due to problems that arise while formatting tapes, SCO
+                  Technical Support is not able to fully support the "format"
+                  option. Keeping this in mind, for data integrity reasons,
+                  SCO highly recommends that pre-formatted tapes are used with
+                  Irwin tape drives. The format option is provided for use at
+                  your own risk!
+                  
+        
+        rewind    This command is used to rewind a tape after a backup or
+                  restore has been interrupted. Normally, the tape is rewound
+                  automatically.
+        
+        reten     This command is used to align a tape that has not been used
+                  for a long time, or has been exposed to temperature
+                  extremes.
+        
+        The command syntax is:
+        
+        	$ mcart command
+        
+        For example, using the "format" option, the command would be:
+        
+        	$ mcart format
+        
+        Additional Notes on New IRWIN Support
+        
+        o It is highly recommended that you use Accutrack (or equivalent)
+          pre-formatted tapes. With these tapes, it is unnecessary to bulk
+          erase or format.
+
+					14
+
+
+        
+        o The device you write to should be "/dev/rctmini". This device needs
+          to be specified regardless of whether you are writing to the drive
+          with "tar", "backup", "cpio", or some other utility.
+        
+        o Also, regardless of which utility you use to write to the drive, you
+          MUST specify a blocking factor. The recommended blocking factor is
+          "20".
+
+        o If you do not have pre-formatted tapes, which SCO highly reccomends,
+          you must format your tapes with the "mcart format" command. Before
+          you issue this command, you MUST BULK ERASE the tape to be
+          formatted. If you do not bulk erase your tape, you will not be able
+          to format it. Proper bulk erasing procedures must be followed.
+          Consult the documentation for your bulk eraser.
+        
+        o This supplement replaces SLS xnx146c.
+        
+        IRWIN Mini-Cartridge Wait-For-Index Feature
+        
+        A condition exists in some computers based on MCA that causes errors
+        reading the first sector of each tape block. Included are the IBM PS/2
+        models 50, 60, and 80, and the Olivetti P-500. On these machines, the
+        wait-for-index feature may need to be enabled in order for the driver
+        to function properly.
+        
+        To enable wait-for-index at the root prompt, enter the following
+        commands:
+        
+        	# echo iropt=I >> /etc/default/mcconfig
+        
+        	# shutdown
+        
+        Using the wait-for-index algorithm has the following drawback:
+        
+        All user system task time processing is stopped until index polling is
+        complete. This means the user will see sluggish system performance at
+        certain times. Typically, this means a 3 or 4 second dead period at
+        tape track switch time.
+        
+        New IRWIN Mini-Cartridge Driver Error Messages
+        
+        o Block not found:  IE_BLKNOTFND(5)
+          
+          A "block not found" error occurs when the driver cannot locate a
+          physical tape block during a read or write operation. Insure the
+          tape head is clean (see the tape drive hardware manual for cleaning
+          instructions). When this message is displayed during a data restore
+          operation, try retensioning the tape; then repeat the restore
+          operation. If this fails, try restoring the data using a different
+          tape drive.
+          
+          When this message is displayed during data backup operation, try
+          another tape, discard or bulk erase and reformat the original tape.
+        
+        o Data CRC error IE_CRC(12)
+        
+        o ID CRC error IE_IDCRC(13)
+          
+          An "ID CRC error", or "Data CRC error" message is displayed during a
+          tape read operation when a tape block cannot be recovered by ECC. If
+          this message appears, retension the tape and try again. 
+
+					15
+
+
+	  If this fails, the data might be recovered by using a different tape 
+	  drive.  Causes of persistent CRC errors are:  poor quality tapes, 
+	  worn tape head, a defect in the drive's record circuitry, or an 
+	  incompatible or otherwise defective data separator circuit on the 
+	  controller. CRC errors might be stopped by using new tapes, or 
+	  installing a data compensator circuit on the drive.
+        
+        o Record not found IE_RECNOTFND(14)
+          
+          A "Record not found" error occurs when some sector within a tape
+          block cannot be located. This error typically occurs on, or during,
+          a tape read operation when there are too many erroneous sectors to
+          recover data using ECC. (See Data CRC Error)
+        
+        o Drive not found IE_DRVNOTFND(23)
+          
+          When /etc/mcdaemon is run (usually by an "rc" script) for the first
+          time after system boot, a drive searching algorithm is executed by
+          the driver. If this algorithm fails to detect the presence of a tape
+          drive, "<mc> Drive not found" is displayed. Subsequently, the same
+          message is displayed on any read or write access to an opened MC
+          device file for which no drive is present. When this message
+          appears, hardware should be checked.
+        
+        o Servo failure IE_SERVO(24)
+          
+          "Servo failure" is a tape formatting error message. The servo
+          writing function is a part of the tape drive's firmware. The driver
+          issues a command to the drive to servo write and awaits tape drive
+          completion status. Usually the drive's LED will be flashing on servo
+          writing failure. Try bulk erasing the cartridge and restart the
+          format. If this fails, try another cartridge.
+        
+        o Insufficient memory IE_NOMEM(42)
+          
+          "Insufficient memory" messages are given when the driver fails to
+          allocate at least three tape block buffers. In some systems
+          sufficient memory may be available when single user mode is entered
+          immediately after system boot. Usually adding memory to the system
+          will stop this message.
+        
+        o Block 0 missing servo header IE_SERVOBLK0(43)
+          Too many sequential missing servo headers IE_SERVOSE Q(44)
+          Too many missing servo headers on track IE_SERVOTRK(45)
+          Too many missing servo headers IE_SERVOTOT(46)
+          Too many sequential bad blocks IE_CYLSEQ(47)
+          Too many bad blocks on a track IE_CYLTRK(48)
+          Too many bad blocks IE_CYLTOT(49)
+          
+          These messages occur during formatting. When formatting fails for
+          one of these reasons, try bulk erasing the cartridge and
+          re-formatting. If this fails, try another cartridge.
+        
+        o Block 0 medium error IE_BLK0DEFECT(52)
+          
+          A "Block 0 medium error" results when, during tape state
+          determination, the first tape block has medium error which is not
+          recoverable by either redundant correction or ECC. Normally the
+          cartridge should be reformatted or discarded. If the cartridge has a
+          backup, try using a different drive to read the tape.
+          
+
+
+					16
+
+
+          If this message persists for multiple cartridges, the tape drive's
+          read circuitry may be out of adjustment, or there may be an
+          incompatibility between the floppy controller's data separator
+          circuit and the tape drive. When running on an MCA based machine,
+          the problem may be overcome; see section on wait-for-index in this
+          documentation.
+
+        o Defect list has unrecoverable error IE_DLISTDEFECT(54)
+          
+          This message is displayed when both copies of the relocation table
+          (kept in the second and third good tape blocks) have unrecoverable
+          medium errors or are otherwise corrupt.
+          
+          When this message is displayed on the first backup after drive
+          installation in an MCA machine, the wait-for-index patch may be
+          needed.
+        
+        o Defect list corrupt IE_DLISTCORRUPT(55)
+          
+          This message is displayed if an error is found in the primary defect
+          list kept in block 0. Reformat tape.
+        
+        o Daemon not started IE_NODAEMON(67)
+          
+          The tape driver uses a single daemon process to encode ECC during
+          tape write operations and recovers data with ECC during tape reads.
+          When the "Daemon not started" message occurs, execute /etc/mcdaemon
+          and retry the tape operation.
+        
+        If you have any questions, please call our SCO Customer Services
+        Department at (800) 347-4381. SCO Customer Service is available Monday
+        through Friday, 6:00 A.M. to 5:00 P.M., Pacific Time.
+        
+        
+        We appreciate your business.
+        
+        SCO Support Services
+
+	dw:wph/6-91
+	xnx296-03CA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					17

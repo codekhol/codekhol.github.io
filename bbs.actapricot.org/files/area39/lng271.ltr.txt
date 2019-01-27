@@ -1,0 +1,62 @@
+
+
+Dear SCO Customer,
+
+The enclosed /lib/ldr Support Level Supplement (SLS) lng271 corrects the
+following problems: 
+
+(1) Dealing with common segment types.
+(2) BSS data symbols in libraries. 
+(3) Allows linking of programs that have static functions declared.
+
+SLS lng271 should be installed on any machine running the following 
+releases of the SCO development system: 
+
+       SCO XENIX 386 Development System Release 2.3.0 with SLS lng085;
+       SCO XENIX 386 Development System Release 2.3.1;
+       SCO UNIX System V/386 Release 3.2 Development System;
+       Open Desktop Development System Release 1.0.
+
+SLS lng271 will replace the file /lib/ldr with an updated version of
+the loader. 
+
+To install SLS lng271, take the following steps:
+      
+   1. Insert the enclosed disk in the primary floppy drive and close 
+      the floppy door.
+
+   2. If you are running SCO XENIX System V Operating System, type 
+      "/etc/install" to start the installation of SLS lng271.
+     
+      If you are running the SCO UNIX System V/386 Operating System,
+      type "/etc/xinstall" to start the installation of SLS lng271.
+   
+   3. You will see:
+             
+                 First Floppy ? (y/n)
+
+      Enter 'y'
+      
+  4.  You will see:
+
+                Extracting files ......
+
+  5.  You will see:
+   
+                Next Floppy ? (y/n)
+   
+      Enter 'n'
+
+  6. You will then see the message "Installation Complete".
+
+  7. You may now remove the SLS lng271 disk from the drive. SLS lng271 
+     is now completely installed. 
+  
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time. 
+
+We appreciate your business.
+
+SCO Support Services
+

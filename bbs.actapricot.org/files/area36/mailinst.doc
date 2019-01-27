@@ -1,0 +1,105 @@
+                             MAIL SERVER INSTALLATION
+          
+          The following  notes explain  how to  install the  Mail Server
+          software on  VX-NET.   These notes  are only an outline,  full
+          documentation on setting up and using the software is provided
+          with the VX-NET 3.11 package.
+          
+          Network Configuration
+          
+          Any network  User who  will have  a mailbox on the system will
+          need to  have access  to a  drive M: on the file-server.  This
+          drive  needs   to  be  setup  on  the  network  as  a  Generic
+          Application, so  that any  workstation can  "see" it.  This is
+          done using  the "NETGEN"  program  supplied  with  the  VX-NET
+          software in the usual way.
+          
+          Once this  has been  done the Mail Server software can then be
+          installed as follows :-
+          
+          1.   Stop the Server,  the installation can be run either from
+               the Server,  if it  has a  keyboard and screen fitted, or
+               from a Workstation by stopping the server using "CONMGR".
+          
+          2.   Once the  Server is displaying "Server C:\>" prompt place
+               the VXNet  3.11 Upgrade  disk containing  the MAIL Server
+               software into  the Server's  floppy drive  and change  to
+               that drive.  The Mail software NEEDS to be installed from
+               drive A:.
+          
+          3.   At the  floppy drive  prompt change  to the sub-directory
+               "MAILSERV" and  run the program "INSTALL".  This will ask
+               for a  drive to  store the  Server component  of the Mail
+               software,  enter "C" at the prompt.
+          
+          4.   The install  routine will  then create  the  Mail  server
+               software on  the Servers  hard disk  in the "C:\COURIER".
+               When  this   is  completed   change  to  this  drive  and
+               sub-directory.
+          
+          5.   Type "ADMIN -DC" to load the Mail Administration program,
+               a prompt  will  appear  asking  for  a  "Mailbox",  enter
+               "ADMIN".   The next  prompt "Password"  will then appear,
+               enter "PASSWORD".
+          
+          6.   The Configuration  programs main  menu is  now displayed,
+               select the  "Local-Admin" option  followed by the "GROUP"
+               option.
+          
+          7.   From the  "GROUP" menu select the "CREATE" option.  Enter
+               the name of a group as "ALL" followed by carriage return.
+               A box  will then  be displayed  with  "Admin"  in,  enter
+               carriage return.   A  message will  then appear prompting
+               "Create new Group?" select the "Yes" option.
+          
+          8.   The "ADMIN"  program can  now be  exited,  this  is  done
+               pressing the  "ESC" key three times then select the "Yes"
+               option at the "QUIT?" prompt.
+          
+          9.   The files in the "COURIER" sub-directory will now need to
+               be copied  to the  to the correct directory on the server
+               so that  they can  be accessed  by the  users.    If  the
+               application was  called "MAIL"  within "NETGEN"  then the
+               syntax to  copy the  files to  the correct  location will
+               be :-
+          
+                    COPY C:\COURIER\*.* C:\APPLIC\GENERIC\MAIL
+          
+               This needs to be entered from MS-DOS.
+          
+          10.  When the  files have  been copied  change directories  to
+               "C:\APPLIC\GENERIC\MAIL" and  enter the  following, again
+               from MS-DOS, to make certain file read only.
+          
+                    ATTRIB +R MAILFONT.FON
+                    ATTRIB +R ADMIN.EXE
+                    ATTRIB +R ADMIN.HLP
+                    ATTRIB +R NCVER.EXE
+                    ATTRIB +R NCVER.VER
+                    ATTRIB +R MAILBACK.EXE
+                    ATTRIB +R MAILREST.EXE
+          
+          11.  The installation  of the  software is  now complete,  the
+               Server and Workstations can now be re-booted.
+          
+          12.  When the  Network is  running logon  as a  User  who  has
+               access to  drive M: on the network.  The configuration of
+               the Users  and Groups is carried out by using the "ADMIN"
+               program.
+          
+          13.  Change to drive M: and enter "ADMIN".  There is a mailbox
+               already setup  to allow the system to be configured, this
+               mailbox  is   called  "ADMIN"   and  has   the   password
+               "PASSWORD".
+          
+          14.  Once the  main menu  is display  select the "Local-Admin"
+               option.  This is where the "housekeeping of the system is
+               carried.   When the  necessary Users and Groups have been
+               setup the system is ready for use.
+          
+          To access  the  Mail  software  and  send  messages  to  other
+          Mailboxes on  the system  a program called "WINMAIL.EXE" needs
+          to be  run on  the Workstations  the users  are using.    This
+          program is  provided with  the Qi  and XEN-S Environment Packs
+          and needs  to be  run from  Windows the  documentation for the
+          program is contained in the relevant Environment Packs.

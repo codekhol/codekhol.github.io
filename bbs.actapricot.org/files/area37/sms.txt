@@ -1,0 +1,77 @@
+May 3, 1993
+
+NOVELL'S STORAGE MANAGEMENT SERVICES (SMS) documents (February 17, 1993 - 
+Rev. 2.0) are provided within the self-extracting compressed files "SMS_1.EXE",
+"SMS_2.EXE", and "SMS_3.EXE". These documents are part of Novell Labs' 
+Storage Management Services Software Developers' Kit which assists developers 
+in creating NetWare v3.1x and v4.0 backup and restoration products for the 
+NetWare environment. Information provided in these documents are subject to 
+change.  Novell does not guarantee that the information provided will meet 
+the users requirements. These documents are provided to help the user 
+determine the usefulness of the SMS SDK in developing their product(s). The 
+documents are provided as "Postscript" printer files.
+
+The following is a copy of the directory listing of the extractable 
+"Postscript" files:
+
+SMS_1.EXE
+==========
+   SMDR.PRN        24377  4-27-93  1:49p  Using the Storage Management Data 
+                                          Requestor
+   CHANGES.PRN     61993  4-27-93  1:26p  Changes from v1.2 to v2.0 docs
+   SMSARCH.01     147214  4-27-93  1:21p  Arch. Overview: Contents & chapter 1
+   SMSARCH.02     151737  4-27-93  1:22p  Architecture Overview: chapter 2
+   SMSARCH.A       43151  4-27-93  1:23p  Architecture. Overview: appendix A, 
+					  glossary, & index
+   SMSTSAPI.01    172721  4-27-93  1:55p  Target Service APIs: chapter 1
+   SMSTSAPI.02    680689  4-27-93  1:59p  Target Service APIs: chapter 2
+   SMSTSAPI.A      17539  4-27-93  1:59p  Target Service APIs: appendix A
+   SMSTSAPI.B     268944  4-27-93  2:00p  Target Service APIs: appendix B
+   SMSTSAPI.C     112692  4-27-93  2:01p  Target Service APIs: appendix C,
+					  appendix D, glossary, & index
+
+SMS_2.EXE
+==========
+   SMSLIB.01       55960  4-27-93  1:49p  SMS Utilities Library APIs: chap 1
+   SMSLIB.02       80511  4-27-93  1:50p  SMS Utilities Library APIs: chap 2
+   SMSLIB.03      112750  4-27-93  1:50p  SMS Utilities Library APIs: chap 3
+   SMSLIB.04       66297  4-27-93  1:50p  SMS Utilities Library APIs: chap 4
+   SMSLIB.05      261171  4-27-93  1:53p  SMS Utilities Library APIs: chap 5
+   SMSLIB.06      129666  4-27-93  1:54p  SMS Utilities Library APIs: chap 6
+   SMSLIB.07       68325  4-27-93  1:54p  SMS Utilities Library APIs: chap 7
+   SMSLIB.A        55979  4-27-93  1:55p  SMS Util. Library APIs: appendix A
+					  appendix B, glossary, & index
+
+   SMSSDAPI.01    202743  4-27-93  1:30p  Storage Device APIs: chapter 1
+   SMSSDAPI.02    494338  4-27-93  1:35p  Storage Device APIs: chapter 2
+   SMSSDAPI.A      16859  4-27-93  1:35p  Storage Device APIs: appendix A
+   SMSSDAPI.B     110413  4-27-93  1:36p  Storage Device APIs: appendix B
+   SMSSDAPI.C      50783  4-27-93  1:36p  Storage Device APIs: appendix C
+   SMSSDAPI.GLS    43092  4-27-93  1:36p  Stor. Device APIs: glossary & index
+
+SMS_3.EXE
+==========
+   SMSSIDF.01     849503  4-27-93  1:41p  System Indepen. Data Format: chap 1
+   SMSSIDF.02     600352  4-27-93  1:45p  System Indepen. Data Format: chap 2
+   SMSSIDF.A       17558  4-27-93  1:45p  System Indepen. Data Format: appndx A
+   SMSSIDF.B      175694  4-27-93  1:48p  System Indepen. Data Format: appndx B
+   SMSSIDF.C      112369  4-27-93  1:48p  System Indepen. Data Format: appndx C
+   SMSSIDF.D       61499  4-27-93  1:48p  System Indepen. Data Format: appndx D
+   SMSSIDF.E       61727  4-27-93  1:49p  System Indepen. Data Format: appndx E
+   SMSSIDF.F       46618  4-27-93  1:49p  System Indep. Data Format: appndx F,
+					  glossary, & index
+
+
+The printer files listed above are for "Postscript" printers and can be printed
+as follows:
+
+      print filename     or     nprint filename
+
+Novell provides Developers additional services and tools for developing 
+backup/restoration products through the SMS Software Developers' Kit. The 
+kit offers development support, sample source, tools, test programs, and 
+development classes. Novell Labs also offers certification testing for all 
+storage management and backup/restoration products. Serious developers should 
+purchase the SMS SDK. If you are interested in obtaining the SMS Software 
+Developers' Kit contact Novell Labs Administration at (801) 429-5544 or 
+Fax (801) 429-5224.

@@ -1,0 +1,180 @@
+Dear SCO Customer,
+
+Enclosed is Support Level Supplement (SLS) NET363A.  This SLS contains
+several updates for SCO TCP/IP 1.2.0 binaries and kernel drivers.  A
+list of what binaries and drivers are replaced is included at the end
+of this cover letter.
+
+Installation:
+
+To install this SLS you will need to be in System Maintenance mode as this
+SLS requires that the kernel be re-linked and re-booted.  To enter System 
+Maintenance mode, execute the following command as root:
+
+shutdown -y -g5 -i1 -f"System going down to install SLS NET363A"
+
+This command will give users five minutes to clean up and logoff the system.
+If more time is necessary, increase the number after the -g option.  Please 
+refer to the online manual page on shutdown(ADM) for more information.
+
+This SLS also requires that you are installing on SCO UNIX System V/386 
+Release 3.2 Operating System Version 4.0 or SCO Open Desktop Release 2.0 
+and that SCO TCP/IP Release 1.2.0 is properly installed.  A fatal instal-
+lation error will occur if this is not the case.  It will also check to 
+insure that the Link kit is properly installed.  If it is not, a fatal 
+error will occur.  If a Link kit failure occurs, contact SCO Technical 
+Support to have a fax sent to you with information on how to correct this 
+error.
+
+Once you are in System Maintenance mode and logged in as root, insert the 
+SLS floppy into the drive and type "custom".  Select the "install" prompt 
+and choose the "A New Product" option.  Once custom is finished installing 
+the SLS, reboot the system via the "/etc/reboot" command.  The installation
+process is now complete.
+
+Removal:
+
+This SLS will back up all the binaries and kernel drivers into the directory
+/usr/lib/custom/save/net363. Using the custom option to remove the SLS will
+have no effect as this SLS is designed to be permanent.
+
+The following instructions must be followed if you wish to remove or re-install
+this SLS.
+
+1. The following files can be found in /usr/lib/custom/save/net363:
+
+   bootpd
+   sendmail
+   telnetd
+
+   The binaries bootpd and telnetd will need to be moved to the /etc directory
+   and should have the following permissions:
+
+   -rwx--x--x   1 bin      bin        71422 Mar 12 08:20 /etc/bootpd
+   -rwx--x--x   1 bin      bin        68734 Mar 23 18:05 /etc/telnetd
+
+   The sendmail binary will need to be moved to either /usr/lib or 
+   /usr/lib/sendmail.d, depending upon if you are using sendmail or
+   MMDF as your mail transport agent.  If you are using sendmail it
+   should have the following permissions:
+
+   -rws--x--x   3 root     bin       143170 Mar 12 08:27 /usr/lib/sendmail
+
+   To set the permissions correctly, use the following chmod command: 
+
+   chmod 4711 /usr/lib/sendmail
+
+   In addition, sendmail needs to be linked to the following files:
+
+   ln /usr/lib/sendmail /usr/lib/newaliases
+   ln /usr/lib/sendmail /usr/lib/mailq
+
+   The following command should also be run to read and freeze your 
+   sendmail.cf configuration file:
+
+   /usr/lib/sendmail -bz
+
+   If you are not using sendmail, then simply place the binary in 
+   /usr/lib/sendmail.d.
+
+
+2. The following directories can be found in /usr/lib/custom/save/net363:
+
+   ip
+   spt
+   tcp
+
+   Each of these directories contain a Driver.o; the spt directory will 
+   also contain a space.c.  Move these files to /etc/conf/pack.d under 
+   their respective directory names and set the permissions as follows:
+
+-rw-r--r--   1 root     sys      7244 Mar 15 16:50 /etc/conf/pack.d/spt/Driver.o
+-rw-r--r--   1 root     sys      1103 Mar 15 15:21 /etc/conf/pack.d/spt/space.c
+
+Once these files have been replaced and the /usr/lib/custom/save/net363
+directory has been removed, the SLS can be re-installed.  It should not 
+be necessary to remove the SLS.  If a condition should arise that requires 
+re- installation of the SLS (such as removing and re-installing the TCP/IP 
+product itself), then the above steps will need to be followed.  If you are
+not concerned about saving these files, then it is also possible to remove 
+the /usr/lib/custom/save/net363 directory and the SLS will re-install.  If 
+you remove the SLS without saving the files in /usr/lib/custom/save/net363
+and it should be necessary to retrieve the original drivers or binaries, then
+you will have to use the custom utility to retrieve them from the original
+media.
+
+SLS NET363A Description:
+
+The following binaries or kernel drivers have been updated to fix the
+following issues:
+
+/etc/bootpd: The problem occurs because of an incompatibility between bootp 
+and tftpd when tftpd is operated in secure mode.
+
+A client requesting a bootfile sends a BOOTREQUEST asking for the file
+/tftpboot/bootfile (for example).  The bootpd on the host processes this,
+tests for existence of the file and sends a reply containing the validated
+path /tftpboot/bootfile.  A tftp request is then sent to get the required file.
+           
+For example, if tftpd on the host has been invoked by "tftpd -s tftpboot",
+then when the request is received, the secure directory path will be appended 
+to the beginning of the pathname in the download request, generating
+/tftpboot/tftpboot/bootfile which does not exist. 
+
+/etc/telnetd: On machines running SCO MPX Release 2.0, when running under heavy
+load, telnetd would core dump.
+
+/usr/lib/sendmail: If the nameserver is not running, then sendmail is unable 
+to fully canonnicalize a hostname via the /etc/hosts file.
+
+A user attempts to send mail to someone on a different domain. They specify
+user@machine, assuming that sendmail will canonnicalize the machinename.
+If the nameserver is not running, the name will never be canonnicalized.  
+This means the domain name will never be appended to the mail address in the
+form user@machine.domain.
+
+/etc/conf/pack.d/ip/Driver.o: If a SLIP or PPP line had been configured in
+conjunction with one or more ethernet cards (or other SLIP or PPP devices) 
+it was not possible to correctly route packets between the devices or lines.
+When trying to add routes to the devices, the route command would return
+"Network Unreachable" even though all the configuration files were correct.
+Customers running MorningStar PPP typically experienced this issue.  This was
+a problem in the routing algorithm in the ip device driver and has been
+corrected.
+
+/etc/conf/pack.d/spt/Driver.o  and  /etc/conf/pack.d/spt/space.c: When trying
+to use the remote login utilities (telnet or rlogin), typically after 30 or 
+more users have successfully logged in to the system, the remote login utili-
+ties will hang and the system must be rebooted to allow any other users to 
+remotely log in.
+
+When using the cut and paste utility in xclients, if the xclients are using the
+remote login utilities, the cut and paste operation would hang.
+
+When using the telnet utility, a buffer overflow would occur if more than 254
+characters were typed on one line without a newline.
+
+/etc/conf/pack.d/tcp/Driver.o: When running the Cognos X application, a DOS
+xclient may hang on machines running HP ARPA TCP/IP.  The hang was caused by 
+a timing issue when the Cognos xclient would close and then try to immediately
+reopen the socket port.
+
+Multiple invocations of "rcmd" when trying to start up xclients (or other jobs)
+from one or more machines would hang after the 3rd or 4th xclient (or job) had
+started.  This behavior was typically seen on DOS clients, while UNIX clients
+do not typically demonstrate this behavior
+
+Multiple invocations of "rcmd" or "rcp" would cause the first attempt to
+succeed immediately, and each one after would be delayed by six seconds.
+        
+If a <SYN> was received on a connected peer, then the receiver would send two
+<RST>'s.
+
+If you have any questions, please call our SCO Customer Services Department
+at (408) 425-4726.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

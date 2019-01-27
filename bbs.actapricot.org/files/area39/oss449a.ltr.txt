@@ -1,0 +1,554 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) OSS449A corrects many known
+problems with the TCP/IP, NFS and UNIX components of SCO OpenServer Release
+5.0.0 and 5.0.2, and SCO Internet FastStart Release 1.0.0 and 1.1.0.  SLS
+OSS449A should only be installed on SCO systems based on the SCO OpenServer
+Release 5.0.0 and 5.0.2 operating systems, and SCO Internet FastStart
+Release 1.0.0 and 1.1.0 operating systems.
+
+If you are installing SLS OSS449A on a system with SCO OpenServer
+Release 5.0.0, you must have installed the Networking Supplement
+1.0.0 (NET100) prior to installing SLS OSS449A.
+
+In order to avoid copying over actively running daemons, it is necessary 
+that you either run "nfs stop" and "tcp stop" or enter System Maintenance 
+mode before installing this SLS. 
+
+After installation, reboot the system.  If you cannot reboot immediately, 
+"tcp start" and then "nfs start" will restart the networking.
+
+
+SLS OSS449A addresses these problems in the TCP/IP component:
+
+   A. Symptom: File length errors when using the tirdrw interface
+      to read files on the same machine.  
+
+      The length of files read is now correct.
+
+   B. Symptom: Programs using rc commands (rcp, rcmd, NFS, rwho)
+      may hang when the network is experiencing problems.
+
+      The UDP driver has been corrected to report errors in lower
+      level protocols up the stack to user programs.
+
+   C. Symptom: ftp hang when the remote host was not available.
+
+      ftp now responds properly if the remote host is not available.
+
+   D. Symptom: nfs hang during large file transfer.
+
+      The read ahead code within the nfs client has been corrected to
+      ensure that each read ahead uses separate buffers.
+
+      Also, the write code in the server was corrected to fix write
+      synchronization problems.
+
+   E. Symptom: An error message such as "WARNING: ip: spinning in PCB"
+      occurs from time to time on some systems.  The network is not
+      impacted.
+
+      This error message, related to a previous error condition fixed
+      in the Networking Supplement 1.0.0 (NET100) and SCO OpenServer 
+      Release 5.0.2, has been removed.
+
+   F. Symptom: Some network cards (those using the esballoc() routine)
+      would experience stream buffer leaks over time.
+
+      The potential memory leak in the socket driver has been fixed.
+
+   G. Symptom: Network printers hang when a printer fault (such as
+      running out of paper) occurs.
+
+      The tcp driver has been corrected to acknowledge the reset sent
+      by the printer after the error condition has been corrected.
+
+   H. Symptom: On systems using EISA or PCI network cards, the tcp
+      connection may hang, or the system may panic when transferring 
+      large amounts of data.
+
+      The tcp driver has been corrected to handle larger data blocks
+      correctly. 
+
+   I. Symptom: telnetd hangs or does not exit on remote close.  On
+      SMP computers, a lock timeout may also occur.
+
+      Changes to the socket driver were required to ensure
+      that telnetd closes properly.
+
+   J. Symptom: When two machines (A and B) are connected, if machine A
+      dies, when it recovers and attempts to re-establish connection
+      to machine B on the same port, the connection is refused.
+
+      The tcp driver was modified to accept an out of sequence SYN as
+      a close signal and then close the port, thus allowing the
+      new connection to be established.
+
+   K. Symptom: Requests from Windows NT 4.0 to an SCO OpenServer Release 
+      5.0.2 server for a list of names registered with NetBIOS would fail.
+      This affects the ability of SCO Advanced File and Print Server
+      (AFPS) to interoperate with Windows NT 4.0.
+
+      The NetBIOS driver has been modified to correct this problem.
+
+   L. Symptom: CHAP authentication during ppp startup negotiations  
+      may cause the system to panic.
+
+      The ppp drivers (ppp and ppcid) have been modified to provide
+      a default name for CHAP negotiation and to avoid referencing
+      NULL pointers.
+
+   M. Symptom: Panic during ifconfig startup of the IP interface if the
+      number of addresses on an interface exceeds a fixed limit.
+
+      The ip driver has been modified to avoid this panic by testing
+      for a NULL pointer when the buffer storing interface information
+      overflows. (The ifconfig startup of the interface will still fail.)
+
+   N. Symptom: When a connection is made using ppp between a Windows NT
+      server and SCO OpenServer Release 5.0.0 or 5.0.2 server, if the 
+      connection is disconnected by NT RAS, the connection cannot be 
+      re-established and the modem becomes locked.
+
+      SCO has modified the ip driver to not send a linkDown trap when
+      NT RAS closes the connection.
+
+   O. Symptom: The SCO OpenServer Release 5.0.0 or 5.0.2 machine panics 
+      with a trap E in the routine ip_pmtu_ageroute().
+
+      The routines in the ip and rte drivers which control the aging of
+      route information have been corrected to avoid walking off the
+      end of a linked list used to store route aging information.
+
+   P. Symptom: The rlp version of lpstat dumps core when the number of
+      entries in /etc/printcap exceeds 12.            
+
+      The rlp version of lpstat has been modified to correct this
+      problem.
+
+   Q. Symptom: The order of options in the rlp version of lp effects
+      the behavior of the print command.
+
+      The rlp version of lp has been modified to correct this problem.
+
+   R. Symptom: The printer portion of a remote server accessed by using
+      rlp will hang if more than 15 print jobs are in the remote queue,
+      or if more than 60 jobs are sent to the remote queue in quick
+      succession.
+
+      The rlp version of lpd has been modified to allow for a larger
+      capacity of simultaneous print jobs.
+
+   S. Symptom: The -n option to timed is not able to find the specified
+      host.
+
+      /etc/timed has been modified to correct this problem.
+
+   T. Symptom: Incomplete or obsolete entries in the arp table
+      are not overwritten.  This may cause the reinitialization of
+      bootp devices to fail.
+
+      The ip driver has been modified to attempt to rewrite incomplete
+      arp table entries. /usr/bin/netstat has also been modified to display
+      incomplete entries, in order to reveal incomplete address problems
+      if they occur.
+
+   U. Symptom: A potential security breach, which would allow local users
+      to acquire root privileges, existed in rdist.
+
+      The binaries /etc/rdistd and /usr/bin/rdist have been modified to
+      eliminate this security hole.
+
+   V. Symptom: Receipt of a ping packet in excess of 64K can hang the
+      operating system.
+
+      The icmp driver has been modified to correct a buffer over run 
+      condition.
+
+ 
+SLS OSS449A addresses these problems in the NFS component:
+
+   A. Symptom: Cross machine concurrent file copies may cause processes,
+      and then the machine, to hang.
+
+      The nfs driver and nfsd driver were modified to limit the number
+      of buffers allocated to reads and writes to ensure that buffers
+      from the buffer pool are always available.
+
+   B. Symptom: An SCO OpenServer Release 5.0.0 or 5.0.2 system using NFS
+      to access files on another server may panic if the network connection
+      becomes unreliable.
+
+      The lockd driver has been corrected to prevent two situations. The
+      first is a condition whereby lockd fails on a server and attempts
+      to cleanup locks reference NULL file table entries.  The second
+      is a situation in which memory for a lock is allocated to a NULL
+      pointer when the referenced lock address becomes NULL.
+
+   C. Symptom: Under some circumstances, it is possible for pcnfsd to
+      change the permissions of files and directories not properly
+      owned by the user connected to the system.
+
+      The pcnfsd daemon has been modified to restrict the daemon's
+      ability to change the access permissions on files.
+
+   D. Symptom: Using mv to move sub-directories of an NFS mounted
+      file system can hang the mounted file system on both the
+      client and the server, requiring both client and server to
+      be rebooted in order to restore access.
+
+      The nfs driver has been modified to correct a problem with
+      virtual inodes.
+
+
+SLS OSS449A addresses these problems in the UNIX component:
+
+   A. Symptom: Network connections hang randomly under heavy load.
+
+      A timing synchronization problem in the streams driver has been
+      corrected to eliminate this problem.
+
+   B. Symptom: System panics in the streams module when running TCP/IP
+      on four processor computers.
+
+      A data integrity problem in the streams driver has been corrected.
+
+   C. Symptom: telnetd hangs or does not exit on remote close.  On
+      SMP computers, a lock timeout may also occur.
+
+      Changes to the iknt driver were required to ensure that telnetd 
+      closes properly.
+
+   D. Symptom: PPP dies under heavy load with more than 5 connections.
+
+      The unix domain socket driver has been corrected to cleanup
+      correctly after a protocol error.  Unix domain sockets are used
+      to connect the serial driver to the tcp driver, and when a modem
+      would hang up due to not getting an immediate connection, the
+      unix domain socket driver would incorrectly queue the connection.
+
+   E. Symptom: The kernel panics in the accept routine.
+
+      The socket driver has been updated to correct this problem.
+
+SLS OSS449A replaces the libsocket.a from the TCP/IP Development System
+in order to reflect the changes that were made in the TCP/IP Runtime System
+into TCP/IP program development projects.
+
+
+
+INSTALLATION AND REMOVAL INSTRUCTIONS
+
+Installing patches on SCO OpenServer 5.0 usually consists of two phases: 
+"Loading" and "Applying".  The instructions that follow enable you to both 
+install the patch from distribution media or media image, as well as 
+configure the patch to be installed from a remote SCO OpenServer 5.0 system 
+over a TCP/IP network.
+
+       NOTE: If any of the components for which patches are provided (TCP/IP,
+       UNIX, NFS, TCP/IP DEV) are not on your system, the patches for that 
+       component will not be installed.
+
+       If you later install that component, you will be required to 
+       re-apply the portion of the SLS pertaining to newly installed
+       components in order to patch the component.
+
+
+I. LOADING THE PATCH
+
+1. Log in as root.
+
+2. If you are installing this SLS from a media image, there is a file
+   called OSS449A.Z.  Uncompress this file with this command:
+
+        # uncompress OSS449A.Z
+
+   Copy the file to the /tmp directory and name it VOL.000.000:
+
+        # cp OSS449A /tmp/VOL.000.000
+
+   If you are installing this SLS from floppy disk media, skip this
+   step and proceed to step 3.
+
+3. Execute the command:
+        
+        # scoadmin software
+
+   or double click on the Software Manager icon on the desktop.
+
+4. Pull down the "Software" menu and select 
+   "Patch Management-->Load Patch".
+
+5. You will see the "Begin Load Patch" menu.  Be sure the
+   local machine name is selected and choose "Continue".
+
+6. You will see the "Select Media" menu. 
+
+   a. If you are loading this SLS from floppy disk media, 
+      select the appropriate floppy disk drive and
+      choose "Continue".  Proceed to step 7.
+
+   b. If you are loading this SLS from a media image per step 2,
+      pull down the "Media Device" menu and select "Media Images",
+      then choose "Continue".  You will then see the "Enter Image 
+      Directory" menu.  Enter /tmp and choose "OK".
+
+7. You will see the "Load Patch Preference" menu.  Choose "Full".
+
+8. You will see the "Load Patch Progress" window.  If the patch loads
+   successfully, you will see a "Message" window which states "Load 
+   Patch complete".  Choose "OK".  You are then returned to the main 
+   Software Manager window.
+
+9. To apply the patch now, continue with step 2 under section II, 
+   "Applying the Patch".  To exit the Software Manager now, select
+   "Exit" from the "Host" menu.
+      
+
+II. APPLYING THE PATCH
+
+1. Log in as root. Execute the command:
+
+        # scoadmin software 
+
+   or double click on the Software Manager icon on the desktop.
+
+2. Pull down the Software menu and select "Patch Management-->Apply Patch".
+
+3. You will see the "Begin Apply Patch" menu.  Be sure that the local
+   machine name is selected and choose "Continue".
+
+4. You will see the "Select Media" menu. The "Hard Disk" menu item 
+   should already be selected.  Choose "Continue".
+
+5. You will be presented with the "Select Patch-product to Apply" menu.
+   Highlight the "OSS449A Network Performance SLS for OpenServer 5.0.0
+   and 5.0.2" patch and then choose "Full" to continue.
+
+6. You will see the "Apply Patch Progress" window as the system applies
+   the patch.
+
+7. You will see an information window displaying the message:
+
+      During this apply patch, the kernel was relinked. You must reboot
+      your system to make this kernel effective.
+
+   Click on "OK". 
+
+8. You will see a "Message" window stating "Apply Patch Complete".  
+   Choose "OK" and you will be returned to the Software Manager's main menu.
+   Exit the Software Manager by choosing "Exit" from the "Host" menu.
+
+9. Log in as root on tty01, and shut down the system:
+
+        # shutdown -g0 -y
+
+   After shutting down and rebooting the machine, application of the patch
+   is complete.
+
+
+III. NOTES ON NETWORK INSTALLATION
+
+To install the patch on other SCO OpenServer 5.0.0 or 5.0.2 machines over 
+the network, first load the patch as in section I above on a designated 
+installation server.  Then create the user "swadmin" on the installation 
+server.
+
+When running the Software Manager on the system where the patch will be
+installed, you will be prompted for the source location of the patch in 
+the "Begin Load Patch" window.  Be sure to choose "from another host" 
+during this phase.  You will need to provide the name of the installation 
+server, as well as the password of the "swadmin" user on the installation 
+server, to initiate the installation process.
+
+
+IV. PATCH REMOVAL
+
+    NOTE: Patches must be rolled back in the reverse order in which they 
+    were installed on a per-component basis. The Network Performance SLS 
+    is composed of 4 patches.  Hence, if the "OSS449A Network Performance
+    SLS for OpenServer Release 5.0.0 and 5.0.2" patch is not the most recent
+    patch applied to each component of the product, you will have to rollback 
+    all patches applied after the "OSS449A Network Performance SLS for 
+    OpenServer Release 5.0.0 and 5.0.2" patch prior to rollback of the
+    "OSS449A Network Performance SLS for OpenServer Release 5.0.0 and 5.0.2"
+    patch for each component.
+
+If you want to remove the patch, take these steps:
+
+1. Log in as root. 
+
+2. Execute the command:
+
+        # scoadmin software
+
+   or double click on the Software Manager icon in the desktop.
+
+   You will need to rollback 4 patches.
+
+3. Depending on which software was installed on your system when 
+   SLS OSS449A was installed, up to four patches may have been applied. 
+   For each of the four patches, pull down the "Software" menu and select
+   "Patch Management-->Rollback Patch".
+
+4. For the TCP/IP patch, perform the following steps:
+
+   a. You will see the "Begin Rollback Patch" menu and will be asked 
+      to select patched software to rollback. Select "SCO TCP/IP"
+      and choose "Continue".
+
+   b. You will see the "Patch Selection" window. Make sure that the 
+      "OSS449A:TCP  Network Performance SLS" patch
+      is selected, and choose "Continue".
+
+   c. You will see the "Confirm Selected Patches" window. Choose
+      "Rollback" to confirm removal of the "OSS449A Network Performance
+      Supplement OSS449A" patch.
+
+   d. You will see the "Rollback Progress" window, as the system 
+      performs the rollback of the patch.
+
+   e. You will see an information window displaying the message:
+
+        NOTE: Rollback of this patch requires a kernel relink.
+        If you are rolling back several patches at this time,
+        you may choose to defer the relink until the last patch
+        rollback. However, you must relink for the system to
+        return to the pre-patch state.
+        Do you want to relink the kernel now? (y/n)
+
+      Answer 'y' if you want to relink now, or 'n' if you want to defer
+      the relink to later.
+
+      Press <Enter> to continue.
+
+   f. After pressing <Enter>, you will see the "Rollback Progress" window, 
+      after which a "Message" window stating "Rollback Patch Complete".
+      Choose "OK" and you will be returned to the Software Manager's main
+      menu.
+
+5. For the NFS patch, perform the following steps:
+
+   a. You will see the "Begin Rollback Patch" menu and will be asked 
+      to select patched software to rollback. Select "SCO NFS" and 
+      choose "Continue".
+
+   b. You will see the "Patch Selection" window. Make sure that the 
+      "OSS449A:NFS Network Performance SLS" patch is selected and 
+      choose "Continue".
+
+   c. You will see the "Confirm Selected Patches" window. Choose "Rollback" 
+      to confirm removal of the "OSS449A Network Performance Supplement
+      OSS449A" patch.
+
+   d. You will see the "Rollback Progress" window, as the system 
+      performs the rollback of the patch.
+
+   e. You will see an information window displaying the message:
+
+        NOTE: Rollback of this patch requires a kernel relink.
+        If you are rolling back several patches at this time,
+        you may choose to defer the relink until the last patch
+        rollback. However, you must relink for the system to
+        return to the pre-patch state.
+        Do you want to relink the kernel now? (y/n)
+
+      Answer 'y' if you want to relink now, or 'n' if you want to defer
+      the relink to later.
+
+      Press <Enter> to continue.
+
+   f. After pressing <Enter>, you will see the "Rollback Progress" window, 
+      after which a "Message" window stating "Rollback Patch Complete".
+      Choose "OK" and you will be returned to the Software Manager's main
+      menu.
+
+6. For the UNIX patch, perform the following steps:
+
+   a. You will see the "Begin Rollback Patch" menu and will be asked 
+      to select patched software to rollback. Select "SCO UNIX System 
+      V Operating System" and choose "Continue".
+
+   b. You will see the "Patch Selection" window. Make sure that the 
+      "OSS449A:UNIX Network Performance SLS" patch
+      is selected, and choose "Continue".
+
+   c. You will see the "Confirm Selected Patches" window. Choose "Rollback" 
+      to confirm removal of the "OSS449A Network Performance Supplement
+      OSS449A" patch.
+
+   d. You will see the "Rollback Progress" window, as the system 
+      performs the rollback of the patch.
+
+   e. You will see an information window displaying the message:
+
+        NOTE: Rollback of this patch requires a kernel relink.
+        If you are rolling back several patches at this time,
+        you may choose to defer the relink until the last patch
+        rollback. However, you must relink for the system to
+        return to the pre-patch state.
+        Do you want to relink the kernel now? (y/n)
+
+      Answer 'y' if you want to relink now, or 'n' if you want to defer
+      the relink to later.
+
+      Press <Enter> to continue:
+
+   f. After pressing <Enter>, you will see the "Rollback Progress" window, 
+      after which a "Message" window stating "Rollback Patch Complete".
+      Choose "OK" and you will be returned to the Software Manager's main
+      menu.
+
+
+7. For the TCPDEV patch, perform the following steps:
+
+   a. You will see the "Begin Rollback Patch" menu and will be asked 
+      to select patched software to rollback. Select "SCO TCP/IP 
+      Development System Component" and choose "Continue".
+
+   b. You will see the "Patch Selection" window. Make sure that the 
+      "OSS449A:TCPDEV Network Performance SLS" patch
+      is selected, and choose "Continue".
+
+   c. You will see the "Confirm Selected Patches" window. Choose "Rollback" 
+      to confirm removal of the "OSS449A Network Performance Supplement
+      OSS449A" patch.
+
+   d. You will see the "Rollback Progress" window, as the system 
+      performs the rollback of the patch.
+
+   e. You will eventually see the message stating "Rollback Patch Complete".
+      Choose "OK" and you will be returned to the Software Manager's main
+      menu.
+
+8. Exit the Software Manager by choosing "Exit" from the "Host" menu.
+
+9. Log in as root and relink the kernel:
+
+        # cd /etc/conf/cf.d
+        # ./link_unix -y
+
+10. Log in as root on tty01, and shut down the system:
+
+        # shutdown -g0 -y
+
+    After shutting down and rebooting the machine, rollback of the patch
+    is complete.
+
+11. To also unload the patch, making it no longer available to be applied, 
+    follow the steps in this section.  In step 3, choose:
+
+        "Patch Management-->Unload Patch"
+
+    instead of:
+ 
+        "Patch Management-->Rollback Patch"
+
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.  
+
+We appreciate your business.
+
+SCO Support Services
+

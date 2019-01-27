@@ -1,0 +1,192 @@
+Dear Customer,
+
+The enclosed Support Level Supplement (SLS) UOD369B contains a new console    
+keyboard driver set.  A new scoterm is also provided for those systems running
+SCO Open Desktop.  This SLS applies to all current SCO UNIX System V/386 
+Release 3.2 Operating System Version 4 based products (Version 4.0, Version 
+4.0 with Maintenance Supplement 4.1 and/or 4.2, and Version 4.2) and SCO Open 
+Desktop Release 2.0 and 3.0.
+
+Since each release of our software has a different console keyboard driver
+it is important to install this console keyboard driver again after the
+installation of any software which may modify the console driver.
+
+When in doubt, install SLS UOD369B last.
+
+If a Maintenance Supplement is used to update your software, remove this 
+Console Keyboard SLS before the update and install it again after the update.
+
+If you do an in-place update of your software from one release of SCO UNIX
+Operating System or SCO Open Desktop to another release, remove this Console 
+Keyboard SLS before the update and install it again after the update.
+
+DO NOT attempt to install this SLS on top of the SCO Japanese Environment 
+Version 1.0.0g due to a console driver conflict.
+
+DO NOT attempt to install the SCO Japanese Environment Version 1.0.0g on 
+top of this SLS due to a console driver conflict.
+
+See Section II for instructions on using custom(ADM) to install this SLS.
+
+This SLS contains several modifications to the console keyboard drivers which
+eliminate problems with "stuck" <Ctrl> keys, "stuck" <Alt> keys, key response
+not consistent with the current state of the keyboard, and hung keyboards.
+
+Other modifications were made to the console keyboard drivers in order for 
+the mapkey function to operate correctly in conjunction with the 
+/usr/lib/keyboard/keys file.
+
+A feature enhancement is the ability to set the keyboard in either SCO UNIX
+Version 2.0 mode for backwards compatibility or SCO UNIX Version 4.0 mode.
+Version 2.0 mode has the extended keys mapped in groups according to keypad 
+function.  Version 4.0 mode has each key mapped separately.  The default mode 
+is SCO UNIX Version 4.0 mode.  This mode can be changed by setting the value 
+of the variable v2keymap in the file /etc/conf/pack.d/kernel/space.c file.
+
+              v2keymap = 0;  sets the keyboard in Version 4.0 mode (default).
+              v2keymap = 1;  sets the keyboard in Version 2.0 mode.
+
+After setting the keyboard mode, the kernel must be relinked in order for the 
+change to take effect.
+
+This can be accomplished by taking the following steps:
+
+					1
+
+1.  If the system is running in multiuser mode, log in as root on the console.
+    After warning the users that the system will be down for some time, enter 
+    the command:
+
+        shutdown  -y -g0 
+
+    The system will then execute a controlled shutdown operation which will 
+    display the following message when the shutdown process has completed:
+
+        **   Safe to Power Off   **
+                   -or-
+        ** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+4.  At the "#" prompt, change directories to /etc/conf/cf.d by issuing 
+    the command:
+
+              cd /etc/conf/cf.d    <Enter>.
+
+5.  At the "#" prompt, enter the command:
+
+              ./link_unix   <Enter>.
+
+    Answer "y" when asked if you want to boot off this kernel.
+
+    Answer "y" when asked if you want to rebuild the kernel environment.
+
+6.  At the "#" prompt, enter the command:
+
+             reboot   <Enter>   in order to reboot the computer. 
+
+The keyboard mode has now been changed.
+
+Section II - Using custom(ADM) to install SLS UOD369B
+
+1.  If the system is running in multiuser mode, log in as root on the console.
+    After warning the users that the system will be down for some time,
+    enter the command:
+
+        shutdown  -y -g0 
+
+    The system will then execute a controlled shutdown operation which
+    will display the following message when the shutdown process has
+    completed:
+
+        **   Safe to Power Off   **
+                   -or-
+        ** Press Any Key to Reboot **
+
+					2
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+4.  Next, insert the custom volume diskette labeled "Console Keyboard SLS
+    Custom Install Disk" in the floppy drive and enter the command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+5.  To select the following, highlight each one with the cursor keys 
+    and press <Enter>:
+
+        Install -> A New Product -> Entire Product
+
+   - Position the cursor so that "Install" is highlighted and 
+     press <Enter>.
+
+   - Make sure that the words "A New Product" are highlighted in the window 
+     found in the lower right hand corner of the screen; press <Enter>.
+
+   - Make sure the words "Entire Product" are highlighted in the "Choose an
+     option" section of the screen; press <Enter>.
+
+   - You will be prompted to "Insert distribution Volume 1 and press <Enter>".
+     The diskette is already in the drive, therefore press <Enter>.
+
+   - You will see the following messages:
+
+       Installing custom data files
+       Executing Product Prep Script
+   
+ The message "Saving files about to be Replaced" will flash on the screen.
+     You will be prompted to "Insert the requested Volume and press <Enter>".
+     The diskette is already in the drive, therefore press <Enter>.
+
+   - You will see the following message:
+
+       Extracting Files
+
+   - When asked if you wish to relink the kernel, reply "Y" in order to insure
+     that the modifications from SLS UOD369B are included in the kernel.
+
+     Answer "y" when asked if you want to boot off this kernel.
+
+     Answer "y" when asked if you want to rebuild the kernel environment.
+
+   - You will then be prompted to "Press any key to continue"; press <Enter>.
+
+					3
+
+   - At the main custom menu, move the highlighted entry to "Quit" and press
+     <Enter>.  Press <Enter> again on the highlighted "yes".  
+     
+   - Reboot the computer.
+
+   - SLS UOD369B is now successfully installed.
+
+NOTE: If you have a 3rd party product which utilizes the console keyboard
+      driver, such as SunRiver Terminals or Maxspeed Terminals, you will be 
+      required to obtain new drivers from the vendor in order to have your 
+      3rd party product work correctly with this SLS.
+   
+      For more information, consult your 3rd party vendor.
+
+If you have and further questions, please contact your supplier.
+
+TECHNICAL SUPPORT DEPARTMENT
+
+Ref: uod369-03CB

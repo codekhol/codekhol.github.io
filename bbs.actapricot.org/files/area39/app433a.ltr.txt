@@ -1,0 +1,341 @@
+Dear SCO Customer,
+
+The SCO Advanced Server Support Level Supplement (SLS) APP433A updates 
+several issues in regard to the NetBEUI transport protocol, SMB (server 
+message block) protocol, and file locking protocol semantics for the SCO 
+Advanced File and Print Server (AFPS) Release 3.5.1f.            
+
+The updates contained in SLS APP433A are outlined below.            
+
+
+Support for the SMB CORE protocol (IBM 4690 POS):
+
+Full support for the SMB (server message block) CORE protocol has been 
+implemented.  This allows AFPS to support older systems, such as the IBM 
+4690 POS system, restricted to the CORE component of the SMB protocol.
+
+
+Corrections to the NetBEUI transport protocol:
+
+Changes have been made to the NetBEUI driver to provide proper 
+interoperability with the NetBEUI network protocol used by the IBM
+4690 POS system.
+
+
+Support for 8-bit characters:
+
+In the current version of AFPS it is not possible to create filenames
+that have characters from the upper half of the ISO-8859-1 character set.
+This includes many international characters, such as a-umlaut.
+
+SLS APP433A addresses this problem by providing support for a server
+specified locale.  The locale must be set in the lanman.ini file of the
+server to enable the proper collating sequence for the extended character
+sets. 
+
+Instructions for enabling 8 bit characters:
+
+1. Log in as the root user.
+
+2. cd /usr/net/servers/lanman
+
+3. vi lanman.ini
+
+4  Enable collating for 8 bit character sets by adding the locale parameter 
+   to the [ lmxserver ] section of the lanman.ini file:
+
+   locale=english_us.8859
+
+5. Enable long file naming and extended character mapping by adding the
+   following parameter to the [ fsi ] section of the lanman.ini file:
+
+   ntfs=yes
+
+6. Save the lanman.ini file and stop and restart the server with the following
+   commands:
+
+      net stop server
+      net start server
+
+   Caution should be exercised when stopping the server to avoid disconnecting
+   clients on the network that are actively utilizing server resources.
+
+
+Corrections to File Access and Locking: 
+
+* Scanning of large directories intermittently failed to find all the 
+  files. Directory lists or directory-to-directory copies would skip 
+  files due to errors in gcbuffer management.  This problem has been 
+  corrected.
+
+* Opening a Microsoft Access95 database on the AFPS server only allowed 
+  read-only access.  This has been corrected so that client file access 
+  and locking semantics are implemented correctly by AFPS.
+
+* When the AFPS lanman.ini file parameters "unixlocks=yes" and 
+  "useoplock=no" are set and a client attempts to access a locked region 
+  of a file, the correct error response is now returned to the client 
+  indicating that the file operation failed due to a preexisting lock.
+
+* The AFPS lanman.ini file "unixlocks=yes" parameter now prevents Unix
+  processes from accessing files locked by AFPS clients.  An erroneous
+  condition intermittently caused Unix filesystem locks placed on a file 
+  to be prematurely released.
+
+* Write-locks being placed on files when a read-lock was requested has 
+  been corrected.  This resolves a problem where applications run under 
+  Merge that access the same file on a mounted LMC filesystem from an 
+  AFPS server appear to deadlock during concurrent file locking operations.
+
+
+
+INSTALLATION AND REMOVAL INSTRUCTIONS
+
+Installing patches on SCO OpenServer 5 usually consists of two phases:
+"Loading" and "Applying".  The instructions that follow enable you to 
+both install the patch from distribution media or media image, as well 
+as configure the patch to be installed from a remote SCO OpenServer 5
+system over a TCP/IP network.
+
+
+I. BEFORE LOADING THE PATCH
+
+This patch will not install on top of any previously released patches 
+for AFPS Release 3.5.1f. Use the Software Manager to check which patches 
+are currently installed on the system.  If an SLS (patch) for AFPS 3.5.1f 
+is already installed, "rollback" and "unload" the earlier patch before 
+installing SLS APP433A.  The SCOadmin Enhancement Supplement (OSS414A) 
+is exempt from this stipulation.
+
+More information regarding installation of the Release Supplement may
+be found in the SCO OpenServer Release Notes.
+
+
+II. LOADING THE PATCH
+
+1. Log in as root.
+
+2. If you are installing this SLS from floppy disk media, skip this
+   step and proceed to step 3. 
+
+   If you are installing this SLS from a media image, there is a file 
+   app433a.tar.  Make a work directory in which to prepare the loadable 
+   patch images:
+    
+        # mkdir /tmp/app433
+
+   Copy the file to the /tmp/app433 directory:
+
+        # cp app433a.tar /tmp/app433
+
+   Extract the patch volume images using the tar command:
+
+        # tar xvf app433a
+
+   The following files should be extracted:
+
+          VOL.000.000
+          VOL.000.000.files
+          VOL.000.000.sum
+          VOL.001.000
+          VOL.001.000.files
+          VOL.001.000.sum
+
+3. Execute the command:
+        
+        # scoadmin software
+
+   or double click on the Software Manager icon on the desktop.
+
+4. Pull down the "Software" menu and select 
+   "Patch Management-->Load Patch".
+
+5. You will see the "Begin Load Patch" menu.  Be sure the
+   local machine name is selected and choose "Continue".
+
+6. You will see the "Select Media" menu. 
+
+   a. If you are loading this SLS from floppy disk media, 
+      select the appropriate floppy disk drive and
+      choose "Continue".  Proceed to step 7.
+
+   b. If you are loading this SLS from a media image per step 2,
+      pull down the "Media Device" menu and select "Media Images",
+      then choose "Continue".  You will then see the "Enter Image 
+      Directory" menu.  Enter /tmp/app433 and choose "OK".
+
+7. You will see the "Load Patch Preference" menu.  Choose "Full".
+
+8. You will see the "Load Patch Progress" window.  If the patch loads
+   successfully, you will see a "Message" window which states "Load 
+   Patch complete".  Choose "OK".  You are then returned to the main 
+   Software Manager window.
+
+9. To apply the patch now, continue with step 2 under section III, 
+   "Applying the Patch".  To exit the Software Manager now, select
+   "Exit" from the "Host" menu.
+      
+
+III. APPLYING THE PATCH
+
+1. Log in as root. Execute the command:
+
+        # scoadmin software 
+
+   or double click on the Software Manager icon on the desktop.
+
+2. Pull down the Software menu and select "Patch Management-->Apply Patch".
+
+3. You will see the "Begin Apply Patch" menu.  Be sure that the local
+   machine name is selected and choose "Continue".
+
+4. You will see the "Select Media" menu. The "Hard Disk" menu item 
+   should already be selected.  Choose "Continue".
+
+5. You will be presented with the "Select Patch-product to Apply" menu.
+   Highlight the "SCO Advanced Server Supplement" and then choose "Full" to
+   continue.
+
+6. You will see the "Apply Patch Progress" window as the system applies
+   the patch.
+
+7. You will see this message:
+
+    NOTE: Application or rollback of this patch requires a kernel relink.
+          If you are applying or rolling back several patches at this time,
+          you may choose to defer the relink until the last patch
+          application or rollback.
+          Do you want to relink the kernel now? (y/n)
+
+   Enter "y" or "n" based on this message.  Note that you will not be able
+   to make use of the the patch until you relink the kernel, hence it is
+   suggested that you answer "y" to this question.
+
+8. If you chose "y" in number 7, the kernel will be relinked. In either
+   case, you will then see:
+   
+        Press <RETURN> to continue
+
+   After pressing the <RETURN> key, you will see the "Apply Patch Progress" 
+   window, after which you will see a "Message" window stating "Apply Patch 
+   Complete".  Choose "OK" and you will be returned to the Software Manager's
+   main menu.  Exit the Software Manager by choosing "Exit" from the
+   "Host" menu.
+
+9. Log in as root on tty01, and shut down the system:
+
+        # shutdown -g0 -y
+
+   After shutting down and rebooting the machine, application of the patch
+   is complete.
+
+
+IV. NOTES ON NETWORK INSTALLATION
+
+To install the patch on other SCO OpenServer 5 machines over the network,
+first load the patch as in section II above on a designated installation 
+server.  Then create the user "swadmin" on the installation server.
+
+When running the Software Manager on the system where the patch will be
+installed, you will be prompted for the source location of the patch in 
+the "Begin Load Patch" window.  Be sure to choose "from another host" 
+during this phase.  You will need to provide the name of the installation 
+server, as well as the password of the "swadmin" user on the installation 
+server, to initiate the installation process.
+
+
+V. PATCH REMOVAL
+
+NOTE: Patches must be rolled back in the reverse order in which they were
+      installed on a per-component basis.  Hence, if the "SCO Advanced Server
+      Supplement" is not the most recent patch applied to the UNIX component
+      of the product, you will have to rollback all patches applied after the
+      "SCO Advanced Server Supplement" prior to rollback of the "SCO Advanced
+      Server Supplement."
+
+1. Log in as root.
+
+2. Execute the command:
+
+        # scoadmin software
+
+   or double click on the Software Manager icon in the desktop.
+
+3. Pull down the "Software" menu and select 
+   "Patch Management-->Rollback Patch".
+
+4. You will see the "Begin Rollback Patch" menu, and be asked to select
+   patched software to rollback. Select "File and Print Services" and
+   choose "Continue".
+
+5. You will see the "Patch Selection" window. Make sure that the 
+   "File and Print Services Supplement (APP433A)" is selected, and choose 
+   "Continue".
+
+6. You will see the "Confirm Selected Patches" window. Choose "Rollback" 
+   to confirm removal of the "File and Print Services Supplement (APP433A)".
+
+7. You will see the "Rollback Progress" window, as the system 
+   performs the rollback of the patch.
+
+8. Pull down the "Software" menu and select
+   "Patch Management-->Rollback Patch".
+
+9. You will see the "Begin Rollback Patch" menu, and be asked to select
+   patched software to rollback. Select "Netbeui Protocol" and
+   choose "Continue".
+
+10. You will see the "Patch Selection" window. Make sure that the
+    "Netbeui Supplement (APP433A)" is selected, and choose "Continue".
+
+11. You will see the "Confirm Selected Patches" window. Choose "Rollback"
+    to confirm removal of the "Netbeui Supplement (APP433A)".
+
+12. You will see the "Rollback Progress" window, as the system
+    performs the rollback of the patch.
+
+13. You will see this message:
+   
+    NOTE: Application or rollback of this patch requires a kernel relink.
+          If you are applying or rolling back several patches at this time,
+          you may choose to defer the relink until the last patch
+          application or rollback.
+          Do you want to relink the kernel now? (y/n)
+
+    Enter "y" or "n" based on this message. Note that complete rollback of
+    this patch requires a relink of the kernel to be complete, hence it is
+    suggested that you answer "y" to this question, unless you are installing
+    or removing other patches.
+
+14. If you chose "y" in number 8, the kernel will be relinked. In either
+    case, you will then see:
+   
+        Press <RETURN> to continue
+
+    After pressing the <RETURN> key, you will see the "Rollback Progress" 
+    window, after which a "Message" window stating "Rollback Patch Complete". 
+    Choose "OK" and you will be returned to the Software Manager's main 
+    menu. Exit the Software Manager by choosing "Exit" from the "Host" menu.
+
+15. Log in as root on tty01, and shut down the system:
+
+        # shutdown -g0 -y
+
+    After shutting down and rebooting the machine, rollback of the patch
+    is complete.
+
+16. To also unload the patch, making it no longer available to be applied, 
+    follow the steps in this section.  In step 3, choose:
+
+        "Patch Management-->Unload Patch"
+
+    instead of:
+ 
+        "Patch Management-->Rollback Patch"
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.  
+
+We appreciate your business.
+
+SCO Support Services

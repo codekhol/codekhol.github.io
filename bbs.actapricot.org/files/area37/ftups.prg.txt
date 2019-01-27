@@ -1,0 +1,284 @@
+#               Netware UPS Configuration file
+#
+# @(#) Apricot Configuration file for FT server UPS driver.
+# @(#) Version 1.04  7th May 1993.
+# @(#) Copyright (C) Apricot Computers Limited 1991 - 1993.
+# 
+# -----------------------------------------------------------------
+# This file defines the actions to be taken at the different stages
+# and events of the UPS system.
+# -----------------------------------------------------------------
+
+
+##################################################################
+#                                                                #
+#      INITIALISATION:                                           #
+#      Instructions here are executed when FTUPS.NLM is first    #
+#      loaded                                                    #
+#                                                                #
+##################################################################
+
+:START
+    Broadcast "UPS initialised on $UPSNAM$" to Supervisor
+    ups log
+    ups log "UPS initialised on $UPSDAT$ $UPSTIM$"
+
+#   how often to check for new script update (if system normal)    
+    ups set updatescript = 60
+
+#   how long to run on batteries before issuing DOWN    
+    ups set preshutdownmins = 25
+
+#   how long it takes to down the server (this + preshutdown = bat life)
+#   preshutdown + shutdown = 30 mins max    
+    ups set shutdownmins = 5
+
+#   how long between pressing standby and going to standby    
+    ups set standbysecs = 300
+
+#   how long between pressing reset and the system resetting    
+    ups set holdoffsecs = 300
+
+#   how long to recharge the batteries    
+    ups set rechargemins = 720
+
+
+##################################################################
+#                                                                #
+#      BROWNOUT: AC power failed.                                #
+#                                                                #
+##################################################################
+
+:BROWNSTART
+    send "BROWNOUT  AC power has failed on $UPSNAM$" to supervisor
+    ups print "WARNING - BROWNOUT OCCURRING"
+    ups log "Brownout occurred on $UPSDAT$ $UPSTIM$" 
+
+##################################################################
+#                                                                #
+#     END OF BROWNOUT: AC power restored after brownout.         #
+#                      Inform Supervisor only.                   #
+#                                                                #
+##################################################################
+
+:BROWNEND
+    send "END OF BROWNOUT  AC power restored on $UPSNAM$" to supervisor
+    ups print "END OF BROWNOUT - AC power has been restored"
+    ups log "Brownout ended on $UPSDAT$ $UPSTIM$" 
+
+
+################################################################## 
+#                                                                #
+#     RUNNING FROM BATTERIES: AC power failed running from       #
+#                             batteries. Inform all stations     #
+#                                                                #
+##################################################################
+
+# THESE INSTRUCTIONS ARE EXECUTED AT THE START OF THE BATTERY STAGE
+
+:BATTERY
+   broadcast "$UPSNAM$ on batteries, will shutdown in $UPSSHUTDOWNSTART$"
+   ups print "AC POWER FAIL - Now running on batteries"
+   ups print "Shutdown will occur in $UPSSHUTDOWNSTART$ at $UPSSHUTDOWNTIM$"
+   ups log "Power failed on $UPSDAT$ $UPSTIM$"
+
+# THESE INSTRUCTIONS ARE EXECUTED 20 MINUTES BEFORE THE START OF THE SHUTDOWN 
+# STAGE
+
+:SHUTDOWN - 20
+   broadcast "$UPSNAM$ on batteries, will shutdown at $UPSSHUTDOWNSTART$."
+   ups print "Running from batteries - will shutdown in $UPSSHUTDOWNSTART$ at $UPSSHUTDOWNTIM$."
+
+# THESE INSTRUCTIONS ARE EXECUTED 10 MINUTES BEFORE THE END OF THE SHUTDOWN 
+# STAGE
+
+:SHUTDOWN - 10
+   broadcast "$UPSNAM$ on batteries, will shutdown in $UPSSHUTDOWNSTART$."
+   ups print "Running from batteries - will shutdown in $UPSSHUTDOWNSTART$ at $UPSSHUTDOWNTIM$."
+
+# THESE INSTRUCTIONS ARE EXECUTED 5 MINUTES BEFORE THE END OF THE SHUTDOWN
+# STAGE
+
+:SHUTDOWN - 5
+   broadcast "$UPSNAM$ will shut down in FIVE MINUTES."
+   ups print "Running from batteries - will shutdown in $UPSSHUTDOWNSTART$ at $UPSSHUTDOWNTIM$."
+
+# THESE INSTRUCTIONS ARE EXECUTED 2 MINUTES BEFORE THE END OF THE SHUTDOWN 
+# STAGE. PREFIXING A '*' TO A COMMAND IMPLIES THAT THE COMMAND WILL ALWAYS
+# BE EXECUTED, EVEN IF WHEN BATTERY FAILURE OCCURS, THE AMOUNT OF 
+# PRE-SHUTDOWN TIME IS LESS THAN SHUTDOWN-X
+
+:SHUTDOWN - 2
+    Broadcast "$UPSNAM$ WILL SHUTDOWN IN TWO MINUTES, LOGOUT NOW!"
+    ups print "Server will shutdown in TWO MINUTES !"
+
+# THESE INSTRUCTIONS ARE EXECUTED 1 MINUTE BEFORE THE END OF THE SHUTDOWN
+# STAGE.
+
+:SHUTDOWN - 1
+    Broadcast "$UPSNAM$ WILL SHUTDOWN IN ONE MINUTE, LOGOUT NOW!"
+    ups print "Server will shutdown in ONE MINUTE !"
+
+##################################################################
+#                                                                #
+#     AUTO SHUTDOWN: Pre-shutdown time exhausted. Shutting down  #
+#                                                                #
+##################################################################
+
+:SHUTDOWN
+    Broadcast "Batteries LOW. $UPSNAM$ has shutdown"
+    ups log "Server shutdown on $UPSDAT$ $UPSTIM$"
+    down
+
+
+##################################################################
+#                                                                #
+#    LOWBAT: AC power fail and too little battery power.         #
+#            proceeding straight to shutdown.                    #
+#                                                                #
+##################################################################
+
+:LOWBAT
+    broadcast "$UPSNAM$ has shut down. Too little battery power available"
+    ups log "AC POWER FAIL - No battery power available"
+    ups log "Server shutdown on $UPSDAT$ $UPSTIM$"
+    ups print "AC POWER FAIL - Not enough battery power available"
+    down
+
+
+##################################################################
+#                                                                #
+#     AC POWER RESTORED: Power restored during shutdown stage.   #
+#                                                                #
+##################################################################
+
+:RESTORE
+   broadcast "$UPSNAM$ AC power restored. Shutdown aborted"
+   ups log "AC Power Restored on $UPSNAM$ after $UPSBATSTART$ at $UPSTIM$"
+   ups log "Shutdown sequence aborted"
+   ups print "AC power restored. Shutdown sequence aborted."
+   Enable Login
+
+
+##################################################################
+#                                                                #
+#     RESET SELECTED: Manual selection of RESET on front panel   #
+#                                                                #
+##################################################################
+
+:RESET
+    ups log "Reset pressed on $UPSDAT$ $UPSTIM$"
+    down
+
+
+##################################################################
+#                                                                #
+#     STANDBY: Standby manually selected from front panel        #
+#                                                                #
+##################################################################
+
+:STANDBY
+    ups log "Standby pressed on $UPSDAT$ $UPSTIM$"
+    down
+
+
+##################################################################
+#                                                                #
+#    OVER TEMPERATURE: Over temperature alarm                    #      
+#                                                                #
+##################################################################
+
+:TEMP
+   broadcast "$UPSNAM$ OVERHEATING. Shutdown likely. LOGOUT"
+   ups print "WARNING - OVER TEMPERATURE ALARM"
+   ups log "Temperature alarm on $UPSDAT$ $UPSTIM$"
+
+
+##################################################################
+#                                                                #
+#    OVER TEMPERATURE: Over temperature alarm still occuring     #      
+#                      after 60 secs, shutting down server for   #                                                                
+#                      safety                                    #
+#                                                                #
+##################################################################
+
+:TEMP + 60
+   broadcast "$UPSNAM$ OVERHEATING. Server shutting down NOW "
+   ups print "SERVER SHUTTING DOWN DUE TO OVERHEATING"
+   ups log "Server shutdown due to overheating on $UPSDAT$ $UPSTIM$"
+   down
+
+##################################################################
+#                                                                #
+#    END OF OVER TEMPERATURE CONDITION:                          #      
+#                                                                #
+##################################################################
+
+:ENDTEMP
+   broadcast "$UPSNAM$ no longer overheating. Shutdown aborted"
+   ups print "Server no longer overheating"
+   ups log "Over temperature condition ended on $UPSDAT$ $UPSTIM$"
+
+
+##################################################################
+#                                                                #
+#    FAULT : Cannot communicate with the UPS Controller          #      
+#                                                                #
+##################################################################
+
+:FAULT
+   send "UPS FAULT Cannot communicate with the UPS controller" to supervisor
+   ups print "UPS FAULT - Cannot communicate with the UPS controller."
+   ups log "UPS Fault - Cannot communicate with the UPS controller on $UPSDAT$ $UPSTIM$"
+
+
+##################################################################
+#                                                                #
+#    ENDFAULT : Can now communicate with the UPS Controller      #      
+#               again.                                           #
+#                                                                #
+##################################################################
+
+:ENDFAULT
+   send "UPS fault has now cleared" to supervisor
+   ups print "UPS fault has now cleared"
+   ups log "UPS fault cleared on $UPSDAT$ $UPSTIM$"
+
+
+##################################################################
+#                                                                #
+#    PANEL : Unauthorised removal of a side panel                #      
+#            (Event will only occur if security is enabled)      #
+#                                                                #
+##################################################################
+
+:PANEL
+   send "Unauthorised side panel removal on $UPSNAM$" to supervisor
+   ups print "Unauthorised side panel removal on $UPSDAT$ $UPSTIM$"
+   ups log "Unauthorised side panel removal on $UPSDAT$ $UPSTIM$"
+   
+
+##################################################################
+#                                                                #
+#    SECURITY : Security violation occurring                     #      
+#                                                                #
+##################################################################
+
+:SECURITY
+   send "Security violation occuring on $UPSNAM$" to supervisor
+   ups print "Security violation occurring on $UPSNAM$ on $UPSDAT$ $UPSTIM$"
+   ups log "Security violation occurred on $UPSDAT$ $UPSTIM$"
+   
+
+##################################################################
+#                                                                #
+#    ENDSECURITY : Security violation no longer occurring        #      
+#                                                                #
+##################################################################
+
+:ENDSECURITY
+   send "Security violation ended on $UPSNAM$" to supervisor
+   ups print "Security violation ended on $UPSNAM$ on $UPSDAT$ $UPSTIM$"
+   ups log "Security violation ended on $UPSDAT$ $UPSTIM$"
+   
+

@@ -1,0 +1,121 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) lng353a, the UNIX Development System
+Compiler supplement, can only be installed on SCO UNIX System V/386 Release 3.2
+Operating System Version 4.0 or on SCO Open Desktop Release 2.0.  The SCO 
+UNIX System V/386 Release 3.2 Development System Version 4.0 must be installed
+prior to installing SLS lng353a.
+
+SLS lng353a addresses the following problems:
+
+	Extraneous messages in c1.err have been removed.
+
+	If you had "path" (NOTE: lower case) set, and it was longer 
+	than about 200 characters, with no ":"s in it, then cc would 
+	dump core.  This has been resolved.
+
+	An alternate PASSM4 can be defined in 'cc' by using the -Bm flag 
+	as follows: 
+
+	        cc -Bm /mypath/usr/bin/m4
+
+	Many optimization problems that resulted in dropped assignments
+	or incorrectly executed loops have been resolved
+
+	cc(CP):ld was passed crt1.o twice.  This has been corrected. 
+
+	Many incompatible assignments and invalid definitions and declarations
+	that compiled without error messages now generate diagnostic error 
+	messages at compile time. 
+
+        Problems with long path names and long file names have been resolved.
+
+	Problems with the -O option that caused compile time assertion 
+	errors have been fixed. 
+
+	When an int is shifted left by more than 32 bits the result is now 
+	computed by using modulo 32 of the shift amount.
+
+	cc(CP): A problem with strings which traverse 64k boundary being cut 
+	has been fixed. 
+
+	cc now correctly passes the -Y U flag through to ld.
+
+	cvtomf(CP): now has correct aux entries for struct/unions. 
+
+	m4(CP):changequote and defn now work with multiple chars.
+
+	cc(CP): A problem with expanding very large macros causing  
+	a core dump during compile time has been fixed. 
+
+	cc(CP): sizeof a bitfield union is now correct.
+
+	The symbol table emitted by c_1p in pass 1 of the compiler
+	is no longer dependent on c_1p itself. 
+
+	Whenever "far", "huge", or "near" are used in compiling 386
+	mode code they are converted to "near" and 
+	the compiler generates the error:
+ 	       2210: `xxx' ignored in 386 compiler
+
+	cc(CP): Multiple static functions can now be declared in local scope. 
+
+	cc(p1):typedefs now function correctly in structs and inside of arrays.
+
+	cc(CP):using -32768 in a short case expression no
+	longer gives a compiler warning. The valid range of 
+	shorts is -32768 to 32767. 
+
+	The functionality of -Ol has been turned off.
+	The user can still specify the option via -Ol or -Ox but it does
+	not get passed to the compiler passes. 
+	
+
+INSTALLATION
+
+To begin the installation of SLS lng353a, take the following steps:
+
+1.  Please make sure you are installing this SLS on Version 4.0 of the SCO 
+    UNIX Operating System or SCO Open Desktop Release 2.0.  Version 4.0 of 
+    the SCO UNIX Development System must be installed prior to installing 
+    SLS lng353a.
+
+2.  Log in as root.
+
+3.  Next, insert Volume 1 in the floppy drive and enter the command:
+
+	custom
+
+    NOTE: Refer to the Release and Installation Notes and custom(C) in the SCO
+	  UNIX System V/386 manuals for more information on how to use custom.
+
+5.  To select the following, highlight with the cursor keys and press
+    <Return>:
+
+	Install -> A New Product -> Entire Product
+
+6.  Follow the normal custom installation procedure.  The SLS lng353a will
+    first validate the release of the operating system.  It will then check 
+    to insure that the correct version of the development system has been 
+    installed. 
+
+    SLS lng353a will then back up the files that it will replace and put the
+    files in a special directory, if ever SLS lng353a needs to be removed.
+
+The following files are updated by SLS lng353a.
+
+	/bin/cc
+	/lib/386/c_1p
+	/lib/386/p2_386
+	/lib/386/p3_386m
+	/lib/386/c1.err
+	/usr/bin/cvtomf
+	/usr/bin/m4
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services

@@ -1,0 +1,11 @@
+
+	SHOGUN		CLIENT 			CLIENT 
+	(25-PIN Female)	(9-PIN Female)		(25-PIN Female)
+
+	2		2			3
+	3		3			2
+	4		8			5
+	5		7			4
+	7		5			7
+	8		4			20
+	20		1			8

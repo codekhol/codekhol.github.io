@@ -1,0 +1,1886 @@
+ SCO(r) Networking Supplement for SCO OpenServer(tm) Release 5.0
+
+ 
+ (c) 1983-1995 The Santa Cruz Operation, Inc.  All rights reserved.
+
+ (c) 1987-1989 Legent Corporation;  (c)	 1994  Sun  Microsystems,  Inc.;  All
+ rights	reserved.
+
+ No part of this publication may be  reproduced,  transmitted,	stored	in  a
+ retrieval system, nor translated into any human or computer language, in any
+ form or by any	means, electronic, mechanical, magnetic,  optical,  chemical,
+ manual,  or otherwise,	without	the prior written permission of	the copyright
+ owner,	The Santa Cruz Operation,  Inc.,  400  Encinal	Street,	 Santa	Cruz,
+ California,  95060,  USA.   Copyright infringement is a serious matter	under
+ the United States and foreign Copyright Laws.
+
+ Information in	this document is subject to change without  notice  and	 does
+ not represent a commitment on the part	of The Santa Cruz Operation, Inc.
+
+ SCO, the SCO logo, The	Santa Cruz Operation,  Open  Desktop,  ODT,  and  SCO
+ OpenServer,  are  trademarks  or  registered  trademarks  of  The Santa Cruz
+ Operation, Inc. in the	USA  and  other	 countries.   UNIX  is	a  registered
+ trademark  in	the  USA  and  other  countries, licensed exclusively through
+ X/Open	Company	Limited. All other brand and product  names  are  or  may  be
+ trademarks  of,  and  are  used  to  identify products	or services of,	their
+ respective owners.
+
+
+
+ Document Version: 1.0.0
+ 1 December 1995
+
+ The SCO software that accompanies this	publication  is	 commercial  computer
+ software  and,	 together  with	 any related documentation, is subject to the
+ restrictions on US Government use as set forth	below. If this procurement is
+ for a DOD agency, the following DFAR Restricted Rights	Legend applies:
+
+ RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the Government
+ is subject to restrictions as set forth in subparagraph (c)(1)(ii) of Rights
+ in Technical Data  and	 Computer  Software  Clause  at	 DFARS	252.227-7013.
+ Contractor/Manufacturer  is  The  Santa  Cruz	Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA	 95060.
+
+ If this procurement is	for a civilian government agency, this FAR Restricted
+ Rights	Legend applies:
+
+ RESTRICTED  RIGHTS  LEGEND:   This  computer  software	 is  submitted	 with
+ restricted  rights  under Government Contract No. _________ (and Subcontract
+ No.  ________,	 if  appropriate).   It	 may  not  be  used,  reproduced,  or
+ disclosed by the Government except as provided	in paragraph (g)(3)(i) of FAR
+ Clause	52.227-14 alt III or as	otherwise expressly stated in  the  contract.
+ Contractor/Manufacturer  is  The  Santa  Cruz	Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA	 95060.
+
+
+ The copyrighted software that accompanies this	publication  is	 licensed  to
+ the  End  User	 only  for use in strict accordance with the End User License
+ Agreement, which should be read  carefully  before  commencing	 use  of  the
+ software.  This  SCO  software	 includes software that	is protected by	these
+ copyrights:
+ (c)  1983-1995	 The  Santa  Cruz  Operation,  Inc.;   (c)   1989-1994	 Acer
+ Incorporated; (c) 1989-1994 Acer America Corporation; (c) 1990-1994 Adaptec,
+ Inc.; (c) 1993	 Advanced  Micro  Devices,  Inc.;  (c)	1990  Altos  Computer
+ Systems;  (c)	1992-1994  American  Power Conversion, Inc.; (c) 1988 Archive
+ Corporation; (c) 1990	ATI  Technologies,  Inc.;  (c)	1976-1992  AT&T;  (c)
+ 1992-1994  AT&T  Global  Information  Solutions  Company;  (c)	1993 Berkeley
+ Network Software Consortium; (c) 1985-1986 Bigelow & Holmes;  (c)  1988-1991
+ Carnegie  Mellon  University;	(c) 1989-1990 Cipher Data Products, Inc.; (c)
+ 1985-1992   Compaq   Computer	 Corporation;	(c)   1986-1987	   Convergent
+ Technologies,	 Inc.;	 (c)  1990-1993	 Cornell  University;  (c)  1985-1994
+ Corollary, Inc.; (c) 1988-1993	Digital	Equipment Corporation; (c)  1990-1994
+ Distributed  Processing  Technology;  (c)  1991 D.L.S.	 Associates; (c) 1990
+ Free Software Foundation, Inc.; (c) 1989-1991 Future Domain Corporation; (c)
+ 1994 Gradient Technologies, Inc.; (c) 1991 Hewlett-Packard Company; (c) 1994
+ IBM Corporation; (c) 1990-1993	Intel Corporation; (c)	1989  Irwin  Magnetic
+ Systems, Inc.;	(c) 1988-1994 IXI Limited; (c) 1988-1991 JSB Computer Systems
+ Ltd.; (c) 1989-1994 Dirk Koeppen EDV-Beratungs-GmbH;  (c)  1987-1994  Legent
+ Corporation;  (c)  1988-1994  Locus  Computing	 Corporation;  (c)  1989-1991
+ Massachusetts Institute of Technology;	(c) 1985-1992  Metagraphics  Software
+ Corporation;  (c)  1980-1994  Microsoft  Corporation;	(c)  1984-1989	Mouse
+ Systems Corporation; (c) 1989 Multi-Tech Systems, Inc.;  (c)  1991  National
+ Semiconductor	Corporation;  (c)  1990	NEC Technologies, Inc.;	(c) 1989-1992
+ Novell, Inc.; (c) 1989	Ing. C.	  Olivetti  &  C.  SpA;	 (c)  1989-1992	 Open
+ Software  Foundation,	Inc.; (c) 1993-1994 Programmed Logic Corporation; (c)
+ 1989 Racal InterLan, Inc.;  (c)  1990-1992  RSA  Data	Security,  Inc.;  (c)
+ 1987-1994 Secureware, Inc.; (c) 1990 Siemens Nixdorf Informationssysteme AG;
+ (c) 1991-1992 Silicon Graphics, Inc.; (c) 1987-1991 SMNP Research, Inc.; (c)
+ 1987-1994 Standard Microsystems Corporation; (c) 1984-1994 Sun	Microsystems,
+ Inc.; (c) 1987	Tandy Corporation; (c) 1992-1994 3COM Corporation;  (c)	 1987
+ United	 States	 Army; (c) 1979-1993 Regents of	the University of California;
+ (c) 1993 Board	of Trustees of the  University	of  Illinois;  (c)  1989-1991
+ University  of	 Maryland; (c) 1986 University of Toronto; (c) 1976-1990 UNIX
+ System	Laboratories, Inc.; (c)	1988 Wyse Technology;  (c)  1992-1993  Xware;
+ (c)  1983-1992	 Eric P. Allman; (c) 1987-1989 Jeffery D. Case and Kenneth W.
+ Key; (c) 1985 Andrew Cherenson; (c) 1989 Mark H.  Colburn; (c)	1993  Michael
+ A.  Cooper; (c) 1982 Pavel Curtis; (c)	1987 Owen DeLong; (c) 1989-1993	Frank
+ Kardel; (c) 1993 Carlos Leandro  and  Rui  Salgueiro;	(c)  1986-1988	Larry
+ McVoy;	 (c)  1992  David L. Mills; (c)	1992 Ranier Pruy; (c) 1986-1988	Larry
+ Wall; (c) 1992	Q. Frank Xia.  All rights reserved.  SCO NFS was developed by
+ Legent	 Corporation  based on Lachman System V	NFS. SCO TCP/IP	was developed
+ by Legent Corporation and is derived from Lachman System V  STREAMS  TCP,  a
+ joint	development  of	 Lachman  Associates,  Inc.   (predecessor  of Legent
+ Corporation) and Convergent Technologies, Inc.
+
+
+ Contents
+
+ About this book							    1
+      Typographical conventions	........................................... 1
+      How can we improve this book? ....................................... 2
+
+ Networking Supplement Release 1.0
+ Installation								    3
+      Packages modified	by the Networking Supplement ...................... 4
+      Loading the patch	onto an	installation server ....................... 4
+      Applying the patch to an installation server ........................ 5
+      Enabling patches on a client after network installation ............. 6
+      Rolling back a patch ................................................ 6
+
+ Networking Supplement Release 1.0
+ Features and limitations						    7
+      New features ........................................................ 7
+	 Secure	TCP (``Kerberized'') utilities ............................ 8
+	 NetBIOS routing ................................................. 10
+	 Configurable time period for NetBIOS keepalive	messages ......... 10
+	 Protecting against IP address spoofing	attacks	.................. 11
+	 Access	to slattach by users other than	root ..................... 11
+	 PPP asynchronous serial driver	support	.......................... 12
+      Software limitations corrected in	this supplement	.................. 14
+	 Changes to executables, libraries and header files .............. 24
+      Software limitations not corrected in this supplement .............. 27
+      Corrections and changes to manual	pages ............................ 28
+      Errata in	the networking documentation ............................. 30
+	 Common	error messages ........................................... 35
+
+
+ About this book
+
+    This document describes the	SCO(r) Networking Supplement Release 1.0 for
+    SCO	OpenServer(TM) Release 5.  This	supplement contains the	SCO Secure
+    TCP	(``Kerberized'') utilities, NetBIOS routing, protection	against	IP
+    address spoofing attacks, and support for third-party PPP asynchronous
+    serial drivers.  It	also contains a	number of fixes	for existing
+    limitations	in the networking software for SCO TCP/IP, SCO NFS(r), and
+    LAN	Manager	Client.
+
+    Refer to ``Features	and limitations'' for detailed information about this
+    supplement.
+
+
+ Typographical conventions
+
+    This publication presents commands,	filenames, keystrokes, and other
+    special elements in	these typefaces:
+
+    Example:	 Used for:
+
+    lp or lp(C)	 commands, device drivers, programs, and utilities (names,
+		 icons,	or windows);  the letter in parentheses	indicates the
+		 reference manual section in which the command,	driver,
+		 program, or utility is	documented
+
+    /new/client.list
+		 files,	directories, and desktops (names, icons, or windows)
+
+    root	 system, network, or user names
+
+    filename	 placeholders  (replace	with appropriate name or value)
+
+    <Esc>	 keyboard keys
+
+    Exit program?
+		 system	output such as prompts and messages
+
+    yes	or yes	 user input
+
+    ``Description''
+		 field names or	column headings	 (on screen or in database)
+
+    Cancel	 button	names
+
+    Edit	 menu names
+
+    Copy	 menu items
+
+    File != Find != Text
+		 sequences of menus and	menu items
+
+    open or open(S)
+		 library routines, system calls, kernel	functions, C
+		 keywords;  the	letter in parentheses indicates	the reference
+		 manual	section	in which the file is documented
+
+    $HOME	 environment or	shell variables
+
+    SIGHUP	 named constants or signals
+
+    buf		 C program structures
+
+    b_b.errno	 C program structure members and variables
+
+
+ How can we improve this book?
+
+    What did you find particularly helpful in this book?  Are there mistakes
+    in this book? Could	it be organized	more usefully? Did we leave out
+    information	you need or include unnecessary	material?  If so, please tell
+    us.
+
+    To help us implement your suggestions, include relevant details, such as
+    book title,	section	name, page number, and system component.  We would
+    appreciate information on how to contact you in case we need additional
+    explanation.
+
+    To contact us, use the card	at the back of the SCO OpenServer Handbook or
+    write to us	at:
+
+       Technical Publications
+       Attn:  CFT
+       The Santa Cruz Operation, Inc.
+       PO Box 1900
+       Santa Cruz, California  95061-9969
+       USA
+
+    or e-mail us at:
+
+       techpubs@sco.com	or ... uunet!sco!techpubs
+
+    Thank you.
+
+
+ Networking Supplement Release 1.0
+ Installation
+
+    To install the Networking Supplement, you must have	10MB of	disk space
+    free in the	root filesystem.
+
+    You	must have installed the	SCO OpenServer Release 5 Release Supplement
+    (version 5.0.0d) before installing the Networking Supplement.  The
+    installation process will check for	the presence of	the Release
+    Supplement and will	refuse to install this supplement if it	is not
+    present.
+
+    The	Networking Supplement includes the benefits of the following patches:
+    OSS407A (sls407.tcp200.0.1.a), and OSS410A (sls410.nfs200.1.1.a).  The
+    installation process checks	for the	presence of these patches and will
+    refuse to install this supplement if either	patch is present.  If either
+    of these patches is	currently installed, roll it back before installing
+    this supplement.  Do not re-apply either of	these patches after
+    installing this supplement.
+
+    See	``Packages modified by the Networking Supplement'' for details of
+    other packages that	the Networking Supplement modifies.
+
+    _________________________________________________________________________
+       WARNING	We recommend that you back up your system's root
+       filesystem before applying or rolling back a patch.  If the system
+       crashes (for example, due to a power failure) while you are
+       applying	or rolling back	a patch, this can leave	the root
+       filesystem in an	inconsistent state.
+    _________________________________________________________________________
+
+    To apply the Networking Supplement:
+
+    1.	Log in as root and run the Software Manager.  (See ``The Software
+	Manager	interface'' in the SCO OpenServer Handbook for instructions.)
+
+    2.	Select Software	-> Patch Management -> Apply Patch
+
+    3.	Select the installation	host system and	device from which you wish to
+	install	the Networking Supplement patch.  The patch can	be applied
+	from floppy disk or from an installation server	onto which you have
+	previously loaded the patch (see ``Loading the patch onto an
+	installation server'').	 Click on Continue.
+
+    4.	If you are installing from floppy disk,	insert Networking Supplement
+	Disk 1 into your primary floppy	disk drive when	you are	prompted to
+	select your installation media.	 Press <Enter>,	and follow the
+	instructions on	the screen.
+
+    5.	When the kernel	has been relinked, exit	the Software Manager.
+
+    6.	Shut down and reboot the system.
+
+
+ Packages modified by the Networking Supplement
+
+    The	Networking Supplement Release 1.0 contains modifications to the
+    following software packages:
+
+    +  SCO UNIX	System V Operating System
+
+    +  SCO TCP/IP
+
+    +  SCO TCP/IP Development System
+
+    +  SCO NFS
+
+    +  LAN Manager Client
+
+    You	must roll back the Networking Supplement patch before installing or
+    re-installing any of the software packages in the list above, then re-
+    apply the patch after installing the package.
+
+
+ Loading the patch onto	an installation	server
+
+    To load (but not apply) the	Networking Supplement onto an installation
+    server:
+
+    1.	Log in as root on the server and run the Software Manager.  (See
+	``The Software Manager interface'' in the SCO OpenServer Handbook for
+	instructions.)
+
+    2.	Select Software	-> Patch Management -> Load Patch
+
+    3.	Select the host	system and device from which you wish to install the
+	Networking Supplement patch.  Click on Continue.
+
+    4.	When you are prompted to select	your installation media, insert
+	Networking Supplement Disk 1 into your primary floppy disk drive.
+	Press <Enter>, and follow the instructions on the screen.
+
+    5.	When the patch has been	loaded,	exit the Software Manager.
+
+    The	patch is now available for remote clients to apply.
+
+
+ Applying the patch to an installation server
+
+    To apply the Networking Supplement to an installation server:
+
+    1.	Log in as root on the server and run the Software Manager.  (See
+	``The Software Manager interface'' in the SCO OpenServer Handbook for
+	instructions.)
+
+    2.	Select Software	-> Patch Management -> Apply Patch
+
+    3.	Select the server as the installation host system from which you wish
+	to apply the Networking	Supplement patch.  The patch can be applied
+	from floppy disk or from the media image of the	patch after
+	previously loading it.	Click on Continue.
+
+    4.	If you are installing from floppy disk,	insert Networking Supplement
+	Disk 1 into your primary floppy	disk drive.  Press <Enter>, and
+	follow the instructions	on the screen.
+
+    5.	When the kernel	has been relinked, exit	the Software Manager.
+
+    6.	Shut down and reboot the system	into multiuser mode.
+
+    7.	If you intend to perform a new installation of the operating system
+	on one or more clients,	run the	following commands on the server:
+
+	netisl server off
+	netisl server on
+
+
+    8.	Use the	command	netisl client add to define the	new clients to the
+	network	installation software, and, if necessary, to create BOOTP
+	boot floppies for the clients.	See Chapter  17, ``Installing and
+	managing software over the network'' in	the Networking Guide for full
+	details.
+
+
+ Enabling patches on a client after network installation
+
+    _________________________________________________________________________
+       NOTE  If	you perform the	initial	system installation from a network
+       installation server to which patches have previously been applied,
+       the installation	will also copy the patches to the client.  To
+       enable the patches, run this command on the client immediately
+       after installation:
+
+       /usr/lib/patch/enablepatch
+
+    _________________________________________________________________________
+
+
+
+ Rolling back a	patch
+
+    To remove a	patch after it has been	applied	to a system:
+
+    1.	Log in as root and run the Software Manager.  (See ``The Software
+	Manager	interface'' in the SCO OpenServer Handbook for instructions.)
+
+    2.	Select Software	-> Patch Management -> Rollback	Patch
+
+    3.	Select the software package and	then the patch that you	wish to
+	remove from it.	 Click on Rollback to confirm your choice.  You	must
+	repeat this for	each software package that the patch has changed.
+
+    4.	When the rollback procedure has	completed, exit	the Software Manager.
+
+    5.	If the kernel was relinked during removal of the patch,	shut down and
+	reboot the system.
+
+    _________________________________________________________________________
+       NOTE  If	you see	a verification error for the file LINK.fl when
+       rolling back this supplement, select Continue to	ignore the error
+       and continue rolling back the patch.  You can also disregard this
+       error if	you see	it while re-applying this supplement.
+    _________________________________________________________________________
+
+
+ Networking Supplement Release 1.0
+ Features and limitations
+
+    The	new features and limitations of	the Networking Supplement are
+    described in the following sections:
+
+    +  ``New features''
+
+    +  ``Software limitations corrected	in this	supplement''
+
+    +  ``Software limitations not corrected in this supplement''
+
+    +  ``Corrections and changes to manual pages''
+
+    +  ``Errata	in the networking documentation''
+
+    The	additional section, ``Common error messages'', lists the probable
+    causes of some common networking error messages.
+
+
+ New features
+
+    The	Networking Supplement contains the following new features:
+
+    +  ``Secure	TCP (``Kerberized'') utilities''
+
+    +  ``NetBIOS routing''
+
+    +  ``Configurable time period for NetBIOS keepalive	messages''
+
+    +  ``Protecting against IP address spoofing	attacks''
+
+    +  ``Access	to slattach by users other than	root''
+
+    +  ``PPP asynchronous serial driver	support''
+
+ Secure	TCP (``Kerberized'') utilities
+
+    This supplement includes Secure TCP	versions (providing Kerberos Version
+    5 authentication) of the following client utilities	and server daemons:
+
+    _________________________________________________________________________
+    Client utilities			 Server	daemon
+    _________________________________________________________________________
+    ftp(TC)				 ftpd(ADMN)
+    rcmd(TC) and rcp(TC)		 rshd(ADMN)
+    rlogin(TC)				 rlogind(ADMN)
+    telnet(TC)				 telnetd(ADMN)
+
+    You	can use	these utilities	and daemons in a Kerberos Version 5 realm or
+    DCE	cell to	provide	authenticated TCP/IP services as described below.
+
+    _________________________________________________________________________
+       NOTE  You cannot	use the	Kerberos authentication	features of these
+       utilities unless	you have a Kerberos Version 5 Security Server such
+       as the SCO Security Services (supplied with the SCO Distributed
+       Services	Release	1.0.3).	 The utilities will function without
+       providing Kerberos authentication if you	do not have such a server.
+    _________________________________________________________________________
+
+
+    Configuring	the Secure TCP utilities
+
+    To use these utilities with	Kerberos Version 5 authentication, you must
+    first define the users (interactive	principals) and	host systems (machine
+    principals)	on the Security	Server(s) for the Kerberos realm or DCE	cell
+    where they are to operate:
+
+    1.	If you are using SCO Security Services,	the cell administrator
+	(authentication	principal) must	use secadmin(ADMD) or rgy_edit(8sec)
+	to add a registry object for each interactive and machine principal
+	to /.:/sec/principal in	the local cell.	 Machine principals must be
+	added to the host subhierarchy.	 For example, the machine principal
+	corresponding to the host foo in the domain bar.com would be:
+
+	/.:/sec/principal/host/foo.bar.com
+
+	Interactive principals may be added directly to	the /.:/sec/principal
+	hierarchy.  Create passwords in	the account properties of all new
+	principals.
+
+    2.	On each	host where Secure TCP utilities	or daemons are to be run, log
+	in as root and run the auth.config(ADMN) command.
+
+    3.	Use auth.config	to define the DCE cell (or Kerberos realm) and fully
+	qualified domain name of the Security Server that will be used to
+	authenticate service requests. When asked for a	host password for
+	Secure TCP services, you can select a machine-generated	password as
+	you do not need	to remember this password.
+
+    4.	Use auth.config	to choose the level of authentication required for
+	access to the ftpd, rshd, rlogind and telnetd daemons.	You can
+	select to make authentication optional if some users require
+	traditional unauthenticated access.
+
+    5.	If users are required to use authenticated access, the access control
+	file, .k5login (see k5login(SFF)), must	exist in their home
+	directories on the machine where the server daemon is running. This
+	file contains the names	and cells of principals	that can access	an
+	account. For example, the entry	``chuck@local_cell'' specifies that
+	the principal chuck in the cell	(or realm) local_cell has access.
+	Only the owner must have write permission on .k5login, and the owner
+	must either be root or the user	associated with	the home directory.
+
+    Obtaining Kerberos session credentials
+
+    Before a user can use the Secure TCP utilities, they must obtain Kerberos
+    session credentials. Because the current versions of login(M) and
+    scologin(XC) do not	support	Kerberos authenticated login, there are	two
+    alternative	methods	by which a user	may obtain these credentials.
+
+    Obtaining session credentials using	kinit
+
+    Log	in locally using unauthenticated login and then	obtain session
+    credentials	using kinit(TC).  The kinit command will authenticate the
+    user's session with	the Security Server and	obtain a Ticket	Granting
+    Ticket for the user's session provided the user can	supply the correct
+    password for their interactive principal name. To monitor their
+    credentials, the user must run the ksession(TC) command which will warn
+    when the credentials are about to expire. The user can also	use the
+    klist(TC) command to view their credentials	and their expiry date.
+
+    _________________________________________________________________________
+       WARNING	If a user performs an authenticated connection to another
+       host (gamma) from a host	(beta) to which	they already connected
+       remotely	from a machine (alpha),	their password will be transmitted
+       in clear	text across the	network	from alpha to beta.
+    _________________________________________________________________________
+
+    Obtaining session credentials using	ktadd and kinit
+
+    To avoid the possibility that passwords can	be transmitted in clear	text,
+    root can use the ktadd(ADMN) command to create user	keys on	the various
+    machines that different users are allowed to access. Alternatively a user
+    can	use ktadd to create a user key on each of the machines that they need
+    to use.
+
+    _________________________________________________________________________
+       WARNING	You should only	invoke ktadd(ADMN) on the system to which
+       you are directly	logged in. This	is to prevent passwords	being
+       passed in clear text across the network.
+    _________________________________________________________________________
+
+    For	example, to obtain a user key for the interactive principal chuck
+    with password ``clydenw'' for the cell local_cell, enter the following
+    commands:
+
+       ktadd -p	chuck@local_cell -pw clydenw -f	~chuck/.v5srvtab
+       chmod 600 ~chuck/.v5srvtab
+
+    This creates a private key table .v5srvtab for chuck in their home
+    directory and changes its permissions so only chuck	and root can read
+    from or write to this file.	 (Note that this example assumes that the
+    shell being	used is	either ksh or csh.)
+
+    To use their private key table when	obtaining session credentials, the
+    user calls kinit from their	.profile or .login file. This example also
+    shows ksession being run to	monitor	chuck's	credentials:
+
+       kinit -k	-t ~chuck/.v5srvtab
+       ksession
+
+    For	more information about using the SCO Security Services,	see the	SCO
+    Security Services Release and Installation Notes. For more information
+    about using	the SCO	DCE Executive, see the SCO DCE Executive Release and
+    Installation Notes.
+
+ NetBIOS routing
+
+    This supplement allows NetBIOS packets to be routed	across subnet
+    boundaries.	 Previously, LAN Manager Client, or any	other software that
+    used NetBIOS as its	transport, was unable to communicate with hosts	on
+    other subnets.  The	new dlnbhosts utility and its configuration file,
+    /etc/lmhosts, allow	client systems to define the names and addresses of
+    servers on other subnets.
+    To implement NetBIOS routing:
+
+    1.	Create the file	/etc/lmhosts (see the new lmhosts(SFF) manual page).
+	This contains the IP addresses and hostnames for the hosts on other
+	subnets	with which your	NetBIOS	applications must communicate.
+
+    2.	Run the	dlnbhosts (see the new dlnbhosts(ADMN) manual page) command
+	to add the /etc/lmhosts	entries	to the global NetBIOS host table.
+
+    After you have performed these configuration steps,	the netbios script
+    (see netbios(ADMN))	will automatically run dlnbhosts provided the
+    /etc/lmhosts file exists.
+
+ Configurable time period for NetBIOS keepalive	messages
+
+    You	can now	configure the amount of	time that keepalive messages are
+    enabled for	NetBIOS	connections. The new variable, NB_KPALIVE, specifies
+    the	time in	seconds	that keepalive messages	will be	enabled. If
+    NB_KPALIVE is set to -1, no	keepalive messages will	be used.  If
+    NB_KPALIVE is set to zero, keepalive messages will be enabled for the
+    default idle time.
+
+    _________________________________________________________________________
+       NOTE  You cannot	use netconfig(ADM) to configure	NB_KPALIVE.  Log
+       in as root, edit	the file /etc/default/nbconf to	change the value
+       of NB_KPALIVE, and then stop and	restart	netbios:
+
+       netbios stop
+       netbios start
+
+    _________________________________________________________________________
+
+
+ Protecting against IP address spoofing	attacks
+
+    An IP spoofing attack is a method of attacking TCP/IP systems. The
+    attacking machine (alpha) pretends to be an	authentic machine (beta) by
+    setting beta's IP address as the source IP address in the header of	IP
+    packets that it transmits. In this way, alpha can initiate a TCP
+    connection with a third machine (gamma), posing as beta. gamma then
+    replies to beta but	not to alpha. To send the correct acknowledgement to
+    gamma, alpha must either examine directly (``sniff'') or correctly guess
+    the	value of the initial send sequence number that gamma placed in its
+    reply's TCP	header.	 If it guesses correctly, alpha	continues the attack
+    by sending more messages to	compromise gamma's security.
+
+    To protect against this type of attack, a random element has been
+    introduced into how	TCP chooses the	initial	send sequence number and its
+    increment.	You can	use inconfig(ADMN) to seed the random number sequence
+    by setting the value of the	new TCP/IP parameter, tcp_secret. The value
+    of tcp_secret can be set to	any integer from 0 through 2147483647.
+
+    Another new	parameter, tcp_seqbits,	selects	the number of bits of
+    tcp_secret that are	used to	seed the sequence number increment value.
+    The	default	value of tcp_seqbits is	21; its	minimum	and maximum values
+    are	16 and 26. The default value represents	a compromise between security
+    and	the uniqueness of the sequence number.	If the value of	tcp_seqbits
+    is small, this increases the possibility that an attacker can guess	the
+    random number.  A large value for tcp_seqbits decreases the	time before a
+    given sequence number occurs again.
+
+    _________________________________________________________________________
+       WARNING	For protection against an IP spoofing attack to	be secure,
+       the permissions on the file /dev/inet/cfg must not allow	write
+       access to unauthorized users.
+    _________________________________________________________________________
+
+    See	Appendix C, ``Configuring TCP/IP tunable parameters'' in the
+    Performance	Guide for more information.
+
+ Access	to slattach by users other than	root
+
+    slattach(ADMN) allows you to specify the local and remote IP addresses on
+    the	command	line and to turn on proxy-ARP.	As a unscrupulous user could
+    use	these features to intercept network traffic, ordinary users are
+    prevented from using this command by the permissions and ownership set on
+    slattach.  Only root and users in the group	network	(with group ID 10)
+    can	run slattach.  In this way, root can set up accounts for dial-in
+    access by SLIP provided that they are in the network group.	 For
+    instructions on how	to add a user to a group, see ``Changing a user's
+    group membership'' in the System Administration Guide.
+
+    _________________________________________________________________________
+       NOTE  You cannot	use the	scoadmin Account Manager to add	a dial-in
+       SLIP user to the	network	group.	You must edit /etc/group instead.
+       For example, the	following entry	from /etc/group	defines	the users
+       network and nslip as members of the network group:
+
+       network::10:network,nslip
+
+    _________________________________________________________________________
+
+    _________________________________________________________________________
+       NOTE  Because slattach is a setuid program, a user must have the
+       execsuid	kernel privilege to be able to run it.	If the system is
+       operating with a	High or	Improved security profile, users do not
+       have the	execsuid kernel	privilege by default.  root can	assign
+       this privilege using the	scoadmin(ADM) Account Manager.	For
+       instructions on how to change a user's kernel privileges, see
+       ``Changing system privileges'' in the System Administration Guide.
+    _________________________________________________________________________
+
+
+ PPP asynchronous serial driver	support
+
+    PPP	now supports the use of	drivers	for smart third-party serial port
+    devices that can perform the packetization and framing of data required
+    by PPP.  To	implement this feature on an existing system:
+
+    1.	Log in as root.
+
+    2.	Create an /etc/pppstack	file (see the new pppstack(SFF)	manual page)
+	that defines the third-party vendor's driver and associated STREAMS
+	module(s).
+
+    3.	Edit the /etc/ppphosts file (see ppphosts(SFF))	and add	the
+	bypassframing keyword to the entry for the interfaces with which you
+	want to	use on-card framing. Note that you cannot use the Network
+	Configuration Manager to do this.  The following example selects on-
+	card framing for a dynamic outgoing entry:
+
+	ppp-tokyo:ppp-nile uucp=ppp-tokyo retry=3 mask=255.255.0.0 \
+	debug=1	idle=3 noipaddr	bypassframing
+
+	Alternatively, to select on-card framing for all PPP interfaces, edit
+	the /etc/tcp file and add the -b option	to the invocation of the PPP
+	daemon:
+
+	if [ -x	/etc/pppd -a -f	/etc/ppphosts ]	;then
+	    /etc/pppd -b; echo "pppd -b\c"
+	fi
+
+	When the PPP daemon (see pppd(ADMN)) configures	a PPP interface, it
+	will configure the PPP stack to	use the	third-party driver and
+	modules	defined	in /etc/pppstack.  If a	serial device does not have
+	an entry in /etc/pppstack, the PPP daemon configures in-kernel
+	framing	using the SCO PPP stack	instead.
+
+    4.	Send a SIGHUP signal to	the PPP	daemon to make it reread its
+	configuration files:
+
+	kill -HUP `cat /etc/pppd.pid`
+
+
+    Figure 1 shows how the SCO and third-party PPP stacks are configured
+    below the PPP driver.
+    *************************************************************************
+
+			 Postscript picture appears here
+
+    *************************************************************************
+    Figure 1  SCO and third-party PPP stacks
+
+
+
+ Software limitations corrected	in this	supplement
+
+    This supplement corrects the following software limitations	in SCO
+    TCP/IP, SCO	NFS, and LAN Manager Client:
+
+    ARP	-- requests being generated too	often
+
+    This supplement corrects a defect in ARP which was causing it to generate
+    an ARP request in response to an ARP request.
+
+    automount -- not working for deep levels of	directories
+
+    The	NFS automounter	prevented the working directory	from being changed on
+    an automounted filesystem if the pathname of the current directory was
+    longer than	69 characters. The limit on the	length of the pathname has
+    been increased to 2048 characters.
+
+    cancel -- not working correctly with remote	printers
+
+    cancel(C) did not exit with	a status of 0 on successful completion when
+    canceling requests on remote printers.  This supplement corrects this
+    behavior.
+
+    dig	-- command not working
+
+    The	dig(ADMN) (Domain Information Groper) command did not work because
+    debugging was disabled in the resolver library in libsocket.  This
+    supplement corrects	this behavior by turning on debugging in the resolver
+    library.
+
+    ftp	-- subcommand ``mget'' not working
+
+    The	ftp(TC)	subcommand mget	did not	work when used with the	argument
+    ``.*''.  This supplement corrects this behavior.
+
+    ftpd -- echoing password to	the screen
+
+    The	FTP daemon (see	ftpd(ADMN)) echoed the password	to the screen and
+    also wrote it to the system	log if the -d debugging	option was specified.
+    This supplement corrects this behavior.
+
+    getsockopt -- swapped functionality
+
+    The	functionality of the SO_REUSEADDR and SO_REUSEPORT options to
+    getsockopt(SSC) were swapped.  For example,	if SO_REUSEADDR	was used to
+    bind a socket to a wildcard	address	and a fixed port, attempting to
+    repeat this	while the first	socket was still open would succeed. It
+    should fail	and set	EADDRINUSE (address already in use) in errno.  This
+    supplement implements the correct behavior in libsocket.
+
+    getsockopt -- causing the system to	hang
+
+    The	SO_SNDBUF option to getsockopt(SSC) could cause	the system to hang if
+    the	buffer size were set to	0.  This supplement corrects this behavior by
+    not	allowing TCP to	change the buffer size if SO_SNDBUF is used to set it
+    to 0.
+
+    ifconfig --	causing	remote machine on SLIP link to hang
+
+    If ifconfig(ADMN) was used to bring	down a SLIP link between two
+    multiprocessor machines, this could	cause the remote machine to hang.
+    This supplement corrects this problem.
+
+    ifconfig --	not showing aliases
+
+    ifconfig(ADMN) did not display interface aliases unless the	-a option was
+    specified. It also would not display interface aliases at all for certain
+    network interface cards.  This supplement corrects this problem.
+
+    IKNT driver	-- no support for extended minor numbers
+
+    The	rlogin and telnet utilities were unusable if the first 256 pseudo
+    terminals in the system were already in use.  In this supplement, the
+    IKNT (in-kernel network terminal) driver uses an extended minor numbering
+    scheme so that the number of rlogin	and telnet sessions is not limited to
+    256.  Use the scoadmin Hardware/Kernel Manager or mkdev ptty to increase
+    the	number of pseudo terminals defined for a system.
+
+    inetd -- limitation	in backlog queue length
+
+    By default,	inetd(ADMN) listens on a socket	with a backlog queue length
+    of 10. The queue length can	now be changed using the -l option to inetd.
+    The	queue length can be changed temporarily	by killing inetd and
+    restarting it:
+
+       kill -KILL `cat /etc/inetd.pid`
+       /usr/bin/sd /etc/inetd -l backup_queue_length
+
+    Edit the line that starts inetd in /etc/tcp	to make	the change permanent.
+
+    Increasing the queue length	will benefit the performance of	applications
+    which are spawned by inetd on busy servers.
+
+    Internet routing discovery -- defects in irdd
+
+    This supplement corrects the following defects in the internet routing
+    discovery daemon (see the irdd(ADMN) manual	page for more information ):
+
+    +  irdd running on a client	would fail to reinstall	the default route if
+       irdd on the router was stopped and restarted
+
+    +  irdd could not configure	static routes that were	defined	in
+       /etc/irdd.conf
+
+    IP -- defect in connecting to addresses containing ``255''
+
+    A system could not connect to IP addresses that contained ``255'' in the
+    network portion of their address.  This supplement corrects	this
+    behavior.
+
+    IP -- defect in connecting to addresses on a network boundary
+
+    If a logical subnet	mask was used, systems could not connect to a class C
+    IP address if its fourth octet corresponded	to a local network or a
+    broadcast address.	Utilities such as ftp and telnet reported Cannot
+    assign requested address when attempting to	connect	to such	addresses.
+    This defect	also allowed the ping command to detect	nonexistent hosts.
+    This supplement corrects this behavior.  IP	now checks the network number
+    of an address when attempting to verify if it belongs to an	interface's
+    subnet.
+
+    IP -- defect when interfaces in different address classes
+
+    IP addresses ending	in 0 did not work if a system had both class B and
+    class C network interfaces.	This caused a class B host address (such as
+    128.1.193.0) to be treated as a class C broadcast address. This
+    supplement corrects	this behavior by checking if an	IP address is a
+    broadcast address only if the network part of the address matches.
+
+    LMC	-- not setting attributes when creating	directories
+
+    LAN	Manager	Client cannot set the attributes of a directory	that it
+    creates on a Microsoft(r) Windows(TM) for Workgroups server.  This
+    limitation was not being reported to the user.  LMC	now prints the
+    following warning message on the console:
+
+       WARNING:	smb_mkdir: setatr failed - ignoring failure code
+
+
+    LMC	-- causing server to hang when being shut down
+
+    An LMC server could	hang when being	shut down because it was not
+    receiving the expected response from clients to a FIN request.  This
+    supplement corrects	this behavior by implementing the NB_KPALIVE variable
+    for	NetBIOS	as described in	``Configurable time period for NetBIOS
+    keepalive messages''.
+
+    LMC	-- could not mount password-protected directory
+
+    A password-protected shared	directory under	Microsoft Windows for
+    Workgroups could not be mounted even if the	password were specified	using
+    the	mount option modifier password=plaintext.  This	supplement allows you
+    to mount password-protected	directories.
+
+    LMC	-- could not print to a	shared printer
+
+    LMC	could not print	to a shared printer configured under Microsoft
+    Windows for	Workgroups. This supplement changes the	mechanism for
+    printing to	remote printers	on share-level and user-level servers.	A new
+    driver, lmcp, implements remote printing.  Clients no longer need to
+    mount remote printers.  This change	invalidates the	instructions given in
+    ``Adding printers''	in the Guide to	Gateways for LAN Servers.  See
+    ``Adding a remote printer to a LAN Manager client''	for a correct
+    description	of how to add a	remote printer to a client.  Also note that
+    the	printer	option modifier	to mount(ADM) is no longer valid for LMCFS
+    filesystems.
+
+    LMC	-- problems with record	locking
+
+    LMC	now handles locking requests correctly including requests for locks
+    of zero length.
+
+    LMC	-- problems with writing to a server
+
+    Writes to a	LAN Manager server could fail unexpectedly.  This supplement
+    corrects this behavior.
+
+    Logical multihoming	-- defects in ICMP and IP
+
+    The	following defects existed in the handling of logical multihoming
+    (multiple IP addresses on a	single interface) by ICMP and IP:
+
+    +  the correct source address could	not be selected	if the transport
+       layer did not supply a source address to	IP
+
+    +  ICMP could not respond to mask requests
+
+    +  generic ICMP reflection did not work
+
+    +  ICMP could not determine	when to	send redirects
+
+    +  IP would	continue to send network redirects when	current	practice is
+       to send only host redirects
+
+    This supplement corrects this behavior as follows:
+
+    +  only host redirects are sent regardless of routing entry	flags
+
+    +  redirects are sent even when multiple addresses are configured for an
+       interface; all addresses	are tested
+
+    +  subnet mask requests are	answered with the correct subnet mask for the
+       destination network number
+
+
+    lp -- remote printing failing
+
+    With remote	printing installed and configured, a print job would fail if
+    an invalid file was	specified as the last file in the list of files	to be
+    printed.  In this supplement, the valid files will be printed.
+
+    lpstat -- not understanding	an aliased remote printer name
+
+    lpstat(C) returned the error unknown printer if the	name of	a remote
+    printer was	aliased	in the /etc/printcap file. For example,	the following
+    entry would	alias the remote printer bar on	host as	foo on the local
+    machine:
+
+       foo::lp=:rm=host:rp=bar:sd=/usr/spool/lpd/foo:
+
+    This supplement allows you to alias	the name of a remote printer.
+
+    netstat -- reports incorrect values
+
+    The	-m option to netstat(TC) now reports the correct values	for the
+    number of message blocks (mblks), STREAMS memory in	use, and maximum
+    STREAMS memory used.
+
+    Network programming	examples -- programs would not compile
+
+    Some of the	example	programs provided in the directories
+    /usr/src/cmd/net/tst and /usr/src/cmd/net/smux-samp	(provided with the
+    SCO	OpenServer Development System) would not compile.  This	supplement
+    corrects the errors	in these files.
+
+    NFS	-- causing MMDF	deliver	to hang
+
+    deliver(ADM) would never exit if /usr/spool/mail was NFS-mounted.  This
+    was	caused by network lock manager looping forever.	 This supplement
+    corrects this problem.
+
+    NFS	-- testing record locking causing the server to	panic
+
+    Testing record locking on a	remote filesystem using	lockf(S) caused	the
+    NFS	server to panic.  This was observed during installation	of the public
+    domain software procmail. This supplement corrects this behavior.
+
+    NTP	-- usage message for ntpdate did not include the -o option
+
+    An SCO OpenServer NTP version 3 client cannot synchronize with a pre-SCO
+    OpenServer NTP version 2 server unless you change its polling behavior by
+    specifying -o 2 as an option to ntpdate(ADMN).  You	can also synchronize
+    with an NTP	version	1 server by specifying -o 1.  The usage	message	for
+    ntpdate now	includes the -o	option.
+
+    The	xntpdc(ADMN) command also implements the -o option to allow you	to
+    query version 1 and	version	2 of the NTP daemon.
+
+    Path MTU Discovery -- causing a system panic
+
+    Using Path MTU Discovery could cause the system to panic.  This
+    supplement corrects	this behavior.
+
+    PCNFS -- rebooting a PCNFS client caused the server	to panic
+
+    Rebooting a	PCNFS client without first unmounting its remote filesystems
+    caused the NFS server to panic when	the client subsequently	tried to
+    remount the	filesystems.  This supplement corrects this behavior.
+
+    PPP	-- daemon dumping core
+
+    The	PPP daemon would dump core if a	SIGHUP signal was sent to it after
+    the	configuration file (/etc/ppphosts) or the packet filter	file
+    (/etc/pppfilter) had been changed.	This supplement	corrects this
+    behavior.
+
+    PPP	-- failing to load
+
+    The	PPP daemon (pppd) would	fail to	load and report	/dev/ppp: not enough
+    space if the STRMAXBLK kernel parameter was	set to 4KB.  This supplement
+    corrects this behavior.
+
+    See	also ``Setting the maximum size	of STREAMS message buffers''.
+
+    PPP	-- hanging when	a telephone line was physically	disconnected
+
+    The	PPP daemon could hang while waiting for	a carrier detect if the
+    telephone line was physically disconnected.	 This supplement corrects
+    this behavior.
+
+    PPP	-- MIB support logging unnecessary messages
+
+    PPP	MIB support was	logging	unnecessary messages.  This supplement
+    corrects this behavior.
+
+    PPP	-- not allowing	duplicate local	addresses in the PPP pool
+
+    PPP	would not allow	a local	IP address to be present more than once	in
+    the	address	pool defined in	/etc/ppppool.  This supplement corrects	this
+    behavior.
+
+    PPP	-- not working with aliased IP addresses
+
+    PPP	would not work if the other interfaces on a system were	aliased.
+    Incoming calls would not be	routed to these	interfaces and the PPP daemon
+    would return the message getifall fail.  This supplement corrects this
+    behavior.
+
+    PPP	-- shutting down incoming links
+
+    Dynamic incoming links were	being shut down	immediately on logging in
+    because remote hosts were sending packets before the PPP login shell had
+    been fully loaded.	PPP now	prints the banner:
+
+       SCO OpenServer PPP
+
+    when it starts to allow the	remote host to synchronize with	it.  You must
+    amend login	scripts	(also known as chat scripts) on	the remote hosts to
+    expect this	banner.	 If a remote host is a UNIX system, edit the UUCP
+    login script in its	Systems(F) file.  For example, if the existing login
+    script is:
+
+       "" \r\d ogin:-\K\d-ogin:	name ssword: password
+
+    you	could change this to:
+
+       "" \r\d ogin:-\K\d-ogin:	name ssword: password PPP
+
+
+    PPP	-- unable to configure a bidirectional interface
+
+    Two	sites connected	by a PPP link could not	be configured to call each
+    other by having both a dynamic incoming and	a dynamic outgoing entry for
+    the	other site in their /etc/ppphosts file.	 Attempting to connect to the
+    other site would fail with the error message IP_address already in use.
+    This supplement corrects this behavior.  A PPP link	can now	be set up
+    between two	systems	that allows either end to initiate the connection to
+    the	other.
+
+    rcmd -- showing performance	problems
+
+    Using rcmd(TC) from	an SCO OpenServer Release 5 system to a	pre-SCO
+    OpenServer Release 5 system	showed a slowdown in the data transfer rate
+    when I/O redirection was specified.	This supplement	corrects this
+    behavior.
+
+    rlogind -- not setting the correct terminal	type
+
+    rlogind(ADMN) was incorrectly passing the terminal type to login(M).
+    This supplement corrects this behavior by not passing the TERM variable.
+
+    routed -- handling dynamic interfaces incorrectly
+
+    routed(ADMN) would sometimes delete	routes to dynamic interfaces (SLIP or
+    PPP) prematurely or	it would not delete them when necessary.  Eventually,
+    it would cease to add the routes to	the routing table at all. This
+    supplement corrects	this behavior.
+
+    routed -- installing routes	with an	incorrect netmask
+
+    routed(ADMN) could install routes into the kernel with an incorrect
+    netmask.  It could also be confused	when installing	routes to aliased IP
+    addresses.	This supplement	corrects this behavior.	routed now computes
+    the	netmask	of an IP address rather	than using the netmask of the
+    interface from which it learned the	route. It also now handles aliased
+    addresses correctly.
+
+    rshd -- not	working	for users without passwords
+
+    If a user did not have a password on a remote system (that is, they	had a
+    null password entry	as opposed to having <Enter> as	the password), they
+    received the error permission denied when invoking the command:
+
+       rcmd remote_hostname -l user command
+
+    This supplement corrects this behavior so that the user can	run the
+    command.
+
+    slattach --	causing	a system panic when run	twice
+
+    If a SLIP connection was configured	between	machines alpha and beta, and
+    alpha was additionally configured to forward packets through one or	more
+    LAN	interfaces (ipforwarding and ipsendredirects were set to 1), system
+    beta would panic if	it tried to execute the	slattach(ADMN) command whilst
+    the	existing SLIP connection was active.  This supplement corrects this
+    problem.  An attempt to open a second SLIP connection while	the first is
+    still active will now fail with the	message	slattach: IF_UNITSEL: Device
+    busy.
+
+    slattach --	could not be run by a user other than root
+
+    Only root could run	slattach(ADMN).	 This supplement also allows users in
+    the	group network to run this command as described in ``Access to
+    slattach by	users other than root''.
+
+    SNMP -- defect in running mosy
+
+    smi.defs information was not being prepended to the	output from mosy
+    before post_mosy was run. The new mibcomp.sh script	performs this
+    operation as described in the new mibcomp.sh(ADMN) manual page.
+
+    SNMP -- causing a memory leak
+
+    The	SNMP server (see snmpd(ADMN)) grew continuously	in size	in virtual
+    memory when	responding to requests from a SMUX peer.  This supplement
+    corrects this behavior.
+
+    SNMP -- turning off	forwarding of IP datagrams
+
+    SNMP could not be used to turn off forwarding of IP	datagrams. This
+    supplement corrects	this behavior.
+
+    SNMP -- returning incorrect	``ifindex'' value
+
+    Consecutive	get operations on the same PPP object could return an
+    incorrect ``ifindex'' value.  This supplement corrects this	behavior.
+
+    snmpd -- dumping core and writing incorrect	log output
+
+    The	SNMP daemon (see snmpd(ADMN)) dumped core if it	received a SMUX
+    ``trap pdu'' while waiting for a SMUX ``set	response'' in verbose mode.
+    Additionally, snmpd	created	incorrect output to the	system log for ``trap
+    pdu'', ``commit pdu'', and ``rollback pdu''.  This supplement corrects
+    this behavior.
+
+    snmpd.peers	-- default location
+
+    The	default	location for the snmpd.peers file, defined by the constant
+    _PATH_PEERS	in <snmp/snmp.h>, is now /etc/snmpd.peers rather than
+    /etc/snmp/snmpd.peers.  This change	allows SMUX peers that are compiled
+    on an SCO OpenServer Release 5 system to interoperate with earlier
+    releases.
+
+    snmpstat --	error when showing the status of SNMP
+
+    The	-S option to snmpstat(ADMN) would produce the error snmpstat: Error
+    code set in	packet - Return	packet too big when used to discover the
+    status of SNMP.  This supplement corrects this behavior.
+
+    STRMAXBLK parameter	-- causing applications	to hang
+
+    An application requesting memory to	perform	a read or write	would hang if
+    it requested a STREAMS message buffer than was larger than the maximum
+    size allowed by the	STRMAXBLK kernel parameter.  This supplement corrects
+    this behavior.
+
+    See	also ``Setting the maximum size	of STREAMS message buffers''.
+
+    syslog -- causing buffer overrun
+
+    syslog(SLIB) and vsyslog(SLIB) could overun	their buffers.	This
+    supplement corrects	this potential security	hole.
+
+    talkd -- causing problems on remote	machines
+
+    The	``logname'' field in talkd(ADMN) packets could cause problems on a
+    remote machine when	initializing a talk(TC)	session	if it contained
+    control characters.	 This supplement corrects this behavior; talkd now
+    checks for control characters and issues the message Unprintable
+    character in logname if any	are found.
+
+    talkd -- hanging if	/etc/utmp is corrupted
+
+    The	talkd(ADMN) daemon could hang when initializing	a talk(TC) session
+    because of bad entries in the /etc/utmp file.  If a	user's entry remained
+    in /etc/utmp after they had	logged out from	a pseudo terminal, attempting
+    to talk to that user could cause talkd to hang.  This supplement corrects
+    this behavior; if talkd cannot open	a pseudo terminal, it now assumes it
+    is in use.
+
+    TCP	-- open	to IP address spoofing attack
+
+    Deterministic initial send sequence	numbering in TCP headers created a
+    security risk by exposing the system to an IP address spoofing attack.
+    See	``Protecting against IP	address	spoofing attacks'' for details of the
+    fix.
+
+    TCP	-- unnecessarily sending window	probes
+
+    When a TCP connection with data flowing in both directions became flow
+    controlled in one direction, window	probes were being sent to discover
+    the	send window size of a remote machine even though the received
+    segments contained window updates.	This reduced the effective bandwidth
+    that was available during sustained	data transfer.	This supplement
+    prevents window probes being sent if TCP segments are being	received.
+
+    TCP/IP -- slow performance noted by	remote telnet sessions
+
+    This supplement corrects performance problems with TCP/IP that were
+    experienced	by remotely logged-in users on DOS machines.
+
+    telnetd -- incorrect usage message
+
+    The	usage message for the telnetd(ADMN) command did	not show the -k, -K,
+    and	-N options for controlling keepalive message behavior.	This
+    supplement corrects	the usage message.
+
+    TLI/XTI -- calling t_connect after t_snddis	could hang an application
+
+    An application that	uses TLI/XTI could hang	if it called t_connect(NET)
+    after calling t_snddis(NET).  This supplement corrects this	behavior.
+
+    TLI/XTI -- incorrect behavior of t_listen
+
+    If t_listen(NET) was called	with no	buffer space allocated for the opt
+    member of the t_call structure, it returned	a value	of -1 and set
+    TBUFOVFLOW in t_errno. This	was incorrect:	t_listen now continues but
+    does not fill in opt.
+
+    TLI/XTI -- polling endpoints causes	applications to	hang
+
+    Polling TLI/XTI endpoints for messages from	established connections
+    prevented the endpoints from being completely closed.  This	supplement
+    corrects this behavior.
+
+    Token-ring -- multicasting should use functional address by	default
+
+    Multicast addresses	were not mapped	to the functional address by default
+    for	token-ring networks.  This supplement corrects this behavior.
+
+    On Ethernet	and FDDI networks, multicast addresses are mapped to a range
+    of assigned	multicast addresses as specified in RFC	1042.  On IEEE 802.5
+    networks, multicast	addresses are normally mapped to the functional
+    address specified in RFC 1469.  To map multicast addresses to the all-
+    rings broadcast address, specify the link0 parameter to ifconfig(ADMN),
+    or specify the IFF_LINK0 flag for a	socket using setsockopt(SSC) before
+    setting the	interface address.
+
+    UDP	-- ignoring routing changes
+
+    UDP	was ignoring notification of routing changes from IP. This caused
+    problems when using	Path MTU Discovery and could have caused problems
+    processing ICMP redirects. Errors were also	likely to occur	when UDP
+    packets were being transferred from	a network with a large MTU (such as
+    Token Ring)	to a network with a smaller MTU	(such as Ethernet). This
+    supplement corrects	this behavior.
+
+ Changes to executables, libraries and header files
+
+    This supplement adds the following executable files:
+
+    /bin/kpasswd
+    /bin/ksession
+    /etc/auth.config
+    /etc/dlnbhosts
+    /usr/bin/kdestroy
+    /usr/bin/kinit
+    /usr/bin/klist
+    /usr/bin/ktadd
+    /usr/bin/ktdelete
+    /usr/bin/ktlist
+
+    This supplement updates the	following executable files:
+
+    /etc/arp
+    /etc/automount
+    /etc/ftpd
+    /etc/ifconfig
+    /etc/inconfig
+    /etc/inetd
+    /etc/irdd
+    /etc/nbd
+    /etc/ntpdate
+    /etc/pppd
+    /etc/rlogind
+    /etc/route
+    /etc/routed
+    /etc/rshd
+    /etc/slattach
+    /etc/snmpd
+    /etc/talkd
+    /etc/telnetd
+    /etc/xntpd
+    /etc/xntpdc
+    /usr/bin/ftp
+    /usr/bin/mibcomp
+    /usr/bin/netstat
+    /usr/bin/rcmd
+    /usr/bin/rcp
+    /usr/bin/rlogin
+    /usr/bin/snmpstat
+    /usr/bin/talk
+    /usr/bin/telnet
+    /usr/lib/ppp/ppp
+    /usr/lpd/remote/cancel
+    /usr/lpd/remote/lp
+    /usr/lpd/remote/lpstat
+    /usr/spool/lp/bin/rlmclp
+
+    This supplement adds the following libraries:
+
+    DCE	libraries:  libcma_s, libdce_s,	libkrb5stand_s
+
+    This supplement updates the	following libraries:
+
+    SNMP libraries: libsnmp, libsnmpio
+    Socket library: libsocket
+    TLI/XTI libraries:
+		    libnsl, libxti
+
+    This supplement adds the following header files:
+
+    <netinet/in_mp.h>
+    <netinet/in_mp_sco.h>
+    <sys/netinet/in_mp.h>
+    <sys/netinet/in_mp_sco.h>
+
+    This supplement updates the	following header files:
+
+    <snmp/snmp.h>
+    <sys/lmcfs/smb.h>
+    <sys/nb/nb.h>
+    <sys/fs/nfs/klm.h>
+    <sys/fs/nfs/lockd.h>
+    <sys/fs/nfs/rnode.h>
+    <sys/net/if.h>
+    <sys/net/memory.h>
+    <sys/net/radix.h>
+    <sys/net/route.h>
+    <sys/netinet/if_ether.h>
+    <sys/netinet/in.h>
+    <sys/netinet/in_cfg.h>
+    <sys/netinet/in_mp.h>
+    <sys/netinet/in_mp_sco.h>
+    <sys/netinet/in_pcb.h>
+    <sys/netinet/in_var.h>
+    <sys/netinet/ip.h>
+    <sys/netinet/ip_str.h>
+    <sys/netinet/ip_var.h>
+    <sys/netinet/ppp.h>
+    <sys/netinet/pppcnf.h>
+    <sys/netinet/tcp.h>
+    <sys/netinet/tcp_seq.h>
+    <sys/netinet/tcp_timer.h>
+    <sys/netinet/tcp_tpi.h>
+    <sys/netinet/tcp_var.h>
+    <sys/netinet/udp_var.h>
+    <sys/socket.h>
+    <sys/socketvar.h>
+
+    This supplement deletes the	following header files:
+
+    <netinet/in_multi.h>
+    <sys/netinet/in_multi.h>
+
+
+ Software limitations not corrected in this supplement
+
+    This supplement does not correct the following software limitations:
+
+    HP network printers	-- receiving corrupted bootp packets
+
+    The	configuration script for HP network printing adds the hn tag (send
+    client's hostname to client) to the	entry for the printer in the
+    /etc/bootptab file.	 An HP network printer may not download	its
+    configuration correctly because the	presence of the	hn tag causes bootp
+    packets from the server to become corrupted.  If this happens, remove the
+    hn tag from	the entry for the printer in the /etc/bootptab file.
+
+    lp -- remote printing failing
+
+    The	lp command in SCO OpenServer Release 5 does not	copy a file to the
+    spool area unless the -c option is specified.  Remote printing from	a
+    PCNFS client will fail if the lp command specified in /etc/pcnfsd.conf
+    for	the remote printer does	not include the	-c option.  If the printer is
+    not	defined	in /etc/pcnfsd.conf, pcnfd uses	a default invocation of	lp
+    that includes the -c option.  Omitting the -c option can also cause
+    remote printing to fail if it is implemented using the
+    /usr/spool/lp/remote file and the file to be printed is not	accessible to
+    the	print service on the remote machine.
+
+    NFS	-- defect when flushing	memory-mapped files
+
+    Applications that write to memory-mapped files over	NFS will fail with
+    the	error Permission denied	even if	the user has write permission on the
+    files.  This happens because the buffer flushing daemon (bdflush) cannot
+    flush the contents of a memory-mapped file to a remote filesystem mounted
+    over NFS unless an entry giving root access	to the local host exists in
+    /etc/exports on the	NFS server.  For example, the following	entry in
+    /etc/exports would allow hermes and	vulcan to have root access to the
+    exported filesystem	/usr/mercury:
+
+       /usr/mercury    -root=hermes:vulcan
+
+
+    PPP	-- ppphosts idle parameter causes inappropriate	shut down
+
+    If the inactivity timeout period is	set to 1 minute	(as controlled by the
+    value of the idle parameter	in the /etc/ppphosts file; see
+    ppphosts(SFF)), a PPP link will shut down even though the link is active
+    with network traffic.  Setting the value of	idle to	2 minutes overcomes
+    this problem.
+
+    Printer Manager -- defect in configuring remote printers
+
+    The	scoadmin Printer Manager adds an ``ex''	entry to /etc/printcap for a
+    remote printer.  As	a result, lpstat fails if the remote host does not
+    support the	extended RLP protocol. If this is the case, edit
+    /etc/printcap and remove the ``ex''	entry for the remote printer.
+
+    resolver --	defect in use of nameserver lines
+
+    If you specify more	than one name server to	query in /etc/resolv.conf,
+    you	must create a separate ``nameserver'' line for each entry as shown in
+    the	example	on the resolver(SFF) manual page.  Up to three name servers
+    can	be queried in the order	that they appear in the	file.  If the first
+    name server	listed is not available, the resolver will try the second,
+    and	so on.	You cannot specify more	than one name server on	a line.
+
+    route -- limited support for old syntax
+
+    The	pre-SCO	OpenServer syntax of route(ADMN) will work correctly provided
+    that the specified metric argument (specifying the number of hops) is
+    less than 10:
+
+       /etc/route command destination gateway [	metric ]
+
+    If the value of metric is greater than 9, it will be interpreted as	a
+    netmask.  For example, the old form	of the command which specifies a
+    metric of 16:
+
+       route add default gateway 16
+
+    should be replaced by:
+
+       route add -hopcount 16 default gateway
+
+    _________________________________________________________________________
+       NOTE  Support for the old syntax	may be removed in a future
+       release.
+    _________________________________________________________________________
+
+
+    TCP	-- closed socket can be	written	to again
+
+    If a client	process	is connected using a socket stream to a	server
+    process on a different machine, the	client process can perform one more
+    write after	the server process has closed its end without receiving	a
+    SIGPIPE.  The data from the	first write will be lost. Only a second	write
+    will cause a SIGPIPE to be received.  This only occurs for client and
+    server processes on	different machines, and	is the correct behavior	for
+    socket streams.
+
+
+ Corrections and changes to manual pages
+
+    This supplement updates all	the manual pages in the	ADMN, ADMP, SFF, and
+    TC sections.
+
+    The	following manual pages are new:
+
+    auth.config(ADMN)	describes the command used to configure	the Secure
+			TCP/IP utilities
+    dlnbhosts(ADMN)	describes the command used to update the NetBIOS host
+			table
+    hosts.lpd(SFF)	describes the file containing lists of trusted hosts
+			for access to remote printing
+    k5login(SFF)	describes the access control file for Secure TCP/IP
+			utilities and authenticated login
+    kdestroy(TC)	destroys the credentials cache
+    kinit(TC)		describes the command used to obtain a Ticket
+			Granting Ticket	(TGT) from the Security	server
+    klist(TC)		describes the command used to list the authentication
+			tickets	stored in a credentials	cache
+    kpasswd(TC)		describes the command used to change an	authenticated
+			login password
+    krb.conf(SFF)	describes the Kerberos configuration file
+    krb.realms(SFF)	describes the host to Kerberos realm translation file
+    ksession(TC)	describes the command used to monitor an existing
+			Kerberos credentials cache
+    ktadd(ADMN)		describes the command used to add a service key	to a
+			service	key table
+    ktdelete(ADMN)	describes the command used to remove a service key
+			from a service key table
+    ktlist(ADMN)	describes the command used to list service keys
+			stored in a service key	table
+    mibcomp.sh(ADMN)	describes the command used to run mosy and post_mosy
+			utilities
+    lmhosts(SFF)	describes the NetBIOS hostname file
+    pe_site(SFF)	describes the standalone SCO Security server RPC
+			bindings file
+    pppstack(SFF)	describes the PPP stack	configuration file
+    v5srvtab(SFF)	describes the default service key table
+
+    The	following manual pages contain new or corrected	information:
+
+    ftp(TC)		describes its use with Secure TCP/IP (Kerberos)
+    ftpd(ADMN)		describes use with Secure TCP/IP (Kerberos), and
+			corrects information about setting up anonymous	FTP
+    inetd(ADMN)		describes the use of the -l option to set the backlog
+			queue length
+    Intro(ADMP)		corrects the pathname of <net/strioc.h>
+    ip(ADMP)		corrects information about the IFF_LINK0 flag for
+			IEEE 802.5 networks
+    nbd(ADMN)		information about the NetBIOS configuration file has
+			been moved to the netbios(ADMN)	manual page
+    netbios(ADMN)	describes the use of dlnbhosts(ADMN) to	add entries
+			to the NetBIOS host table, and describes the new
+			NB_KPALIVE variable for	controlling keepalive
+			messages
+    netrc(SFF)		corrects information about the keywords	recognized in
+			a .netrc file
+    ntpdate(ADMN)	describes the use of the -o option for use with	NTP
+			version	3 clients that listen to NTP version 1 and 2
+			servers
+    ppp(ADMP)		describes support for third-party asynchronous serial
+			port devices
+    pppd(ADMN)		describes support for third-party asynchronous serial
+			port devices
+    rcmd(TC)		describes its use with Secure TCP/IP (Kerberos)
+    rcp(TC)		describes its use with Secure TCP/IP (Kerberos)
+    rhosts(SFF)		corrects a statement about the necessary permissions
+			on root's .rhosts file
+    rlogin(TC)		describes its use with Secure TCP/IP (Kerberos)
+    rlogind(ADMN)	describes its use with Secure TCP/IP (Kerberos)
+    rshd(ADMN)		describes its use with Secure TCP/IP (Kerberos)
+    slink(ADMN)		corrects information about kernel streams linking
+    strcf(SFF)		corrects information about kernel streams linking
+    telnet(TC)		describes its use with Secure TCP/IP (Kerberos)
+    telnetd(ADMN)	describes its use with Secure TCP/IP (Kerberos)
+    xntpdc(ADMN)	describes the use of the -o option for querying	NTP
+			version	1, 2 and 3 servers
+
+
+ Errata	in the networking documentation
+
+    Please note	the following errors in	the networking documentation:
+
+    Changes to how the TCP/IP protocol stack is	linked
+
+    The	slink(ADMN) and	strcf(SFF) manual pages	supplied with SCO OpenServer
+    Release 5 provide an inaccurate description	of how the TCP/IP protocol
+    stack is linked.  Prior to SCO OpenServer Release 5, the user-level
+    daemon slink read the configuration	information in /etc/strcf to build
+    and	maintain the protocol stack when TCP was started.
+
+    In SCO OpenServer Release 5, the operation of slink	was changed so that
+    the	operating system could support network installation and	diskless
+    clients.  This meant that the TCP/IP protocol stack	had to be available
+    before any local filesystems could be mounted.  When the kernel is
+    linked, slink parses the configuration files in the	/etc/strcf.d
+    directory and generates C language source code in
+    /etc/conf/pack.d/ksl/space.c. This code is compiled	and linked into	the
+    kernel. When the kernel is initialized, the	ksl_start invokes the code to
+    build the TCP/IP protocol stack.  (The slink daemon	process	no longer has
+    to maintain	the protocol stack because ``persistent	links''	are available
+    in SCO OpenServer STREAMS; see streamio(M) for more	information.)
+
+    In some cases, it is necessary to defer building the protocol stack	until
+    the	system goes to multiuser mode. This is necessary for network card
+    drivers that need to download microcode (for example, the COMPAQ NetFlex
+    and	some X.25 cards).  In this case, you must specify the ksl.disable
+    bootstring at the Boot prompt, or you must add this	bootstring to the
+    definition of DEFBOOTSTR in	/etc/default/boot.
+
+    See	the online slink(ADMN) and strcf(SFF) manual pages supplied with this
+    supplement for more	information.
+
+    Printing remotely over TCP/IP -- aliasing printer names
+
+    Changes to the software in this supplement invalidate the first bullet
+    point listed in ``Setting up a client'' in the Networking Guide.  The
+    following example entry from /etc/printcap shows how to alias the name of
+    a remote printer:
+
+       sunlaser::lp=:rm=ohio:rp=laser:sd=/usr/spool/lpd/sunlaser
+
+    The	first bullet point following the example should	now read:
+
+    +  The first field,	sunlaser, is the name by which the client knows	the
+       printer.	 For a remote printer, the name	that the client	uses need not
+       be the same as that used	by the print server.  In this example,
+       sunlaser	is an alias for	the printer named laser	on ohio.
+
+    Adding a remote printer to a LAN Manager client
+
+    Changes to the software in this supplement invalidate the instructions
+    given in ``Adding printers'' in the	Guide to Gateways for LAN Servers.
+
+    The	correct	procedure for adding a remote printer to a LAN Manager client
+    is:
+
+    1.	Log on as root on the client.
+
+    2.	Create a file called /usr/spool/lp/remote containing a line with the
+	following format for each remote printer:
+
+	printer:<Tab>/usr/spool/lp/bin/rlcmlp -D remote	-S svr [ -P pass ]
+
+	printer	is the name by which the client	knows the remote printer.
+	The rlcmlp command is provided to transfer file(s) to the print
+	server.	 rlcmlp	takes the following options:
+
+	-D remote
+	    Specifies the name of the printer on the print server.
+
+	-P pass
+	    Specifies the plain-text password for access to the	printer.
+	    This option	is only	needed for share-level servers that require a
+	    password to	access the printer.
+
+	-S svr
+	    Specifies the name of the print server.
+
+	For example, if	you want to give the name printer1 to the remote
+	printer	lpt1 on	the share-level	server jupiter with password
+	``clydenw'', the entry should read:
+
+	printer1:	/usr/spool/lp/bin/rlmclp -D lpt1 -S jupiter -P clydenw
+
+
+    3.	Change the owner and group of /usr/spool/lp/remote to lp:
+
+	chown lp:lp /usr/spool/lp/remote
+
+
+    4.	Make /usr/spool/lp/remote publicly readable:
+
+	chmod 444 /usr/spool/lp/remote
+
+
+    5.	Define the printer to the print	service, start accepting requests for
+	it, and	enable printing	on it:
+
+	/usr/lib/lpadmin -p printer -v /dev/null -m network
+	accept printer
+	enable printer
+
+
+    6.	Test by	printing a short ASCII file such as /etc/default/issue:
+
+	lp -c -d printer /etc/default/issue
+
+
+    The	printer	option modifier	for LMCFS filesystems described	on the
+    mount(ADM) manual page is no longer	valid.
+
+    Permissions	on /usr/spool/pcnfs
+
+    The	pcnfsd(NADM) manual page does not list the ownership and permissions
+    that you should assign to the /usr/spool/pcnfs directory.  Its owner,
+    group and permissions should be root, sys, and ``0755'' respectively,
+    assuming that root will run	pcnfsd.
+
+    Increasing the number of remote files accessible through NFS
+
+    The	following information was not included in the Networking Guide.
+
+    If an NFS client tries to access too many files simultaneously (including
+    mount points, directories, and running binaries) in	remote NFS-mounted
+    filesystems, you may see the following error message:
+
+       nfs_iget: rnode table overflow
+
+    The	default	maximum	number of remote files that a client can access
+    simultaneously is 256.  To increase	this number:
+
+    1.	Log in as root on the client and run the scoadmin(ADM) Network
+	Configuration Manager or netconfig(ADM).
+
+    2.	Highlight SCO NFS Runtime System.
+
+    3.	Select Modify protocol configuration from the Protocol menu.
+
+    4.	Increase the number of NFS connections and click on OK.
+
+    5.	Exit the Network Configuration Manager and select to relink the
+	kernel when prompted.
+
+    6.	Shut down and reboot the system	for the	change to take effect.
+
+
+    Incompatibilities of NFS with distributed filesystems
+
+    The	description under the heading ``Cannot access server inodes'' in
+    ``Incompatibilities	with distributed filesystems'' in the Networking
+    Guide is incorrect.	 It should read	as follows:
+
+    If an NFS client running SCO(r) Open Desktop(r) Release 3.0	or earlier
+    tries to mount filesystems from an SCO OpenServer Release 5	NFS server,
+    some of the	exported files may not be available.  This is because some
+    SCO	OpenServer Release 5 filesystems support a greater number of inodes
+    (2^32) than	filesystems in earlier releases	(2^16).	 We recommend that
+    the	number of inodes in a server's exported	filesystem should not exceed
+    the	maximum	number that a client can address.
+
+    Setting TCP	delayed	ACKs
+
+    The	tcp_delay_acks parameter is not	documented in ``TCP/IP parameters''
+    in the Performance Guide.  This parameter to inconfig(ADMN)	selects	TCP
+    delayed acknowledgements (ACKs) if set to 1	(default), and selects
+    immediate ACKs if set to 0.	 If delayed ACKs are set, TCP does not send
+    an ACK immediately on receiving data. It delays sending the	ACK to
+    improve the	chance that it can bundle it with transmitted data.
+
+    Setting the	maximum	size of	STREAMS	message	buffers
+
+    The	STRMAXBLK kernel parameter is not documented in	``STREAMS'' in the
+    Performance	Guide.	STRMAXBLK sets the maximum size	of a STREAMS message
+    buffer.  By	default, this parameter	has a value of 524288, but it can be
+    set	to any value that is a power of	two between 4096 and 524288 (4KB to
+    512KB).  Older LLI drivers that control devices directly with DMA
+    transfer functions require that STRMAXBLK is set to	4096 so	that all
+    STREAMS buffers fit	in a page of memory.  This is necessary	so that	these
+    drivers will work correctly	with SCO-supplied protocol stacks and other
+    networking products.  Note that changing STRMAXBLK to 4096 may not enable
+    LLI	drivers	to work	with protocols supplied	by third-party vendors that
+    map	in private data	blocks.
+
+    Setting up anonymous ftp
+
+    The	procedure for setting up anonymous ftp given in	the hardcopy version
+    of ``Setting up anonymous ftp'' in the Networking Guide is incorrect.
+    The	procedure does not include the steps for copying the libprot library
+    to ~ftp/lib.  The version of the procedure given in	the online
+    documentation is correct.
+
+    Configuring	LAN Manager Client
+
+    The	procedure for configuring LAN Manager Client given in ``Configuring
+    LAN	Manager	Client'' in the	Guide to Gateways for LAN Servers is
+    incorrect. The correct steps are:
+
+    1.	Install	and configure the transport provider you are going to use.
+	Refer to the installation documentation	for the	transport provider
+	for more details.
+
+    2.	Using the Network Configuration	Manager, highlight the networking
+	card to	which you want to add LMC support.
+
+    3.	Select Add protocol from the Protocol menu, highlight SCO TCP/IP, and
+	then click on Add.
+
+    4.	Select Add protocol, highlight SCO TPI NetBIOS for TCP/IP, and then
+	click on Add.
+
+    5.	Select Add protocol, highlight LMC Runtime System, and then click on
+	Add.
+
+    6.	When presented with the	LMC configuration screen, you are asked	how
+	many connections (Virtual Circuits) are	provided by the	transport
+	provider. This determines the maximum number of	concurrent sessions
+	that the transport provider will support (the default value is 64).
+	The value you should enter can be obtained from	the documentation for
+	the transport provider.
+
+	The result of this is that the /etc/default/lmcconf file will have
+	been updated to	contain	the configuration information referring	to
+	the new	transport provider, system tunables and	network	drivers.
+
+    7.	After you have reconfigured, and relinked the new kernel if
+	necessary, LMC will automatically be started next time you reboot.
+	If you do not wish to reboot, you can start it manually. Enter lmc
+	start (refer to	lmc(LMC) for more details).  You can use lmc status
+	at any time to find out	if LMC is running.
+
+    Configuring	the Serial Line	Internet Protocol (SLIP)
+
+    The	following inaccuracies exist in	the documentation of the Serial	Line
+    Internet Protocol (SLIP):
+
+    +  The description of SLIP given in	the third bullet point of ``SCO	SLIP
+       features'' in the Networking Guide is misleading.  SLIP uses UUCP to
+       acquire serial lines dynamically.  This allows SLIP to share serial
+       lines with UUCP.	 A SLIP	link cannot use	a serial line simultaneously
+       with other services such	as UUCP	or with	other SLIP links.
+
+    +  The description of dynamic incoming SLIP	links given in the second
+       bullet point of ``SLIP link configurations'' in the Networking Guide
+       is incorrect.  The serial line being used by a dynamic incoming SLIP
+       link cannot simultaneously be used by multiple links or by other
+       services	such as	UUCP.
+
+    +  References to ``dynamic'' incoming and outgoing SLIP links throughout
+       Chapter	5, ``Configuring the Serial Line Internet Protocol (SLIP)''
+       in the Networking Guide and the slattach(ADMN) manual page may be
+       misleading.  The	word ``dynamic'' indicates that	you can	use UUCP to
+       establish a SLIP	link over any available	serial connection that is
+       suitable	as described in	``UUCP facility	use for	dynamic	outgoing SLIP
+       links'' in the Networking Guide.	 It does not mean that SLIP removes a
+       link automatically if it	becomes	inactive.  There is no concept of a
+       timeout on a SLIP link.	Once a SLIP link has been established, root
+       can detach it by	killing	the slattach process and removing the route
+       from the	routing	table.
+
+ Common	error messages
+
+    The	following sections detail the probable causes of some networking
+    error messages that	are either undocumented	or that	require	further
+    explanation.
+
+    ARP	information overwritten	error message
+
+    The	following error	is partially documented	on the arp(ADMP) manual	page:
+
+       WARNING:	arp: info overwritten for IP_address by	MAC_address
+
+    The	source of the error may	be:
+
+    +  two or more systems having the same IP address on the local network.
+       This is likely to be the	case if	you see	the error message repeated
+       several times on	a single system.  Redefine the IP address of one of
+       the systems using the scoadmin(ADM) Network Configuration Manager or
+       netconfig(ADM).
+
+    +  changing	a network card in a system.  The message should	only occur at
+       most once on each of the	other systems connected	to the local network.
+
+
+    inetd unknown user error message
+
+    The	following error	message	was undocumented:
+
+       date user inetd[n]: smp_check_user: user: not found
+
+    inetd outputs this error to	the system log if an /etc/inetd.conf entry
+    requests that a service be run under an unknown user ID.
+
+    NFS	error messages
+
+    The	following error	messages were not documented in	``Troubleshooting
+    NFS'' in the Networking Guide:
+
+       nfs_iget: rnode table overflow
+
+    This error is caused by an NFS client trying to access too many files
+    simultaneously (including mount points, directories, and running
+    binaries) in remote	NFS-mounted filesystems.  The default maximum number
+    of remote files that a client can access simultaneously is 256.  See
+    ``Increasing the number of remote files accessible through NFS'' for
+    details of how to increase this number.
+
+       RPC error: RPC_PMAPFAILURE
+
+    This error may be caused by:
+
+    +  the IP address associated with the machine's hostname in	/etc/hosts
+       not being the same as the IP address defined in /etc/tcp
+
+    +  a race condition	in starting the	NFS daemons on a fast multiprocessor
+       system
+
+    WARNING : NLM : RPCCALL FAILED ; rperror : rpc-pmap	failure	errno 0
+
+    This error may be caused by	the IP address associated with the machine's
+    hostname in	/etc/hosts not being the same as the IP	address	defined	in
+    /etc/tcp.  lockd(NADM) attempts to connect back to the host	by resolving
+    the	hostname into its IP address.  The connection fails if the returned
+    address is not the same as the real	address.
+

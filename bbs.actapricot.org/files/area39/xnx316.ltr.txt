@@ -1,0 +1,242 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) xnx316 contains a new set of 
+drivers for the Adaptec 154x/1640 series of host adapters, as well as a 
+new version of /usr/lib/mkdev/tape.
+
+It provides the following SCSI support:
+
+     . Adds support for a Wangtek 5525ES and Tecmar Q5525ES SCSI tape 
+       drive on an Adaptec 154x/1640 host adapter.
+
+     . Adds support for a SCSI tape drive on an Adaptec 154x/1640 with the
+       BIOS disabled (the boot disk is not on the host adapter).
+
+     . Adds the ability to do the tape commands using the device 
+       /dev/xct0 for all supported SCSI tape drives.
+    
+     . Enables multiple volume spanning of all supported SCSI tape
+       drives with cpio(C).
+
+SLS xnx316 can be installed only on SCO XENIX Operating System Release 2.3.4 
+or Release 2.3.4 GT for computers based on Micro Channel Architecture (MCA).
+
+
+I. INSTALLATION PROCEDURE
+
+To begin the installation of SLS xnx316, take the following steps:
+
+1.  Please make sure you are installing this SLS on the correct version of 
+    the SCO XENIX System, as described previously.  Next, make sure the system
+    is in single user mode.  If it is running in multiuser mode, log in as 
+    root and execute the command:
+
+             shutdown 0
+
+    The system will then execute a controlled shutdown operation which
+    will display the following message when the shutdown process has
+    completed:
+
+	**   Safe to Power Off   **
+	           -or-
+	** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+	Type CONTROL-d to proceed with normal startup,
+	(or give root password for system maintenance):
+
+    Enter the root password and press <Return>.
+    Wait until the "#" prompt appears.
+
+4.  Next, go into custom by entering the command:
+
+	custom
+
+    NOTE: Refer to custom(C) in the SCO XENIX manuals for more information
+	  on how to use custom.
+
+5.  You will see a menu similar to the following:
+        
+        	1. Operating System
+        	2. Development System
+        	3. Text Processing System
+        	4. Add a Supported Product
+        
+    Choose selection 4, "Add a Supported Product".  You will then be
+    prompted to insert distribution volume 1.  At this point, insert 
+    the diskette labeled Volume 1 and press <Return>. 
+
+    The installation will back up your original files to a special directory.
+        
+    If the Link kit is not installed, you will be asked to install it. 
+    Answer 'y' to the question to install the Link Kit.
+
+6.  It will then give the following menu:
+
+                1. Install one or more packages
+                2. Remove one or more packages
+                3. List the available packages
+                4. List the files in a package
+                5. Install a single file
+                6. Select a new set to customize
+                7. Display current disk usage
+                8. Help
+        
+    Choose 1 to install the packages.  When it asks which packages to 
+    install, type "ALL" and press <Return>.
+        
+    The system will then ask you to insert the Adaptec SCSI Tape SLS for 
+    XENIX volume 1 and press <Return>.  Since it is already in the drive,
+    press <Return>.
+
+7.  The system will bring in the new drivers and archive them.  It will
+    then tell you that you will need to reconfigure your tape drive.
+
+          XENIX System V Tape Driver Installation
+
+          1. Install a Tape Driver
+	  2. Remove a Tape Driver
+
+	  Select an option or enter q to quit:
+
+    Select option 1.
+
+8.  You will then be prompted:
+
+          1. Install Cartridge Tape Driver
+          2. Install Mini-Cartridge Tape Driver
+          3. Install Qic-40/Qic-80 Tape Driver
+          4. Install Adaptec SCSI Tape Drive
+          5. Install IBM SCSI Tape Drive
+                
+          Select an option or enter q to quit:
+
+    Select option 4.
+
+9.  You will then be asked:
+
+          What ID is this tape? Choose a number between 0 and 7:
+ 
+    Choose the number to which your SCSI tape is configured.
+
+10. You will then be asked: 
+
+          Which SCSI host adapter will interface with the tape?
+ 	  Enter either 1 (first adapter) or 2 (second adapter):
+
+     Choose 1 if the Adaptec connected to the tape is the first Adaptec
+     adapter.  Choose 2 if the Adaptec connected to the tape is the second 
+     Adaptec adapter.
+
+11. You will then be asked:
+
+        You must create a new kernel to effect the driver change you specified. 
+        Do you wish to create a new kernel now? (y/n)
+
+    Answer 'y' to this question. 
+
+12. You will then be asked:
+
+	Do you want this kernel to boot by default?
+
+    Answer 'y' to this question. 
+    
+13. After the kernel has been relinked, you will see the top menu:
+
+                1. Install one or more packages
+                2. Remove one or more packages
+                3. List the available packages
+                4. List the files in a package
+                5. Install a single file
+                6. Select a new set to customize
+                7. Display current disk usage
+                8. Help
+        
+    You have completed the update and you may now exit out of custom(ADM).
+    Type 'q' to quit.
+        
+
+
+II.  REMOVAL PROCEDURE -- IMPORTANT!!
+
+If at some point it is necessary to remove SLS xnx316, take the 
+following steps:
+
+1. Make sure you are in single user mode by following steps 1-3 in the 
+   Installation Procedure. 
+
+2. Go into custom again by typing:
+    
+         custom
+
+3. You will see a menu similar to the following:
+        
+        	1. Operating System
+        	2. Development System
+        	3. Text Processing System
+        	4. Add a Supported Product
+		5. Adaptec SCSI Tape SLS for XENIX
+
+   Choose the selection that reads, "Adaptec SCSI Tape SLS for XENIX". You 
+   will then get the following menu:
+
+                1. Install one or more packages
+                2. Remove one or more packages
+                3. List the available packages
+                4. List the files in a package
+                5. Install a single file
+                6. Select a new set to customize
+                7. Display current disk usage
+                8. Help
+        
+   Choose 2 to remove the packages.  When it asks which packages to 
+   remove, type "ALL" and press <Return>.
+
+   The system will restore the original drivers and tape file.
+
+4. You will then be asked:
+
+        You must create a new kernel to effect the driver change you specified. 
+        Do you wish to create a new kernel now? (y/n)
+
+   Answer 'y' to this question. 
+
+5. You will then be asked:
+
+	Do you want this kernel to boot by default?
+
+   Answer 'y' to this question. 
+    
+6. After the kernel has been relinked, you will get the top menu:
+
+                1. Install one or more packages
+                2. Remove one or more packages
+                3. List the available packages
+                4. List the files in a package
+                5. Install a single file
+                6. Select a new set to customize
+                7. Display current disk usage
+                8. Help
+        
+7.  You may now exit out of custom(ADM) by typing 'q' to quit.  However, 
+    SLS xnx316 has not been completely removed.
+   
+8.  The SCO XENIX custom(ADM) utility will not remove the perm list for any
+    package that is removed; it must be done by hand.  Type the command:
+ 
+               rm /etc/perms/xnx316   
+
+    to remove the perms file.  SLS xnx316 is now completely removed.
+    
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

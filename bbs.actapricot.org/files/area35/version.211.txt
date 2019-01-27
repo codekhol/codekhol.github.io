@@ -1,0 +1,2 @@
+@(#) VX-NET Release 2.11 (beta)   31st January 1989
+

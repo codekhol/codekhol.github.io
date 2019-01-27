@@ -1,0 +1,99 @@
+
+Dear SCO Customer,
+
+Enclosed find your copy of Support Level Supplement (SLS) unx233.
+This SLS will allow you to install SCO UNIX Operating System Release
+3.2.0 and later for Micro Computers based on Micro Channel Architecture
+on systems using IBM ESDI drives manufactured by Seagate Technologies 
+(e.g. ST 177i 60 MB). To use this supplement, replace the N1 diskette
+provided with your original distribution with the N1 diskette supplied
+with this supplement; and install the Volume 1 diskette with custom
+after the installation process (detailed instructions follow).
+
+
+1. Start the installation by booting from the new N1 diskette.
+   (SCO ESDI Supplement to SCO UNIX 386MC - Volume N1)
+   Follow the instructions as displayed on the screen. If you are asked
+   during the installation process to relink the kernel you must
+   say no, as you cannot do so until after the Volume 1 diskette has 
+   been installed.  Again, DO NOT RE-LINK THE KERNEL UNTIL AFTER YOU
+   HAVE INSTALLED Volume 1 below. Complete the installation normally
+   as instructed and reboot the system.
+
+2. Install the Volume 1 diskette via "etc/custom":
+
+   - Type /etc/custom   (The custom menu will appear)
+   
+   - Position the cursor so that Install is highlighted and press <Enter>.
+
+   - Make sure that the words A New Product are highlighted in the window 
+     in the lower right hand corner of the screen and press <Enter>.
+
+   - Make sure the words Entire Product are highlighted in the Choose an
+     option section of the screen and press <Enter>.
+
+   - You will be prompted to Insert distribution Volume 1 and press <Return>
+     Insert the diskette labeled SCO ESDI Supplement to SCO UNIX 386MC Volume 1
+     and press <Enter>.
+
+   - You will see the following messages
+       Installing custom data files
+       Executing Product Prep Script
+   
+   - You will be prompted at the bottom of the screen to Press any key to
+     continue.  Press <Enter>
+
+   - The message Creating file lists will flash onto the screen and then 
+     you will be prompted to Insert the requested Volume and press <Return>
+     Since the diskette is already in the drive press <Enter>
+
+   - You will see the following messages in sequence:
+       Extracting Files
+       Executing SCO ESDI Supplemenmt Init Script
+     
+       The UNIX Operating System will now be rebuilt.
+       This will take a few minutes. Please wait.
+
+       Root for this build is /.
+
+       The UNIX Kernal has been rebuilt
+
+   - Next you will be asked if you wish to boot the kernel by default
+     enter y and press <Enter>.
+
+   - You will see the following messages in sequence:
+       Backing up /unix to /unix.old
+       Installing new /unix
+
+       The kernel environment includes device node files and /etc/inittab.
+       The new kernel may require changes to /etc/inittab or device nodes.
+
+   - Next you will be asked if you want the kernel environment rebuilt,
+     enter y and press <Enter>
+
+   - You will see the following messages:
+      The kernel has been successfully linked and installed.
+              To activate it, reboot your system.
+      Setting up new kernel environment 
+
+   - You will then be prompted to press any key to continue, press <Enter>
+
+   - At the main custom menu move the highlighted entry to Quit and press
+     <Enter>.  Press <Enter> again on the highlighted yes.  
+     
+      
+3. At the prompt enter the command haltsys to reboot the system and activate
+   the changes.
+
+Your ESDI SLS unx233 is now installed correctly.
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Services is available Monday through Friday,
+6:00 to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services.
+
+

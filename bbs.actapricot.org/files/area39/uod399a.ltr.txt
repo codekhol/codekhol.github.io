@@ -1,0 +1,192 @@
+
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) UOD399A corrects problems 
+found in kernel modules in these products:
+
+	  SCO UNIX System V/386 Release 3.2 Operating System Version 4.2
+	  SCO Open Server Enterprise System Release 3.0
+	  SCO Open Server Network System Release 3.0
+	  SCO Open Desktop Release 3.0
+	  SCO Open Desktop Lite Release 3.0
+
+The kernel module problems corrected by SLS UOD399A are:
+
+   - A synchronous write to a file when the file system is full 
+     hangs the operating system.
+
+   - A possible system hang when performing raw transfers 
+     above 16 MB of physical memory.
+
+Performance enhancements: 
+
+   - Modifications have been made to kernel modules to improve 
+     performance when SCO NFS is being used.
+
+
+
+Using custom(ADM) to Install or Remove SLS UOD399A
+
+A. Installing SLS UOD399A
+
+1.  If the system is running in multiuser mode, log in as root on 
+    the console.  After warning the users that the system will be 
+    down for some time, enter the command:
+
+        shutdown  -y -g0 
+
+    The system will then execute a controlled shutdown operation 
+    which displays this message when the shutdown process is  
+    complete: 
+
+        **   Safe to Power Off   **
+                   -or-
+        ** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+4.  Insert the custom volume diskette labeled "SCO OS I/O Supplement
+    1.0 UOD399" in the floppy drive and enter the command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+5.  To select the following, highlight each one with the cursor keys
+    and press <Enter>:
+
+        Install -> A New Product -> Entire Product
+
+
+   - Position the cursor so that "Install" is highlighted and 
+     press <Enter>.
+
+   - Make sure the words "A New Product" are highlighted in the window
+     found in the lower right corner of the screen; press <Enter>.
+
+   - Make sure the words "Entire Product" are highlighted in the 
+     "Choose an option" section of the screen; press <Enter>.
+
+   - You will be prompted to "Insert: Distribution Floppy Volume 1 
+     and press <Enter>".  The diskette is already in the drive, 
+     therefore press <Enter>.
+
+   - You will see the following messages:
+
+       Installing custom data files ...
+       Executing Product Prep Script
+   
+   - You will be prompted to "Insert the requested Volume and 
+     press <Enter>".  The diskette is already in the drive, 
+     therefore press <Enter>.
+
+   - You will see the message:
+
+       Extracting Files
+
+   - When asked if you wish to relink the kernel, reply "y" in order 
+     to ensure that the modifications from SLS UOD399A are included 
+     in the kernel.
+
+     Answer "y" when asked if you want to boot off this kernel.
+
+     Answer "y" when asked if you want to rebuild the kernel 
+     environment.
+
+   - You will then be prompted to "Press any key to continue"; 
+     press <Enter>.
+
+   - At the main custom menu, move the highlighted entry to "Quit" 
+     and press <Enter>.  Press <Enter> again on the highlighted "yes".
+     
+   - Remove the diskette and reboot the computer.
+
+   - SLS UOD399A is now successfully installed.
+
+
+B. Removing SLS UOD399A
+
+1.  If the system is running in multiuser mode, log in as root on 
+    the console.  After warning the users that the system will be 
+    down for some time, enter the command:
+
+        shutdown  -y -g0 
+
+    The system will then execute a controlled shutdown operation 
+    which displays this message when the shutdown process has
+    completed:
+
+        **   Safe to Power Off   **
+                   -or-
+        ** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+4.  Use the custom utility to remove this SLS.  At the command line,
+    enter the command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+5.  To select the following, highlight each one with the cursor keys 
+    and press <Enter>:
+
+        Remove -> SCO OS I/O Supplement 1.0 UOD399 -> ALL
+
+   - Position the cursor so that "Remove" is highlighted and 
+     press <Enter>.
+
+   - Make sure to move the highlighted cursor to: "SCO OS 
+     I/O Supplement 1.0 UOD399" to select this package; press 
+     <Enter>.
+
+   - Make sure the word "ALL" is highlighted as the selected package to
+     remove; press <Enter>.
+
+   - Make sure the word "ALL" is highlighted under "Please verify the 
+     removal of the following packages"; press <Enter>.
+
+   - When asked if you wish to relink the kernel, reply "y" in order 
+     to ensure that the modifications from SLS UOD399A are removed 
+     from the kernel.
+
+     Answer "y" when asked if you want to boot off this kernel.
+
+     Answer "y" when asked if you want to rebuild the kernel 
+     environment.
+
+   - You will then be prompted to "Press any key to continue"; 
+     press <Enter>.
+
+   - At the main custom menu, move the highlighted entry to "Quit" 
+     and press <Enter>.  Press <Enter> again on the highlighted "yes".
+     
+   - Reboot the computer.
+
+   - SLS UOD399A has now been successfully removed.
+
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.  
+
+We appreciate your business.
+
+SCO Support Services
+

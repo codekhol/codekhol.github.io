@@ -1,0 +1,46 @@
+
+Dear Customer,
+
+The enclosed Support Level Supplement (SLS) lng227 replaces the icmp,
+tcp, cp, and udp protocol drivers for SCO TCP/IP Release 1.1.1, both for
+the standalone product and for the SCO TCP/IP portion of Open Desktop
+Release 1.0.0.  The new drivers are enhanced versions which allow for
+better communication and correct various problems encountered with these
+protocols and drivers, evident in some third party application programs.
+
+SLS lng227 also contains a new /etc/cpd daemon that only checks for copy
+protection violations on bootup, as opposed to a periodic check which
+presents an unwanted network load.
+
+The directions for installation of this SLS are as follows:
+
+1. Reboot your system and enter System Maintenance mode.
+
+2. Insert the enclosed diskette into the drive.
+
+3. Type "/etc/xinstall"
+
+4. Type "y" at the prompt "First floppy? (y/n)"
+
+5. Type "y" at the prompt "Do you wish to relink the kernel now? (y/n)"
+
+6. Type "y" at the prompt "Do you want this kernel to boot by default? (y/n)"
+
+7. Type "y" at the prompt "Do you want the kernel environment rebuilt? (y/n)"
+
+8. Type "n" at the prompt "Next floppy? (y/n)"
+
+
+If an error occurs during installation of the SLS, please follow the
+directions printed on the screen to diagnose the situation and continue
+with the installation. 
+
+Installation of this SLS will not affect any SCO TCP/IP configuration
+files. 
+
+Yours sincerely,
+
+
+Technical Support Department
+
+ref: lng227

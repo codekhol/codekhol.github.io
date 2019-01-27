@@ -1,0 +1,52 @@
+November 11, 1992
+
+NOVELL'S ODI NETWARE SERVER DRIVER DEVELOPMENT TOOL KIT Driver Specification 
+Version 3.1 March 15, 1993 Document Version 1.00 P/N 107-000007-001 is 
+provided as "Postscript" files within the self-extracting compressed files 
+"LANSV1.EXE", "LANSV2.EXE, and "LANSV3.EXE".  These files provide documentation
+on developing ODI LAN drivers for NetWare servers. Information provided in 
+these documents are subject to change.  Novell does not guarantee that the 
+information provided will meet the users requirements. The document's 
+chapters and appendices are separated into 20 separate "Postscript" printer 
+files.  
+
+The following is a copy of the directory listing of the extractable 
+"Postscript" files:
+
+LAN_SRV CNT   184082   3-15-93  8:00a    Table of Contents, Preface
+LAN_SRV 01    113349   3-15-93  8:00a    Chapter 1: Introduction
+LAN_SRV 02    106664   3-15-93  8:00a    Chapter 2: HSM Overview
+LAN_SRV 03    618966   3-15-93  8:00a    Chapter 3: HSM Data
+LAN_SRV 04    592060   3-15-93  8:00a    Chapter 4: MSM/TSM Data
+LAN_SRV 05    359941   3-15-93  8:00a    Chapter 5: HSM Procedures
+LAN_SRV 06    234258   3-15-93  8:00a    Chapter 6: TSM Procedures
+LAN_SRV 07    541086   3-15-93  8:00a    Chapter 7: MSM Procedures
+LAN_SRV 08    575851   3-15-93  8:00a    Chapter 8: Hub Management
+LAN_SRV 09    189689   3-15-93  8:00a    Chapter 9: Source Routing
+LAN_SRV A      62299   3-15-93  8:00a    Appendix A:Building the HSM
+LAN_SRV B     101582   3-15-93  8:00a    Appendix B:NetWare Debugger
+LAN_SRV C     454858   3-15-93  8:00a    Appendix C:Installation File
+LAN_SRV D     479203   3-15-93  8:00a    Appendix D:Media Frame Types
+LAN_SRV E     168402   3-15-93  8:00a    Appendix E:LSL Procedures
+LAN_SRV F     402081   3-15-93  8:00a    Appendix F:OS Procedures
+LAN_SRV G      47532   3-15-93  8:00a    Appendix G:Address Formats
+LAN_SRV H      75665   3-15-93  8:00a    Appendix H:Message Definitions
+LAN_SRV I     125258   3-15-93  8:00a	 Appendix I:Driver Template
+LAN_SRV J      50458   3-15-93  8:00a    Appendix I:v3.11 HSM Conversion
+LAN_SRV IDX    65716   3-15-93  8:00a    Index
+
+The printer files listed above are for "Postscript" printers and can be 
+printed as follows:
+
+      print filename     or     nprint filename
+
+Also available in conjunction with this compressed file are other compressed
+files containing documentation for developing NetWare drivers for DOS and
+OS/2 workstations.
+
+Novell provides LAN Driver Developers additional services and tools for
+developing LAN drivers through a LAN Driver Develovers Guide.  The guide offers
+LAN driver development support, sample driver source, tools, test programs, 
+driver development classes, and certification testing. If you are interested in
+obtaining the LAN Driver Development Guide contact Novell Labs Administration
+at (801) 429-5544 or Fax (801) 429-5224.

@@ -1,0 +1,103 @@
+                               HP JetDirect
+                        Extended Feature Supplement
+
+The information  provided in  the supplement  should be  used with  Hewlett
+Packard's TCP/IP  Ethernet Network Peripheral Interface for HP-UX and SunOS
+Systems, Administrator's  Guide (HP  Part No.  C2850-90001).    This  guide
+should come standard with your hardware.  If you are ordering new hardware,
+you should  specify no  media as  an ordering  option.    Most  information
+provided in  the HP  guide is  also relevant for an SCO installation.  This
+supplement only provides information where there are notable differences.
+                                     
+                            Platforms Supported
+
+This EFS has been designed to work with SCO UNIX, Releases 3.2v2 and above,
+and SCO Open Desktop, Releases 1.1 and above.  SCO Xenix is not supported.
+
+                   Where to find additional information
+
+Online manual pages are included with this EFS in the /usr/lib/hpnp/sco-man
+directory.   For more  information about  bootp, hpnpadmin and hpnpcfg, you
+should print out these pages.
+
+                             Network Utilities
+                                     
+The network  utilities on  SCO systems differ slightly from those described
+in the  HP Administrator's Guide.  The bootpd (boot protocol daemon) is not
+included in SCO's standard TCP/IP release.  It is provided and supported in
+this EFS  only in  the context  of HP printers and plotters.  Additionally,
+SCO's bootpd  does not support the bootpquery protocol.  If you choose this
+option when  running the  hpnpcfg utility,  information on  how to  use the
+debug modes of bootpd will be provided.
+
+SNMP (Simple Network Monitoring Protocol) is not provided with SCO's TCP/IP
+system.   The hpnpadmin utility described in the HP documentation will work
+with SCO  systems, but it does not support the "set community name" option.
+In  addition,  the  hpnpsnmp,  hpnpttyd,  and  hpnpstat  programs  are  not
+supported or included with this EFS.
+
+The major  difference in SCO installations is the "Installing the Software"
+section on page 2-3 of the Administrator's Guide.  After reading up to that
+point  in   the  Administrator's   Guide,  continue   with  the   following
+instructions:
+                       Installing the Software on an
+                     SCO Unix or SCO Open Desktop Host
+                                     
+The custom  utility is  used to  install the software from diskette to your
+SCO system.   In  addition, the  custom script will automatically customize
+the host,  and if necessary, configure the BOOTP and the TFTP configuration
+services.  It is not necessary to run the hpnpinstall utility since this is
+run during the custom installation.
+
+                             Load the Software
+
+1.  Log on the SCO host computer as root.
+2.  Type cd / to go to the root directory.
+3.  Insert the diskette into the proper drive.
+4.  Use custom to install the diskette as follows:
+     custom (when using your default device)
+               or
+     custom -m /dev/rfd096ds15
+     (for disk 0, 5 1/4" media)
+     custom -m /dev/rfd0135ds18
+     (for disk 0, 3 1/2" media)
+     custom -m /dev/rfd196ds15
+     (for disk 1, 5 1/4" media)
+     custom -m /dev/rfd1135ds18
+     (for disk 1, 3 1/2" media)
+                                     
+                     Running the Configuration Utility
+
+The custom  script will  automatically run the configuration utility during
+the installation  process.   If you  make configuration  errors during this
+step, you can run the configuration utilities again by typing:
+     /usr/lib/hpnp/hpnpcfg
+                                     
+                               Model scripts
+
+Generally in  an SCO  environment, you should configure the software to use
+one of the following model scripts:
+
+               laserjethpnp
+               laserjetIIIsi
+               hpplotter
+
+For Laserjet  II, III,  IIID or  IIIsi printers,  you should  set the model
+script to  be laserjethpnp.    This  is  the  default  script  for  all  HP
+compatible printers.   If  you have  a Laserjet IIIsi, you may also set the
+model script  to be laserjetIIIsi.   This script contains some options only
+available for  this printer.  If a plotter is connected to the network, you
+should set the model script to be hpplotter.
+                                     
+                         Printing Postscript Files
+                                     
+The  default  mode  for  printing  when  using  the  lp  command  with  the
+laserjethpnp or  laserjetIIIsi model  scripts is  HP/PCL mode.  Below is an
+example of how to print a postscript file:
+     lp -opost filename
+
+                       Finishing up the Installation
+
+You should  now continue in the Administrator's Guide on page 2-8, "Running
+the Configuration Utility."
+

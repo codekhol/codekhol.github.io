@@ -1,0 +1,91 @@
+ 
+                   SCO XENIX Supplement for IBM Model 35/40/L40
+ 
+ 
+             The enclosed disks provide additional support for the
+             following IBM Personal System/2 models:
+ 
+                  35 SX 043, 40 SX 043, 40 SX 045 and L40 SX
+ 
+             These PS/2 models use the Industry Standard Architecture
+             (ISA or AT architecture).  Install SCO XENIX System V
+             Release 2.3.4 for 386GT platforms using this supplement.
+             SCO XENIX for 386MC platforms and SCO XENIX releases prior
+             to 2.3.4 are not supported with this supplement.
+ 
+             The package consists of 2 disks: a replacement N1 (Boot)
+             disk to be used in place of the one supplied with the
+             Operating System package, and a LINK kit update disk to
+             modify the appropriate drivers.
+ 
+             INSTALLATION
+             ------------
+ 
+             1. Install the Operating System on the machine as normal,
+                using the replacement N1 (Boot) disk in place of the
+                standard N1.
+ 
+             2. Boot the system and enter System Maintenance mode by
+                entering the root password at the prompt.
+ 
+             3. Install the Operating System LINK kit using custom, as
+                follows:
+ 
+                a. Run /etc/custom
+ 
+                b. At the menu, choose "1. Operating System"
+ 
+                c. At the next menu, choose "1. Install one or more
+                   packages".
+ 
+                d. At the prompt, "Enter the package(s) to install",
+                   enter "LINK".
+ 
+                e. custom will then prompt for one or more volumes of
+                   your Operating System distribution.
+ 
+                f. After reading the Operating System disks, custom
+                   prompts for your Operating System serial number and
+                   activation key.  Enter these carefully from the
+                   Activation Key card provided with the Operating
+                   System.
+ 
+                g. When serialization is complete, quit the custom menu.
+ 
+             4. Install the LINK kit update disk using install(ADM) as
+                follows: 
+ 
+                a. Run /etc/install.
+ 
+                b. You will see the message:
+ 
+                       First Floppy? (y/n)
+ 
+                   Answer "y" and enter <RETURN>
+ 
+                c. You will then see the message:
+ 
+                       Installing IBM Model 35/40/L40 Supplement
+ 
+                d. If the LINK kit is not installed you will be given a
+                   chance to install it now.  However, it should already
+                   be installed due to the previous steps.
+ 
+                e. The LINK kit update is installed and you will see the
+                   message:
+ 
+                       Next Floppy? (y/n)
+ 
+                   Enter "n" and then <RETURN>
+ 
+                f. You will see the message:
+ 
+                       Installation complete
+ 
+                   You will then be returned to the system prompt.  The
+                   system is now ready for the installation of any
+                   additional packages.
+ 
+             If you have any questions, please contact your support
+             provider.
+ 

@@ -1,0 +1,497 @@
+Dear SCO Customer,
+
+Support Level Supplement (SLS) UOD426C corrects various date-related
+problems reported on SCO UNIX System V/386 and SCO Open Server based 
+systems.  Note that this SLS _only_ applies to the products specified 
+below.  A separate SLS is needed for SCO XENIX systems; contact your SCO 
+supplier for more information. 
+
+NOTE: Please remove any previous versions of UOD426 before installing
+      UOD426C.
+
+This SLS is intended for the following warranted operating system 
+releases and affected warranted SCO products:
+
+       SCO UNIX System V/386 Release 3.2 Operating System Version 4.2
+       SCO Open Server Enterprise System Release 3.0 
+       SCO Open Server Network System Release 3.0 
+       SCO Open Desktop Release 3.0 
+       SCO Open Desktop Lite Release 3.0 
+       SCO FoxBASE+ 386 Release 2.1.2
+
+
+These operating system and other SCO products are not warranted by SCO 
+and have not been extensively tested. However, SLS UOD426C should still 
+work as expected:
+
+       SCO UNIX System V/386 Release 3.2 Version 4.1, 4.0, 2.0
+       SCO UNIX System V/386 Release 3.2.0 
+       SCO Open Desktop Server System 1.1, 2.0
+       SCO Open Desktop Server System Supplement 2.0
+       SCO Open Desktop Personal System 1.0, 1.1, 2.0
+       SCO Open Desktop Server Upgrade 1.0, 1.1
+       Microsoft Word for UNIX Systems Release 5.1.1 
+       SCO Portfolio Release 1.0.1, 2.0.0
+
+SLS UOD426C resolves a number of separate and specific date-related problems, 
+described below, in the above operating systems and SCO products.  Other 
+SCO products, non-SCO applications, or SCO SLSs may be affected by the same 
+date-related problems:
+
+    1. The "century" problem
+
+    Some binaries and utilities will not correctly recognize the switch over 
+    from the 20th century to the 21st century when the system's date changes
+    from 1999 to the year 2000. This will cause other utilities, such as 
+    script asktime(ADM) which makes use of one or more of the affected 
+    binaries and/or utilities, to incorrectly revert back to the beginning 
+    of the 20th century.
+
+    The binaries and utilities affected by this problem are:
+
+     /bin/touch
+     /bin/sddate
+     /etc/setclock
+     /lib/cvtdate
+     /usr/bin/at
+
+    To correct the century problem SLS UOD426C installs fixed versions
+    of the binaries and utilities listed above.
+
+
+    2.  The "leap year" problem
+
+    Many commands and utilities do not display dates after February 28th,
+    2000 correctly.  For example, running the following command to set the 
+    date to Tuesday February 29th, 2000:
+
+               # date 0229101000
+
+    will set the date to Tuesday March 1st, 2000 instead.
+
+    The affected binaries and utilities do not correctly recognize the 
+    year 2000 as a leap year, hence a day is skipped over. The problem
+    was found to be a bug in a version of an SCO development system library 
+    used to build the affected binaries and utilities. 
+
+    To correct this problem SLS UOD426C installs a binary patch, fix2000,
+    which is run to find all affected binaries and utilities and patch 
+    in the corrected code. 
+
+
+    3.  Incorrect date in mail headers 
+
+    On systems where the date is set to the year 2000 and beyond the date 
+    reported in the mail headers will be incorrect. This problem is caused 
+    by a bug in the libmmdf.a library. 
+
+    To correct this problem SLS UOD426C installs fixed versions of the 
+    affected mailer binaries. The mailer binaries affected by this problem
+    are:
+
+     /usr/bin/mail
+     /usr/bin/mlist
+     /usr/bin/rmail
+     /usr/bin/rcvfile
+     /usr/bin/rcvtrip
+     /usr/bin/resend
+     /usr/lib/mail/execmail
+     /usr/lib/sendmail
+     /usr/mmdf/bin/cleanque
+     /usr/mmdf/bin/deliver
+     /usr/mmdf/bin/oldlocal
+     /usr/mmdf/bin/submit
+     /usr/mmdf/bin/v6mail
+     /usr/mmdf/chans/local
+
+
+    4.  'passwd -s' 
+
+    When the system's date is set to the year 2000 and a user's password
+    is subsequently modified, the command 'passwd -s <user>' displays the 
+    modification date as '01/01/100'.
+
+    To correct this problem SLS UOD426C installs a fixed passwd(ADM)
+    command.
+
+  
+    5.  The lp interface script 'standard' has the wrong date hard coded
+
+    The lp interface script, 'standard', has the wrong date hard coded.
+    The date is hard coded in 2 digits.
+
+    To correct this problem SLS UOD426C installs a modified 'standard'
+    interface script file with the date correctly coded to use 4 digits.
+
+
+    6. SCCS delta/get functions do not handle dates in year 2000 correctly.
+
+    When the system date is set to the year 2000 or beyond, and you insert a 
+    new version of a program into SCCS, SCCS will subsequently display an 
+    incorrect date for the insertion of the new program into SCCS and will
+    report an error.
+
+    To correct this problem SLS UOD426 installs fixed versions of a number
+    of SCCS binaries. All SCCS binaries except for 'help' are affected. 
+    The list of affected SCCS binaries is:
+
+     /usr/bin/admin
+     /usr/bin/cdc
+     /usr/bin/comb
+     /usr/bin/delta
+     /usr/bin/get
+     /usr/bin/prs
+     /usr/bin/rmdel
+     /usr/bin/sact
+     /usr/bin/sccsdiff
+     /usr/bin/unget
+     /usr/bin/val
+     /usr/bin/vc
+     /usr/bin/what
+ 
+    (NOTE: This problem will only be seen if the SCO UNIX System V/386
+    Development System is installed on the system.)
+
+ 
+ 7. New enhancements to /bin/date(C) and /etc/asktime(ADM)
+
+    SLS UOD426C also supplies an enhancement intended to synchronize the 
+    real-time clock (RTC) and system clock at boot time with an improved 
+    version of the /etc/asktime(ADM) shell script. It also provides the 
+    user with a new utility, /bin/getclock, a function designed to read the 
+    RTC to the nearest second, and an improved version of /bin/date(C) with 
+    a new command line option, '-t, which allows setting the system clock 
+    to the nearest second. 
+
+    As shown in the RTC(HW) man page, the RTC contains a seconds register
+    which can be read with the appropriate call to the RTC driver. Unlike
+    setclock(ADM), which does not implement this functionality, the new 
+    utility /bin/getclock reads the RTC including the seconds register and 
+    prints this time to stdout in exactly the format that the new /bin/date(C)
+    expects, namely YYMMDDHHMM.SS.
+
+    Thus in the new /etc/asktime(ADM), the system clock is synced to the 
+    RTC via the command:
+
+     date -t 'getclock'
+
+    to the nearest second. However, if the time needs to be reset  by the 
+    administrator at the familiar "Enter new time ([yymmdd]hhmm):" prompt,
+    the system clock is set to the nearest minute and the RTC is updated 
+    accordingly, truncating the current value of the seconds register to 
+    zero. This is adequate for most time-setting purposes, since rarely
+    is it desired to set the system clock to the nearest second apart from
+    referencing the RTC. 
+
+    Note that /bin/date(C) retains its old functionality in its entirety.
+    Thus typing "date MMDDHHMM[YY]" sets the date to the nearest minute. 
+    The full range of specification of date setting with the '-t' option
+    to /bin/date(C) includes the century according to the generalized 
+    syntax:
+
+     date -t [CC]YYMMDDHHMM[.SS]
+
+    where the bracketed information is optional once '-t' has been chosen.
+   
+
+    NOTE: While SLS UOD426C installs a number of fixed and enhanced 
+    utilities, most of the new utilities also suffer from the "leap-year" 
+    problem and so will also require patching by fix2000(ADM). Thus SLS 
+    UOD426C first replaces the broken utilities with the new versions 
+    before running fix2000(ADM) on the new versions. On removal of SLS 
+    UOD426C from the system, the original versions of the utilities are 
+    replaced. 
+
+
+
+INSTALLING SLS UOD426C
+
+NOTE:  Please remove any preivous versions of UOD426 before installing
+       UOD426C.
+
+To install SLS UOD426C, follow the attached procedure.  It is important that
+you read the "Notes" section first before installing SLS UOD426C. 
+
+
+   1. Log in as "root" in single-user mode, or if already logged in,
+      enter this command at the shell prompt:
+
+            init 1 
+
+   2. At the shell prompt, invoke custom(ADM):
+
+            custom
+
+      Insert the SLS floppy when prompted to do so.
+
+   3. Choose the option:
+   
+            Install->A New Product->Entire Product
+   
+   4. At the following prompt:
+
+            Insert SCO Year 2000 SLS
+                 Floppy Volume 1
+
+      check to ensure that the floppy is still in the floppy drive and 
+      press <Enter>.
+
+      Insert the second SLS floppy volume when prompted to do so.
+
+   5. After several messages indicating the progress of the installation of 
+      this SLS, you will see a message informing you that files are now being
+      fixed by the binary fix2000(ADM) installed by SLS UOD426C.  At this 
+      stage, the binary is being applied to all files and utilities that 
+      are known to be broken for the operating system and any products 
+      installed on your system. 
+
+      NOTE:  Depending on the speed of the machine and how many files 
+      will require correcting, this part of the installation may take 
+      some time. 
+
+   6. After the binary has found and corrected all the required files,
+      a message will be displayed to say that all files corrected have 
+      first been saved to a backup directory. The script will display how 
+      much disk space has been taken by the backup files and you will be 
+      prompted as to whether you want to archive the backup or keep the 
+      backup files on the hard disk. Enter "y" if you want to archive the 
+      backup files to a backup medium, or "n" if you want to keep the 
+      backup directory on the system.  Refer to (2) in the Notes section 
+      for more details.
+
+
+The installation is now complete. Once SLS UOD426C has been installed, the 
+binary supplied with SLS UOD426C, fix2000(ADM), is left on the system as 
+/usr/bin/fix2000. This binary can be used to check for other applications 
+whose files may require correcting. The list of known broken files and 
+utilities in SCO operating systems and known affected SCO products are 
+kept in the directory: 
+
+               /usr/lib/custom/uod426/fix 
+
+Lists are provided for SCO UNIX (uod), SCO FoxBASE+ (fox), SCO MPX (mpx),
+SCO Office Portfolio (op2) and Microsoft Word for UNIX systems (wrd).
+(NOTE: The file list of SCO UNIX, uod, also includes the list of affected
+SCCS binaries from the development system.)
+
+If necessary, fix2000(ADM) can be run against these lists to recheck the 
+files, or to check and correct any file that has been reinstalled after SLS 
+UOD426C. 
+
+If any parts of the operating system, or one of the known affected SCO 
+applications is reinstalled, it is highly recommended that fix2000(ADM) is 
+run against the appropriate list(s). 
+
+Additionally, should other SCO products, or applications and any non-SCO 
+products or applications be installed either before or after SLS UOD426C, 
+it is advisable to check these as well.
+
+For further information on the binary fix2000(ADM), see the supplied manual 
+page. This is available online, and a hard copy is provided in the Notes 
+section below, under Note (1).
+
+
+
+REMOVING SLS UOD426C
+
+To remove SLS UOD426C from your system:
+
+   1. Log in as "root" in single-user mode.
+   
+   2. At the shell prompt, invoke custom(ADM):
+
+            custom
+
+   3. Choose the option Remove, and highlight the SCO Year 2000 SLS 
+      to select it. Press <Enter>.
+
+   4. Choose the package "ALL" from the list of packages.
+
+   5. Answer "Yes" when prompted if you want to continue with the removal.
+   
+   6. If you had previously archived the saved files in the backup directory
+      to a backup medium and removed the backed up files from the system, you 
+      will be prompted to insert the backup medium to restore the backup area.
+      See note (3) in the Notes section for further details.
+
+   7. All the original files previously saved during the installation of 
+      SLS UOD426C are now restored, and the binary fix2000(ADM) and its 
+      manual page is removed from the system. 
+
+The removal is now complete. 
+
+
+
+Notes 
+=====
+
+1. fix2000(ADM) 
+
+Provided below is a copy of the manual page for the fix2000(ADM) binary. 
+NOTE: This is not available as part of the standard SCO operating system 
+environment.  fix2000(ADM) was specially produced for SLS UOD426C.
+
+
+
+fix2000(ADM)                   15 January 1996               fix2000(ADM)
+
+Name
+
+        fix2000 - Check for and fix known bug which causes dates after
+                  28th February, 2000 to be printed incorrectly.
+
+
+Syntax
+
+        fix2000 [ -ipv ] file ...
+
+
+Description
+
+        The command without options will scan the specified 'file'(s)
+        to determine whether a known bug is present in 'file'(s) which
+        causes the command to handle dates after 28th February, 2000
+        incorrectly. Its exit status indicates whether or not the bug
+        is present in any of the 'file'(s), and so it is generally more
+        useful to run it on a single 'file' at a time.
+
+        The following options are recognized:
+
+        -v      Prints name of 'file'(s) which contain the bug on standard
+                output.
+
+        -p      Attempts to fix the bug where present.  This will fail
+                if the 'file'(s) cannot be opened for writing.
+
+        -i      Interactive version of '-p' above.  Will prompt for
+                confirmation before attempting to fix each 'file'
+                containing the bug.
+
+
+Examples
+
+        A list of all binaries in the system containing this bug can be
+        printed using the following:
+
+                find / -type f -exec fix2000 -v {} \;
+
+
+Diagnostics
+
+        Exit status is 0 if any occurrences of the bug are found, 1 if
+        no occurrences of the bug are found, and 2 for usage errors or
+        inaccessible files.
+
+
+Notes
+
+        The fix2000 utility knows about five different variations of
+        the same bug. There may be more, in which case the command
+        will need to be updated to cater for these.
+
+
+2. Archiving the backup directory
+
+The backup directory, /usr/lib/custom/uod426, is a backup of all the files 
+that have been corrected by SLS UOD426C.  At the end of the installation 
+procedure, you will be told how much space is taken up by the entire backup 
+directory. You can choose whether or not to archive the backup directory 
+to an archive medium of your choice, or whether or not to leave the backup 
+directory in place. Archiving the backup directory to an archive medium 
+will allow you to remove the backup directory, thus freeing up the extra 
+hard disk space taken up. 
+
+Should you choose to archive the backup directory, this can be done either 
+during the installation of SLS UOD426C, or afterwards. Choosing to archive 
+the backup directory after SLS UOD426C has been installed allows any further 
+applications (whether SCO or non-SCO) that were not checked and corrected 
+during the installation of SLS UOD426C, but which were checked and fixed 
+with fix2000(ADM), to be backed up. 
+
+If you choose to archive the backup directory during the installation of 
+SLS UOD426C, you can choose to remove the backup files at the same time, or 
+leave the backup directory in place. Choosing the option to remove the backup 
+files at the same time as archiving them will not completely remove the entire
+backup directory. You will be left with just the lists of known broken files 
+and utilities. If you choose to remove the backup afterwards, the entire 
+backup directory will be removed.
+
+It is recommended that you choose to archive the backup directory during 
+installation, then answer 'yes' to remove the backup files. The files that 
+are left, the lists of known broken files and utilities, take up a negligible
+amount of space on the hard disk and can be used by fix2000(ADM) to recheck
+the corrected files.
+
+It is also recommended that the backup directory be archived to a tape or DAT 
+device, although any valid device can be specified.
+
+Free disk space requirements for installing SLS UOD426C will depend on the 
+default software installed and the total number of files requiring correction.
+You should ensure you have a minimum of 28Mb free disk space for the full 
+SCO UNIX and Open Desktop systems. This figure needs to be increased if you 
+have additional products installed. 
+
+3. Removing SLS UOD426C
+
+If you remove SLS UOD426C, you must have a valid backup directory present on 
+the system, or a valid archive.  SLS UOD426C will not be removed if no backup
+is available.  Make sure that any archive of the backup directory taken 
+is valid, can be read and is kept in a safe location. 
+
+
+4. SLS UOD426C log file
+
+A log file is created by SLS UOD426C, if this is the first installation.
+The log file is found in /usr/lib/custom/uod426.log.  If SLS UOD426C 
+has been installed before and is being installed again, the previous log 
+file is backed up to /usr/lib/custom/uod426.log.bck.  The log file can be 
+used to check the installation and removal of SLS UOD426C.  It is useful 
+to see what files have been saved and modified, and to debug the 
+installation or removal of SLS UOD426C should there be problems.
+
+5. Using fix2000(ADM)
+
+If fix2000(ADM) is to be used after SLS UOD426C has been installed to 
+check files from any SCO products and/or non-SCO products, it is important 
+to note that fix2000(ADM) does not automatically back up files to be 
+patched. fix2000(ADM) only patches the affected files. You must ensure 
+that you first back up any files to be patched before running fix2000(ADM).
+
+You should first use fix2000(ADM) to generate a list of the files to be 
+patched, then create a simple script to back up files to be patched before 
+running fix2000(ADM). If you do not do this, any files that are patched by
+fix2000(ADM) will not be saved and you will not be able to restore the 
+original files. 
+
+6. New /bin/date(C) and /etc/asktime(ADM)
+
+The enhanced versions of /bin/date(C) and /etc/asktime(ADM) are provided 
+as is but have been tested insofar as to ensure they work as expected.
+Note: There is no new man page for either of these enhanced utilities.
+
+On removing SLS UOD426C, both enhanced utilities are removed from the 
+system and replaced by their original versions. 
+
+
+7. /shlib/protlib_s
+
+The new version of at(C) supplied by SLS UOD426C is built from a source
+version that may be later than the source version from which the current 
+at(C) is built from. The later version of at(C) requires a shared library 
+be installed in the /shlib directory. On pre-3.2v4 based SCO systems, this 
+shared library is not present.
+
+SLS UOD426C will install the additional shared library, if needed, and 
+remove it when SLS UOD426C is removed from the system. The additional 
+shared library installed is:
+
+   /shlib/protlib_s
+
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services
+

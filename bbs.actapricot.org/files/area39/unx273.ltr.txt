@@ -1,0 +1,102 @@
+ Dear SCO Customer,
+ 
+ Enclosed find Support Level Supplement (SLS) unx273.  This SLS resolves an 
+ outstanding problem with the SCO UNIX System/V 386 Release 3.2 Operating
+ System where heavy serial input would cause serial I/O degradation and
+ system hang. It will install on machines running:
+ 
+         SCO UNIX System V/386 Release 3.2 Operating System 
+         SCO UNIX System V/386 Release 3.2 Operating System Version 2.0 
+         Open Desktop Release 1.0 
+ 
+ SLS unx273 will install on computers based on Industry Standard Architecture 
+ and on computers based on Micro Channel Architecture (MCA).  This SLS is not
+ applicable to operating systems with SCO MPX installed.
+ 
+ To install this SLS, please take the following steps:
+ 
+ (1) Reboot your system and enter System Maintenance mode.
+ 
+ (2) Insert the floppy into your primary floppy drive and close the door.
+ 
+ (3) Type:
+ 
+       /etc/xinstall
+         
+     You will see the following message:
+ 
+       For each volume in the distribution set, insert the
+       floppy into the drive, enter 'y', and press <Return>.
+       Enter the letter 'n' after the last volume.
+     
+       First Floppy? (y/n)
+ 
+     At this point enter 'y' and press <Return>.  You will then see the 
+     message:
+ 
+       Extracting files...
+     
+     If you do not have the LINK kit installed, you will be prompted with
+     the following message:
+ 
+       You must install the LINK kit package for the Supplement
+       Do you wish to install the LINK kit now (y/n)
+ 
+     Enter 'y' and then <Return>.  
+ 
+     You will see the message:
+ 
+    backing up /etc/conf/pack.d/kernel/io.o as /etc/conf/pack.d/kernel/io.o.bak
+ 
+ (4) You will then be prompted to build a new kernel with the message:
+ 
+       You must create a new kernel to effect the driver change specified.
+       Do you wish to create a new kernel now? (y/n)
+ 
+     Enter 'y' and then <Return>.  You will then see the message:
+ 
+       The UNIX Operating System will now be rebuilt.
+       This will take a few minutes.  Please wait.
+ 
+       Root for this system build is /
+ 
+       The UNIX Kernel has been rebuilt.
+ 
+       Do you want this kernel to boot by default? (y/n)
+     
+     Enter 'y' followed by <Return>.  You will see the message:
+ 
+       Backing up /unix to /unix.old
+       Installing new /unix
+ 
+       The kernel environment includes device node files and /etc/inittab.
+       The new kernel may require changes to /etc/inittab or device nodes.
+ 
+       Do you want the kernel environment rebuilt? (y/n)
+ 
+     Enter 'n' followed by <Return> and you will see the message:
+ 
+       Device node or inittab changes associated with this new kernel have not
+       been made. These changes should be made by running touch /etc/new_unix;
+       /etc/conf/bin/mkenv.
+ 
+       Next Floppy? (y/n)
+ 
+     At this point, enter 'n' followed by <Return>.  
+     
+ (5) You must now reboot the system so that the changes made by SLS unx273
+     can take effect.  To shut down your system, enter the command:
+ 
+       shutdown -g0 -y
+ 
+     SLS unx273 will take effect when your system is rebooted.  Note that if
+     you re-install your LINK kit, you will need to re-install SLS unx273.
+
+ If you have any questions, please call our SCO Customer Services Department
+ at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+ 6:00 A.M. to 5:00 P.M., Pacific Time.
+
+ We appreciate your business.
+
+ SCO Support Services
+

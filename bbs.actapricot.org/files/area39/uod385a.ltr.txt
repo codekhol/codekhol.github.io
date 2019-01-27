@@ -1,0 +1,168 @@
+Dear SCO Customer,
+
+The Connection Drivers Support Level Supplement (SLS) UOD385A resolves
+several problems in regard to file system connectivity and network data
+transfer issues for Microsoft LAN Manager for UNIX Systems Release 2.2.0
+(hereafter referred to simply as LAN Manager). 
+
+It is highly recommended that SLS UOD385A and the Microsoft LAN Manager 
+for UNIX Systems Server Maintenance Supplement 2.2.1 be applied to the 
+LAN Manager 2.2.0 server.  Doing so will provide the best possible 
+environment and will bring the LAN Manager server software to revision 
+level 2.2.1. 
+
+The enclosed Support Level Supplement (SLS) UOD385A contains drivers 
+for the following products:
+
+SCO UNIX System V/386 Release 3.2 Operating System Version 4.1 and 4.2
+SCO Open Desktop Release 2.0 and 3.0
+SCO Open Desktop Lite Release 3.0
+SCO Open Server Network System Release 3.0
+SCO Open Server Enterprise System Release 3.0
+
+SLS UOD385A contains the following:
+
+1. A new /etc/conf/pack.d/s5/Driver.o file.  An updated /etc/conf/pack.d/.
+   s5/space.c file is also installed on SCO Open Desktop 2.0 and SCO UNIX
+   Operating System Version 4.1.  The update to this driver addresses silent
+   corruption of files, when written from the application on the client to 
+   the network drive on the server.  An application that holds the target 
+   file open and issues a chsize(S) call to change the size of the file is 
+   subject to this problem.  This issue has been reported by users of 
+   Microsoft MSWORKS, Microsoft Excel and Lotus 123.
+
+2. A new /etc/conf/pack.d/sp/Driver.o and /etc/conf/pack.d/sp/space.c file.
+   Updates to this driver essentially remove a minor deadlock situation that
+   is manifested by: (1) server hangs under extremely heavy data transfer;
+   (2) intermittent failures when copying multiple files (copy *.*) between
+   the server and a workstation; (3) failures by the server to validate work-
+   station net logon attempts.
+
+3. A new /etc/conf/pack.d/hs/Driver.o file.  Updates to this driver correct
+   an intermittent problem with mounted high-sierra file systems on the LAN
+   Manager server. The LAN Manager workstation is unable to report the
+   existence of directories.  This problem is seen when the directory files
+   '.'  and '..' have the same inode number.
+
+INSTALLATION INSTRUCTIONS AND NOTES
+-----------------------------------
+
+It is recommended that the Microsoft LAN Manager for UNIX Systems Server
+Maintenance Supplement 2.2.1 be installed first, followed by SLS UOD385A.
+You may postpone relinking of the kernel until installation of the SLS.  
+This will avoid an unnecessary second relinking of the kernel.
+
+The /etc/conf/pack.d/s5/Driver.o file supplied with SLS UOD385A is not 
+compatible with the same driver supplied in SLS UOD381A.  It is NOT safe 
+to install SLS UOD385A and SLS UOD381A on the same machine.  Installation 
+of SLS UOD385A on a machine running SYBASE with SLS UOD381A will violate 
+the integrity of the SYBASE level 10 environment.
+
+The /etc/conf/pack.d/s5/Driver.o file supplied with SLS UOD385A is not XPG4
+compliant.
+
+At this time, it is necessary for a customer to choose between installing
+SLS UOD385A and strict XPG4 compliance, they cannot have both.  This will 
+be corrected in a future release of SLS UOD385.       
+
+
+To install SLS UOD385A, take the following steps:
+
+1. Shutdown and reboot your system.  Enter System Maintenance 
+   mode by typing your root password at the prompt:
+
+   Type CONTROL-d to proceed with normal startup,
+   (or give root password for System Maintenance)
+
+2. Type:
+
+   /etc/custom
+
+3. The main custom "menu" will appear.  The "Install" option will
+   be highlighted.  Press <Return> to select the "Install" option.
+
+4. A list of installed products will appear.  The first item in 
+   the list, "A New Product", is highlighted.  Press <Return> 
+   to select "A New Product".
+
+5. Custom will now display your installation options.  By default,
+   "Entire Product" is highlighted.  Press <Return> to select
+   "Entire Product".
+
+6. Custom will prompt you to insert "Distribution Floppy 1".  Insert
+   the enclosed diskette into the drive and press <Return> while 
+   "Continue" is highlighted.
+
+7. After extracting some information from the diskette, custom 
+   will display information indicating that it is saving several 
+   files.  Custom will once again prompt you to insert volume 1.
+   Press <Return> while "Continue" is highlighted.
+
+8. You will be prompted:
+
+   "Do you wish to relink the kernel now? (y/n)"
+
+   Enter "y" at this prompt.
+
+9. After the relink of the kernel is complete, you will be
+   prompted:
+
+   "Do you want this kernel to boot by default? (y/n)"
+
+   Enter "y" at this prompt.
+
+10. Next, you will be prompted:
+
+    "Do you want the kernel environment rebuilt? (y/n)"
+
+    Enter "y" at this prompt.
+
+11. After the kernel environment has been rebuilt, custom will 
+    prompt you to "Press any key to continue".  Press <Return>.  
+    Custom will then display the message:
+
+    "Checking file permissions...".
+
+12. After completing these steps, you will be returned to the
+    main custom menu.  You may quit out of custom at this time. 
+    To reboot the system so that the changes take effect, type:
+
+    /etc/reboot
+
+
+It should never become necessary to remove this SLS.  However, should
+you need to do so, remove the SLS while in System Maintenance mode. 
+Enter the command:
+
+      /etc/custom
+
+Choose the menu selections:
+
+      Remove -> UOD385A: Connection Drivers SLS -> ALL
+
+Follow the directions displayed on the screen to remove the SLS.
+
+
+During both the installation and removal of this SLS, you are asked to
+relink the kernel.  If you should choose not to do so during the installation
+or removal process, execute the following commands at a later time while in 
+System Maintenance mode:
+
+        cd /etc/conf/cf.d
+        ./link_unix
+
+To complete installation or removal of this SLS, answer "y" to the questions 
+presented and then reboot your system with the command:
+
+        /etc/reboot
+
+
+
+If you have any questions, please call our SCO Customer Services Department
+at (408) 425-4726.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

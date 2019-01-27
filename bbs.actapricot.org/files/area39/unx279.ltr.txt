@@ -1,0 +1,172 @@
+
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) unx279 is specifically designed
+for and resolves outstanding problems with the SCO UNIX System V/386 Release 
+3.2 Operating System Version 2.0 GT.  Some of these problems (items 1-3 below) 
+are corrected in SCO UNIX System V/386 Release 3.2 Operating System Version 2.0
+for computers based on Micro Channel Architecture (MCA), Open Desktop Release 
+1.1, and on systems with SCO MPX Release 1.1 installed.  Therefore, SLS unx279 
+is not needed and will not install on these particular releases.  If you have 
+one of these releases, and it is based on SCO UNIX System V/386 Release 3.2 
+Operating System Version 2.0, you may still want to install the new version of 
+vi provided with this SLS using the procedure in the section of this letter 
+entitled "TO INSTALL ONLY THE VI PORTION OF THE SCO UNIX MAINTENANCE DISK".
+
+The following problems are addressed by SLS unx279:
+
+	(1) Processes using the plock() system call would hang
+	    indefinitely.  Ps(C) would show the process state 
+	    as "B" when this occurred.
+
+	(2) Under a rare set of conditions, the in-core inode 
+	    table would appear to end up with an invalid
+	    entry.  In actuality, the problem was with the 
+	    directory name cache scheme which was added to 
+	    improve performance in the SCO UNIX System V/386 
+	    Release 3.2 Operating System Version 2.0 - hence 
+	    fsck would not detect an error.
+
+	(3) 14 character directory names could not be renamed.
+
+        (4) Heavy serial input on a line with echo enabled would cause
+            the system to hang.  Degradation of i/o on other serial lines 
+	    would be observed before the system would finally hang.  The 
+	    onset of data loss on serial terminals occurred after a few 
+	    minutes.  The effect was seen on the systems own serial ports,
+	    as well as those available on add-in multiport cards.  The 
+	    problem was caused by all available clist structures getting 
+	    filled with buffered (echoed) data.  Increasing the tunable 
+	    parameter to increase the number of clists available merely 
+	    increased the time before hangup occurred.
+
+        (5) The vi(C), vedit(C), and view(C) utilities did not properly 
+	    reset their modes when resumed after being stopped by the 
+	    POSIX job control signal SIGTSTP.
+
+
+To install SLS unx279, shutdown your system with:
+
+    /etc/shutdown
+
+and bring your system up in System Maintenance mode.  Insert the floppy 
+into your floppy drive and, at a root prompt, type:
+
+    /etc/xinstall
+        
+You will see the following message:
+
+    For each volume in the distribution set, insert the
+    floppy into the drive, enter 'y', and press <RETURN>.
+    Enter the letter 'n' after the last volume.
+    
+    Should you see the message 'tar: please mount new volume'
+    insert the next floppy, and press <RETURN>.
+
+    First Floppy? (y/n)
+
+At this point enter 'y' and press <RETURN>.  You will then see the 
+message:
+
+    Extracting files...
+    
+If you do not have the LINK kit installed, you will be prompted with 
+the following message:
+
+    You must have the LINK kit installed
+    Do you wish to install the LINK kit now (y/n)
+
+Enter 'y' and then <RETURN>.  You will then be prompted for the 
+diskettes, and the serial number and activation key, all of which 
+were supplied with your SCO UNIX System V/386 Release 3.2 Operating 
+System Version 2.0.  Once this process is complete, or if you already 
+have the LINK kit installed on your system, you will then see the 
+following message:
+
+    Backing up /etc/conf/pack.d/kernel/io.o /etc/conf/pack.d/kernel/io.o.bak
+    Backing up /etc/conf/pack.d/kernel/os.o /etc/conf/pack.d/kernel/os.o.bak
+    Backing up /etc/conf/pack.d/s5/Driver.o /etc/conf/pack.d/s5/Driver.o.bak
+    Backing up /usr/include/sys/nami.h /usr/include/sys/nami.h.bak 
+    Backing up /bin/vi /bin/vi.bak
+    Backing up /usr/bin/view /usr/bin/view.bak
+    Backing up /usr/bin/vedit /usr/bin/vedit.bak
+    Backing up /usr/bin/vi /usr/bin/vi.bak
+
+The installation will now prompt you for your serial number and activation 
+key.  You will then see the following message:
+
+    	The UNIX Operating System will now be rebuilt.
+    	This will take a few minutes.  Please wait.
+
+    	Root for this system build is /
+
+    	The UNIX Kernel has been rebuilt.
+
+    Do you want this kernel to boot by default (y/n)
+    
+Enter 'y' followed by <RETURN>.  You will see the message:
+
+    Backing up /unix to /unix.old
+    Installing new /unix
+
+    The kernel environment includes device node files and /etc/inittab.
+    The new kernel may require changes to /etc/inittab or device nodes.
+
+    Do you want the kernel environment rebuilt? (y/n)
+
+Enter 'n' followed by <RETURN> and you will see the message:
+
+    Device node or inittab changes associated with this new kernel have not
+    been made.  These changes should be made by running touch /etc/new_unix;
+    /etc/conf/bin/mkenv.
+
+    Next Floppy? (y/n)
+
+
+
+At this point, enter 'n' followed by <RETURN>.  You must now reboot the 
+system so that the changes made by SLS unx279 can take effect.  To shutdown 
+your system, first make certain that all users are logged off the system. 
+Enter the command:
+
+    shutdown -g0 -y
+
+SLS unx279 will take effect when your system is rebooted.  Note: If you 
+re-install your LINK kit, you will need to re-install SLS unx279.
+
+
+
+TO INSTALL ONLY THE VI PORTION OF THE SCO UNIX MAINTENANCE DISK
+===============================================================
+
+(1) Log in as root and back up your original vi, vedit and view binaries 
+    (these are typically linked to the same file) with the following 
+    commands:
+
+	cd /usr/bin
+	mv vi vi.old
+	mv view view.old
+	mv vedit vedit.old
+
+(2) Now, extract the vi portion of SLS unx279 with the tar(C) command
+    as shown in the example below:
+
+	cd /
+	tar xvf /dev/install ./usr/bin/vi
+
+(3)  Finally, link the new vi to the view and vedit binaries using the
+     ln(C) command as shown:
+
+	cd /usr/bin
+	ln vi view
+	ln vi vedit
+
+
+If you have any questions please call our SCO Customer Services Department 
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

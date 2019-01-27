@@ -1,0 +1,3066 @@
+Dear Valued SCO Customer:
+
+We are pleased to provide you with the SCO LLI Driver Disk EFS Version 3.0.0.
+
+The SCO LLI Driver Disk EFS Version 3.0.0 runs on SCO UNIX System V/386 
+Release 3.2 Version 4.0, SCO MPX 2.0, and SCO Open  Desktop  1.1 and later 
+versions of each.  
+
+It supports the following protocol stacks:  SCO TCP/IP 1.1.3, SCO GOSIP 1.0  
+and Microsoft LAN Manager for UNIX Systems 1.1 and later versions of each.
+
+This version of the product adds support for additional LAN cards, a list of 
+which can be found in the Release Notes and Installation Instructions, which 
+you should read before installing the product.
+
+You may be aware that Standard Microsystems Corporation (SMC) has replaced the 
+Western Digital Ethernet cards with their own interchangeable cards.  SCO LLI 
+Driver Disk Version 3.0.0 provides support for both the older Western Digital 
+8003 and 8013 cards as well as their SMC replacements.
+
+We would like to draw your attention to three known problems with this version:
+
+The 3Com 3C523 driver in the product sometimes causes spontaneous rebooting
+under heavy load conditions in the following configuration: 486-based, 
+33 MHz   hardware running SCO UNIX System V/Release 3.2.
+
+The Racal Datacomm NI6510 card does not work with a remote "nbstatus" 
+on Microsoft LAN Manager for UNIX Systems.  If a machine tries to "nbstatus" 
+the machine with the NI6510, the "nbstatus" will fail, and all of the 
+LAN Manager sessions using the NI6510 will drop.
+
+The on-line man pages in this product are obsolete and are being updated.  
+Please refer to the Release Notes for current information.  
+
+Please also note that due to the older hardware architecture of the 3Com 3C501 
+LAN card and its relatively small buffer size, you may find this card's 
+performance below average.
+
+We hope you find this product useful.
+
+Sincerely,
+
+
+Products Business Unit
+The Santa Cruz Operation, Inc.
+
+
+
+
+
+                           SCO LLI Drivers Package
+
+
+
+
+
+
+
+
+
+                        Release and Installation Notes
+
+
+
+
+
+
+
+                                Release 3.0.0
+
+
+
+
+
+
+                      The Santa Cruz Operation, Inc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ (c) 1983-1992 The Santa Cruz Operation, Inc.
+ (c) 1980-1992 Microsoft Corporation.
+ (c) 1989-1992 UNIX System Laboratories, Inc.
+ All Rights Reserved.
+ No part of this publication may be  reproduced,  transmitted,  stored  in  a
+ retrieval system, nor translated into any human or computer language, in any
+ form or by any means, electronic, mechanical, magnetic,  optical,  chemical,
+ manual,  or otherwise, without the prior written permission of the copyright
+ owner, The Santa Cruz Operation, Inc., 400 Encinal, Santa Cruz,  California,
+ 95060,  U.S.A.   Copyright infringement is a serious matter under the United
+ States and foreign Copyright Laws.
+ The copyrighted software that accompanies this manual is licensed to the End
+ User  only for use in strict accordance with the End User License Agreement,
+ which should be read carefully before commencing use of the  software.   In-
+ formation  in this document is subject to change without notice and does not
+ represent a commitment on the part of The Santa Cruz Operation, Inc.
+ The following legend applies to all contracts and subcontracts  governed  by
+ the  Rights  in  Technical  Data  and Computer Software Clause of the United
+ States Department of Defense Federal Acquisition Regulations Supplement:
+
+ RESTRICTED RIGHTS LEGEND:  USE, DUPLICATION, OR  DISCLOSURE  BY  THE  UNITED
+ STATES   GOVERNMENT  IS SUBJECT TO RESTRICTIONS AS SET FORTH IN SUBPARAGRAPH
+ (c) (1) (ii) OF THE RIGHTS IN TECHNICAL DATA AND COMPUTER SOFTWARE CLAUSE AT
+ DFARS  52.227-7013.  "CONTRACTOR/SUPPLIER" IS THE SANTA CRUZ OPERATION, INC.
+ 400 ENCINAL STREET, SANTA CRUZ, CALIFORNIA 95060, U.S.A.
+
+ SCO, SCO Open Desktop, The Santa Cruz Operation, the SCO Open Desktop  logo,
+ and the SCO logo are registered trademarks of The Santa Cruz Operation, Inc.
+ in the U.S.A and other countries.
+
+ All other brand or product names are or may be trademarks of, and  are  used
+ to identify products or services of, their respective owners.
+
+ Document Version: 3.0.0B
+ Date: 12 March 1992
+
+
+
+
+
+ Chapter 1
+ Introduction
+
+    These SCO LLI Drivers Package  Drivers Package Release and Installation
+    Notes, which are referred to here as simply release notes, contain the
+    latest information on the SCO LLI Drivers Package .  The introductory
+    sections discuss notational conventions, the contents of the SCO LLI
+    Drivers Package , and how to use the documentation set.  Subsequent sec-
+    tions contain a product overview, installation and configuration informa-
+    tion, removal procedures, and known problems with this release.  Appen-
+    dixes provide samples of configuring the supported transport stacks over
+    LLI drivers.  A set of manual pages is also included.
+
+    _________________________________________________________________________
+       NOTE  Please read through this entire document before installing
+       the software or configuring your drivers.
+    _________________________________________________________________________
+
+
+
+ Conventions used in this guide
+
+    This guide uses the following notational conventions:
+
+    bold         Commands, command options, and daemons appear in bold.
+
+    BOLD CAPS    Parameters contained in files appear in uppercase BOLD.
+
+    italics      Files and directories appear in italics. Italics are also
+                 used for emphasis.
+
+    bold italics Variables that you supply are in bold italics.  For example,
+                 in the command path:pathname, you replace the variable path-
+                 name with an actual pathname when you type the command.
+
+    < >          Special keys that you press are in angle brackets, < >.  For
+                 example, Ctrlx means to hold down the Control key and press
+                 the x key simultaneously, then release them.
+
+    Courier      System responses and programming examples appear in Courier.
+
+
+
+ Contents of the SCO LLI drivers package
+
+    The SCO LLI Drivers Package  contains both software and documentation.
+
+    +  The software consists of one disk labeled SCO LLI Drivers Package
+       disk, Release 3.0.0.
+
+    +  The documentation consists of these release notes.
+
+
+
+ Supported operating environments
+
+    This version of the SCO LLI Drivers Package  is supported on the follow-
+    ing platforms and transport stacks:
+
+    +  Platforms/Operating Systems
+
+       -  SCO UNIXO System V/386 Release 3.2 version 2.0
+
+       -  SCO UNIX System V/386 Release 3.2 version 4.0
+
+       -  SCO Open DesktopO Release 1.1 and 2.0
+
+    +  Transport Stacks
+
+       -  SCO TCP/IP Release 1.1.3 and 1.2.0
+
+       -  MicrosoftO NetBEUI
+
+       -  SCO/RetixO OSI
+
+    SCO distributes Microsoft NetBEUI as part of Microsoft LAN Manager for
+    UNIX Systems.
+
+
+ New features of the SCO LLI drivers package
+
+    The SCO LLI Drivers Package  now supports more network adapter cards than
+    in previous Releases, including cards for twisted-pair Ethernet networks.
+    In addition, this release of SCO LLI Drivers Package includes the
+    llistat(ADM) command.  This command displays each driver board's name and
+    address, the number of frames that have gone in and out, the number of
+    frames with errors, and the number of collisions (if any).  For more in-
+    formation on llistat, see the llistat(ADM) manual page at the end of
+    these release notes.  For information on using llistat in place of the
+    OSI mac utility, see the section ``Displaying Statistics with LLI'' later
+    in these release notes.
+
+
+
+
+
+ Chapter 2
+ Overview of the SCO LLI drivers package
+
+    The SCO LLI Drivers Package  provides a common interface for SCO's net-
+    working products.  This section presents basic information on networking,
+    then discusses the SCO LLI Drivers Package  specifically.
+
+    +  If the SCO LLI Drivers Package  is the first networking product you
+       have used, begin with the section ``Basics of Networking.''  This sec-
+       tion provides the background you need to understand subsequent sec-
+       tions.
+
+    +  If you are new to the International Organization for Standardization
+       (ISO) architecture, which describes a seven-layer hierarchical model
+       and the concept of protocol layers, read the section ``Network Proto-
+       cols and OSI.''
+    +  All readers should study the section ``The SCO LLI Drivers Package .''
+
+
+ Basics of networking
+
+    Networking means connecting your computers together so that they can
+    share information.  Effective networking increases productivity by using
+    computer resources more efficiently.  A network puts the combined power
+    of your system's hardware and software at your fingertips.
+
+    Although there are many different types of networks, they fall into two
+    general categories: wide area networks (WANs) and local area networks
+    (LANs).
+
+    +  A WAN connects computers over long distances using phone lines and
+       sometimes satellite connections.  Computers on a WAN can be several
+       hundred feet apart or on the other side of the world from each other.
+       Sometimes a computer must go through additional computers, routers, or
+       gateways to reach the one it wants to talk to.
+
+    +  A LAN connects computers that are in the same office or in adjacent
+       buildings.  All the computers on a LAN are connected to a single
+       cable, unless they use a gateway or bridge.  A computer on a LAN can
+       talk directly to any other computer on that LAN.
+
+    Most networks are a combination of wide and local area networks.
+
+
+ Network protocols and OSI
+
+    A network, in the physical sense, consists of cables or phone lines that
+    connect computers and data communication cards.  However, a network is
+    not useful unless it has programs on each computer that let people access
+    the various computers on the network.
+
+    Computers on a network communicate in agreed ways called protocols. Pro-
+    tocols dictate which signals computers use across cables, how they tell
+    one another that they have received information, and how they exchange
+    information.
+
+    Protocols are more accurately termed ``protocol suites'' or ``protocol
+    families.''  This subtle shift in terminology reflects the fact that the
+    communications functions are complex and are usually divided into
+    independent layers (or ``levels'').  The protocol associated with each
+    layer communicates only with the layers immediately above and below it,
+    and assumes the support of underlying layers. Lower layers are closer to
+    the hardware and higher layers are closer to the user.  The number of
+    layers and tasks that each layer performs depends on who defines them.
+
+    ISO has a seven-layer protocol called the Reference Model of Open Systems
+    Interconnection (OSI).  OSI has become a generally accepted convention
+    for referring to protocols.  This model divides the way computers commun-
+    icate into seven layers and describes the protocol used at each layer.
+
+    The following table illustrates the seven layers.
+
+    OSI model
+
+    __________________________________________________
+   |  7  Application |  Defines how programs can com-|
+   |                 |  municate with each other.    |
+   |_________________|_______________________________|
+   |  6  Presentation|  Performs any necessary data  |
+   |                 |  conversion.                  |
+   |_________________|_______________________________|
+   |  5  Session     |  Controls dialog and estab-   |
+   |                 |  lishes a connection, also    |
+   |                 |  called a session, with other |
+   |                 |  machines.                    |
+   |_________________|_______________________________|
+   |  4  Transport   |  Makes sure information       |
+   |                 |  exchanged between computers  |
+   |                 |  arrives intact and without   |
+   |                 |  errors.                      |
+   |_________________|_______________________________|
+   |  3  Network     |  Makes sure information coming|
+   |                 |  from one computer arrives at |
+   |                 |  the correct destination.  The|
+   |                 |  network layer uses addresses,|
+   |                 |  which differ in format from  |
+   |                 |  protocol to protocol, to     |
+   |                 |  determine the correct desti- |
+   |                 |  nation.                      |
+   |_________________|_______________________________|
+   |  2  Data Link   |  Makes sure information gets  |
+   |                 |  from one end of the cable to |
+   |                 |  the other intact.  A data    |
+   |                 |  communications card in the   |
+   |                 |  computer usually controls the|
+   |                 |  data link-layer protocol.    |
+   |_________________|_______________________________|
+   |  1  Physical    |  Defines the way information  |
+   |                 |  travels on a cable.  For     |
+   |                 |  example, the physical layer  |
+   |                 |  defines the electrical       |
+   |                 |  impulse for a binary 1, and  |
+   |                 |  it defines the speed at which|
+   |                 |  the electrical impulses      |
+   |                 |  travel.  The most common     |
+   |                 |  physical-layer protocol for  |
+   |                 |  LANs is the IEEE 802.3 proto-|
+   |                 |  col, of which Ethernet(TM) is|
+   |                 |  a subset.  The term ``Ether- |
+   |                 |  net network'' is sometimes   |
+   |                 |  used to refer to a LAN.      |
+   |_________________|_______________________________|
+
+
+
+ Using the SCO LLI drivers package
+
+    The SCO LLI Drivers Package  provides a uniform interface at the data
+    link level:
+
+    +  The networking cards and their drivers conform to the SCO LLI Drivers
+       Package , thus allowing a consistent way to configure them.
+
+    +  The SCO LAN transport stacks are free from low-level card configura-
+       tion.  These transport stacks, which consist of the transport layer
+       and below, can include SCO TCP/IP, SCO OSI, and Microsoft NetBEUI.
+
+    The upcoming sections in these release notes describe in detail the two
+    procedures you must complete before you can use your network cards: in-
+    stallation and configuration.
+
+    +  The section ``Installing the SCO LLI drivers package'' describes how
+       to install the appropriate driver for your card.
+
+    +  The section ``Configuring the SCO LLI drivers package'' describes how
+       to configure your card's driver.
+
+    +  The appendixes provide presents sample configuration procedures for
+       the mkdev and netconfig utilities.
+
+       _________________________________________________________________________
+          NOTE  You should use mkdev to make chains between the card, the
+          LLI drivers and the SCO TCP/IP Runtime (for SCO UNIX System V)
+          Version 1.1.3.  Use netconfig to create the chains between the
+          LLI drivers and any transport stack other than SCO TCP/IP 1.1.3.
+       _________________________________________________________________________
+
+
+    Your networking situation might require more than one transport stack on
+    a single networking card.  In that case, you can configure different
+    transports over the same driver.  For example, you can configure Micro-
+    soft NetBEUI and SCO TCP/IP over one Western Digital driver.
+
+
+
+
+
+ Chapter 3
+ Installing the SCO LLI drivers package
+
+    This section discusses the following aspects of the SCO LLI Drivers Pack-
+    age  installation:
+
+    +  hardware and software requirements your machine must meet before you
+       can install the SCO LLI Drivers Package
+
+    +  the installation procedure itself
+
+ Hardware requirements
+
+    Your machine must have the following hardware configuration:
+
+    +  386 or 486(TM) computer based on Industry Standard Architecture (ISA),
+       Extended Industry Standard Architecture (EISA), or Microchannel Archi-
+       tecture (MCA)
+
+    +  supported network card designed for your machine
+
+    The SCO LLI Drivers Package  supports the following cards for ATO ma-
+    chines:
+
+       3Com 501 EtherLink(TM) I
+       3Com 503 EtherLink II
+       3Com 507 EtherLink 16
+       HP 27250A ISA
+       HP 27247A EISA
+       Racal InterLanO NI6510 ISA
+       Racal InterLan ES3210 EISA
+       IBM Token Ring Adapter
+       IBM Token Ring Network PC Adapter II (long card)
+       IBM Token Ring Network PC Adapter II (short card)
+       IBM Token Ring Network PC Adapter 16/4
+       Excelan(TM) 205 Ethernet
+       Excelan 205T Ethernet
+       Excelan 205T/16 bit Ethernet
+       Western DigitalO WD8003E EtherCard PLUS(TM)
+       Western Digital WD8003EB EtherCard PLUS
+       Western Digital WD8003EBT EtherCard PLUS
+       Western Digital WD8003S EtherCard PLUS(TM)
+       Western Digital WD8003W EtherCard PLUS
+       Western Digital WD8003WC EtherCard PLUS
+       Western Digital WD8003WT EtherCard PLUS
+       Western Digital WD8003EP EtherCard PLUS
+       Western Digital WD8013EBT EtherCard PLUS16(TM)
+       Western Digital WD8013EP EtherCard PLUS16
+       Western Digital WD8013EPA EtherCard PLUS16
+       Western Digital WD8013EPC EtherCard PLUS16
+       Western Digital WD8013W EtherCard PLUS16
+       Western Digital WD8013WC EtherCard PLUS16
+       Western Digital WD8013EW EtherCard PLUS16
+       Western Digital WD8013EWPA EtherCard PLUS16
+       Western Digital WD8013EWC EtherCard PLUS16
+
+    The SCO LLI Drivers Package  supports the following cards for MC ma-
+    chines:
+
+      3Com 523 EtherLink/MC
+      3Com 523B EtherLink/MC
+      IBM Token Ring Adapter/A 4 Mbps
+      IBM Token Ring Adapter/A 4/16 Mbps
+      Western Digital WD8003E/A EtherCard PLUS
+      Western Digital WD8003EP/A EtherCard PLUS
+      Western Digital WD8003EP/C EtherCard PLUS
+      Western Digital WD8003ET/A EtherCard PLUS
+      Western Digital WD8003ST/A EtherCard PLUS
+      Western Digital WD8003W/A EtherCard PLUS/A
+      Western Digital WD8013WP/A EtherCard PLUS16/A
+
+ Software requirements
+
+    Your machine must have either SCO UNIX Version 3.2.2, 3.2.4 or SCO Open
+    Desktop Release 1.1 or 2.0, including the Link Kit, installed and work-
+    ing.  You must also have software for the SCO LLI Drivers Package  on the
+    distribution media suitable for your machine.
+
+
+ Installation procedure
+
+    _________________________________________________________________________
+       CAUTION  If you have an earlier version of the SCO LLI Drivers
+       Package  on your system, remove it before you install the current
+       version.  Follow the removal directions in the release notes that
+       accompany your earlier SCO LLI Drivers Package .
+    _________________________________________________________________________
+
+    Become familiar with the custom menu and its operation.  The custom(ADM)
+    utility for SCO UNIX platforms is described in the Installation Guide in
+    the section entitled ``Installing the UNIX Distribution and Applica-
+    tions'' in the binder marked UNIX Operating System, System
+    Administrator's Reference. If you are running Open Desktop, the utility
+    is described in the Open Desktop Installation Guide in the section enti-
+    tled ``Installing Open Desktop Services and Service Components''.
+    To install the SCO LLI Drivers Package , follow the instructions below.
+
+    1.  Reboot the machine.
+
+    2.  Enter System Maintenance (single-user) mode by typing the root pass-
+        word.
+
+        The super user has access to all the system files, so be careful not
+        to overwrite, delete, or corrupt any files by accident.
+
+    3.  At the prompt, type:
+
+           custom
+
+        The main custom menu appears with the Install option highlighted.
+
+    4.  Press Return to begin the installation.
+
+        custom displays the Install screen with a list of currently installed
+        software at the bottom right corner of the screen.
+
+        The screen highlights A New Product.  Use v to highlight SCO LLI
+        Driver Disk
+
+    5.  Press Return to select SCO LLI Driver Disk
+        The screen offers you a choice of installing the Entire Product,
+        Packages, or Files. The screen highlights the Entire Product Option.
+
+    6.  Press Return to select the Entire Product option.
+        The screen directs you to insert the SCO LLI Drivers Package  volume.
+
+    7.  Insert Volume 1 in the drive, then press Return.
+
+        The following message appears at the top of the screen:
+
+    _________________________________________________________________________
+    Installing custom data files ...
+        _________________________________________________________________________
+
+
+        Next, custom leaves the Install screen and checks for the correct in-
+        stallation environment.  The following message appears briefly:
+
+    _________________________________________________________________________
+    Executing Product Prep script
+        _________________________________________________________________________
+
+
+
+
+        After the prep script, custom displays a screen with a list of SCO
+        LLI Drivers Package s.
+
+    8.  Use ^ or v to highlight an SCO LLI Drivers Package , and press Space
+        to select it.  An asterisk ``*'' appears by the package.  Repeat the
+        highlight and space procedure for each package that you need, then
+        press Return.
+
+
+        The following message appears at the top of the screen:
+
+    _________________________________________________________________________
+    Creating file lists ...
+        _________________________________________________________________________
+
+
+        A message instructs you to insert the first SCO LLI Drivers Package
+        volume.
+
+    9.  Verify that Volume 1 is in the drive, then press Return.
+
+
+        The following message appears at the top of the screen:
+
+    _________________________________________________________________________
+    Extracting files ...
+        _________________________________________________________________________
+
+
+        The system leaves the Install screen to execute the SCO LLI Drivers
+        Package initialization script.  The following message appears
+        briefly:
+
+    _________________________________________________________________________
+    Executing SCO LLI Driver disk Init Script
+        _________________________________________________________________________
+
+
+        You then see messages indicating progress as each driver package is
+        installed.  When all of the packages are installed, the following
+        message appears at the bottom of your screen:
+
+    _________________________________________________________________________
+    After installing the SCO LLI Driver Disk,
+    please use netconfig or mkdev <driver> to add drivers to
+    your system. Press Return to continue.
+        _________________________________________________________________________
+
+
+
+    10. Press any key to continue with the installation.
+
+
+        The following message appears briefly on the screen:
+
+    _________________________________________________________________________
+    Checking file permissions . . .
+        _________________________________________________________________________
+
+
+        You return to the main custom menu.  The software list on your screen
+        now includes the SCO LLI Drivers disk.
+
+        You can choose to continue installing other products or you can quit
+        custom.
+
+    11. To quit custom, use -> to highlight the Quit option, and press
+        Return.  The screen prompts you to confirm that you want to quit, and
+        highlights the Yes option.  Press Return.
+
+
+
+
+
+
+ Chapter 4
+ Configuring the SCO LLI drivers package
+
+
+    This section describes the information needed for configuring the net-
+    working card drivers to the hardware setup of the cards. For sample mkdev
+    and netconfig configuration procedures, see the appendixes.
+
+    _________________________________________________________________________
+       NOTE  Please familiarize yourself with the other cards and drivers
+       in your machine before installing new or additional drivers.
+    _________________________________________________________________________
+
+
+ Configuration overview
+
+    Each machine can support from one to four of each networking card type,
+    depending on the type.  Use mkdev or netconfig to configure a driver to
+    match each card's hardware setup.
+
+    Different cards require differing information. Consult the documentation
+    for your card and the section for your card in the section entitled
+    ``Configuration information for supported cards'' to determine what in-
+    formation you need to configure your card. Depending on your card, the
+    configuration procedure may require you to supply an acceptable interrupt
+    vector, I/O base address, cable type, RAM base address, RAM size, DMA
+    setting and slot number. The parameters you supply through mkdev or
+    netconfig must match those acceptable to the card and other hardware
+    installed on your system.
+
+
+ Interrupt vectors
+
+    Before you install a networking card and driver software, choose an
+    interrupt vector (IRQ) setting for the card that does not conflict with
+    the IRQ settings used by your hardware and your other networking cards.
+    Consult the card's documentation to learn its acceptable IRQ settings.
+
+    Also, consult your hardware documentation to learn which IRQ settings
+    your machine, hard disk, and current add-on cards use.  The following
+    table lists some typical hardware interrupt settings:
+
+    _________________________________________________________________________
+    Hardware                         Interrupt Vector (IRQ)
+    _________________________________________________________________________
+    ISA, EISA, or MCA machine
+      clock interrupt                0
+      console (keyboard) interrupt   1
+      floppy controller interrupt    6
+    Hard disk                        varies
+    Serial ports
+      com1                           4
+      com2                           3
+    Parallel ports
+      lpt0, lpt1                     7
+      lpt2                           5
+
+    After you determine your hardware's IRQ settings, choose settings for
+    each networking card that you plan to install, making sure that the set-
+    tings you choose do not conflict with each other.  The documentation for
+    each networking card should indicate whether you need to configure the
+    card physically to use the chosen IRQ setting.
+
+    The operating system reserves interrupt vectors 4, 3, and 7 for com1,
+    com2, and lpt0.  If you choose an interrupt setting that is either a set-
+    ting reserved for another use or is in use by another device, a conflict
+    occurs.  The mkdev and netconfig utilities resolve such conflicts by
+    prompting you to remove the restriction on the reserved setting.
+    _________________________________________________________________________
+       WARNING  If you assign both sio interrupt vectors 3 and 4 to other
+       drivers, you remove the sio driver from the Link Kit.  On a system
+       running SCO MPX(TM), you cannot link the kernel if the sio driver
+       is removed.  To correct this problem, use mkdev or netconfig to
+       remove one of the drivers that uses an sio interrupt vector and
+       reassign that vector to the sio device.  Then reconfigure the
+       driver you removed, using a different interrupt vector.
+
+       For details on this problem and the work-around, see the section
+       ``sio Interrupt Vectors under MPX'' in these release notes.
+    _________________________________________________________________________
+
+ I/O base address
+
+    The I/O base address is a unique area of memory allocated to a specific
+    network card (for example, 300 is the I/O base address for the e3A card)
+    in the system for input/output data control. The I/O base address must
+    match the hardware configuration on the card, and other devices must not
+    use this I/O base address. If you enter an I/O that is already in use by
+    another device, you will delete that device.
+
+ Thick, thin or twisted pair cable
+
+    When you configure certain cards (for example, the 3Com 503 driver), you
+    need to specify whether the board connects to ``thick,'' ``thin'' or
+    ``twisted pair'' Ethernet cable. Thick and thin are both coaxial cable.
+    Thick cable is approximately 1/2'' in diameter, and thin is approximately
+    1/4'' in diameter. Twisted pair resembles a slightly thicker phone cable.
+
+    +  Thin cable provides a direct connection to the network without using a
+       transceiver.
+
+    +  Thick cable connects your 3Com 503 board to a transceiver, which in
+       turn connects to the Ethernet cable.
+
+    +  Twisted pair cable provides a direct connection to the network without
+       using a transceiver.
+
+
+ RAM buffer base address
+
+    The shared RAM buffer base address is a unique area of memory allocated
+    as shared memory for both the host machine and network card for
+    read/write operations.  Other devices must not use this address.  If you
+    assign a networking card a RAM base address that is used by another de-
+    vice, you are prompted to select another address.
+
+ RAM buffer size
+
+    Some cards (for example, most Western Digital cards) require that you
+    specify the RAM buffer size as well as the base address.  A RAM buffer is
+    a part of Random Access Memory that is set aside for use by the network-
+    ing card.  Consult the documentation that comes with your card to deter-
+    mine which buffer sizes your card requires.
+
+ ROM base address
+
+    Some cards (for example, IBM Token Ring cards) require that you specify a
+    ROM address. If you have more than one card requiring a ROM address, make
+    sure you give them different addresses.
+
+ DMA channel
+
+    Some cards (for example, the HP-EISA-32) require that you specify the DMA
+    channel you want the card to use. If you assign a networking card a DMA
+    channel that is currently in use by another device, you are prompted to
+    select another channel.
+
+ Slot number
+
+    Cards (for example,the HP-EISA-32) that are meant to be used on machines
+    using the EISA (Enhanced Industry Standard Architecture) bus may be
+    required to provide a slot number. This number refers to the slot in
+    which the card is inserted.
+
+
+ Configuration information for supported cards
+
+    To configure your cards you need to assemble several kinds of informa-
+    tion.  Different cards require different kinds of configuration informa-
+    tion.  Before you start the configuration, you should:
+
+    1.  Find the appropriate section below for your card.
+
+    2.  Determine what information you need to configure your card.
+
+    3.  Consult the documentation for your card.  Although some of the
+        default settings are supplied below, much of the configuration infor-
+        mation requested is system-, card-, and machine-specific. All the in-
+        formation should be recorded on a configuration worksheet before you
+        attempt to assemble your network.  The following sections include the
+        default settings where appropriate. You should add other relevant in-
+        formation for each card, such as the other machines or networks to
+        which each is attached.
+
+    4.  Write the information for your card, network and machine on a
+        separate sheet of paper.
+
+    5.  Attach the completed sheet to your machine.
+
+ 3Com 3c501
+
+    Begin the installation of an 3Com 3c501 card by reading the section enti-
+    tled ``Configuration overview'' in this chapter. To complete the instal-
+    lation of the 3Com 3c501 card, you need the following additional informa-
+    tion:
+
+    Card name               SCO LLI 3.0.0 refers to the 3Com 3c501 as e3A.
+                            The first e3A card installed on your system is
+                            referred to as e3A0.  If you install more than
+                            one e3A card on your system, the cards are num-
+                            bered sequentially starting with 0. Thus, an
+                            ``e3A0'' indicates the first card of that type
+                            installed on the system. If you install a second
+                            card of the same type, it would be  e3A1, the
+                            third would be e3A2, and so forth.
+
+                            Default settings for multiple card installations
+                            are found in Table 4-1.
+
+    Interrupt vector (IRQ) The default interrupt vector is 3. This setting
+                            is used if you press Return at the prompt.
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+    I/O base address        The default I/O base address is 300. If you want
+                            to add additional cards or change the default
+                            address of the original card, make sure that you
+                            do not choose an I/O address used by another de-
+                            vice.
+                            _________________________________________________________________________
+                               CAUTION  If you use a base address that is
+                               already in use by another serial device,
+                               that device is removed.  If you want to
+                               continue to use that device, you must sup-
+                               ply it with another base address.
+                            _________________________________________________________________________
+
+    Cable type              The e3A card does not require cable information.
+
+    RAM address             The e3A card does not require that you specify a
+                            RAM address.
+
+    ROM address             The e3A card does not require that you specify a
+                            ROM address.
+
+    DMA channel             The e3A card does not require that  you specify a
+                            DMA channel.
+
+    Slot                    The e3A card does not require that you specify a
+                            slot number.
+
+ 3Com 3c503 & 3c503-16
+
+    Begin the installation of a 3Com 3c503 card by reading the section enti-
+    tled ``Configuration overview'' in this chapter. To complete the instal-
+    lation of the card, you need the following additional information:
+
+    Card name               SCO LLI 3.0.0 refers to the 3Com 3c503 as e3B.
+                            The first e3B card installed on your system is
+                            referred to as e3B0.  If you install more than
+                            one e3B card on your system, the cards are num-
+                            bered sequentially starting with 0. Thus, an
+                            ``e3B0'' indicates the first card of that type
+                            installed on the system. If you install a second
+                            card of the same type, it would be  e3B1, the
+                            third would be e3B2, and so forth.
+
+                            Default settings for multiple card installations
+                            are found in Table 4-1.
+
+                            _________________________________________________________________________
+                               WARNING  The 3Com 3c503-16 and 3c503-16 TP
+                               ``stretch'' cards have an 8 bit mode and a
+                               16 bit mode configurable by a jumper on the
+                               card. SCO LLI Release 3.0.0 only supports
+                               the 8-bit mode.
+                            _________________________________________________________________________
+
+
+    Interrupt vector (IRQ)  The default interrupt vector is 3. This setting
+                            is used if you press Return at the prompt.
+
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+
+    I/O base address        The default I/O base address is 300. If you want
+                            to add additional cards or change the default
+                            address of the original card, make sure that you
+                            do not choose an I/O address used by another de-
+                            vice.
+
+                            _________________________________________________________________________
+                               CAUTION  If you use a base address that is
+                               already in use by another serial device,
+                               that device is removed.  If you want to
+                               continue to use that device, you must sup-
+                               ply it with another base address.
+                            _________________________________________________________________________
+
+    Cable type              To install the e3B card, you must know if your
+                            network uses thick, thin, or twisted pair ether-
+                            net cable.
+
+    RAM address             The e3B card does not require that you specify a
+                            RAM address.
+
+    ROM address             The e3B card does not require that you specify a
+                            ROM address.
+
+    DMA channel             The e3B card does not require that  you specify a
+                            DMA channel.
+
+    Slot Number             The e3B card does not require that you specify a
+                            slot number.
+
+
+ 3Com 3c507
+
+    Begin the installation of an 3Com EtherLink 16 (3c507) card by reading
+    the section entitled ``Configuration overview'' in this chapter. To com-
+    plete the installation of the 3c507 card you must follow these steps;
+
+    +  Use mkdev or netconfig to configure the driver.
+
+    +  Use e3dsetup to configure the card.
+
+    Although both mkdev or netconfig and e3dsetup require the same informa-
+    tion, you should configure the driver first. Both mkdev and netconfig
+    check the parameters you supply for conflicts with other devices.  If
+    found, they prompt you to select another parameter. Once you have
+    selected a configuration that does not conflict with other devices, those
+    parameters can be supplied to the e3D card with e3dsetup.
+
+    _________________________________________________________________________
+       CAUTION  When you use e3dsetup to configure your card, note that
+       the 3c507 cards can be set to use either 8 or 16 bit data
+       transfers.  Acceptable values for this options are standard for 8-
+       bit data transfer and turbo for 16-bit data transfer. The 3c507
+       card does not work in 16-bit mode with some motherboard chip sets.
+       If your 3c507 card does not work in 16 bit mode, try the 8-bit mode
+    _________________________________________________________________________
+
+    Both mkdev (or netconfig) and e3dsetup require the following additional
+    information.
+
+    Card name               SCO LLI 3.0.0 refers to the 3Com 3c507 as e3D.
+                            The first e3D card installed on your system is
+                            referred to as e3D0.  If you install more than
+                            one e3D card on your system, the cards are num-
+                            bered sequentially starting with 0. Thus, an
+                            ``e3D0'' indicates the first card of that type
+                            installed on the system. If you install a second
+                            card of the same type, it would be  e3D1, the
+                            third would be e3D2, and so forth.
+
+                            Default settings for multiple card installations
+                            are found in Table 4-1.
+
+    Interrupt vector (IRQ)  The default interrupt vector is 3. This setting
+                            is used if you press Return at the prompt.
+
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+
+    I/O base address        The default I/O base address is 300. If this
+                            address is in use, you must choose another.
+
+                            _________________________________________________________________________
+                               CAUTION  If you use a base address that is
+                               already in use by another serial device,
+                               that device is removed.  If you want to
+                               continue to use that device, you must sup-
+                               ply it with another base address.
+
+                               Also, because the e3D card uses the I/O
+                               base address 0x100 for storing other net-
+                               work information, you can not use that
+                               address for any other device.
+                            _________________________________________________________________________
+
+
+    Cable type              To install the e3D card, no cable information is
+                            required.
+
+    RAM address             The default RAM address for the e3D card is
+                            C0000. If you want to add additional cards or
+                            change that address, make sure that you do not
+                            choose an address used by another device.
+
+    ROM address             The e3D card does not require that you specify a
+                            ROM address.
+
+    DMA channel             The e3D card does not require that you specify a
+                            DMA channel.
+
+    Slot number             The e3D card does not require that you specify a
+                            slot number.
+
+
+ 3Com 3c523
+
+    Begin the installation of a 3Com 3c523 card by reading the section enti-
+    tled ``Configuration overview'' in this chapter. To complete the instal-
+    lation of the card, you need the following information:
+    _________________________________________________________________________
+       WARNING  3c523 cards may cause the system to ``panic'' or spontane-
+       ously reboot when used with 486 (TM) machines under heavy loads.
+       For more information, see the section entitled ``Known limitations
+       with this release.''
+    _________________________________________________________________________
+
+
+    Card name               SCO LLI 3.0.0 refers to the 3Com 3c523 as e3C.
+                            The first e3C card installed on your system is
+                            referred to as e3C0.  If you install more than
+                            one e3C card on your system, the cards are num-
+                            bered sequentially starting with 0. Thus, an
+                            ``e3C0'' indicates the first card of that type
+                            installed on the system. If you install a second
+                            card of the same type, it would be  e3C1, the
+                            third would be e3C2, and so forth.
+
+                            Default settings for multiple card installations
+                            are found in Table 4-1.
+
+    Interrupt vector (IRQ)  The default interrupt vector is 12. This setting
+                            is used if you press Return at the prompt. If
+                            this interrupt is already in use, you are
+                            prompted to select another.
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+
+    I/O base address        The default I/O base address is 300. If you want
+                            to add additional cards or change the default
+                            address of the original card, make sure that you
+                            do not choose an I/O address used by another de-
+                            vice.
+                            _________________________________________________________________________
+                               CAUTION  If you use a base address that is
+                               already in use by another serial device,
+                               that device is removed.  If you want to
+                               continue to use that device, you must sup-
+                               ply it with another base address.
+                            _________________________________________________________________________
+
+
+    Cable type              To install the e3C card, cable information is not
+                            required.
+
+    RAM address             The default RAM address for the e3C card is
+                            C0000. If you want to add additional cards or
+                            change that address, make sure that you do not
+                            choose an address used by another device.
+
+    ROM address             The e3C card does not require that you specify a
+                            ROM address.
+
+    DMA channel             The e3C card does not require that you specify a
+                            DMA channel.
+
+    Slot number             The e3C card does not require that you specify a
+                            slot number.
+
+
+ Excelan 205T
+
+    Begin the installation of an Excelan 205T card by reading the section
+    entitled ``Configuration overview'' in this chapter. To complete the in-
+    stallation of the card, you need the following information:
+
+    Card name               SCO LLI 3.0.0 refers to the Excelan 205T as exos.
+                            The first exos card installed on your system is
+                            referred to as exos0.  If you install more than
+                            one exos card on your system, the cards are num-
+                            bered sequentially starting with 0. Thus, an
+                            ``exos0'' indicates the first card of that type
+                            installed on the system. If you install a second
+                            card of the same type, it would be exos1, the
+                            third would be exos2, and so forth.
+
+                            Default settings for multiple card installations
+                            are found in Table 4-1.
+
+                            _________________________________________________________________________
+                               CAUTION  SCO LLI 3.0.0 only supports the
+                               exos card at bus speeds of 8 MHz or less.
+                            _________________________________________________________________________
+
+
+    Interrupt vector (IRQ)  The default interrupt vector is 2. This setting
+                            is used if you press Return at the prompt.
+
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+
+    I/O base address        The default I/O base address is 310. If your sys-
+                            tem has additional cards, or you want to change
+                            the default base address of the exos card, make
+                            sure that you do not choose an I/O address used
+                            by another device.
+
+                            _________________________________________________________________________
+                               CAUTION  If you use a base address that is
+                               already in use by another serial device,
+                               that device is removed.  If you want to
+                               continue to use that device, you must sup-
+                               ply it with another base address.
+                            _________________________________________________________________________
+
+
+    Cable type              To install the exos card, cable information is
+                            not required. However, if you install the exos
+                            card using Thinnet ethernet cable, you must make
+                            sure that the card is connected to a network.
+
+    RAM address             The default RAM address for the exos card is
+                            CC000. If you want to add additional cards or
+                            change that address, make sure that you do not
+                            choose an address used by another device.
+
+    ROM address             The exos card does not require that you specify a
+                            ROM address.
+
+    DMA channel             The exos card does not require that you specify a
+                            DMA channel.
+
+    Slot number             The exos does not require that you specify a slot
+                            number
+
+
+ HP EISA-32
+
+    Begin the installation of the HP EISA-32 card by reading the section
+    entitled ``Configuration overview'' in this chapter. To complete the in-
+    stallation of the card, you need the following information:
+
+    Card name               SCO LLI 3.0.0 refers to the HP EISA-32 as hpe.
+                            The first hpe card installed on your system is
+                            referred to as hpe0.  If you install more than
+                            one hpe card on your system, the cards are num-
+                            bered sequentially starting with 0. Thus, an
+                            ``hpe0'' indicates the first card of that type
+                            installed on the system. If you install a second
+                            card of the same type, it would be hpe1 the third
+                            would be hpe2, and so forth.
+
+                            Default settings for multiple card installations
+                            are found in Table 4-1.
+
+    Interrupt vector (IRQ)  The default interrupt vector is 5 This setting is
+                            used if you press Return at the prompt. If this
+                            interrupt is already in use, you are prompted to
+                            select another.
+
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+
+    I/O base address        The hpe does not require base address informa-
+                            tion.
+
+    Cable type              To install the hpe card, cable information is not
+                            required.
+
+    RAM address             The hpe card does not require RAM address infor-
+                            mation.
+
+    ROM address             The hpe card does not require that you specify a
+                            ROM address.
+
+    DMA channel             The default DMA channel for the first hpe card is
+                            3.  For additional card default DMA channel in-
+                            formation, see Table 4-1.  If you change the DMA
+                            channel or install more than one card, make sure
+                            you select a channel not used by another device.
+
+    Slot number             To install the hpe card, you must know what slot
+                            your card occupies.
+
+
+ HP ISA
+
+    Begin the installation of the HP ISA card by reading the section entitled
+    ``Configuration overview'' in this chapter. To complete the installation
+    of the card, you need the following information:
+
+    Card name               SCO LLI 3.0.0 refers to the HP ISA as hpi.  The
+                            first hpe card installed on your system is
+                            referred to as hpe0.  If you install more than
+                            one hpi card on your system, the cards are num-
+                            bered sequentially starting with 0. Thus, an
+                            ``hpi0'' indicates the first card of that type
+                            installed on the system. If you install a second
+                            card of the same type, it would be hpi1, the
+                            third would be hpi2, and so forth.
+
+                            Default settings for multiple card installations
+                            are found in Table 4-1.
+
+    Interrupt vector (IRQ)  The default interrupt vector is 2 This setting is
+                            used if you press Return at the prompt. If this
+                            interrupt is already in use, you are prompted to
+                            select another.
+
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+
+    I/O base address        The default I/O base address for the hpi is 300.
+                            If you want to add additional cards or change the
+                            default address of the original card, make sure
+                            that you do not choose an I/O address used by
+                            another device.
+
+                            _________________________________________________________________________
+                               CAUTION  If you use a base address that is
+                               already in use by another serial device,
+                               that device is removed.  If you want to
+                               continue to use that device, you must sup-
+                               ply it with another base address.
+                            _________________________________________________________________________
+
+
+    Cable type              Cable information is not required.
+
+    RAM address             A RAM address information is not required.
+
+    ROM address             ROM address information is not required.
+
+    DMA channel             The hpi card does not require DMA information.
+
+    Slot number             The hpi card does not require a slot number.
+
+ ES-3210 Racal InterLan
+
+    Begin the installation of the ES-3210 Racal card by reading the section
+    entitled ``Configuration overview'' in this chapter. To complete the in-
+    stallation of the card, you need the following information:
+
+    Card name               SCO LLI 3.0.0 refers to the ES-3210 Racal driver
+                            as i3B.  The first i3B card installed on your
+                            system is referred to as i3B0.  If you install
+                            more than one i3B card on your system, the cards
+                            are numbered sequentially starting with 0. Thus,
+                            an ``i3B0'' indicates the first card of that type
+                            installed on the system. If you install a second
+                            card of the same type, it would be i3B1, the
+                            third would be i3B2, and so forth.
+
+                            Default settings for multiple card installations
+                            are found in Table 4-1.
+
+    Interrupt vector (IRQ)  The default interrupt vector is 1 This setting is
+                            used if you press Return at the prompt.
+
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+
+    I/O base address        The I/O base address for the i3B is defined by
+                            the slot number.
+
+    Cable type              To install the i3B card, you must determine if
+                            your network uses thick, think or twisted pair
+                            internet cable.
+
+    RAM address             The default RAM address is D0000.  If you want to
+                            add additional cards or use a different address,
+                            make sure no other device uses that address.
+
+    ROM address             The i3B card does not require that you specify a
+                            ROM address.
+
+    DMA channel             The default DMA channel for the i3B card is
+                            ``none.''
+
+    Slot number             To install the i3B card, you must know what slot
+                            your card occupies.
+
+
+ NI6510 Racal InterLan
+
+    Begin the installation of the NI6510 Racal card by reading the section
+    entitled ``Configuration overview'' in this chapter. To complete the in-
+    stallation of the card, you need the following information:
+
+    Card name               SCO LLI 3.0.0 refers to the NI6510 Racal driver
+                            as i6E0.  Only one i6E card may be installed on
+                            any given system.
+
+    Interrupt vector (IRQ)  The default interrupt vector is 9.  This setting
+                            is used if you press Return at the prompt. If
+                            this interrupt is already in use, you are
+                            prompted to select another.
+
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+
+    I/O base address        The default I/O base address for the i6E is 360
+                            If you want to change the default address of the
+                            original card, make sure that you do not choose
+                            an I/O address used by another device.
+
+                            _________________________________________________________________________
+                               CAUTION  If you use a base address that is
+                               already in use by another serial device,
+                               that device is removed.  If you want to
+                               continue to use that device, you must sup-
+                               ply it with another base address.
+                            _________________________________________________________________________
+
+
+    Cable type              The i6E card does not require cable information.
+
+    RAM address             The i6E care does not require RAM address infor-
+                            mation.
+
+    ROM address             The i6E card does not require that you specify a
+                            ROM address.
+
+    DMA channel             The default DMA channel is 3.  If you change the
+                            DMA channel or install another card, make sure
+                            you select a channel not used by another device.
+
+    Slot number             The i6E card does not require a slot number.
+
+
+ IBM Token Ring driver
+
+    Begin the installation of an IBM Token Ring card by reading the section
+    entitled ``Configuration overview'' in this chapter. To complete the in-
+    stallation of an IBM Token Ring card, you need the following additional
+    information:
+
+    Card name               SCO LLI 3.0.0 refers to the IBM Token Ring card
+                            as tok.  The first tok card installed on your
+                            system is referred to as tok0.  You can install
+                            the Token Ring using either one or two adapter
+                            cards.  If you install more than one Token Ring
+                            on your system, the cards are numbered sequen-
+                            tially starting with 0. Thus, ``tok0'' indicates
+                            the first card of that type installed on the sys-
+                            tem. If you install a second card of the same
+                            type, it would be tok1.  If you are using two
+                            cards, use the Primary-Alternate switches on the
+                            cards to set up one as the primary adapter and
+                            the other as the alternate adapter.  Obtain
+                            switch information for these cards from the docu-
+                            mentation supplied by the card manufacturer.
+
+                            The size of the shared RAM on the Token Ring
+                            adapter should be set to 16 K.
+
+                            _________________________________________________________________________
+                               NOTE  The Token Ring card configuration
+                               copies the file:
+
+                               /etc/conf/pack.d/sio/space.c
+                               to
+                               /etc/conf/pack.d/sio/space.c.rls
+
+                               and removes the COM3 entry from space.c.
+                               This corrects a problem that caused the
+                               Token Ring card to appear as a serial card
+                               with a different name at boot time.
+                            _________________________________________________________________________
+
+    Interrupt vector (IRQ)  The default interrupt vector is 2. This setting
+                            is used if you press Return at the prompt.
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+                            You should install your primary adapter card
+                            using IRQ2, which is the factory default.  If you
+                            are installing an alternate adapter, use IRQ3.
+                            You can also use IRQ6 and IRQ7 to install Token
+                            Ring adapter cards. If you want to use either of
+                            these interrupt vectors to install a Token Ring
+                            adapter, check your system configuration for IRQ
+                            conflicts.
+
+    I/O base address        The default I/O base address is 300. If this
+                            address is in use, you must choose another. If
+                            you attempt to use a base address that is already
+                            in use by another serial device, that device is
+                            removed.
+
+                            _________________________________________________________________________
+                               CAUTION  Because the tok adapter also uses
+                               I/O address 0x2f0 for writing network in-
+                               formation, no other device may use that
+                               address.
+                            _________________________________________________________________________
+
+
+    Cable type              The Token Ring card installation does not require
+                            cabling information.
+
+    RAM address             The default RAM address for the IBM Token Ring
+                            card is D8000.  If you want to add additional
+                            cards or change that address, make sure that you
+                            do not choose an address used by another device.
+
+                            When you configure a driver on your SCO UNIX sys-
+                            tem, the configuration utility checks to make
+                            sure that the new driver's parameters are dif-
+                            ferent from the parameters for drivers already on
+                            the system.  Parameters for the Token Ring 16/4
+                            and Token Ring PC II adapters include shared RAM
+                            addresses and configurable ROM addresses.  The
+                            RAM addresses are hard-coded for AT machines
+                            (0xd8000-0xdbfff for the primary adapter and
+                            0xd4000-0xd7fff for the secondary adapter).  You
+                            set the ROM addresses (for all machines), as well
+                            as the RAM addresses (for MC machines), when you
+                            configure the adapter.
+
+                            _________________________________________________________________________
+                               CAUTION  During configuration, the system
+                               checks both sets of addresses for conflicts
+                               with currently installed drivers.  However,
+                               the Link Kit can record only one set of
+                               addresses for future checking.  Because the
+                               RAM addresses are hard-coded, the Link Kit
+                               records the variable ROM addresses.
+
+                               This means that if you install another
+                               driver with shared RAM addresses after you
+                               install the Token Ring driver, the system
+                               cannot detect possible conflicts with the
+                               shared RAM addresses the Token-Ring adapter
+                               uses.  Therefore, if you install another
+                               driver that uses shared RAM addresses after
+                               you install the Token Ring adapter, take
+                               precautions not to introduce RAM address
+                               conflicts.
+                            _________________________________________________________________________
+
+    ROM address             The default ROM address for the IBM Token Ring
+                            card is CC000.  If you want to add additional
+                            cards or change that address, make sure that you
+                            do not choose an address used by another device.
+
+    DMA channel             The IBM Token Ring card does not require that
+                            you specify a DMA channel.
+
+    Ring routing            Token Ring allows you to establish connections
+                            from your machine to other machines in either of
+                            the following ways:
+
+                            +  on the local ring
+
+                            +  on another ring using a bridge
+                            When you use a bridge, the rings appear as a sin-
+                            gle local area network (LAN).
+
+                            If you are connecting two or more rings using
+                            bridges, you must enable Token Ring routing.
+                            Without Token Ring routing, you can only estab-
+                            lish connections on the local ring from your ma-
+                            chine.  (However, if a bridge exists on the local
+                            ring, a non-local machine with routing can estab-
+                            lish a connection with your machine.)  Token Ring
+                            routing makes use of the Routing Information
+                            field, which is part of the Token Ring frame.
+
+                            During configuration you can enable or disable
+                            this function when the following prompt is dis-
+                            played:
+
+    _________________________________________________________________________
+    Restrict broadcasts to the local ring (y/n) [N] or 'q' to quit:
+                  _________________________________________________________________________
+
+
+                            To select Token Ring routing, enter n at this
+                            prompt.  If you decide not to use Token Ring
+                            routing (that is, if you decide to restrict
+                            broadcasts to the local ring), enter y.
+
+                            If you do not use Token Ring routing, the program
+                            creates the file /usr/lib/token/noroute0. This
+                            file suppresses Token Ring routing for the pri-
+                            mary adapter.  The file /usr/lib/token/noroute1
+                            suppresses Token Ring routing for the alternate
+                            adapter.
+                            If you want to connect two or more networks using
+                            a gateway, you must install both primary and
+                            alternate adapters on the gateway machine.
+
+
+ Western Digital 8003 or 8013 (elite)
+
+    Begin the installation of a Western Digital card by reading the section
+    entitled ``Configuration overview'' in this chapter. To complete the in-
+    stallation of a Western Digital card you must follow these steps;
+
+    +  Use mkdev or netconfig to configure the driver.
+
+    +  Use wdnsetup to configure the card.
+
+    Although both mkdev or netconfig and wdnsetup require the same informa-
+    tion, you should configure the driver first. Both mkdev and netconfig
+    check the parameters you supply for conflicts with other devices.  If
+    found, they prompt you to select another parameter. Once you have
+    selected a configuration that does not conflict with other devices, those
+    parameters can be supplied to the Wester Digital card with wdnsetup.
+    Both mkdev (or netconfig) and wdnsetup require the following additional
+    information.
+
+    Card name               SCO LLI 3.0.0 refers to the Western Digital 8003
+                            and the Western Digital 8013 (elite) card as wdn.
+                            The installation requires that you know whether
+                            your card is an 8003 or an 8013 (elite).  The
+                            first wdn card installed on your system is
+                            referred to as wdn0.  If you install more than
+                            one wdn card on your system, the cards are num-
+                            bered sequentially starting with 0. Thus, an
+                            ``wdn0'' indicates the first card of that type
+                            installed on the system. If you install a second
+                            card of the same type, it would be  wdn1, the
+                            third would be wdn2, and so forth.
+
+                            Default settings for multiple card installations
+                            are found in Table 4-1.
+
+    Interrupt vector (IRQ)  The default interrupt vector is 3. This setting
+                            is used if you press Return at the prompt.
+
+                            _________________________________________________________________________
+                               CAUTION  If the vector you select for your
+                               networking card is already in use by
+                               another device, you are prompted to remove
+                               it or choose another vector for your card.
+                               If you remove the device, you must supply
+                               it with a new vector before it can be used.
+                            _________________________________________________________________________
+
+
+    I/O base address        The default I/O base address is 240.
+
+                            _________________________________________________________________________
+                               CAUTION  If this address is in use, you
+                               must choose another. If you attempt to use
+                               a base address that is already in use by
+                               another serial device, it may be removed.
+
+                               Do not use I/O base addresses 0x200, 0x220,
+                               0x340, 0x3C0, or 0x3E0 for the Western
+                               Digital 8003E and 8013EBT cards.  Because
+                               of register-address aliasing, these
+                               addresses can cause your machine to hang at
+                               boot time.
+
+                               Western Digital cards also require that you
+                               specify the size of the RAM buffer. Consult
+                               the card documentation to determine which
+                               buffer sizes your card requires.
+                            _________________________________________________________________________
+
+
+    Cable type              To install the wdn card, no cable information is
+                            required.
+
+    RAM address             The default RAM address for the wdn card is
+                            D0000. If you want to add additional cards or
+                            change that address, make sure that you do not
+                            choose an address used by another device.
+
+    ROM address             The wdn card does not require that you specify a
+                            ROM address.
+
+    DMA channel             The wdn card does not require that  you specify a
+                            DMA channel.
+
+    Slot number             The wdn card does not require a slot number.
+
+
+    Table 4-1  Default card settings
+
+
+    _________________________________________________________________________
+                    Card     IRQ      I/O base   RAM        ROM       DMA
+    Card name       number   number   address    address    address   channel
+    _________________________________________________________________________
+    3Com 3c501      e3A 0*      3        300     N/A        N/A         N/A
+                    e3A 1       2        310     N/A        N/A         N/A
+                    e3A 2       5        330     N/A        N/A         N/A
+                    e3A 3       7        350     N/A        N/A         N/A
+    3Com 3c503      e3B 0       3        300     N/A        N/A         N/A
+                    e3B 1       2        310     N/A        N/A         N/A
+                    e3B 2       5        330     N/A        N/A         N/A
+                    e3B 3       4        350     N/A        N/A         N/A
+    3Com 3c507      e3D 0       3        300     N/A        N/A         N/A
+                    e3D 1       2        310     N/A        N/A         N/A
+                    e3D 2       5        330     N/A        N/A         N/A
+                    e3D 3       4        350     N/A        N/A         N/A
+    3Com 3c523      e3C 0      12        300     C0000      N/A         N/A
+                    e3C 1       7       1300     C8000      N/A         N/A
+                    e3C 2       3       2300     D0000      N/A         N/A
+                    e3C 3       2       3300     D8000      N/A         N/A
+    Excelan 205T    exos 0      2        310     CC000      N/A         N/A
+                    exos 1      3        300     C0000      N/A         N/A
+                    exos 2      5        320     C4000      N/A         N/A
+                    exos 3      7        330     C8000      N/A         N/A
+
+    HP-EISA 32      hpe 0       5       N/A      N/A        N/A          3
+    HP-EISA 32      hpe 1       7       N/A      N/A        N/A          2
+    HP-EISA 32      hpe 2      10       N/A      N/A        N/A          6
+    HP-EISA 32      hpe 3      11       N/A      N/A        N/A          5
+
+    HP-ISA          hpi 0       2        300     N/A        N/A         N/A
+    HP-ISA          hpi 1       3        240     N/A        N/A         N/A
+    HP-ISA          hpi 2       5        280     N/A        N/A         N/A
+    HP-ISA          hpi 3       7        2C0     N/A        N/A         N/A
+
+    ES-3210 Racal   i3B 0       1       N/A      D0000      N/A        NONE
+    ES-3210 Racal   i3B 1       2       N/A      D4000      N/A        NONE
+    ES-3210 Racal   i3B 2       4       N/A      D8000      N/A        NONE
+    ES-3210 Racal   i3B 3       5       N/A      DC000      N/A        NONE
+
+    NI-6510 Racal   i6E 0       9        360     N/A        N/A          3
+
+    IBM Token       tok 0       2       N/A      D8000      CC000       N/A
+    Ring            tok1        3       N/A      D4000      DC000       N/A
+    WD8003          wdn 0       3        240     D0000      N/A         N/A
+    WD8013          wdn 1       2        380     D2000      N/A         N/A
+                    wdn 2       5        260     D4000      N/A         N/A
+                    wdn 3       7        340     D6000      N/A         N/A
+
+    *Card number 0 of each type indicates the first card of that type
+    installed on the system, number 1 indicates the second, and so forth.
+
+
+
+
+
+ Chapter 5
+ Removing the SCO LLI drivers package
+
+    _________________________________________________________________________
+       CAUTION  If you need to remove the SCO LLI Drivers Package  from a
+       system running SCO TCP/IP version 1.1.3, first remove the LLI
+       Drivers, then remove TCP/IP, then reinstall TCP/IP.
+    _________________________________________________________________________
+
+    To remove the SCO LLI Drivers Package , follow the instructions below.
+
+    1.  Reboot the machine.
+
+    2.  Enter System Maintenance (single-user) mode by entering the root
+        password.
+
+    3.  At the prompt, enter:
+
+           custom
+
+        The main custom menu appears.
+
+    4.  Use the -> to highlight the Remove option, then press Return.
+
+        custom displays the Remove screen, with a list of currently installed
+        software at the bottom right corner.
+
+    5.  Use the v to highlight SCO LLI Driver disk, then press Return.
+
+        The Remove screen appears with a list of currently installed SCO LLI
+        Driver packages at the bottom.
+
+    6.  Select the drivers you need to remove.
+
+        Use ^ or v to highlight a package, and press Space to select it.  An
+        asterisk ``*'' appears by the package.  Repeat the highlight and
+        space procedure until all packages you want to remove are marked by
+        an asterisk.  Then press Return.
+
+        You are prompted to continue.
+
+    7.  To continue, press Return.
+
+        You see a message that the system is executing the removal script,
+        and are prompted to continue.
+
+    8.  Press any key to continue with the removal.
+        You see the following message:
+
+    _________________________________________________________________________
+    Creating file list ...
+        _________________________________________________________________________
+
+
+        You return to the main custom menu.
+
+        If you have removed the software using the All option, the software
+        list on your screen no longer includes the SCO LLI Driver disk.
+
+        You can continue removing other products or you can quit custom.
+
+    9.  When you are ready to quit custom, use -> to highlight the Quit
+        option.  Press Return.  custom asks you to confirm that you want to
+        quit, and highlights the Yes option.  Press Return.
+
+
+
+
+
+
+ Chapter 6
+ Known limitations with this release
+
+    This section describes the known limitations with this release of SCO LLI
+    Drivers Package .
+
+
+ Displaying statistics with LLI
+
+    Recent improvements to the statistics-gathering method used by SCO LLI
+    Drivers Package  result in an incompatibility between the OSI mac utility
+    and the LLI drivers.  In place of mac, this SCO LLI Drivers Package
+    includes the llistat(ADM) utility.  A manual page describing llistat
+    appears at the end of these release notes.  (The mac utility is described
+    in the section ``Display MAC Entity Management Statistics: mac,'' in the
+    SCO/Retix OSI/LT-610 Administrator Guide.)
+
+    A future release of SCO OSI will eliminate the current mac incompatibili-
+    ties.
+
+
+ Use with SCO TCP/IP and LAN Manager
+
+    The SCO TCP/IP 1.1.3 netstat -i command does not give information on
+    input packets, input errors, output packets, output errors, and colli-
+    sions for some drivers in this version of the SCO LLI Drivers Package .
+    You can get these statistics using the llistat command.
+
+    LAN Manager uses NetBIOS, and if NetBIOS cannot get statistics using
+    netstat -i, it fails with the following error message when you start mul-
+    tiuser:
+
+       netbios: cannot find host_name in /etc/hosts
+       netbios: aborted
+
+    In this example, host_name represents the variable NB_HOST from
+    /etc/default/nbconf.  This variable is normally the local machine name.
+    (This error could also result from an improperly configured etc/hosts or
+    improper nameserver configuration.)
+
+    To avoid this problem when you use LAN Manager over SCO TCP/IP 1.1.3 with
+    this version of the SCO LLI drivers, install the SCO TCP/IP netstat Main-
+    tenance Supplement. See the netstat supplement's Release and Installation
+    Notes for details on the supplement's purpose and for installation
+    instructions.
+
+
+ Co-resident IPX/SPX and OSI or LAN Manager protocol stacks
+
+    Because the framing for an IPX/SPX is user configurable to either 802.3
+    or Ethernet II, it may be set to use the same framing as either NetBEUI
+    or OSI. If it is set to use 802.3 framing, you may not drive both IPX/SPX
+    and either LAN Manager or OSI over the same card. To be able to drive
+    both IPX/SPX and either LAN Manager or OSI over the same card you must
+    set IPX/SPX to use Ethernet II framing.  For more information see the SCO
+    IPX/SPX Release and Installation Notes
+
+
+ sio interrupt vectors under MPX
+
+    The sio driver uses interrupt vectors 3 and 4.  You can assign either of
+    these interrupt vectors to another driver, but if you assign both 3 and 4
+    to other drivers, you remove the sio driver from the Link Kit.  On a sys-
+    tem running SCO MPX, you cannot link the kernel if the sio driver is
+    removed.  You get an error message similar to the following when you try
+    to relink:
+
+    _________________________________________________________________________
+    undefined       first referenced
+    symbol             in file
+    sio_tty         /etc/conf/pack.d/crllry/Driver.o
+    ld fatal: Symbol referencing errors. No output
+    written to unix
+    _________________________________________________________________________
+
+
+    If you get this error message, use the following procedure to restore the
+    sio device.  See the section ``Sample Driver Configuration'' earlier in
+    these release notes for complete instructions on the mkdev and netconfig
+    utilities mentioned below.
+
+    1.  Reboot the machine.
+
+    2.  Enter System Maintenance (single-user) mode by typing the root pass-
+        word.
+
+        The super user has access to all the system files, so be careful not
+        to overwrite, delete, or corrupt any files by accident.
+
+    3.  If you are running SCO TCP/IP 1.1.3, enter the following command:
+
+           mkdev driver_name.
+
+        Here, driver_name is the name of an LLI driver that uses an sio
+        interrupt vector.
+
+        If you are not running SCO TCP/IP 1.1.3, enter the following command:
+
+           netconfig
+
+
+    4.  If you are using mkdev, enter r to remove the driver.  A message asks
+        whether you want to restore the vector to the sio device.
+
+        If you are using netconfig, enter 2 to remove a chain of protocol
+        elements.  You see a list of chains currently configured on the sys-
+        tem.  Enter the number that appears in front of the chain that you
+        want to remove.  After netconfig completely removes the chain, a
+        message asks whether you want to restore the vector to the sio de-
+        vice.
+
+    5.  Enter y to restore the vector to the sio device.
+
+        If you are using mkdev, you see a prompt to relink the kernel after
+        you remove the conflicting driver.  To save time, do not relink the
+        kernel until you reconfigure the driver you removed.  After you
+        answer n to relinking the kernel, mkdev exits and you return to the
+        command line.
+
+        If you are using netconfig, you see the original menu that prompts
+        you to add or remove a chain or to quit.
+
+    6.  If you are using mkdev, run the mkdev driver_name command again to
+        add the driver you removed.  Remember to use an interrupt vector that
+        does not conflict with the sio driver.
+
+        If you are using netconfig, enter a to add a chain that includes the
+        driver you removed.  Remember to use an interrupt vector that does
+        not conflict with the sio driver.
+
+    7.  When you finish all your changes, relink the kernel.  If you are
+        using netconfig, you must enter q to quit before you can relink.
+
+    8.  If you are using SCO TCP/IP 1.1.3, run mkdev tcp after you relink the
+        kernel.  Refer to your SCO TCP/IP Release and Installation Notes for
+        instructions on this command.
+
+    9.  When you finish, you must reconfigure the card itself.  If your card
+        is software configurable, run the card configuration routine.  If
+        your card is not software configurable, you must reconfigure the card
+        by hand.
+
+
+
+ Spontaneous reboot with some 3Com 523 cards
+
+    On a 486 Microchannel machine after several hours under heavy load, the
+    3Com 523 EtherLink/MC card may cause the system to panic or spontaneously
+    reboot.  This problem is much more likely to occur when the card is used
+    with Microsoft LAN Manager for UNIX Systems Release 1.1 and the Microsoft
+    LAN Manager for UNIX Systems Release 1.1 Performance Supplement.
+
+
+ Reinstalling SCO LLI Drivers Package  after SCO TCP/IP 1.1.3
+
+    If you install SCO TCP/IP 1.1.3 after NetBEUI, you must reinstall the SCO
+    LLI Drivers Package  after SCO TCP/IP.  The drivers with SCO TCP/IP
+    overwrite the existing LLI drivers, but do not support OSI or NetBEUI.
+    This is not a problem with SCO TCP/IP 1.2.0 and above.
+
+
+
+
+
+
+ Appendix A
+ mkdev TCP/IP sample driver configuration
+
+    This appendix presents a sample configuration showing how to use mkdev to
+    configure an Excelan driver on SCO TCP/IP 1.1.3.  The procedure for any
+    driver is similar, with some differences depending on the networking
+    cards that you are configuring for your network.
+
+    You must use the mkdev utility if you are running SCO TCP/IP Release
+    1.1.3, because this version of TCP/IP does not use netconfig.
+
+    Follow these steps to configure your network with mkdev:
+
+    1.  Reboot the machine.
+
+    2.  Enter System Maintenance (single-user) mode by typing the root pass-
+        word.
+
+        The super user has access to all the system files, so be careful not
+        to overwrite, delete, or corrupt any files by accident.
+
+    3.  Type mkdevexos at the command line and press Return.
+
+        You see the following prompt:
+
+    _________________________________________________________________________
+
+       Add (configure) or remove the exos driver or q
+       to quit (a/r/q):
+
+        _________________________________________________________________________
+
+
+
+    4.  Enter a to add the driver.
+
+        You see these messages:
+
+    _________________________________________________________________________
+
+       Configuring Excelan 205 Ethernet Adapter 0
+       Installing the exos driver into the Link Kit
+       Enter IRQ (2 3 4 5 6 7) [2] or 'q' to quit:
+
+        _________________________________________________________________________
+
+
+        The numbers in parentheses are the valid vector numbers, and the num-
+        ber in square brackets is the default.
+
+    5.  Press Return to select the default value, or type in the desired num-
+        ber and press Return.
+
+        If you choose an interrupt vector that conflicts with another device,
+        you see a message similar to the following:
+
+    _________________________________________________________________________
+
+       Interrupt vector 3 is already in use for the sio
+       device.
+       The alternatives available to you are:
+          1. Continue the installation and remove vector
+               3 for the sio device.
+          2. Select a different interrupt vector.
+       Select an option (1 2) [1] or 'q' to quit:
+
+        _________________________________________________________________________
+
+
+        If you enter 1, you see this message:
+
+    _________________________________________________________________________
+    Removing interrupt vector 3 for the sio
+    device ...
+        _________________________________________________________________________
+
+        If you enter 2, you again see the prompt in step 2.
+
+        _________________________________________________________________________
+           NOTE  If you assign both sio interrupt vectors 3 and 4 to other
+           drivers, you remove the sio driver from the Link Kit.  On a
+           system running SCO MPX, you cannot link the kernel if the sio
+           driver is removed.  To correct this problem, use mkdev or
+           netconfig to remove one of the drivers that uses an sio inter-
+           rupt vector and reassign that vector to the sio device.  Then
+           reconfigure the driver you removed, using a different interrupt
+           vector.
+
+           For details on this problem and the workaround, see the section
+           ``sio Interrupt Vectors under MPX'' in these release notes.
+        _________________________________________________________________________
+
+        Once you choose an interrupt vector, you are similarly prompted for
+        the I/O base address and the RAM base address.  In each case, press
+        Return to select the default value, or type in the desired number and
+        press Return.
+
+    6.  Finally, you are asked if you wish to relink the kernel. To save
+        time, do not relink the kernel until you have added all the drivers
+        that you want to use on your system.  If you choose not to relink the
+        kernel, you return to the command line.
+
+        If you enter y to relink the kernel, a message confirms that choice.
+        Then, you see this prompt:
+    _________________________________________________________________________
+       Do you want this kernel to boot by default? (y/n)
+        _________________________________________________________________________
+
+
+    7.  Enter y. You see several messages, including:
+
+    _________________________________________________________________________
+
+       Do you want the kernel environment rebuilt? (y/n)
+
+        _________________________________________________________________________
+
+
+
+    8.  Enter y.  This procedure takes a few minutes. When the rebuild is
+        complete, you return to the command line.
+
+
+    If you are running TCP/IP 1.1.3, when you finish configuring all of the
+    driver cards you need, run mkdevtcp to configure TCP/IP.  Refer to your
+    SCO TCP/IP Release and Installation Notes for instructions on this com-
+    mand.
+
+
+
+
+
+ Appendix B
+ netconfig NetBEUI sample driver configuration
+
+    This appendix presents a sample configuration showing how to use netcon-
+    fig to configure LAN Manager Client over a Microsoft NetBEUI transport
+    stack.  The procedure for any driver is similar, with some differences
+    depending on the networking cards that you are configuring for your net-
+    work.
+
+    Follow these steps to configure your network with netconfig:
+
+    1.  Reboot the machine.
+
+    2.  Enter System Maintenance (single-user) mode by typing the root pass-
+        word.
+
+        The super user has access to all the system files, so be careful not
+        to overwrite, delete, or corrupt any files by accident.
+
+    3.  At the system prompt, enter the following and press Return:
+
+           netconfig
+
+
+        The following menu appears:
+
+    _________________________________________________________________________
+    No chains configured:
+    Available options:
+
+      1. Add a chain
+      2. Remove a chain
+      q. Quit
+    Select option:
+        _________________________________________________________________________
+
+
+
+    4.  Enter 1 to select the Add a Chain option, then press Return.
+
+        A list of available top-level products appears:
+
+    _________________________________________________________________________
+    Num Name   Description
+     1. lmxc   LAN Manager Client for UNIX Systems
+     2. lmxs   LAN Manager Server for UNIX Systems
+    Select top level of chain to Add or q to quit:
+        _________________________________________________________________________
+
+
+
+        In the example shown above, both LAN Manager Client and LAN Manager
+        Server are installed.  If only one or the other application is
+        installed, only one is listed.
+
+    5.  To install LAN Manager Client, enter 1, then press Return.
+
+        You see the following prompt:
+
+    _________________________________________________________________________
+    Add chain : lmxc->
+    Num  Name       Description
+      1. nbe        NetBEUI
+    Select next level of chain to Add or q to quit:
+        _________________________________________________________________________
+
+
+
+    6.  To select the Microsoft NetBEUI transport, enter 1, then press
+        Return.
+
+        You are prompted to choose from a list of network drivers similar to
+        the following:
+
+    _________________________________________________________________________
+
+       Add chain : lmxc->nbe->
+       Num Name  Description
+         1. E3A   3Com 501 Driver
+         2. E3B   3Com 503 Driver
+         3. E3C   3Com 523 Driver
+         4. E3D   3Com 507 Driver
+         5. EXOS  Excelan 205 Ethernet Driver
+         6. HPE   HP-EISA-32 SCO LLI Driver
+         7. HPI   HP-ISA SCO LLI Driver
+         8. I3B   ES-3210 Racal Interlan Driver
+         9. I6E   NI6510 Racal Interlan Driver
+        10. TOK   IBM Token Ring Network Adapter driver
+        11. WDN   Western Digital 8003/8013 Series driver
+       Select next level of chain to Add or q to quit:
+
+        _________________________________________________________________________
+
+
+
+        The list of drivers depends on the software currently installed.
+
+    7.  Enter the number corresponding to the network adapter over which you
+        wish to configure Microsoft NetBEUI, then press Return.  The
+        remainder of this sample procedure describes the screens that you see
+        if you choose 1.
+
+        The following prompt asks you to confirm the selected product chain:
+
+    _________________________________________________________________________
+    Add chain lmxc->nbe->e3A0 (y/n):
+        _________________________________________________________________________
+
+
+
+    8.  If the displayed product chain is correct, type y, then press Return.
+        If the chain is incorrect, type n, then press Return to return to the
+        netconfig main menu.  You can then either quit netconfig or add a
+        different chain of products.
+
+        The following messages appear while the selected chain is configured:
+
+    _________________________________________________________________________
+    Adding: lmxc->nbe->e3A0
+    Configuring 3Com501 board 0
+        _________________________________________________________________________
+
+
+        You also see driver-specific prompts, which vary depending on the
+        network adapter you choose in step 5.
+
+    9.  Respond to the driver-specific prompts.  For instructions on respond-
+        ing to these prompts, see the sections ``Configuration Overview'' and
+        ``IBM Token Ring Driver'' earlier in these release notes.
+
+        After you respond to all of the driver-specific prompts, netconfig
+        begins configuring the specified chain of products.  You see a series
+        of messages indicating the progress of the configuration.
+
+        After netconfig configures the chain of products, the following
+        prompt appears:
+    _________________________________________________________________________
+    Do you want to start the LMX Client every time you
+    go multiuser (y/n)
+        _________________________________________________________________________
+
+
+
+    10. If you want LAN Manager Client to start every time you leave system-
+        maintenance mode, enter y, then press Return.  Otherwise, enter n,
+        then press Return.
+
+        The following messages and prompts appear:
+
+    _________________________________________________________________________
+    Currently configured chains:
+     1. lmxc->nbe->e3A0
+         lmxc  Microsoft LAN Manager Client for UNIX Systems
+         nbe   NetBEUI
+         e3A0  3Com 501 ethernet driver, board 0
+
+    Available options:
+     1. Add a chain
+     2. Remove a chain
+     q. Quit
+    Select option:
+        _________________________________________________________________________
+
+
+
+    11. If you wish to add another chain, select option 1 and repeat the
+        netconfig procedure.
+
+        After you configure all the drivers that you want on your system,
+        enter q to quit netconfig.
+
+    12. Finally, you are asked if you wish to relink the kernel. To save
+        time, wait to relink the kernel until you install all the software
+        that you plan to install at this time.  If you choose not to relink
+        the kernel (by entering n), you return to the command line.
+
+        If you enter y to relink the kernel, a message confirms that choice.
+        Then, you see this prompt:
+
+    _________________________________________________________________________
+
+       Do you want this kernel to boot by default? (y/n)
+
+        _________________________________________________________________________
+
+
+
+
+    13. Enter y. You see several messages, including:
+
+    _________________________________________________________________________
+
+       Do you want the kernel environment rebuilt? (y/n)
+
+        _________________________________________________________________________
+
+
+
+
+    14. Enter y.  This procedure takes a few minutes. When the rebuild is
+        complete, you return to the command line.
+
+
+    The LAN Manager Administrator's Guide lists all possible entries and
+    values for the Microsoft NetBEUI tunable parameters, including default
+    options for the Microsoft NetBEUI tunable parameters.  The guide also
+    contains definitions and descriptions of these parameters.
+
+
+
+
+ Appendix C
+ netconfig OSI  sample driver configuration
+
+    This appendix presents a sample configuration showing how to use netcon-
+    fig to configure LT-610  over a Western Digital Driver.  The procedure
+    for any driver is similar, with some differences depending on the net-
+    working cards that you are configuring for your network.
+
+    Follow these steps to configure your network with netconfig:
+
+    1.  Reboot the machine.
+
+    2.  Enter System Maintenance (single-user) mode by typing the root pass-
+        word.
+
+        The super user has access to all the system files, so be careful not
+        to overwrite, delete, or corrupt any files by accident.
+
+    3.  At the system prompt, enter the following and press Return:
+
+           netconfig
+
+        A listing of configured chains appears, followed by a menu of
+        options.  If no chains are configured, you see the following:
+
+    _________________________________________________________________________
+
+       No chains configured:
+       Available options:
+
+         1. Add a chain
+         2. Remove a chain
+         q. Quit
+       Select option:
+
+        _________________________________________________________________________
+
+
+
+        If you already had a chain configured, such as SCO TCP/IP over a
+        Western Digital 8013 network adapter card, you would see something
+        like the following:
+
+    _________________________________________________________________________
+
+       Currently configured chains:
+        1. tcp-ip->wdn0
+            tcp-ip  SCO TCP/IP Runtime System for SCO Unix
+            wdn0    Western Digital 8003/8013 Series driver,
+                    board 0
+
+       Available options:
+         1. Add a chain
+         2. Remove a chain
+         q. Quit
+       Select option:
+
+        _________________________________________________________________________
+
+    4.  Enter 1 to select the Add a Chain option, then press Return.
+
+        A list of available top-level products appears, as in the following
+        example, which depicts the situation in which SCO/RETIX LT-610 , SCO
+        NetBIOS, and SCO TCP/IP all happen to be available for configuration
+        over your network adapter card:
+    _________________________________________________________________________
+    Num Name    Description
+     1. lt610    Retix OSI LT-610 Lower Layers
+     2. netbios  SCO NetBIOS Runtime System for SCO Unix
+     3. sco_tcp  SCO TCP/IP Runtime System for SCO Unix
+    Select top level of chain to Add or q to quit:
+        _________________________________________________________________________
+
+
+
+        The list you actually see reflects the products available on your
+        system.
+
+    5.  To add a chain using LT-610  from the example list, enter 1, then
+        press Return.
+
+        You are prompted to choose a network driver from a list similar to
+        the following:
+
+    _________________________________________________________________________
+
+       Num Name  Description
+         1. E3A   3Com 501 Driver
+         2. E3B   3Com 503 Driver
+         3. E3C   3Com 523 Driver
+         4. E3D   3Com 507 Driver
+         5. EXOS  Excelan 205 Ethernet Driver
+         6. HPE   HP-EISA-32 SCO LLI Driver
+         7. HPI   HP-ISA SCO LLI Driver
+         8. I3B   ES-3210 Racal Interlan Driver
+         9. I6E   NI6510 Racal Interlan Driver
+        10. TOK   IBM Token Ring Network Adapter driver
+        11. WDN   Western Digital 8003/8013 Series driver
+       Select next level of chain to Add or q to quit:
+
+        _________________________________________________________________________
+
+
+
+        The list of drivers actually displayed reflects the software
+        currently installed on your system.
+
+    6.  Enter the number corresponding to the network adapter over which you
+        wish to configure LT-610 , then press Return.  The remainder of this
+        sample procedure describes the screens that you see if you choose
+        item number 8.
+
+        The following prompt asks you to confirm the selected product chain:
+
+    _________________________________________________________________________
+    Add chain lt610->wdn0 (y/n):
+        _________________________________________________________________________
+
+
+    7.  If the displayed product chain is correct, type y, then press Return.
+        If the chain is incorrect, type n, then press Return to return to the
+        netconfig main menu.  You can then either quit netconfig or add a
+        different chain of products.
+
+        If you type y in response to the previous prompt, you see the follow-
+        ing messages while the selected chain is being configured:
+
+    _________________________________________________________________________
+    Adding: lt610->wdn0
+    Configuring Western Digital 8003/8013 Series driver,
+    board 0
+        _________________________________________________________________________
+
+
+        You may also see driver-specific prompts, which vary depending on the
+        network adapter you choose in step 5.  If you see any such prompts,
+        respond to them.
+
+        For instructions on how to respond to these prompts, see the sections
+        ``Configuration Overview'' and ``IBM Token Ring Driver'' earlier in
+        these release notes.
+
+        _________________________________________________________________________
+           NOTE  Please consult the SCO/Retix OSI /LT-610 Installation
+           Instructions for additional information that may be of help
+           while you perform steps 8 through 13.
+        _________________________________________________________________________
+
+
+    8.  The Network Service Configuration menu appears, and is similar to the
+        following example:
+
+    _________________________________________________________________________
+
+                        Network Services Configuration
+       1. ESIS support for end systems configuration ( default )
+       2. ESIS support for intermediate systems configuration
+       3. No ESIS support, static routing tables for end system configuration
+       3. No ESIS support, static routing tables for intermediate system
+          configuration
+
+        _________________________________________________________________________
+
+
+
+
+    9.  Enter the number that corresponds to the configuration you want.
+
+        The following prompt appears:
+
+    _________________________________________________________________________
+    Network Entity Title address:
+        _________________________________________________________________________
+
+
+
+    10. Enter the Network Entity Title that you have obtained for this sys-
+        tem.
+
+        Note that every system on the network requires a unique Network
+        Entity Title and at least one unique NSAP address.
+
+    11. The following prompt appears:
+
+    _________________________________________________________________________
+    Number of NSAP addresses  [1]:
+        _________________________________________________________________________
+
+
+        Enter the number of NSAP addresses assigned to your system.
+
+    12. Enter each NSAP address as a continuous string of hexadecimal digits.
+        Do not include any spaces, periods, or other punctuation in the
+        address.
+
+        The drivers are installed in the kernel.
+
+        Note that, if you chose to install an Intermediate System in step 8,
+        you are now given the option of installing WAN support. Once that is
+        done, you continue with the next step.
+
+    13. The following prompt appears:
+
+    _________________________________________________________________________
+
+       Would you like the lower layers started
+       when the system boots? (y n)
+
+        _________________________________________________________________________
+
+
+
+        If you enable automatic startup by entering y at this prompt, the
+        executable script file /etc/rc2.d/S40osi is created.  This script
+        runs automatically whenever the system is booted.  It consists of a
+        single command that starts LT-610 .
+
+    14. Press Return when instructed.
+
+        At this point, netconfig begins configuring the specified chain of
+        products.  You see a series of messages indicating the progress of
+        the configuration, including the automatic configuration of various
+        STREAMS parameters.
+
+        Assuming that you already have SCO TCP/IP configured over the same
+        card over which you just configured LT-610 , you see messages and
+        prompts similar to the following:
+
+    _________________________________________________________________________
+    Currently configured chains:
+     1. tcp-ip->wdn0
+         tcp-ip  SCO TCP/IP Runtime System for SCO Unix
+         wdn0    Western Digital 8003/8013 Series driver,
+                   board 0
+     2. lt610->wdn0
+         lt610 Retix OSI LT-610 Lower Layers
+         wdn0  Western Digital 8003/8013 Series driver,
+                 board 0
+
+    Available options:
+     1. Add a chain
+     2. Remove a chain
+     q. Quit
+    Select option:
+        _________________________________________________________________________
+
+
+
+    15. Select q to quit the netconfig menu, and confirm the exit with
+        Return.
+
+    16. Finally, you are asked if you wish to relink the kernel. Enter y to
+        relink the kernel.
+
+        A message confirms that choice. Then, you see the following prompt:
+
+    _________________________________________________________________________
+
+       Do you want this kernel to boot by default? (y/n)
+
+        _________________________________________________________________________
+
+
+
+
+    17. Enter y. You see several messages, including:
+
+    _________________________________________________________________________
+
+       Do you want the kernel environment rebuilt? (y/n)
+
+        _________________________________________________________________________
+
+
+
+
+    18. Enter y.
+
+        This procedure takes a few minutes. When the rebuild is complete, you
+        are returned to the command line.  LT-610  is now configured over
+        your selected network adapter card driver.
+
+
+
+
+
+
+ e3dsetup(ADM)                                                  e3dsetup(ADM)
+
+
+
+ Name
+
+    e3dsetup - configures 3Com EtherLink 16 (3c507) network adapter cards
+
+ Syntax
+
+
+    e3dsetup         -help
+    e3dsetup        [-io:base I/O address]
+                    [-irq:IRQ line]
+                    [-conn:aui | bnc]
+                    [-ram:RAM window starting address]
+                    [-ramsize:RAM window size]
+                    [-rom:boot ROM starting address]
+                    [-romsize:boot ROM size]
+                    [-zerowait:e | d]
+                    [-data:data addressing mode]
+
+
+ Description
+
+    The e3dsetup command configures 3Com EtherLink 16 network adapter cards.
+    For your protection, this command can be run only by the superuser.  See
+    the ``Warnings'' section for a description of the issues to be aware of
+    before running this command.
+    Be aware that no more than one Etherlink 16 adapter card at a time can be
+    physically installed in your computer while you are configuring the card.
+    After you have configured all of your network adapter cards, you can
+    install as many as four of them in your computer, provided that you have
+    assigned each of them a unique base I/O address and a unique IRQ line.
+    You should also make sure that the RAM window and the boot ROM address
+    spaces, if defined, do not overlap address spaces defined for other
+    adapter cards or devices.  See the -ram, -ramsize, -rom, and -romsize
+    options for more information.
+    If you install more than one Etherlink 16 card and later wish to recon-
+    figure some or all of them, you must remove all but one of the cards
+    before configuring the remaining card. Once you have configured the one
+    card and wish to configure the others, you must remove the card just con-
+    figured and install the next card to be configured.  Proceed in this
+    manner until all Etherlink 16 cards (up to four) have been configured.
+    Once the last card has been configured, the remaining cards can be rein-
+    stalled.
+    When power to the computer is turned on, the contents of the EEPROM chip
+    on board the network adapter card is loaded into the configuration regis-
+    ters of the card.  These registers occupy three consecutive I/O
+    addresses.  The first of these addresses is offset thirteen memory loca-
+    tions beyond the base I/O address configured for the card.  In other
+    words, the first address equals the base I/O address plus hexadecimal 0D.
+
+    To display or change adapter card configurations interactively, enter the
+    e3dsetup command with no options.  The command begins by attempting to
+    find all software configurable cards (up to four) installed in the com-
+    puter and which have base I/O addresses within the range from hexadecimal
+    200 through 3E0.  If more than one 3Com Etherlink 16 adapter card is
+    found, the e3dsetup command prints the current configurations for all of
+    them, then prints a warning message and exits.  If, however, you have
+    only one EtherLink 16 network adapter card installed, the command dis-
+    plays the configuration of that card and prompts you to change the con-
+    figuration. If you wish to change the configuration of the adapter card,
+    enter y.  If you do not wish to change the configuration, enter n.
+    If you enter y, the command presents each configuration option in
+    sequence and displays its current value.  If you wish to change the con-
+    figuration value for that option, enter the new value and press Return.
+    If you wish to retain the displayed value for that option, simply press
+    Return.
+    To change the configuration of an adapter card from the command line,
+    enter the following:
+
+       e3dsetup [options]
+
+    The command first verifies that there is only one 3Com Etherlink 16
+    adapter card installed in the computer with a base I/O address in the
+    range from hexadecimal 200 through 3E0 inclusive.  If more than one card
+    is found, e3dsetup prints the current configurations for all the cards
+    found, then prints a warning message and exits. If only one card is
+    found, the command reads the options and their values, verifies that the
+    values specified are valid, and changes the configuration values as
+    specified by the options. All omitted options retain their current
+    values.
+
+ Options
+
+
+    -data          specifies whether 8 or 16 bit data transfers are used.
+                   Acceptable values for this options are standard for 8-bit
+                   data transfer and turbo for 16-bit data transfer. Note
+                   that the 3c507 card does not work in 16-bit mode with some
+                   motherboard chip sets.  If your 3c507 card does not work
+                   in 16 bit mode, try the 8-bit mode
+
+    -help          displays the help screen.
+
+    -io            specifies the base I/O address for the network adapter
+                   card.  The address must be specified using three hexade-
+                   cimal digits, lie in the range from 200 through 3E0
+                   inclusive, and be a multiple of hexadecimal 10.  In other
+                   words, legal addresses are 200, 210, 220, and so forth.
+                   However, the following addresses are not allowed, even
+                   though they follow the rules just described: 2F0, 370,
+                   3B0, 3C0, and 3D0.
+
+    -irq           specifies the Interrupt Request (IRQ) line to be used by
+                   the network adapter card. Acceptable values for this
+                   option are 3, 5, 7, 9, 10, 11, 12, and 15.  Be aware that
+                   network adapter cards prior to Revision 04 do not support
+                   IRQ 11.
+
+    -conn          specifies the type of physical connection to be used
+                   between the network adapter card and the network.  Accept-
+                   able values for this option are aui (thick Ethernet,
+                   external transceiver) or bnc (thin Ethernet, on-board
+                   transceiver).
+
+    -ram           specifies the starting address of the RAM window.  The RAM
+                   window is memory on the adapter card that is mapped into
+                   the physical address space of the computer.  Acceptable
+                   values for this option are:  C0000, C8000, D0000, D8000,
+                   F00000, F20000, F40000, F60000 or F80000.  Note that
+                   addresses above D0000 limit acceptable values of the -
+                   ramsize options.  See the -ramsize option for more infor-
+                   mation.  This option is used in conjunction with the -
+                   ramsize option to fully specify the address space of the
+                   RAM window.
+
+    -ramsize       specifies the size of the RAM window in Kbytes. The RAM
+                   window is memory on the adapter card that is mapped into
+                   the physical address space of the computer.  In general,
+                   acceptable values for this option are 16, 32, 48, and 64.
+                   However, if you specify a RAM window starting address of
+                   D8000, the only acceptable values are 16 or 32.  Further-
+                   more, if you specify a RAM window starting address of
+                   F00000 or greater, the only acceptable value is 64.  This
+                   option is used in conjunction with the -ram option to
+                   fully specify the address space of the RAM window.  Note
+                   that the address space of the RAM window cannot overlap
+                   address spaces defined for other adapter cards or other
+                   devices.
+
+    -rom           specifies the starting address of the boot ROM.  The
+                   address must be a hexadecimal value in the range from
+                   C0000 through DE000.  Further, the address must be an
+                   integral multiple of hexadecimal 2000.  In other words,
+                   legal addresses are C0000, C2000, C4000, and so forth.
+
+    -romsize       specifies the size of the boot ROM in Kbytes.  Acceptable
+                   values for this option are 0, 16, 32, or 64. Specify a
+                   size of 0 if the adapter card has no boot ROM or if you
+                   wish to disable the boot ROM.
+
+    -zerowait      specifies whether or not the adapter card is to use zero
+                   wait states for RAM access.  Wait states, if used, effec-
+                   tively slow down the data transfer rate of the RAM on
+                   board the adapter card.  Zero wait states means that no
+                   wait states are used and RAM accesses occur at full speed.
+                   Acceptable values for this option are d for disable and e
+                   for enable. If you specify d, wait states are added.  If
+                   you specify e, no wait states are added.
+
+
+ Warnings
+
+    You are strongly urged to run this program in single user mode only.  The
+    purpose of this precaution is to avoid problems that might arise from
+    specifying an incorrect base I/O address for the network adapter card or
+    from specifying a baseI/O address or IRQ that is already being used by
+    another adapter card or device. It is also important that no part of the
+    RAM and ROM address spaces defined for the network adapter card overlap
+    address spaces defined for other adapter cards or other devices.  This
+    includes devices such as small built-in LED or LCD displays used to show
+    disk cylinder data or CPU clock speed.
+
+ See also
+
+    Consult the documentation accompanying the 3Com Etherlink 16 network
+    adapter card for additional information about installing and configuring
+    the card.
+
+
+ lliconfig(ADM)                                                lliconfig(ADM)
+
+
+
+ Name
+
+    lliconfig - displays all LLI drivers currently configured on the system
+
+ Syntax
+
+    lliconfig
+
+ Description
+
+    The lliconfig utility lets you see which LLI drivers are currently con-
+    figured on your system.  lliconfig displays each driver board's name,
+    interrupt vector, IO address, and RAM address (if any).  The utility also
+    shows how the LLI chains are configured.
+
+ Examples
+
+    Here is the sample output from lliconfig:
+
+       The following LLI drivers are configured:
+            Board   Interrupt   IO Addr    RAM Addr     DMA Channel
+            e3B0    3           300        0-0            none
+            wdn0    2 (9)       240        d0000-d1fff    none
+
+       The following LLI chains are configured:
+            Driver           Configured under
+            e3B0                     netconfig (nbe)
+            wdn0                     mkdev
+
+
+    In this example, the 0-0 in the RAM address column for the e3B0 board
+    indicates that the board does not have a RAM address.  The (9) in the
+    interrupt vector column for the wdn0 board indicates that interrupt vec-
+    tor 2 is sometimes referred to as 9.
+
+ Files
+
+    /etc/lliconfig
+
+ See also
+
+    mkdev(ADM) netconfig(ADM)
+
+
+ llistat(ADM)                                                    llistat(ADM)
+
+
+
+ Name
+
+    llistat - displays LLI driver statistics
+
+ Syntax
+
+    llistat [-s] [-l] [device name]
+
+ Description
+
+    The llistat utility provides a standard method of displaying statistics:
+
+    +  to verify your driver board's name and address,
+
+    +  to verify that your driver board is installed correctly, and
+
+    +  to check for network problems.
+
+    llistat displays each driver board's name and address, the Multicast
+    address table, the number of frames that have gone in and out, the number
+    of frames with errors, and the number of collisions (if any).
+
+    Here is the sample output from llistat:
+
+       Device       SNPA/MAC address    Factory Address
+       /dev/e3B0    02:60:8c:3c:2f:4a   02:60:8c:3c:2f:4a
+               Multicast address table
+               Frames:      In      Out  Errs In  Err out Collisions
+                        172999      750        0        0         10
+
+
+    In this example, /dev/e3B0 in the Device column indicates the name of the
+    lli device.  The 02:60:8c:3e:2f:4a in the SNPA/MAC address column indi-
+    cates the address currently in use on the driver board.  The similar num-
+    bers in the Factory Address column indicates the built-in address
+    assigned by the board manufacturers.  These two addresses are often the
+    same.  The Multicast address table gives the multicast address in the
+    same form.  In this example, the driver board is not using a multicast
+    address and the table is empty.  The columns in the Frames row indicate
+    the number of frames that have gone into and out of the board, the number
+    of frames that have gone in and out with errors, and the number of colli-
+    sions.  Frames that have collisions are re-sent.  You can expect to have
+    a few errors, but you might have a network problem if a large percentage
+    of frames have gone in and out with errors.
+
+ Options
+
+
+    -s             verifies the device name only.
+
+    -l             displays all available statistics, one statistic to a
+                   line.
+
+    device name    allows you to specify a single device name.  If you do not
+                   use this option and there is more than one lli device con-
+                   figuration, llistat shows you the configuration for all of
+                   the devices.
+
+
+ Files
+
+    /usr/lib/netconfig/chains
+
+ See also
+
+    lliconfig(ADM)
+
+
+ wdnsetup(ADM)                                                  wdnsetup(ADM)
+
+
+
+ Name
+
+    wdnsetup - configures Western Digital network adapter cards
+
+ Syntax
+
+
+    wdnsetup -v
+    wdnsetup -help
+    wdnsetup -factory
+    wdnsetup -default
+
+    wdnsetup [-node:node address | -io:base I/O address]
+
+    wdnsetup -node:node address [configuration options]
+    wdnsetup -io:base I/O address [configuration options]
+
+
+ Description
+
+    The wdnsetup command configures supported Western Digital network adapter
+    cards. For your protection, this command can be run only by the
+    superuser.  See the ``Warnings'' section for a description of the issues
+    to be aware of before running this command.
+
+    If you enter the wdnsetup command without any options, the command begins
+    by attempting to find all software configurable cards (up to four)
+    installed in the computer and which have base I/O addresses within the
+    range from hexadecimal 200 through 3E0.  It then displays the configura-
+    tion of each card, and prompts you to change the configuration.  If you
+    do not wish to change configurations, enter q (or n if you have only one
+    adapter card installed).
+
+    If you do wish to change the configuration of an adapter card, enter the
+    number of that card (or simply enter y if you have only one card
+    installed).  The command presents each configuration option in sequence
+    and displays its current value.  If you wish to change the value, enter
+    the new value and press Return.  Otherwise, just press Return.
+
+    To display or modify the configuration of a single adapter card, enter
+    its base I/O address or Ethernet node address as follows:
+
+       wdnsetup -io:base I/O address
+
+    or
+
+       wdnsetup -node:node address
+
+    The command presents each configuration option in sequence and displays
+    its current value for the specified card.  If you wish to change the
+    value, enter the new value and press Return.  Otherwise, just press
+    Return.
+    To change the configuration values of a single adapter card all from the
+    command line, enter the following:
+
+       wdnsetup -io:base I/O address [configuration options]
+
+    or
+
+       wdnsetup -node:node address [configuration options]
+
+    For each configuration option specified, the new value replaces the
+    current value.  Omitted options retain their current values.
+
+    You can install as many as four network adapter cards in your computer,
+    provided that you have assigned each of them both a unique base I/O
+    address and a unique IRQ line.
+
+ Configuration options
+
+
+    -newio         specifies the new base I/O address in hexadecimal for a
+                   network adapter card. The address must be in the range
+                   from hexadecimal 200 through 3E0 and must be a multiple of
+                   hexadecimal 20. In other words, legal addresses are 200,
+                   220, 240, and so forth.  When power to the computer is
+                   turned on, the contents of the EEROM chips on board the
+                   adapter card are loaded into the internal registers of the
+                   WD83C583 or WD83C584 Bus Interface Controller Device.
+                   These registers occupy eight consecutive I/O addresses,
+                   starting at the base I/O address configured for the
+                   adapter card.
+
+    -irq           specifies the Interrupt Request (IRQ) line to be used by
+                   the network adapter card. This option also has the effect
+                   of enabling the IRQ line specified.  Acceptable values for
+                   this option are 2, 3, 4, 5, 7, 10, 11, and 15.  Note that
+                   IRQ 2 maps into IRQ 9.  Also, be aware that some adapter
+                   cards do not support all of the above values.
+
+    -ram           specifies the starting address of the RAM window.  The RAM
+                   window is the RAM on board the adapter card that is mapped
+                   into the physical address space of the computer.  The
+                   address must be a hexadecimal value in the range from
+                   80000 through FE000. Also, the address must be an integral
+                   multiple of -ramsize. See the -ramsize option for more in-
+                   formation.  For 8013 adapter cards, recall that addresses
+                   above 1 Megabyte are specified with six hexadecimal
+                   digits.
+
+    -ramsize       specifies the size of the RAM window in Kbytes. The RAM
+                   window is the RAM on board the adapter card that is mapped
+                   into the physical address space of the computer.  Accept-
+                   able values for this option are 8 and 16.  The starting
+                   address of the RAM window is specified with the -ram
+                   option. The address space of the RAM window, defined by
+                   the -ramsize and -ram options, must be reserved for a
+                   given adapter card and not overlap address spaces defined
+                   for other adapter cards or devices.
+
+    -rom           specifies the base address of the boot ROM.  The address
+                   must be a hexadecimal value in the range from 80000
+                   through FC000.  Also, the address must be an integral mul-
+                   tiple of -romsize.   This option is ignored if -romsize is
+                   0.
+
+    -romsize       specifies the size of the boot ROM in Kbytes.  Acceptable
+                   values for this option 0, 16, 32, or 64. Specify a size of
+                   0 if the adapter card has no boot ROM or if you wish to
+                   disable it.  The address space for the boot ROM, defined
+                   by the -romsize and -rom options, must be reserved for a
+                   given adapter card and not overlap address spaces defined
+                   for other adapter cards or devices.
+
+    -wait          specifies whether or not the adapter card is to use zero
+                   wait states for RAM access.  Acceptable values for this
+                   option are y for yes and n for no. If you specify y, wait
+                   states are added to effectively slow down the data
+                   transfer rate of the RAM on board the adapter card.  If
+                   you specify n, no wait states are added.
+
+    -netconn       specifies the type of physical connection to be used
+                   between the network adapter card and the network.  This
+                   option must be used for those cards that lack a hardware
+                   jumper for this purpose.  Acceptable values for this
+                   option are 1 (BNC or 10BaseT), 2 (AUI or 10BaseT), and 3
+                   (Twisted Pair with No Link Integrity).
+
+    -link_int      specifies whether Link Integrity is enabled or disabled.
+                   Acceptable values for this option are e (enabled) or d
+                   (disabled).  This option cannot be used with WD8013WC and
+                   WD8013EWC network adapter cards.  For these adapter cards,
+                   use the -netconn option instead of the -link_int option.
+
+
+ Other options
+
+
+    -v             displays the version number of this command.
+
+    -help          displays the help screen.
+
+    -node          specifies the Ethernet node address in hexadecimal of a
+                   network adapter card.
+
+    -io            specifies the current base I/O address in hexadecimal for
+                   a network adapter card.
+
+    -factory       forces the adapter card to the factory configuration.
+                   This option overrides all other options except -default.
+                   The factory configuration is the same as the default con-
+                   figuration, except that interrupts are disabled.  See the
+                   table following the -default option for more information.
+
+    -default       forces the adapter card to its default configuration.
+                   This option overrides all other options, including -
+                   factory.
+
+
+ Notes
+
+    Depending on the cards you are installing, you may have to set hardware
+    jumpers to allow the configuration settings you specify with wdnsetup to
+    take effect.  Consult the documentation accompanying your adapter card
+    for more information.
+
+ Warnings
+
+    You are strongly urged to run this program in single user mode only.  The
+    purpose of this precaution is to avoid problems that might arise from
+    specifying an incorrect base I/O address for a network adapter card or
+    from specifying a baseI/O address that is already being used by some
+    other device. If multiple adapters cards are to be configured, it is
+    recommended that you configure them one at a time to reduce the chance of
+    configuring more than one card with the same base I/O address. It is also
+    important that no part of the RAM and ROM address spaces defined for a
+    given network adapter card be shared with either other adapter cards or
+    any other device.  This includes devices such as small built-in LED or
+    LCD displays used to show disk cylinder data or CPU clock speed.
+
+ See also
+
+    Consult the documentation accompanying your network adapter card for
+    additional information about installing and configuring the card.
+

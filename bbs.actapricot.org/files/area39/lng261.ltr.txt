@@ -1,0 +1,48 @@
+
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) lng261 contains a new /bin/make 
+program which corrects errors encountered while compiling files that reside 
+on NFS filesystems. 
+
+The error that occurs most frequently when using the original /bin/make is:
+
+	rfs_read: attempt to read from non-file
+
+This error appears on the console of the NFS server.  Compilation may or 
+may not succeed when this error occurs.  This error is encountered most
+often when the NFS server is running a non-SCO operating system. 
+
+SLS lng261 installs on all releases of the SCO UNIX System V/386 Development 
+System up to and including SCO UNIX System V/386 Release 3.2 Development 
+System Version 2.0.  This also includes the Open Desktop Development System
+Release 1.0.1.
+
+To install SLS lng261, take the following steps:
+
+	1. Reboot your system.  Enter System Maintenance Mode by typing
+	   your root password at the prompt:
+
+		Type <Ctrl>-d to proceed with normal startup,
+		(or give root password for System Maintenance):
+
+	2. Type:
+
+		/etc/xinstall
+
+	3. Type "y" at the prompt "First Floppy? (y/n)"
+	
+	4. Type "n" at the prompt "Next Floppy? (y/n)"
+
+	5. Press <Ctrl>-d and enter Multi-User Mode in order
+	   for the change to take affect.
+
+
+If you have any questions, please call our SCO Customer Services Department 
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday, 
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

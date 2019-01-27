@@ -1,0 +1,510 @@
+ Novell NetWare Update Files
+
+ Last Updated: 24/05/99
+
+ All the files mentioned below can be downloaded from the Novell Support
+ connection Internet site, from File Area 37 of the Insight BBS, or copied
+ from the \NETWORKS\NETWARE\UPDATES directory on the Insight CD.
+ 
+ NOTE: This list does not include server LAN drivers (found in LANDR9.EXE),
+       BTRIEVE updates (found in BT515.EXE for Btrieve 5.15 and BTR61.EXE for 
+       Btrieve 6.10), or NetWare v3.11 patches (found in 311PTG.EXE and 
+       XLOAD.ZIP). It also does not include any Novell released updates for 
+       their communications products (NFS, SAA, SNA, MAC or TCP/IP).
+
+ ------------------------------------------------------------------------------
+ 
+ The following list contains all the updates released by Novell for NetWare
+ v3.11.
+
+BNDFX3.EXE      Updated BINDFIX for NetWare 3.11
+CHK375.EXE      CHKDIR.EXE Ver 3.75 - bug-fix
+CLTDR1.EXE      VLM/Client32 LAN Driver Update Kit
+FIL376.EXE      FILER.EXE Ver 3.76 - bug-fix
+FLGDIR.EXE      FLAGDIR.EXE Ver 1.21 for NetWare 2.2 and 3.11
+IDE.EXE         NetWare 3.1X/4.X IDE.DSK disk driver for IDE controllers
+LIB311B.EXE     CLIB update for NetWare 3.11/3.12/4.1x/SFT III 3.11
+LOG376.EXE      Version 3.76 of LOGIN.EXE for NetWare 2.x/3.x - bug-fix
+MAP312.EXE      Version 3.75 of MAP.EXE for NetWare 3.1x
+MENU34.EXE      Latest release of MENU.EXE + MENUPARZ.EXE v2.31
+MKUSER.EXE      MAKEUSER.EXE Version 3.62 - bug-fix
+MON176.EXE      NetWare 3.1x MONITOR.NLM Ver 1.76 - bug-fix
+NAM312.EXE      Updated MAC.NAM and OS2.NAM for NetWare 3.11 and 3.12
+NCY358.EXE      NCOPY.EXE version 3.58 - bug fixes
+NDR345.EXE      Latest version of NDIR.EXE (v3.45) - bug-fixes
+NET33X.EXE      Latest NETX/Windows NetWare 3.x Drivers for NetWare Clients
+NW3DFS.EXE      DIRECTFS.NLM 1.09 update for NetWare 3.1x
+NWDLL2.EXE      Latest Windows NetWare DLL Support Files for NetWare Clients
+PBURST.EXE      PBURST support files and fix for WAN links
+PS2311.EXE      PS2OPT.DSK for NetWare v3.11
+PS3X02.EXE      Latest PSERVER and RPRINTER files for 3.1x/2.2
+PU3X01.EXE      Latest Updated NetWare printing utilities
+RCONSL.EXE      Replacement RCONSOLE.EXE for NetWare 3.11/3.12 (bug-fix)
+RPLKT5.EXE      Remote Program Load files for NetWare 3.1x/4.10
+SBACK6.EXE      Update to SBACKUP for NetWare 3.1x/4.x
+SECUT1.EXE      NCP Signature Fix: SYS:PUBLIC files (1 of 3)
+SECUT2.EXE      NCP Signature Fix: SYS:PUBLIC files (2 of 3)
+SECUT3.EXE      NCP Signature Fix: SYS:PUBLIC files (3 of 3)
+SETP375.ZIP     SETPASS.EXE ver 3.75
+SMSUP6.EXE      Updated SMS Agent Files for NetWare 3.1x/4.x
+SROUT4.EXE      Source Routing update for NetWare (2.2/3.11/3.12/4.10)
+STRTL7.EXE      STREAMS, TLI, SPXS and IPXS update/patch for NetWare 3.1x/4.1x
+SYS376.EXE      SYSCON v3.76 - bugfix update for NetWare 3.1x
+VLMUP4.EXE      Latest DOS Client VLM (1.20B) and ODI drivers
+VRP386.EXE      VERPAIR.NLM v2.18 for NetWare 3.1x
+WINDR3.EXE      Latest Windows 3.x NetWare drivers for NetWare Clients
+
+ ______________________________________________________________________________
+ 
+
+ Novell NetWare v3.12, v4.x + SFT III v3.11  Updates
+ 
+ Despite the fact that NetWare v3.12 and v4.x are relatively new releases, 
+ there are already a number of updates in existence for both operating systems.
+ These are summarised below (also included is NetWare v3.11 and SFT III v3.11
+ compatibility).....
+ 
+ Insight   Update applies to
+ BBS       NetWare version.....
+ Source    3.11 3.12 4.01 4.02 4.10 3.11 Brief Description
+ File                               SFT3
+ --------- ---- ---- ---- ---- ---- ---- -----------------
+311PTG.EXE yes  no   no   no   no   no   Collection of 3.11 O/S Patches
+312DU1.EXE no   yes  no   no   no   no   Updated FCONSOLE and SESSION for 3.12
+312PTD.EXE no   yes  no   no   no   no   Collection of 3.12 O/S Patches
+312Y2KP2.EXE no yes  no   no   no   no   NetWare 3.12 Year 2000 Patches
+401PT1.EXE no   no   yes  no   no   no   Collection of 4.01 updates and patches
+401PT6.EXE no   no   yes  no   no   no   Collection of 4.01 O/S Patches
+402PA1.EXE no   no   no   yes  no   no   PAUDIT for NetWare 4.02 (from 3.12)
+402PT1.EXE no   no   no   yes  no   no   Collection of 4.02 O/S Patches
+410PT8B.EXE no  no   no   no   yes  no   Collection of 4.10 O/S Patches
+41FILR.EXE no   no   no   no   yes  no   NetWare 4.10 FILER.EXE Update (v4.21)
+41MAC1.EXE no   no   no   no   yes  no   Netware for Macintosh 4.10 update
+41NDIR.EXE no   no   yes  yes  yes  no   Updated NDIR for NetWare 4.x
+41NWAD.EXE no   no   no   yes  yes  no   NWADMIN v4.10.2
+41REM1.EXE no   no   no   no   yes  no   Updated RCONSOLE and RSPX NLMs for 4.10
+41RTR4.EXE no   no   no   no   yes  no   NW4.10 OS Protocol Update Files
+4X241.EXE  no   no   yes  yes  yes  no   Utils to help 4.0x to 4.1 upgrade
+4XREP1.EXE no   no   yes  yes  no   no   Updated DSREPAIR for NetWare 4.0x
+AUDIT410.EXE no no   no   no   yes  no   Updated AUDITCON.EXE for NetWare 4.10
+CDUP5A.EXE no   yes  yes  yes  yes  no   Updated CDROM.NLM for NetWare 3.12/4.x
+CLTDR1.EXE yes  yes  yes  yes  yes  yes  VLM/Client32 LAN Driver Update Kit
+DS310.EXE  no   no   yes  no   no   no   DS.NLM ver 4.02 (310) for NW4.01/4.02
+DS410N.EXE no   no   no   no   yes  no   New NW4.10 DS.NLM and DSREPAIR.NLM
+DSENH.EXE  no   no   no   no   yes  no   Updated DL.NLM + Support Modules
+DSFLT1.EXE no   no   no   no   yes  no   Configure NDS communication intervals
+DSMNT3.EXE no   no   no   no   yes  no   DSMAINT.NLM version 4.92
+DSREPS.EXE no   no   yes  no   no   no   DSREPAIR.NLM ver 2.01 for NetWare 4.01
+EXTRTR.EXE yes  yes  yes  no   no   no   ROUTEGEN.EXE v1.0 and associated files
+IDE.EXE    yes  yes  yes  yes  no   yes  Latest IDE.DSK for NetWare 3.1x/4.x 
+INS224.EXE no   no   no   no   yes  no   Updated INSTALL.NLM for NetWare 4.10
+INTCFG.EXE no   no   yes  no   no   no   INETCFG.NLM fix for NetWare 4.01
+IPX660.EXE yes  yes  no   no   yes  yes  Enhanced IPX Routing (IPXRTR 6.60)
+LANDRV.EXE no   yes  no   no   yes  no   Current Certified NetWare LAN Drivers
+LANDR9.EXE yes  yes  no   no   yes  no   Updated 3.1x/4.10 server LAN drivers
+LOG376.EXE yes  yes  no   no   no   yes  LOGIN.EXE ver 3.76 for NW3.x
+LOG410A.EXE no  no   no   no   yes  no   LOGIN.EXE ver 4.12ptf for NW4.10
+LIB311B.EXE yes no   no   no   no   yes  Latest CLIB update for NetWare 3.11
+LIB312B.EXE no  yes  no   no   no   no   Latest CLIB update for NetWare 3.12/3.2
+LIBUP4.EXE no   no   yes  no   no   no   Latest CLIB update for NetWare 4.01
+LIBUPI.EXE no   no   no   no   yes  no   Latest CLIB update for NetWare 4.1x
+MACPT1.EXE no   no   no   no   yes  no   ATXRP.NLM v4.11 Update for NW4.10
+MAP312.EXE yes  yes  no   no   no   yes  Version 3.75ptf of MAP.EXE for NW3.1x
+MAP410B.EXE no  no   no   no   yes  no   Version 4.12ptf of MAP.EXE for NW4.10
+MON176.EXE yes  yes  no   no   no   no   MONITOR.NLM ver 1.76 for NW 3.1x
+MONSFT.EXE no   no   no   no   no   yes  MONITOR.NLM V1.68 for SFT III v3.11
+NAM312.EXE yes  yes  no   no   no   no   Updated MAC.NAM and OS2.NAM for NW3.1x
+NAM401.EXE no   no   yes  no   no   no   Updated MAC.NAM for NetWare 4.01
+NAM41C.EXE no   no   no   no   yes  no   Updated MAC.NAM and OS2.NAM for NW4.10
+NCPY410A.EXE no no   no   no   yes  no   Updated NCOPY.EXE for NetWare 4.10
+NETUSR.EXE no   no   no   no   yes  no   Updated NETUSER.EXE for NetWare 4.10
+NW3DFS.EXE yes  yes  no   no   no   yes  DIRECTFS.NLM 1.09 update for NW 3.1x
+NW4DFS.EXE no   no   no   no   yes  no   DIRECTFS.NLM patches for NetWare 4.10
+NWADMN1.EXE no  no   yes  yes  no   no   NWADMIN.EXE v4.10.2 and support files
+NWAMN2.EXE  no  no   no   no   yes  no   NWADMIN.EXE v4.10.4 and support files
+NWDLL2.EXE yes  yes  yes  yes  no   yes  Latest Windows DLL files for NW Clients
+NWPSLB.EXE yes  yes  no   no   no   no   Print Services Library patch for 3.1x
+ODI33F.EXE no   yes  no   no   yes  no   Latest ODI support files for 3.12/4.1x
+P2SCSI.EXE no   no   yes  yes  yes  no   Updated PS2SCSI.DSK for NetWare 4.x
+PBURST.EXE yes  yes  yes  no   no   no   PBURST support files and fix for WANs
+PS3X02.EXE yes  yes  no   no   no   yes  Updated PSERVER + RPRINTER for 3.1x
+PS4X03.EXE no   no   yes  yes  yes  no   Updated PSERVER + NPRINTER for 4.x
+PU3X01.EXE yes  yes  no   no   no   yes  Updated NetWare printing utils for 3.x
+PU4X03.EXE no   no   yes  yes  yes  no   Updated NetWare printing utils for 4.x
+RCONSL.EXE yes  yes  no   no   no   yes  Updated RCONSOLE.EXE for 3.11/3.12
+RPLKT5.EXE yes  yes  yes  yes  yes  yes  Updated RPL support files
+SBACK6.EXE yes  yes  no   yes  yes  yes  SBACKUP update files for 3.1x/4.x
+SFTDSA.EXE no   no   no   no   yes  no   4.10 SFT III DSAPI.NLM update
+SFTUTL.EXE no   no   no   no   no   yes  Some extra utils for SFT III v3.11
+SFTPT2.EXE no   no   no   no   no   yes  SFT III v3.11 O/S Patch Kit
+SMSDI.EXE  no   no   no   no   yes  no   SMSDI.NLM update for NetWare 4.10
+SMSUP6.EXE yes  yes  yes  yes  yes  yes  SMS Update Files (TSA???.*) for NetWare
+SPXSTR.EXE no   no   no   no   yes  no   SPXS.NLM and STREAMS.NLM for NW 4.10
+SROUT4.EXE yes  yes  no   no   yes  no   Source Routing update
+SRVMN1.EXE no   no   no   no   yes  no   SERVMAN.NLM for NW4.10 - bug fixes
+STRTL3.EXE no   no   yes  no   no   no   STREAMS, TLI, SPXS + IPXS updates
+STRTL7.EXE yes  yes  no   no   yes  yes  STREAMS, TLI, SPXS + IPXS updates
+SYS376.EXE yes  yes  no   no   no   no   Updated SYSCON v3.76 for NetWare 3.12
+TCP312.EXE no   yes  no   no   no   no   TCPIP.NLM update for NetWare 3.12/3.2
+TCPN05.EXE no   no   no   no   yes  no   TCPIP.NLM update for NetWare 4.1x
+TLI312.EXE no   yes  no   no   no   no   Updated TLI.NLM for NetWare 3.12
+TLI4X.EXE  no   no   no   no   yes  no   Updated TLI.NLM for NetWare 4.10
+TPEDAIFT.EXE no no   yes  no   no   no   Fixes problem with Archive 1.3Gb DDS
+TSA410.EXE no   no   no   no   yes  no   Updated TSA410.NLM (v4.14) for NW4.10
+UIM413.EXE no   no   yes  yes  no   no   UIMPORT.EXE update for NetWare 4.0x
+VRP386.EXE yes  yes  no   no   no   yes  VREPAIR Updates for 3.1x 
+VRPUP1.EXE no   no   yes  yes  yes  no   VREPAIR Updates for 4.x
+
+ ______________________________________________________________________________
+  
+ 
+ NetWare 5.0 Updates
+
+NW5SP2.EXE   - Novell NetWare 5.0 Support Pack 2
+
+ ______________________________________________________________________________
+  
+ 
+ NetWare 4.11/IntraNetWare Updates
+
+IWSP6A.EXE   - IntraNetWare (NetWare 4.11) Support Pack v6.0A
+DS411Q.EXE   - Latest DS.NLM (and related modules) for NetWare 4.11
+TCPN06.EXE   - Updated TCPIP.NLM for NetWare 4.11
+SCMDA.EXE    - Updated SCMD.NLM for NetWare 4.x and 5.0
+STRTL7.EXE   - Updated STREAMS, IPXS and SPXS for NetWare 3.1x/4.x
+
+DSFLT1.EXE   - 2 NLMs that allow the configuration of NDS Communication
+               intervals (for slow/costly WAN links for example)
+
+
+ ______________________________________________________________________________
+  
+ 
+ NetWare 3.2 Enhancement Pack Updates
+
+LANDRV.EXE   - Current Novell Certified LAN Drivers for NetWare 3.1x/4.1x
+TCP312.EXE   - Latest TCP/IP update for NetWare 3.12 and 3.2
+IPX660.EXE   - IPX Router (v6.60) Update
+LIB312B.EXE  - Latest CLIB.NLM (and related NLMs) update for NetWare 3.12/3.2
+STRTL7.EXE   - Updated STREAMS, IPXS and SPXS for NetWare 3.1x/4.x
+312Y2KP2.EXE - NetWare 3.12/3.2 Year 2000 fixes and enhancements
+
+ ______________________________________________________________________________
+  
+ 
+ Update History
+  
+ New To This Update..... 24/05/99
+ --------------------------------
+STRTL7.EXE    Added 24/5/99
+ STRTL6.EXE   Removed 24/5/99
+
+ Date of last update.... 06/05/99
+ --------------------------------
+NW5SP2.EXE    Added 6/5/99
+DS411Q.EXE    Added 4/5/99
+ DS411P.EXE   Removed 4/5/99
+IWSP6A.EXE    Added 14/04/99
+ IWSP6.EXE    Removed 14/04/99
+DSCAT.EXE     Added 07/04/99
+I2ODRV4.EXE   Added 25/03/99
+ I2ODRV3.EXE  Added 25/03/99
+IWSP6.EXE     Resurrected 17/3/99
+ IWSP6A.EXE   Removed 17/3/99
+TIMESYNC.EXE  Added 9/3/99
+IWSP6A.EXE    Added 9/3/99
+ IWSP6.EXE    Removed 9/3/99
+SCMDA.EXE     Added 4/3/99
+TCPN06.EXE    Added 22/2/99
+DS411P.EXE    Updated 17/2/99
+411Y2KP2.EXE  Updated 17/2/99
+DS411P.EXE    Added 15/2/99
+ DS411N.EXE   Removed 15/2/99
+NW5SP1A.EXE   Added 12/2/99
+NW5NDS1.EXE   Added 12/2/99
+ NW5SP1.EXE   Removed 12/2/99
+LIB312B.EXE   Added 29/1/99
+ LIB32PT2.EXE Removed 29/1/99
+ LIB312A.EXE  Removed 29/1/99
+NW5SP1.EXE    Added 29/1/99
+312Y2KP2.EXE  Updated 26/1/99
+LIB32PT2.EXE  Added 12/1/99
+LIBUPI.EXE    Added 24/11/98
+ LIBUPH.EXE   Removed 24/11/98
+TSANDS1.EXE   Added 19/11/98
+VRPNW5A.EXE   Added 19/11/98
+NSSNW5A.EXE   Added 19/11/98
+IWSP6.EXE     Added 16/11/98
+ IWSP5B.EXE   Removed 16/11/98
+DS411N.EXE    Updated 13/11/98
+DS411N.EXE    Added 11/11/98
+ DS411L.EXE   Removed 11/11/98
+DS410N.EXE    Added 11/11/98
+ DS410K.EXE   Removed 11/11/98
+I2ODRV3.EXE   Added 2/11/98
+ I2ODRV2.EXE  Removed 2/11/98
+RPLKT5.EXE    Added 7/10/98
+ RPLKT4.EXE   Removed 7/10/98
+IPX660.EXE    Added 29/9/98
+ IPX65G.EXE   Removed 29/9/98
+I2ODRV2.EXE   Added 19/8/98
+ I2ODRV1.EXE  Removed 19/8/98
+CDUP5A.EXE    Added 24/7/98
+ CDUP5.EXE    Removed 24/7/98
+ LIBUPG.EXE   Removed 22/7/98
+LIBUPH.EXE    Added 22/7/98
+DS411L.EXE    Added 1/7/98
+410PT8B.EXE   Updated 9/6/98
+ LIB311A.EXE  Removed 5/6/98
+LIB311B.EXE   Added 5/6/98
+410PT8B.EXE   Added 26/5/98
+ 410PT8A.EXE  Removed 26/5/98
+DS410K.EXE    Added 26/5/98
+ DS410A.EXE   Removed 26/5/98
+TCP312.EXE    Added 20/5/98
+LANDRV.EXE    Updated 15/5/98
+I2ODRV1.EXE   Added 15/5/98
+ 32PT1.EXE    Removed 14/5/98
+411Y2KP2.EXE  Added 5/5/98
+CDUP5.EXE     Updated 5/5/98
+ 312PTC.EXE   Removed 23/4/98
+312PTD.EXE    Added 23/4/98
+ FTCPN05.EXE  Removed 23/4/98
+TCPN05.EXE    Added 23/4/98
+DSKDRV.EXE    Updated 17/4/98
+LANDRV.EXE    Updated 17/4/98
+LIBUPG.EXE    Updated 14/4/98
+ IWSP5.EXE    Removed 14/4/98
+IWSP5B.EXE    Added 14/4/98
+ IWSP4B.EXE   Removed 31/3/98
+ DS411H.EXE   Removed 31/3/98
+IWSP5.EXE     Added 31/3/98
+ LIBUPF.EXE   Removed 31/3/98
+LIBUPG.EXE    Added 31/3/98
+IPX65G.EXE    Updated 31/3/98
+411Y2KP3.EXE  Added 16/3/98
+ 411Y2KP2.EXE Removed 16/3/98
+FTCPN05.EXE   Added 13/3/98
+410PT8A.EXE   Updated 12/3/98
+LIB312A.EXE   Added 9/3/98
+ LIB312.EXE   Removed 9/3/98
+LIB311A.EXE   Added 9/3/98
+ LIB311.EXE   Removed 9/3/98
+411Y2KP2.EXE  Added 4/3/98
+ 411Y2KP1.EXE Removed 4/3/98
+IWSP4B.EXE    Added 4/3/98
+ IWSP4A.EXE   Removed 4/3/98
+32PT1.EXE     Added 4/2/98
+CLTY2KP1.EXE  Updated 4/3/98
+312Y2KP2,EXE  Updated 4/3/98
+IPX65G.EXE    Added 2/3/98
+ IPX65F.EXE   Removed 2/3/98
+ 410PT8.EXE   Removed 27/2/98
+410PT8A.EXE   Added 27/2/98
+312Y2KP2.EXE  Updated 9/2/98
+DS411H.EXE    Updated 9/2/98
+ 312PTB.EXE   Removed 9/2/98
+312PTC.EXE    Added 9/2/98
+410PT8.EXE    Added 23/1/98
+ 410PT7.EXE   Removed 23/1/98
+312Y2KP2.EXE  Added 12/1/98
+ 312Y2KP1.EXE Removed 12/1/98
+312Y2KP1.EXE  Updated 9/1/98
+LIBUPF.EXE    Added 9/1/98
+ LIBUPE.EXE   Removed 9/1/98
+ODI33F.EXE    Added 9/1/98
+ ODI33E.EXE   Removed 9/1/98
+312Y2KP1.EXE  Added 30/12/97
+411Y2KP1.EXE  Added 30/12/97
+CLTY2KP1.EXE  Added 30/12/97
+DS411H.EXE    Added 30/12/97
+IPX65F.EXE    Added 1/12/97
+ IPX65B.EXE   Removed 1/12/97
+41REM1.EXE    Added 1/12/97
+MAP410B.EXE   Added 1/12/97
+ MAP410A.EXE  Removed 1/12/97
+CDUP5.EXE     Added 17/11/97
+ CDUP4.EXE    Removed 17/11/97
+STRTL6.EXE    Updated 17/11/97
+STRTL6.EXE    Updated 10/11/97
+IWSP4A.EXE    Added 27/10/97
+ IWSP4.EXE    Removed 27/10/07
+LIBUPE.EXE    Added 24/10/97
+ LIBUPD.EXE   Removed 24/10/97
+IWSP4.EXE     Updated 23/10/97
+ IPX65A.EXE   Removed 9/10/97
+IPX65B.EXE    Added 9/10/97
+VRP411A.EXE   Added 9/10/97
+ NAM41B.EXE   Removed 9/10/97
+NAM41C.EXE    Added 9/10/97
+ TCPN04.EXE   Removed 29/9/97
+TCPN04A.EXE   Added 29/9/97
+ IWSP3A.EXE   Removed 29/9/97
+IWSP4.EXE     Added 29/9/97
+MAP410A.EXE   Added 16/9/97
+ MAP412.EXE   Removed 16/9/97
+NCPY410A.EXE  Added 16/9/97
+LOG410A.EXE   Added 16/9/97
+ LOG412.EXE   Removed 16/9/97
+AUDIT410.EXE  Added 16/9/97
+VRP386.EXE    Added 29/8/97
+STRTL6.EXE    Added 28/8/97
+LIB312.EXE    Updated 27/8/97
+LIB311.EXE    Added 22/8/97
+LIB312.EXE    Added 22/8/97
+LIBUPD.EXE    Updated 22/8/97
+TCPN04.EXE    Added 12/8/97
+ TCPN03.EXE   Removed 12/8/97
+ODI33E.EXE    Added 31/7/97
+ ODI33D.EXE   Removed 31/7/97
+SFTPT2.EXE    Added 25/7/97
+ SFTPT1.EXE   Removed 25/7/97
+LIBUPD.EXE    Added 10/7/97
+ LIBUPC.EXE   Removed 10/7/97
+IWSP3A.EXE    Added 27/6/97
+ IWSP3.EXE    Removed 27/6/97
+ODI33D.EXE    Added 26/6/97
+LANDRV.EXE    Updated 24/6/97
+DSKDRV.EXE    Updated 24/6/97
+IWSP3.EXE     Updated 18/6/97
+IWSP3.EXE     Added 13/6/97
+ IWSP2.EXE    Removed 13/6/97
+IPX65A.EXE    Added 6/6/97
+ IPXRT4.EXE   Removed 6/6/97
+ IPXRT3.EXE   Removed 6/6/97
+312PTB.EXE    Added 3/6/97
+ 312PTA.EXE   Removed 3/6/97
+ODIKT2.EXE    Added 18/4/97
+ ODIKT1.EXE   Removed 18/4/97
+ ODIKT1.EXE   Added 14/4/97
+NDB32I.EXE    Added 14/4/97
+IWSP2.EXE     Updated 2/4/97
+LIBUPC.EXE    Added 24/3/97
+ LIBUPB.EXE   Removed 24/3/97
+IWSP2.EXE     Added 12/3/97
+ 411SP1B.EXE  Removed 12/3/97
+WS251B.EXE    Added 12/3/97
+ WS251A.EXE   Removed 12/3/97
+WS250B.EXE    Added 12/3/97
+LANDRV.EXE    Added 12/3/97
+DSKDRV.EXE    Added 12/3/97
+TCPN03.EXE    Added 20/2/97
+ TCP31A.EXE   Removed 20/2/97
+ TCP41B.EXE   Removed 20/2/97
+SMSUP6.EXE    Updated 5/2/97
+DS410A.EXE    Added 5/2/97
+ 41NDS9.EXE   Removed 5/2/97
+NAM41B.EXE    Added 4/2/97
+ NAM41A.EXE   Removed 4/2/97
+410PT7.EXE    Updated 4/2/97
+411PT1.EXE    Updated 4/2/97
+410PT7.EXE    Added 29/1/97
+ 410PT6.EXE   Removed 29/1/97
+411PT1.EXE    Added 27/1/97
+SMSUP6.EXE    Added 24/1/97
+ SMSUP5.EXE   Removed 20/1/97
+NW3DFS.EXE    Added 8/1/97
+NW4DFS.EXE    Added 8/1/97
+ DFS108.EXE   Removed 8/1/97
+WS251A.EXE    Added 20/12/96
+LIBUPB.EXE    Added 19/12/96
+ LIBUP9.EXE   Removed 19/12/96
+41RTR4.EXE    Added 4/12/96
+ 41RTR3.EXE   Removed 4/12/96
+411SP1B.EXE   Added 14/11/96
+ 411SP1A.EXE  Removed 14/11/96
+311PTG.EXE    Added 12/11/96
+ 311PTF.EXE   Removed 12/11/96
+312PTA.EXE    Added 12/11/96
+ 312PT9.EXE   Removed 12/11/96
+SROUT4.EXE    Added 12/11/96
+ SROUT3.EXE   Removed 12/11/96
+DSFLT1.EXE    Added 6/11/96
+411SP1A.EXE   Added 5/11/95
+NAM41A.EXE    Added 30/10/96
+NAM312.EXE    Updated 30/10/96
+LANDR9.EXE    Added 28/10/96
+ LANDR8.EXE   Removed 28/10/96
+ 311LAN.EXE   Removed 28/10/96
+LIBUP9.EXE    Updated 28/10/96
+LIBUP9.EXE    Added 20/9/96
+ LIBUP8.EXE   Removed 20/9/96
+RPLKT4.EXE    Added 5/9/96
+311LAN.EXE    Added 2/9/96
+LANDR8.EXE    Added 2/9/96
+SRVMN1.EXE    Added 2/9/96
+TSA410.EXE    Added 22/8/96
+311PTF.EXE    Added 20/8/96
+ 311PTE.EXE   Removed 20/8/96
+312PT9.EXE    Added 20/8/96
+ 312PT8.EXE   Removed 20/8/96
+410PT6.EXE    Added 20/8/96
+ 410PT3.EXE   Removed 20/8/96
+NAM312.EXE    Updated 12/8/96
+CLTDR1.EXE    Added 8/8/96
+LANDR7.EXE    Updated 7/8/96
+LANDR7.EXE    Added 5/8/96
+IPXRT4.EXE    Added 5/8/96
+TLI312.EXE    Added 24/7/96
+NWAMN2.EXE    Added 19/7/96
+41RTR2.EXE    Updated 11/7/96
+SRVMAN.EXE    Updated 11/7/96
+CDUP4.EXE     Updated 11/7/96
+311PTE.EXE    Updated 1/7/96
+CDUP4.EXE     Added 27/6/96
+ CDUP3.EXE    Removed 27/6/96
+311PTE.EXE    Added 24/6/96
+ 311PTD.EXE   Removed 24/6/96
+312PT8.EXE    Added 18/6/96
+ 312PT7.EXE   Removed 18/6/96
+LANDR6.EXE    Added 17/6/96
+ LANDR5.EXE   Removed 17/6/96
+STRTL5.EXE    Added 17/6/96
+ STRTL4.EXE   Removed 17/6/96
+SMSUP5.EXE    Added 7/6/96
+ SMSUP4.EXE   Removed 7/6/96
+41NDS9.EXE    Added 4/6/96
+ 41NDS6.EXE   Removed 4/6/96
+LIBUP8.EXE    Added 22/4/96
+ LIBUP7.EXE   Removed 22/4/96
+SBACK6.EXE    Added 22/4/96
+ SBACK5.EXE   Removed 22/4/96
+TCP31A.EXE    Updated 16/4/96
+LANDR5.EXE    Added 15/4/96
+ LANDR4.EXE   Removed 15/4/96
+CDUP3.EXE     Updated 12/4/96
+41RTR3.EXE    Added 11/4/96
+ 41RTR2.EXE   Removed 11/4/96
+41NDS6.EXE    Added 9/4/96
+ 41NDS5.EXE   Removed 9/4/96
+SROUT3.EXE    Added 4/4/96
+ SROUT2.EXE   Removed 4/4/96
+CDUP3.EXE     Added 25/3/96
+SRVMAN.EXE    Added 15/3/96
+NETUSR.EXE    Added 13/3/96
+41FILR.EXE    Added 11/3/96
+SMSDI.EXE     Added 6/3/96
+41NDS5.EXE    Updated 6/3/96
+DSMNT3.EXE    Added 6/3/96
+INS224.EXE    Added 6/3/96
+ INSTLL.EXE   Removed 6/3/96
+ DSMNT2.EXE   Removed 6/3/96
+LIBUP7.EXE    Added 1/3/96
+ LIBUP6.EXE   Removed 1/3/96
+RPLKT3.EXE    Updated 1/3/96
+410PT3.EXE    Updated 28/2/96
+ 312PT6.EXE   Removed 26/2/96
+312PT7.EXE    Added 26/2/96
+ RPLKT2.EXE   Removed 26/2/96
+RPLKT3.EXE    Added 26/2/96
+TCP41B.EXE    Added 14/2/96
+410PT3.EXE    Updated 6/2/96
+41NDS5.EXE    Added 2/2/96
+ 41NDS4.EXE   Removed 2/2/96
+410PT3.EXE    Added 24/1/96
+ 410PT2.EXE   Removed 24/1/96
+LIBUP6.EXE    Updated 19/1/96
+STRTL4.EXE    Updated 15/1/96
+LIBUP6.EXE    Added 10/1/96
+STRTL4.EXE    Added 9/1/96
+

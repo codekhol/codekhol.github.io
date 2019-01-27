@@ -1,0 +1,923 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+ <!-- This document was created from RTF source by rtftohtml version 2.7.5 -->
+ <title>unx004 - DPT 3224 RAID controller</title>
+</head>
+<body>
+
+<img src="../../images/apricot.gif.html" alt="apricot">
+
+<hr>
+
+<h1>SCO Unix 3.2v4.2 / OpenServer Release 5</h1>
+
+<h2>with DPT 3224 RAID controller</h1>
+
+<h3>
+ John Euinton
+ <br>Unix Support Department
+</h3>
+
+<h3>Release 3.0.1</h3>
+
+<hr>
+
+<p>
+<b><u>Table of Contents</u></b>
+</p>
+
+<ol>
+ <li><a href="#RTFToC1">Introduction</a>
+ <li><a href="#RTFToC2">FT//ex 1000 RAID system configuration</a>
+ <ol>
+  <li><a href="#RTFToC21">Hold F10 to make system boot</a>
+  <li><a href="#RTFToC22">ECU settings</a>
+  <li><a href="#RTFToC23">The motherboard BIOS Utility</a>
+  <ol>
+   <li><a href="#RTFToC231">Basic System Configuration</a>
+   <li><a href="#RTFToC232">Advanced System Configuration</a>
+   <li><a href="#RTFToC233">PCI System Configuration</a>
+   <li><a href="#RTFToC234">System Security</a>
+  </ol>
+  <li><a href="#RTFToC24">Initial DPT BIOS screen</a>
+  <li><a href="#RTFToC25">DPT BIOS screen with RAID array confiured</a> 
+  <li><a href="#RTFToC26">Label drive trays</a>
+ </ol>
+ <li><a href="#RTFToC3">Installing SCO UNIX</a>
+ <ol>
+  <li><a href="#RTFToC31">Required BTLD floppies</a>
+  <ol>
+   <li><a href="#RTFToC311">Installing</a>
+  </ol>
+ </ol>
+ <li><a href="#RTFToC4">Installing SCO OpenServer 5</a>
+ <ol>
+  <li><a href="#RTFToC41">Required BTLD floppies</a>
+  <ol>
+   <li><a href="#RTFToC411">Installing</a>
+  </ol>
+ </ol>
+ <li><a href="#RTFToC5">DPT utilities</a>
+ <ol>
+  <li><a href="#RTFToC51">Installation of the utilities</a>
+  <ol>
+   <li><a href="#RTFToC511">Installation at  Unix install time</a>
+   <li><a href="#RTFToC512">Installation onto a running system</a>
+   <li><a href="#RTFToC513">Suggested modifications</a>
+  </ol>
+  <li><a href="#RTFToC52">Using the utilities</a>
+ </ol>
+ <li><a href="#RTFToC6">Emergency floppies</a>
+ <ol>
+  <li><a href="#RTFToC61">Related documentation</a>
+ </ol>
+</ol>
+
+<hr>
+
+<h1 align=center>
+ <a name="RTFToC1">Introduction</a>
+</h1>
+
+<p>
+Throughout this Info Guide the following typefaces have special meaning:<p>
+<pre>
+<b>dptmgr</b>        - The name of a command, file, menu item,
+                or on screen option.
+<i>Boot</i>          - Output displayed on screen.
+<u>alad dptr</u>     - Keyboard input
+<b><i>Logical</i></b>       - Terminology used by DPT and is described
+                in the DPT
+<b><i>Storage Unit</i></b>  - SmartRAID user's manual.
+</pre>
+<p>
+This Info Guide makes the following assumptions:<p>
+<ul>
+ <li>	That the DPT card and the hot-plug backplane have been installed in the
+FT//ex.  For guidance with these tasks review the installation documentation
+supplied with them.
+
+ <li>	That a single array of drives configured as a RAID 5 array is to be installed.
+This type of array provides drive redundancy without the need for duplicating
+the entire array of drives with a mirrored array, and provides a disk
+performance increase through striping.  RAID 5 requires at least 3 drives.
+Assuming all drives are of the same size, an amount of storage capacity equal
+to that of one drive in the array is lost, it being used throughout the array
+to hold parity information for rebuilding data should a drive fail.  So, for an
+array of 5 drives each of 1Gb, the size of the logical drive that the DPT card
+offers the host is 4Gb.
+
+ <li>	That SCO Unix 3.2v4.2 is to be installed from a SCSI tape set to ID 2, or a
+CD-ROM set to ID 5, connected to the on-board AIC-7870.  There are potential
+problems with using the 7870 for installation and these will be discussed and
+an alternative offered.  These SCSI ID's are mandatory for installation, this
+being an SCO feature.
+</ul>
+<p>
+Only Apricot supported drives for the FT//ex with DPT card should be used.  At
+the time of writing such drives being the Quantum 540Mb, IBM DPES-31080 1Gb
+"Pegasus", and IBM 2Gb "Starfire".  For earlier Apricot supplied drives check
+with Unix Support.
+</p>
+<p>
+Follow these notes in the order written to start from an unconfigured system
+through to SCO Unix installed onto a RAID 5 drive array.
+</p>
+
+<hr>
+
+<h1 align=center>
+ <a name="RTFToC2">FT//ex 1000 RAID system configuration</a>
+</h1>
+
+<p>
+Prior to configuring the RAID array or installing software onto any hard disks,
+the system's configuration must be checked as outlined in the following
+sub-sections.
+</p>
+
+<p>
+There are four separate software/BIOS setups to be run, these are:
+</p>
+
+<ul>
+ <li> The motherboard "BIOS Utility"
+ <li> The DPT card "DPT Configuration Utility"
+ <li> The Adaptec AIC-7870 on-board PCI SCSI controller "SCSISelect(TM)
+Utilty"
+ <li> The "EISA System Configuration Utility" or ECU.
+</ul>
+
+<p>
+These quoted names are the names of these setup utilities as they appear
+on-screen.
+</p>
+
+<h2>
+ <a name="RTFToC21">Hold F10 to make system boot</a>
+</h2>
+
+<p>
+At boot-up the system should display output from the DPT BIOS and the Adaptec
+AIC 7870 BIOS.  If either are missing or if the system does not boot DOS from
+one of the hard disks (systems are supplied with DOS installed from our
+factory), assume that there is a problem with stored CMOS configuration and
+power on again with the F10 key held down until the system beeps once.
+</p>
+
+<p>
+This will reset the CMOS configuration to a working state that will allow the
+floppy to boot and the ECU to be run.  Pressing F10 in this way does not affect
+the ECU settings that are in place.  See the later sub-section entitled "ECU
+settings" for the settings required.
+</p>
+
+<p>
+After configuring the ECU you must configure the settings in the motherboard
+"BIOS Utility", the DPT card "DPT Configuration Utility", and the Adaptec
+AIC-7870 on-board PCI SCSI controller "SCSISelect(TM) Utilty".  These settings,
+and the ECU settings, that should be defined are detailed in the following
+sub-sections.
+</p>
+
+<h2>
+ <a name="RTFToC22">ECU settings</a>
+</h2>
+
+<p>
+Firstly review the ECU settings.  After the ECU has booted select the
+<b>Configure computer - advanced method</b> option.  At this point the EISA
+slots 1 to 5 are listed and so is the system motherboard.  Select the
+motherboard - the menu option <b>M5</b>.
+</p>
+
+<p>
+Shown below is the ECU listing for the motherboard with comments included to
+give relevant explanations:
+</p>
+
+<pre>
+System Memory Functions
+ Base System Memory............640K Base Memory
+ 4   -   16MB Extended Memory..<b>16MB</b> Ext Memory with 15-16MB System used
+</pre>
+
+<p>
+For systems with at least 16MB the above is set to <b>16MB</b>.
+</p>
+
+<pre>
+ 16  -   64MB Extended Memory  Ctrl-R to add the Memory
+</pre>
+
+<p>
+For memory up from 16Mb to 64Mb enter <u>&lt;cntrl&gt;R</u> followed by
+<u>&lt;tab&gt;</u> and then enter the value of the memory in megabytes (as a
+number followed by <u>M</u>) above 16Mb.  Eg. for a 32Mb system, enter
+<u>16M</u>.
+</p>
+
+<pre>
+ 64  -  128MB Extended Memory  Ctrl-R to add the Memory
+</pre>
+
+<p>
+For memory up from 64Mb to 128Mb enter <u>&lt;cntrl&gt;R</u> followed by
+<u>&lt;tab&gt;</u> and then enter the value of the memory in megabytes (as a
+number followed by <u>M</u>) above 64Mb.  Eg. for a 96Mb system, enter
+<u>32M</u> here and <u>48M</u> in the 16 - 64MB Extended Memory menu
+item.
+</p>
+
+<pre>
+PCI Devices IRQ assignment
+ On board 7870 SCSI controller.......<b>IRQ 11</b>
+</pre>
+
+<p>
+The actual mapping of the Adaptec 7870 PCI interrupt to IRQ mapping is setup in
+the motherboard "BIOS Utility".  Therefore, although the above setting for the
+7870 SCSI controller can be set to disabled, it should be set as <b>IRQ 11</b>
+here to stop the ECU assigning this IRQ to another card.
+</p>
+
+<pre>
+ On board Enhanced IDE controller....Disabled
+ PCI slot 1..........................<b>IRQ 14</b>
+</pre>
+
+<p>
+The actual mapping of the DPT 3224 card's PCI interrupt to IRQ mapping is setup
+in the motherboard "BIOS Utility".  Therefore, although the above setting for
+the PCI slot 1 can be set to disabled, it should be set as <b>IRQ 14</b> here
+to stop the ECU assigning this IRQ to another card.
+</p>
+
+<pre>
+ PCI slot 2..........................Disabled
+ PCI slot 3..........................Disabled
+
+Sysem BIOS type......................E, F Segment System used
+
+Peripheral Device Status
+ Mouse port..........................Enabled
+ Keyboard port.......................Enabled
+ Floppy Disk Controller..............Enabled
+ IDE HDD Interface...................Disabled
+ Parallel port.......................Enabled as LPT1 (3BCh)
+ Serial port 1 (9 pins)..............Enabled as Serial 1 (3F8h)
+ Serial port 1 (25 pins).............Enabled as Serial 2 (2F8h)
+
+System Setting
+ Special System Ports................Enable
+ EISA Reserved Devices...............Enable
+</pre>
+
+<p>
+To save the ECU definitions, enter <u>&lt;alt&gt;</u> to highlight the top row
+of menu items.  Open the <b>System</b> menu by pressing the <u>&lt;down
+arrow&gt;</u>.  Slect <b>Exit</b> and then select <b>Save configuration and
+exit</b> at the next menu.
+</p>
+
+<h2>
+ <a name="RTFToC23">The motherboard BIOS Utility</a>
+</h2>
+
+<p>
+After defining the ECU settings as shown in the previous sub-section reboot the
+system and wait for the memory test to run.  Next you will either see the DPT
+BIOS run followed by the Adaptec AIC 7870 BIOS or you may not see either of
+these which probably means that F10 was pressed to force the system to boot the
+ECU floppy.  You are then presented with a blue configuration display in the
+top third of the screen.
+</p>
+
+<p>
+Once whichever of the above occurs after the memory tests, enter
+<u>&lt;cntrl&gt;&lt;alt&gt; &lt;esc&gt;</u> to run the motherboard BIOS
+Utility.  This will give the following menu:
+</p>
+
+<pre>
+     Basic System Configuration
+    Advanced System Configuration
+      PCI System Configuration
+          System Security
+     Load Setup Default Settings
+</pre>
+
+<h3>
+ <a name="RTFToC231">Basic System Configuration</a>
+</h3>
+
+<p>
+Select <b>Basic System Configuration</b> and review the following
+definitions:
+</p>
+
+<pre>
+Date----------------------------- [DD/MM/MM]
+Time----------------------------- [hh:mm:ss]
+Diskette Drive A ---------------- [1.44 MB 3.5-inch]
+Diskette Drive B ---------------- [      None      ]
+                                            Cylinder  Head  Sector
+Fixed Disk 0 (   0 MB) ---------- [Auto]           0    0       0
+Fixed Disk 1 (   0 MB) ---------- [Auto]           0    0       0
+
+
+Base Memory --------------------- [   640] KB
+Extended Memory ----------------- [ 31744] KB   This for a 32Mb system
+Total memory -------------------- [ 32384] KB
+Math Coprocessor ---------------- [  Installed  ]
+Video Display ------------------- [VGA/EGA]
+</pre>
+
+<p>
+Enter <u>&lt;pg down&gt;</u> to review page 2 of 2
+</p>
+
+<pre>
+Communication Settings
+
+    Baud Rate ------------------- [ 9600] BPS
+    Parity ---------------------- [ Odd]
+    Stop Bits ------------------- [1] Bits
+    Data Length ----------------- [8] Bits
+
+Enhanced IDE Features
+    IDE Fixed Disk Block Mode --- [Disabled]
+    Large Hard Disk Capacity ---- [Disabled]
+    Advanced PIO Mode  ---------- [Disabled]
+
+Num Lock After Boot ------------- [Enabled]
+Memory Test --------------------- [Disabled]
+</pre>
+
+<p>
+The <b>Memory Test</b> (memory count and test at power-up) option above can
+only be enabled if the <b>Fast Boot Mode</b> option below is disabled <p>
+</p>
+
+<pre>
+Auto Configuration Mode --------- [Enabled]
+</pre>
+
+<p>
+The <b>Auto Configuration Mode</b> option above is normally enabled.  If
+disabled it is possible to disable the processor cache in the <b>Advanced
+System Configuration</b> menu.
+</p>
+
+<pre>
+Fast Boot Mode ------------------ [Enabled]
+</pre>
+
+<h3>
+ <a name="RTFToC232">Advanced System Configuration</a>
+</h3>
+
+<p>
+Select <b>Advanced System Configuration</b> and review the following
+definitions:
+</p>
+
+<pre>
+Shadow RAM
+    E0000h-FFFFFh (System BIOS) ------------- [Enabled ]
+    C0000h-C7FFFh (Video BIOS) -------------- [Enabled ]
+    C8000h-CFFFFh --------------------------- [Disabled]
+    D0000h-D7FFFh --------------------------- [Disabled]
+    D8000h-DFFFFh --------------------------- [Disabled]
+
+Internal Cache(CPU Cache) ------------------- [Enabled ]
+External Cache ------------------------------ [Enabled ]
+    Cache Scheme ---------------------------- [Write Back]
+</pre>
+
+<p>
+If it is ever required to disable the processor cache the <b>Auto Configuration
+Mode</b> option in the <b>Basic System Configuration</b> menu must be
+disabled.
+</p>
+
+<pre>
+System Memory Parity ------------------------ [Disabled]
+Memory at 15MB-16MB Reserved for ------------ [  System  ] Use
+E0000h-FFFFFh (System BIOS) ----------------- [Noncacheable]
+C0000h-C7FFFh (Video BIOS) ------------------ [Noncacheable]
+</pre>
+
+<p>
+Enter <u>&lt;pg down&gt;</u> to review page 2 of 2
+</p>
+
+<pre>
+Guaranteed Access Time Mode ----------------- [Enabled ]
+Highest Priority Device for PCI Arbitration - [EISA/IO]
+</pre>
+
+<h3>
+ <a name="RTFToC233">PCI System Configuration</a>
+</h3>
+
+<p>
+Select <b>PCI System Configuration</b> and review the following
+definitions:
+</p>
+
+<pre>
+PCI Slot Number ------------------------------ [1]
+   Function Number Of Device ----------------- [0]
+      Device Function ------------------------ [Enabled ]
+      Bus Master ----------------------------- [Enabled ]
+
+   IRQ Level for INTA Pin -------------------- [14]
+   IRQ Level for INTB Pin -------------------- [--]
+   IRQ Level for INTB Pin -------------------- [--]
+   IRQ Level for INTB Pin -------------------- [--]
+</pre>
+
+<h3>
+ <a name="RTFToC234">System Security</a>
+</h3>
+
+<p>
+Select <b>System Security</b> and review the following definitions.
+</p>
+
+<pre>
+Disk Drive Control
+    Diskette Drive --------------- [       Normal       ]
+    Fixed Disk Drive ------------- [       Normal       ]
+    System Boot Drive ------------ [Drive A Then C]
+
+On Board Communication Ports
+    Serial Port 1 Base Address --- [  3F8h  ]
+    Serial Port 2 Base Address --- [  2F8h  ]
+    Parallel Port Base Address --- [  3BCh  ]
+</pre>
+
+<p>
+If the parallel port is required, the <b>mkdev parallel</b> command is used and
+the <b>Parallel/Monochrome</b> adapter option is normally selected.  The SCO
+default I/O address being 3BCh.  Use the left and right arrow keys to change
+the hardware default from 378h to 3BCh.<p>
+<pre>
+      Operation Mode  ------- [ Standard Parallel Port(SPP) ] Mode
+      EPP Version Selection - [1.7]
+
+Setup Password -------------- [ None  ]
+Power On Password ----------- [ None  ]
+</pre>
+
+<h2>
+ <a name="RTFToC24">Initial DPT BIOS screen</a>
+</h2>
+
+<p>
+The DPT 3224 card BIOS gives the following type of display for a new system
+where the drives attached are not configured as a RAID array.  In the example
+below the card has five IBM "Pegasus" DPES-31080 1Gb drives attached and they
+are set to SCSI ID's 0,1,2,3,4 respectively
+</p>
+
+<pre>
+   DPT SCSI BIOS v003.B1
+   Distributed Processing Technology
+   (c) Copyright 1990-1994
+
+   &lt;Ctrl-D&gt;  for DPT Configuration Utility
+
+Controller: PM3224A/9X -R  v07A.6  4.0MB Port:0510h  IRQ:14
+   Drive  :  0 (0,0,0)    IBM     DPES-31080        517 x  65 x 63
+   Drive  :  1 (0,1,0)    IBM     DPES-31080        517 x  65 x 63
+   Drive  :  2 (0,2,0)    IBM     DPES-31080        517 x  65 x 63
+   Drive  :  3 (0,3,0)    IBM     DPES-31080        517 x  65 x 63
+   Drive  :  4 (0,4,0)    IBM     DPES-31080        517 x  65 x 63
+</pre>
+
+<p>
+Note the line DPT SCSI BIOS v003.B1 which shows the card's firmware version.
+The DPT card MUST NOT have version 3B0 firmware installed as this is known to
+corrupt vital DPT specific data on any of the attached hard disk drives.
+Version 3B1 (full version name is actually 7A63B1) is the first satisfactory
+version to be used.  Contact Apricot Technical Support for the latest version
+as it is likely that another release will be preferred in the future.
+</p>
+
+<p>
+The line above starting Controller: indicates that the card has a single 4Mb
+cache simm installed and that its PCI interrupt A line is mapped to the
+computer's IRQ 14 line.  If the IRQ is incorrect it should be set correctly in
+the computer's BIOS setup (&lt;cntrl&gt;&lt;alt&gt;&lt;esacpe&gt; during
+boot-up) - this setup is described elsewhere in these notes.  The I/O port of
+510h is also identified - this is dependent upon the PCI slot used and cannot
+be changed, 510h indicates PCI slot 1.
+</p>
+
+<h2>
+ <a name="RTFToC25">DPT BIOS screen with RAID array confiured</a>
+</h2>
+
+<p>
+Once the drive array is configured with the DPT Manager utility
+(<b>dptmgr.exe</b>) the five lines will be replaced with a single line that
+identifies the drive array as a single logical drive as shown below:
+</p>
+
+<pre>
+Controller: PM3224A/9X -R  v07A.6  4.0MB Port:0510h  IRQ:14
+   Drive  :  0 (0,0,0)    DPT     RAID-5            527 x 255 x 63
+</pre>
+
+<h2>
+ <a name="RTFToC26">Label drive trays</a>
+</h2>
+
+<p>
+Label the drive trays that are fitted with hard disks with their SCSI ID.  This
+will allow location of a drive when action is required in response to messages
+from the DPT firmware/BIOS or the DPT software utilities
+</p>
+
+<hr>
+
+<h1>
+ <a name="RTFToC3">Installing SCO Unix</a>
+</h1>
+
+<h2>
+ <a name="RTFToC31">Required BTLD floppies</a>
+</h2>
+
+<p>
+In addition to the SCO distribution floppies and tape, BTLD driver disks are
+required for the on-board Adaptec AIC-7870 and the DPT3224.
+</p>
+
+<p>
+However, do not use the BTLD driver disk for the AIC-7870 that ships in the
+FT//ex box as a modified BTLD driver is required that allows installation from
+a SCSI tape or CD-ROM connected to the Adaptec onto a SCSI disk connected to
+another SCSI adapter.  This is because under SCO Unix 3.2v4.2 the installation
+SCSI device must be on the same SCSI bus as the root hard disk.  Once Unix is
+installed however, such limitations do not exist - Unix will support the DPT
+disks and AIC-7870 SCSI devices.
+</p>
+
+<p>
+The modified AIC-7870 BTLD floppy image is available from area 39 of Apricot
+Insight Online or release 8 or later of the Insight CD.  The filename is
+<b>dpt7870.Z</b>.
+</p>
+
+<p>
+The DPT card's BTLD floppy is created by the DOS based <b>dptmgr.exe</b>
+utility used to create the drive array.  Refer to the notes covering the use of
+this utility or the DPT SmartRAID User's Manual for a full description of the
+creation of such operating system specific floppies.  This <i>DPT OS Setup
+diskette</i> as DPT call it, is created by performing an <i>Initial System 
+Configuration</i>.  An image of this floppy is also on Insight 10 and in area
+39 of Apricot Insight Online as the file <b>DPTBTLD.Z</b>.
+</p>
+
+<h3>
+ <a name="RTFToC311">Installing</a>
+</h3>
+
+<p>
+Boot from the SCO N1 floppy as normal and at the Boot: prompt enter:
+</p>
+
+<pre>
+  <u>link restart Stp=alad(0,2,0) disable=dpt</u>
+</pre>
+
+<p>
+This will force an installation from a SCSI tape connected to the AIC-7870.
+For a CD-ROM installation use the following boot string:
+</p>
+
+<pre>
+  <u>link restart Srom=alad(0,5,0) disable=dpt</u>
+</pre>
+
+<p>
+The boot string causes the SCO supplied dpt driver not to be used as this
+driver is for earlier DPT cards and is not suitable for the 3224 SmartCache
+card.
+</p>
+
+<p>
+Enter the following when asked what drivers are to be linked in for version
+1EB or later of the DPT Manager:
+</p>
+
+<pre>
+  <u>dptr4 alad</u>
+</pre>
+
+<p>
+For version 1E9 of the DPT Manager enter:
+
+<pre>
+ <u>dptraid alad</u>
+</pre>
+
+<p>
+Continue with a normal installation.  You will be asked to insert the volumes
+that contain these drivers on two separate occasions during the
+installation.
+</p>
+
+<p>
+The installation will default to a SCSI tape on ID 2 connected to the AIC-7870
+(alad driver).  If a CD-ROM is being used the installation will say that the
+CD-ROM is to be on SCSI ID 5, as mentioned in the Introduction section.
+</p>
+
+<p>
+Once SCO Unix is installed check the <b>/etc/conf/cf.d/mscsi</b> file for a
+SCSI tape entry.  If not present re-create the SCSI tape with the <b>mkdev
+tape</b> command in the normal manner.
+</p>
+
+<hr>
+
+<h1>
+ <a name="RTFToC4">Installing SCO OpenServer 5</a>
+</h1>
+
+<p>
+The procedure above for <a href="#RTFToC3">Unix 3.2v4.2</a> is not appropriate
+for OpenServer 5.  However, it should be referred to and differences here
+noted.
+</p>
+
+<p>
+The DPT Storage Manager software must be at least release 1EB - earlier
+releases have no support for OpenServer 5.
+</p>
+
+<h2>
+ <a name="RTFToC41">Required BTLD floppy</a>
+</h2>
+
+<p>
+The DPT card's BTLD floppy is created by the DOS based <b>dptmgr.exe</b>
+utility used to create the drive array.  An image of this floppy is also on
+Insight from Release 10 and in area 39 of Apricot Insight Online as the file
+<b>DPTBTLD.Z</b>.  For an OpenServer 5 installation, release 1EB or later
+DPT Manager is required.  The menu to create an SCO <i>DPT OS Setup
+diskette</i> floppy does not actually list OpenServer 5 as an option with
+version 1EB, but selecting the SCO Unix 2.3v4.2 option will create a BTLD
+floppy that contains the OpenServer 5 driver.
+</p>
+
+<h3>
+ <a name="RTFToC411">Installing</a>
+</h3>
+
+<p>
+Boot from the SCO Boot floppy as normal and at the Boot: prompt enter:
+</p>
+
+<pre>
+  <u>defbootstr ahslink=dptr5 Stp=alad(0,2,0) disable=dpt</u>
+</pre>
+
+<p>
+This will force an installation from a SCSI tape connected to the
+AIC-7870.  For a CD-ROM installation use the following boot string:
+</p>
+
+<pre>
+  <u>defbootstr ahslink=dptr5 Srom=alad(0,5,0) disable=dpt</u>
+</pre>
+
+<p>
+The boot string causes the SCO supplied DPT driver not to be used as
+this is for earlier DTP cards and is not suitable for the 3224
+SmartCache card.
+</p>
+
+<p>
+Note that the alad driver exists in the standard OpenServer 5 product.
+</p>
+
+<hr>
+
+<h1>
+ <a name="RTFToC5">DPT utilities</a>
+</h1>
+
+<p>
+From release 1E7 of the DOS based Storage Manager utility <b>dptmgr.exe</b> 
+the DPT <i>OS Setup diskette</i> that is created contains the BTLD driver
+plus a Unix version of the Storage Manager and an event logger/broadcaster.
+From version 1EB there is also support for OpenServer 5.
+</p>
+
+<h2>
+ <a name="RTFToC51">Installation of the utilities</a>
+</h2>
+
+<h3>
+ <a name="RTFToC511">Installation at Unix install time</a>
+</h3>
+
+<p>
+If the system is installed with a BTLD floppy of at least release 1E7 the
+utilities will be placed into the <b>/usr/dpt</b> directory.  One other file
+will also be installed, this being the rc startup script
+<b>/etc/rc2.d/S33dpt</b>.
+</p>
+
+<p>
+The files in <b>/usr/dpt</b> are as follows:
+</p>
+
+<pre>
+S33dpt            dptlog            dptmgrsc.rsc      
+dptelog           dptmgr            dptsig            
+dptelog.20        dptmgrsc          read.me           
+dptelog.def       dptmgrsc.hlp      readme.apps       
+dpteng            dptmgrsc.ini      zilmouse.sco      
+</pre>
+
+<p>
+Of particular interest is the file <b>readme.apps</b> which provides usage and
+configuration information.
+</p>
+
+<p>
+The file <b>dptelog.def</b> configures the error logger utility <b>dptelog</b>.
+It is strongly suggested that this file be amended to enable such features as
+emailing of failures.  See the sub-section entitled
+<a href="#RTFToC513">Suggested modifications</a> below for more detail.
+</p>
+
+<h3>
+ <a name="RTFToC512">Installation onto a running system</a>
+</h3>
+
+<p>
+If updating to a later release of the DPT driver, perhaps from the 1E3 release
+that did not include a Unix based manager and utility set, use the
+<b>installpkg</b> command in the normal way.
+<p>
+
+<h3>
+ <a name="RTFToC513">Suggested modifications</a>
+</h3>
+
+<p>
+The file <b>dptelog.def</b> configures the error logging program
+<b>dptelog</b>.  Given below are some entries which may be desirable.  Refer to
+the file <b>readme.apps</b> for a full description.
+</p>
+
+<pre>
+  # TIME is the minutes between checks
+  TIME=1
+</pre>
+
+<p>
+The DPT default for the above setting is that the card is checked for possible
+problems every minute.  A longer time could be specified here if desired.  The
+default should be satisfactory.
+</p>
+
+<pre>
+  # SYSLOG= allows you to enable/disable logging the ascii events to a file
+  SYSLOG:/usr/adm/messages
+</pre>
+
+<p>
+The above setting defines that errors are logged to the
+<b>/usr/adm/messages</b> file.  This should not be changed.
+</p>
+
+<pre>
+  # ELOG allows you to enable/disable logging to the binary adapter event file
+  ELOG=ON
+  # NOTIFY allows you to specify users to be notified
+  NOTIFY=root
+</pre>
+
+<p>
+The DPT default for the above setting is no users defined - commented
+out.
+</p>
+
+<pre>
+  # NOTIFY=D: allows you to specify a device to be notified to
+  NOTIFY=D:/dev/console
+  # MAIL will email the events to any currently set up users
+  MAIL
+</pre>
+
+<p>
+The DPT default for the above setting is no mail - commented out.
+</p>
+
+<pre>
+  # NOCLEAR will not clear the adapter data so each scan will get the same data
+  #NOCLEAR
+  # NOWAIT will scan the system once and exit
+  #NOWAIT
+</pre>
+
+<h2>
+ <a name="RTFToC52">Using the utilities</a>
+</h2>
+
+<p>
+The only utility that should be needed from the command line is the Unix
+version of the Storage Manager.  This command is <b>/usr/dpt/dptmgr</b>.  It
+can support the use of a mouse and if this is required use the Unix
+<b>mkdev mouse</b> utility to configure a mouse.  However, it is quite usable
+without a mouse and works in a similar manner to the DOS Storage Manager
+<b>dptmgr.exe</b>.  This command is actually a script that uses
+<b>/usr/dtp/usemouse</b> to establish if a mouse is attached, and then runs
+one or two manager binaries dependent upon whether there is a mouse or not.
+There is a slight difference to the DOS version however; the &lt;alt&gt; key
+is not used with other keys as a short-cut to an option.  Instead the same
+character is preceeded with an &lt;escape&gt;, so to Switch View for example
+use the key sequence:
+</p>
+
+<pre>
+  <u>&lt;escape&gt;v</u>
+</pre>
+
+<p>
+<u>Note</u> it is possible that the command <b>/usr/dpt/dptmgr</b>
+mistakenly assumes that there is a mouse attached when these is not.  In
+this case use the command <b>/usr/dpt/dptmgrscr</b> to run the manager.
+This is the keyboard-only binary that the <b>/usr/dpt/dptmgr</b> script
+should invoke.
+</p>
+
+<p>
+For a full descripion of the Storage Manager's functions and options refer to
+the notes accompanying the hardware and RAID array setup and the DPT SmartRAID
+User's Manual.
+</p>
+
+<p>
+A couple of minor bugs have been seen so far:
+</p>
+
+<ol>
+ <li>
+ <p>
+  If <b>dptmgr</b> is running when a drive fails, it fails to identify
+  the model type details when the replacement drive is re-installed.  You
+  cannot view the failed or rebuilding drive.  To overcome this, exit
+  Storage Manager and run it again.
+ </p>
+ <li>
+ <p>
+  The error logger seems to generate spurious <i>High temporature
+  detected</i> and <i>Normal temporature restored</i> error messages.  The
+  card is fitted with a temporature sensor and is also able to receive
+  such messages from an attached SmartRAID Storage Cabinet which is a 
+  proprietary DPT piece of hardware not used by Apricot.
+ </p>
+</ol>
+
+<hr>
+
+<h1>
+ <a name="RTFToC6">Emergency floppies</a>
+</h1>
+
+<p>
+There is a potential risk of an inexperienced user damaging the data held on
+the array by using the DPT utilities.  For this reason alone it is desirable to
+make an emergency boot set of floppies and a full root filesystem backup using
+<b>cpio(C)</b>.  With the emergency floppies and the <b>cpio(C)</b> backup tape
+the root filesystem can be restored onto a re-created <i>logical drive</i>.
+</p>
+
+<h2>
+ <a name="RTFToC61">Related documentation</a>
+</h2>
+
+<p>
+Refer to Info Guide <a href="unx003.htm">UNX003</a> for guidence on the
+subject of creation of emergency floppies, backing up, and restoring such
+tapes onto blank (low level formatted) root disks.  The Info Guide covers
+such details as making a hard disk bootable, creating the Unix partition,
+creating the root filesystem and restoring the backup tape onto the
+filesystem.  By using this method there is no need to carry out a Unix
+installation from the SCO media prior to restoration of the backup tape.
+</p>
+
+</body>
+</html></html></html></html>

@@ -1,0 +1,1065 @@
+
+ SCO(R) OpenServer(TM) Virtual Disk Manager Supplement Release 1.1
+
+
+
+
+
+ (c) 1983-1996 The Santa Cruz Operation, Inc.  All rights reserved.
+
+ (c)  1992-1994	 AT&T  Global  Information  Solutions  Company;	 All   rights
+ reserved.
+
+ No part of this publication may be  reproduced,  transmitted,	stored	in  a
+ retrieval system, nor translated into any human or computer language, in any
+ form or by any	means, electronic, mechanical, magnetic,  optical,  chemical,
+ manual,  or otherwise,	without	the prior written permission of	the copyright
+ owner,	The Santa Cruz Operation,  Inc.,  400  Encinal	Street,	 Santa	Cruz,
+ California,  95060,  USA.   Copyright infringement is a serious matter	under
+ the United States and foreign Copyright Laws.
+
+ Information in	this document is subject to change without  notice  and	 does
+ not represent a commitment on the part	of The Santa Cruz Operation, Inc.
+
+ SCO, the SCO logo, The	Santa Cruz Operation,  Open  Desktop,  ODT,  and  SCO
+ OpenServer,  are  trademarks  or  registered  trademarks  of  The Santa Cruz
+ Operation, Inc. in the	USA  and  other	 countries.   UNIX  is	a  registered
+ trademark  in	the  USA  and  other  countries, licensed exclusively through
+ X/Open	Company	Limited. All other brand and product  names  are  or  may  be
+ trademarks  of,  and  are  used  to  identify products	or services of,	their
+ respective owners.
+
+
+
+ Document Version: 1.1.0
+ 2 January 1996
+
+ The SCO software that accompanies this	publication  is	 commercial  computer
+ software  and,	 together  with	 any related documentation, is subject to the
+ restrictions on US Government use as set forth	below. If this procurement is
+ for a DOD agency, the following DFAR Restricted Rights	Legend applies:
+
+ RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the Government
+ is subject to restrictions as set forth in subparagraph (c)(1)(ii) of Rights
+ in Technical Data  and	 Computer  Software  Clause  at	 DFARS	252.227-7013.
+ Contractor/Manufacturer  is  The  Santa  Cruz	Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA	 95060.
+
+ If this procurement is	for a civilian government agency, this FAR Restricted
+ Rights	Legend applies:
+
+ RESTRICTED  RIGHTS  LEGEND:   This  computer  software	 is  submitted	 with
+ restricted  rights  under Government Contract No. _________ (and Subcontract
+ No.  ________,	 if  appropriate).   It	 may  not  be  used,  reproduced,  or
+ disclosed by the Government except as provided	in paragraph (g)(3)(i) of FAR
+ Clause	52.227-14 alt III or as	otherwise expressly stated in  the  contract.
+ Contractor/Manufacturer  is  The  Santa  Cruz	Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA	 95060.
+
+
+ The copyrighted software that accompanies this	publication  is	 licensed  to
+ the  End  User	 only  for use in strict accordance with the End User License
+ Agreement, which should be read  carefully  before  commencing	 use  of  the
+ software.  This  SCO  software	 includes software that	is protected by	these
+ copyrights:
+ (c)  1983-1996	 The  Santa  Cruz  Operation,  Inc.;   (c)   1989-1994	 Acer
+ Incorporated; (c) 1989-1994 Acer America Corporation; (c) 1990-1994 Adaptec,
+ Inc.; (c) 1993	 Advanced  Micro  Devices,  Inc.;  (c)	1990  Altos  Computer
+ Systems;  (c)	1992-1994  American  Power Conversion, Inc.; (c) 1988 Archive
+ Corporation; (c) 1990	ATI  Technologies,  Inc.;  (c)	1976-1992  AT&T;  (c)
+ 1992-1994  AT&T  Global  Information  Solutions  Company;  (c)	1993 Berkeley
+ Network Software Consortium; (c) 1985-1986 Bigelow & Holmes;  (c)  1988-1991
+ Carnegie  Mellon  University;	(c) 1989-1990 Cipher Data Products, Inc.; (c)
+ 1985-1992   Compaq   Computer	 Corporation;	(c)   1986-1987	   Convergent
+ Technologies,	 Inc.;	 (c)  1990-1993	 Cornell  University;  (c)  1985-1994
+ Corollary, Inc.; (c) 1988-1993	Digital	Equipment Corporation; (c)  1990-1994
+ Distributed  Processing  Technology;  (c)  1991 D.L.S.	 Associates; (c) 1990
+ Free Software Foundation, Inc.; (c) 1989-1991 Future Domain Corporation; (c)
+ 1994 Gradient Technologies, Inc.; (c) 1991 Hewlett-Packard Company; (c) 1994
+ IBM Corporation; (c) 1990-1993	Intel Corporation; (c)	1989  Irwin  Magnetic
+ Systems, Inc.;	(c) 1988-1994 IXI Limited; (c) 1988-1991 JSB Computer Systems
+ Ltd.; (c) 1989-1994 Dirk Koeppen EDV-Beratungs-GmbH;  (c)  1987-1994  Legent
+ Corporation;  (c)  1988-1994  Locus  Computing	 Corporation;  (c)  1989-1991
+ Massachusetts Institute of Technology;	(c) 1985-1992  Metagraphics  Software
+ Corporation;  (c)  1980-1994  Microsoft  Corporation;	(c)  1984-1989	Mouse
+ Systems Corporation; (c) 1989 Multi-Tech Systems, Inc.;  (c)  1991  National
+ Semiconductor	Corporation;  (c)  1990	NEC Technologies, Inc.;	(c) 1989-1992
+ Novell, Inc.; (c) 1989	Ing. C.	  Olivetti  &  C.  SpA;	 (c)  1989-1992	 Open
+ Software  Foundation,	Inc.; (c) 1993-1994 Programmed Logic Corporation; (c)
+ 1989 Racal InterLan, Inc.;  (c)  1990-1992  RSA  Data	Security,  Inc.;  (c)
+ 1987-1994 Secureware, Inc.; (c) 1990 Siemens Nixdorf Informationssysteme AG;
+ (c) 1991-1992 Silicon Graphics, Inc.; (c) 1987-1991 SMNP Research, Inc.; (c)
+ 1987-1994 Standard Microsystems Corporation; (c) 1984-1994 Sun	Microsystems,
+ Inc.; (c) 1987	Tandy Corporation; (c) 1992-1994 3COM Corporation;  (c)	 1987
+ United	 States	 Army; (c) 1979-1993 Regents of	the University of California;
+ (c) 1993 Board	of Trustees of the  University	of  Illinois;  (c)  1989-1991
+ University  of	 Maryland; (c) 1986 University of Toronto; (c) 1976-1990 UNIX
+ System	Laboratories, Inc.; (c)	1988 Wyse Technology;  (c)  1992-1993  Xware;
+ (c)  1983-1992	 Eric P. Allman; (c) 1987-1989 Jeffery D. Case and Kenneth W.
+ Key; (c) 1985 Andrew Cherenson; (c) 1989 Mark H.  Colburn; (c)	1993  Michael
+ A.  Cooper; (c) 1982 Pavel Curtis; (c)	1987 Owen DeLong; (c) 1989-1993	Frank
+ Kardel; (c) 1993 Carlos Leandro  and  Rui  Salgueiro;	(c)  1986-1988	Larry
+ McVoy;	 (c)  1992  David L. Mills; (c)	1992 Ranier Pruy; (c) 1986-1988	Larry
+ Wall; (c) 1992	Q. Frank Xia.  All rights reserved.  SCO NFS was developed by
+ Legent	 Corporation  based on Lachman System V	NFS. SCO TCP/IP	was developed
+ by Legent Corporation and is derived from Lachman System V  STREAMS  TCP,  a
+ joint	development  of	 Lachman  Associates,  Inc.   (predecessor  of Legent
+ Corporation) and Convergent Technologies, Inc.
+
+
+
+
+
+Contents
+
+ About this book							    1
+      Typographical conventions	........................................... 1
+      How can we improve this book? ....................................... 2
+
+ Virtual Disk Manager Supplement Release 1.1
+ Installation								    3
+      Packages modified	by the Virtual Disk Manager Supplement ............ 4
+      Loading the patch	onto an	installation server ....................... 4
+      Applying the patch to an installation server ........................ 5
+      Enabling patches on a client after network installation ............. 6
+      Rolling back a patch ................................................ 6
+
+ Virtual Disk Manager Supplement Release 1.1
+ Features and limitations						    7
+      Features ............................................................ 7
+	 Mirroring boot, swap, and root	onto virtual disks ................ 8
+	 Moving	vdisk3 to an alternative device	.......................... 12
+	 Creating a mirror of the root disk on upgraded	systems	.......... 13
+      Software limitations corrected in	this supplement	.................. 13
+      Software limitations present in this supplement .................... 14
+      Software limitations not noted previously	.......................... 16
+      Documentation errata ............................................... 17
+
+
+
+
+
+
+
+ About this book
+
+    This document describes the	Virtual	Disk Manager Supplement	Release	1.1
+    for	SCO OpenServer(TM) Release 5.  This supplement contains	support	for
+    mirroring the boot filesystem in addition to the swap division and the
+    root filesystem. This allows a system to be	booted from the	parity disk
+    if the root	disk fails.
+
+    Refer to ``Installation'' and ``Features and limitations'' for detailed
+    information	about this supplement.
+
+
+ Typographical conventions
+
+    This publication presents commands,	filenames, keystrokes, and other
+    special elements in	these typefaces:
+
+    Example:	 Used for:
+
+    lp or lp(C)	 commands, device drivers, programs, and utilities (names,
+		 icons,	or windows);  the letter in parentheses	indicates the
+		 reference manual section in which the command,	driver,
+		 program, or utility is	documented
+
+    /new/client.list
+		 files,	directories, and desktops (names, icons, or windows)
+
+    root	 system, network, or user names
+
+    filename	 placeholders  (replace	with appropriate name or value)
+
+    <Esc>	 keyboard keys
+
+    Exit program?
+		 system	output such as prompts and messages
+
+    yes	or yes	 user input
+
+    ``Description''
+		 field names or	column headings	 (on screen or in database)
+
+    Cancel	 button	names
+
+    Edit	 menu names
+
+    Copy	 menu items
+
+    File != Find != Text
+		 sequences of menus and	menu items
+
+    open or open(S)
+		 library routines, system calls, kernel	functions, C
+		 keywords;  the	letter in parentheses indicates	the reference
+		 manual	section	in which the file is documented
+
+    $HOME	 environment or	shell variables
+
+    SIGHUP	 named constants or signals
+
+    buf		 C program structures
+
+    b_b.errno	 C program structure members and variables
+
+
+ How can we improve this book?
+
+    What did you find particularly helpful in this book?  Are there mistakes
+    in this book? Could	it be organized	more usefully? Did we leave out
+    information	you need or include unnecessary	material?  If so, please tell
+    us.
+
+    To help us implement your suggestions, include relevant details, such as
+    book title,	section	name, page number, and system component.  We would
+    appreciate information on how to contact you in case we need additional
+    explanation.
+
+    To contact us, use the card	at the back of the SCO OpenServer Handbook or
+    write to us	at:
+
+       Technical Publications
+       Attn:  CFT
+       The Santa Cruz Operation, Inc.
+       PO Box 1900
+       Santa Cruz, California  95061-9969
+       USA
+
+    or e-mail us at:
+
+       techpubs@sco.com	or ... uunet!sco!techpubs
+
+    Thank you.
+
+
+
+
+
+
+ Virtual Disk Manager Supplement Release 1.1
+ Installation
+
+    To install the Virtual Disk	Manager	Supplement, you	must have 8MB free in
+    the	root filesystem.  The installation process checks that this space is
+    available and warns	you if it is not.
+
+    This supplement does not require any patches for other supplements to be
+    removed or applied.
+
+    If you have	previously applied the patch for the Virtual Disk Manager
+    Supplement Release 1.0, it is not necessary	to roll	back this patch
+    unless you wish to save disk space.	If you choose to do this, you must
+    roll back the previous supplement before installing	this one.
+
+    _________________________________________________________________________
+       WARNING	We recommend that you back up your system's root
+       filesystem before applying or rolling back a patch.  If the system
+       crashes (for example, due to a power failure) while you are
+       applying	or rolling back	a patch, this can leave	the root
+       filesystem in an	inconsistent state.
+    _________________________________________________________________________
+
+    To apply the Virtual Disk Manager Supplement:
+
+    1.	Log in as root and run the Software Manager.  (See ``The Software
+	Manager	interface'' in the SCO OpenServer Handbook for instructions.)
+
+    2.	Select Software	-> Patch Management -> Apply Patch
+
+    3.	Select the installation	host system and	device from which you wish to
+	install	the Virtual Disk Manager Supplement.  The supplement can be
+	applied	either from floppy disk	or from	an installation	server onto
+	which you have previously loaded it (see ``Loading the patch onto an
+	installation server'').	 Click on Continue.
+
+    4.	If you are installing from floppy disk,	insert Virtual Disk Manager
+	Supplement Disk	1 into your primary floppy disk	drive when you are
+	prompted to select your	installation media.  Press <Enter>, and
+	follow the instructions	on the screen.
+
+    5.	When the kernel	has been relinked, exit	the Software Manager.
+
+    6.	Shut down and reboot the system.
+
+    _________________________________________________________________________
+       WARNING	If you are installing an SCO OpenServer	system for the
+       first time and wish to add the Virtual Disk Manager, ensure that
+       you obtain all parts of the software from the same source.  A
+       client may report software verification errors if you load some
+       components from media images and	others from an installation server
+       across a	network, or if you patch an installation server	before
+       installing additional packages (such as the Virtual Disk	Manager)
+       from it.	 You should either install everything from media images,
+       or install all the required software from a single installation
+       server at the same time.
+    _________________________________________________________________________
+
+
+
+ Packages modified by the Virtual Disk Manager Supplement
+
+    The	Virtual	Disk Manager Supplement	contains modifications to the
+    following packages:
+
+    SCO	OpenServer system:
+
+       +  Base Operating System:
+
+	  -  UNIX Run Time System
+
+	  -  Policy Manager
+
+       +  System V Link	Kit files
+
+       +  Online Documentation Framework
+
+    Disk Array Support:
+
+       +  Virtual Disk Management
+
+       +  vdiskGUI package
+
+
+ Loading the patch onto	an installation	server
+
+    To load (but not apply) the	Virtual	Disk Manager Supplement	onto an
+    installation server:
+
+    1.	Log in as root on the server and run the Software Manager.  (See
+	``The Software Manager interface'' in the SCO OpenServer Handbook for
+	instructions.)
+
+    2.	Select Software	-> Patch Management -> Load Patch
+
+    3.	Select the host	system and device from which you wish to install the
+	Virtual	Disk Manager Supplement.  Click	on Continue.
+
+    4.	When you are prompted to select	your installation media, insert
+	Virtual	Disk Manager Supplement	Disk 1 into your primary floppy	disk
+	drive.	Press <Enter>, and follow the instructions on the screen.
+
+    5.	When the patch has been	loaded,	exit the Software Manager.
+
+    The	patch is now available for remote clients to apply.
+
+
+ Applying the patch to an installation server
+
+    To apply the Virtual Disk Manager Supplement to an installation server:
+
+    1.	Log in as root on the server and run the Software Manager.  (See
+	``The Software Manager interface'' in the SCO OpenServer Handbook for
+	instructions.)
+
+    2.	Select Software	-> Patch Management -> Apply Patch
+
+    3.	Select the server as the installation host system from which you wish
+	to apply the Virtual Disk Manager Supplement.  The supplement can be
+	applied	from floppy disk or from the media image of the	patch after
+	previously loading it.	Click on Continue.
+
+    4.	If you are installing from floppy disk,	insert Virtual Disk Manager
+	Supplement Disk	1 into your primary floppy disk	drive.	Press
+	<Enter>, and follow the	instructions on	the screen.
+
+    5.	When the kernel	has been relinked, exit	the Software Manager.
+
+    6.	Shut down and reboot the system	into multiuser mode.
+
+    7.	If you intend to perform a new installation of the operating system
+	on one or more clients,	run the	following commands on the server:
+
+	netisl server off
+	netisl server on
+
+
+    8.	Use the	command	netisl client add to define the	new clients to the
+	network	installation software, and, if necessary, to create BOOTP
+	boot floppies for the clients.	See Chapter  17, ``Installing and
+	managing software over the network'' in	the Networking Guide for full
+	details.
+
+
+ Enabling patches on a client after network installation
+
+    If you perform the initial system installation from	a network
+    installation server	to which patches have previously been applied, the
+    installation will also copy	the patches to the client.  To enable the
+    patches, run this command on the client immediately	after installation:
+
+       /usr/lib/patch/enablepatch
+
+
+
+ Rolling back a	patch
+
+    To remove a	patch after it has been	applied	to a system:
+
+    1.	Log in as root and run the Software Manager.  (See ``The Software
+	Manager	interface'' in the SCO OpenServer Handbook for instructions.)
+
+    2.	Select Software	-> Patch Management -> Rollback	Patch
+
+    3.	Select the software package and	then the patch that you	wish to
+	remove from it.	 Click on Rollback to confirm your choice.  You	must
+	repeat this for	each software package that the patch has changed.
+
+    4.	When the rollback procedure has	completed, exit	the Software Manager.
+
+    5.	If the kernel was relinked during removal of the patch,	shut down and
+	reboot the system.
+
+
+
+
+
+
+
+
+ Virtual Disk Manager Supplement Release 1.1
+ Features and limitations
+
+    This chapter describes features and	limitations of the Virtual Disk
+    Manager Supplement.
+
+
+ Features
+
+    The	Virtual	Disk Manager Supplement	contains the following features:
+
+    +  Support for mirroring your system's boot	division (/stand) onto a
+       virtual disk.
+
+    +  Support for booting your	system from a complete mirror of the boot,
+       swap, and root divisions.
+
+    The	following section, ``Mirroring boot, swap, and root onto virtual
+    disks'', is	intended to replace ``Mirroring	root and swap onto virtual
+    disks'' in the System Administration Guide.	 It describes how to use the
+    new	software features to:
+
+    +  create a	mirror of your system's	root disk
+
+    +  reboot your system from the parity disk in the mirror
+
+    +  unmirror	the root disk
+
+    +  replace a disk in the mirror
+
+    _________________________________________________________________________
+       NOTE  The Virtual Disk Manager software now reserves the	virtual
+       disk device vdisk3 to create a mirror of	the boot filesystem.  If
+       you want	to mirror the boot filesystem on a system where	vdisk3 is
+       already in use, you must	change the definition of any virtual disk
+       that uses vdisk3	to use an alternative vdisk device.  You must also
+       change the configuration	files for any software that refers to
+       vdisk3 to use the new device.  Follow the instructions given in
+       ``Moving	vdisk3 to an alternative device'' to redefine an existing
+       vdisk3 device.
+    _________________________________________________________________________
+
+    If your system does	not have a separate boot filesystem mounted on /stand
+    (because it	was upgraded from an earlier release of	the operating system
+    such as SCO(r) Open	Desktop(r) Release 3.0), follow	the instructions
+    given in ``Creating	a mirror of the	root disk on upgraded systems''	to
+    create a mirror of the root	disk.
+
+ Mirroring boot, swap, and root	onto virtual disks
+
+    You	may want to mirror your	system's boot, swap, and root divisions	onto
+    a virtual disk, to provide backup for them.	You cannot install the
+    operating system itself onto a disk	array, but mirroring provides
+    protection against intermittent disk problems.  There are two possible
+    configurations:
+
+    Mirroring the boot,	swap, and root divisions on a secondary	hard disk
+
+    This configuration protects	against	disk I/O errors	and it also allows
+    you	to reboot your system from the parity disk should the root disk	fail.
+
+    If you use SCSI disks, the extended	SCSI BIOS on most systems can detect
+    the	first two disks	in the system, and you can sometimes configure this
+    to boot the	system from either disk. We recommend that you set up the
+    parity disk	as the second SCSI disk	in the system. It may also be
+    possible to	attach the data	and parity disks to separate SCSI buses
+    provided that the host adapters are	of the same type.
+
+    The	storage	capacity of the	secondary disk must be at least	as large as
+    the	root disk because the divisions	must have the same start and end
+    blocks.
+
+    _________________________________________________________________________
+       NOTE  We	recommend that the root	and parity disks have identical
+       capacity, performance, and type (IDE, EIDE, or SCSI). Ideally, use
+       the same	model from the same manufacturer for each disk.
+
+       The parity disk must have the same size root partition as the root
+       disk. The root partition	must not contain any divisions or valid
+       timestamps.
+    _________________________________________________________________________
+
+
+    1.	If the parity disk does	not contain a valid root partition, use	the
+	fdisk(ADM) command to define the partition.  For example, enter
+	fdisk -f /dev/rdsk/0s0 to discover the size of the root	partition on
+	the root disk.	If the replacement disk	is the second hard disk
+	defined	in the system, enter fdisk -f /dev/rdsk/1s0 to define a	root
+	partition on it.
+
+    2.	In the Virtual Disk Manager, select Mirror from	the Boot menu.
+
+    3.	On the Select Divisions	screen,	select Yes for each of the root,
+	swap, and boot divisions.  Click on OK to accept this.
+
+    4.	On the Piece Allocation	screen,	select Yes to choose automatic piece
+	allocation.  Click on OK to accept this.
+
+    5.	On the Vdisk parameters	screen,	click on OK to accept the default
+	cluster	size of	32. Change the value if	you want to use	a different
+	cluster	size for the mirrored divisions.
+
+    6.	Click on Allocate pieces to view the parity piece that will be used
+	to mirror the three divisions.	Click on OK to accept this.
+
+    7.	Click on Create	to make	the parity piece, division tables, and
+	masterboot block on the	parity disk.
+
+    8.	After the kernel has been relinked, exit from the Virtual Disk
+	Manager.
+
+    9.	Shut down and reboot the system.
+
+    Mirror any combination of the boot,	swap, and root divisions individually
+    onto parity	disk pieces
+
+    The	pieces do not have to exist on the same	physical disk as each other,
+    and	they can be defined in any order on the	same physical disk.
+    Mirroring the divisions in this way	only protects against disk I/O
+    errors.  You cannot	boot your system from these disk pieces.  If your
+    root disk fails, you must reinstall	the operating system and restore the
+    boot and root filesystems from a backup.
+
+    1.	In the Virtual Disk Manager, select Mirror from	the Boot menu.
+
+    2.	On the Select Divisions	screen,	select which of	the root, swap,	and
+	boot divisions you want	to mirror. Click on OK to accept this.	If
+	you choose to mirror all three divisions, select No on the Piece
+	Allocation screen to reject automatic piece allocation.
+
+    3.	Define the individual disk pieces that will be used to mirror each
+	division.  See ``Allocating or modifying disk pieces'' in the System
+	Administration Guide.
+
+    4.	Allocate a disk	piece to each division,	and click on Create to write
+	the configuration changes to disk.
+
+    5.	After the kernel has been relinked and you have	defined	parity disks
+	for all	the divisions, exit from the Virtual Disk Manager.
+
+    6.	Shut down and reboot the system.
+
+    _________________________________________________________________________
+       NOTE  Although the boot and root	parity disks are updated when the
+       system is rebooted, the swap parity disk	is not updated because it
+       does not	contain	any useful information.
+    _________________________________________________________________________
+
+
+    Booting your system	from a parity disk
+
+    If you choose to create a mirror of	the root disk, it is possible to
+    reboot a system from the parity disk if the	root disk fails. To do this,
+    you	may have to reconfigure	the system's hardware so that it recognizes
+    the	parity disk as the root	disk:
+
+    IDE	or EIDE	disks
+       Remove the failed disk drive and	configure the disk containing the
+       mirror of the root disk as the ``Master'' device	on the ``Primary''
+       controller.
+
+    SCSI disks
+       Remove the failed disk drive and	configure the disk containing the
+       mirror of the root disk with the	same SCSI ID number as the root	disk.
+       Note that on most systems, the SCSI ID of the root disk is 0; on	some
+       IBM systems, the	SCSI ID	of the root disk is 6.
+
+       Alternatively, the extended SCSI	BIOS on	most systems can detect	both
+       root and	parity disks when the machine is first turned on or reset,
+       provided	that both disks	are attached to	the same SCSI bus.  If the
+       root disk has failed and	has been physically removed, it	is usually
+       possible	to boot	from the parity	disk without reconfiguring its SCSI
+       ID.
+
+       If the root disk	has failed and has not been removed, and the BIOS can
+       still detect its	presence, the system will not be able to boot if the
+       masterboot program on the root disk has become corrupted.  In this
+       case, use an emergency boot floppy to boot the system and specify an
+       appropriate bootstring at the Boot prompt.
+
+       The following example bootstring	defines	that the executable kernel is
+       located on the second hard disk defined in the system, that this	disk
+       is controlled by	the SCSI disk driver, and that the root	and swap
+       divisions are accessible	using the vdisk	driver:
+
+       hd(72)unix hd=Sdsk root=vdisk(1)	swap=vdisk(2) dump=none
+
+       For more	information, see bootstring(HW).
+
+    Unmirroring	boot, swap, or root
+
+    To remove a	mirror from one	or more	of the root, swap, or boot divisions:
+
+    1.	In the Virtual Disk Manager, select Unmirror from the Boot menu.
+
+    2.	On the Select Mirrors screen, select which of the root,	swap, and
+	boot divisions you want	to remove mirroring from. Click	on OK to
+	accept this.
+
+    3.	After the kernel has been relinked, exit from the Virtual Disk
+	Manager.
+
+    4.	Shut down and reboot the system.
+
+    Replacing a	mirrored root or parity	disk
+
+    To replace a defective root	or parity disk when a mirror disk is
+    available:
+
+    1.	Shut down the system and remove	the failed disk	drive.
+
+    2.	If the root disk has failed, reconfigure the parity disk to have the
+	same IDE or SCSI configuration as the root disk.  Alternatively, for
+	SCSI disks, you	can use	a boot floppy to reboot	the system in steps 4
+	and 5.	In this	case, you must specify an appropriate bootstring at
+	the Boot prompt	to define where	to find	the bootable kernel, for
+	example:
+
+	hd(72)unix hd=Sdsk root=vdisk(1) swap=vdisk(2) dump=none
+
+
+    3.	Install	the replacement	disk with the same IDE or SCSI configuration
+	as the disk being replaced.  If	you reconfigured the parity disk as
+	the root disk, configure the replacement disk as the new parity	disk.
+
+	_____________________________________________________________________
+	   NOTE	 The root partition on the replacement disk must be the
+	   same	size and have the same partition number	as the root
+	   partition on	the original disk. The root partition must not
+	   contain any divisions or valid timestamps. If the disk has been
+	   used	on another system, clear its partition,	division, and
+	   timestamp tables before using it as a replacement disk.
+	_____________________________________________________________________
+
+
+    4.	If the replacement disk	does not contain a valid root partition,
+	reboot the system, place it in system maintenance mode,	and use	the
+	fdisk(ADM) command to define the partition.
+
+    5.	Reboot the system and place it in multiuser mode.  The system should
+	recognize the replaced disk and	start to recreate the data on the
+	mirror.
+
+    6.	In the Virtual Disk Manager, select Recreate from the Boot menu.
+
+    7.	On the Select Mirrors screen, select the divisions whose division
+	table entries you want to recreate.  You will normally want to select
+	Yes for	all three divisions.  Click on OK to make a new	division
+	table and masterboot block on the parity disk. This will allow you to
+	boot from this disk if the root	disk fails.
+    See	also:
+
+    +  ``Planning your system layout with virtual disks'' in the System
+       Administration Guide
+
+    +  ``Adding	virtual	disks''	in the System Administration Guide
+
+ Moving	vdisk3 to an alternative device
+
+    If your system already uses	the vdisk3 virtual disk	device,	you will not
+    be able to mirror the boot filesystem until	you configure your system to
+    use	an alternative device. The procedure for doing this is as follows:
+
+    1.	Log in as root.
+
+    2.	Stop any applications from accessing vdisk3 either as a	virtual	disk
+	array itself or	as part	of a larger nested virtual disk.  For
+	example, if a filesystem uses vdisk3, use the Filesystem Manager or
+	umount(ADM) to unmount it.  If a database management system uses
+	vdisk3,	shut down the database manager.
+
+    3.	Run the	Virtual	Disk Manager, highlight	vdisk3 or, if vdisk3 is	a
+	component of a nested virtual disk, highlight the device that
+	corresponds to the entire nested virtual disk, and select Disable
+	from the Disk menu.
+
+    4.	Exit from the Virtual Disk Manager.
+
+    5.	Edit /etc/dktab	and change all occurrences of vdisk3 to	the next
+	unused virtual disk device node	that does not appear in	the file. For
+	example, if the	virtual	disk device vdisk11 is not used, change	all
+	occurrences of vdisk3 to read vdisk11.
+
+	If all virtual disk devices are	in use,	edit /etc/conf/node.d/vdisk
+	to define extra	block and character device files. For example, to
+	define vdisk17,	add the	following lines	to the vdisk node file:
+
+	vdisk	dsk/vdisk17	b	17	sysinfo	sysinfo	600
+	vdisk	rdsk/vdisk17	c	17	sysinfo	sysinfo	600
+
+	Use the	command	idmknod	-s to create the new device nodes.
+
+    6.	Run the	Virtual	Disk Manager, highlight	the new	virtual	disk device
+	or, if it is a component of a nested virtual disk, highlight the
+	device that corresponds	to the entire nested virtual disk, and select
+	Enable from the	Disk menu.
+
+    7.	Exit from the Virtual Disk Manager.
+
+    8.	Reconfigure any	applications that used to access vdisk3	so that	they
+	refer to the new virtual disk device instead.  For example, if the
+	old vdisk3 contained a filesystem, use the Filesystem Manager to
+	redefine the filesystem	as using the new virtual disk device and
+	mount it. Alternatively, edit /etc/default/filesys, substitute the
+	name of	the new	virtual	disk device for	vdisk3,	and mount the
+	filesystem.
+
+	Third-party applications such as database management systems may have
+	their own administration tools to change references in their
+	configuration files from vdisk3	to the new virtual disk. Consult the
+	administration documentation that was provided with the	database
+	management software for	more information.
+
+ Creating a mirror of the root disk on upgraded	systems
+
+    If your system does	not have a separate boot filesystem because it was
+    upgraded from an operating system released prior to	SCO OpenServer,	you
+    can	create a mirror	of the root disk as follows:
+
+    1.	If the parity disk does	not contain a valid root partition, use	the
+	fdisk(ADM) command to define the partition.
+
+    2.	In the Virtual Disk Manager, select Mirror from	the Boot menu.
+
+    3.	On the Select Divisions	screen,	select Yes for the root	and swap
+	divisions.  Click on OK	to accept this.
+
+    4.	Define the individual disk pieces on the parity	disk that will be
+	used to	mirror each division.  See ``Allocating	or modifying disk
+	pieces'' in the	System Administration Guide.
+
+	_____________________________________________________________________
+	   NOTE	 The pieces must have the same sizes and positions on the
+	   parity disk as the corresponding divisions on the root disk.
+	_____________________________________________________________________
+
+
+    5.	For each division, allocate a disk piece to it,	and click on Create
+	to write the configuration changes to disk.
+
+    6.	After the kernel has been relinked and you have	defined	parity disks
+	for all	the divisions, exit from the Virtual Disk Manager.
+
+    7.	Shut down and reboot the system.
+
+    8.	In the Virtual Disk Manager, select Recreate from the Boot menu.
+
+    9.	On the Select Mirrors screen, select Yes for the root and swap
+	divisions to recreate their division table entries.  Click on OK to
+	make a new division table and masterboot block on the parity disk.
+	This will allow	you to boot from this disk if the root disk fails.
+
+
+ Software limitations corrected	in this	supplement
+
+    This supplement corrects the following limitations in the Virtual Disk
+    Manager software:
+
+    Emergency root and boot floppies
+
+    An emergency root floppy did not contain the utilities or files required
+    to administer virtual disks. In addition, the kernel on an emergency boot
+    floppy did not contain a license to	run the	virtual	disk driver.  The
+    script for creating	an emergency boot and root floppy disk,	mkdev fd, has
+    been modified to correct these problems.  It now installs the dkconfig
+    utility, the /etc/dktab file, and creates the virtual disk device nodes
+    when it is used to create an emergency root	floppy disk.
+
+    Licensing
+
+    If licensing of the	Virtual	Disk Manager was not performed when the
+    software is	installed, you must run	the License Manager to add the
+    license data.  It is no longer necessary to	reboot the system after	the
+    License Manager has	been run, for the license to take effect.
+
+    Mirror performance
+
+    Performance	of mirrored arrays has been improved in	this release.  It is
+    no longer necessary	to mark	one piece of a mirror as the read piece.
+
+    Piece menu problems
+
+    Incorrect dimming (stippling) of the Piece menu options for	RAID 4/5
+    arrays and mirrors in the Virtual Disk Manager has been corrected.
+
+    Progress reporting
+
+    Under some circumstances, the slider bar showing the progress of a
+    reconfiguration would remain at 0% for the duration	of the
+    reconfiguration. This has been corrected.
+
+    Using dd on	a mirrored root	filesystem
+
+    This supplement allows you to use dd(C) to back up a mirrored root
+    filesystem.	 In the	previous release this could panic or hang the system.
+
+
+ Software limitations present in this supplement
+
+    The	following limitations in the Virtual Disk Manager software were	noted
+    in previous	supplements:
+
+    Adding new pieces to a virtual disk
+
+    When the Virtual Disk Manager is used to add a new piece to	an array with
+    out-of-date	parity or that is out-of-service, then a parity	restore	will
+    be started automatically after the reconfiguration has completed. This
+    occurs in the background and is not	shown by the progress slider bar. The
+    list of virtual disks is refreshed when the	progress slider	bar reaches
+    100% and the reconfigured virtual disk will	be marked as having bad
+    parity. When the restore has completed and the display refresh interval
+    has	elapsed, the reconfigured virtual disk will be shown with up-to-date
+    parity (or no pieces out-of-service).
+
+    The	Virtual	Disk Manager software does not allow disk pieces to be added
+    to an existing RAID	10 or RAID 53 configuration.  If you need to add
+    another piece, create the extra mirror or array piece with the Virtual
+    Disk Manager, then exit and	edit /etc/dktab	manually to add	the extra
+    piece.  The	format of this file is described in dktab(F).  You will	need
+    to move the	definition of the new virtual disk piece so that it occurs
+    before the definition of the virtual disk that uses	it.
+
+    Cached partition and division nodes
+
+    The	Virtual	Disk Manager caches the	partition and division nodes by
+    reading them at startup and	holding	them in	memory.	If changes are made
+    to these nodes while the Virtual Disk Manager is running, you need to
+    restart the	Virtual	Disk Manager so	it can read the	nodes again.
+
+    Checking the length	of a piece
+
+    When a new virtual disk is forced online with dkconfig -cf,	the length of
+    the	pieces is checked to see if the	pieces overrun the length of the
+    device on which they reside. This checking is only performed when the -f
+    flag is used; other	operations (such as reconfiguring a virtual disk to
+    change a piece or add a new	piece) do not perform this check.
+
+    Creating disks with	an even	number of blocks
+
+    If you create a virtual disk with an odd number of blocks, the last	512-
+    byte block will be inaccessible through the	block device node. When
+    creating a filesystem on an	odd-length virtual disk, mkfs(ADM)
+    automatically rounds down the size accordingly.
+
+    Creating nested virtual disks
+
+    Virtual disks can be nested	inside one another provided that a virtual
+    disk which has redundancy (mirrors and RAID	4/5) is	not nested inside
+    another virtual disk with redundancy (this may cause the virtual disk
+    driver to hang, suspending access to all configured	virtual	disks).
+    Three-way mirrors (created by nesting a mirror within a mirror) are	an
+    exception, and can be configured provided the master piece of the top
+    level mirror is the	second mirror. The following example shows how to
+    configure vdisk4 as	a 3-way	mirror in the /etc/dktab file:
+
+       /dev/dsk/vdisk3 mirror  2       32
+	       /dev/dsk/1s1    2016    3200
+	       /dev/dsk/2s1    2016    3200
+
+       /dev/dsk/vdisk4 mirror  2       32
+	       /dev/dsk/vdisk3 0       3200
+	       /dev/dsk/3s1    2016    3200
+
+    When creating a nested virtual disk, the Virtual Disk Manager nests	the
+    disk definitions in	/etc/dktab correctly.  If you edit /etc/dktab
+    manually, ensure that definitions of virtual disks used as pieces occur
+    before the definition of the virtual disk that references them.
+
+    Maximum virtual disk size
+
+    You	cannot create a	virtual	disk larger than 50GB (50 gigabytes) using
+    the	Virtual	Disk Manager.  You can create a	virtual	disk up	to 1TB (1
+    terabyte) in size if you edit /etc/dktab to	create the definition and
+    then configure this	by running dkconfig(ADM) from the command line.
+
+    Parity restores
+
+    When a mirror or RAID 4/5 array is first created, the Virtual Disk
+    Manager states that	parity must be restored	before the virtual disk	can
+    be used, which is incorrect. Restoring the parity can be delayed until it
+    is convenient and the virtual disk can be used as normal. However, with
+    out-of-date	parity,	the virtual disk will go off-line if a disk error is
+    encountered.
+
+
+ Software limitations not noted	previously
+
+    The	following limitations in the Virtual Disk Manager software were	not
+    noted in the previous supplement:
+
+    Support for	AIO to raw virtual disk	devices
+
+    The	Virtual	Disk Manager software supports the use of ioctl-based asynch-
+    ronous I/O to raw virtual disk devices (described on the aio(HW) manual
+    page).  It does not	support	the POSIX.1b AIO programming interface
+    provided by	the libsuds library.
+
+    Support for	hot spare disks	and hot	swapping of disks
+
+    The	Virtual	Disk Manager software supports the use of hot spare disks
+    which are defined as pieces	of an array. If	one of the disks in the	array
+    fails, the spare will be brought online so that it can be reconstructed
+    from the data and parity on	the working disks.
+
+    The	Virtual	Disk software does not support hot swapping of disks.  Hot
+    swapping allows a physical disk to be removed from an array, and another
+    disk to be inserted	to replace it.
+
+    The	root mirror is not a mountable device
+
+    The	scoadmin(ADM) Filesystem Manager shows the root	division mirror
+    (/dev/dsk/vdisk1) as a mountable device.  You should not attempt to	mount
+    this device.
+
+    Using the Virtual Disk Manager in system maintenance mode
+
+    The	scoadmin(ADM) Virtual Disk Manager will	not run	in system maintenance
+    mode unless	the HOME variable is set in the	environment.
+
+    Before using the Virtual Disk Manager in system maintenance	mode, set and
+    export the shell variable HOME.  For example, in the Korn and Bourne
+    shells, you	can enter:
+
+       HOME=/ scoadmin virtual disk manager
+
+
+
+ Documentation errata
+
+    The	following errors exist in the documentation for	the Virtual Disk
+    Manager:
+
+    Converting physical	disk divisions to virtual disks
+
+    The	steps listed in	``Converting physical disk divisions to	virtual
+    disks'' in the System Administration Guide should read:
+
+    1.	Unmount	the filesystems	that you want to convert.
+
+    2.	For each division, select New from the Disk menu, add a	simple one-
+	piece virtual disk as described	in ``Adding virtual disks'' in the
+	System Administration Guide, and allocate the division to the virtual
+	disk.  This overlays each division with	a simple virtual disk.
+
+    3.	For each division, select Modify from the Disk menu, and migrate the
+	simple virtual disk to the desired RAID	type. For example, if you
+	want to	create a mirrored filesystem, select Mirror and	allocate a
+	spare disk piece to the	parity piece.  If migrating to a disk array,
+	you must have spare disk space for temporary storage.
+
+    4.	Use the	Filesystem Manager to update the information about mounted
+	filesystems.  Replace the filesystems' divvy device nodes with their
+	virtual	disk ones.  For	example, if you	have replaced the /u
+	filesystem with	a mirror vdisk3, mount /dev/dsk/vdisk3 instead of
+	/dev/u on the /u mount point.
+
+
+    Creating a RAID 10 virtual disk array
+
+    The	following procedure creates a RAID 10 (striped,	mirrored array)
+    virtual disk configuration using previously	configured mirrored virtual
+    disks for its pieces.  See ``Striped, mirrored array (RAID 10)'' in	the
+    System Administration Guide	for more information about this	type of
+    array.
+
+    1.	Configure two or more mirrored virtual disks using the Virtual Disk
+	Manager.
+
+    2.	Restore	parity on each mirror.
+
+	_____________________________________________________________________
+	   WARNING  Do not create any filesystems at this stage.
+	_____________________________________________________________________
+
+
+    3.	Select New from	the Disk menu, and choose to add a RAID	10 array.
+
+    4.	Select the mirrored virtual disks that you created in step 1 for the
+	pieces of the RAID 10 array.
+
+    5.	The Virtual Disk Manager prompts you to	create a filesystem on the
+	new array.
+
+    6.	Exit from the Virtual Disk Manager.
+
+    7.	Use the	Filesystem Manager to configure	the filesystem's mount point
+	and mount options.
+
+    Your RAID 10 array is now online and ready for use.
+
+    Creating a RAID 53 virtual disk array
+
+    The	following procedure creates a RAID 53 (striped array of	arrays)
+    virtual disk configuration using previously	configured RAID	5 virtual
+    disk arrays	for its	pieces.	 See ``Striped array of	arrays (RAID 53)'' in
+    the	System Administration Guide for	more information about this type of
+    array.
+
+    1.	Configure two or more RAID 5 virtual disk arrays using the Virtual
+	Disk Manager.
+
+    2.	Restore	parity on each RAID 5 array.
+
+	_____________________________________________________________________
+	   WARNING  Do not create any filesystems at this stage.
+	_____________________________________________________________________
+
+
+    3.	Select New from	the Disk menu, and choose to add a RAID	53 array.
+
+    4.	Select the RAID	5 arrays that you created in step 1 for	the pieces of
+	the RAID 53 array.
+
+    5.	The Virtual Disk Manager prompts you to	create a filesystem on the
+	new array.
+
+    6.	Exit from the Virtual Disk Manager.
+
+    7.	Use the	Filesystem Manager to configure	the filesystem's mount point
+	and mount options.
+
+    Your RAID 53 array is now online and ready for use.
+
+    Incorrect example on the dktab(F) manual page
+
+    The	example	/etc/dktab file	entry for a concatenated virtual disk on the
+    dktab(F) manual page is incorrect. The concatenated	virtual	disk provides
+    1.92GB of storage, not 1.92MB as stated.  The example should read as
+    follows:
+
+    A concatenated virtual disk	composed of four hard disks using 1.92GB of
+    disk space and providing 1.92GB of usable storage:
+
+       /dev/dsk/vdisk4	       concat  4
+	       /dev/dsk/2s1    100     977363
+	       /dev/dsk/3s1    100     977200
+	       /dev/dsk/4s1    100     977365
+	       /dev/dsk/5s1    100     977360
+
+
+    Maximum size of an HTFS filesystem
+
+    The	vdisk(HW) manual page is inaccurate. The maximum size of an HTFS
+    filesystem is 512GB, not 512MB as stated.
+

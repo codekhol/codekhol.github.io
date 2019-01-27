@@ -1,0 +1,383 @@
+
+Burst Mode Protocol
+
+Hot Start and Trouble Shooting Guide
+
+Overview
+
+Burst Mode is a special-purpose service protocol provided for NCP
+read and write requests.  It is built on top of IPX; as such, it
+is similar to SPX in that it is a connection-oriented protocol.
+As a special-purpose service, it has been optimized to avoid the
+overhead of acknowledging the delivery of each packet, as does
+the SPX protocol.
+
+Although IPX does not require one-request, one-response type
+communication, the normal NCP implementation usually does.  Burst
+Mode, however, communicates using multipacket units.  A
+multipacket unit, including
+
+     * The IPX headers for each packet
+     * The burst headers for each packet
+     * And the request or reply, with or without data
+
+is called a burst.  The packets that make up the burst are called
+fragments.  Theoretically, one burst may be up to 64K in length.
+
+A burst transaction occurs from the beginning of the burst
+request to the end of the reply.  For example, when a client
+sends a request to read a file, the burst transaction begins. 
+The file server sends a series of packets (a burst) to the
+workstation, indicating the last packet with an End Of Burst
+flag.
+
+When the client receives that packet, the burst transaction is
+complete, if there are no missing fragments.  If fragments are
+missing, the client sends a missing fragment list to the server. 
+Missing fragments are then retransmitted.  This process repeats
+until no missing fragments remain or until a timeout expires.
+
+A complete file read or write may require several burst
+transactions.  A service transaction is the completion of the
+entire request, whether that entails just one burst and reply or
+many bursts and the associated replies.  In other words, if the
+client requests to read a large file and the request requires
+many burst transaction transmittals, the completion of all
+transmittals is a service transaction.
+
+Note that there is one End of Burst flag per burst, not per
+service transaction.
+
+Implementing Burst Mode on a NetWare 3.11 server.
+
+The current implementation of burst mode on a 3.11 server requires the 
+following steps:
+
+1.  Copy PBURST.NLM to the server's SYSTEM directory. This file can be
+    found in DOSUP9.EXE in the NOVFILES forum of Compuserve. 
+
+2.  Type LOAD PBURST at the server console (this enables BURST 
+    MODE at the server.). PBURST.NLM functionality is built into 
+    NetWare 3.12 and 4.01 - it is not necessary to load an NLM.
+
+3.  Copy VLM components to the workstation's NWCLIENT directory or run the
+    DOS/Windows client install program. BNETX.EXE was not included in later 
+    versions of DOSUP after DOSUP7.EXE. You must therefore use the VLM 
+    components downloadable from the NOVFILES forum.
+
+4.  Create a NET.CFG file (with COPY CON or any text editor) or 
+    edit the workstation's existing NET.CFG to include the     
+    following line:
+
+    PB BUFFERS=n* (added to the workstation's NET.CFG file)
+
+    * In this line, the variable n is a number between 0 and 10.
+
+    (The default for PB BUFFERS in VLM 1.10 is 3).
+
+Novell recommends that this value be set to 3 (Burst Mode is a
+self-governing protocol and will adjust the burst size up and
+down automatically to maintain optimum Burst performance).
+
+(Omitting the PB BUFFERS line in the NET.CFG disabled Burst Mode
+in earlier versions of BNETX and VLM)
+
+Making n = 0 disables burst mode, while 1 causes the shell to
+increase the value up to 3. 
+
+If n > 10, the shell reduces the number to 10, rather than
+returning an error to the user.
+
+If the workstation does not have enough memory for requested
+buffers, the shell sets the number accordingly, without notifying
+the user.
+
+Increasing the value of n does not necessarily equal better
+performance.  For example, a slow machine cannot move data from
+the hardware buffers to application memory fast enough,
+regardless of an increased n value.  Also, if a network card has
+hardware receive buffers, the PB buffers parameter could be set
+to a higher number than for cards without hardware buffers.  In
+both scenarios, performance will actually degrade with the higher
+values.
+
+Connection Setup
+
+A workstation sets up a burst mode connection with a file server
+at attach/login time.  Once the burst mode connection is
+established, it stays up indefinitely.  If the shell fails to
+make a burst mode connection during attach/login, it uses normal
+NCPs to do the work.  This ensures compatibility with servers not
+running burst mode.
+
+During the connection process, the shell negotiates maximum burst
+sizes, in the fashion as it negotiates packet size, with each
+server connected.  The size of each fragment (packet in a burst)
+is the same as the packet size negotiated for non-burst
+transmissions.
+
+Once a burst mode connection is established between a workstation
+and a given file server, the NetWare workstation shell
+automatically uses the burst mode service whenever an application
+makes a request for a read or write involving more than 512 bytes
+of data. In other words, an application does not have to be burst
+mode aware. 
+
+If the workstation did set up a burst mode connection with the
+server at initialization, burst mode is not actually invoked
+until a big read or write request is made.
+
+Self-Governing Burst Optimization
+
+Various factors influence the transmission rate of data on the
+network, including:
+
+* The speed of the file server
+* The speed and available memory of the workstations
+* The speed and buffer size of the network media
+* The traffic on the network at transmission time
+
+A protocol such as burst mode must be sensitive to
+data-transmission factors as well as issues of interaction
+between host network elements.  For example, a fast file server
+could overwhelm a congested bridge or slow workstation with a
+large stream of packets, causing dropped packets.  A bursting
+workstation must be able to give up a portion of the bandwidth
+it is using, if the network becomes congested, and readjust to
+maximum bandwidth usage when it is available. 
+
+Inasmuch as the client requests services from the server, the
+burst mode flow control is governed completely by the client. 
+There are two basic considerations which relate directly to
+performance: 
+
+* How should the protocol regulate the relationship between a
+fast file server and a slow workstation?
+
+* How should the protocol use the maximum amount of bandwidth
+available and yet not dominate the wire?
+
+The relationship between a fast file server and a slow
+workstation is regulated by determining a minimum time between
+packet transmissions.  The bandwidth issue is regulated by an
+expanding and contracting burst window size.  The client
+determines both pieces of information.
+
+Flow control also requires regulating the current maximum burst
+size.  For example, the hardware may be capable of transmitting
+a 4K burst, but traffic on the network might indicate that
+transmissions should be limited to 1K bursts, in order not to
+dominate the bandwidth.
+
+To maximize the fair and effective transmission rate in light of
+these factors, the burst mode protocol uses a twofold 
+transmission-rate-control algorithm.  The algorithm has two basic
+control elements:
+
+Burst gap time
+
+The amount of time between packet deliveries to the wire.
+Determined by the median of the time between packet arrivals.
+(Gap time is not meaningful when bursts must cross a bridge.)
+
+Burst window size.
+
+The amount of data that will be sent in the current burst.  The
+minimum window size is based on the maximum physical packet size
+of the network media and the number of workstation burst mode
+buffers. As currently implemented, the burst size cannot fall
+below this number.  The maximum burst window size is based on
+current network traffic congestion conditions.  Window size is
+regulated by successes and failures; a timeout is considered a
+failure, as is a dropped packet.  The window size fluctuation is
+based on research by Van Jacobson at UC/Berkeley.
+
+NOTE: All adjustments to these elements are on a burst-by-burst,
+as opposed to a packet-by-packet, basis.
+
+How The Algorithm Works
+
+In the current implementation, burst mode requires conventional
+memory space in the workstation.  
+
+The amount of conventional memory, m, in bytes, required for one
+burst mode buffer is:
+
+     m = negotiated packet size + 102
+
+For the negotiated packet size value, NetWare negotiates a packet
+size with Ethernet, for example, of 1024 bytes.  The constant 102
+is the total number of bytes needed for the IPX, NCP burst, and
+ECB headers.
+
+Thus the total memory n required for all burst mode buffers, in
+bytes, is:
+
+     n = pb buffers * m
+
+The value pb buffers is the user-specified number of burst mode
+buffers (see below), and m is the memory required for one burst
+mode buffer.
+
+When a burst is received, the data is transferred from the
+hardware to the workstation memory. Therefore, to maximize
+performance, one must consider the speed of the workstation as
+well as the network card being used.  Performance optimization,
+however, will be largely a matter of experimentation. 
+
+After figuring the maximum physical packet size and determining
+that there is enough memory available at the workstation for the
+number of burst mode buffers requested, the burst mode protocol
+determines a minimum size for the burst mode data window and
+allows that minimum to be transmitted regardless of network
+conditions. (The theoretical maximum window size is 64K.)
+
+A successful burst transaction is one with no dropped packets;
+an unsuccessful burst transaction has dropped packets.  Control
+of the window size (the current maximum allowed window size) is
+determined by successful and unsuccessful burst transactions. 
+Successful burst transactions cause the window to increase in
+size by 100 bytes.
+
+On the other hand, one or more dropped packets cause the window
+to decrease to 7/8 of current size.  The value will not drop
+below the physical packet size negotiated by NetWare and the
+network media (such as Token Ring or Ethernet), times the pb
+buffers parameter. (That is, window size >= negotiated packet
+size * pb buffers).  A slow workstation will determine a maximum
+window size, based on whether it ran out of burst mode receive
+buffers during the burst transaction.
+
+In addition to data window size and gap time, network timeouts
+(how long a workstation waits before assuming that communication
+between the file server and the workstation has been temporarily
+interrupted or severed) are factored in to the rate control of
+burst mode. No response times less than two 55ms ticks are
+factored in.
+
+Longer delays on the network (up to the maximum timeout set by
+the IPX initialization code) are processed according to a formula
+for calculating moving averages and moving deviations modelled by
+Van Jacobson.  That figure is used to indicate whether the
+time-outs should be extended to some degree.
+
+The gap time is established relatively early and stays relatively
+stable once established.  The data window and the timeout values
+fluctuate much more when the network is under a load.
+
+Trouble Shooting Guide
+
+What to do if Burst Mode does not appear to work after completing
+the steps in the "Implementing Burst Mode section" of this
+document.
+
+* Make sure that PBURST.NLM is loaded at the server the        
+  workstation is attaching to, or that you are running NetWare 3.12
+  or 4.01.
+
+* Make sure the workstation is loading the VLM components
+  and that the NET.CFG contains the PB BUFFERS statement. 
+
+* An undocumented SETtable parameter can be invoked at the server 
+  to see if any Burst connections have been established.  This 
+  is accomplished by typing the following at the server's      
+  console:
+
+     SET ENABLE PACKET BURST STATISTICS SCREEN = ON
+
+After this use ALT-ESC to switch to a screen that resembles the
+following:
+
+#010  003A**
+
+00000000 00000000 00000000 00000000  00000000 00000000 00000000 00000000
+00000000 00000000 00000000 00000000  00000000 00000000 00000000 00000000
+00000000 00000000 00000000 00000000  00000000 00000000 00000000 00000000
+00000000 00000000 00000000 00000000  00000000 00000000 00000000 00000000
+00000000 00000000 00000000 00000000  00000000 00000000 00000000 00000000
+00000000 00000000 00000000 00000000  00000000 00000000 00000000 00000000
+00000000 00000000 00000000 00000000
+
+**   Each burst connection will have a corresponding connection number and
+gap time.  (In the example above ONE Burst Connection has been established. 
+Its Burst connection number is 10 and its burst gap time is 3A)
+
+NOTE  The zeros in the example above represent registers (such as read
+rerequests, write rerequests, timeouts, etc.
+Specific documentation concerning the registers is unpublished proprietary
+information.
+
+It is important to remember that having a burst connection does NOT mean
+that the workstation is bursting.  A burst occurs when the workstation has
+a burst connection _and_ makes a NCP READ or WRITE request of more than 
+512 bytes.
+
+
+Current Burst Issues 
+
+* Many people have a misconception that Burst Mode will increase their
+  LAN's performance.  This is NOT true in all cases.  Burst performance is
+  dependent upon several factors that influence the transmission rate on the
+  LAN.  These factors are discussed on page three of this document.
+
+* If some anomaly is occurring on the LAN (such as the server and/or
+  workstations locking up) one of the first things to look at is the drivers
+  (server and workstation).  Have the customer contact the LAN driver
+  developer to get the latest ODI drivers for the server (driver.LAN) and
+  workstation (driver.COM or driver.EXE). Many updated server LAN drivers
+  can be found in the file LANDR1.ZIP in the NOVFILES forum.
+
+* Some problems with workstations hanging have been resolved by changing
+  the number of CACHE BUFFERS in the NET.CFG.  (This solution is not a
+  logical one, but it may work on certain machines)
+
+* Some LAN adapters do not work with Burst Mode.  For example, adapters that
+  have hardware buffers can potentially have those buffers overrun by the
+  bursts. 
+
+* PBURST.NLM and LIPX.NLM (separate from PBURST) were originally shipped with 
+  the Multi Protocol Router (MPR) 1.0.  The current PBURST.NLM includes both
+  Burst Mode and Large Internet Packet (LIP) functions and should replace 
+  all previous copies of these files. PBURST.NLM is not required for NetWare
+  3.12 or 4.01.
+
+* PBURST.NLM defaults to providing NCP Packet Signature as well as LIP and
+  Burst Mode.
+  To disable packet signature at the server use the command :
+
+  SET NCP PACKET SIGNATURE OPTION=0
+ 
+For a complete description of Burst Mode Protocol, please refer to the
+March 1992 issue of NetWare Application Notes (starting on page 45) (The
+application notes article contains information about WAN links, performance
+test results, Burst packet structure, etc).  To order reprints of this or
+other NetWare Application Notes please call +1 303 297 2725 or 
+1 800 377 4136 in the US.
+
+Please note that references in the March 1992 Application Note to BNETX.COM 
+should be changed to VLM.EXE.
+
+
+Summary of Compuserve files required :
+
+Forum             Filename      Contents
+-----             --------      --------
+NOVFILES          DOSUP9.EXE    Latest version with PBURST.NLM (no BNETX.EXE)
+
+
+ Burst Document - Revision 1.1, 22 Jun 92  
+
+ Burst Document - Minor revisions made for release of DOSUP6.ZIP
+                  by Marcus Williamson, NCS(E), 10 Mar 93
+
+ Burst Document - Minor revisions made for release of DOSUP7.ZIP
+                  and VLM shells by Marcus Williamson, NCS(E), 20 Jul 93
+
+ Burst Document - Minor revisions made for DOSUP7.EXE
+                  Marcus Williamson, NCS(E), 15 Oct 93
+ 
+ Burst Document - Revisions made for DOSUP9.EXE, NetWare 3.12, NetWare 4.01
+                  Marcus Williamson, NCS(E), 18 Jan 94 & 1 Mar 94
+
+ 
+

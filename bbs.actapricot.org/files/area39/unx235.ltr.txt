@@ -1,0 +1,49 @@
+
+
+    Dear SCO Customer,
+    
+    Enclosed is the Support Level Supplement (SLS) unx235 Custom(ADM) Update
+    with installation instructions. This SLS is designed to install only on 
+    SCO UNIX System V/386 Operating System Release 3.2.0.  SLS unx235 updates
+    the binaries that custom(ADM) uses so that it may install later versions 
+    of SCO products, such as SCO TCP/IP Release 1.1.1b.  This SLS replaces 
+    the following binaries:
+    
+    /usr/bin/tar /usr/bin/compress /usr/bin/uncompress /etc/conf/bin/idtune
+    
+    The old versions of these binaries will be saved in the directory
+    /usr/lib/custom/save.
+    
+    To install the floppy:
+    
+       1. Log in as root and ensure that you are located in the / (root)
+	  directory.
+    
+       2. Type the command: 
+       
+	       /etc/xinstall
+	  
+	  Answer "y" to the first floppy.
+    
+	  Installation messages will appear on the screen. 
+    
+	  The installation will be finished when you see the following
+	  message:
+    
+	     SCO unx235 Custom(ADM) Update SLS Installation Complete
+    
+	  Answer "n" to next floppy.
+    
+    After SLS unx235 is installed, you may install other SCO products, such as 
+    SCO TCP/IP Release 1.1.1b.
+      
+    If you have any questions, please call our SCO Customer Services Department
+    at (800) 347-4381. SCO Customer Services is available Monday through Friday,
+    6:00 A.M. to 5:00 P.M., Pacific Time.
+    
+    We appreciate your business.
+    
+    
+    SCO Support Services
+
+

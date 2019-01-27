@@ -1,0 +1,5 @@
+@echo off
+set path=%path%;\dosutils\dos33\ibm;\dosutils\dos33
+cd \netwkmgr
+netgen
+

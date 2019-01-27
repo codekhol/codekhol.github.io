@@ -1,0 +1,35 @@
+ATI Driver Installation Utility, version 1.1
+
+This program is used to install ATI driver modules downloaded from the ATI
+BBS and Compuserve.  It is NOT a replacement for the ATI graphics card
+configuration utilities and should NOT be placed in your \MACH32, \COMBUTIL,
+\VGAUTIL, or \8514UTIL directory.
+
+To use this utility, create a new directory on your hard disk (we recommend
+C:\ATI) and copy LOADER.EXE, README.COM and LHARC.EXE into that directory.
+
+To install a particular ATI driver update, download the appropriate driver
+module from the ATI BBS or CompuServe and "unzip" it into the same directory
+(ie C:\ATI).  Make that directory current (CD \ATI) and run LOADER.  The
+LOADER program will prompt you for any further steps required.
+
+..............................................................................
+
+Our current address is:
+
+ATI Technologies Inc.
+33 Commerce Valley Drive East
+Thornhill, Ontario
+Canada L3T 7N6
+
+Head Office, Sales and Marketing ....... (905) 882-2600
+Corporate FAX .......................... (905) 882-2620
+
+Customer Support (VOICE)................ (905) 882-2626
+Customer Support FAX ................... (905) 882-0546
+
+ATI BBS ................................ (905) 764-9404
+Compuserve ............................. GO ATITECH
+               General Inquiries   (Corilee Fox)  76004,3656
+               Technical Inquiries (ATI Support)  74740,667
+

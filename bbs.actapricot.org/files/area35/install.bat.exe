@@ -1,0 +1,117 @@
+echo off
+if "%2" == "" goto noparam
+if "%1" == "" goto noparam
+if not exist %1\amode.exe goto wrongdisk
+if not exist %1\install.bat goto wrongdisk
+if not exist %2\netwkmgr\netgen.exe goto notserver
+cls
+%1
+cd \
+echo Are you updating a VX_Net Release 2.1 network or an MF_Net Release 7.1 network?
+ask Enter '2' for VX_Net Rel 2.1 or '7' for MF_Net Rel 7.1. ,27
+if errorlevel 2 goto updatemf
+if errorlevel 1 goto updatevx
+goto end
+:updatevx
+if not exist %2\version goto notvx21
+cls
+echo This batch file will install new software onto your VX_Net file server
+echo that will allow XEN_s machines to boot up either locally or remotely
+echo so long as they are defined as VX type machines.
+echo ÿ
+echo The source disk is %1 and the destination disk is %2.
+echo ÿ
+echo Strike any key to continue if this is OK, or press CTRL C to end the batch file.
+pause
+copy %1\version.211 %2\version
+goto common
+:updatemf
+if not exist %2\version goto notmf71
+cls
+echo This batch file will install new software onto your MF file server
+echo that will allow XEN_s machines to boot up either locally or remotely
+echo so long as they are defined as VX type machines.
+echo ÿ
+echo The source disk is %1 and the destination disk is %2.
+echo ÿ
+echo Strike any key to continue if this is OK, or press CTRL C to end the batch file.
+pause
+copy %1\version.711 %2\version
+:common
+cls
+echo Updating system - please wait.
+attrib -r %2\dosutils\ibm\setup.exe
+attrib -r %2\dosutils\amload.exe
+if exist %2\dosutils\ibm\amode.exe attrib -r %2\dosutils\ibm\amode.exe
+attrib -r %2\dosutils\ibm\omninet2.sys
+attrib -r %2\dosutils\netdisk.sys
+copy %1\setup.exe %2\dosutils\ibm
+copy %1\amload.exe %2\dosutils
+copy %1\amode.exe %2\dosutils\ibm
+copy %1\omninet2.sys %2\dosutils\ibm
+copy %1\netdisk.sys %2\dosutils
+attrib +r %2\dosutils\ibm\setup.exe
+attrib +r %2\dosutils\amload.exe
+attrib +r %2\dosutils\ibm\amode.exe
+attrib +r %2\dosutils\ibm\omninet2.sys
+attrib +r %2\dosutils\netdisk.sys
+%2
+cd \netwkmgr
+softcopy %1\setup.exe msdos32i.dsk
+softcopy %1\amload.exe msdos32i.dsk
+softcopy %1\amload.exe msdos32.dsk
+softcopy %1\amode.exe msdos32i.dsk
+softcopy %1\omninet2.sys msdos32i.dsk
+softcopy %1\netdisk.sys msdos32i.dsk
+softcopy %1\netdisk.sys msdos32.dsk
+if exist omninet2.sys attrib -r omninet2.sys
+if exist omninet2.sys del omninet2.sys
+cls
+echo System Updated. You now need to regenerate all necessary boot disks.
+goto end
+:notmf71
+cls
+echo This system is not on MF_Net Release 7.1.
+echo ÿ
+echo The file server software needs to be at a base level of MF_Net Release 7.1
+echo for this update to work.
+echo ÿ
+echo If in doubt, please contact your support organisation.
+echo ÿ
+goto end
+:notvx21
+cls
+echo This system is not on VX_Net Release 2.1.
+echo ÿ
+echo The file server software needs to be at a base level of VX_Net Release 2.1 
+echo for this update to work.
+echo ÿ
+echo If in doubt, please contact your support organisation.
+echo ÿ
+goto end
+:noparam
+cls
+goto cont
+:wrongdisk
+cls
+echo The source disk specified (%1) is not the update disk.
+echo ÿ
+goto cont
+:notserver
+cls
+echo The destination disk specified (%2) is not the server hard disk.
+echo ÿ
+goto cont
+:cont
+echo You did not specify the command line parameters correctly.
+echo The install command should be entered as follows:
+echo ÿ
+echo         INSTALL [source:] [destination:]
+echo ÿ
+echo ie      INSTALL B: A: (installs to MF hard disk A: from floppy disk B:)
+echo ÿ
+echo or      INSTALL A: C: (installs to VX hard disk C: from floppy disk A:)
+echo ÿ
+goto end
+:end
+

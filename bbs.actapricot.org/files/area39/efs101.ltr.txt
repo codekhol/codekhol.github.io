@@ -1,0 +1,53 @@
+
+IMPORTANT NOTES
+===============
+
+Micro Channel Extended Feature Supplement
+for SCO UNIX System V/386 Release 3.2.0
+
+-------------------------------------------------------------------------------
+
+Dear SCO UNIX System V/386 Customer,
+
+The Santa Cruz Operation is pleased to ship you this release of the Micro 
+Channel SCSI Exteneded Feature Supplement (EFS).  We are continually adding 
+new functionality to SCO UNIX System V/386 Release 3.2 and use this means
+to provide added functionality to our customers between major releases of
+the product.
+
+This EFS provides additional support for computers based on Micro Channel 
+Architectures, including the following IBM Personal System/2 models: 65-061,
+65-121, 80-121, 80-321, 80-A21, 80-A31.
+
+These machines contain an IBM SCSI host adaptor used to operate the hard disk,
+and potentially other devices.
+
+This EFS consists of two diskettes, a replacement N1 to be used instead of the 
+one supplied with the operating system, and a link-kit update disk to provide
+the additional driver support in the link-kit.  The notes contained here 
+supplement the original Release Notes.
+
+
+Installing the Operating System with this Supplement
+====================================================
+
+1.  Remove the N1 disk from the original distribution of the operating system
+    diskettes, and replace it with the N1 provided with this supplement.
+
+2.  Install the operating system on the machine as usual.
+
+3.  Install the operating system link-kit using the custom utility.
+
+4.  Install the Maintenance Supplement Update A diskettes.
+
+    When prompted after the kernel re-link, DO NOT shutdown and reboot the
+    system, but continue and install the link-kit disk that came with this
+    supplement, using the "Add a Supported Product" option in custom.  This
+    will add additional driver support to the link-kit.
+
+5.  Shutdown the system and reboot.
+
+6.  Continue the rest of the installation as normal.
+
+                                   ----
+

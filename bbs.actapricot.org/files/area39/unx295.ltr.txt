@@ -1,0 +1,102 @@
+        
+Dear SCO Customer,
+        
+The enclosed Support Level Supplement (SLS) unx295, the SCO UNIX System V/386 
+Pseudo-tty SLS, contains the pseudo-tty driver with enhanced performance. This 
+driver replaces the old version Driver.o located in /etc/conf/pack.d/spt.
+        
+This pseudo-tty driver is for installation on SCO UNIX System V/386 Release 
+3.2 Operating System Version 2.0.
+
+Before you install the SCO UNIX System V/386 Pseudo-tty SLS, make sure that 
+you have configured your system correctly.  Your operating system must be the 
+SCO UNIX System V/386 Release 3.2 Operating System Version 2.0 or Open Desktop 
+Release 1.1.
+        
+You need a fully installed Run Time system for this installation.  If your Run 
+Time system is not completely installed, the installation will abort.
+        
+To install SLS unx295, take the following steps:
+              
+        - Make sure that your system is in single-user
+          (System Maintenance) mode.
+              
+        - Make sure that you are installing on SCO UNIX System V/386 
+	  Release 3.2 Version 2.0.
+
+        - Log in as root.
+              
+        - Type 'custom' at the prompt.
+              
+        - Select "A New Product".
+              
+        - Select "Entire Product".
+              
+        - Insert the SLS floppy in the floppy drive and
+          press <Return> to continue.
+              
+        - The original Driver.o in /etc/conf/pack.d/spt will 
+	  be saved in /usr/lib/custom/save/spt/Driver.o.
+              
+        - Select "Continue" when you are prompted to insert
+          the SLS floppy.
+              
+        - Select "y" to relink the kernel.
+             
+        - When the kernel has been rebuilt, select "y" to
+          boot the new kernel by default.
+              
+        - When you are prompted, select "y" to rebuild the
+          kernel environment.
+              
+        - When you are prompted, press any key to return to
+          the custom menu.
+              
+        - Exit custom and reboot the system with the new
+          kernel.
+              
+To remove SLS unx295, take the following steps:
+              
+        - Make sure that your system is in single-user
+          (System Maintenance) mode.
+              
+        - Log in as root.
+              
+        - Type 'custom' at the prompt.
+              
+        - Select "Remove".
+              
+        - Select "SCO Pseudo-tty SLS".
+              
+        - Select "All".
+              
+        - The new driver will be removed and the old driver
+          will be restored.
+              
+        - Select "Yes" to continue.
+
+        - When the removal is finished, select "y" to
+          relink the kernel.
+              
+        - When the kernel has been rebuilt, select "y" to
+          boot the new kernel by default.
+              
+        - When you are prompted, select "y" to rebuild the
+          kernel environment.
+             
+        - When you are prompted, press any key to return to
+          the custom menu.
+
+        - Exit custom and reboot the system with the new
+          kernel.
+              
+        
+If you have any questions, please call our SCO Customer Services Department 
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday, 
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+ 
+We appreciate your business.
+        
+SCO Support Services
+

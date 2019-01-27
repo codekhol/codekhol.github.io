@@ -1,0 +1,342 @@
+
+Dear SCO Customer,
+
+Enclosed is Support Level Supplement (SLS) unx257, the SCO UNIX System 
+V/386 Release 3.2 Security Enhancement.  Please read the entire letter 
+before beginning the installation of this SLS to insure proper configuration 
+of your particular system.
+
+
+SLS unx257 can be installed on the following systems:
+
+  SCO UNIX System V/386 Release 3.2 Operating System Version 2.0.
+
+  Open Desktop Release 1.0.0, provided that the Open Desktop Maintenance 
+  Supplement UFE has been installed.
+
+  SCO UNIX System V/386 Release 3.2 Operating System, provided that the SCO 
+  Security Supplement (SLS unx223) has been installed.
+
+
+NOTE: THE OPEN DESKTOP MAINTENANCE SUPPLEMENT, UFE, AND SLS unx223 CAN BE 
+      ORDERED FROM THE SCO SUPPORT MEDIA DEPARTMENT.
+      SLS UNX223 CAN ALSO BE DOWNLOADED ON SOSCO.
+
+(I)  INSTALLATION 
+
+The Link Kit must be installed before installing SLS unx257.  The installation 
+will fail if the Link Kit is not installed or if a required SLS is not present.
+If the installation fails, the installation script will remove all the files 
+read from the diskette.  Install the missing item and install SLS unx257 again.
+
+SLS unx257 must always be installed after SCO MPX.  If SLS unx257 is installed
+before SCO MPX is installed, then SLS unx257 will need to be reinstalled. 
+
+Before you install SLS unx257, identify any changes you have made to the File 
+Control database (/etc/auth/system/files).  You need to remake these changes 
+in the new version of the File Control database after SLS unx257 is installed.
+
+NOTE: SLS unx257 can only be installed using xinstall(ADM) utility.  Do not 
+      use custom(ADM) utility to install or reinstall SLS unx257.
+
+Begin the installation of the SCO Security Supplement as follows:
+
+1.  If the systems is up, log in as root and enter the command:
+
+	shutdown -g0 
+
+2.  When the system reboots, eventually you will see the message:
+
+    	Type CONTROL-d to proceed with normal startup,
+    	(or give root password for system maintenance):
+
+    Enter the root password and press <Return>. 
+    Wait until the '#' prompt appears.
+
+3.  Next, insert Volume 1 in the floppy drive and enter the command:
+
+        xinstall
+
+    You will see the following message:
+
+    	For each volume in the distribution set, insert the 
+    	floppy into the drive, enter 'y', and press <Return>.
+    	Enter the letter 'n' after the last volume.
+
+    	First Floppy? (y/n)
+
+4.  Enter "y" and press <Return>
+
+    You will see:
+
+	Extracting files.....
+
+    when the contents of the diskette is read and the kernel is relinked.  
+    Enter "y" and press <Return> at the prompt:
+
+    	Do you want this kernel to boot by default? (y/n) 
+
+    Enter "n" and press <Return> at the prompt: 
+
+    	Do you want the kernel environment rebuild? (y/n)
+
+    This SLS does not create any device nodes.
+
+5.  The following messages are then displayed:
+
+	Uncompressing files....
+	Rebuilding manual page index....
+	Copying files....
+      * /etc/profile not replaced
+      * /etc/cshrc not replaced
+	Checking permissions....
+
+    Messages marked with (*) indicate those files that are not overwritten 
+    with the new versions.  You can find the new version as /etc/profile.hush 
+    and /etc/cshrc.hush.  (Refer to Important Notes)
+
+    The message "Checking permissions" is displayed while fixmog(ADM) is 
+    run to set permissions to match the File Control database.  You may see 
+    a number of permission changes.
+
+6.  When you see:
+
+	Next Floppy? (y/n) 
+
+    enter "n" and press <Return>.  
+
+    Now you need to edit the File Control database in order to modify any 
+    changes you have identified earlier.
+
+    If you make any changes, you should run fixmog(ADM) once again by
+    entering "/tcb/bin/fixmog".
+
+The installation is now complete.  Reboot the system to use the new kernel.
+
+
+(II)  Features in SLS unx257
+
+SLS unx257 includes the following features:
+
+  Enhanced crash recovery, including modifications to tcbck(ADM).
+
+  Command-line utilities, rmuser(ADM) and unretire(ADM), for removing, 
+  retiring and unretiring users. 
+
+  The utility, passwdupd(ADM), to create a user who was added to 
+  /etc/passwd file manually. 
+
+  A hushlogin feature in login(M) for suppressing copyright and other 
+  messages during a login.
+
+  A new authck(ADM) -y flag that silently corrects any errors in the 
+  subsystem database.
+
+  The utility, fixmog(ADM), to change the permissions of all files to match 
+  their entries in the File Control database. 
+
+  The utility, cps(ADM), for setting the permissions of individual files to 
+  match their entries in the File Control database.
+
+  A locking utility, ale(ADM), that enables administrators to write scripts 
+  that update the Authentication database. 
+
+  The utility, ttyupd(ADM), that updates the Terminal Control database to 
+  match /etc/inittab. 
+
+  The utility, asroot(ADM) that allows an authorized user to run a defined 
+  set of commands as superuser without the root password. 
+
+  New semantics of PASSLENGTH in /etc/default/passwd that represent the 
+  absolute minimum password length to be enforced by passwd(C).
+
+  Modifications to su(C) 
+
+	- Instead of allowing a user to su to root only, users can su 
+	  to any account if they have the account password.
+
+	- The system can be configured to a C1 level of security so that 
+	  su transitions also transfer the authorizations of the account.
+
+
+  (III)  Other Improvements and Additions
+
+  SLS unx257 also includes the following improvements and additions. 
+  Note: Unless otherwise stated the problems described below are present 
+  in all the software environments specified earlier.
+
+  addxusers(ADM)
+
+  	- Now handles a relative pathname for the name of the input file.
+
+  	- Allows the passwords of newly added accounts to be changed if they 
+  	  did not have aging information.
+
+  authck(ADM)
+
+	- Increased robustness to repair additional errors in the subsystem 
+	  database files.
+
+  lpadmin(ADM)
+
+	- Creates /usr/spool/lp/admins/lp/printer/<printername> with the 
+	  correct permissions of 770, owner=lp, group=lp (previous versions 
+	  of lpadmin created these directories with various incorrect 
+	  permissions).
+
+	- Can now be used by a user with the lp authorization.  
+	  (This problem is not present in SCO UNIX System V/386 Release 3.2 
+	   Operating System Version 2.0.)
+
+  lpfilter(ADM) & lpforms(ADM)
+
+	- Can now be used by a user with the lp authorization.  
+	  (This problem is not present in SCO UNIX System V/386 Release 3.2 
+	   Operating System Version 2.0.)
+
+  sulogin(ADM)
+
+	- The LUID is now set under all circumstances.
+
+	- The gid is set to root's group as specified in /etc/passwd.
+
+  sysadmsh(ADM)
+
+	- The useshell helper program used by sysadmsh now displays 
+	  descriptive error messages.
+
+  at(C)
+
+	- No longer displays error messages when used from an su session.
+
+  chmod(C)
+
+	- Displays more accurate error messages.
+
+	- Error checking done consistently across all combinations of 
+	  command line arguments.
+
+  crontab(C)
+
+	- No longer displays error messages when used from an su session.
+
+	- No longer core dumps when an account name for the -u flag is 
+	  longer than 5 characters.
+
+	- When the -u and -r flags are used to remove an account's crontab 
+	  file, the cron jobs for that account are immediately stopped.  
+	  (This problem is only present in SCO UNIX System V/386 Release 3.2 
+	   Operating System Version 2.0.)
+
+	- The File Control database is used to obtain the correct permissions 
+	  of crontab files rather than using hardcoded values.
+
+  login(C)
+
+	- Does not produce the 'cannot access Terminal Control database' 
+	  message when a large number of concurrent logins take place.
+
+	- The override shell spawned in emergencies now has its LUID set.
+
+	- All combinations of null passwords and PASSREQ work as documented.
+
+	- Use of an invalid username is now audited as <bad>.
+
+  passwd(C)
+
+	- Lockfiles are no longer left behind when setting a dial-up password.
+
+  su(C)
+
+	- No longer makes two entries in the sulog file each time it is used.
+
+
+  umask(C) preservation
+
+	- auths(C), su(C), newgrp(C), and at(C) now use the current value 
+	  of the user's umask rather than setting it to 077.
+
+
+	   ***********  Important Notes  *************
+
+
+(1)  Because the sysadmsh System->Security->Relax selection edits system 
+     default files that are then changed by system administrators, there 
+     was no accurate way for utilities, such as rmuser(ADM), to determine 
+     if the system had been relaxed.  To indicate relaxed behavior, edit 
+     the /etc/auth/system/default files and change the u_secclass field 
+     from "c2" to "c1".  NOTE: If you have a trusted system, do NOT change 
+     this.
+  
+(2)  login(M) and su(C) now start the shell with the supplemental group 
+     list set.  The supplemental group ID list is used in addition to the 
+     effective group ID (EGID) in determining file access permissions.  The
+     EGID is still used in file creation. The maximum number of groups in 
+     the supplemental groups list is defined by the tunable kernel parameter 
+     NGROUPS_MAX.  It can be changed by running sysadmsh(ADM), selecting
+     System->Configure->Kernel->Parameters and selecting option 3, 
+     "Files, Inodes, and Filesystems".  The parameter is NGROUPS.
+  
+(3)  login(M) and su(C) set the supplemental group list to the login GID 
+     (from /etc/passwd), followed by successive groups (read from /etc/group), 
+     of which the user is a member (excluding the login group).  If a user is 
+     listed as a member of a group more than once, the group ID will appear 
+     more than once in the supplemental group list.  When the list is full or 
+     the end of the group file is reached, the supplemental group list is set.
+     
+(4)  This behavior is functionally equivalent to BSD's, except BSD uses a 
+     fixed, instead of configurable, size list.
+  
+(5)  In SCO UNIX System V/386 Release 3.2, supplemental group lists may 
+     only be set, they are not used in access decisions.
+  
+(6)  The su(C) feature, allowing a user to gain the authorizations of another 
+     account, has been implemented as a temporary solution which involves 
+     changing the LUID of the su process.  All audit records generated by that
+     process have the LUID of the su'ed user, not the original user.  However, 
+     the audit reduction program can produce an audit report with audit records 
+     labeled with the correct LUID.  Because this implementation can reduce the 
+     integrity of audit data, this su feature is only enabled if the system is 
+     relaxed (see below).  The implementation of this feature will be changed 
+     in a future release of the operating system.
+  
+(7)  Note that when su'ing from an account, that does not have the nopromain 
+     subsystem authorization to an account that does, the shell started by su 
+     will still be running in a promain.
+  
+(8)  The new asroot(ADM) utility will also run a command with root
+     authorizations if the u_secclass field is set to "c1".  Note that asroot 
+     asks for the password corresponding to the LUID, not the RUID.
+  
+(9)  In SCO UNIX System V/386 Release 3.2 Operating System Version 2.0, the 
+     file /tcb/lib/setfiles is a nonfunctional utility; this SLS replaces it 
+     with a link to /bin/false.  This command has been superseded by the new 
+     fixmog(ADM) utility.
+
+(10) When using passwdupd(ADM) to add users to the system, always add lines at 
+     the end of /etc/passwd.
+  
+(11) On-line copies of the new and replacement manual pages are added to your 
+     system during installation.
+  
+(12) SLS unx257 contains new versions of /etc/profile and /etc/cshrc which 
+     have been modified so that no messages are displayed during a hushlogin.  
+     If the existing versions of these files have not been altered from the 
+     original operating system versions, then the installation script over-
+     writes the old versions with the new versions.  If changes have been 
+     made, then the new versions are left in /etc/profile.hush and 
+     /etc/cshrc.hush.  The /etc/profile and /etc/cshrc files are sometimes 
+     edited by a product's (such as ODT-DATA and ODT-DOS) installation script.
+     Then SLS unx257 will not overwrite these files and will put the new 
+     version as /etc/profile.hush and /etc/cshrc.hush.  If the files are not 
+     overwritten, then you may want to incorporate the hushlogin changes into 
+     your own versions manually, after the installation is complete.
+  
+     If you have any questions, please contact our SCO Customer Services 
+     Department at (800) 347-4381.  SCO Customer Service is available Monday 
+     through Friday, 6:00 A.M. to 5:00 P.M., Pacific Time.
+  
+     We appreciate your business.
+  
+     SCO Support Services
+  

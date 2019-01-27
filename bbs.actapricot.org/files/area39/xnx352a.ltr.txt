@@ -1,0 +1,56 @@
+Dear SCO Customer, 
+
+The enclosed Support Level Supplement (SLS) xnx352a provides a replacement 
+/usr/lib/mkdev/hd file for SCO XENIX 386 Operating System Release 2.3.4 for 
+computers based on Micro Channel Architecture (MCA).  This SLS should only 
+be installed on this release of SCO XENIX System V. 
+
+Following are instructions for the installation of SLS xnx352a:
+
+(1) Log in as the root user (superuser).  Insert the enclosed 
+    SLS xnx352a diskette. 
+   
+(2) At the system prompt, type the following commands:
+
+       	# cd /
+	# /etc/custom
+  
+	(do not type the "#", this is the system prompt)
+
+(3) Choose item 4, to "Add a Supported Product" and press <Return>.
+    Next, choose item 1, to "Install one or more packages". 
+    When prompted for the package to install, choose "ALL" to 
+    install the Entire "Replacement mkdev hd Supplement".  
+    Press <Return> to continue.
+
+(4) Installation of the Replacement mkdev hd Supplement is now complete.
+
+
+Following are instructions for the removal of SLS xnx352a: 
+(Note: There should not be any reason to remove this SLS) 
+
+(1) Type the following: 
+
+        # cd /
+	# /etc/custom
+        
+	(do not type the "#", this is the system prompt)
+
+(2) Choose the number that corresponds to the "Replacement mkdev hd 
+    Supplement".  Then choose item 2, to "Remove one or more packages".
+    Finally, choose "ALL" as the package to remove. 
+ 
+(3) At this point, the file /usr/lib/mkdev/hd has been restored to 
+    its original state.  
+
+NOTE: In order to determine if SLS xnx352a is currently installed, 
+      run "custom" to view Products Currently Installed. 
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

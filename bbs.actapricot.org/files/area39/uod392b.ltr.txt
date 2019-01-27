@@ -1,0 +1,103 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) UOD392B (System Security 
+Enhancements) corrects flaws found in these programs:
+
+        at(C)
+        login(M)
+        mail(C) / mailx(C)
+        prwarn(C)
+        sadc(ADM)
+        /usr/lib/pt_chmod
+        /usr/mmdf/chans/local
+        ex(C) / edit(C)                 *** New to UOD392B ***
+        vi(C) / view(C) / vedit(C)      *** New to UOD392B ***
+
+Previously, these programs could have allowed a user with an existing 
+login account to obtain unauthorized privileged access to the system.
+
+In passwd(C), a flaw which could corrupt the password databases, 
+preventing all logins, has been corrected.
+
+IMPORTANT: SLS UOD368B (the replacement passwd(C) supplement) 
+           must be removed before installing SLS UOD392B.
+
+SLS UOD392B applies to these releases:
+
+        SCO UNIX System V/386 Release 3.2 Operating System Version 4.2
+        SCO Open Desktop Lite Release 3.0
+        SCO Open Desktop Release 3.0
+        SCO Open Server Enterprise System Release 3.0
+        SCO Open Server Network System Release 3.0
+
+
+Using custom(ADM) to install SLS UOD392B
+________________________________________
+
+1.  If the system is running in multiuser mode, log in as root on the 
+    console.  After warning the users that the system will be down for 
+    some time, enter the command:
+
+        shutdown  -y -g0 su
+
+2.  When the system enters single-user mode, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+3.  Insert the custom volume disk labeled "UOD392B SLS Custom 
+    Install Disk" in the floppy drive and enter the command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+4.  To select the following, highlight each one with the cursor keys 
+    and press <Enter>:
+
+        Install -> A New Product -> Entire Product
+
+    Position the cursor so that "Install" is highlighted and 
+    press <Enter>.
+
+    Make sure the words "A New Product" are highlighted in the window
+    found in the lower right corner of the screen; press <Enter>.
+
+    Make sure the words "Entire Product" are highlighted in the "Choose 
+    an option" section of the screen; press <Enter>.
+
+    You will be prompted to "Insert distribution Volume 1 and 
+    press <Enter>".  Make sure the disk is already in the 
+    drive and press <Enter>.  You will see:
+
+       Installing custom data files
+       Executing Product Prep Script
+   
+    The message "Saving files about to be Replaced" will flash on the 
+    screen.  You will be prompted to "Insert the requested Volume and 
+    press <Enter>".  The disk is already in the drive, therefore 
+    press <Enter>.  You will see:
+
+       Extracting Files
+
+    You will then be prompted to "Press any key to continue"; 
+    press <Enter>.
+
+    At the main custom menu, move the highlighted entry to "Quit" and 
+    press <Enter>.  Press <Enter> again on the highlighted "yes."
+     
+    Reboot the computer.
+
+    SLS UOD392B is now successfully installed.
+
+
+If you have questions regarding this SLS, or the product on which
+it is installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services
+

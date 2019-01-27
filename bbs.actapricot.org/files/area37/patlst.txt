@@ -1,0 +1,492 @@
+       Last Update on 18 May 1999
+
+       Download the latest Novell Clients and other Novell products
+       from http://www.novell.com/download.
+
+       Novell Technical Support recommends applying these updates as
+       a baseline. For a complete listing of all available updates
+       for these products, or for older products not listed, see the
+       Knowledgebase or File Finder of the Support Connection web
+       site.
+
+       [Image]=New File within last 30 days
+
+       Table of Contents
+
+          * NetWare
+          * NetWare Client Updates
+          * ZENworks
+          * BorderManager
+          * ManageWise
+          * GroupWise
+          * Tools
+          * Documentation
+          * Year 2000 Updates
+
+     NetWare
+
+     NetWare 5
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       NW5SP2.EXE[NEW]    NetWare 5 Support Pack 2             4MAY1999
+
+     
+
+     NetWare 4.2
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       DS411Q.EXE         NDS Update for Netware 4.11/4.2     16APR1999
+
+       SCMDA.EXE          Common SCMD.NLM for 4.x             3FEB1999
+
+     
+
+     NetWare 4.11
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       IWSP6A.EXE         Localized Support Pack 6            8MAR1999
+
+       DS411Q.EXE         NDS Update for Netware 4.11/4.2     16APR1999
+
+       SCMDA.EXE          Common SCMD.NLM for 4.x             3FEB1999
+
+     
+
+     NetWare 4.10
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       410PT8B.EXE        410PT8B.EXE; NetWare 4.10 Patch     22MAY1998
+                          Kit
+
+       DS410N.EXE         Novell Directory Services           9NOV1998
+
+       LIBUPI.EXE         Updated modular CLIB and DSAPI      21NOV1998
+
+       ODI33F.EXE         Lan Drivers                         7JAN1998
+
+       STRTL6.EXE         STREAMS.NLM- TLI.NLM- SPXS.NLM-     21AUG1997
+                          IPXS.NLM
+
+       CDUP5A.EXE         CDROM.NLM and supporting files      22JUL1998
+
+       TCPN05.EXE         Common TCPIP.NLM for NW 4.x         16APR1998
+
+       SRVMN1.EXE         SERVMAN.NLM                         22JUL1996
+
+       INS224.EXE         INSTALL.NLM v2.24                   3OCT1995
+
+       SBACK6.EXE         SBACKUP.NLM and supporting files    18APR1996
+
+       SMSUP6.EXE         SMS Functions Updated               16JAN1997
+
+       PS4X03.EXE         Print Server                        28JUL1995
+
+       PU4X03.EXE         Print Utilities                     3MAY1995
+
+       MPR31B.EXE         NetWare Multiprotocol Router        29OCT1996
+
+       IPX660.EXE         IPX Upgrade for NetWare 3.1x, 4.1x  23SEP1998
+
+       MACPT3D.EXE        NetWare for Macintosh               25APR1997
+
+       NAM41c.EXE         Macintosh and OS/2 Name Space       6OCT1997
+
+     
+
+     NetWare 3.2
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       LIB312B.EXE        NetWare 3.2 CLIB Update             28JAN1999
+
+     
+
+     NetWare 3.12
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       312PTD.EXE         OS Patches                          18MAR1998
+
+       ODI33F.EXE         Lan Drivers                         7JAN1998
+
+       IPX660.EXE         IPX Upgrade for NetWare 3.1x, 4.1x  23SEP1998
+
+       TCP312.EXE         Common TCPIP.NLM for NW 3.12        22APR1998
+
+       312Y2KP2.EXE       NetWare 3.12 Year 2000 Fixes        9JAN1998
+
+       LIB312B.EXE        CLIB Update for NetWare 3.12        28JAN1999
+
+       VRP386.EXE         VREPAIR Update                      31JUL1997
+
+       NAM312.EXE         Name Space Update for NetWare 3.12  29AUG1994
+
+       STRTL6.EXE         Readme for STRTL6.EXE               21AUG1997
+
+       PS3X02.EXE         Updated 2.2 and 3.x                 30JUN1995
+                          Pserver/Rprinter files
+
+       PU3X01.EXE         NetWare v3.12 Printing Utilities    28OCT1995
+
+     
+
+     NetWare 3.11
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       311PTG.EXE         OS Patches                          11NOV1996
+
+       LIB311B.EXE        CLIB for NetWare 3.11               2JUN1998
+
+       VRP386.EXE         VREPAIR Update                      31JUL1997
+
+       PBURST.EXE         Packet Burst Update                 14JUN1994
+
+       STRTL6.EXE         Readme for STRTL6.EXE               21AUG1997
+
+       MON176.EXE         MONITOR.NLM v1.76                   18SEP1995
+
+     
+
+     NetWare Client Updates
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       CLIENTS.TXT[NEW]   Required Novell Client versions     17MAY1999
+
+     
+
+     Novell Client for Windows NT
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       NT430P2.EXE        Windows NT v4.3 Updates             24MAR1999
+
+       NT411P1.EXE        NetWare NT Client v4.11 Updates     26AUG1998
+
+     
+
+     Novell Client for Windows 95/98
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       9530IPX.EXE        Windows 95/98 v3.01 Updates         23DEC1998
+
+       95250P2.EXE        Windows 95/98 v2.5 Updates          24MAR1999
+
+       95220P1.EXE        Windows 95 v2.2 Updates             3DEC1998
+
+       ADM32_22.EXE       Windows 95 v2.2 Supplement          10SEP1997
+
+     
+
+     Novell Client for DOS & Windows 3.x
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       ADM32_22.EXE       DOS & Windows 3.x v2.2 Supplement   10SEP1997
+
+     
+
+     Novell Client for OS/2
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       OS2PT2.EXE         OS/2 v2.12 Client Updates           18DEC1998
+
+     
+
+     ZENworks
+
+     ZENworks 1.1
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       ZW110P2.EXE        Z.E.N.works 1.1 Patches             14APR1999
+
+     
+
+     ZENworks 1.01
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       ZW101P1.EXE        Z.E.N.works 1.01 Patches             6NOV1998
+
+     
+
+     ZENworks 1.0
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       ZW100P1.EXE        Z.E.N.works 1.0 Patches             13OCT1998
+
+     
+
+     BorderManager
+
+     BorderManager 3.0
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       BM3SP1.EXE         BorderManager Support Pack 1        13APR1999
+
+     
+
+     BorderManager 2.1
+
+       File Name         Document Title                        Creation
+                                                                 Date
+
+       BMSP2D.EXE        BorderManager Support Pack 2         17MAR1998
+
+       BMP107.EXE        BMP107.EXE - BorderManager Proxy     4MAY1998
+                         Cache v1.07
+
+       TCPN05.EXE        TCPIP prerequisite for TCPN06.EXE    16APR1998
+
+       TCPN06.EXE        Common TCPIP.NLM for NetWare 4.11    18FEB1999
+
+     
+
+     BorderManager FastCache
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       BFC107.EXE         BorderManager FastCache patch v1.07  2JUN1998
+
+     
+
+     ManageWise
+
+     ManageWise 2.6
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       MW26SP1.EXE[NEW]   ManageWise 2.6 Support Pack 1       3MAY1999
+
+       MWINOC7R.EXE[NEW]  ManageWise - Virus Signature 4.20   22APR1999
+                          Update
+
+       MWINOC8O.EXE[NEW]  InocuLAN v4.0 for Win NT - Sig      22APR1999
+                          4.20 & SP 2A
+
+     
+
+     ManageWise v2.5 Updates
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       MWNT01A.EXE        ManageWise 2.X - Windows NT Agent   18NOV1996
+                          V2.1 Update
+
+       MWNT01B.EXE        ManageWise 2.X - Windows NT Agent   22MAY1998
+                          V2.1 Update
+
+       MWNXP01A.EXE       Y2K patch for ManageWise 2.5        21APR1998
+
+       MWNMA4A.EXE        MWISE 2.1B,2.5 UPDATE for NMA 2.1   15OCT1998
+                          on OS 4.x
+
+       MWNMA3A.EXE        MWISE 2.1B, 2.5 UPDATE for NMA 2.1  14OCT1998
+                          on OS 3.X
+
+       MWINOC7R.EXE[NEW]  ManageWise - Virus Signature 4.20   22APR1999
+                          Update
+
+       MWINOC8O.EXE[NEW]  InocuLAN v4.0 for Win NT - Sig      22APR1999
+                          4.20 & SP 2A
+
+     
+
+     Lanalyzer Updates
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       LZFW01B.EXE        LANalyzer for Windows 2.2 - New     12JUN1998
+                          Decodes
+
+     
+
+     GroupWise
+
+     GroupWise 5.5
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       GW55SP1.EXE        GroupWise 5.5 Support Pack 1, EN    10DEC1998
+
+       GM526BUS.BIN       gm526bus.bin; Mac Client 5.2.6      5NOV1998
+                          Installer
+
+       EXCHNT1.EXE[NEW]   Patch 1 GW5 NT Gateway for          29APR1999
+                          Exchange
+
+     
+
+     GroupWise 5.2
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       GW52SP4.EXE        GroupWise 5.2 Support Pack 4        24NOV1998
+
+       GM526BUS.BIN       gm526bus.bin; Mac Client 5.2.6      5NOV1998
+                          Installer
+
+       EXCHNT1.EXE[NEW]   Patch 1 GW5 NT Gateway for          29APR1999
+                          Exchange
+
+     
+
+     GroupWise 4.1
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       GW41SP5.TXT        GroupWise 4.1a Support Pack 5 -     2FEB1999
+                          All Languages
+
+       SMTP4.EXE          SMTP/MIME - Patch 4                 14JUL1998
+
+       GW4API1.EXE        GW4API1.exe: Patch 1 for API        14JUL1998
+                          NLM/OS2
+
+       NGWAUP.EXE         NWAdmin Integration Snapin Update   12AUG1996
+                          (v.3)
+
+       NGWSNC.EXE         GroupWise NDS Synhcronization NLM   7MAR1995
+
+       GWUSR3.EXE         GroupWise 4.1a Remote Client Patch  16DEC1996
+                          3
+
+       GWBR41.EXE         GroupWise Web Browser Integration   26JUL1996
+                          Package
+
+       ASYNC1.EXE         GroupWise 4.x Async for NLM -       5OCT1998
+                          Patch 1
+
+       MSMLOS21.EXE       MSMLOS21.EXE: Patch 1 for MSMail    5OCT1998
+                          OS/2 Gateway
+
+       NOTES41.EXE        Patch 1 GW OS/2 Gateway for Lotus   12OCT1998
+                          Notes 4
+
+       CCMLO1.EXE         Patch 1 GW OS/2 Gateway for         30OCT1998
+                          cc:Mail
+
+     
+
+     Tools
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       ETBOX2.EXE         Enhanced ToolBox Utility            12OCT1998
+
+       TBOX7.EXE          ToolBox Utility including COPY.NLM  1SEP1998
+
+       CFGRD6B.EXE        NetWare Config Reader v2.67         12OCT1998
+
+       DSRIGHT2.EXE       DS Rights v1.0                      2MAY1997
+
+       CHTREE1.EXE        Change Tree v1.0                    2MAY1997
+
+       SCHCMP2.EXE        Schema Compare Utility v1.0         3NOV1997
+
+       CRON5.EXE          CRON.NLM Server Utility             23JUN1998
+
+       TBACK3.EXE         TBackup Utility Beta 3              4MAY1998
+
+       TCOPY2.EXE         Trustee Copy Beta 2                 4MAY1998
+
+       STUFKEY5.EXE       StuffKey Utility                    8MAR1999
+
+       CONFG7B.EXE        Server Configuration Information    1SEP1998
+
+       LOADDLL1.EXE       DLL Loader for Netware 4.11         25AUG1998
+
+       ONSITEB6.EXE[NEW]  Onsite Admin Pro v1.0 - beta6       17MAY1999
+
+     
+
+     Documentation
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       4XMIGR2.EXE        Envoy Document on Migration         6APR1998
+                          Solutions
+
+       DSDOC2.EXE         Novell Directory Services Document  17JUN1996
+                          of codes
+
+       HIGHUTL1.EXE       Troubleshooting High Utilization    13AUG1998
+                          for NW 4
+
+       TABND2A.EXE        Abend Troubleshooting Guide         14JUL1997
+
+     
+
+     Year 2000 Updates
+
+       File Name          Document Title                       Creation
+                                                                 Date
+
+       411Y2KP2.EXE       NetWare 4.11                        2MAR1998
+
+       312Y2KP2.EXE       NetWare 3.12                        9JAN1998
+
+       LIB312B.EXE        NetWare 3.12/3.2 CLIB               28JAN1999
+
+       410Y2KP2.EXE       NetWare 4.10                        10DEC1998
+
+       NA4NTY2K.EXE       Netware Admistrator                 12FEB1998
+
+       CLTY2KP1.EXE       NetWare Client                      19DEC1997
+
+       NCV20Y2K.EXE       NetWare Connect                     1APR1998
+
+       BM21Y2K.EXE        BorderManager                       1APR1998
+
+       PBM21Y2K.EXE       BorderManager - Portugues           27JUN1998
+
+       FBM21Y2K.EXE       BorderManager - French              26JUN1998
+
+       IBM21Y2K.EXE       BorderManager - Italian             26JUN1998
+
+       GBM21Y2K.EXE       BorderManager - German              26JUN1998
+
+       SBM21Y2K.EXE       BorderManager - Spanish             27JUN1998
+
+       MWNXP01A.EXE       ManageWise                          21APR1998
+
+       LWP511.EXE         Lan WorkPlace Pro                   15MAY1998
+
+       LWP501.EXE         Lan WorkPlace & WorkGroup 5.0       18MAY1998
+
+     

@@ -1,0 +1,521 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) UOD429A, the Boot Supplement SLS, 
+contains various feature enhancements and corrections to known problems with 
+these SCO UNIX Version 4.2 based operating systems:
+
+SCO UNIX System V/386 Release 3.2 Operating System Version 4.2
+
+SCO Open Server 3.0 Product Family:
+
+        SCO Open Desktop Lite Release 3.0
+        SCO Open Desktop Release 3.0
+        SCO Open Server Network System Release 3.0
+        SCO Open Server Enterprise System Release 3.0
+
+
+This document contains the following sections:
+
+     I. Fresh Installation of the Operating System
+    II. Installation on an existing system
+   III. Components of SLS UOD429A
+    IV. Biosgeom
+     V. Host Adapter Notes
+    VI. ATAPI CD-ROM Notes
+   VII. Removal of SLS UOD429A
+
+
+I. Fresh Installation of the Operating System
+
+SLS UOD429A consists of a new N1 disk. The N1 disk works for both 
+the SCO Open Server 3.0 Product Family and SCO UNIX System V/386 
+Release 3.2 Operating System Version 4.2.
+
+During the operating system installation process, each time you 
+are instructed to place the N1 disk into the floppy drive to boot
+the system, use the replacement N1 disk instead of the original N1.
+Then proceed with the standard installation of the operating system.
+
+1.  Insert the replacement N1 disk in the floppy drive.
+
+2.  Manually reset the system or turn the power on.
+
+3.  The boot prompt will be displayed:
+
+        Boot
+        :
+
+4.  Follow the installation procedures as outlined in the 
+    Release and Installation Notes, with the following additions.
+
+    NOTE: If you are installing with one of the following host
+    adapters as the primary adapter, see section V, "Host Adapter
+    Notes":
+
+    "arad"      Adaptec AIC-7770 chipset Host Adapter Driver (Adaptec 2740/42)
+    "bscam"     Symbios Logic SCSI Driver for SCO Unix 3.2v4 
+    "dptr"      DPT RAID SCSI Host Adapter Driver  
+    "alad"      Adaptec AIC-7870 chipset Host Adapter Driver (Adaptec 2940)
+    "ncr"       SCSI Host Adapter Driver for NCR Microchannel Systems
+
+    NOTE: If you are installing using an ATAPI CD-ROM drive, see
+    section VI, "ATAPI CD-ROM Notes."
+
+    NOTE: If you are installing on a disk larger than 4Gb and you are
+    installing:
+
+        - SCO Open Desktop 3.0, you must choose the "Preserve" option 
+          during installation.  You cannot use the "Overwrite" option.
+
+        - SCO UNIX Version 4.2, you must choose the "Fully Configurable 
+          Initialization" option.  You cannot use "Automatic Initialization."
+
+        - Divisions created during initialization must be smaller than
+          2 Gigabytes (2097152 1K blocks).
+
+    NOTE: An additional boot capability is provided with SLS UOD429A.
+    The "biosgeom" keyword is available for use at the Boot: prompt.  
+    Use of this keyword during installation can make it easier to share 
+    the disk with other operating systems, though this is not usually 
+    necessary.  See section IV for a description of biosgeom.
+
+    NOTE: With certain IBM computers you may see the message
+    "SHOULD NOT BOOT - LOW POWER (use "apm.boot=always" to override)".
+    You can override this by typing "apm.boot=always" at the Boot:
+    prompt.  Boot should return with another Boot: prompt, at which 
+    point you can proceed with installation as usual.  After you have
+    completed installation, add the following line to /etc/default/boot:
+
+                apm.check=no
+
+5.  When the installation is complete, you will see the 
+    "SAFE to POWER OFF" message.  
+
+    a. Make sure the replacement N1 disk is in the floppy drive.
+
+    b. Press <Enter> to reboot the computer.
+
+    c. When the Boot: prompt appears, type:
+
+         fd(64)unix  root=hd(40) swap=hd(41)
+
+       If you are installing with an ATAPI CD-ROM, see section VI,
+       "ATAPI CD-ROM Notes" for instructions regarding the boot
+       string to use at this point.
+
+       In addition to the above, if you used "biosgeom" at the
+       original Boot: prompt, add that keyword to the above boot
+       string.  Also, if you are using a boot loadable adapter
+       driver, and used the "link" keyword at the original
+       Boot: prompt, use that keyword again at this prompt.
+
+6.  After loading text and data, you will see:
+
+         ** Invalid Serial Number **
+
+    You can safely ignore this message at this time.
+
+    When you see:
+    
+       Type CONTROL-d  to proceed with normal startup,
+       (or give root password for system maintenance):
+
+    type the root password and press <Enter>.
+
+
+    If you are installing using one of the host adapters mentioned in 
+    Step #4, first follow the instructions in step "a", then the 
+    instructions in step "b".
+
+    For all other host adapters, follow only the instructions in step "b".
+
+    a. Type "installpkg" at the command line; press <Enter>.
+
+       For the Adaptec 2940 driver, leave the SLS UOD429A N1 disk in the 
+       floppy drive and press <Enter> to begin installation.
+
+       For the other drivers, put the BTLD disk (which may be AHS3.4) in 
+       the floppy drive and press <Enter> to begin installation.
+
+       Select the appropriate driver from the list of Boot-Time Loadable 
+       Drivers (BTLDs) by entering the name of that driver; press <Enter>. 
+
+    b. Type "custom" at the command line and press <Enter>.
+
+       - Position the cursor so that "Install" is highlighted 
+         and press <Enter>.
+
+       - Make sure the words "A New Product" are highlighted in 
+         the window found in the lower right corner of the screen; 
+         press <Enter>.
+
+       - Make sure the words "Entire Product" are highlighted in the 
+         "Choose an option" section of the screen; press <Enter>.
+
+       - Custom will execute the "Prep Script."
+
+       - You will be prompted to "Insert distribution Volume 1 and press
+         <Enter>."  Insert the SLS UOD429A N1 disk; press <Enter>.
+
+       - You will see the message:
+
+             Installing custom data files
+
+       - The message "Creating file lists" will flash on the screen.  
+         You will be prompted to "Insert the requested Volume and 
+         press <Enter>."  The disk is already in the drive, therefore 
+         press <Enter>.
+
+       - You will see the message:
+
+             Extracting Files
+     
+       - Custom will execute the "Init Script."
+         Relink the kernel by responding 'y' when prompted.
+
+         Answer "y" when asked if you want the kernel to boot by default.
+         Answer "y" when asked if you want the kernel environment rebuilt.
+
+       - You will be returned to the main custom menu where you will
+         see "UOD429A for UNIX/ODT" listed as one of the installed products. 
+
+       - At the main custom menu, move the highlighted entry to "Quit" and 
+         press <Enter>.  Press <Enter> again on the highlighted "yes."
+
+       - SLS UOD429A is now correctly installed.
+
+       - If you have an ATAPI CD-ROM, there may be an additional step at
+         this point.  See section VI, "ATAPI CD-ROM Notes."
+
+       - Remove the SLS UOD429A replacement N1 from the drive and 
+         reboot the system.
+
+
+
+II. For systems already running SCO Open Server 3.0 Product Family or 
+    SCO UNIX System V/386 Release 3.2 Operating System Version 4.2
+
+If you are installing a new host adapter which requires a BTLD disk, 
+including the Adaptec 2940 host adapter, follow the procedure listed 
+below in steps 1, 2a, 2b, and 3, before removing the original SCSI host 
+adapter.
+
+If you are installing the SLS UOD429A for any other reason, follow the 
+procedure listed below in steps 1, 2b, and 3.
+
+To install SLS UOD429A on an existing operating system, use custom(ADM):
+
+1.  If the system is running in multiuser mode, log in as root on the 
+    console screen tty01 (or tty1a if using a serial console).  After 
+    warning the users that the system will be down for some time, 
+    enter the command:
+
+       init 1 
+
+    The system will then execute a controlled shutdown operation which
+    will bring it to System Maintenance mode.  You will see the prompt: 
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+2a. Insert the BTLD disk for your host adapter in the floppy drive.
+    If you are installing an Adaptec 2940, this will be the SLS UOD429A 
+    disk.  Type:
+     
+        installpkg
+
+    The installpkg menu will appear. Select your host adapter from the 
+    list of BTLDs by typing its name at the prompt; press <Enter>.
+
+2b. Insert the SLS UOD429A N1 disk in the floppy drive.  To install 
+    the remainder of the UOD429A SLS, type:
+
+        /etc/custom
+
+    The custom menu will appear. Follow the instructions in 
+    step 3 below.
+
+3.  Make the following menu selections: 
+
+        Install -> A New Product -> Entire Product
+
+   - Position the cursor so that "Install" is highlighted and 
+     press <Enter>.
+
+   - Make sure the words "A New Product" are highlighted in the window 
+     found in the lower right corner of the screen; press <Enter>.
+
+   - Make sure the words "Entire Product" are highlighted in the "Choose 
+     an option" section of the screen; press <Enter>.
+
+   - You will be prompted to "Insert distribution Volume 1 and press 
+     <Enter>." The disk is already in the drive, therefore press <Enter>.
+
+   - You will see this message:
+
+       Installing custom data files
+   
+   - The message "Creating file lists" will flash on the screen.  You will 
+     be prompted to "Insert the requested Volume and press <Enter>."  The 
+     disk is already in the drive, therefore press <Enter>.
+
+   - You will see this message:
+
+       Extracting Files
+
+   - You will be returned to the main custom menu where you will
+     see "Boot SLS for UNIX/ODT" listed as one of the installed products. 
+
+   - At the main custom menu, move the highlighted entry to "Quit" and 
+     press <Enter>.  Press <Enter> again on the highlighted "yes."
+
+   - Relink the kernel by responding 'y' when prompted.
+     Answer "y" when asked if you want the kernel to boot by default.
+     Answer "y" when asked if you want the kernel environment rebuilt.
+
+   - Shut down the computer.  If you are installing a new host adapter,
+     do it at this point.  Remove the SLS UOD429A N1 disk from the drive
+     and reboot your computer.
+
+   - SLS UOD429A is now successfully installed.
+
+
+
+III. Components of SLS UOD429A
+
+SLS UOD429A includes these components:
+
+1. A new /boot which correctly addresses the IBM SCSI-2 Fast Wide Adapter/A 
+   host adapter.  It also includes other boot modules which address disk 
+   geometry issues.  The "bootos" utility allows the user to boot other
+   operating systems from the Boot: prompt.  "Link" allows the user
+   to replace drivers in the kernel at the Boot: prompt.
+
+2. A new IDE driver is included in SLS UOD429A which has support for 
+   Extended IDE drives, making it possible to install on drives larger 
+   than 528Mb which use Logical Block Addressing.
+
+3. Support for ATAPI CD-ROM drives.
+
+4. New tape drivers for the IBM 1.2 GB 1/4" Cartridge SCSI Tape Drive, 
+   the 2.3 GB 8mm Full High SCSI Tape Drive, and the 2.0 GB 4mm tape SCSI
+   Tape Drive.
+
+5. The IBM SCSI-2 Fast/Wide Adapter/A is now able to use disk drives
+   greater than 1GB. 
+
+   NOTE: (The following caveat applies to secondary drives larger than
+   1Gb attached to the Fast/Wide Adapter/A which have already been
+   installed prior to installation of SLS UOD429A.) The SLS will NOT 
+   preserve the disk geometry for any non-primary drives attached 
+   to the Fast/Wide Adapter/A that are greater than 1GB.  Following 
+   the installation of UOD429A, data on a non-boot drive greater than 
+   1GB will not be accessible by the system.  Users who need to preserve 
+   data on such a drive can either use SLS UOD383B or back up and then 
+   restore data on the drive.  (SLS UOD383B preserves data on secondary 
+   drives greater than 1GB.)
+   
+   The internal and external SCSI buses are viewed as a single SCSI 
+   bus. Thus the driver is able to address up to a total of 6 SCSI 
+   devices over the internal and external SCSI bus.  These SCSI devices 
+   must all have unique SCSI IDs, whether they are on the internal or
+   external bus.
+
+6. Because the Adaptec 2940 driver is included in the kernel, it is
+   not necessary to specify "link" at the "Boot: " prompt.  The driver 
+   can also be used to install on machines that have both MCA and PCI 
+   interface buses.  The Adaptec 2940 driver can share interrupts
+   with other devices.  Following installation, it is still necessary
+   to install the Adaptec 2940 driver with "installpkg" as described
+   in section I.6a.
+
+7. The adaptec 1540/1542 driver supports the 1540/1542CP adapter.
+
+8. There are corrections for problems with interrupt handling in the IBM 
+   PC 700-series with PCI/MCA riser cards.
+
+9. Certain operations will no longer fail on drives exactly 2Gb or 
+   exactly 4Gb in size.
+
+10. There is a correction for a problem in the keyboard which occasionally 
+    leads to system hangs on fast systems.
+
+
+
+IV. Biosgeom
+
+This keyword can be specified at the N1 Boot: prompt during the initial 
+UNIX installation to ensure that UNIX is installed with the same disk 
+geometry that the BIOS uses.  Since other operating systems are likely 
+to use that geometry, this can forestall problems in sharing the disk 
+with other operating systems.
+
+To use this keyword, type it in at the prompt followed by your normal 
+boot string.  NOTE: "biosgeom" must precede the remainder of the boot string.
+An example follows in which a boot loadable driver is used:
+
+SCO UNIX
+
+Boot
+: biosgeom link
+
+
+
+V. Host Adapter Notes
+
+The installation process has changed for the following host adapters:
+
+    "arad"      Adaptec AIC-7770 chipset Host Adapter Driver (Adaptec 2740/42)
+    "bscam"     Symbios Logic SCSI Driver for SCO Unix 3.2v4 
+    "dptr"      DPT RAID SCSI Host Adapter Driver  
+    "alad"      Adaptec AIC-7870 chipset Host Adapter Driver (Adaptec 2940)
+    "ncr"       SCSI Host Adapter Driver for NCR Microchannel Systems
+        
+   - It is no longer necessary to use the "link" keyword at the Boot: prompt 
+     for these adapters.  The drivers are already linked into the kernel.
+     However, you still need to install the drivers into the link kit by
+     using "installpkg" as documented above.
+
+   - During the kernel relink phase of installation you may see the message: 
+
+            warning: mscsi - host adapter <name> not in mdevice
+
+     You can safely ignore this warning.
+
+
+
+VI. ATAPI CD-ROM Notes
+
+If your primary hard disk is attached to one of the controllers supported 
+by standard installation (including IDE and Extended IDE), or if your 
+primary hard drive is attached to one of the host adapters mentioned 
+in section V, it is possible to install SLS UOD429A using an ATAPI CD-ROM.  
+To do this, you will need to know the adapter number of the IDE controller
+to which your ATAPI drive is attached, as well as the ID and Logical Unit 
+Number (LUN) of the CD-ROM drive.  This information is typically available 
+through the computer's "Setup" utility.
+
+NOTE: It is not possible to use a Boot-Time Loadable Driver (BTLD) to add 
+a host adapter driver when using an ATAPI CD-ROM for installation.  The 
+host adapter must be one already supported or one of the adapters mentioned 
+in section V.
+
+- At the initial "Boot:" prompt from the N1 disk, you will need to enter
+  a boot string as follows:
+
+  If your primary drive is an IDE drive, enter this boot string:
+
+        Boot
+        : defbootstr Srom=wd(h,i,l)
+
+  If your primary drive is attached to a SCSI host adapter, use:
+
+        Boot
+        : defbootstr hd=Sdsk Srom=wd(h,i,l)
+
+  If you are using the 'biosgeom' keyword, use it as follows:
+
+        Boot
+        : defbootstr biosgeom hd=Sdsk Srom=wd(h,i,l)
+
+  In the above boot strings: 
+
+        'h' is 0 or 1 and refers to the number of the ATAPI controller,
+        'i' is 0 or 1 and is the SCSI ID of the ATAPI CD-ROM drive, 
+        'l' is 0 or 1 and is the LUN of the ATAPI CD-ROM drive.
+
+  ATAPI drives are often attached to IDE controller #1 so a common boot
+  string would be "defbootstr hd=Sdsk Srom=wd(1,0,0)".
+
+- During installation, select SCSI CD-ROM as the installation media.
+  If you are installing SCO Open Desktop 3.0, the only choice offered 
+  for host adapter number is 0.  Select this even if your ATAPI CD-ROM 
+  driver is actually connected to controller #1.  You can select the 
+  correct drive ID at this time (0 or 1).  
+
+  If you are installing SCO UNIX Version 4.2, you will be asked if you 
+  are using a BTLD for CD-ROM installation.  Respond with 'n'.
+
+  If you are installing SCO UNIX Version 4.2, you are asked to confirm that 
+  your CD-ROM drive is configured as:
+
+        SCSI Target ID:         5
+        SCSI Host Adapter:      0
+        Logical Unit Number:    0
+
+  Answer 'y' to this prompt, even though this information is incorrect.
+
+- For SCO Open Desktop 3.0 installation, the system will shut down at 
+  this time.  Reboot with the N1 disk in the floppy drive.  Enter the 
+  same boot string as that used above.  If your CD-ROM is attached to 
+  controller #1, boot will print conflicting information such as: 
+
+        ... Srom=wd(0,0,0) Srom=wd(1,0,0)
+
+  You can safely ignore this.
+
+- For Open Desktop 3.0 installation, you may see the warnings such as 
+  the following (using 'bhba' as an example), which can be ignored:
+
+        WARNING: Multiple SCSI host adapters detected.
+        WARNING: Using SCSI host adapter for installation.
+        Configuring tape installation on cdrom bhba@0,0,0
+
+- There may be warnings or failures such as the following during the 
+  kernel relink phase of installation:  
+
+        warning: mscsi - host adapter 'bhba' not in mdevice
+        warning: mscsi - device 'wd'; not enough sdevice entries
+        undefined external: wd_entry in conf.o
+
+  These can be ignored.
+
+- Following the installation phase, reboot with the N1 disk in the
+  floppy drive, using the boot string described in section I.5 with
+  any additions necessary for ATAPI as described in this section.
+  Some examples follow:
+
+  1. Primary adapter is SCSI, using biosgeom, ATAPI CD-ROM attached to
+     IDE controller #1:
+
+        Boot
+        : fd(64)unix biosgeom root=hd(40) swap=hd(41) hd=Sdsk Srom=wd(1,0,0)
+
+  2. Primary adapter is IDE, ATAPI CD-ROM attached to IDE controller #1:
+
+        Boot
+        : fd(64)unix root=hd(40) swap=hd(41) Srom=wd(1,0,0)
+
+- After running custom as described in section I.6, edit the file
+  "/etc/default/boot".  Change the line defining "DEFBOOTSTR" to
+  not contain any "hd=" or "Srom=" references.
+
+- KEYWORDS:  At this point you can run "mkdev cdrom" to configure your ATAPI
+  CD-ROM drive.  Select 'wd' as the adapter name.
+
+- The system needs to be rebooted for all changes to take effect.
+
+
+
+VII. Removal of SLS UOD429A
+
+This SLS cannot be removed if it was used for the initial installation
+of the operating system.  If it was installed after the initial installation,
+the SLS can be removed with custom.  Select "Remove", product "Boot SLS
+for UNIX/ODT".  Because this SLS replaces boot modules, you will see
+a warning that removal may leave the system in an unbootable state.
+If your system was booting without problems before installation of the
+SLS, and you have not changed the hardware configuration or removed any 
+of the backed up files from the SLS installation, you should be able to 
+answer 'y' to this question and proceed with removal of the SLS.
+
+
+If you have questions regarding this SLS, or the product on which
+it is installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services

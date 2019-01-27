@@ -1,0 +1,990 @@
+    
+    
+    
+    
+		       SCOterm(r) ANSI Terminal Emulator for X
+			    Release and Installation Notes
+				    Version 1.0.0
+				  11 September 1990
+    
+	
+    
+    
+	1. Preface  1
+    
+	2. Installing scoterm  2
+	   2.1 Installing scoterm on a UNIX System  2
+	   2.2 Installing scoterm on a XENIX System  4
+    
+	3. Configuring scoterm for Open Desktop or Xsight  5
+	   3.1 Updating the .startxrc Files  5
+	   3.2 Adding scoterm to the Root Menu  6
+	   3.3 Linking scoterm to the UNIX Icon  7
+    
+	4. Configuring scoterm for Color  7
+	   4.1 Using the X Default Color Map  7
+	   4.2 Using ANSI Colors  7
+		4.2.1 ANSI Color Resources  8
+		4.2.2 Possible Color Shifts under the scoterm Color Map  8
+	   4.3 Monochrome Operation  8
+	   4.4 Using setcolor  8
+    
+	5. Running Common Applications Under scoterm  9
+	   5.1 Running SCO Professional 2.0 under scoterm  9
+	   5.2 Running Microsoft Word under scoterm  11
+		5.2.1 Setting a Blinking Cursor  11
+		5.2.2 Changing the Reverse Video Colors  12
+    
+	6. Limitations  12
+	   6.1 No Mouse Support for Applications under XENIX  12
+	   6.2 Modifying the Default Foreground and Background Colors  12
+	   6.3 Problems When Quitting scoterm Abnormally  12
+	   6.4 Using Mapkey and Mapstr  13
+	   6.5 Mapstr -d option is not Supported  13
+	   6.6 Scrollbar Disables Window Position Coordinates  13
+	   6.7 Limited International Keyboard Support  14
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - i  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+    
+    
+    
+    
+		       SCOterm(r) ANSI Terminal Emulator for X
+			    Release and Installation Notes
+				    Version 1.0.0
+				  11 September 1990
+    
+    
+    
+    
+	1.  Preface
+    
+	These release and installation notes introduce the scoterm terminal
+	emulator, describe the procedure for installing it, and discuss
+	options for configuring it to run under SCO(r) Open DesktopTM or SCO
+	Xsight(r), SCO's X window systems. You should read these notes prior
+	to installing scoterm.
+    
+	scoterm provides full ANSI compatibility for character-based programs
+	that cannot use the X Window SystemTM directly. scoterm provides the
+	following improvements over xterm, the existing terminal emulator for
+	X:
+    
+	    +   full ANSI features available for all applications
+    
+	    +   color support
+    
+	    +   mouse support for applications written for X and also for
+		older applications
+    
+	    +   support for resizing of applications running within the
+		scoterm window
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - 1  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+	Release and Installation Notes
+    
+    
+    
+	The following chart details the resources needed to install and run
+	scoterm:
+    
+		       ________________________________________
+		       |COMPUTER      | industry-standard      |
+		       |              | 80386 or 80486 com-    |
+		       |              | puter                  |
+		       |______________|________________________|
+		       |OPERATING     | SCO UNIX(r) System     |
+		       |SYSTEM        | V/386 Release 3.2.0 or |
+		       |              | later, or SCO XENIX(r) |
+		       |              | V/386 Release 2.3.2;   |
+		       |              | plus either SCO Xsight |
+		       |              | Version 2.2 or SCO     |
+		       |              | Open Desktop Version   |
+		       |              | 1.0 or 1.1, or another |
+		       |              | X server               |
+		       |______________|________________________|
+		       |DISK CAPACITY | This supplement        |
+		       |              | requires 1 Mbyte of    |
+		       |              | free storage space.    |
+		       |______________|________________________|
+		       |RAM           | No additional RAM is   |
+		       |              | needed for this sup-   |
+		       |              | plement.               |
+		       |______________|________________________|
+    
+    
+	The scoterm documentation consists of these release and installation
+	notes, plus an on-line manual page.  For your convenience, a printed
+	copy of the manual page accompanies these notes.
+    
+	2.  Installing scoterm
+    
+	If you plan to run scoterm on an SCO console display, you must install
+	and configure SCO Open Desktop or SCO Xsight on your system first.  If
+	you plan to run scoterm only on an X window display terminal, you need
+	not install Open Desktop or Xsight.
+    
+	2.1  Installing scoterm on a UNIX System
+    
+	The scoterm installation procedure is identical under all versions of
+	the UNIX system listed in the previous section.  The installation pro-
+	cedure relinks the UNIX kernel, which means that you must reboot the
+	operating system near the end of the procedure.  Thus you must get all
+	other users off the system before you begin.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - 2  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+    
+    
+    
+    
+	When you are ready, follow these steps to install scoterm:
+    
+	1.   Log in as root.  When the root prompt (#) appears, type the fol-
+	     lowing command:
+    
+		  custom
+    
+	     Press <Return>.  The custom menu appears.
+    
+	2.   The Install selection is highlighted.  Press <Return> to choose
+	     Install.  The Install menu appears.  Press <Return> to select the
+	     option A New Product, and then press <Return> again to select
+	     Entire Product.
+    
+	3.   The program now asks you to insert Distribution Floppy Volume 1.
+	     Insert the scoterm distribution diskette in floppy drive 0 and
+	     press <Return>.
+    
+	4.   The screen displays the messages Installing custom data files and
+	     Creating file lists.  Then the program asks you to insert the
+	     diskette SCO SCOterm for X Window Systems Floppy Volume 1.  You
+	     already inserted this diskette, so just press <Return> again.
+    
+	5.   The screen displays the following messages while the installation
+	     continues:
+    
+		  Extracting files...
+    
+		  Executing SCO SCOterm for X Window Systems
+		  Init Script
+		  SCOterm Enhanced ANSI Console Emulator
+    
+		  Updating system configuration...
+		  Creating new nodes...
+    
+    
+	     If scoterm was installed on this system before, you may also see
+	     the message: Mouse already configured for SCOterm.
+    
+	6.   You must now relink the UNIX system kernel.  The installation
+	     program asks if you want to do this.  Answer y and press
+	     <Return>.  A message informs you that the kernel is being
+	     rebuilt.  This process takes a few minutes.
+    
+	7.   After the kernel is rebuilt, you are asked if you want this ker-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - 3  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+	Release and Installation Notes
+    
+    
+    
+	     nel to boot by default.  Type y and press <Return>.
+    
+	8.   You now see these messages:
+    
+		  Backing up /unix to /unix.old.
+		  Installing new /unix.
+    
+		  The kernel environment includes device
+		  node files and /etc/inittab.
+		  The new kernel may require changes to
+		  /etc/inittab or device nodes.
+    
+	     After these messages appear, you are asked if you want the kernel
+	     environment rebuilt.  Type y and press <Return>.
+    
+	9.   You now see a message stating that the kernel has been success-
+	     fully installed or rebuilt, followed by a message stating that
+	     the kernel environment is being set up.  Finally, the installa-
+	     tion program prompts you to press any key to continue.  Press a
+	     key.
+    
+	10.  You see the message Checking file permissions...  and then the
+	     installation program returns you to the custom menu.  Remove the
+	     distribution diskette from the floppy drive.  Now exit custom by
+	     highlighting the menu's Quit option and pressing <Return>.
+	     Select Yes to leave custom.
+    
+	11.  You must now reboot the system.  To do this, shut down the
+	     operating system by entering this command at the root prompt:
+    
+		  /etc/shutdown -g0 -y
+    
+	     In a few moments the screen displays a message telling you that
+	     the system is shut down.  Now press any key to reboot your sys-
+	     tem.
+    
+	2.2  Installing scoterm on a XENIX System
+    
+	To install scoterm under SCO XENIX V/386 Release 2.3.2, you need not
+	relink the kernel or reboot the operating system as is required under
+	UNIX systems.
+    
+	Follow this procedure to install scoterm:
+    
+	1.   Log in to the system as root.
+    
+	2.   At the root prompt (#), type custom and press  <Return>.  The
+	     initial custom menu then appears.
+    
+	3.   Choose the Add a Supported Product option.   The program now
+	     prompts you to enter distribution volume 1.  Insert the scoterm
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - 4  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+    
+    
+    
+    
+	     distribution diskette in floppy drive 0 and press <Return>.
+    
+	4.   A new menu appears. Choose the Install One or More Packages
+	     option.
+    
+	5.   A list of available packages to install now appears on the
+	     screen.  Enter ALL and press <Return>.
+    
+	6.   The program now asks you to insert the diskette SCO SCOterm for X
+	     Window Systems Volume 1.  You have already done this, so just
+	     press <Return> again.
+    
+	7.   The screen displays the following messages while the installation
+	     continues:
+    
+		  Extracting files...
+    
+		  SCOterm Enhanced ANSI Console Emulator
+		  Checking file permissions..
+    
+	8.   When the installation process finishes, you return to custom.
+	     Press q to exit the custom menu.
+    
+    
+	3.  Configuring scoterm for Open Desktop or Xsight
+    
+	Once you install scoterm, you can run it by typing scoterm from within
+	an xterm window.  But if you want to use it as the default terminal
+	emulator for Xsight or Open Desktop, you must change certain confi-
+	guration files that these programs use.  This section tells how.
+    
+	3.1  Updating the .startxrc Files
+    
+	When you start Xsight or Open Desktop, your software may be configured
+	to start the xterm client automatically.  If you would like to start
+	the scoterm client automatically instead, you must modify either
+	/usr/lib/X11/sys.startxrc or the .startxrc file in your home direc-
+	tory.
+    
+	The file /usr/lib/X11/sys.startxrc specifies which X clients should
+	start automatically when you call up Xsight or Open Desktop.  This
+	file provides the default instructions for all users.  Individual
+	users can override the default instructions by putting customized
+	.startxrc files in their home directories.
+    
+	To have scoterm start automatically, edit /usr/lib/X11/sys.startxrc
+	and replace the command xterm with the command scoterm.  When you have
+	done this, scoterm starts automatically for all users except the ones
+	who have customized .startxrc files.  They must modify their .startxrc
+	files to include scoterm.
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - 5  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+	Release and Installation Notes
+    
+    
+    
+	By the same token, if you do not modify /usr/lib/X11/sys.startxrc to
+	include scoterm, individual users who want scoterm to start automati-
+	cally can add it to their personal .startxrc files.
+    
+	3.2  Adding scoterm to the Root Menu
+    
+	This section tells you how to substitute scoterm for xterm on the Root
+	menu.  The Root menu appears when you press the left mouse button in
+	the background area around the Desktop window.  This area is called
+	the Root window under Open Desktop, and it is called the Workspace
+	under Xsight.
+    
+	Under Open Desktop Version 1.1 and Xsight Version 2.2, the Root menu
+	option that calls xterm is called New Window.  On Open Desktop Version
+	1.0's Root menu, the option is simply called xterm.
+    
+	If you want to substitute scoterm for xterm on the Root menu, you must
+	modify the /usr/lib/X11/system.mwmrc file.  This adds scoterm to the
+	default Root menu configuration for all users.
+    
+	Some users may have a personal .mwmrc file in their home directories
+	that overrides the default settings in  system.mwmrc. If you have such
+	a file, you must modify it as well.   (If you choose not to change the
+	system-wide default configuration for the Root menu, other users can
+	change the menu for themselves by modifying their own .mwmrc files.)
+    
+	To add scoterm to the Root menu, edit the file
+	/usr/lib/X11/system.mwmrc (or the .mwmrc file on your home directory)
+	and search for the string Menu RootMenu.  You should find a section of
+	code that looks like this:
+    
+		Menu RootMenu
+		{
+			"Root Menu"             f.title
+			"Clients"       _C      f.menu ClientsMenu
+			"New Window"    _N      f.exec "xterm -sb  &"
+			"Shuffle Up"    _U      f.circle_up
+			"Shuffle Down"  _D      f.circle_down
+			"Refresh"       _R      f.refresh
+			no-label                f.separator
+			"Restart"               f.restart
+		}
+    
+	This section sets the menu selections for Xsight's Root menu.  To
+	modify it to offer scoterm instead of xterm, change the line for the
+	xterm option as follows:
+    
+			"New Window"    _N      f.exec "scoterm -sb  &"
+    
+	Follow the same procedure to change the Root menu under Open Desktop
+	Version 1.0.  The line that you have to change may look slightly
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - 6  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+    
+    
+    
+    
+	different, however:
+    
+			"xterm"    _x     f.exec "xterm -sb  &"
+    
+	Edit it to look like this:
+    
+			"SCOterm"  _S     f.exec "scoterm -sb  &"
+    
+	The Root menu now has a scoterm option instead of an xterm option.
+    
+	3.3  Linking scoterm to the UNIX Icon
+    
+	Your default Open Desktop or Xsight desktop window includes a UNIX
+	icon that calls xterm.  If you wish, you can make the icon call
+	scoterm instead.
+    
+	To do this, you must modify the file
+	/usr/lib/X11/xdt/defaultDesktop/UNIX.  This file is a short shell
+	script that starts the xterm program every time you double-click on
+	the UNIX icon.  Edit the file and change every occurrence of the word
+	``xterm'' to ``scoterm''.  Now the UNIX icon calls up scoterm instead
+	of xterm.
+    
+	4.  Configuring scoterm for Color
+    
+	You can configure scoterm to use colors or to display a monochrome
+	window.  If you want color, you can configure scoterm to use either
+	ANSI colors or the X default color map.
+    
+	scoterm's ANSI color set actually is a superset of the ANSI colors.
+	It features the eight standard colors, plus a lighter version of each
+	color.  Besides the normal ANSI ``blue,'' ``red,'' and ``white,'' for
+	example, scoterm supports ``lt_blue,'' ``lt_red,'' and ``hi_white.''
+    
+	4.1  Using the X Default Color Map
+    
+	By default, scoterm displays its window in color and uses the X
+	default color map.  The color map does not support the full range of
+	ANSI colors.  Instead, scoterm draws from this map the colors that are
+	the closest approximation to the ANSI colors.  If there is no approxi-
+	mate match, scoterm uses white.
+    
+	scoterm uses the X default color map when the
+	Scoterm*useDefaultColormapOnly resource is set to ``true,'' and the
+	Scoterm*monochrome resource is set to ``false.''
+    
+	4.2  Using ANSI Colors
+    
+	scoterm has a color map of its own that supports full ANSI colors.  If
+	you want true ANSI colors, add the option -cmap to the scoterm com-
+	mand.
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - 7  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+	Release and Installation Notes
+    
+    
+    
+	scoterm also uses the ANSI color map when the
+	Scoterm*useDefaultColormapOnly and Scoterm*monochrome resources are
+	both set to ``false.''
+    
+	4.2.1  ANSI Color Resources
+    
+	scoterm's ANSI color map is defined in
+	/usr/lib/X11/app-defaults/Scoterm.  This file includes a resource for
+	each color.  In the file, the resources have names like Ansi.blue,
+	Ansi.red, and so on.  Each resource is assigned the value of the color
+	it calls.  If you want, however, you can change the color value of a
+	resource to any other color that your server supports.  You can find
+	the color values that Xsight and Open Desktop support for the system
+	console in the file /usr/lib/X11/rgb.txt.
+    
+	If you add any of the color resources from /usr/lib/X11/app-
+	defaults/Scoterm to your personal .Xdefaults in your home directory,
+	you must add the prefix Scoterm* to each resource and use a lower-case
+	``a'' in ``ansi:'' Scoterm*ansi.red, Scoterm*ansi.blue, and so on.
+    
+	4.2.2  Possible Color Shifts under the scoterm Color Map
+    
+	If you use scoterm's ANSI color map, you may notice sudden shifts in
+	window color when you change focus between scoterm windows and other
+	windows.  This can happen when the active window imposes its own color
+	map on the other windows.  If the color maps used by the various win-
+	dows are sufficiently different, noticeable color shifts appear as you
+	shift from window to window.
+    
+	If you want to avoid this color shift, you have two choices.  First,
+	you can do without the -cmap option and use the X default color map
+	instead of the ANSI colors.  Second, you can continue using scoterm's
+	ANSI color map, but change the color values assigned to each color
+	resource so that they do not conflict with the other windows' color
+	maps.
+    
+	4.3  Monochrome Operation
+    
+	If you are not interested in color, you can configure scoterm not to
+	use color.  Simply add the option -mono to the scoterm command.
+    
+	scoterm also displays a monochrome window when the Scoterm*monochrome
+	resource is set to ``true.''
+    
+	4.4  Using setcolor
+    
+	Use the setcolor utility to reset the foreground and background colors
+	in the scoterm window.  If you enter the setcolor command without any
+	options, the command displays setcolor usage information and resets
+	the window's colors to the default foreground color and default back-
+	ground color.   To set the window to the default colors without
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - 8  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+    
+    
+    
+    
+	displaying usage information, enter setcolor -n.
+    
+	When you first receive scoterm, it uses white and black as the default
+	foreground and background colors, respectively.  You can change the
+	default colors if you want, but sometimes with unexpected results.
+	See the ``Limitations'' section later in this document for details.
+    
+	5.  Running Common Applications Under scoterm
+    
+	The following sections show how to make Microsoft Word(r) and SCO Pro-
+	fessional work properly under scoterm.
+    
+	5.1  Running SCO Professional 2.0 under scoterm
+    
+	SCO Professional(r) Version 2.0 was optimized to run under xterm. If
+	you are going to run SCO Professional 2.0 in a scoterm window, enter
+	the term type xterm-ac instead of the usual term type of ansi.
+    
+	Because xterm-ac is a new terminal type, you must establish it in your
+	operating system before you can use it.  To do so, you create a sub-
+	directory called xterm-ac in the directory /usr/lib/sco/tcap, and
+	grant read and execute permission for the new directory to all users.
+	Then you copy all the files in the /usr/lib/sco/tcap/ansi directory
+	into the new subdirectory.  You must also copy the file
+	/usr/lib/sco/tcap/xterm/graph.pro into the xterm-ac subdirectory.
+    
+	If you do not know how to perform the operations described in the pre-
+	vious paragraph, just enter the following commands in the order that
+	they appear in:
+    
+	1.   Enter this command to move to the tcap directory
+    
+		  cd /usr/lib/sco/tcap
+    
+	2.   Enter this command to make the xterm-ac subdirectory:
+    
+		  mkdir xterm-ac
+    
+	3.   Enter this command to grant read and execute privileges on the
+	     new directory to all users:
+    
+		  chmod a+rx xterm-ac
+    
+	4.   Enter this command to copy the contents of the ansi subdirectory
+	     into the xterm-ac subdirectory:
+    
+		  cp ansi/* xterm-ac
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0         - 9  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+	Release and Installation Notes
+    
+    
+    
+    
+	5.   Enter this command to copy the graph.pro file from the xterm sub-
+	     directory into the xterm-ac subdirectory.
+    
+		  cp xterm/graph.pro xterm-ac
+    
+    
+	Before actually running SCO Professional Version 2.0, you must also
+	make minor changes to the last six lines of the shell scripts
+	/usr/bin/pro and /usr/bin/procalc.  The files are nearly identical.
+    
+	The last six lines of /usr/bin/pro look like this:
+    
+	if [ $TERM = "xterm" ]
+	then
+	   exec xterm -n "ProMgr" -T "SCOProfessionalManager" -e $PROLIB/$MGR $*
+	else
+	   exec $PROLIB/$MGR $*
+	fi
+    
+	Replace those lines with the following:
+    
+	if [ $WINDOWID ]
+	then
+	   if [ -f /usr/bin/X11/scoterm ]
+	   then
+	      execscoterm-n"ProMgr"-T"SCOProfessionalManager"-tnxterm-ac \
+			  -e$PROLIB/$MGR$*
+	   else
+	      execxterm-n"ProMgr"-T"SCOProfessional"-tnxterm-e$PROLIB/$MGR$*
+	   fi
+	else
+	   exec $PROLIB/$MGR $*
+	fi
+    
+	As mentioned above, the last six lines of /usr/bin/procalc are nearly
+	identical to the last six in /usr/bin/pro.  Replace them with the
+	following:
+    
+	if [ $WINDOWID ]
+	then
+	   if [ -f/usr/bin/X11/scoterm ]
+	   then
+	      execscoterm-n"SCOPro"-T"SCOProfessional"-tnxterm-ac-e$PROLIB/$CALC$*
+	   else
+	      execxterm-n"SCOPro"-T"SCOProfessional"-tnxterm-e$PROLIB/$CALC$*
+	   fi
+	else
+	   exec $PROLIB/$CALC $*
+	fi
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0        - 10  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	5.2  Running Microsoft Word under scoterm
+    
+	Under certain circumstances, Microsoft Word's cursor becomes invisible
+	under scoterm.  The circumstances behind this problem are very
+	specific, and you can eliminate them in several different ways.
+    
+	scoterm has a TERM type of ``ansi'' and displays a steady, non-
+	blinking cursor by default.  Word, however, expects to find a blinking
+	cursor in an ANSI environment.   Word reacts to scoterm's steady cur-
+	sor by giving its text cursor the same color as the window's back-
+	ground color: a blue cursor on a blue background, for example.
+    
+	You can solve this problem by configuring scoterm to display a blink-
+	ing cursor, or by using the setcolor command to change the colors that
+	scoterm uses for reverse video.
+    
+	5.2.1  Setting a Blinking Cursor
+    
+	You can add a blinking cursor to scoterm in several different ways:
+    
+	    +   Use the -blink option when invoking scoterm from another
+		scoterm or xterm window.  The command is:
+    
+		     scoterm -blink &
+    
+	    +   Set the Scoterm*blink resource to ``true.''  This means that
+		the cursor will blink in every scoterm window that you create.
+		You can set this resource either in the .Xdefaults file in
+		your home directory, which affects only you, or in the
+		/usr/lib/X11/app-defaults/Scoterm file, which sets the default
+		scoterm configuration for all users.
+    
+	    +   Edit your .mwmrc file or the file /usr/lib/X11/system.mwmrc so
+		that it invokes scoterm with the -blink option, as described
+		above.  This gives blinking cursors to scoterm sessions
+		invoked from the Root menu, but not to scoterm sessions
+		started by other means.   Change the line that invokes scoterm
+		to look something like this:
+    
+		      "New Window"    _N      f.exec "scoterm -sb -blink &"
+    
+		If you make the change to your own .mwmrc file, it affects
+		only you; but if you make the change to the
+		/usr/lib/X11/system.mwmrc, it becomes the default for all
+		users.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0        - 11  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+	Release and Installation Notes
+    
+    
+    
+    
+	5.2.2  Changing the Reverse Video Colors
+    
+	If you do not want a blinking cursor, you can make Word's cursor visi-
+	ble under scoterm by changing the scoterm window's reverse video fore-
+	ground color to be different than the current foreground color.  To do
+	this, use the command setcolor -r followed by the new reverse video
+	foreground and background colors.  For example, enter the command
+	setcolor -r magenta black in a scoterm window to see a magenta-colored
+	text cursor when you run Word in that window.
+    
+	6.  Limitations
+    
+	Version 1.0.0 of scoterm contains several limitations.  The following
+	sections describe them.
+    
+	6.1  No Mouse Support for Applications under XENIX
+    
+	Under XENIX, applications cannot control the mouse from within a
+	scoterm window.  The application's mouse commands, if any, do not
+	work.  You can use the mouse in the window, but only to give commands
+	to scoterm itself:  cut text, paste text, call up a scoterm menu,
+	select a menu option.
+    
+	6.2  Modifying the Default Foreground and Background Colors
+    
+	Users can change scoterm's default foreground and background colors by
+	redefining the Scoterm*foreground and Scoterm*background resources in
+	their personal .Xdefaults files, or by using the -fg and -bg command-
+	line options with the scoterm command.  If they do this, however, they
+	can no longer change the screen colors to black or white through
+	setcolor.
+    
+	scoterm's default window colors are white for the foreground (defined
+	in Scoterm*foreground) and black for the background (defined in
+	Scoterm*background). These two resources also define the colors white
+	and black for scoterm under the setcolor command.  So if you change
+	the default foreground and background colors from white and black, you
+	no longer have access to those two colors through setcolor.  The color
+	samples for white and black in the setcolor display instead show the
+	new default foreground and background colors.
+    
+	6.3  Problems When Quitting scoterm Abnormally
+    
+	You will sometimes experience problems if you leave a scoterm window
+	open while quitting  Xsight or Open Desktop.  Under such conditions,
+	one or more scoterm processes may occasionally remain running in the
+	background.
+    
+	If this has happened, the error message ``scoterm: no available ptys''
+	appears when you try to start another scoterm session.  Thus, you
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0        - 12  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+    
+    
+    
+    
+	cannot run scoterm again until you kill the processes.
+    
+	(Note that the error message may also appear if you try to open a
+	scoterm window when several other scoterm or xterm windows are already
+	open.  In that case, close the other windows and try again to start a
+	new scoterm session.  If you can, then you simply had too many termi-
+	nal emulators going at once.)
+    
+	To avoid leaving scoterm processes running, just close each scoterm
+	window before quitting the window manager.  This is standard procedure
+	for quitting a program under a window manager.  But when the problem
+	does occur, solve it by following this procedure:
+    
+	1.   Exit from Xsight or Open Desktop.
+    
+	2.   Get a list of the processes that are still running under your
+	     account. To do this, enter the command ps -fu username, where
+	     username is your user ID.
+    
+	3.   Check the output from the ps command for scoterm processes.  Kill
+	     each scoterm process by entering the command kill -9 PID, where
+	     PID is the process ID of the process you are killing.
+    
+	4.   After you kill all scoterm processes, restart Xsight or Open
+	     Desktop and try scoterm again.
+    
+	This situation is caused by a problem in the UNIX streams driver,
+	which will be fixed in a future release of the UNIX system.
+    
+	6.4  Using Mapkey and Mapstr
+    
+	If you use the mapkey or mapstr commands under scoterm, the new key
+	assignments do not take effect until you select the Do Full Reset
+	option from scoterm's ansiMenu.
+    
+	6.5  Mapstr -d option is not Supported
+    
+	scoterm does not support the -d option to the mapstr command.
+    
+	6.6  Scrollbar Disables Window Position Coordinates
+    
+	If you configure scoterm to display a scrollbar in its window at
+	startup time, scoterm ignores any specific position coordinates you
+	specified for the window through the geometry resource.  To work
+	around this, do not specify a scrollbar when starting scoterm.
+	Instead, wait until the window appears, and then add a scrollbar by
+	choosing Enable Scrollbar from scoterm's ansiMenu.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0        - 13  -  The Santa Cruz Operation, Inc.
+    
+    
+    
+    
+	Release and Installation Notes
+    
+    
+    
+	6.7  Limited International Keyboard Support
+    
+	scoterm's support of the mapkey (M) function does not include interna-
+	tional keyboard support.  The current SCO X server does not support
+	international keyboards, so scoterm cannot do so either.
+    
+	The next release of Xsight will support international keyboards.  In
+	the meantime, you may use mapkey under scoterm only to map the modi-
+	fied key values of a given configuration.  You cannot alter the base
+	character assigned to a key, but you can change the character assigned
+	to that key when it is pressed in conjunction with the <Ctrl> ,
+	<Shift>, or <Alt> keys.
+    
+	For example, you can edit the default /usr/lib/keyboard/keys file to
+	modify the ``Ctrl,'' ``Shift,'' and ``Alt'' states of the character
+	``s,'' but you cannot change the value of the base character ``s''
+	itself.
+    
+	After you edit the keys file, you incorporate the changes into scoterm
+	by giving the command:
+    
+	   mapkey /usr/libkeyboard/keys < /dev/console
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	11 September 1990/1.0.0        - 14  -  The Santa Cruz Operation, Inc.
+    
+

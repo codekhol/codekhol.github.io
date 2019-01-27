@@ -1,0 +1,97 @@
+
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) UOD397A contains a new kernel 
+module that corrects a problem where creation of multiple large shared memory
+segments greater than slightly less than 4MB is not possible.
+
+This SLS applies to these SCO UNIX Version 4.2 based operating systems:
+
+        SCO UNIX System V/386 Release 3.2 Operating System Version 4.2
+
+        SCO Open Server 3.0 Product Family:
+
+                SCO Open Desktop Lite Release 3.0
+                SCO Open Desktop Release 3.0
+                SCO Open Server Network System Release 3.0
+                SCO Open Server Enterprise System Release 3.0
+
+
+Using custom(ADM) to install SLS UOD397A
+________________________________________
+
+1.  If the system is running in multiuser mode, log in as root on the console.
+    After warning the users that the system will be down for some time, enter
+    the command:
+
+        shutdown  -y -g0 su
+
+2.  When the system enters single-user mode, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+3.  Next, insert the custom volume diskette labeled "Nopen SLS
+    Custom Install Disk" in the floppy drive and enter the command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+4.  To select the following, highlight each one with the cursor keys 
+    and press <Enter>:
+
+        Install -> A New Product -> Entire Product
+
+   - Position the cursor so that "Install" is highlighted and 
+     press <Enter>.
+
+   - Make sure that the words "A New Product" are highlighted in the window 
+     found in the lower right-hand corner of the screen; press <Enter>.
+
+   - Make sure the words "Entire Product" are highlighted in the "Choose an
+     option" section of the screen; press <Enter>.
+
+   - You will be prompted to "Insert distribution Volume 1 and press <Enter>".
+     Make sure the diskette is already in the drive and press <Enter>
+
+   - You will see the following messages:
+
+       Installing custom data files
+       Executing Product Prep Script
+   
+   - The message "Saving files about to be Replaced" will flash on the screen.
+     You will be prompted to "Insert the requested Volume and press <Enter>".
+     The diskette is already in the drive, therefore press <Enter>.
+
+   - You will see the following message:
+
+       Extracting Files
+
+   - When asked if you wish to relink the kernel, reply "Y" in order to insure
+     that the modifications from SLS UOD397A are included in the kernel.
+
+     Answer "y" when asked if you want the kernel to boot by default. 
+
+     Answer "y" when asked if you want the kernel environment rebuilt.
+
+   - You will then be prompted to "Press any key to continue"; press <Enter>.
+
+   - At the main custom menu, move the highlighted entry to "Quit" and press
+     <Enter>.  Press <Enter> again on the highlighted "yes."
+     
+   - Reboot the computer.
+
+   - SLS UOD397A is now successfully installed.
+
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services
+

@@ -1,0 +1,252 @@
+Dear Customer,
+
+The enclosed Support Level Supplement (SLS) UNX365B contains various feature    
+enhancements and corrections to known problems for SCO UNIX System V/386
+Release 3.2 Operating System Version 4.0 and Version 4.1 (Version 4.0
+with Maintenance Supplement Version 4.1).
+
+SLS UNX365B is designed to install ONLY on the previously mentioned SCO 
+operating systems.
+
+See section III for a list of functional components.
+
+SLS UNX365B consists of a new N1 diskette for Version 4.0 or 4.1 of SCO UNIX
+System and a custom installable diskette to be installed after the operating 
+system is loaded.
+
+The new N1 diskette OBSOLETES your current N1.  Please replace your current 
+N1 with the appropriate (SCO UNIX System) floppy diskette from SLS UNX365B.
+ 
+Please NOTE: On Version 4.0 of SCO UNIX System, if you install or remove
+             SCO Maintenance Supplement 4.1 on your system, you should
+             reinstall SLS UNX365B on your system before rebooting the 
+	     computer.
+
+I.   INSTALLATION [for systems already running SCO UNIX System Version 4.0
+                   or Version 4.1 (4.0 plus Maintenance Supplement)]
+
+The following procedure outlines how to install SLS UNX365B on an existing
+operating system using custom(ADM):
+
+1.  If the system is running in multiuser mode, log in as root on the console.
+    After warning the users that the system will be down for some time,
+    enter the command:
+
+	shutdown  -y -g0 
+
+    The system will then execute a controlled shutdown operation which
+    will display the following message when the shutdown process has
+    completed:
+
+	**   Safe to Power Off   **
+         	   -or-
+	** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+	Type CONTROL-d to proceed with normal startup,
+	(or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+					1
+
+4.  Next, insert the custom volume diskette labeled "Combined Updates 1.0
+    for SCO UNIX Custom Install Disk" in the floppy drive and enter the
+    command:
+
+	/etc/custom
+
+    The custom menu will appear.
+
+5.  To select the following, highlight each one with the cursor keys 
+    and press <Enter>:
+
+	Install -> A New Product -> Entire Product
+
+   - Position the cursor so that "Install" is highlighted and 
+     press <Enter>.
+
+   - Make sure that the words "A New Product" are highlighted in the window 
+     found in the lower right hand corner of the screen; press <Enter>.
+
+   - Make sure the words "Entire Product" are highlighted in the "Choose an
+     option" section of the screen; press <Enter>.
+
+   - You will be prompted to "Insert distribution Volume 1 and press <Enter>".
+     The diskette is already in the drive, therefore press <Enter>.
+
+   - You will see the following messages:
+
+       Installing custom data files
+       Executing Product Prep Script
+   
+   - The message "Saving Files about to be replaced" will flash on the screen.
+     You will be prompted to "Insert the requested Volume and press <Enter>".
+     The diskette is already in the drive, therefore press <Enter>.
+
+   - You will see the following message:
+
+       Extracting Files
+
+   - When asked if you wish to relink the kernel, reply "Y" in order to insure 
+     that the modifications from SLS UNX365B are included in the kernel.
+
+   - You will then be prompted to "Press any key to continue"; press <Enter>.
+
+   - At the main custom menu, move the highlighted entry to "Quit" and press
+     <Enter>.  Press <Enter> again on the highlighted "yes".  
+
+   - Reboot the computer.
+
+   - SLS UNX365B is now successfully installed.
+
+II. BOOTING - OPERATING SYSTEM INSTALLATION
+
+The replacement N1 diskette OBSOLETES your previous N1 diskette.  If you
+have not already done so, please mark your previous N1 as obsolete and
+use the appropriate N1 (SCO UNIX System) supplied with SLS UNX365B.
+
+					2
+
+For the operating system installation process, every time you are instructed
+to place the N1 diskette into the floppy drive to boot your system, simply
+place the Replacement N1 diskette in the drive instead.  Then proceed with
+the normal installation of the operating system distribution.
+
+Take the following steps to install the operating system using the SLS's
+Replacement N1 Boot Disk:
+
+1.  Place the Replacement N1 diskette in the floppy drive.
+
+2.  Manually reset the system or turn the power on.
+
+3.  The boot prompt will be displayed:
+
+        Boot:
+
+4.  Follow normal installation procedures as outlined in the Release and
+    Installation Notes.  
+
+5.  After installation is complete, when you get the "SAFE to POWER OFF"
+    message, take the following steps:
+
+    a. Make sure the Replacement N1 diskette is in the floppy drive.
+    b. Press <Enter> to reboot the computer.
+    c. When the BOOT: prompt appears, type the following:
+
+         fd(64)unix  root=hd(40) swap=hd(41)
+
+    d. After loading text and data you will see the following message:
+    
+  	 Type CONTROL-d  to proceed with normal startup,
+	 (or give root password for system maintenance):
+
+       Enter the root password and press <Enter>.
+       
+    e. Invoke custom(ADM) by typing "custom" at the command prompt; 
+       press <Enter>.
+
+       - Position the cursor so that "Install" is highlighted and 
+         press <Enter>.
+
+       - Make sure that the words "A New Product" are highlighted in the window
+         found in the lower right hand corner of the screen; press <Enter>.
+
+       - Make sure the words "Entire Product" are highlighted in the "Choose 
+	 an option" section of the screen; press <Enter>.
+
+       - You will be prompted to "Insert distribution Volume 1 and press
+         <Enter>."
+         Insert the diskette labeled "Combined Updates 01 Custom Install Disk"
+         and press <Enter>. 
+
+					3
+
+       - You will see the following messages:
+
+             Installing custom data files
+             Executing Product Prep Script
+
+       - The message "Saving files about to be replaced" will flash on the
+         screen.  You will be prompted to "Insert the requested Volume and
+         press <Enter>."  The diskette is already in the drive, therefore
+         press <Enter>.
+
+       - You will see the following message:
+
+             Extracting Files
+   
+       - When asked if you wish to relink the kernel you should reply "Y"
+	 in order to insure that the modifications for fast computers are 
+	 included in the final kernel.
+
+       - During the relink process, you will be asked if you want to boot off
+         the new kernel and if you want to rebuild the kernel environment.
+         Reply "Y" to both questions.
+     
+       - You will then be prompted to "Press any key to continue"; 
+	 press <Enter>.
+
+       - Exit custom and reboot your computer.
+
+       - SLS UNX365B is now installed correctly.
+
+III. Functional components of SLS UNX365B
+
+   1. A new console driver has been provided which can be switched
+      between ANSI compliant mode and SCO backwards compatible mode.
+
+      The driver comes shipped in SCO compatible mode.
+
+      When the console driver is in ANSI mode, sending an \E[)m to turn 
+      on graphics mode causes the driver to revert back to the primary 
+      font (7 bit characters only).  This causes lines, boxes, and other 
+      figures that use high order characters, to be drawn incorrectly.
+
+      The escape sequence \E[=5L turns on ANSI compliant behavior.
+
+      The escape sequence \E[=4L turns off ANSI compliant behavior.
+
+   2. A new /bin/sh is included to support enhancements in the
+      custom utility.
+
+   3. The Western Digital controller device driver has been
+      modified to accommodate 50MHz and 66MHz computers.
+ 
+   4. The SCSI adapter drivers for Adaptec 1540, Adaptec 1740,
+      DPT, and Future Domain have been modified to accommodate
+      50MHz and 66MHz computers.
+
+   5. New high speed dialers are included to better accommodate
+      modems operating at 9600 baud and above.
+
+					4
+
+   6. A new CD ROM driver is included to allow for variable media
+      block size.
+
+   7. /etc/crash has been modified to allow for proper inspection of
+      core files from computers with more than 16MB of RAM.
+
+   8. /usr/lib/uucp/ct has been modified to correct a problem which 
+      occurred when ct attempted to read long lines in /etc/inittab.
+
+   9. A memory leak in /usr/bin/awk has been found and corrected.
+
+NOTE: Refer to the Release and Installation Notes for more 
+      information on how to use custom(ADM).
+
+If you have any further questions, please contact your supplier.
+
+Yours sincerely
+
+TECHNICAL SUPPORT DEPARTMENT
+
+Ref: unx365-03CB
+
+					5
+                                                                                

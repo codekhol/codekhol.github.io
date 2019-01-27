@@ -1,0 +1,396 @@
+echo off
+break off
+verify on
+rem ----------------------------------------------------------------------
+if not exist %1:\update.bat goto ERROR
+if not exist %2:\server.exe goto ERROR
+goto START
+rem ----------------------------------------------------------------------
+:ERROR
+cls
+echo There was an error in the command line parameters.
+echo The correct usage of this update routine is as follows:-
+echo ÿ
+echo      UPDATE [source] [destination]
+echo ÿ
+echo where [source] is the floppy disk drive where the update disk is, and
+echo [destination] is the main network hard disk (where the network software
+echo was installed).
+echo ÿ
+echo Examples are:-
+echo ÿ
+echo UPDATE A C   -    Will update the root directory of a VX server from the 
+echo                   floppy disk with the network stopped. 
+echo ÿ
+echo UPDATE B A   -    Will update the root directory of an MF server from the
+echo                   floppy disk with the network stopped.   
+echo ÿ
+echo UPDATE A R   -    Will update the root directory of a server from a 
+echo                   local workstation floppy with the network live.
+echo ÿ
+echo UPDATE F R   -    Will update the root directory of a server from the
+echo                   network floppy with the network live.
+echo ÿ
+pause
+goto END
+rem ----------------------------------------------------------------------
+:START
+cls
+%1:
+cd \
+type title.scr
+rem ----------------------------------------------------------------------
+ask Do you wish to continue ? , yn
+if errorlevel 2 goto NO
+if errorlevel 1 goto YES
+rem ----------------------------------------------------------------------
+:NO
+cls
+goto END
+rem ----------------------------------------------------------------------
+:YES
+cls
+echo Are you updating a VX_Net 2 (1C) network, a VX_Net 3.03 network, or
+echo an MF Release 7 network?
+ask Enter '2' for VX_Net 2(1C) '3' for VX_Net 3.03 or '7' for MF Rel 7: ? ,237
+if errorlevel 3 goto MF7
+if errorlevel 2 goto VXNET3
+if errorlevel 1 goto VXNET2
+rem ----------------------------------------------------------------------
+rem ----------------------------------------------------------------------
+:VXNET2
+echo ÿ
+ask You wish to update a VX_Net 2(1C) network - is this correct (y/n) ? ,yn
+if errorlevel 2 goto START
+if errorlevel 1 goto 2OK
+rem ----------------------------------------------------------------------
+:2OK
+cls
+echo Copying files - please wait.
+rem ----------------------------------------------------------------------
+attrib -r %2:\server.exe
+copy %1:\server.exe %2:\server.exe > nul:
+attrib +r %2:\server.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\bootsrv.exe
+copy %1:\bootsrv.exe %2:\bootsrv.exe > nul:
+attrib +r %2:\bootsrv.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\mouse.sys
+copy %1:\mouse.sys %2:\dosutils\ibm\mouse.sys > nul:
+attrib +r %2:\dosutils\ibm\mouse.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\mouse.sys %2:\netwkmgr\msdos32i.dsk mouse.sys > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\key.*
+copy %1:\key.* %2:\dosutils\ibm\key.* > nul:
+attrib +r %2:\dosutils\ibm\key.*
+rem ----------------------------------------------------------------------
+if exist %2:\tbackup.exe attrib -r %2:\tbackup.exe
+copy %1:\tbackup.exe %2:\tbackup.exe > nul:
+attrib +r %2:\tbackup.exe
+rem ----------------------------------------------------------------------
+if exist %2:\trestore.exe attrib -r %2:\trestore.exe
+copy %1:\trestore.exe %2:\trestore.exe > nul:
+attrib +r %2:\trestore.exe
+rem ----------------------------------------------------------------------
+if exist %2:\tapes.sys attrib -r %2:\tapes.sys
+copy %1:\tapes.sys %2:\tapes.sys > nul:
+attrib -r %2:\tapes.sys
+rem ----------------------------------------------------------------------
+copy %1:\vgaplus.exe %2:\dosutils\ibm\vgaplus.exe > nul:
+attrib +r %2:\dosutils\ibm\vgaplus.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\netwkmgr\conmgr.exe
+copy %1:\conmgr.exe %2:\netwkmgr\conmgr.exe > nul:
+attrib +r %2:\netwkmgr\conmgr.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\xport.exe
+copy %1:\xport.exe %2:\xport.exe > nul:
+attrib +r %2:\xport.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\xport.exe
+copy %1:\xport.exe %2:\dosutils\xport.exe > nul:
+attrib +r %2:\dosutils\xport.exe
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\xport.exe %2:\netwkmgr\msdos32i.dsk xport.exe > nul:
+%2:\netwkmgr\softcopy %1:\xport.exe %2:\netwkmgr\msdos32.dsk xport.exe > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\netbios.exe
+copy %1:\netbios.exe %2:\netbios.exe > nul:
+attrib +r %2:\netbios.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\netbios.exe
+copy %1:\netbios.exe %2:\dosutils\netbios.exe > nul:
+attrib +r %2:\dosutils\netbios.exe
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\netbios.exe %2:\netwkmgr\msdos32i.dsk netbios.exe > nul:
+%2:\netwkmgr\softcopy %1:\netbios.exe %2:\netwkmgr\msdos32.dsk netbios.exe > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\setup.exe
+copy %1:\setup.exe %2:\dosutils\ibm\setup.exe > nul:
+attrib +r %2:\dosutils\ibm\setup.exe
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\setup.exe %2:\netwkmgr\msdos32i.dsk setup.exe > nul:
+rem ----------------------------------------------------------------------
+if exist %2:\quad.sys attrib -r %2:\quad.sys
+copy %1:\quad.sys %2:\quad.sys > nul:
+attrib +r %2:\quad.sys 
+rem ----------------------------------------------------------------------
+attrib -r %2:\modemsrv.exe
+copy %1:\modemsrv.exe %2:\modemsrv.exe > nul:
+attrib +r %2:\modemsrv.exe
+rem ----------------------------------------------------------------------
+if exist %2:\modemxxx.sys attrib -r %2:\modemxxx.sys
+copy %1:\modemxxx.sys %2:\modemxxx.sys > nul:
+attrib +r %2:\modemxxx.sys
+rem ----------------------------------------------------------------------
+if exist %2:\dosutils\ibm\modemxxx.sys attrib -r %2:\dosutils\ibm\modemxxx.sys
+copy %1:\modemxxx.sys %2:\dosutils\ibm\modemxxx.sys > nul:
+attrib +r %2:\dosutils\ibm\modemxxx.sys
+rem ----------------------------------------------------------------------
+if exist %2:\netwkmgr\modemxxx.sys attrib -r %2:\netwkmgr\modemxxx.sys
+copy %1:\modemxxx.sys %2:\netwkmgr\modemxxx.sys > nul:
+attrib +r %2:\netwkmgr\modemxxx.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\modemxxx.sys %2:\netwkmgr\msdos32i.dsk modemxxx.sys > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\modemrdr.sys
+copy %1:\modemrdr.sys %2:\dosutils\modemrdr.sys > nul:
+attrib +r %2:\dosutils\modemrdr.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\modemrdr.sys %2:\netwkmgr\msdos32i.dsk modemrdr.sys > nul:
+%2:\netwkmgr\softcopy %1:\modemrdr.sys %2:\netwkmgr\msdos32.dsk modemrdr.sys > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\modemuse.exe
+copy %1:\modemrdr.sys %2:\dosutils\modemuse.exe > nul:
+attrib +r %2:\dosutils\modemuse.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\amload.exe
+copy %1:\amload.exe %2:\dosutils\amload.exe > nul:
+attrib +r %2:\dosutils\amload.exe
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\amload.exe %2:\netwkmgr\msdos32i.dsk amload.exe > nul:
+%2:\netwkmgr\softcopy %1:\amload.exe %2:\netwkmgr\msdos32.dsk amload.exe > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\omninet2.sys
+copy %1:\omninet2.sys %2:\omninet2.sys > nul:
+attrib +r %2:\omninet2.sys
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\omninet2.sys
+copy %1:\omninet2.sys %2:\dosutils\ibm\omninet2.sys > nul:
+attrib +r %2:\dosutils\ibm\omninet2.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\omninet2.sys %2:\netwkmgr\msdos32i.dsk omninet2.sys > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\mscalc.sys
+copy %1:\mscalc.sys %2:\mscalc.sys > nul:
+attrib +r %2:\mscalc.sys
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\mscalc.sys
+copy %1:\mscalc.sys %2:\dosutils\ibm\mscalc.sys > nul:
+attrib +r %2:\dosutils\ibm\mscalc.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\mscalc.sys %2:\netwkmgr\msdos32i.dsk mscalc.sys > nul:
+rem ----------------------------------------------------------------------
+copy %1:\aemm.sys %2:\aemm.sys > nul:
+attrib +r %2:\aemm.sys
+rem ----------------------------------------------------------------------
+copy %1:\aemm.sys %2:\dosutils\ibm\aemm.sys > nul:
+attrib +r %2:\dosutils\ibm\aemm.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\aemm.sys %2:\netwkmgr\msdos32i.dsk aemm.sys > nul:
+rem ----------------------------------------------------------------------
+copy %1:\version %2:\version > nul:
+rem ----------------------------------------------------------------------
+cls
+echo All files updated. Now re-boot the server.
+goto END
+rem ----------------------------------------------------------------------
+:MF7
+echo ÿ
+ask You wish to update an MF Release 7 network - is this correct (y/n) ? ,yn
+if errorlevel 2 goto START
+if errorlevel 1 goto 7OK
+rem ----------------------------------------------------------------------
+:7OK
+cls
+echo Copying files - please wait.
+rem ----------------------------------------------------------------------
+path=%2:\;%2:\dosutils\;
+rem ----------------------------------------------------------------------
+copy %1:\autoexec.mf %2:\autoexec.bat > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\server.exe
+copy %1:\server.exe %2:\server.exe > nul:
+attrib +r %2:\server.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\bootsrv.exe
+copy %1:\bootsrv.exe %2:\bootsrv.exe > nul:
+attrib +r %2:\bootsrv.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\mouse.sys
+copy %1:\mouse.sys %2:\dosutils\ibm\mouse.sys > nul:
+attrib +r %2:\dosutils\ibm\mouse.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\mouse.sys %2:\netwkmgr\msdos32i.dsk mouse.sys > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\key.*
+copy %1:\key.* %2:\dosutils\ibm\key.* > nul:
+attrib +r %2:\dosutils\ibm\key.*
+rem ----------------------------------------------------------------------
+copy %1:\vgaplus.exe %2:\dosutils\ibm\vgaplus.exe > nul:
+attrib +r %2:\dosutils\ibm\vgaplus.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\netwkmgr\conmgr.exe
+copy %1:\conmgr.exe %2:\netwkmgr\conmgr.exe > nul:
+attrib +r %2:\netwkmgr\conmgr.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\xport.exe
+copy %1:\xport.exe %2:\xport.exe > nul:
+attrib +r %2:\xport.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\xport.exe
+copy %1:\xport.exe %2:\dosutils\xport.exe > nul:
+attrib +r %2:\dosutils\xport.exe
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\xport.exe %2:\netwkmgr\msdos32i.dsk xport.exe > nul:
+%2:\netwkmgr\softcopy %1:\xport.exe %2:\netwkmgr\msdos32.dsk xport.exe > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\netbios.exe
+copy %1:\netbios.exe %2:\netbios.exe > nul:
+attrib +r %2:\netbios.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\netbios.exe
+copy %1:\netbios.exe %2:\dosutils\netbios.exe > nul:
+attrib +r %2:\dosutils\netbios.exe
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\netbios.exe %2:\netwkmgr\msdos32i.dsk netbios.exe > nul:
+%2:\netwkmgr\softcopy %1:\netbios.exe %2:\netwkmgr\msdos32.dsk netbios.exe > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\setup.exe
+copy %1:\setup.exe %2:\dosutils\ibm\setup.exe > nul:
+attrib +r %2:\dosutils\ibm\setup.exe
+rem ----------------------------------------------------------------------
+if exist %2:\quad.sys attrib -r %2:\quad.sys
+copy %1:\quad.sys %2:\quad.sys > nul:
+attrib +r %2:\quad.sys
+rem ----------------------------------------------------------------------
+attrib -r %2:\modemsrv.exe
+copy %1:\modemsrv.exe %2:\modemsrv.exe > nul:
+attrib +r %2:\modemsrv.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\modemrdr.sys
+copy %1:\modemrdr.sys %2:\dosutils\modemrdr.sys > nul:
+attrib +r %2:\dosutils\modemrdr.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\modemrdr.sys %2:\netwkmgr\msdos32i.dsk modemrdr.sys > nul:
+%2:\netwkmgr\softcopy %1:\modemrdr.sys %2:\netwkmgr\msdos32.dsk modemrdr.sys > nul:
+rem ----------------------------------------------------------------------
+if exist %2:\dosutils\ibm\modemxxx.sys attrib -r %2:\dosutils\ibm\modemxxx.sys
+copy %1:\modemxxx.sys %2:\dosutils\ibm\modemxxx.sys > nul:
+attrib +r %2:\dosutils\ibm\modemxxx.sys
+rem ----------------------------------------------------------------------
+if exist %2:\netwkmgr\modemxxx.sys attrib -r %2:\netwkmgr\modemxxx.sys
+copy %1:\modemxxx.sys %2:\netwkmgr\modemxxx.sys > nul:
+attrib +r %2:\netwkmgr\modemxxx.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\modemxxx.sys %2:\netwkmgr\msdos32i.dsk modemxxx.sys > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\modemuse.exe
+copy %1:\modemrdr.sys %2:\dosutils\modemuse.exe > nul:
+attrib +r %2:\dosutils\modemuse.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\amload.exe
+copy %1:\amload.exe %2:\dosutils\amload.exe > nul:
+attrib +r %2:\dosutils\amload.exe
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\amload.exe %2:\netwkmgr\msdos32i.dsk amload.exe > nul:
+%2:\netwkmgr\softcopy %1:\amload.exe %2:\netwkmgr\msdos32.dsk amload.exe > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\omninet2.sys
+copy %1:\omninet2.sys %2:\dosutils\ibm\omninet2.sys > nul:
+attrib +r %2:\dosutils\ibm\omninet2.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\omninet2.sys %2:\netwkmgr\msdos32i.dsk omninet2.sys > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\ibm\mscalc.sys
+copy %1:\mscalc.sys %2:\dosutils\ibm\mscalc.sys > nul:
+attrib +r %2:\dosutils\ibm\mscalc.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\mscalc.sys %2:\netwkmgr\msdos32i.dsk mscalc.sys > nul:
+rem ----------------------------------------------------------------------
+copy %1:\aemm.sys %2:\dosutils\ibm\aemm.sys > nul:
+attrib +r %2:\dosutils\ibm\aemm.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\aemm.sys %2:\netwkmgr\msdos32i.dsk aemm.sys > nul:
+rem ----------------------------------------------------------------------
+copy %1:\version7 %2:\version > nul:
+rem ----------------------------------------------------------------------
+cls
+echo All files updated. Now re-boot the server.
+goto END
+rem ----------------------------------------------------------------------
+rem ----------------------------------------------------------------------
+:VXNET3
+echo ÿ
+ask You wish to update a VX_Net 3.03 network - is this correct (y/n) ? ,yn
+if errorlevel 2 goto START
+if errorlevel 1 goto 3OK
+:3OK
+cls
+echo Copying files - please wait.
+rem ----------------------------------------------------------------------
+attrib -r %2:\minses.exe
+copy %1:\minses.exe %2:\minses.exe > nul:
+attrib +r %2:\minses.exe
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\minses.exe %2:\netwkmgr\msdos32i.dsk minses.exe > nul:
+%2:\netwkmgr\softcopy %1:\minses.exe %2:\netwkmgr\msdos33i.dsk minses.exe > nul:
+%2:\netwkmgr\softcopy %1:\minses.exe %2:\netwkmgr\msdos32.dsk minses.exe > nul:
+rem ----------------------------------------------------------------------
+copy %1:\stat.dsk %2:\netwkmgr\stat.dsk > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\mscalc.sys
+copy %1:\mscalc.sys %2:\mscalc.sys > nul:
+attrib +r %2:\mscalc.sys
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\dos32\ibm\mscalc.sys
+copy %1:\mscalc.sys %2:\dosutils\dos32\ibm\mscalc.sys > nul:
+attrib +r %2:\dosutils\dos32\ibm\mscalc.sys
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\dos33\ibm\mscalc.sys
+copy %1:\mscalc.sys %2:\dosutils\dos33\ibm\mscalc.sys > nul:
+attrib +r %2:\dosutils\dos33\ibm\mscalc.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %1:\mscalc.sys %2:\netwkmgr\msdos32i.dsk mscalc.sys > nul:
+%2:\netwkmgr\softcopy %1:\mscalc.sys %2:\netwkmgr\msdos33i.dsk mscalc.sys > nul:
+rem ----------------------------------------------------------------------
+attrib -r %2:\trestore.exe
+copy %1:\trestore.exe %2:\trestore.exe > nul:
+attrib +r %2:\trestore.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\dos32\ibm\trestore.exe
+copy %1:\trestore.exe %2:\dosutils\dos32\ibm\trestore.exe > nul:
+attrib +r %2:\dosutils\dos32\ibm\trestore.exe
+rem ----------------------------------------------------------------------
+attrib -r %2:\dosutils\dos33\ibm\trestore.exe
+copy %1:\trestore.exe %2:\dosutils\dos33\ibm\trestore.exe > nul:
+attrib +r %2:\dosutils\dos33\ibm\trestore.exe
+rem ----------------------------------------------------------------------
+if exist %2:\quad.sys attrib -r %2:\quad.sys
+copy %1:\quad.sys %2:\quad.sys > nul:
+attrib +r %2:\quad.sys
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %2:\dosutils\dos32\netdisk.sys %2:\netwkmgr\msdos32.dsk netdisk.sys > nul:
+%2:\netwkmgr\softcopy %2:\dosutils\dos32\netdisk.sys %2:\netwkmgr\msdos32i.dsk netdisk.sys > nul:
+%2:\netwkmgr\softcopy %2:\dosutils\dos33\netdisk.sys %2:\netwkmgr\msdos33i.dsk netdisk.sys > nul:
+rem ----------------------------------------------------------------------
+%2:\netwkmgr\softcopy %2:\dosutils\dos32\ibm\aemm.sys %2:\netwkmgr\msdos32i.dsk aemm.sys > nul:
+rem ----------------------------------------------------------------------
+cls
+echo All files updated. Now re-boot the server.
+goto END
+rem ----------------------------------------------------------------------
+:END
+

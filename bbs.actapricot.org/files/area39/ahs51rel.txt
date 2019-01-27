@@ -1,0 +1,3373 @@
+SCO Advanced Hardware Supplement (AHS) Release 5.1.0
+for SCO OpenServer(TM) Release 5
+
+ (c) 1983-1995 The Santa Cruz Operation, Inc.  All rights reserved.
+ Document Version:  5.1.0
+ 28 August 1995
+
+ Welcome                                                                    1
+
+ About this book                                                            3
+      How this book is organized .......................................... 3
+      Related documentation ............................................... 4
+      Typographical conventions ........................................... 5
+      How can we improve this book? ....................................... 6
+      Accessing SCO Services information online ........................... 6
+
+ Chapter 1
+ Installing the AHS 5.1.0 software                                          7
+      Installation ........................................................ 8
+      AHS components ..................................................... 10
+      Note about SSOs and AHS 5.1.0 ...................................... 11
+      Removing the AHS software .......................................... 11
+      Restoring software after removing Advanced Hardware Supplement
+        Release 5.1.0 .................................................... 12
+
+ Chapter 2
+ Graphics drivers: new features                                            13
+      New video adapters in AHS 5.1 ...................................... 14
+      Updated video adapters in AHS 5.1 .................................. 14
+      Supported video adapters listed by manufacturer .................... 15
+
+ Chapter 3
+ Graphics drivers: notes and known limitations                             23
+      Discontinued or ``legacy'' drivers ................................. 24
+      VGA and Super-VGA (mw) driver does not run if you switch
+        multiscreens ..................................................... 25
+      Drawing problems when moving Desktop icons ......................... 25
+      Color problems when using TrueColor and DirectColor with SCO X
+        clients .......................................................... 25
+      Using grey-scale monochrome monitors with the X server ............. 26
+      Problems exiting the X server ...................................... 26
+      WordPerfect limitations ............................................ 27
+      Error messages when running /etc/fontserv .......................... 27
+      Maximum number of local X servers .................................. 27
+      Hardware conflicts and multi-monitor configuration ................. 27
+      Problems when exiting the Video Configuration Manager in character
+        mode ............................................................. 28
+
+ Chapter 4
+ Network drivers: new features for this release                            29
+      New features ....................................................... 29
+      New network adapters ............................................... 30
+      Updated network adapters ........................................... 31
+      Supported network adapters ......................................... 31
+         Supported network adapters by manufacturer ...................... 32
+         Supported network adapters by media and bus type ................ 35
+         Supported Ethernet adapters ..................................... 35
+         Supported Token-Ring adapters ................................... 38
+
+ Chapter 5
+ Network drivers: notes and known limitations                              39
+      STRMAXBLK kernel parameter changes ................................. 39
+      Using Plug-and-Play devices on SCO OpenServer systems .............. 40
+      Problems when searching for ISA cards .............................. 40
+      Using command line options with netconfig .......................... 41
+      Network adapter performance with large data transfers .............. 41
+      OSI and Token-Ring incompatibility ................................. 42
+      Token-Ring source routing and IPX/SPX .............................. 42
+      Token-Ring hardware addresses ...................................... 42
+      Multiple SCOhelp clients spawned by the Network Configuration
+        Manager .......................................................... 42
+
+ Chapter 6
+ Mass storage drivers: notes and known limitations                         43
+      Contents of the Mass Storage Drivers component ..................... 44
+      Definition of Boot-Time Loadable Drivers ........................... 44
+      Installation requirements .......................................... 44
+      Installation procedure ............................................. 44
+         Using BTLDs at installation time ................................ 45
+         Warning: installing over previously-installed BTLDs ............. 47
+         Installing BTLDs after initial installation ..................... 47
+      Removal procedure .................................................. 47
+      Adaptec AIC-7770 host adapter driver (arad) ........................ 48
+      Adaptec AIC-7870 and AIC-7850 host adapter driver (alad) ........... 49
+      Adaptec AIC-6x60 host adapter driver (smad) ........................ 50
+      Advanced Micro Devices host adapter driver (ams) ................... 50
+      DPT SCSI host adapter driver update with RAID, multi-channel, wide
+        SCSI and PCI support (dptr) ...................................... 50
+      EIDE and ATAPI CD-ROM (wd) ......................................... 51
+      IBM Fixed Disk Adapter/A (esdi) .................................... 51
+      Symbios Logic (bhba) ............................................... 51
+         Hardware requirements ........................................... 52
+         Software requirements ........................................... 52
+         Known problems .................................................. 52
+      SCSI juke box driver (Sjk) ......................................... 53
+         Configuring a SCSI juke box ..................................... 53
+         Juke box operation .............................................. 53
+      Tricord 4-bus (iiop) ............................................... 55
+         Using the iiop BTLD diskette .................................... 56
+         Fresh installation .............................................. 57
+         SCSI configuration viewing utility .............................. 59
+         Adding SCSI devices ............................................. 59
+         Kernel message logging daemon (imsd) ............................ 60
+         Remote console feature .......................................... 60
+
+ Chapter 7
+ Multiprocessing drivers: notes and known limitations                      63
+      Installation requirements .......................................... 63
+      Installation procedure ............................................. 64
+      Removal procedure .................................................. 64
+      Tricord ............................................................ 64
+
+ Appendix A
+ Manual pages                                                              65
+      juke(C) ............................................................ 66
+      jukebox(HW) ........................................................ 69
+
+ Index  .................................................................. 71
+
+
+
+
+ About this book
+
+    You will find the information you need more quickly if you are familiar
+    with:
+
+    +  ``How this book is organized''
+
+    +  ``Related documentation''
+
+    +  ``Typographical conventions''
+
+    Although we try to present information in the most useful way, you are
+    the ultimate judge of how well we succeed.  Please let us know how we can
+    improve this book.
+
+
+ How this book is organized
+
+    After introducing SCO system products, this book includes the following:
+
+    +  Chapter 1, ``Installing the AHS 5.1.0 software''
+
+    +  Chapter 2, ``Graphics drivers: new features''
+
+    +  Chapter 3, ``Graphics drivers: notes and known limitations'' This
+       chapter is also available in the Configuring Video Adapters book that
+       can be read online using the scohelp(XC) utility.
+
+    +  Chapter 4, ``Network drivers: new features for this release''
+
+    +  Chapter 5, ``Network drivers: notes and known limitations'' This
+       chapter is also available in the Configuring Network Connections book
+       that can be read online using the scohelp(XC) utility.
+
+    +  Chapter 6, ``Mass storage drivers: notes and known limitations''
+
+    +  Chapter 7, ``Multiprocessing drivers: notes and known limitations''
+
+
+ Related documentation
+
+    The AHS documentation set includes printed Release Notes plus the
+    following online books:
+
+    Configuring Network Connections
+        Full information about configuring network drivers and new Advanced
+        Hardware Supplement Release 5.1.0 network driver features.
+
+    Network Driver Configuration Notes
+        List of all network adapters supported in Advanced Hardware
+        Supplement Release 5.1.0 with configuration notes.
+
+    Configuring Video Adapters
+        Full information about configuring graphics drivers and new Advanced
+        Hardware Supplement Release 5.1.0 graphics driver features.
+
+    Graphics Adapters and Chip Set Configuration Notes
+        List of all graphics adapters supported in Advanced Hardware
+        Supplement Release 5.1.0 with configuration notes.
+
+
+ Typographical conventions
+
+    This publication presents commands, filenames, keystrokes, and other
+    special elements in these typefaces:
+
+
+    Example:     Used for:
+
+    lp or lp(C)  commands, device drivers, programs, and utilities (names,
+                 icons, or windows);  the letter in parentheses indicates the
+                 reference manual section in which the command, driver,
+                 program, or utility is documented
+
+    /new/client.list
+                 files, directories, and desktops (names, icons, or windows)
+
+    root         system, network, or user names
+
+    filename     placeholders  (replace with appropriate name or value)
+
+    <Esc>        keyboard keys
+
+    Exit program?
+                 system output  (prompts, messages)
+
+    yes or yes   user input
+
+    ``Description''
+                 field names or column headings  (on screen or in database)
+
+    Cancel       button names
+
+    Edit         menu names
+
+    Copy         menu items
+
+    File != Find != Text
+                 sequences of menus and menu items
+
+    open or open(S)
+                 library routines, system calls, kernel functions, C
+                 keywords;  the letter in parentheses indicates the reference
+                 manual section in which the file is documented
+
+    $HOME        environment or shell variables
+
+    SIGHUP       named constants or signals
+
+    ``adm3a''    data values
+
+    employees    database names
+
+    orders       database tables
+
+    buf          C program structures
+
+    b_b.errno    structure members
+
+
+ How can we improve this book?
+
+    What did you find particularly helpful in this book?  Are there mistakes
+    in this book? Could it be organized more usefully? Did we leave out
+    information you need or include unnecessary material?  If so, please tell
+    us.
+
+    To help us implement your suggestions, include relevant details, such as
+    book title, section name, page number, and system component.  We would
+    appreciate information on how to contact you in case we need additional
+    explanation.
+
+    To contact us, write to us at:
+
+
+       Technical Publications
+       Attn:  CFT
+       The Santa Cruz Operation, Inc.
+       PO Box 1900
+       Santa Cruz, California  95061-9969
+       USA
+
+
+    or e-mail us at:
+
+
+       techpubs@sco.com  or   ...  uunet!sco!techpubs
+
+
+    Thank you.
+
+
+ Accessing SCO Services information online
+
+    If you are connected to the Internet and have a World Wide Web browser
+    (such as NCSA Mosaic), the following URL (Uniform Resource Locator) will
+    lead you to the SCO World Wide Web home page:
+
+       http://www.sco.com/
+
+    To access updated information about the AHDK and other topics of interest
+    to the SCO development community, click on ``Developer Info.''
+
+
+
+
+ Chapter 1
+ Installing the AHS 5.1.0 software
+
+    Install the Advanced Hardware Supplement Release 5.1.0 using the Software
+    Manager (see ``Installing software'' in the SCO OpenServer Handbook).
+    You can install the entire product or a single component.  For the Mass
+    Storage and Multiprocessing Drivers components, you can also install a
+    single driver package.
+
+    AHS Release 5.1.0 can be installed only on SCO OpenServer Release 5
+    (5.0.0).
+
+    _________________________________________________________________________
+       WARNING  Note the following before installing Advanced Hardware
+       Supplement Release 5.1.0:
+
+       +  Do not install AHS 5.1.0 on a system that is a server for
+          networked operating system installation (initial system load, or
+          ISL).  The AHS software modifies system files that are required
+          for networked ISL, and after it is installed, networked ISLs
+          will no longer be possible from that machine.
+
+       +  If you remove the Graphics Drivers or Network Drivers components
+          of the AHS software from the system after it is installed, you
+          must reinstall some software from the original SCO OpenServer
+          Release 5 release media.  See ``Restoring software after
+          removing Advanced Hardware Supplement Release 5.1.0''.
+
+       +  Do not select single driver or documentation packages from the
+          Network Driver or Graphics Drivers components.  Installing any
+          single package from these components will delete all other
+          drivers in that package from your system.  If you install only
+          the documentation package, you will delete all drivers of that
+          type from your system.  See ``Note about SSOs and AHS 5.1.0''.
+
+    _________________________________________________________________________
+
+
+ Installation
+
+    The following procedure installs the AHS software:
+
+    _________________________________________________________________________
+       NOTE  The installation model for Advanced Hardware Supplement
+       Release 5.1.0 favors installation from disk files that are
+       available either locally or over the network.  The Advanced
+       Hardware Supplement Release 5.1.0 can also be installed directly
+       from floppy disks but the installation will take considerably
+       longer and cannot be left to run unattended.
+    _________________________________________________________________________
+
+
+    1.  Log in as root. Enter the following to bring your machine into system
+        maintenance mode:  /etc/shutdown -i1
+
+    2.  If the AHS software is not yet accessible (on a local or remote
+        machine), load it now into files in the /ahs5_1 directory or other
+        directory of your choice.
+
+        +  To load from floppy disks:
+
+           Copy the floppies to the local hard disk with these commands:
+
+              mkdir /ahs5_1
+              dd if=/dev/fd0  of=/ahs5_1/VOL.000.000 bs=36b
+              dd if=/dev/fd0  of=/ahs5_1/VOL.001.000 bs=36b
+              dd if=/dev/fd0  of=/ahs5_1/VOL.002.000 bs=36b
+              dd if=/dev/fd0  of=/ahs5_1/VOL.003.000 bs=36b
+              dd if=/dev/fd0  of=/ahs5_1/VOL.004.000 bs=36b
+
+           The block size shown (bs=36b) is recommended for 3-1/2 inch
+           floppies; for 5-1/4 inch floppies, use bs=30b.
+
+           _________________________________________________________________________
+              NOTE  The AHS installation files can be loaded into any
+              directory you choose, but the actual file names must be the
+              ones shown above.
+           _________________________________________________________________________
+
+
+        +  To load from SCO's Internet site using ftp:
+
+           Create a directory (such as /ahs5_1) and cd into it.  Then,
+           transfer the files with these commands:
+
+              ftp -i ftp.sco.com
+                      <log in as anonymous>
+                      <give your email address for the password>
+              cd AHS/5.0/sco/5.1
+              mget VOL*
+              exit
+
+           See the README file for additional information.
+
+    3.  Run the Software Manager from the desktop, or enter scoadmin software
+        from the command line.  Select Install New from the Software menu.
+
+    4.  Identify the installation source:
+
+        +  To install from files on the local host, select the current host
+           and specify Media Images as the media device.  Then, enter the
+           name of the directory containing the media images (for example,
+           /ahs5_1).
+
+        +  To install directly from floppy disks, select the current host and
+           specify the correct Floppy Disk Drive.  Insert your floppy disk
+           and click on Continue.
+
+        +  To install from another host, select From another host.  Specify
+           the host that contains the AHS software files, and enter the
+           swadmin password for that host when prompted.
+
+           -  If AHS is installed on the remote host, specify Hard Disk as
+              the media device, then select SCO OpenServer Advanced Hardware
+              Supplement.
+
+           -  If the AHS images are loaded onto the remote host but not
+              installed, specify Media Images as the media device.  Then
+              enter the full pathname of the directory containing the media
+              images.
+
+        It will take about one minute for a set of control files to be
+        copied.
+
+    5.  Choose a Full or Partial installation:
+
+        +  To install the entire Advanced Hardware Supplement Release 5.1.0
+           product, click on Full.
+
+        +  To install only one component (such as Graphics Drivers, Network
+           Drivers, or Mass Storage Drivers), click on Partial, then select
+           the components you want from the list of available software and
+           click on Install.  The components are described in ``AHS
+           components''.
+
+        +  To install one or more drivers from the Mass Storage or
+           Multiprocessing Drivers component, click on Partial, then expand
+           the component that contains the drivers you want to install.  From
+           the list of available drivers, select the ones you want and click
+           on Install.
+
+           ____________________________________________________________________
+              WARNING  Do not select single driver or documentation
+              packages from the Graphics Drivers component or the Network
+              Drivers component.  See ``Note about SSOs and AHS 5.1.0''.
+           ____________________________________________________________________
+
+
+    6.  When the installation is complete, select Exit from the Host menu.
+
+    7.  When the system prompt returns, you can delete the Advanced Hardware
+        Supplement Release 5.1.0 volume image files from your system if they
+        are not required for other installations.
+
+    8.  If the kernel was relinked, you must reboot your system for the
+        changes to take effect.  Type init 6, then press <Enter> to reboot
+        your system.
+
+    When the system comes up, the new drivers are installed.  Store the
+    distribution media in a safe place.
+
+
+ AHS components
+
+    Installing the Entire product requires approximately 8.5MB of disk space.
+    You can choose to install one or more of the following packages and
+    components:
+
+    Graphics Drivers
+         Includes graphics drivers, grafinfo files, and moninfo files for all
+         supported graphics devices, plus an updated version of the Video
+         Configuration Manager, a revised Configuring Video Adapters book,
+         and new context-sensitive help for the video configuration software.
+
+         Installing this component will update any configured devices on your
+         system.  Additional devices can be configured with the Video
+         Configuration Manager after the AHS software is installed.
+
+         See Chapter 2, ``Graphics drivers: new features'' and Chapter 3,
+         ``Graphics drivers: notes and known limitations''.
+
+    Network Drivers
+         Driver binaries and support files for all supported network devices,
+         plus an updated version of the Network Configuration Manager, a
+         revised Configuring Network Connections book, and new context-
+         sensitive help for the network configuration software.
+
+         Installing this component will update any configured devices on your
+         system.  Additional devices can be configured with the Network
+         Configuration Manager after the AHS software is installed.
+
+         See Chapter 4, ``Network drivers: new features for this release''
+         and Chapter 5, ``Network drivers: notes and known limitations''.
+
+    AHS Upgrade Utility
+         Provides support for other AHS components.  Do not select this
+         component for installation; it is automatically installed by the
+         other components that require it.
+
+    Mass Storage Drivers
+         Driver binaries and support files for SCSI host adapters and the
+         SCSI jukebox peripheral driver.  See Chapter 6, ``Mass storage
+         drivers: notes and known limitations''.
+
+         The boot-time loadable drivers that are included in the Mass Storage
+         Drivers component can be installed directly at boot time using the
+         link(HW) or ahslink commands; See ``Using BTLDs at installation
+         time''.
+
+    Multiprocessing Drivers
+         Software to support the Tricord PowerFrame platform.  See Chapter 7,
+         ``Multiprocessing drivers: notes and known limitations''.
+
+
+ Note about SSOs and AHS 5.1.0
+
+    The Network Drivers and Graphics Drivers components of Advanced Hardware
+    Supplement Release 5.1.0 use the SCO OpenServer Software Storage Object
+    (SSO) architecture.  For SCO OpenServer Release 5, each of these
+    components was contained in a single SSO.  In Advanced Hardware
+    Supplement Release 5.1.0, these large SSOs are replaced by a collection
+    of smaller SSOs to allow for more flexible upgrades in future releases.
+    Because of this paradigm switch, SCO recommends that you install the
+    entire Network Drivers or Graphics Drivers components rather than
+    installing single driver or documentation packages from these components.
+
+    The Mass Storage and Multiprocessing Drivers components are not affected
+    by this paradigm switch so single driver packages can be installed from
+    these components.
+
+
+ Removing the AHS software
+
+    The Advanced Hardware Supplement Release 5.1.0 software is not normally
+    removed once it is installed from the system and full roll-back
+    capability is not supported.  The software can be removed using the
+    Software Manager, but you will then need to reinstall portions of
+    software from the original SCO OpenServer Release 5 media.
+
+    _________________________________________________________________________
+       WARNING  The system should be in system maintenance mode when
+       removing and restoring AHS software.  Specifically, be sure that no
+       NFS automounts are active when removing these components; during
+       the removal process, TCP will be deconfigured, which can cause
+       problems if there are active NFS mounts.
+    _________________________________________________________________________
+
+    To remove the Advanced Hardware Supplement Release 5.1.0 software:
+
+    1.  Log in as root. Enter the following to bring your machine into system
+        maintenance mode:  /etc/shutdown -i1
+
+    2.  Select Software Manager from the Desktop or enter scoadmin software
+        at the command line.
+
+    3.  Select SCO Advanced Hardware Supplement from the list of installed
+        software, then select Remove from the Software menu.  Study the
+        messages displayed; if you still want to remove the software, click
+        on OK to confirm the removal.
+
+    4.  Select Exit from the Host menu.  The Advanced Hardware Supplement
+        Release 5.1.0 software has now been removed.
+
+
+ Restoring software after removing Advanced Hardware Supplement Release 5.1.0
+
+    After removing the Graphics Drivers or Network Drivers packages from
+    Advanced Hardware Supplement Release 5.1.0, you will need to restore
+    files from the original SCO OpenServer Release 5 release media to return
+    your system to the state it was in before installing the AHS software.
+
+    To do this, take the following steps after removing the AHS software as
+    discussed in ``Removing the AHS software'':
+
+    1.  From the list of available software in the Software Manager, record
+        which SCO OpenServer Release 5 system you are using (Enterprise,
+        Host, or Desktop).
+
+    2.  Select Install New from the Software menu.  Select the current host,
+        identify the media device (tape or CD-ROM), and insert your original
+        SCO OpenServer Release 5 distribution media.
+
+    3.  The media contains several SCO products.  Select the SCO OpenServer
+        Release 5 system that you already have installed (recorded from the
+        main window of the Software Manager).
+
+    4.  Specify a Partial installation.
+
+        To restore the Graphics Drivers, expand the SCO OpenServer Graphics
+        item and select Graphics Drivers.
+
+        To restore the Network Drivers, expand the SCO OpenServer
+        Connectivity item and select Network Drivers.
+
+        Click on the Install button.  The Software Manager will install just
+        these two components, restoring your system to the original SCO
+        OpenServer Release 5 versions.
+
+    5.  Reconfigure your network and graphics software using scoadmin video
+        and scoadmin network.
+
+
+
+
+ Chapter 2
+ Graphics drivers: new features
+
+    The Graphics Drivers component of Advanced Hardware Supplement Release
+    5.1.0 provides the following new capabilities:
+
+    PCI auto-detection
+          The updated Video Configuration Manager provides automatic device
+          detection for supported PCI graphics adapters.
+
+    High resolution graphics mode
+          Advanced Hardware Supplement Release 5.1.0 enables you to configure
+          your graphical system to 1600x1200 at 256 (or more) colors, which
+          is significantly better than the resolutions supported in earlier
+          releases.  New adapters supporting this resolution are marked with
+          an asterisk ``*'' in ``New video adapters in AHS 5.1''.  You must
+          have enough DRAM or VRAM on the video adapter and you must use a
+          compatible video monitor that supports this resolution.
+
+    When you install the Graphics Drivers component of Advanced Hardware
+    Supplement Release 5.1.0, existing graphics adapters and monitors will be
+    updated automatically.  To configure new adapters and monitors, run the
+    Video Configuration Menu after you complete the AHS installation.
+    Changes will take effect when you restart the X server.
+
+
+ New video adapters in AHS 5.1
+
+    The following graphics adapters are newly supported in Advanced Hardware
+    Supplement Release 5.1.0.  The video adapters marked with an asterisk (*)
+    support the 1600x1200 resolution at 256 or more colors.
+
+       Compaq ProLinea, Deskpro (CL GD5434, 1MB)
+       Compaq ProLinea, Deskpro (CL GD5434, 2MB)
+       Compaq QVision 2000 (2 MB)
+       Diamond Stealth 64 DRAM (S3 Vision868 chip set)
+       Diamond Stealth 64 VRAM (S3 Vision968 chip set)
+       Diamond Viper PRO*
+       Diamond Viper SE*
+       IBM Thinkpad (Western Digital 90C24)
+       Matrox MGA/Impression PCI Graphics Adapter*
+       Matrox MGA VLB Graphics Adapter*
+       Number 9 FX Motion 771*
+       Number 9 FX Vision 330
+
+
+ Updated video adapters in AHS 5.1
+
+    Some of the Graphics drivers have been enhanced and improved over the
+    versions that were included in SCO OpenServer Release 5.
+
+    Improvements were made to the drivers for the following video adapters:
+
+       Compaq QVision 1024 (1 MB)
+       Compaq QVision 1280 (2 MB)
+
+    Note also that the X driver for the Cirrus Logic GD5434 chipset has been
+    corrected for a hardware problem that caused many adapters based on this
+    chipset to hang.  Installing Advanced Hardware Supplement Release 5.1.0
+    provides the updated X driver; the change will take effect the next time
+    you restart the X server.  The new Driver resets the ``blitter'' if a
+    hang is detected.  Some drawing errors may be noticed if this reset
+    occurs.  This affects the following video adapters:
+
+       Cirus Logic GPS434
+       Orchid Kelvin 64
+
+    Other graphics adapters based on the Cirrus Logic GD5434 chip set may
+    also be affected.
+
+
+ Supported video adapters listed by manufacturer
+
+
+    Appian
+
+              Appian Rendition III
+
+
+    AST
+
+              AST Power Premium 90C31
+              AST VGA Plus
+
+
+    ATI
+
+              ATI Ultra Pro or Ultra Plus
+              ATI Ultra Pro or Ultra Plus -- Early 92
+              ATI Ultra or ATI Vantage
+              ATI VGA Wonder
+              ATI VGA Wonder Plus
+              ATI VGA Wonder XL
+              ATI Mach64 chip set based adapters
+
+
+    BOCA
+
+              BOCA Vortek-VL based on the AGX015 chip set
+              BOCA Voyager based on the CT6430x chip set
+
+
+    Bull
+
+              Bull Prostation 25i
+
+
+    Chips & Technology (C&T) Chip sets
+
+              Chips & Technology 451 chip set based adapters
+              Chips & Technology 452 chip set based adapters
+              Chips & Technology 655x0 chip set based adapters
+              Chips & Technology 6430x chip set based adapters
+
+
+    Cirrus Logic
+
+              Cirrus Logic VGA
+              Cirrus Logic GD 5426 chip set based adapters
+              Cirrus Logic GD 5428 chip set based adapters
+              Cirrus Logic GD 542x chip set based adapters
+              Cirrus Logic GD 5434 chipset based adapters
+
+
+    ColorGraphics
+
+              ColorGraphics TwinTurbo Accelerator
+
+
+    Compaq
+
+              Compaq Advanced VGA
+              Compaq LTE Elite (WD90C24)
+              Compaq LTE Lite (VGA LCD)
+              Compaq LTE Lite E, C (AVGA)
+              Compaq ProLinea, Deskpro (CL GD5434, 1MB)
+              Compaq ProLinea, Deskpro (CL GD5434, 2MB)
+              Compaq ProLinea MT (CL GD5428)
+              Compaq ProLinea Net1 (CL GD5420)
+              Compaq ProLinea 3 (WD 90C11)
+              Compaq ProLinea 4 (Tseng ET4000/AX)
+              Compaq ProLinea 4 (Tseng ET4000/W32)
+              Compaq Portable 486, 486C (AVGA)
+              Compaq ProSignia, ProLiant (CL GD5420/5424)
+              Compaq ProSignia (WD 90C11)
+              Compaq QVision 1024 (1 MB)
+              Compaq QVision 1280 (2 MB)
+              Compaq QVision 2000 (2 MB)
+              Compaq VGC
+              Compaq VGC-132
+
+
+    Cornerstone
+
+              Cornerstone Dual Page
+              Cornerstone Dual Page 150
+              Cornerstone Dual Page for Microchannel
+              Cornerstone PC1280
+              Cornerstone Single Page
+
+
+    DEC
+
+              DECpc 433W with DEC IGC
+              DECpc S3 86C805
+              DECpc S3 864/964
+              DECpc S3 86C924
+              DECpc S3 86C928 PCI
+              DECpc S3 86C928 VL Bus
+              Diamond Viper PRO
+              DECpc Viper PCI 2MB VRAM
+              Diamond Viper SE
+              DEC 90C30
+
+
+    Dell
+
+              Dell 90C30
+
+
+    Diamond
+
+              Diamond SpeedStar 24X
+              Diamond SpeedStar PRO
+              Diamond Stealth VRAM
+              Diamond Stealth 24
+              Diamond Stealth 64 DRAM (S3 Trio64 chipset)
+              Diamond Stealth 64 DRAM (S3 Vision864 chipset)
+              Diamond Stealth 64 DRAM (S3 Vision868 chip set)
+              Diamond Stealth 64 VRAM (S3 Vision964 chip set)
+              Diamond Stealth 64 VRAM (S3 Vision968 chip set)
+              Diamond Stealth Pro
+              Diamond Viper VLB (2MB VRAM)
+              Diamond Viper PCI (2MB VRAM)
+              Diamond Viper PRO
+              Diamond Viper SE
+
+
+    EIZO
+
+              EIZO MD-B07
+              EIZO MD-B10
+
+
+    Genoa
+
+              Genoa SuperVGA
+              Genoa SuperVGA 6000
+              Genoa SuperVGA 7000
+
+
+    Grid Systems
+
+              Grid Systems Grid 1530
+
+
+    Hercules
+
+              Hercules Monochrome Graphics Card
+
+
+    Hewlett-Packard
+
+              HP UltraVGA (D2325A)
+              HP Vectra 386/33NI (S3 86C801)
+              HP Vectra 486 N/NI Series (S3 86C805)
+              HP Vectra XU 5/90 and Vectra XM2
+              HP Vectra 486 XM Series (S3 86C928)
+              HP Vectra XP/60 (S3 86C928)
+
+
+    IBM
+
+              IBM VGA
+              IBM 8514A
+              IBM Thinkpad (Western Digital 90C24)
+              IBM graphics adapters using the S3 864 chip set
+              IBM graphics adapters using Tseng Labs ET4000/W32
+              IBM XGA
+              IBM XGA-2
+
+
+    Imagraph
+
+              Imagraph ITX
+
+
+    Intel
+
+              Intel Ultra Pro or Ultra Plus
+              Intel 90C30
+              Intel 90C31
+
+
+    Matrox
+
+              Matrox MGA/Impression PCI Graphics Adapter
+              Matrox MGA VLB Graphics Adapter
+              Matrox MWIN1280
+
+
+    Microfield
+
+              Microfield I8
+
+
+    MIRO
+
+              MIRO Crystal
+              MIRO Crystal 8S
+              MIRO Crystal 16SI
+              MIRO Crystal 20SD
+              MIRO Crystal 20SV
+              MIRO Crystal 32S
+              MIRO Crystal 40SV
+              MIRO Magic
+              MIRO Magic Plus
+
+
+    NCR
+
+              NCR 77C22 VGA chip
+              NCR 77C22E VGA chip
+
+
+    Number 9
+
+              Number 9 FX Motion 771
+              Number 9 FX Vision 330
+              Number 9 GXe BIOS 1.09
+              Number 9 GXe BIOS 1.1x
+              Number 9 GXe 64
+              Number 9 GXi
+
+
+    Oak
+
+              Oak OTI-077 VGA
+
+
+    Olivetti
+
+              Olivetti EVC
+              Olivetti LSX5015/25 VGA/SVGA
+              Olivetti m300-28 VGA/SVGA
+              Olivetti m300-30 VGA/SVGA
+              Olivetti m380-40 VGA/SVGA
+              Olivetti m386-25 VGA/SVGA
+              Olivetti M4-62/64/66 SVGA
+              Olivetti M400-60 VGA/ATI ULTRA
+              Olivetti M400-10/40 VGA/SVGA
+              Olivetti M480-10/20 VGA/SVGA
+              Olivetti OVC Graphics Controller
+              Olivetti GAM ( 2MB VRAM)
+
+
+    Orchid
+
+              Orchid Designer VGA
+              Orchid Fahrenheit 1280 (BIOS Version 1.x)
+              Orchid Fahrenheit 1280 (BIOS Version 2.x-3.x)
+              Orchid Fahrenheit 1280 Plus or Plus/VA
+              Orchid Kelvin 64
+              Orchid ProDesigner/e
+              Orchid ProDesigner II (Version 3.x)
+              Orchid ProDesigner II (Version 4.x)
+              Orchid ProDesigner II (Version 5.x)
+              Orchid ProDesigner IIs
+
+
+    Paradise
+
+              Paradise 8514A
+              Paradise VGA 1024
+              Paradise VGA Plus
+
+
+    Pixelworks
+
+              Pixelworks WhirlWIN
+
+
+    Quadram
+
+              Quadram QuadVGA
+
+
+    S3
+
+              S3 86C732 chip set based adapters
+              S3 Trio64 (86C764) chip set based adapters
+              S3 86C805 chip set based adapters
+              S3 Vision864 (86C864) and S3 Vision964 (86C964) chip set based adapters
+              S3 86C911 chip set based adapters
+              S3 86C928 chip set based adapters
+
+
+    Sigma
+
+              Sigma Legend
+
+
+    SNI
+
+              SNI 68800
+              SNI 86C805
+              SNI Ergo I
+              SNI Ergo II
+              SNI Ergo III
+
+
+    Spider
+
+              Spider 32 VLB
+
+
+    STB
+
+              STB EM 16
+              STB EM 16+
+              STB Extra-EM
+              STB PowerGraph X-24 and VL-24
+              STB Wind/X BIOS 1.0
+              STB Wind/X BIOS 1.1
+              STB Horizon VL
+              STB Pegasus
+
+
+    Tecmar
+
+              Tecmar VGA/AD
+
+
+    Toshiba
+
+              Toshiba Grid 758 Display
+              Toshiba Grid Plasma Display
+
+
+    Trident
+
+              Trident Impact II & III
+              Trident TVGA 8900B
+              Trident TVGA 8900B with 512k VRAM
+              Trident TVGA/TGUI
+
+
+    Tseng Labs
+
+              Tseng Labs ET3000 chip based adapters
+              Tseng Labs ET4000 chip based adapters
+
+
+    Tulip
+
+              Tulip P9000
+
+
+    UNISYS
+
+              UNISYS MPE Series Computers
+              UNISYS MPI Series Computers
+
+
+    Video Dynamics
+
+              Video Dynamics SprintGXU
+
+
+    Verticom
+
+              Verticom MX/AT
+
+
+    Video 7
+
+              Video 7 Fast Write
+              Video 7 VGA 1024i
+              Video 7 VRAM
+              Video 7 VRAM II
+
+
+    Western Digital
+
+              Western Digital 90C11 chip set based adapters
+              Western Digital 90C24 chip set based adapters
+              Western Digital 90C30 chip set based adapters
+              Western Digital 90C31 chip set based adapters
+              Western Digital 90C33 chip set based adapters
+
+
+    Weitek
+
+              Weitek P9000 with 1MB VRAM
+              Weitek P9000 with 2MB VRAM
+
+
+    XTEC
+
+              XTEC AGX
+
+
+    Zenith Data Systems
+
+              Zenith Data Systems 90C30
+              Zenith Data Systems 90C31
+              Zenith Data Systems WAM
+
+
+ Chapter 3
+ Graphics drivers: notes and known limitations
+
+    This chapter contains notes about the Graphics Drivers component of
+    Advanced Hardware Supplement Release 5.1.0.  Device-specific notes are
+    provided in the context-sensitive help that is supplied with the Video
+    Configuration Manager and in Graphics Adapters and Chip Set Configuration
+    Notes in the Graphics Adapters and Chip Set Configuration Notes.
+
+    +  ``Discontinued or ``legacy'' drivers''
+
+    +  ``VGA and Super-VGA (mw) driver does not run if you switch
+       multiscreens''
+
+    +  ``Drawing problems when moving Desktop icons''
+
+    +  ``Color problems when using TrueColor and DirectColor with SCO X
+       clients''
+
+    +  ``Using grey-scale monochrome monitors with the X server''
+
+    +  ``Problems exiting the X server''
+
+    +  ``WordPerfect limitations''
+
+    +  ``Error messages when running /etc/fontserv''
+
+    +  ``Maximum number of local X servers''
+
+    +  ``Hardware conflicts and multi-monitor configuration''
+
+    +  ``Problems when exiting the Video Configuration Manager in character
+       mode''
+
+
+ Discontinued or ``legacy'' drivers
+
+    The following graphics adapters, X drivers, grafinfo files and scripts
+    are no longer included with this product (unless you performed an in-
+    place upgrade). Support for these products may be available via the
+    ``Legacy'' program. Contact SCO Support for more information on the
+    Legacy program.
+
+    Graphics adapters
+              +  Appian Rendition II
+              +  DEC Intelligent Graphics Controller
+              +  Dell PowerLine 450 DGX
+              +  Matrox PG-1281/S
+              +  Matrox PG-1281
+              +  Microfield T8 T8/2 V8 V8/2
+              +  Microfield X8
+              +  MICRONICS MVC
+
+    X drivers
+              +  /usr/lib/X11/dyddx/tms0/XDriver.o
+              +  /usr/lib/X11/dyddx/mfgnfb/XDriver.o
+              +  /usr/lib/X11/dyddx/mgxnfb/XDriver.o
+              +  /usr/lib/X11/dyddx/mvc/XDriver.o
+              +  /usr/lib/X11/dyddx/mpg/XDriver.o
+              +  /usr/lib/X11/dyddx/jaws/XDriver.o
+
+    Grafinfo files
+              +  /usr/lib/grafinfo/dell/powerline.xgi
+              +  /usr/lib/grafinfo/matrox/pg1281-s.xgi
+              +  /usr/lib/grafinfo/matrox/pg1281.xgi
+              +  /usr/lib/grafinfo/micronics/mvc.xgi
+              +  /usr/lib/grafinfo/microfield/x8.xgi
+              +  /usr/lib/grafinfo/microfield/t8v8.xgi
+              +  /usr/lib/grafinfo/dec/decigc.xgi
+              +  /usr/lib/grafinfo/appian/renii.xgi
+              +  /usr/lib/grafinfo/numbernine/n9gxi.tms0
+
+    Scripts
+              +  tms340/renii.out
+              +  tms340/renii-ini
+              +  tms340/ags-ini
+              +  tms340/ags.out
+              +  tms340/decigc.out
+              +  tms340/decigc-ini
+              +  tms340/decigc-end
+
+    In addition, the entire /usr/lib/vidconf/ihv directory has been removed.
+
+    _________________________________________________________________________
+       CAUTION  If your system uses one of these graphics adapters or
+       drivers, you should select the in-place upgrade during system
+       installation to preserve your existing functionality.  If you
+       perform a fresh installation and later want to use one of these
+       adapters or drivers, contact SCO Support for information about the
+       ``Legacy'' program.
+    _________________________________________________________________________
+
+
+ VGA and Super-VGA (mw) driver does not run if you switch multiscreens
+
+    If you are using a graphics adapter that uses the mw X driver (typically
+    a VGA or Super-VGA-only card that does not contain a graphics
+    acceleration chip), the driver stops running and the X server ceases to
+    do graphics rendering when you switch to a different multiscreen.
+    Activity is reinitiated when you return to the multiscreen on which the X
+    server is running.
+
+
+ Drawing problems when moving Desktop icons
+
+    Occasionally, if Desktop icons are moved across the top of the Desktop
+    under the menu bar, incorrect pixels are drawn. Using Refresh from the
+    window manager Root menu clears the incorrectly drawn pixels.
+
+
+ Color problems when using TrueColor and DirectColor with SCO X clients
+
+    If you specify the -cmap option for the SCOcolor, SCOpaint, and SCOpaint
+    clients, TrueColor and DirectColor visual types will not work.
+    (DirectColor and TrueColor cards typically support 32K, 64K, and 16
+    Million colors).  This problem also results if you start Xsco with the -
+    static option.  These are the visual types where the rgb values are
+    stored directly in the display memory of the adapter.  Consult the
+    documentation accompanying your graphics adapter.  If there are display
+    modes that support 32K, 64K, or 16 Million colors, do not use these
+    modes.
+
+    Also, the applications mentioned above do not work with fixed colormap
+    graphics adapters.
+
+
+ Using grey-scale monochrome monitors with the X server
+
+    Running startx with some grey-scale monitors (sometimes incorrectly
+    called monochrome) causes the system to crash.  If this happens, you must
+    ensure that the console ports are properly configured.  To configure your
+    ports automatically at boot-up complete the following:
+
+    1.  As root, use an ASCII editor (such as vi) to open
+        /etc/rc.d/8/userdef.
+
+    2.  Add the following lines:
+
+           vidi v80x25 < /dev/tty01
+           vidi v80x25 < /dev/tty02
+           vidi v80x25 < /dev/tty03
+           vidi v80x25 < /dev/tty04
+           vidi v80x25 < /dev/tty05
+           vidi v80x25 < /dev/tty06
+           vidi v80x25 < /dev/tty07
+           vidi v80x25 < /dev/tty08
+           vidi v80x25 < /dev/tty09
+           vidi v80x25 < /dev/tty10
+           vidi v80x25 < /dev/tty11
+           vidi v80x25 < /dev/tty12
+           echo "Screen devices set to color mode ..."
+
+
+    3.  Save the file.
+
+    4.  Use shutdown(ADM) or init(M) to reboot your machine.
+
+    5.  Start the X server.
+
+
+ Problems exiting the X server
+
+    If you use startx to start the X server, you may notice problems when
+    exiting your SCO system Desktop or X server.  Sometimes, the screen
+    remains in graphics mode or the keyboard does not function correctly
+    after exiting.
+
+    To prevent the problem, use /etc/clean_screen along with startx by
+    entering the following:
+
+       startx; /etc/clean_screen
+
+    If you log in via scologin, you should not encounter any problems.
+
+
+ WordPerfect limitations
+
+    If you use WordPerfect(r) with a non-VGA graphics adapter and you move a
+    window or the cursor off the screen, the text screen does not display
+    correctly.
+
+    If you run WordPerfect with a VGA-based adapter, and you move the
+    WordPerfect cursor off the screen to the left and then type, you see
+    multiple cursor images (to the right of the text you are typing).
+
+    In both cases, you can restore the correct screen display by selecting
+    Refresh from the Root menu.
+
+
+ Error messages when running /etc/fontserv
+
+    If you run /etc/fontserv start, it may incorrectly produce the following
+    error message:
+
+       TCP/IP must be running before starting the font server.
+
+    For the font server to run, you must modify the /etc/fontserv command.
+
+    Enter the following commands as root:
+
+       cp  /etc/fontserv  /etc/fontserv.bak
+       sed '/slink/,/fi/d'  /etc/fontserv > /tmp/fontserv
+       cat /tmp/fontserv > /etc/fontserv
+
+    Once this is done, start the font server:
+
+       /etc/fontserv  start
+
+    If you need to restore the old version of fontserv, enter the following
+    command as root:
+
+       cat  /etc/fontserv.bak > /etc/fontserv
+
+
+ Maximum number of local X servers
+
+    SCO OpenServer Release 5 supports up to 8 local X servers.
+
+
+ Hardware conflicts and multi-monitor configuration
+
+    If you install two or more video adapters on the system, you must ensure
+    that there are no hardware conflicts between them and other hardware in
+    the system.
+
+
+ Problems when exiting the Video Configuration Manager in character mode
+
+    If the CHARM version of the Video Configuration Manager exits
+    unexpectedly, you may be left in raw mode.  To correct this problem,
+    complete the following steps:
+
+    1.  Type <Ctrl>\ a few times to verify that CHARM has really stopped
+        running.
+
+    2.  Enter the following to restore your terminal setting:
+
+           <Ctrl>J stty sane <Ctrl>J
+
+
+
+
+ Chapter 4
+ Network drivers: new features for this release
+
+    This section contains information about the new features found in the
+    Network Drivers component of Advanced Hardware Supplement Release 5.1.0
+    including:
+
+    +  the new features supported in this release of Advanced Hardware
+       Supplement
+
+    +  the network adapters supported in this release of Advanced Hardware
+       Supplement
+
+
+ New features
+
+
+    New and improved network adapters
+         Advanced Hardware Supplement Release 5.1.0 supports over 120 network
+         adapters;  see ``Supported network adapters'' for the complete list.
+         Advanced Hardware Supplement Release 5.1.0 supports all the adapters
+         found in SCO OpenServer Release 5 and adds support for the new
+         adapters listed in ``New network adapters''.  Support for a number
+         of adapters has been enhanced for robustness and performance; see
+         ``Updated network adapters''.
+
+    Fast Ethernet
+         Advanced Hardware Supplement Release 5.1.0 provides support for
+         several new 100 Mbps network adapters, including support for both
+         100VG and 100BaseT networking technologies.  Some of the new and
+         updated drivers also support full-duplex data transfer mode when
+         used with full-duplex hubs.
+
+    Improved PCI support
+         Advanced Hardware Supplement Release 5.1.0 also provides a much
+         wider selection of network adapters for the high-performance PCI
+         bus.
+
+    Multithreaded networking and network drivers
+         Some of the network drivers included with Advanced Hardware
+         Supplement Release 5.1.0 are multithreaded to provide better
+         performance on multiprocessor configuration.  These multithreaded
+         drivers can execute both their task-level code and interrupt
+         processing on any configured CPU.  Single-threaded drivers (that
+         have not been multithreaded) can be run on multiprocessor
+         configurations; they will benefit from the multithreaded protocol
+         stacks and STREAMS interface that are provided with SCO OpenServer
+         but all driver execution will occur on one CPU.  Consequently,
+         single-threaded drivers may not realize the full performance
+         benefits of the multiprocessing configuration.
+
+         The drivers for the following network adapters are multithreaded:
+         +  Novell/Eagle NE3200
+         +  Novell/Microdyne NE3200T
+         +  Intel EtherExpress 32
+         +  Intel EtherExpress Flash 32
+
+         Additional multithreaded drivers are under development for future
+         releases of the Advanced Hardware Supplement.
+
+
+ New network adapters
+
+    The following is a list of network adapters newly supported in Advanced
+    Hardware Supplement Release 5.1.0:
+
+    HP J2973A 10Mbps PCI LAN Adapter
+    HP J2573A 10/100VG ISA LAN Adapter
+    HP J2577A 10/100VG EISA LAN Adapter
+    HP J2585A 10/100VG PCI LAN Adapter
+    HP J2585B 10/100VG PCI LAN Adapter
+    Intel EtherExpress PRO/100 EISA LAN Adapter
+    Intel EtherExpress PRO/100 PCI LAN Adapter
+    Standard Microsystems
+         SMC8432T EtherPower PCI Ethernet Adapter
+         SMC8432TA EtherPower PCI Ethernet Adapter
+         SMC8432BA EtherPower PCI Ethernet Adapter
+         SMC8432BT EtherPower PCI Ethernet Adapter
+         SMC8432BTA EtherPower PCI Ethernet Adapter
+         SMC8434T EtherPower2 Dual Channel PCI Ethernet Adapter
+         SMC8434BT EtherPower2 Dual Channel PCI Ethernet Adapter
+         SMC9332 EtherPower 10/100 PCI Ethernet Adapter
+
+
+ Updated network adapters
+
+    Some of the network drivers provided with Advanced Hardware Supplement
+    Release 5.1.0 have been enhanced and improved over the versions that were
+    included in SCO OpenServer Release 5. Improvements were made to the
+    drivers for the following network adapters:
+
+       AMD Am2110-SM AT Ethernet 7998
+       AMD Am1500T/2 PCnet-ISA
+       AMD Am1500T PCnet-ISA
+       AMD PCnet-ISA+
+       AMD PCnet-PCI
+
+       Compaq Integrated NetFlex-2/ENET.
+
+       HP J2405A EtherTwist PC LAN Adapter NC/16 TP
+
+       IBM EtherStreamer MC32 Adapter
+       IBM LANStreamer MC32 Adapter
+       IBM Auto LANStreamer MC32 Adapter
+       IBM Auto LANStreamer PCI Adapter
+
+       Racal InterLan PCI-T2
+
+       Standard Microsystems
+            SMC8216 EtherCard Elite 16C Ultra
+            SMC8216T EtherCard Elite 16C Ultra
+            SMC8216C EtherCard Elite 16C Ultra
+            SMC82M32 EtherCard Elite 32C Ultra
+            SMC8416B EtherEZ
+            SMC8416T EtherEZ
+            SMC8416BT EtherEZ
+
+
+ Supported network adapters
+
+    This section contains two lists of network adapters supported by Advanced
+    Hardware Supplement Release 5.1.0:
+
+    +  arranged by manufacturer
+
+    +  arranged by media and bus type
+
+
+ Supported network adapters by manufacturer
+
+    _________________________________________________________________________
+       NOTE  Card-specific information is provided in the context-
+       sensitive help for the Network Configuration Manager and Network
+       Driver Configuration Notes in the Supported Network Driver
+       Configuration Notes.
+    _________________________________________________________________________
+
+
+    3Com
+
+         3C501 EtherLink
+         3C503 EtherLink II & EtherLink II TP
+         3C503-16 EtherLink II/16 & EtherLink II/16 TP
+         3C507 EtherLink 16 & EtherLink 16 TP
+         3C509 & 3C509-TP EtherLink III
+         3C509-Combo EtherLink III
+         3C509B & 3C509B-TP EtherLink III
+         3C509B-Combo EtherLink III
+         3C523 & 3C523B EtherLink/MC
+         3C523 EtherLink/MC TP
+         3C529 & 3C529-TP EtherLink III
+         3C579 & 3C579-TP EtherLink III
+         3C589-TP & 3C589-Combo EtherLink III
+         3C589B-TP & 3C589B-Combo EtherLink III
+
+
+    AMD
+
+         AMD Am1500T PCNet-ISA
+         AMD Am1500T/2 PCNet-ISA
+         AMD Am2110-SM AT Ethernet 7998
+         AMD PCnet-ISA+
+         AMD PCnet-PCI
+
+
+    Compaq
+         Integrated NetFlex-2/ENET*
+
+    Hewlett-Packard
+
+         HP 27245A EtherTwist PC LAN Adapter/8 TP
+         HP 27247A EtherTwist PC LAN Adapter/16 TP
+         HP 27247B EtherTwist PC LAN Adapter/16 TP Plus
+         HP 27248A EtherTwist EISA LAN Adapter/32 TP
+         HP 27250A EtherTwist PC LAN Adapter/8 TL
+         HP 27252A EtherTwist PC LAN Adapter/16 TL Plus
+         HP J2405A EtherTwist PC LAN Adapter NC/16 TP
+         HP J2577A 10/100VG EISA LAN Adapter
+         HP J2973A 10Mbps PCI LAN Adapter
+         HP J2573A 10/100VG ISA LAN Adapter
+         HP J2585A 10/100VG PCI LAN Adapter
+         HP J2585B 10/100VG PCI LAN Adapter
+
+
+    IBM
+
+         Ethernet adapters
+
+              LAN Adapter for Ethernet
+              LAN Adapter for Ethernet TP & CX
+              Ethernet Adapter/A
+              EtherStreamer MC32 Adapter
+              PS/2 Adapter/A for Ethernet Networks
+              PS/2 Adapter/A for Ethernet TP Networks
+
+
+         Token Ring adapters
+
+              Auto 16/4 Token-Ring Network ISA Adapter
+              Token-Ring Network 16/4 ISA-16 Adapter
+              Token-Ring Network PC Adapter II
+              Token-Ring Network PC Adapter & Adapter/A
+              Token-Ring Network 16/4 Adapter & Adapter/A
+              Token-Ring Network 16/4 Busmaster Server Adapter/A
+              LANStreamer MC32 Adapter
+              Auto LANStreamer MC32 Adapter
+              Auto LANStreamer PCI Adapter
+
+
+    Intel
+
+         EtherExpress 16
+         EtherExpress 16 TP & C
+         EtherExpress 16 FlashC
+         EtherExpress 16 MCA & MCA TP
+         EtherExpress 32
+         EtherExpress Flash32
+         EtherExpress PRO/100 EISA LAN Adapter
+         EtherExpress PRO/100 PCI LAN Adapter
+
+
+    Microdyne (Excelan)
+
+         EXOS 205 and 205T
+         EXOS 205T/16
+
+
+    National SemiConductor Corporation
+
+         InfoMover NE2000plus
+
+
+    Novell
+
+         NE2000
+         NE3200
+         NE3200T
+
+
+    Racal InterLan
+
+         ES3210
+         NI6510
+         NI6510/2 InterLan EtherBlaster
+         NI6510SC-T2 InterLan EtherBlaster TP
+         PCI-T2
+
+
+    Standard Microsystems
+
+         SMC8003EP EtherCard PLUS Elite
+         SMC8003WC EtherCard PLUS Elite 10T
+         SMC8013EPC EtherCard PLUS Elite 16
+         SMC8013WC EtherCard PLUS Elite 16T
+         SMC8013EWC EtherCard PLUS Elite 16 Combo
+         SMC8013EP/A EtherCard PLUS Elite/A
+         SMC8013WP/A EtherCard PLUS Elite 10T/A
+         SMC8216 EtherCard Elite 16C Ultra
+         SMC8216T EtherCard Elite 16C Ultra
+         SMC8216C EtherCard Elite 16C Ultra
+         SMC82M32 EtherCard Elite 32C Ultra
+         SMC8416B EtherEZ
+         SMC8416T EtherEZ
+         SMC8416BT EtherEZ
+         SMC8432BA EtherPower PCI Ethernet Adapter
+         SMC8432BT EtherPower PCI Ethernet Adapter
+         SMC8432BTA EtherPower PCI Ethernet Adapter
+         SMC8432T EtherPower PCI Ethernet Adapter
+         SMC8432TA EtherPower PCI Ethernet Adapter
+         SMC8434T EtherPower2 Dual Channel PCI Ethernet Adapter
+         SMC8434BT EtherPower2 Dual Channel PCI Ethernet Adapter
+         SMC9332 EtherPower 10/100 PCI Ethernet Adapter
+
+
+    Western Digital
+
+         WD8003/WD8013 EtherCard PLUS series
+         WD8003/WD8013 EtherCard PLUS Elite series (ISA)
+         WD8013 EtherCard PLUS Elite series (MCA)
+
+
+    ____________________
+    *   The Integrated NetFlex-2/ENET is a network device which uses the AMD
+        PCnet-32 built into the motherboard of Compaq Prosignia VS systems.
+
+ Supported network adapters by media and bus type
+
+    _________________________________________________________________________
+       NOTE  Card-specific information is provided in the context-
+       sensitive help for the Network Configuration Manager and Network
+       Driver Configuration Notes in the Supported Network Driver
+       Configuration Notes.
+    _________________________________________________________________________
+
+
+ Supported Ethernet adapters
+
+
+    ISA Ethernet adapters
+
+         3Com 3C501 EtherLink
+         3Com 3C503 EtherLink II & EtherLink II TP
+         3Com 3C503-16 EtherLink II/16 & EtherLink II/16 TP
+         3Com 3C507 EtherLink 16 & EtherLink 16 TP
+         3Com 3C509 & 3C509-TP Parallel Tasking EtherLink III
+         3Com 3C509-Combo EtherLink III
+         3Com 3C509B & 3C509B-TP EtherLink III
+         3Com 3C509B-Combo EtherLink III
+
+
+         AMD Am1500T PCnet-ISA
+         AMD Am1500T/2 PCnet-ISA
+         AMD Am2110-SM AT Ethernet 7998
+
+         HP 27245A EtherTwist PC LAN Adapter/8 TP
+         HP 27247A EtherTwist PC LAN Adapter/16 TP
+         HP 27247B EtherTwist PC LAN Adapter/16 TP Plus
+         HP 27250A EtherTwist PC LAN Adapter/8 TL
+         HP 27252A EtherTwist PC LAN Adapter/16 TL Plus
+         HP J2405A EtherTwist PC LAN Adapter NC/16 TP
+         HP J2573A 10/100VG ISA LAN Adapter
+
+
+         IBM LAN Adapter for Ethernet
+         IBM LAN Adapter for Ethernet TP & CX
+
+
+         Intel EtherExpress 16
+         Intel EtherExpress 16 TP & C
+         Intel EtherExpress 16 FlashC
+
+
+         Microdyne EXOS 205 and 205T
+         Microdyne EXOS 205T/16
+
+
+         NSC InfoMover NE2000plus
+
+
+         Novell/Eagle NE2000
+
+
+         Racal InterLan NI6510
+         Racal InterLan NI6510/2 InterLan EtherBlaster
+         Racal InterLan NI6510SC-T2 InterLan EtherBlaster TP
+
+
+         Standard Microsystems SMC8003EP EtherCard PLUS Elite
+         Standard Microsystems SMC8003WC EtherCard PLUS Elite 10T
+         Standard Microsystems SMC8013EPC EtherCard PLUS Elite 16
+         Standard Microsystems SMC8013WC EtherCard PLUS Elite 16T
+         Standard Microsystems SMC8013EWC EtherCard PLUS Elite 16 Combo
+         Standard Microsystems SMC8216 EtherCard Elite 16C Ultra
+         Standard Microsystems SMC8216T EtherCard Elite 16C Ultra
+         Standard Microsystems SMC8216C EtherCard Elite 16C Ultra
+         Standard Microsystems SMC8416B EtherEZ
+         Standard Microsystems SMC8416T EtherEZ
+         Standard Microsystems SMC8416BT EtherEZ
+
+
+         Western Digital WD8003 EtherCard PLUS series
+         Western Digital WD8003 EtherCard PLUS Elite series
+         Western Digital WD8013 EtherCard PLUS series
+         Western Digital WD8013 EtherCard PLUS Elite series
+
+         _________________________________________________________________________
+            NOTE  Most ISA adapters also can be used on EISA machines.
+         _________________________________________________________________________
+
+
+    EISA Ethernet adapters
+
+         3Com 3C579 & 3C579-TP EtherLink III
+
+
+         Compaq Integrated NetFlex-2/ENET
+
+
+         HP 27248A EtherTwist EISA LAN Adapter/32 TP
+         HP J2577A 10/100VG EISA LAN Adapter
+
+
+         Intel EtherExpress 32
+         Intel EtherExpress Flash32
+         Intel EtherExpress PRO/100 EISA LAN Adapter
+
+
+         Novell/Eagle NE3200
+         Novell/Microdyne NE3200T
+
+
+         Racal InterLan ES3210
+
+
+         Standard Microsystems SMC82M32 EtherCard Elite 32C Ultra
+
+
+    MCA Ethernet adapters
+
+         3Com 3C523 & 3C523B EtherLink/MC
+         3Com 3C523 EtherLink/MC TP
+         3Com 3C529 & 3C529-TP EtherLink III Parallel Tasking
+
+
+         IBM Ethernet Adapter/A
+         IBM EtherStreamer MC32 Adapter
+         IBM PS/2 Adapter/A for Ethernet Networks
+         IBM PS/2 Adapter/A for Ethernet TP Networks
+
+
+         Intel EtherExpress 16 MCA & MCA TP
+
+
+         Standard Microsystems SMC8013EP/A EtherCard PLUS Elite/A
+         Standard Microsystems SMC8013WP/A EtherCard PLUS Elite 10T/A
+
+
+         Western Digital WD8003 EtherCard PLUS series
+         Western Digital WD8013 EtherCard PLUS Elite series
+
+
+    PCMCIA Ethernet adapters
+
+         3Com 3C589-TP & 3C589-Combo EtherLink III
+         3Com 3C589B-TP & 3C589B-Combo EtherLink III
+
+
+    PCI Ethernet adapters
+
+         AMD PCnet-PCI
+
+
+         HP J2973A 10Mbps PCI LAN Adapter
+         HP J2585A 10/100VG PCI LAN Adapter
+         HP J2585B 10/100VG PCI LAN Adapter
+
+
+         Intel EtherExpress PRO/100 LAN Adapter
+
+
+         Racal InterLan PCI-T2
+
+
+         Standard Microsystems
+               SMC8432BA EtherPower PCI Ethernet Adapter
+               SMC8432BT EtherPower PCI Ethernet Adapter
+               SMC8432BTA EtherPower PCI Ethernet Adapter
+               SMC8432T EtherPower PCI Ethernet Adapter
+               SMC8432TA EtherPower PCI Ethernet Adapter
+               SMC8434BT EtherPower2 Dual Channel PCI Ethernet Adapter
+               SMC8434T EtherPower2 Dual Channel PCI Ethernet Adapter
+               SMC9332 EtherPower 10/100 PCI Ethernet Adapter
+
+
+ Supported Token-Ring adapters
+
+
+    ISA Token-Ring adapters
+
+         IBM Token-Ring Network 16/4 Adapter
+         IBM Token-Ring Network 16/4 ISA-16 Adapter
+         IBM Token-Ring Network PC Adapter
+         IBM Token-Ring Network PC Adapter II
+         IBM Auto 16/4 Token-Ring ISA Adapter
+         IBM Token-Ring Network EISA Adapter
+
+
+    MCA Token-Ring adapters
+
+         IBM LANStreamer MC32 Adapter
+         IBM Auto LANStreamer MC32 Adapter
+         IBM Token-Ring Network PC Adapter/A
+         IBM Token-Ring Network 16/4 Adapter/A
+         IBM Token-Ring Network 16/4 Busmaster Server Adapter/A
+
+
+    PCI Token-Ring adapters
+
+         IBM Auto LANStreamer PCI Adapter
+
+
+ Chapter 5
+ Network drivers: notes and known limitations
+
+    The Network Drivers component of Advanced Hardware Supplement Release
+    5.1.0 has the following notes and limitations.
+
+    +  STRMAXBLK kernel parameter changes
+
+    +  Using Plug-and-Play devices on SCO OpenServer systems
+
+    +  Problems when searching for ISA cards
+
+    +  Using command line options with netconfig
+
+    +  Network adapter performance with large data transfers
+
+    +  OSI and Token-Ring incompatibility
+
+    +  Token-Ring source routing and IPX/SPX
+
+    +  Multiple SCOhelp clients spawned by the Network Configuration Manager
+
+
+ STRMAXBLK kernel parameter changes
+
+    The STREAMS implementation in SCO OpenServer Release 5 has changed from
+    that of earlier releases so that the memory within a single data block is
+    not guaranteed to reside in a single, physically-contiguous block.  This
+    creates problems for STREAMS drivers that control devices with DMA
+    transfer functions.  All SCO-provided network drivers have been modified
+    for compatibility with the new STREAMS architecture; non-SCO LLI drivers
+    for DMA-based network adapters (such as ZYNX) may not work correctly with
+    the default SCO OpenServer Release 5 STRMAXBLK setting.
+
+    The new STRMAXBLK kernel parameter defines the maximum size of STREAMS
+    buffers. The default value of the STRMAXBLK parameter is 524288, but it
+    can be set to any value that is a power of two between 4096 and 524288
+    (4KB to 512KB).  Setting STRMAXBLK to 4096 has the effect of ensuring
+    that all buffers allocated from STREAMS will be located in a physically
+    contiguous block, which enables older LLI drivers to work properly with
+    SCO protocol stacks and other networking products.  Note that changing
+    STRMAXBLK to 4096 does not ensure that LLI drivers can work with non-SCO
+    protocols that map in private data blocks.
+
+    If you are using a DMA-based network adapter with a non-SCO provided LLI
+    driver, use the configure(ADM) command to set the value of STRMAXBLK to
+    4096 bytes, then relink the kernel and reboot the system.
+
+
+ Using Plug-and-Play devices on SCO OpenServer systems
+
+    SCO OpenServer Release 5 does not support the ISA Plug-and-Play standard.
+    However, Plug-and-Play devices should work correctly if you follow these
+    steps:
+
+    1.  Run the DOS setup program to locate the card.
+
+    2.  Disable the Plug-and-Play logic.
+
+    3.  Set the network adapter to an unused I/O address.
+
+    4.  Boot the UNIX system, run the Network Configuration Manager and
+        configure the driver normally.  The Network Configuration Manager can
+        successfully configure the hardware settings on the Plug-and-Play
+        adapter if the driver configuration routine provides the ability to
+        program those settings.
+
+
+ Problems when searching for ISA cards
+
+    Because of limitations in ISA architecture, when using the Search option
+    in the Network Configuration Manager to search for an ISA network
+    adapter, your system may hang or fail to respond after the search.  If
+    this happens, restart netconfig and do not use the Search option to
+    locate network adapters.  This is more likely to happen if you have more
+    than one ISA network adapter installed in your system.
+
+
+ Using command line options with netconfig
+
+
+    +  Do not use capital letters when using netconfig to configure network
+       connections.
+
+    +  netconfig does not support the following command line options: -m -C
+       -L.
+
+
+ Network adapter performance with large data transfers
+
+    If a networking adapter is not fast enough to keep up with the data it is
+    asked to transfer, network products such as NFS and LAN Manager can
+    experience delays, timeouts, and error messages when engaged in large
+    data transfers. If this happens with NFS, the following message appears:
+
+       NFS timeout
+
+    If this happens with LAN Manager client, LAN Manager prints the following
+    message:
+
+       terminating read ahead with server server_name.
+
+    Other networking services and applications that use unreliable transports
+    (like UDP) can also suffer from this problem.  For example, because the
+    3Com 3C501 adapter has a limited buffering capability, the timeout error
+    occurs when using NFS and a large (2KB or more) buffer size. It can also
+    occur when transferring data over a 16MB Token-Ring between a machine
+    with a fast Token-Ring adapter and a machine with a slow one.  A similar
+    error can occur with LAN Manager over a Novell/Eagle NE2000 adapter,
+    yielding an ``Unexpected network error'' message.
+
+    You can solve the problem in the following ways:
+
+    -  For NFS, specify a smaller read/write buffer size in your NFS mount
+       options.  1024 is a reasonable value for slower adapters.  For more
+       information about configuring this option, see Read.write buffer size
+       in the Networking Guide.
+
+    -  For the LAN Manager client, specify a smaller read/write buffer size
+       in your LAN Manager client filesystem mount options.  1024 is a
+       reasonable value for slower adapters.  For more information about
+       configuring this option, see ``LMC filesystem mount options'' in
+       Chapter 4, ``Administering and using LAN Manager Client'' in the Guide
+       to Gateways for LAN Servers.
+
+    -  For LAN Manager servers, configure smaller values for the maxreadsize
+       and  maxwritesize keywords in the lanman.ini file.  For additional
+       details, consult your Microsoft LAN Manager for SCO Systems
+       Administering LAN Manager guide.
+
+
+ OSI and Token-Ring incompatibility
+
+    Token-Ring drivers do not work properly for the OSI protocol stack
+    because OSI uses illegal Token-Ring multicast addresses.
+
+
+ Token-Ring source routing and IPX/SPX
+
+    Token-Ring source routing may not work with the IPX/SPX protocol stack.
+
+
+ Token-Ring hardware addresses
+
+    The Hardware address parameter for IBM Token-Ring adapters does not set
+    the new MAC address properly.
+
+
+ Multiple SCOhelp clients spawned by the Network Configuration Manager
+
+    netconfig configures many different types of hardware and software, so if
+    you ask for help first from one part of netconfig, and then from another,
+    your graphical environment may become littered with SCOhelp windows. If
+    you do (and you find it annoying), you can simply close the windows you
+    are not currently using. All the SCOhelp windows will close when you exit
+    the manager.
+
+
+
+
+ Chapter 6
+ Mass storage drivers: notes and known limitations
+
+    This chapter describes the Mass Storage Drivers component of the Advanced
+    Hardware Supplement Release 5.1.0.  These drivers are boot-time loadable
+    and provide support for SCSI host adapters that may need to be link-
+    edited into the SCO OpenServer(TM) kernel during the booting process.
+    Supported SCSI host adapter drivers are:
+
+    +  Adaptec 7770 (arad)
+
+    +  Adaptec 7870 and 7850 (alad)
+
+    +  Adaptec AIC-6x60 Host Adapter Driver (smad)
+
+    +  Advanced Micro Devices (ams)
+
+    +  DPTR (dptr)
+
+    +  EIDE (wd)
+
+    +  IBM Fixed Disk Adapter/A (esdi)
+
+    +  Symbios Logic (bhba)
+
+    +  Tricord 4-bus (iiop)
+
+    The supported SCSI device (which is not boot-time loadable) is:
+
+    +  SCSI jukebox (Sjk)
+
+    This documentation also explains how these drivers can be installed after
+    installation of the SCO OpenServer system.
+
+
+ Contents of the Mass Storage Drivers component
+
+    This component contains one Boot-Time Loadable Drivers' disk containing
+    the software.  You should keep the floppy disk until the next release of
+    the SCO OpenServer system. If you upgrade the software or hardware on
+    your system, you may need to install or reinstall the Boot-Time Loadable
+    Drivers.
+
+    After some introductory notes, this chapter describes the installation
+    procedure for the Mass Storage Drivers component followed by some release
+    notes for each of the host adapters.  The release notes list supported
+    hardware and known limitations.
+
+
+ Definition of Boot-Time Loadable Drivers
+
+    Boot-Time Loadable Drivers are drivers which can be link-edited into the
+    SCO OpenServer system kernel during the booting process.  The
+    link-editing is done by link(HW) or ahslink after the driver is loaded
+    into memory (RAM) but before the kernel is started.  A BTLD enables SCO
+    OpenServer to be installed either onto, or using, new hardware as soon as
+    a driver for the hardware is available.
+
+    The disk provided in this package is all you need to use this facility;
+    no additional software is required to use BTLDs since link(HW) and
+    ahslink are part of the SCO OpenServer system.
+
+
+ Installation requirements
+
+    The drivers in this Mass Storage Drivers component are only valid for SCO
+    OpenServer Release 5.
+
+    Before installing a driver, you should read the relevant release notes
+    for the driver in this document.  The release notes contain configuration
+    notes and known limitations for the drivers in this package.
+
+
+ Installation procedure
+
+    There are two possible scenarios in which you may need to install the
+    Mass Storage Drivers component:
+
+    1.  For installing new hardware which is required for your system at
+        installation time.  In this case, you need to add one of the drivers
+        included in the Mass Storage Drivers component before you can install
+        the SCO OpenServer system.  To follow this procedure, you should
+        proceed to ``Using BTLDs at installation time''.
+
+    2.  For installing new hardware which you wish to add to your system
+        after the installation of the SCO OpenServer system.  In this case,
+        the Mass Storage Drivers component is treated as a package of drivers
+        to be added to the Link Kit by the Software Manager.  To follow this
+        procedure, proceed to Chapter 1, ``Installing the AHS 5.1.0
+        software''.
+
+ Using BTLDs at installation time
+
+    This section describes how to install the new driver which is required
+    for the installation of the SCO OpenServer system.  If you need to use
+    your BTLD disk at installation time, you should have already inserted
+    your boot disk.  After inserting the boot disk, the boot prompt is
+    displayed; this is the point at which you begin the installation
+    procedure for this SCO BTLD package.  At this stage the boot floppy disk
+    should be in the drive, and the system should be displaying:
+
+    SCO OpenServer(tm) Release 5
+
+    Boot
+    :
+
+
+    1.  What you enter at the prompt depends on which driver you are
+        installing.  Enter link at the ``:'' prompt if you are installing
+        ams, bhba, or iiop drivers.  If you are installing alad, arad, dptr,
+        esdi or wd drivers, enter ahslink. If you are installing smad, enter
+        defbootstr link disable=spad (the smad driver replaces the older spad
+        driver).
+
+    2.  The screen displays the following prompt:
+
+        What packages do you need linked in the system,
+        or `q' to quit? :
+
+        Available packages in this SCO BTLD package are:
+
+        alad  Adaptec 7870 and 7850 Host Adapter Driver
+
+        ams   Advanced Micro Devices
+
+        arad  Adaptec 7770 Host Adapter Driver
+
+        bhba  Symbios Logic Host Adapter Driver
+
+        dptr  DPT - entire card line
+
+        esdi  IBM Fixed Disk Adapter/A
+
+        iiop  Tricord ES5000 Motherboards
+
+        smad  Adaptec AIC-6x60 Host Adapter Driver
+
+        wd    EIDE Driver
+
+        To install the Sjk SCSI device (SCSI jukebox driver) use the Software
+        Manager as described in Chapter 1, ``Installing the AHS 5.1.0
+        software''.
+
+        Enter only the packages which are required by the installation.  If
+        you want to install the other packages on the disk, you should use
+        the post-installation procedure as described in Chapter 1,
+        ``Installing the AHS 5.1.0 software''.
+
+
+    3.  Next, you will see a boot line similar to the following example:
+
+
+        fd(64)unix ramdisk=f(64) rootfs root=ram(7) ram.preload=7 swap=none
+        dump=none nbuf=100 link=pkg btld=fd(x)
+
+        Memory found: 0k - 640k, 1m - 9600k
+
+        pkg in the line above is replaced by the actual name of the driver
+        package for boot-time loading and x is replaced by the minor number
+        for your floppy device.
+
+        After a moment, a series of prompts are displayed with trailing dots;
+        these messages progress as software is loaded.
+
+    4.  Next you see:
+
+        Please insert the fd(x)pkg volume and press <Return>:
+
+        Insert the requested volume (the SCO BTLD disk). The system prompts
+        for and extracts the contents of the package.
+
+        If the wrong volume is inserted or the drive is empty, the system
+        displays the following:
+
+        Sorry, that volume does not contain the pkg package
+
+        followed by the insertion request again:
+
+        Please insert the fd(x)pkg volume and press <Return>:
+
+
+    5.  link(HW) and ahslink perform the linking of the extracted drivers
+        into the kernel in core and may require more information for the
+        extracted drivers.  If the system prompts you for more information
+        about configuring in these drivers, refer to the link(HW) manual page
+        in the Operating System Administrator's Reference Volume 2 .
+
+        _________________________________________________________________________
+           NOTE  If there are any errors during this extraction (linking)
+           process, the process is aborted and you are forced to reboot.
+        _________________________________________________________________________
+
+
+    6.  After a series of messages culminating in a message such as:
+
+        arad: Driver "arad" successfully loaded
+
+        you will see a message prompting you to re-insert the boot disk.
+
+        _________________________________________________________________________
+           NOTE  If the message:
+
+           ... Characteristic '...' not supported;
+
+           is displayed, you can safely ignore it.
+        _________________________________________________________________________
+
+        The Mass Storage Drivers component has been installed; you should now
+        return to the installation procedure for SCO OpenServer.
+
+        During the installation of the SCO OpenServer system you will be
+        asked whether you want to customize your operating system.  At the
+        very least, you must install the SCO OpenServer Run Time System (RTS)
+        and the BASE and LINK packages of the SCO OpenServer Extended
+        Utilities.
+
+ Warning: installing over previously-installed BTLDs
+
+    If a different version of a driver with the same name as an AHS driver is
+    found during installation using the Software Manager, you will be asked
+    whether you want to keep the driver already installed or overwrite it
+    with the AHS version.
+
+    You will see the following message:
+
+    Driver <driver name> is already installed.
+    Do you want to overwrite the installed driver (note: it will
+    not be backed up)?"
+
+    If you answer yes, the third-party driver and its configuration
+    information is overwritten.  The new AHS driver will not be configured
+    into the kernel.  You will need to turn on the driver by changing `N' in
+    the driver's entry in /etc/conf/sdevice.d to `Y'.  Relink the kernel
+    before rebooting.
+
+ Installing BTLDs after initial installation
+
+    _________________________________________________________________________
+       NOTE  BTLD drivers installed at ISL are not visible to the Software
+       Manager even though they are installed in the link kit. It is
+       possible to custom-install a driver that has already been BTLD-
+       installed and this may become recommended practice in future
+       releases of AHS.
+    _________________________________________________________________________
+
+    To install the SCO BTLD package when the SCO OpenServer system is already
+    installed, follow the steps described in Chapter 1, ``Installing the AHS
+    5.1.0 software''.
+
+
+ Removal procedure
+
+    To remove the SCO BTLD package, follow the steps described in ``Removing
+    the AHS software''.
+
+
+ Adaptec AIC-7770 host adapter driver (arad)
+
+    The arad driver directly supports the following host adapters:
+
+    EISA bus
+
+    AHA-2740/2742                (Single channel)
+    AHA-2740/2742 A              (Single channel)
+    AHA-2740/2742 T              (Twin channel)
+    AHA-2740/2742 A-T            (Twin channel)
+    AHA-2740/2742 W              (Wide channel)
+
+
+    VL bus
+
+    AHA-2840/2842VL              (VL Bus)
+
+    This driver also supports the AIC-7770 chip in SCO Certified System
+    platforms. Please refer to the SCO Hardware Compatibility Handbook to
+    determine the support status of your host adapter, or contact your system
+    supplier.
+
+    BIOS notes
+
+    The following notes apply to the Adaptec host adapter BIOS:
+
+    +  If multiple 2740T host adapters are being used, under certain
+       conditions, disable all BIOSs except for the boot host adapter.
+
+    +  If the BIOS of the 2740T/2742T or the 2740A/A-T/2742/A/A-T is
+       disabled, the driver will use the default setting configuration.
+
+    Configuration utility notes
+
+    The following notes apply to the card's configuration utility:
+
+    +  You must save the configuration information before attempting to use
+       the configuration utility.
+
+    +  When termination on Channel B is not set up properly or if the
+       2740T/2740A-T/2742A-T is not seated properly in the EISA slot, the
+       configuration utility might falsely detect those adapters as 2740/42
+       or as 2740W/2742W host adapters.
+
+    The following general notes apply.
+
+    +  The AHA-2740T/2742T and the 2740A/A-T/2742A/A-T do not support a
+       synchronous rate lower than 3.6MB/s.
+
+    +  The system may display a warning message if you try to do a fresh
+       install of the driver at IRQ 10; this is because of the possibility of
+       an interrupt collision.  Do not use IRQ 10 for a fresh installation.
+       The IRQ can be changed to 10 for a driver previously installed.
+
+    +  When adding a host adapter, the lowest BIOS address must correspond to
+       the lowest EISA slot.
+
+    +  Some hard disk drives which initiate synchronous negotiation will not
+       be installed during BIOS scan when synchronous negotiation is disabled
+       on the host adapter.  It is recommended that synchronous negotiation
+       be left enabled (default) for hard disks.
+
+
+ Adaptec AIC-7870 and AIC-7850 host adapter driver (alad)
+
+    The alad driver directly supports the AHA-2940 and AHA-2940W host
+    adapters.
+
+    This driver also supports the AIC-7870 and AIC-7850 chip in SCO Certified
+    System platforms. Please reference the SCO Hardware Compatibility
+    Handbook to determine the support status of your host adapter or contact
+    your system supplier.
+
+    Configuration feature
+
+    Host adapter configurations may be changed by editing the driver's
+    space.c file. This file is located under the appropriate directory of
+    /etc/conf/pack.d for the host adapter driver. In the case of the AHA-
+    2940x, the relevant entry is in the directory /etc/conf/pack.d/alad.  You
+    can alter the value of a number of parameters in this file including the
+    SCSI ID, I/O port address, scatter/gather, tag queuing and
+    connect/disconnect.
+
+    Known problems
+
+    The alad driver may not talk to a tape device. If a tape(C) command or
+    data transfer is attempted on a SCSI tape device at any time after power
+    up, the command will hang and all access to the SCSI bus is denied (you
+    cannot access any other device on the SCSI bus the tape is on).
+
+    The tape is holding the SCSI bus BUSY waiting for an acknowledgement of
+    data it has previously sent. The adapter driver has become confused about
+    the Synchronous Transfer parameters negotiated previously and does not
+    realize it needs to send an acknowledgement.
+
+    To avoid this problem, disable Synchronous Negotiation for the tape
+    device in the Adaptec SCSI-Select BIOS.
+
+    The data transfer rate to the tape device may be decreased slightly.
+    This problem has only been observed on Apricot machines with Tandberg
+    4200c and Archive Viper 525 tape drives.
+
+
+ Adaptec AIC-6x60 host adapter driver (smad)
+
+    The smad driver directly supports:
+
+    AHA-1510
+
+    AHA-1510 A
+
+    AHA-1520
+
+    AHA-1520 A
+
+    AHA-1522
+
+    AHA-1522 A
+
+    This driver supports both the AIC-6260 and AIC-6360 chipsets, and
+    replaces the older and less efficient spad driver (which only supported
+    the AIC-6260 chipset).  You can type defbootstr link disable=spad at the
+    boot prompt to disable the spad driver in the installation kernel.
+
+
+ Advanced Micro Devices host adapter driver (ams)
+
+    This is a PCSCSI(TM) 2.3.0 BTLD which provides fixes to limitations with
+    previous releases of this driver.
+
+    This driver is compatible with any of the following AMD devices:
+
+    PCSCSI (part number Am53C974)
+
+    PCSCSI II (part number Am53C974A)
+
+    PCnet*-SCSI(TM) (part number Am79C970)
+
+
+ DPT SCSI host adapter driver update with RAID, multi-channel, wide SCSI and
+ PCI support (dptr)
+
+    This driver updates the dptr SCSI host adapter driver and adds multi-
+    channel, wide SCSI and PCI support.
+
+    The SCO DPT RAID driver (dptr) will support all SmartCache III products,
+    SmartCache Plus products, and SmartRAID products. For technical support,
+    upgrades, purchases, or product information, you can contact DPT at (407)
+    830-5522 in the US.
+
+    Currently there is a curses version of Storage Manager available for the
+    SCO OpenServer system that will allow you to configure and monitor your
+    RAID system. This is obtainable direct from DPT.  If you want to install
+    the SCO OpenServer system, you will have to create the RAID system first
+    by running Storage Manager for DOS.  Once you have configured your RAID
+    system using Storage Manager, you can add RAID to an existing system or
+    install RAID on a new system using the dptr driver.
+
+
+ EIDE and ATAPI CD-ROM (wd)
+
+    This BTLD provides support for MP and MicroChannel systems, and for ATAPI
+    CD-ROM. It replaces the ATAPI BTLD on the SCO OpenServer Release
+    Supplement.
+
+    Note that if you do not have a DPT RAID in your system, you should type
+    defbootstr ahslink=wd disable=dptr at the boot prompt.  This is because
+    the DPT driver can have an adverse affect on some IDE chipsets.
+
+
+ IBM Fixed Disk Adapter/A (esdi)
+
+    This driver is for MicroChannel machines only.
+
+    The installation will fail when it tries to link the kernel.  Type i to
+    ignore this, and continue. When you reboot, put the boot diskette in, and
+    type hd(40)unix.install ahslink=esdi btld=fd(60).  Then you go into
+    system maintenance mode and edit the line in /etc/conf/pack.d/hd/space.c:
+
+    extern nodev();
+
+    to read
+
+    extern nodev(), nulldev;
+
+    The installation will then succeed. You will need to relink the kernel.
+
+
+ Symbios Logic (bhba)
+
+    BTLDPCI-3.04.ME is a boot-time loadable driver that is link-edited into
+    the SCO OpenServer kernel.  This BTLD supports the 8xx family of Symbios
+    Logic SCSI controllers, specifically the 53C810, 810A, 815, 825, 825A,
+    860 and 875.  This driver dynamically maps interrupts, supports Fast and
+    Wide SCSI, scatter/gather, and multiple host bus adapters (HBAs).  In
+    addition, this driver fully supports either single or multiple processor
+    systems (multiple processor systems must also have the SCO Symmetrical
+    Multiprocessing Support package installed).
+
+    New features of this driver are:
+
+    +  Supports Multiple Processors
+
+    +  Negotiates for Fast 20 devices (860 & 875)
+
+
+ Hardware requirements
+
+    This SCO UNIX BTLD works with all Symbios Logic 53c8xx SCSI I/O
+    Processors.  The 53C810, 815 and 825 are fully supported.  The 53C810A
+    and 825A are supported in legacy mode of 53C810 and 825, respectively.
+    The Fast20 negotiation feature of the 53C860 and 875 are also supported.
+    The SCRIPTs RAM operation of the 53C825A and 875 are not currently
+    supported.
+
+    After installation, if additional Symbios Logic SCSI host bus adapters
+    are added to the system, use the appropriate mkdev command for each
+    device attached to the new host bus adapter.  After this has been done,
+    the kernel has to be rebuilt, and the system needs to be rebooted for the
+    change to take effect.
+
+ Software requirements
+
+    This driver fully supports either single or multiple processor systems
+    (multiple processor systems must also have the SCO Symmetrical
+    Multiprocessing Support package installed).
+
+ Known problems
+
+    Shutting off power to an active CD-ROM drive may hang the shell which is
+    utilizing the CD-ROM.
+
+    There is a known problem which will cause a system hang if a disk drive
+    capable of Fast-20 operation is attached to a Symbios Logic host bus
+    adapter containing a SCSI chip that is not capable of Fast-20 operation.
+    The Symbios Logic chips which support Fast-20 operation are the 53c860
+    and 53c875.  This deficiency has been identified and will be corrected in
+    a later version of the Driver.
+
+    This driver defaults to not issuing Queue Tag messages to any SCSI
+    devices, since at least one SCSI disk drive with a certain firmware level
+    exhibits problems during high I/O operations with Queue Tagging.  The
+    driver does implement Queue Tagging.  If QueueTagging is desired, an
+    administrator can edit the file /etc/conf/pack.d/bhba/space.c, change the
+    bhba_do_tagged to 1 (near the end of the file), link edit the kernel and
+    reboot the system.  Some increase in I/O speed has been observed but this
+    change should be implemented in a non-critical system until the SCSI
+    devices are proven to correctly implement Queue Tagging.
+
+    This driver defaults to not implementing an OS feature known as
+    "do_buffer".  A system hang occurs on multiprocessor systems during
+    bootup.  It is advised that this feature remain OFF until the driver
+    problem is corrected in a later version.
+
+
+ SCSI juke box driver (Sjk)
+
+    _________________________________________________________________________
+       NOTE  This driver should be installed using the Software Manager.
+       It is not boot-time loadable.
+    _________________________________________________________________________
+
+    The Sjk driver supports media changer or ``juke box'' devices.  These
+    allow the selection of a data medium (such as a tape or CD) from a
+    carousel, tape holder or magazine containing similar data media. This is
+    then transported to an embedded SCSI device for reading or writing, and
+    finally replaced in the magazine.  These devices are useful for remote
+    and unattended mass data storage, retrieval, or backup purposes, where a
+    single data medium could not contain enough data for the task required.
+
+    This driver supports juke boxes which implement the SCSI-2 Medium Changer
+    model definition. This is a set of SCSI commands which control the
+    selection of media from the magazine and transport to and from the SCSI
+    drive that reads and writes the data.  Refer to the juke(C) manual page
+    for a description of SCSI-2 Medium Changer model.
+
+ Configuring a SCSI juke box
+
+    Before running the mkdev juke program, refer to the juke box
+    documentation to find out how embedded SCSI devices (referred to as the
+    data transfer elements) and the other parts of the juke box should be
+    configured for their SCSI addresses (host adapter, bus number, ID, and
+    LUN).
+
+    Typically, simple juke box devices, containing one SCSI data transfer
+    element such as a CD-ROM, would be configured with the same host adapter,
+    SCSI ID, and bus number, as the juke box.  However, the SCSI device would
+    have a SCSI LUN (logical unit number) of 0, and the juke box would have a
+    SCSI LUN of 1.
+
+    First configure each of the embedded SCSI data transfer elements using
+    the appropriate mkdev scripts (for example, mkdev tape for tape, mkdev
+    cdrom for CD-ROM).  Defer relinking the kernel.  Then configure the juke
+    box device using mkdev juke, and relink and reboot the kernel.
+
+ Juke box operation
+
+    Refer to the juke box's documentation for details of the drive and
+    mechanisms that it contains, and how it transfers media to and from
+    magazines to the embedded drives. You should also read the juke(C) manual
+    page and familiarize yourself with the terminology used there.
+
+    Each juke box configured with mkdev juke is associated with a control
+    device node. The device node is named /dev/SjkN, where N takes a value
+    from 0 to 255.  Use the included juke(C) command to control movement of
+    media inside the juke box.
+
+    Use the normal device nodes for the embedded SCSI data transfer elements
+    to control, read or write to the currently selected data media.
+
+    The following example is based on a system containing a juke box with two
+    SCSI DAT tape drives as data transfer elements, eight storage elements,
+    two medium transport elements, and one import/export element.
+
+    Two SCSI tape drives were first configured using mkdev tape.
+
+       /dev/rStp0    /dev/nrStp0    /dev/xStp0
+       /dev/rStp1    /dev/nrStp1    /dev/xStp1
+
+    This created rewind, non-rewind and control devices for the first and
+    second tape drives:  tape(C) and backup commands such as cpio(C), tar(C),
+    dd(C), can be used to access and control these devices assuming that they
+    have data media loaded.
+
+    The juke box was configured using mkdev juke.  This created the device
+    node /dev/Sjk0. The juke(C) command is used with this device. The
+    available elements on the device can be displayed using the juke elem
+    command.
+
+       Valid elements for device /dev/Sjk0:
+       Import/Export Elements:     ie0
+       Medium Transport Elements:  mt0 mt1
+       Storage Elements:               st0 st1 st2 st3 st4 st5 st6 st7
+       Data Transfer Elements:         dt0 dt1
+
+    In this listing, dt0 refers to the first SCSI DAT tape, mt1 is the second
+    medium transport mechanism, and st1 is the second slot in a tape
+    magazine.
+
+    Assuming that each storage element contains a DAT tape, the following
+    procedure will read from the DAT tape in the second storage element.
+    First move the tape from the second storage element (st1) to one of the
+    medium transport elements (mt0);
+
+       juke move st1 mt0
+
+    Next place the DAT tape into one of the DAT drives (dt0) by moving the
+    medium transport element to the DAT drive.
+
+       juke move mt0 dt0
+
+    This has the effect of loading the tape into the drive; The tape can be
+    read from or written to the drive using the /dev/rStp0 device node.
+
+    Once finished, the DAT tape can be replaced back in its slot using the
+    commands:
+
+       juke move dt0 mt0
+       juke move mt0 st1
+
+    Note that the tape is usually replaced from where it came, although you
+    could place it in another free slot.  To replace the media in the second
+    storage element (st1), move it to the import/export element;
+
+       juke move st1 ie0
+
+    The DAT tape can then be taken out of the tape loader or access panel and
+    replaced. To place the new media in the second storage element:
+
+       juke move ie0 st1
+
+    Simpler devices without import/export elements or media transport
+    elements may operate as follows.  To move the media in the second storage
+    element to the first drive:
+
+       juke move st1 dt0
+
+    To move it back again:
+
+       juke move dt0 st1
+
+
+ Tricord 4-bus (iiop)
+
+    This BTLD is used to install machines configured with an Intelligent I/O
+    Processor Board (IIOP), an Enhanced IIOP (EIIOP) with  PowerRAID or an
+    Intelligent Storage Subsystem (ISS) with PowerRAID.  This BTLD supports
+    the following PowerFrame  models:
+
+    +  PowerFrame  Models 30/40
+
+    +  PowerFrame  Models 300/400
+
+    +  PowerFrame  Models ES3000/4000/5000
+
+    Throughout these release notes the term SCSI controller will be used to
+    reference the IIOP, EIIOP, or ISS.
+
+    The IIOP and EIIOP controller boards control two SCSI buses. The ISS
+    controller board controls two or four SCSI buses depending on the model.
+
+    IIOP/EIIOP SCSI subsystem
+
+    The IIOP/EIIOP manages two SCSI buses, numbered 0 and 1.  On each SCSI
+    bus, the IIOP itself reserves ID 0; therefore, SCSI IDs 1 through 7 may
+    be used for devices. One IIOP/EIIOP can support a maximum of 14 SCSI
+    devices.  The IIOP/EIIOP driver can support a maximum of 2 IIOPs/EIIOPs
+    (numbered 0 and 1) and therefore a maximum of 28 SCSI devices. An
+    additional IIOP or EIIOP can be added to your system by configuring the
+    additional board with the EISA Configuration Utility.  The IIOP/EIIOP
+    driver will automatically recognize the new board when the system is
+    booted. You cannot mix IIOPs and EIIOPs in the same machine. If you are
+    installing two IIOP/EIIOPs in a machine, they must have the same firmware
+    revision number.  IIOP/EIIOPs and ISSs cannot co-exist in the same
+    machine.
+
+    ISS SCSI subsystem
+
+    The ISS manages two or four SCSI buses, depending on the model.  These
+    buses are numbered  0 and 1 or 0, 1, 2 and 3 respectively.  On each SCSI
+    bus, the ISS itself reserves ID 0; therefore, SCSI IDs 1 through 7 may be
+    used for devices.  The maximum number of  ISSs that can be configured
+    into your ES3000/4000/5000 depends on the number of available system
+    slots.  Additional ISS boards can be added to your system using the EISA
+    configuration utility. The ISS driver will automatically recognize the
+    new board when the system is booted. Multiple ISSs in the same machine
+    must have the same firmware revision number. The firmware revision can be
+    determined by booting the PowerRAID diskette. IIOP/EIIOPs and ISSs cannot
+    co-exist in the same machine.
+
+ Using the iiop BTLD diskette
+
+    The BTLD diskette is used to link the IIOP/EIIOP/ISS driver into the SCO
+    OpenServer kernel during installation.
+
+    The default configuration expected on a Tricord PowerFrame is a hard disk
+    configured on SCSI controller 0, bus 0, with SCSI ID 1.  Mirroring of the
+    boot drive is allowed if you have an EIIOP or ISS SCSI controller. Check
+    your hardware manuals and the Release Notes for more information.
+
+    To install  using the BTLD:
+
+    1.  Familiarize yourself with installation procedures covered in the SCO
+        OpenServer Handbook.
+
+    2.  If you wish to mirror your boot drive, boot the system using the
+        PowerRAID Administrator diskette and create a mirrored boot drive.
+        Installation on logical drives is allowed.  Logical identifier 0 will
+        always represent the boot drive.
+
+    3.  The installation device (cartridge tape or CD-ROM) may be configured
+        on a secondary controller such as an Adaptec 2740.  The BIOS for
+        these controllers must be disabled using the EISA configuration
+        utility.  Do not put hard drives on a secondary controller as the
+        kernel will get confused about the boot controller and panic the
+        system. You can use tapes and CD-ROMs on a secondary controller
+        without any problem.
+
+    4.  Insert the boot diskette and reboot the machine.
+
+    5.  At the boot prompt (Boot:) type link and press <Enter>.
+
+    6.  When asked to enter the package name type iiop and any other package
+        you need to link at boot-time, and press <Enter>, regardless of which
+        SCSI controller is present.
+
+    7.  Follow the installation instructions.
+
+
+ Fresh installation
+
+    A fresh installation of SCO OpenServer Release 5 is the only installation
+    type supported by this BTLD.  If you are upgrading from a SCO(r) UNIX(r)
+    Release 3.2v4 system to SCO OpenServer Release 5 and you would like to
+    take advantage of the new High Throughput File System (HTFS(TM)), you
+    must save your filesystem data to tape or another backup media and
+    restore them to the new filesystems after they are created. If you are
+    currently using the U/FT RAID 1 product, refer to ``Upgrading U/FT RAID 1
+    mirrors''.
+
+    If you wish to retain your current AFS or EAFS filesystems you can move
+    your hard drives intact to your SCO OpenServer Release 5 system. The
+    following procedure will work for physical drives or logical drives
+    created with the PowerRAID utility:
+
+    1.  Create configuration entries for your drive(s) under SCO OpenServer
+        Release 5 by using the mkdev utility hd_iiop.  The first time the
+        utility is run, an entry is created in the file /etc/conf/cf.d/mscsi.
+        Do not create these entries by editing the mscsi file.  You must use
+        mkdev hd_iiop.
+
+    2.  Relink the kernel, and reboot the system.
+
+    3.  Now run mkdev hd_iiop for the second time to create a device node for
+        the drive. You will see the following message displayed on the
+        console:
+
+           During installation you may choose to overwrite all
+           or part of the present contents of your hard disk
+
+           Do you wish to continue (y/n)
+
+        Answer `y' to this question to preserve the disk's contents.  You
+        will see the following message displayed on the console:
+
+           The hard disk installation program will now invoke /etc/fdisk.
+           Entering 'q' at the following menu will exit /etc/fdisk,
+           and the hard disk installation will continue.
+
+           If you wish to exit the entire installation at this menu,
+           press the <DEL> key
+
+                1). Display Partition Table
+                2). Use Entire Disk for UNIX
+                3). Use Rest of Disk for UNIX
+                4). Create UNIX Partition
+                5). Activate Partition
+                6). Delete Partition
+                7). Create Partition
+
+           Enter your choice or `q' to quit:
+
+        There should already be a partition table on your hard disk, so enter
+        `q'.  You will then see the following message displayed on the
+        console:
+
+           Choose one of the following options below or quit
+
+              `y' to create a division table on the active partition
+              `n' to avoid creating a division table
+
+           Enter `y', `n' or `q' to quit:
+
+        There should already be a division table defined for this drive so
+        answer `y' to this question and the division table will be displayed
+        on the system console. Name the divisions that have filesystems on
+        them. Do not create new filesystems on any  divisions that contain
+        valid data.  After naming the divisions, enter `q' to quit.  Install
+        the division table by entering `i' at the next menu.
+
+    4.  Installing the division table creates block and character device
+        nodes in /dev for your divisions. You can now create filesystem mount
+        entries in /etc/default/filesys by running the utility mkdev fs on
+        the Filesystem Manager.
+
+    Using the Software Manager after a BTLD installation
+
+    We recommend that you do not install using the Software Manager after the
+    BTLD installation. If you do use the Software Manager, your kernel relink
+    will fail, and you will need to  follow the steps below. You will not be
+    able to remove the driver subsequently.
+
+    When you see the message:
+
+    Driver <driver name> is already installed.
+    Do you want to overwrite the installed driver (note: it will
+    not be backed up)?"
+
+    Answer no for each of the drivers in the Tricord package. If you do not,
+    it will not be possible to relink the kernel.
+
+    If the kernel relink fails:
+
+    1.  Switch to another multiscreen.
+
+    2.  Enter
+
+
+        cp /var/opt/K/SCO/OS_drivers/perm_save_dir/tpic/space.c
+        /etc/conf/pack.d/pic/space.c.
+
+
+    3.  Switch to the original multiscreen to proceed with the installation.
+
+    4.  Type r to retry the kernel link and finish the installation.
+
+
+    Upgrading U/FT RAID 1 mirrors
+
+    The U/FT RAID 1 product is not supported under SCO OpenServer. SCO now
+    supports a Virtual Disk Manager product that includes the functionality
+    of U/FT RAID and much more. The virtual disk system is incompatible with
+    disk divisions created with divvy,  meaning that existing filesystems
+    cannot be directly used with the virtual disk product.  If you have
+    filesystem data that resides on a U/FT mirror and you intend to restore
+    the data to a virtual disk RAID device, save the filesystem data to a
+    backup device and restore it to the virtual disk RAID after it is
+    created.
+
+ SCSI configuration viewing utility
+
+    The rview utility provides a visual representation of SCSI devices
+    attached to the SCSI controller.  To run rview:
+
+       /usr/bin/rview
+
+
+ Adding SCSI devices
+
+    The SCO OpenServer Release 5 BTLD diskette contains modified mkdev
+    scripts for configuring SCSI devices on a Tricord SCSI controller.  Use
+    mkdev hd_iiop for configuring disk devices, mkdev tape_iiop for
+    configuring tape devices and mkdev cdrom_iiop for configuring Compact
+    disk devices. These mkdev scripts use the SCSI configuration viewing
+    utility (rview) to display SCSI devices for selection.
+
+ Kernel message logging daemon (imsd)
+
+    This release of the BTLD includes a  message logging daemon, imsd. This
+    daemon provides the following major functions:
+
+    +  Generic, high speed, kernel message logging.
+
+    +  Management Console remote shutdown (for systems configured with an
+       Intelligent Management Subsystem).
+
+    imsd is started up when the system enters multiuser mode.  If for any
+    reason this daemon is killed when in multiuser mode, it can be restarted
+    by entering:
+
+       /bin/sh  /etc/idrc.d/ims
+
+
+ Remote console feature
+
+    For systems configured with an Intelligent Management Subsystem, the
+    Management Console software supports a remote console window.  All output
+    to the console will appear on this Management Console window.  The last
+    4KB of console output are buffered by the Intelligent Management
+    Processor and are available when the remote console window is brought up.
+
+    The remote console window also supports limited functionality for issuing
+    shell commands. Since the window emulates a dumb terminal, no UNIX
+    commands requiring ANSI terminal support can be successfully issued (for
+    example vi). Since this interface provides a direct pipeline into console
+    input and output, system administrators with security concerns may wish
+    to disallow any input from this Management Console window.
+
+    Both input and output to this window are configurable by modifying
+    variables in the file /etc/conf/pack.d/ims/space.c according to the
+    following bit defines, and relinking:
+
+    IMS_REMOTE_CON_KIN 1 /* Bit 0 */
+            If set to a 1 (default), kernel input is enabled.  If set to a 0,
+            kernel input is disabled.
+
+    IMS_REMOTE_CON_KOUT 2 /* Bit 1 */
+            If set to a 2 (default), then all kernel output is forwarded to
+            the Management Console. This includes all system error messages.
+            If set to 0 then no output generated by the kernel will be
+            forwarded to the Management Console.
+
+    IMS_REMOTE_CON_UIN 4 /* Bit 2 */
+            If set to a 4 (default), then all input from the Management
+            Console will be forwarded to the operating system for processing.
+            Since this is the mechanism for logging into the operating system
+            from the Management Console setting this to a 0 will disable the
+            issuing of all administration commands.
+
+    IMS_REMOTE_CON_UOUT 8 /* Bit 3 */
+            If set to a 8 (default), then all console output originating from
+            the operating system will be forwarded to the remote Management
+            Console. If set to 0, then all process level console output will
+            not be sent to the management console.
+
+    The remote console window also supports an option for local echo. A
+    suggested setting for local echo is off if running the debugger and on
+    when not in the debugger.
+
+
+
+
+ Chapter 7
+ Multiprocessing drivers: notes and known limitations
+
+    This chapter documents the SCO(r) Multiprocessing Drivers component of
+    the Advanced Hardware Supplement Release 5.1.0.  This component contains
+    the driver for the Tricord PowerFrame (TPF) platform.
+
+    After some introductory notes on installation, this chapter contains
+    notes about the Tricord driver.
+
+
+ Installation requirements
+
+    Before installing the multiprocessing component, you must have the SCO
+    OpenServer system installed with SCO Symmetrical Multiprocessing Support
+    (SMP(r)) (this product can be found on the original installation media
+    tape or CD-ROM and accessed via the Software Manager).  The iiop BTLD
+    package must also be installed and configured.  If it is not, the MP
+    component will be installed but the TPF driver will be disabled.  In this
+    case, install the iiop package, and then enable the TPF driver by setting
+    the second field of /etc/conf/sdevice.d/tpf  from N to Y.
+
+    You can install on one of the following configurations:
+
+    +  A clean distribution (SCO OpenServer and no MP drivers).
+
+    +  A distribution which already has a vendor EFS (it is not generally
+       necessary to remove the EFS prior to installing the SCO Multi-
+       processing Drivers Release 5.1.0).
+
+    The AHS Multiprocessing Drivers component can be removed and any vendor
+    EFS/SCO OpenServer files will be restored (if you want to save them).
+
+
+ Installation procedure
+
+    To install the AHS Multiprocessing Drivers component on your system,
+    follow the steps in Chapter 1, ``Installing the AHS 5.1.0 software''
+
+
+ Removal procedure
+
+    To remove the AHS Multiprocessing Drivers component from your system,
+    follow the steps in ``Removing the AHS software''
+
+
+ Tricord
+
+    This version of the AHS supports the following PowerFrame models:
+
+    +  PowerFrame Models 30/40
+
+    +  PowerFrame Models 300/400
+
+    +  PowerFrame Models ES3000/4000/5000
+
+    You need to remove any previous Tricord EFS prior to installing.
+
+    When you install the TPF package, you will automatically disable the a15k
+    driver.  If you have a Tricord box this does not affect you and may cause
+    problems if it was not disabled.  If you have any machine that uses the
+    a15k driver (the ACER FRAME 15000/17000), you should either reenable the
+    a15k driver, or remove the TPF package. If you are not running on a
+    Tricord machine, there is no problem having both enabled.
+
+
+
+
+ juke(C)                                                       28 August 1995
+
+
+ Name
+
+    juke - operate a SCSI media changer
+
+ Syntax
+
+    juke operation [device]
+
+ Description
+
+    The juke utility sends a command to a SCSI media changer (or ``juke
+    box'') device to move data media between its various elements.  The
+    device argument defaults to /dev/Sjk0, the first media changer defined in
+    the system.
+
+    Supported operations are:
+
+    elem List the internal elements of the media changer.  (The SCSI-2 media
+         changer model defines four physical parts, or ``elements'', for juke
+         box devices.  The physical configuration of these elements should be
+         defined in the hardware manual supplied with the device.)
+
+         The elem operation displays elements using the following codes:
+
+         dtN  Data transfer element; an embedded SCSI peripheral device (such
+              as a tape or CD-ROM drive) which is capable of reading or
+              writing a data medium.  Medium changer devices normally contain
+              one or more data transfer elements.
+
+         ieN  Import/export element; a special storage location where a human
+              operator or another media changer can insert or remove a data
+              medium via an access door or external loader mechanism.  A
+              media transport element moves data media between an
+              import/export element and storage elements and data transfer
+              elements which are usually not accessible externally.  A media
+              changer device may have zero or more import/export elements.
+
+         mtN  Medium transport element; a robotic mechanism which moves data
+              media between storage elements, data transfer elements, and
+              import/export elements.  If a media changer device defines one
+              or more media transport elements, these may be used as
+              temporary holding places for data media.  If a media changer
+              device does not define a media transport element, data media
+              are transferred directly between storage elements and data
+              transfer elements.
+
+         stN  Storage element; a location or ``slot'' in a carousel, tape
+              holder or magazine which can contain a data medium.  It is not
+              a data medium (such as a tape or a CD).  Medium changer devices
+              typically contain four or more storage elements.
+
+         N is a number from 0 to 255 representing different elements of a
+         given type within a media changer device.  If no entries are shown
+         for an element type, the media changer does not contain such an
+         element.
+
+    lock Disable the front panel controls of the media changer.
+
+    move source destination
+         Move data medium from a source element to a destination element.
+
+    pos stN
+         Position medium transport element ``mt0'' in front of ``stN''.  This
+         places the media transport ready to retrieve a data medium from the
+         specified storage element.  It does not transfer any data medium to
+         the media transport.
+
+    reset
+         Perform a hardware reset on the media changer.
+
+    unlock
+         Enable the front panel controls of the media changer.
+
+    Configuration
+
+    Each data transfer element is configured and operated as a separate SCSI
+    peripheral device.  Storage, data transfer, and import/export elements
+    are configured and operated as part of the media changer device.
+
+    For example, a juke box containing one SCSI CD-ROM drive (the data
+    transfer element) is configured as two entities:
+
+    +  A CD-ROM drive using the mkdev cdrom command.  If this is the first
+       such device configured in the system, its block and character device
+       nodes are /dev/cd0 and /dev/rcd0.
+
+    +  A media changer device using the mkdev juke command.  If this is the
+       first such device configured in the system, its control device node is
+       /dev/Sjk0.
+
+    Data transfer elements usually have the same SCSI host adapter name, bus
+    number, and ID as the other elements in the juke box, but their LUNs
+    (logical unit numbers) differ.  For example, the LUNs of the data
+    transfer element and the media changer device may be 0 and 1
+    respectively.
+
+    Refer to the documentation supplied with the juke box for details of the
+    SCSI configuration of its elements.
+
+ Files
+
+
+    /dev/Sjk0
+         media changer control device
+
+    /usr/bin/juke
+         juke executable
+
+    /usr/include/sys/Sjk.h
+         Sjk include file
+
+ See also
+
+    backup(ADM), cpio(C), dd(C), jukebox(HW), mkdev(ADM), restore(ADM),
+    tape(HW), tar(C), xbackup(ADM), xrestore(ADM)
+
+ Standards conformance
+
+    juke is not part of any currently supported standard; it is an extension
+    of AT&T System V provided by The Santa Cruz Operation, Inc.
+
+
+
+
+ jukebox(HW)                                                   28 August 1995
+
+
+ Name
+
+    jukebox: juke, Sjk - media changer devices
+
+ Description
+
+    Sjk is the SCSI peripheral driver for media changer devices (juke boxes).
+
+    The command mkdev juke is used to configure the media changer driver
+    interactively. This defines the SCSI host adapter, bus number, controller
+    target ID, and device LUN in the SCSI configuration file mscsi(F).  The
+    data transfer elements of a media changer (for example, DAT or CD-ROM
+    drive) must be defined as separate SCSI peripherals using an appropriate
+    command such as mkdev tape or mkdev cdrom.
+
+    The juke command can be used to control a media changer device.  See
+    juke(C) for more information.
+
+    The device file /dev/SjkN may be used to control the associated media
+    changer device.  N corresponds to the minor number of the device.  The
+    minor device number determines which media changer will be accessed;
+    minor number 0 accesses the first device, 1 the second device and so on,
+    up to minor number 255.
+
+    ioctl commands
+
+    The following ioctl(S) commands, defined in /usr/include/sys/Sjk.h, may
+    be used to control a media changer (the argument arg to ioctl is set to 0
+    unless otherwise indicated):
+
+    SJK_GETJUKEADDR
+         Return the details of the media changer's internal elements in the
+         struct Sjk_address pointed to by arg.
+
+    SJK_MOVEJUKE
+         Move a data medium (tape, CD) from a source storage element to a
+         destination storage element.  The argument arg is coded as:
+
+         (source << 16) | destination
+
+         where source and destination are of type unsigned short.
+
+    SJK_NOJUKEREMOVE
+         Disable the front panel controls of the media changer.
+
+    SJK_OKJUKEREMOVE
+         Enable the front panel controls of the media changer.
+
+    SJK_POSITIONJUKE
+         Position medium transport element ``mt0'' in front of storage
+         element ``stN'', where N is the value of arg of type unsigned int.
+
+    SJK_RESET
+         Perform a hardware reset on the media changer.
+
+ Diagnostics
+
+    The following SCSI sense error messages may be displayed on the console.
+    See messages(M) for general information about kernel error messages,
+    including a list of generic device driver errors.
+
+    NOTICE: Sjk: Destination Element Full
+
+    A data medium could not be placed in a given element because that element
+    was already occupied.
+
+    NOTICE: Sjk: Invalid CDB Field
+
+    A SCSI command data block field was not understood by the media changer's
+    controller.
+
+    NOTICE: Sjk: Invalid Command Code
+
+    A SCSI command was not understood by the media changer's controller.
+
+    NOTICE: Sjk: Invalid Element Address
+
+    A specified element was not found to be present in the media changer.
+
+    NOTICE: Sjk: Logical Unit Not Supported
+
+    A SCSI command addressed a non-existent element of the media changer.
+
+    NOTICE: Sjk: Manual Intervention Required
+
+    A hardware error occurred in the media changer which requires the
+    intervention of a human operator.
+
+    NOTICE: Sjk: Mechanical problem
+
+    A hardware failure occurred in the media changer.
+
+    NOTICE: Sjk: Media Removal Prevented
+
+    A data medium could not be removed from a specified element because of a
+    physical obstruction.
+
+    NOTICE: Sjk: Power-on Reset, or Bus Reset
+
+    A hardware reset was performed on the media changer.
+
+    NOTICE: Sjk: Source Element Empty
+
+    A data medium could not be removed from a given element because it was
+    not present there.
+
+ Files
+
+    /dev/SjkN       control special device for media changer with minor
+                    device number N
+    /usr/include/sys/Sjk.h
+                    header definitions file
+
+ See also
+
+    cdrom(HW), juke(C), mkdev(ADM), mscsi(F), scsi(HW), scsitape(HW)
+
+
+ Index
+
+
+    Adaptec AIC-6x60 host adapter driver, 50
+    Adaptec AIC-7770 host adapter driver, 48
+    Adaptec AIC-7870 and AIC-7850, 49
+    Advanced Micro Devices host adapter driver, 50
+    alad, 49
+    ams driver, 50
+    arad, 48
+    ATAPI CD-ROM driver, 51
+    bhba, 51
+    BIOS notes, Adaptec host adapter, 48
+    BTLD
+     defined, 44
+     installing, 44
+    Desktop, problems exiting, 26
+    DirectColor, SCOcolor, SCOterm, SCOcolor problems with, 25
+    dptr, 50
+    drawing problems, icons, 25
+    EIDE driver, 51
+    esdi, 51
+    Ethernet, supported adapters, 35
+    Fixed Disk Adapter/A, 51
+    graphical mode, problems exiting, 26
+    graphics adapters
+     discontinued adapters, 24
+     legacy program, 24
+    grey-scale monitors, special X server problems, 26
+    icons, drawing problems, 25
+    iiop, 55
+    IIOP/EIIOP SCSI subsystem, 56
+    imsd, 60
+    ISS SCSI subsystem, 56
+    juke box driver, 53
+    jukebox(HW), 69
+    juke(C), 66
+    kernel message logging daemon, 60
+    LAN Manager, performance problems, 41
+    legacy graphics adapters, 24
+    monochrome monitors, special X server problems, 26
+    mw driver, and multiscreens, 25
+    network adapters
+     data transfer problems, 41
+     timeouts, 41
+    NFS, performance problems, 41
+    OSI, incompatibility with Token-Ring, 42
+    PowerFrame, 64
+    RAID support, 50
+    SCO Services, 6
+    SCOcolor, SCOterm, SCOcolor, problems with -cmap, 25
+    SCSI juke box driver, 53
+    services, 6
+    Sjk, 53
+    smad, 50
+    SSOs, 11
+    Symbios Logic controllers, 51
+    timeouts, network adapters, 41
+    Token-Ring
+     data transfer problems, 41
+     incompatibility with OSI, 42
+     supported adapters, 38
+    Tricord, 64
+    Tricord 4-bus, 55
+    TrueColor, SCOcolor, SCOterm, SCOcolor problems with, 25
+    U/FT RAID mirrors, 59
+    VGA driver, and multiscreens, 25
+    video adapters, listed by manufacturer, 15
+    wd driver, 51
+    wide SCSI support, 50
+    WordPerfect, problems with non-VGA graphics adapters, 27
+    X server, problems exiting, 26
+
+
+
+ No part of this publication may be  reproduced,  transmitted,  stored  in  a
+ retrieval system, nor translated into any human or computer language, in any
+ form or by any means, electronic, mechanical, magnetic,  optical,  chemical,
+ manual,  or otherwise, without the prior written permission of the copyright
+ owner, The Santa Cruz Operation,  Inc.,  400  Encinal  Street,  Santa  Cruz,
+ California,  95060,  USA.   Copyright infringement is a serious matter under
+ the United States and foreign Copyright Laws.
+
+ Information in this document is subject to change without  notice  and  does
+ not represent a commitment on the part of The Santa Cruz Operation, Inc.
+
+ SCO, the SCO logo, The Santa Cruz Operation, Open Desktop, ODT, Panner,  SCO
+ Global  Access,  SCO  OK,  SCO  OpenServer,  SCO  MultiView, SCO Visual Tcl,
+ Skunkware, and VP/ix are trademarks or registered trademarks  of  The  Santa
+ Cruz  Operation,  Inc.  in the USA and other countries. UNIX is a registered
+ trademark in the USA  and  other  countries,  licensed  exclusively  through
+ X/Open  Company  Limited.   All  other brand and product names are or may be
+ trademarks of, and are used to  identify  products  or  services  of,  their
+ respective owners.
+
+
+ Document Version:  5.1.0
+ 28 August 1995
+
+
+ The SCO software that accompanies this publication  is  commercial  computer
+ software  and,  together  with  any related documentation, is subject to the
+ restrictions on US Government use as set forth below.  If  this  procurement
+ is for a DOD agency, the following DFAR Restricted Rights Legend applies:
+
+ RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the Government
+ is subject to restrictions as set forth in subparagraph (c)(1)(ii) of Rights
+ in Technical Data  and  Computer  Software  Clause  at  DFARS  252.227-7013.
+ Contractor/Manufacturer  is  The  Santa  Cruz  Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA  95060.
+
+ If this procurement is for a civilian government agency, this FAR Restricted
+ Rights Legend applies:
+
+ RESTRICTED  RIGHTS  LEGEND:   This  computer  software  is  submitted   with
+ restricted  rights  under Government Contract No. _________ (and Subcontract
+ No. ________, if appropriate).  It may not be used, reproduced, or disclosed
+ by  the  Government  except as provided in paragraph (g)(3)(i) of FAR Clause
+ 52.227-14 alt  III  or  as  otherwise  expressly  stated  in  the  contract.
+ Contractor/Manufacturer  is  The  Santa  Cruz  Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA  95060.
+ The copyrighted software that accompanies this publication  is  licensed  to
+ the  End  User  only  for use in strict accordance with the End User License
+ Agreement, which should be read  carefully  before  commencing  use  of  the
+ software.   This  SCO  software includes software that is protected by these
+ copyrights:  (c) 1983-1995 The Santa Cruz  Operation,  Inc.;  (c)  1992-1994
+ 3COM  Corporation;  (c)  1989-1994  Acer  Incorporated;  (c)  1989-1994 Acer
+ America Corporation; (c) 1990-1994 Adaptec,  Inc.;  (c)  1993-1994  Advanced
+ Micro Devices, Inc.; (c) 1990 Altos Computer Systems; (c) 1992-1994 American
+ Power Conversion, Inc.;  (c)  1988  Archive  Corporation;  (c)  1987  Apollo
+ Computer   Inc.;   (c)   1988-1991   Apple  Computer,  Inc.;  (c)  1990  ATI
+ Technologies,  Inc.;  (c)  1976-1992  AT&T;  (c)   1992-1994   AT&T   Global
+ Information   Solutions   Company;   (c)   1993  Berkeley  Network  Software
+ Consortium; (c) 1985-1986 Bigelow & Holmes; (c) 1993 Board  of  Trustees  of
+ the  University  of  Illinois; (c) 1988-1991 Carnegie Mellon University; (c)
+ 1989-1990  Cipher  Data  Products,  Inc.;  (c)  1985-1992  Compaq   Computer
+ Corporation;  (c)  1990-1993  Cornell  University;  (c) 1985-1994 Corollary,
+ Inc.; (c) 1986-1987 Convergent Technologies Inc.;  (c)  1994  Dell  Computer
+ Corporation; (c) 1987-1993 Digital Equipment Corporation; (c) 1989-1994 Dirk
+ Koeppen EDV-Beratungs-GmbH; (c) 1990-1994 Distributed Processing Technology;
+ (c)  1991 D.L.S. Associates; (c) 1993 D.I.S - Universita` di Pavia; (c) 1988
+ Evans & Sutherland Computer Corporation; (c) 1990 Free Software  Foundation,
+ Inc.; (c) 1991-1992 Fuji Xerox Co., Ltd.; (c) 1991-1992 Fujitsu Limited; (c)
+ 1989-1991 Future Domain Corporation; (c) 1994 Gradient  Technologies,  Inc.;
+ (c)  1990-1993  Groupe Bull; (c) 1986-1995 Hewlett-Packard Company; (c) 1990
+ Ing.C.Olivetti & C., SpA; (c) 1994-1995 IBM Corporation; (c) 1989-1995 Intel
+ Corporation;  (c)  1989  Irwin  Magnetic  Systems,  Inc.;  (c) 1988-1995 IXI
+ Limited; (c) 1988-1991 JSB  Computer  Systems  Ltd.;  (c)  1987-1994  Legent
+ Corporation;  (c)  1985-1995  Locus  Computing  Corporation:  DOS Merge; (c)
+ 1985-1993 Massachusetts Institute of Technology; (c) 1989  Matra  Datavision
+ Inc.;  (c)  1990  Megatek  Corporation;  (c) 1985-1992 Metagraphics Software
+ Corporation; (c) 1980-1994 Microsoft Corporation; (c)  1990  Motorola  Inc.;
+ (c)  1984-1989 Mouse Systems Corporation; (c) 1989 Multi-Tech Systems, Inc.;
+ (c) 1989-1991 National Computer Graphics Association; (c) 1991-1995 National
+ Semiconductor  Corporation;  (c)  1990  NEC Technologies, Inc.; (c) 1990 NCR
+ Corporation; (c) 1989-1993 Network Computing Devices,  Inc.;  (c)  1989-1992
+ Novell,  Inc.;  (c)  1990-1991  NTT  Software  Corporation;  (c) 1989 Object
+ Design, Inc.; (c) 1990  Oki  Electric  Industry  Co.,  Ltd.;  (c)  1992  Oki
+ Technosystems   Laboratory,  Inc.;  (c)  1990-1991  OMRON  Corporation;  (c)
+ 1989-1994 Open Software  Foundation,  Inc.;  (c)  1989  Prentice  Hall;  (c)
+ 1993-1994  Programmed Logic Corporation; (c) 1989-1995 Racal InterLan, Inc.;
+ (c) 1979-1994 Regents of the University of  California;  (c)  1990-1992  RSA
+ Data  Security,  Inc.; (c) 1987-1994 Secureware, Inc.; (c) 1991-1992 Silicon
+ Graphics, Inc.; (c) 1987-1990 Siemens Nixdorf  Informationssysteme  AG;  (c)
+ 1987-1991 SMNP Research, Inc.; (c) 1991-1992 Sony Corporation; (c) 1990-1992
+ SORD Computer Corp.; (c) 1987-1995 Standard  Microsystems  Corporation;  (c)
+ 1984-1994  Sun Microsystems, Inc.; (c) 1987 Tandy Corporation; (c) 1988-1991
+ Tektronix, Inc.; (c) 1990-1992 Toshiba Corp.; (c) 1987 United  States  Army;
+ (c)  1990-1991  UniSoft  Group  Limited;  (c)  1990  Unisys Corporation; (c)
+ 1989-1991 University of  Maryland;  (c)  1986  University  of  Toronto;  (c)
+ 1976-1994  UNIX  System  Laboratories, Inc.; (c) 1988 Wyse Technology, Inc.;
+ (c) 1988-1994 X Consortium, Inc.; (c) 1992-1994 Xware; (c) 1983-1992 Eric P.
+ Allman; (c) 1987-1988 Don Bennett; (c) 1987-1989 Jeffery D. Case and Kenneth
+ W. Key; (c) 1985 Andrew Cherenson;  (c)  1989  Mark  H.  Colburn;  (c)  1993
+ Michael  A.  Cooper;  (c)  1982  Pavel  Curtis;  (c)  1987  Owen DeLong; (c)
+ 1989-1993 Frank Kardel; (c) 1993  Carlos  Leandro  and  Rui  Salgueiro;  (c)
+ 1991-1994  Karl Lehenbauer and Mark Diekhans; (c) 1986-1988 Larry McVoy; (c)
+ 1990 Larry Medwin; (c) 1992 David  L.  Mills;  (c)  1992  Ranier  Pruy;  (c)
+ 1986-1988  Larry Wall; (c) 1992 Q. Frank Xia.  All rights reserved.  SCO NFS
+ was developed by Legent Corporation based on  Lachman  System  V  NFS.   SCO
+ TCP/IP  was  developed  by  Legent  Corporation  and is derived from Lachman
+ System V STREAMS TCP,  a  joint  development  of  Lachman  Associates,  Inc.
+ (predecessor of Legent Corporation) and Convergent Technologies, Inc.
+
+

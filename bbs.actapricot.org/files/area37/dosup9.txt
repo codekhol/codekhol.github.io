@@ -1,0 +1,161 @@
+                NOVELL TECHNICAL INFORMATION DOCUMENT
+
+TITLE:              DOSUP9.EXE divided into VLMUP2.EXE and NET33X.EXE
+DOCUMENT ID:        TID014295
+DOCUMENT REVISION:  F
+DATE:               19DEC94
+ALERT STATUS:       Red
+INFORMATION TYPE:   Symptom Solution
+README FOR:         DOSUP9.TXT
+
+NOVELL PRODUCT and VERSION:
+NetWare Client for DOS/Windows 
+
+ABSTRACT:
+
+This file contains a README that explains how and why WINUP9.EXE and 
+DOSUP9.EXE have been removed and broken into four new files: WINDR2.EXE,
+NWDLL2.EXE, VLMUP2.EXE, and NET33X.EXE. Because of the Compuserve limitation
+of file names to Octal (6.3) naming, Novell has decided this would be a 
+perfect opportunity to end the tradition of DOSUPx.EXE and WINUPx.EXE 
+naming schemes for DOS & Windows clients and change to this new format. 
+The file contains detailed instructions on which files to download for
+your configuration.
+
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DISCLAIMER
+THE ORIGIN OF THIS INFORMATION MAY BE INTERNAL OR EXTERNAL TO
+NOVELL.  NOVELL MAKES EVERY EFFORT WITHIN ITS MEANS TO VERIFY 
+THIS INFORMATION. HOWEVER, THE INFORMATION PROVIDED IN THIS 
+DOCUMENT IS FOR YOUR INFORMATION ONLY.  NOVELL MAKES NO EXPLICIT
+OR IMPLIED CLAIMS TO THE VALIDITY OF THIS INFORMATION.
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+
+
+    Self-Extracting File Name:  DOSUP9.TXT     Revision:  F
+
+     Files Included     Size     Date      Time
+
+     \
+       DOSUP9.TXT         (This File)
+
+
+SYMPTOM
+
+Which files do I need to download to update my workstations?
+
+SOLUTION
+
+The following is a matrix that identifies which files you need to download
+to update you workstation.  When the VLMs are referenced - the assumption
+is made that you have already installed the VLMS with with the client kit
+that is provided with the NetWare products 4.X and 3.12.  If you are using
+NetWare 3.11 or NetWare 2.x and have not already purchased the client kit, 
+you can purchase a site license for $99.00 (US dollars) by entering the 
+NOVFILES forum \Client Kits\Order DOS/Windows client (v1.2) you will be
+asked for a credit card number, or you can call 1-800-UPDATE1 and order the
+"NetWare Client for DOS/MS Windows v1.2" - part number 00662644024943.
+
+
+                    Version of NetWare on file server
+
+W/s configuration    v2.x/v3.x/PNW @       v4.02               v4.10
+____________________________________________________________________________
+
+Netx with             NET33x.EXE         NET33X.EXE          NET33X.EXE
+dedicated IPX
+(IPX.COM)
+strictly DOS
+
+
+Netx with             NET33X.EXE         NET33X.EXE          NET33X.EXE
+dedicated IPX         WINDR2.EXE         WINDR2.EXE          WINDR2.EXE
+with Windows          NWDLL2.EXE                             NWDLL2.EXE 
+
+Netx with             NET33X.EXE         NET33X.EXE          NET33X.EXE
+ODI and               
+strictly DOS * 
+
+Netx with             NET33X.EXE         NET33X.EXE          NET33X.EXE
+ODI and               WINDR2.EXE         WINDR2.EXE          WINDR2.EXE 
+Windows *             NWDLL2.EXE         NWDLL2.EXE          NWDLL2.EXE           
+
+VLMs with             VLMUP2.EXE         VLMUP2.EXE          ***
+ODI and 
+strictly DOS
+
+VLMs with             VLMUP2.EXE         VLMUP2.EXE          ***
+ODI and               WINDR2.EXE         WINDR2.EXE           
+Windows               NWDLL2.EXE         **                    
+
+
+*    If you need the updated ODI files and/or MLIDs - you should also download
+     VLMUP2.EXE (LSL.COM, NE2000.COM, IPXODI.COM).
+
+**   The dynamic link libraries (*.dll) that you need are dependent upon the
+     version of NWADMIN.EXE that you run.  If you are using the NWDAMIN.EXE
+     that comes with 4.02 (NWADMIN.EXE 5-12-94 v4.06) you will need to use 
+     the client files that come with NetWare v4.02.  That client kit contains
+     the DLLs that correspond to the 4.06 version of NWADMIN.EXE. The v4.06
+     NWADMIN will not run if the workstation has the DLLs from this file
+     loaded.
+
+
+***  The drivers contained in VLMUP2.EXEm WINDR2.EXE, and NWDLL2.EXE are the
+     same as the files that ship with NetWare v4.10.  
+
+@    Personal Netware works only with VLMs (you cannot use NETX).
+
+
+SOLUTION SPECIFICS
+
+DOSUP9.EXE has been divided into 2 files - VLMUP2.EXE and NET33X.EXE. 
+
+  VLMUP2.EXE contains all the updated VLMs (Pre-release v1.20), the updated 
+  ODI drivers (LSL.COM and IPXODI.COM), the updated MLIDs, and other 
+  associated files.  
+
+
+  Note: The new naming scheme required the three files be in synch
+        on their revision number.
+	
+		
+  NET33X.EXE contains the latest NETX.EXE.  Novell is recommending that
+  users upgrade to the ODI/VLMs since NETX.EXE is no longer under development.
+  Novell's 16-bit solution is ODI/VLMs rather than NETX.
+
+
+
+WINUP9.EXE has been divided into 2 files - WINDR2.EXE and NWDLL2.EXE.
+
+  WINDR2.EXE contains the updated Windows drivers and Vxds that are independent
+  of the utilities that you are running (ie. NWADMIN.EXE).  These files are
+  used by both NETX and VLM clients with excpetion of NETWARE.DRV.  The 
+  NETWARE.DRV for NETX is in NET33X.EXE.  Users running Windows on their w/s
+  will want to use the the updated drivers in this file.
+
+  NWDLL2.EXE contains the Netware dynamic link libraries for Windows. 
+  Many users will not need to download this file since the dynamic link 
+  libraries (*.dll) that you need are dependent upon the version of 
+  NWADMIN.EXE that you run (if running NetWare 4.x), and any version 
+  from WINUP9 or later is required if running on a 2.x or 3.x server.  
+  By breaking WINUP9.EXE into 2 files Novell is saving the customer 
+  from having to download 350k of information that they may not need. 
+
+  At times it has become necessary for Novell to update some client modules but
+  not others. With this new naming scheme WINDRx.EXE & NWDLLx.EXE (where x 
+  stands for the latest revision) for Windows files and VLMUPx.EXE & NET33x.EXE
+  for DOS, we can achieve this goal and provide the latest client files
+  when needed revising only the specific downloadable file whose contents has
+  changed.
+
+  Because DOSUP9.EXE has also been divided into two files (VLMUP2.EXE and 
+  NET33X.EXE), it should be noted that the Windows NETWARE.DRV v2.02 is version
+  specific to NETX.EXE and has been moved into NET33X.EXE and is not found in 
+  WINDR2.EXE. Novell's 16-bit solution is on VLMs rather than NETX.
+
+
+Any comments or suggestions on how we can improve the delivery of these client 
+update files are welcomed. Please send your responses to enhclient@novell.com
+via Internet Mail.
+

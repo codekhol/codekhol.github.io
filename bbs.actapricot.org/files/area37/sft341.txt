@@ -1,0 +1,862 @@
+
+              NOVELL TECHNICAL INFORMATION DOCUMENT
+
+TITLE:              SFT III 4.1 features/changes document
+DOCUMENT ID:        TID021974
+DOCUMENT REVISION:  A
+DATE:               09JAN95
+ALERT STATUS:       Yellow
+INFORMATION TYPE:   Issue
+README FOR:         NA
+
+NOVELL PRODUCT and VERSION:
+NetWare 4.10
+
+ABSTRACT:
+
+SFT341.TXT contains the certified MSL list, and a further-edited
+version of the CIT summary of compatibilities with SFT III that
+were found last November.
+
+-----------------------------------------------------------------
+
+DISCLAIMER
+THE ORIGIN OF THIS INFORMATION MAY BE INTERNAL OR EXTERNAL TO
+NOVELL.  NOVELL MAKES EVERY EFFORT WITHIN ITS MEANS TO VERIFY
+THIS INFORMATION.  HOWEVER, THE INFORMATION PROVIDED IN THIS
+DOCUMENT IS FOR YOUR INFORMATION ONLY.  NOVELL MAKES NO EXPLICIT
+OR IMPLIED CLAIMS TO THE VALIDITY OF THIS INFORMATION.
+-----------------------------------------------------------------
+
+
+ISSUE
+
+NEW FEATURES AND CHANGES FOR SFT III v4.1:
+
+CONTENTS
+
+1 - Default memory amount assigned to IOEngine is now 5MB
+2 - .NCF changes in SFT III 4.1
+3 - Screen behaves a little differently when servers are coming
+up
+4 - Test Mode default (time between failures) changed
+5 - SET parameter name changes
+6 - Limit size of log files (via SET parameters)
+7 - Group/user notification upon server failure
+8 - Alternate/backup MSL feature
+9 - Install for SFT III v4.1 is improved
+10 - Mac/TCP support
+11 - DS and TimeSync
+12 - Memory protection (DOMAIN.NLM)
+13 - PRINT changes
+14 - BTRIEVE changes
+15 - NLM connection problem resolved
+16 - Dual processor drivers w/SFT III Alpha and Beta code
+17 - INetConfig utility
+18 - New defaults for Packet Receive Buffers
+19 - MSL certification list
+20 - MEMSCAN.NLM
+21 - Mirror Status notes
+22 - Oracle 7 and SFT III
+23 - Cheyenne ArcServe and SFT III
+24 - Compaq Insight Manager and Server Manager boards
+25 - Upgrade promotion from 3.11 SFT III to 4.1 SFT III
+26 - Remirror block size, mirroring aborts at 99%
+
+Supplement 1 - TCP/IP for SFTIII
+Supplement 2 - AppleTalk zone names and numbers
+Supplement 3 - NetWare 4.1 SFT III certified MSLs (as of 11/94)
+Supplement 4 - Novell products and NetWare 4.1 SFT III (as of
+11/94)
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+= =
+NEW FEATURES AND CHANGES FOR SFT III v4.1:
+(Details on each of the new features are also in the 4.1
+documentation)
+
+1 - DEFAULT MEMORY AMOUNT ASSIGNED TO IOENGINE IS NOW 5MB
+The default IOEngine size in 3.11 was 2MB, and many customers
+were having to increase it via the SET parameters anyway.  5MB
+should be a good starting point for SFT III 4.1, for a
+small-to-medium-size system.  The 4.1 INSTALL program actually
+tries to adjust the IOEngine size automatically, within certain
+limits, so that it ends up taking about 25% of the total RAM.
+
+NOTE1: If adjusting the IOEngine size via the SET parameters, be
+sure to put these commands near the beginning of the IOSTART.NCF,
+right after the IOEngine name and number. 
+
+NOTE2: You can still adjust the IOEngine/MSEngine size by using
+the SET parameters (New Start/End Address for Unclaimed Memory
+Block).  You may notice, when you specify a new start/end address
+with these SET parameters, that the OS will round your value up
+to the nearest 4K boundary.  This change was necessary to comply
+with 4.1 memory handling.
+
+
+2 - .NCF CHANGES IN SFT III 4.1
+The sequence of execution of these files is the same as in 3.11,
+but there are some changes to what goes where in these files.  
+
+Also, in 3.11 the IOAUTO.NCF was not executed the first time the
+servers are brought up, the first time ACTIVATE SERVER is typed
+at the console.  That has changed for 4.1 SFT III, in that the
+IOAUTO is executed now even the first time the servers come up. 
+Additional notes below.
+
+You can use INSTALL to view and edit these files once the server
+is up and active; in SFT III 4.1 you can cut and paste between
+these files.  You'll want to at least take LAN driver load
+statements from the IOSTART and put them in the IOAUTO, and move
+the LAN drivers from the DOS partition to the SYS volume.
+
+IOSTART (still executed first when you type MSERVER) IOEngine
+name and number, SET parameters (do the ones for adjusting memory
+assignment first), load disk driver(s), load MSL driver (last in
+this file)
+
+MSSTART (executed when you type ACTIVATE SERVER) SET parameters
+as needed, those that must be set at startup
+
+MSAUTO  MSEngine name and number, SET parameters, mount commands
+for volumes, load any NLMs that run in the MSEngine here
+
+IOAUTO (always executes, even 1st time server is activated*) Load
+LAN drivers here, from the SYS volume.  Load any NLMs that need
+to be in the IOEngine but need an active MSEngine (and mounted
+volume) to load.
+
+*NOTE: If there is something "pending" on the console of the
+IOEngine that's "coming back in" after a failure/restart (like
+keyboard input without the <Enter>, or a LAN driver load command
+waiting for parameters to be specified), the IOAUTO won't execute
+until the IOEngine console is "free" or available.  
+
+INETCONFIG NOTE: The INetConfig utility modifies the SFT III
+.NCFs correctly, but puts LAN driver load commands into a
+separate file (INIT.SYS) that is called from the IOAUTO.NCF.  It
+is also ok to have these commands (to load and bind LAN drivers)
+directly in the IOAUTO.  Do not try to modify the INIT.SYS file
+created by INetConfig, or you will be punished by the system. 
+(See item 17 below)
+
+
+3 - SCREEN BEHAVES A LITTLE DIFFERENTLY WHEN SERVERS ARE COMING
+UP 
+When the server is activated, after MSSTART (if any) and MSAUTO
+are executed, the console screens will switch back to their
+respective IOEngines.
+
+
+4 - TEST MODE DEFAULT (TIME BETWEEN FAILURES) CHANGED
+Test Mode default frequency (Server Test Minimum Delay Amount) is
+set at 3 minutes between failures now, instead of instantaneous
+back-to- back failures.  This provides a more realistic but still
+very rigorous test environment.
+
+NOTE that some of the names of the SET parameters for Recovery
+Options have changed, so if you're using NORST or a similar NCF
+file to set these to zero for debugging purposes, you'll have to
+make some changes to the wording of some of the parameters.  (See
+name changes, all listed below.)
+
+
+5 - SET PARAMETER NAME CHANGES
+For consistency (especially), clarity and international enabling
+(and in response to requests from Beta testers and customers),
+the following SET parameters are named differently in 4.1 than in
+3.11.  (Same default settings and ranges, see 3.11 or 4.1 doc for
+details.)
+
+- MSL Error Wait Time 
+   (WAS: Mirrored Server Comm ACK Wait Time Out)
+- Secondary Take Over Wait Time 
+   (WAS: Secondary Take Over Delay Amount)
+- MSL Deadlock Wait Time 
+   (WAS: Comm Deadlock Detect Wait Time)
+- Extra MSL Checking 
+   (WAS: Check Server to Server Comm)
+- Primary Server MSL Deadlock Recovery Option 
+   (WAS: Primary Server Comm Deadlock Recovery Option)
+- Secondary Server MSL Deadlock Recovery Option 
+   (WAS: Secondary Server Comm Deadlock Recovery Option)
+- MSEngine Outputs Different Recovery Option 
+   (WAS: MSEngine Outputs Different)
+- Primary Server MSL Consistency Error Recovery Option 
+   (WAS: Primary Server Comm Consistency Recovery Option)
+- Secondary Server MSL Consistency Error Recovery Option 
+   (WAS: Secondary Server Comm Consistency Recovery Option)
+- Primary Server MSL Send Blocked Recovery Option 
+   (WAS: Primary Server Comm Driver Stuck Recovery Option)
+- Secondary Server MSL Send Blocked Recovery Option 
+   (WAS: Secondary Server Comm Driver Stuck Recovery Option)
+- Primary Server MSL Hardware Failure Recovery Option 
+   (WAS: Primary Server Comm Hardware Failure Recovery Option)
+- Secondary Server MSL Hardware Failure Recovery Option 
+   (WAS: Secondary Server Comm Hardware Failure Recovery Option)
+- Notify All Users of Mirrored Server Synchronization
+   (WAS: Notify Users of Mirrored Server Synchronization)
+- Server Failure Notification Name 
+   (WAS: Notify Users of Mirrored Server Failures,
+    SEE ITEM 7 BELOW)
+
+        
+6 - LIMIT SIZE OF LOG FILES (VIA SET PARAMETERS)
+Status Dump File Overflow Size = (size in bytes) max size for
+MSSTATUS.DMP file before taking action (see below)
+
+Status Dump File State = (0, 1, or 2)
+        0: take no action if file exceeds overflow size
+        1: (default) delete log file if it exceeds overflow size
+        2: rename log file if it exceeds overflow size
+        (renames file to MSSTATUS.000, then .001, .002, etc.)
+
+IOEngine Error Log File Overflow Size = (size in bytes) max size
+for IO$LOG.ERR file before taking action (see below)
+
+IOEngine Error Log File State = (0, 1, or 2)
+        0: take no action if file exceeds overflow size
+        1: (default) delete log file if it exceeds overflow size
+        2: rename log file if it exceeds overflow size
+        (renames file to IO$LOG.000, then .001, .002, etc.)
+
+
+7 - GROUP/USER NOTIFICATION UPON SERVER FAILURE
+Instead of broadcasting to every attached user when a server
+failure occurs, the SFT III 4.1 OS will use the group or username
+specified via the new SET parameter below, and broadcast only to
+that group or user. 
+
+(Set in the MSEngine):
+SET SERVER FAILURE NOTIFICATION NAME = GROUP_NAME
+
+The broadcast goes to the specified user or any members of the
+specified group that are attached when the failure occurs.  The
+error messages about switchover reason, etc. still go to the
+console and log files.
+
+IMPORTANT ENHANCEMENT: In addition to server failures that result
+in a switchover to the new primary, this broadcast will also
+occur when a disk drive fails for any reason.  Same user or group
+will be notified as described above.  In addition, a message is
+printed to the server console (but not broadcast) every 30
+minutes to the effect that a disk failure has occurred and
+mirroring is no longer active.  (This is in case the disk failure
+happened at a time when no one was logged in.  The console and
+log files will still show these messages.)
+
+The other broadcast message option acts the same as in 3.11, and
+is to notify users of the short delay they may experience during
+synchronization when the failed server is coming back up.  The
+wording on this parameter changed slightly from 3.11:  
+
+SET NOTIFY ALL USERS OF MIRRORED SERVER SYNCHRONIZATION = ON
+
+
+8 - ALTERNATE/BACKUP MSL FEATURE
+SFT III 4.1 allows for the use of more than one MSL per server. 
+At any given time, when the server is active, only 1 MSL is being
+used, and any others are in a "standby" mode in case the active
+MSL fails.
+
+The CONFIG command at the IOEngine console will show the status
+of any MSLs that are loaded.  (Active, Standby, etc.)
+
+The MSLs should be loaded in order of preference, at the end of
+the IOAUTO.NCF; the first-loaded MSL will always be used unless
+it continues to fail.  Any additional MSLs are loaded then
+monitored uring normal operation to make sure they are ready to
+take over if the active one fails.  (There is essentially no
+overhead involved in this monitoring; no measurable performance
+hit.)  If one of the standby MSLs fails, a message is sent to the
+console (and log file).  If the active or MSL fails, the
+secondary server restarts (as is the case with any MSL failures),
+and when it comes back up the OS will re-load and re-try the
+preferred (first-loaded) MSL then the second, etc. until a
+functional MSL is found.  Synchronization can only occur after a
+functional MSL is loaded, and this will happen automatically. 
+(When the secondary server restarts because of MSL failure, the
+broadcast message described above will go out to the user or
+group specified.)
+
+SFT III 4.1 allows for a maximum of 8 MSLs per server (although
+any more than 2 or 3 seems like overkill).  Each MSL must be
+cabled properly for automatic takeover; the standby MSL cannot be
+used as a LAN card.
+
+
+9 - INSTALL FOR SFT III V4.1 IS IMPROVED
+The SFT III Install procedure has changed significantly from the
+3.11 version.  The documentation covers paths to install SFT III
+from scratch ("Initial Installation"), as well as an option to
+"Convert" a server from SFT III 3.11 to SFT III 4.1, and an
+option to "Upgrade" regular NetWare 4.1 to SFT III (4.1).  See
+the SFT III 4.1 document for details on each of these paths.
+
+INITIAL INSTALLATION
+Since SFT III is treated as an add-on or upgrade from "regular"
+NetWare, the Install program will first take you through a normal
+NetWare 4.1 installation on the initial server before getting to
+the SFT III-specific part.  You will be prompted for far less
+stuff than you were in 3.11; as much of the process as possible
+has been automated.  For example, the server name you provide
+(JOE for example) will be used for the MSEngine, and will then
+generate IOEngine names JOE_IO1 and JOE_IO2 automatically.  The
+install from scratch begins with a DOS front-end program
+(INSTALL.BAT) which prompts you through everything, including MSL
+and selection and activation, the creation of 3 floppies with the
+minimal file set needed for the second server, and then
+automatically goes into INSTALL.NLM when the server is activated.
+
+CONVERT 3.11 SFT III to 4.1 SFT III
+Preserves and re-uses all partition information, engine
+names/numbers, etc. and automatically moves the LAN and disk
+driver LOAD commands to their recommended locations in the new
+.NCF file scheme.  (See item 2 above)
+
+UPGRADE NETWARE 4.1 to SFT III
+Identical to the procedure for initial install, without the
+procedure of installing regular NetWare 4.1 on the initial server
+first.  Nothing needs to be set up on the second server, since
+the Install program will set up partitions and mirroring
+automatically, and even make adjustments to memory alignment if
+necessary.  
+
+IN EVERY CASE, YOU WILL EVENTUALLY BE PROMPTED FOR THE SECOND,
+ADDITIONAL LICENSE DISKETTE FOR SFT III.  YOU MUST HAVE -BOTH- A
+LICENSE DISKETTE FOR REGULAR 4.1 AND A LICENSE DISKETTE FOR SFT
+III.  The 4.1 license is the one that determines the user count;
+the SFT III license is an upgrade for any user count to the same
+on mirrored servers.  Same SFT III license for 5-user NetWare as
+for 1000-user NetWare.
+
+
+10 - MAC/TCP SUPPORT
+Name spaces load in the MSEngine See separate sheets [Supplements
+1 and 2, included at the end of this document] for TCP/IP FOR SFT
+III and APPLETALK ZONE NAMES AND NUMBERS.
+
+
+11 - DS AND TIMESYNC
+DS runs in the MSEngine, runs just like in 4.1.  DSLOADER and DS
+are separate NLMs.  The Directory is now unloadable (new in 4.1).
+The DS Install is the same as for normal 4.1, except that on an
+SFT III server there is no requirement to pre-load LAN drivers.
+
+TimeSync loads in the MSEngine, but the time stuff can be set in
+any of the 3 engines, and will be propagated to the other two
+engines. NOTE: Set time/zone in any engine, and time will by
+synchronized in the other two engines.  Don't set time or zone in
+both IOEngines simultaneously; also set begin and end of Daylight
+Savings time in the same engine.
+
+
+12 - MEMORY PROTECTION (DOMAIN.NLM)
+Loads in MSEngine and/or both IOEngines.  As in 4.0, DOMAIN must
+be loaded first, and cannot be  unloaded.  Works correctly in
+dual-processor SFT III.
+
+NOTE: In case you have used early Alpha code for SFT III 4.1, be
+aware of the following change: There is no longer an IOEngine
+piece required for DOMAIN.NLM in the MSEngine.
+
+
+13 - PRINT CHANGES
+PSERVER loads in the MSEngine NPRINTER loads in either or both
+IOEngines, or (recommended) on a separate machine.  Jobs in
+progress continue through a server failure.
+
+
+14 - BTRIEVE CHANGES
+Use Btrieve v6.1C or later for SFT III 3.11. For SFT III 4.1:
+BRouter and BSPX.COM in IOEngine, Btrieve in MSEngine
+Accommodates ArcServe 5.0, XQL, SQL, INetConfig, Product Install,
+and other Btrieve-dependent modules.
+
+
+15 - NLM CONNECTION PROBLEM RESOLVED
+NLMs in 3.11 used up "real" user connections; this has been fixed
+in the 4.1 product.  You will see NLM connections show up not as
+SUPERVISOR connections, but as a user called [ServerName] (which
+will be the MSEngine name).  This user will not "count" against
+the maximum user connections limit.
+
+NOTE: All registered 3.11 SFT III users will get 4.1 SFT III for
+free.  This is an important promotion good until the end of the
+1994 calendar year.  Customers will receive the user count they
+originally purchased under SFT III 3.11, since this connection
+problem has been resolved.
+
+
+16 - DUAL PROCESSOR DRIVERS W/SFT III ALPHA AND BETA CODE
+Dual processor drivers written for SFT III v3.11 will also work
+with SFT III 4.1.  Customers should be able to use existing 3.11
+DP drivers with the 4.1 SFT III OS.  (Compaq has updated their
+SFT III DP driver CPQMP.NLM for SFT III 4.1.)  As in 3.11, DP
+drivers can be loaded or unloaded at any time, in either or both
+IOEngines, and the MSEngine code will be assigned to the second
+processor in that box.
+
+
+17 - INETCONFIG UTILITY
+The new INetConfig utility automates the updating of .NCF
+information, but does so by maintaining separate files that are
+called from the normal .NCFs.  If you use INetConfig, you will
+notice a new line in the MSAUTO.NCF and IOAUTO.NCF calling the
+separate file for INetConfig.  It's called INITSYS.NCF and must
+-not- be edited by hand; only using INetConfig.  The location of
+this file on an SFT III server is as follows:
+
+-for the MSEngine (JOE): SYS:\ETC\INITSYS.NCF
+-for the first IOEngine (JOE_IO1): SYS:\ETC\IO1\INITSYS.NCF
+-for the second IOEngine (JOE_IO2): SYS:\ETC\IO2\INITSYS.NCF
+
+
+18 - NEW DEFAULTS FOR PACKET RECEIVE BUFFERS
+Minimum and maximum packet receive buffers (SET parameters in all
+3 engines) have higher defaults in SFT III than in regular 4.1
+(100/400 in SFT III, 50/100 in regular 4.1) to maximize
+efficiency and speed during synchronization.
+
+NOTE: If you change either the min or max packet receive buffers,
+it's best if you make those values the same in all 3 engines
+(primary/secondary IOEngines, MSEngine).
+
+
+19 - MSL CERTIFICATION LIST
+See attached list (from IMSP/Novell Labs) (Supplement 3 at the
+end of this document) of MSL drivers that have been certified and
+are included on the NetWare 4.1 CD.  The hardware certification
+bulletins for a given machine include information about SFT III
+if they have been tested with the SFT III OS.  This information
+includes which MSL card they were tested with.
+
+
+20 - MEMSCAN.NLM
+This is a utility that forces a read through memory (1K chunks at
+a time) every -n- seconds, then starts over.  The goal is to
+discover parity errors (NMIs) during normal server operation,
+instead of during server synchronization.  This is just a test
+utility and is NOT delivered as part of the product.  A couple of
+customers have used it to narrow down memory errors, but Novell
+does not intend to productize it or make it generally available.
+
+
+21 - MIRROR STATUS NOTES
+"Out of sync" normally means that mirroring is set up but one of
+the machines isn't there (or the disk driver is not loaded, etc.)
+
+"Not fully mirrored" normally means that mirroring has been
+broken, and needs to be set up again using INSTALL.
+
+
+22 - ORACLE 7 AND SFT III
+The shipping 4.1 SFT III when used with Oracle 7 may produce an
+abend on both servers (MSEngines produced different outputs). 
+This is fixed with a new CLIB.NLM (v4.1B, dated 11/30/94 or
+later, available on NetWire) and an OS patch which is also
+available on NetWire by the time 4.1 ships.
+
+
+23 - CHEYENNE ARCSERVE AND SFT III
+ArcServe may not be able to make the connection necessary to back
+up a remote server from an SFT III 4.1 server.  This is fixed
+with a new CLIB.NLM (v4.1B, dated 11/30/94 or later, available on
+NetWire).
+
+
+24 - COMPAQ INSIGHT MANAGER AND SERVER MANAGER BOARDS
+To run correctly on an SFT III server, these products require
+never versions of the DAI shims than what are shipping on the 4.1
+CD.  MSDAI40.NLM (v2.00B) and IODAI40.NLM (v2.00C) are available
+on NetWire.  If a customer uses the 4.1 CD versions of these
+NLMs, they will load but may not run correctly.  The DAI NLMs may
+not unload without abending the server.  This is what's fixed
+with these newer versions of the DAI NLMs.
+
+
+25 - UPGRADE PROMOTION FROM 3.11 SFT III TO 4.1 SFT III
+Any registered user of SFT III v3.11 will receive the new 4.1 SFT
+III at no charge.  All SFT III 3.11 users should register and
+take advantage of this upgrade opportunity.  Novell has no plans
+to further enhance the SFT III 3.x product; all enhancements will
+be added on the 4.x platform.
+
+
+26 - REMIRROR BLOCK SIZE, MIRRORING ABORTS AT 99%
+If a customer has increased the remirror block size from the
+default of 4K, and if the NetWare partition being mirrored is of
+a size not evenly divisible by that new size, they will notice
+that mirroring aborts at 99%.  This can be resolved by simply
+SETting the "remirror block size" parameter back down to 4K. 
+(Mirroring will then complete, just that last chunk; it will not
+have to remirror the whole partition again.)
+
+[end of main notes section]
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+= = =
+SUPPLEMENT 1 - TCP/IP FOR SFTIII
+
+NOTE: This is intended for those who already know a little about
+TCP/IP configuration.
+
+Because TCP/IP uses the Ethernet_II frame type, it is important
+that this frame type be loaded in each IOEngine; no protocol need
+be bound to this frame type until you have loaded all other
+supporting NLM's in each IOEngine.  Some of these support NLMs
+include SNMP, TLI, CLIB, STREAMS, and IPXS.  Loading TCP/IP
+should auto load all the appropriate support NLMs.
+
+You should take time before hand to determine IP addresses to use
+for the IOEngines, IOEngine-MSEngine internal route, and the
+MSEngine unless these have been supplied by your network
+administrator.  You will need four addresses.  The addresses for
+the IOEngines should be associated with the same (sub)network. 
+The IOEngine-MSEngine internal route and the MSEngine IP
+addresses should be on another (sub)network from the IOEngines,
+as they will route for the MSEngine (Server).  This is commonly
+done with you network masks.
+        
+SUB-NETWORK MASKS
+
+example IP address: 130.57.30.56
+
+MASK              NETWORK           SUBNET            NODE
+Default           130.57.                             30.56
+255.255.255.0     130.57.           30.               56
+255.255.240.0*    130.57.           16.               14.56
+
+*
+240 = 1111  0000
+30  = 0001  1110
+      16    14
+
+Therefore the subnet for the last example in the table is 16 and
+the host node becomes 14.56.  This is because the 16 bit of 30 is
+masked by 240. The remaining bits (binary positions 8, 4, 2, and
+1) leave 14 as part of the host node.
+
+In order for you to have all servers on the same (sub)network,
+you might consider using stub-sub-network mask for the internal
+IOEngine-MSEngine route and MSEngine IP addresses.
+
+If you are a class B network with existing sub networks, you will
+have to use a stub-sub-network mask to have all SFTIII servers on
+the same sub-network.
+
+(examples follow)
+
+For example, if you were assigned the class B network of 141.51,
+and your area is on subnet 32, all addresses would begin
+141.51.32.  In addition, all masks would have to be
+255.255.255.0, in order for routing to work correctly.  In order
+for you to get your SFTIII Server (MSEngine) on different
+networks from 141.51.32.xx you would have to use stub-sub-network
+masks as the following outline shows.
+
+Given IOEngine addresses of
+Primary_IO        =141.51.32.5      Mask=255.255.255.0
+Secondary_IO      =141.51.32.6      Mask=255.255.255.0
+MSEngine          =141.51.32.18     Mask=255.255.255.240
+Internal          =141.51.32.17     Mask=255.255.255.0
+
+Because the mask is the same for the first three digits, these
+all become part of the network address (141.51.32.).  All that
+remains for the IOEngines is the host node address; 5 and 6 for
+the primary and secondary engines. The internal
+(IOEngine-MSEngine route) address is 17, and on the same network
+as the IOEngines.  As you can see, the MSEngine is
+stub-sub-networked by the additional mask of 240.  This forces
+the MSEngine (SFTIII Server) to be on another network from the
+IOEngines (141.51.32.16 host node 2).  You will also note that
+the IOEngine-MSEngine route address was chosen so that it could
+be placed on the same stub-sub-net as the MSEngine (141.51.32.16
+host node 1).
+
+ADDRESS        MASK              NET           SUBNET    NODE
+
+141.51.32.5    255.255.255.0     141.51.32.              5
+141.51.32.6    255.255.255.0     141.51.32.              6
+
+141.51.32.5    255.255.255.240   141.51.32.    0.        5
+141.51.32.6    255.255.255.240   141.51.32.    0.        6
+141.51.32.17   255.255.255.240   141.51.32.    16.       1
+141.51.32.18   255.255.255.240   141.51.32.    16.       2
+
+It is important to note that no Clients/Hosts can have addresses
+in the stub-sub-net mask address range (in this case 141.51.32.16
+to 141.51.32.31), as routing implies that these clients/hosts are
+on the same 'wire' as the MSEngine and this is physically
+impossible.  With careful thought and planning, TCP/IP can be
+successfully implemented on SFTIII.
+
+
+[end of TCP/IP notes]
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+=
+SUPPLEMENT 2 - APPLETALK ZONE NAMES AND NUMBERS
+
+
+APPLETALK ZONE NAMES:
+
+Zone names are 1 to 32 characters, case sensitive, allows spaces
+and include all printable characters except * and ".
+
+NETWORK/ZONE NUMBERS.
+
+NUMBER  MEANING
+0       Non seed interface for non extended network
+X       Seeded interface for non extended network, X must be
+        in the range of 1 to 65279 inclusive.
+
+0 - 0   Non seed interface for extended network
+X - Y   Seeded interface for extended network, X and Y must be 
+        in the range of 1 to 65279 inclusive and Y must be equal
+        or greater than X.
+
+NON EXTENDED APPLETALK NETWORKS:
+- LocalTalk
+- Arcnet
+- Ethernet with frame type ETHERNET_II
+
+EXTENDED APPLETALK NETWORKS:
+- TokenRing
+- FDDI
+- Ethernet with frame type ETHERNET_SNAP
+- SFT3 virtual board
+
+BINDING APPLETALK TO LAN BOARDS:
+LAN board to non seed, extended network
+  bind appletlk <BOARD NAME> net = 0-0
+  e.g. bind appletlk ne2_snap net = 0-0
+
+LAN board to non seed, non extended network
+  bind appletlk <BOARD NAME> net = 0
+  e.g. bind appletlk ne2_II net = 0
+
+LAN board to seeded, extended network
+  bind appletlk <BOARD NAME> net= X-Y zone={"appletalk zone
+  name"}
+  e.g. bind appletlk ne2_II net = 12-20 zone={"zone 12 - 20"}
+  NOTE: You may specify the same zone name for more than one
+  extended networks.
+
+LAN board to seeded, non extended network
+  bind appletlk <BOARD NAME> net= X zone={"appletalk zone name"}
+  e.g. bind appletlk ne2_II net = 12 zone={"zone 12"}
+  NOTE: You must specify a unique zone name for a non extended
+  network.
+
+AppleTalk to the virtual board or MSEngine
+  bind appletlk MSEngine net= X-X zone={"appletalk zone name"}
+  e.g. bind appletlk MSENGINE net = 21-21 zone={"SFT3 zone 21"}
+  NOTE: Appletalk is operated as an extended network on the SFT3
+  virtual network and the network range is 1.
+
+
+(examples follow)
+
+EXAMPLES OF LOAD AND BIND STATEMENT FOR THE MSENGINE AND THE
+IOENGINES.
+
+-MSENGINE-
+load appletlk routing=no
+bind appletlk msengine
+load afp
+
+
+-RIGHT IOENGINE-
+load cslstub
+load streams
+load ipxs
+load clib
+load tli
+load snmp
+rem Load and bind appletalk in Primary IOEngine
+load ne2000 NAME=NE2000_SNAP port=320 int=2 Frame=ethernet_snap
+load appletlk.nlm routing=yes internal_net_mode=yes net=20-20
+zone={"zone 20 internal"}
+bind appletlk NE2000_SNAP net=22-29 zone={"zone 22-29"}
+bind appletlk msengine net=1234-1234 zone={"virtual net 1234"}
+
+
+-LEFT IOENGINE-
+load cslstub
+load streams
+load ipxs
+load clib
+load tli
+load snmp
+rem  Load and bind appletalk in secondary IOEngine
+load ne2000 name=NE2000_SNAP port=320 int=2 frame=ethernet_snap
+load appletlk routing=yes internal_net_mode=yes net=30-30
+zone={"zone
+30 internal"}
+bind appletlk NE2000_SNAP net=0-0
+bind appletlk msengine net=1234-1234 zone={"virtual net 1234"}
+
+
+[end of AppleTalk notes]
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+= =
+SUPPLEMENT 3 - NETWARE 4.1 SFT III CERTIFIED MSLS (AS OF 11/94)
+
+(alphabetical listing by vendor name)
+
+DEC (FDDI EISA UTP)
+ driver name DECMSL4X.MSL
+
+Eagle/Microdyne NMSL/F (fiber, EISA only)
+ driver name NMSL.MSL
+(NOTE: hardware should be Rev.J or later especially for use in
+high-speed Compaq machines)
+
+Madge (Smart 100 EISA)
+ driver name MDGFMSL.MSL
+
+Novell NE2000 (ISA, slow, use for alternate MSL or testing only)
+ driver name HNE2000.MSL
+
+Novell NE2/32 (MicroChannel, slow, use for alternate MSL or
+testing only)
+ driver name HNE232.MSL
+
+PlainTree PTC302B (EISA) or PTC303B (MCA)
+ driver name WBMSL.MSL 
+(NOTE: there may be a newer driver available from PlainTree than
+what is shipping on the 4.1 CD)
+
+Schneider & Koch SKFM (MCA) or SKFE (EISA)
+ driver name SKFM_MSL.MSL or SKFE_MSL.MSL
+
+Thomas Conrad TC3047 (EISA) or TC3046 (MCA) or TC3045 (ISA)
+ driver name TCMSL.MSL
+
+Vinca VLE-2 (EISA)
+ driver name V41MSL.MSL
+
+[end of 4.1 certified MSL list]
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+SUPPLEMENT 4 - NOVELL PRODUCTS AND NETWARE 4.1 SFT III (AS OF
+11/94)
+
+Messaging Services (ships with v4.10)
+ Supports SFT III: Yes
+ Issues/notes: (none)
+
+NetWare for Mac v4.10 (ships with v4.10)
+ Supports SFT III: Yes
+ Issues/notes: (none)
+
+Global MHS v2.0d
+ Supports SFT III: Yes
+Issues/notes: Not extensively tested with SFT III, loads and runs
+through test suites.  If v2.0d is updated to support NetWare 4.1,
+be sure to use the latest version with SFT III as well.  Cannot
+run asynchronous support because of hardware constraints.
+
+LAN WorkPlace v4.2
+ Supports SFT III: Yes
+Issues/notes: TCPIP stack does not include router discovery.  As
+a result, if one SFT III side goes down, the client won't switch
+automatically to the other side.  You can work around this by
+defining a second IP Router in the NET.CFG.
+
+LAN WorkGroup v4.2
+ Supports SFT III: Yes
+ Issues/notes: Same as above.
+
+NFS v2.0 (beta)
+ Supports SFT III: Yes
+Issues/notes: XCONSOLE.NLM not supported on SFT III.  Xconsole
+needs access to both Remote and DSAPI which run in different
+engines.  If you try to load XCONSOLE.NLM in either engine you
+will get undefined public symbol error messages. NFS install 
+expects you to have a startup.ncf and an autoexec.ncf  because
+that is were it puts Unistart.ncf.  You will need to manually put
+Unistart.ncf in the MSauto.ncf.
+
+NetWare IP  v1.1
+ Supports SFT III: Yes and No
+Issues/notes: At this writing (11/94), official support for SFT
+III is pending; it can be made to work with the following nuance:
+TCPIP stack doesn't include router discovery.  As a result, if
+one SFT III side goes down, the client won't switch automatically
+to the other side.  You can work around this by defining a second
+IP Router in the NET.CFG.
+
+MSS 1.0 (Kodak/Novell Migration product) (beta)
+ Supports SFT III: Yes
+ Issues/notes: Beta product, extensive testing has not been
+completed
+
+NMA v2.0 (alpha)
+ Supports SFT III: Yes
+ Issues/notes: Alpha product, extensive testing has not been
+completed
+
+NMS v2.1 (alpha)
+ Supports SFT III: Yes
+Issues/notes:  Alpha product, extensive testing has not been
+completed
+
+UnixWare v2.0 (NUC.NLM) (beta)
+ Supports SFT III: Yes
+ Issues/notes: Beta product; extensive testing has not been
+completed.
+
+-----------------------------------------------------
+NMA v1.6, NMS v2.0c
+ Supports SFT III: No (SFT III is supported with NMS v2.1 and NMA
+v2.0)
+
+NFS v1.2c
+ Supports SFT III: No  (Use NFS v2.0)
+
+NW Connect v1.0, v2.0
+ Supports SFT III: No
+
+NW for DEC Access (LAT)
+ Supports SFT III: No
+
+NW Navigator v3.0c
+ Supports SFT III: No
+
+NW for SAA v1.3b, v2.0
+ Supports SFT III: No
+Issues/notes: The 3rd internal IPX number causes problems for
+Commexec.  SAA has a feature called Hot Standby--another server
+can be configured to automatically take over if the first goes
+down.  (Terminal emulation software must be specifically written
+to support the "rollover feature", however.)  Because of this
+feature, it was decided that SFT III support was not urgently
+necessary.
+
+Hostprint 1.1
+ Supports SFT III: No (depends on SAA)
+
+MPR v3.0 (beta)
+ Supports SFT III: No
+
+HAMs & CDMs
+ Support SFT III: No
+Issues/notes: If you try to use them you will get undefined
+public symbol error messages. SFT III users should use the *.DSK
+disk drivers instead.
+
+-----------------------------------------------------------------
+
+Any trademarks referenced in this document are the property of
+their respective owners.  Consult your product manuals for
+complete trademark information.
+-----------------------------------------------------------------
+
+
+

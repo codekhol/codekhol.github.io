@@ -1,0 +1,2 @@
+@(#) MF-NET Release 7.11 (beta)   31st January 1989
+

@@ -1,0 +1,26 @@
+
+Dear Customer,
+
+The enclosed Support Level Supplement(SLS), xnx116, corrects problems 
+with the mapkey program used in the SCO XENIX 386 Operating System
+Release 2.3.0 and 2.3.1. The SLS may be installed using the command 
+etc/install. In order to do so, the Link Kit must be installed. If the Link
+Kit is not installed on your system, or if you are not sure, refer to the 
+section on custom(C) in your SCO XENIX System V Operating System User's
+Reference Manual. 
+
+To install the fix, it is necessary to go to single user mode. Login
+as root and run the commands:
+
+          cd /
+          etc/intstall
+          type y at the prompt for the first floppy.
+          type y to continue with the installation 
+          type n at the prompt for the second floppy.
+
+Yours sincerely,
+
+
+Technical Support Department
+
+ref: xnx116

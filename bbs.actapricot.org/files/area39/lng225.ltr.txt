@@ -1,0 +1,171 @@
+ 
+
+Dear SCO Customer,
+        
+The enclosed International Crypt Support Level Supplement (SLS) lng225 
+revision b is for use with SCO UNIX System V/386 and SCO XENIX System V
+Development Systems.
+        
+This SLS provides the international version of the crypt(S) library.
+Note that decryption is not provided in this version of crypt(S). If 
+decryption is attempted an error message is printed.  Please see the 
+enclosed manual page for crypt(S) for more details.
+        
+SLS lng225 will install on machines running:
+     
+  SCO XENIX Operating System Release 2.2 and later;
+  SCO XENIX Development System Release 2.2 and later;
+  SCO UNIX System V/386 Release 3.2 Operating System Version 1.0 and later;
+  SCO UNIX System V/386 Release 3.2 Development System Version 1.0.
+
+It includes Small, Medium and Large model OMF format libraries and both 
+OMF and COFF format 386 libraries.
+      
+To install this SLS lng225 revision b, take the following steps:
+        
+   (1) Reboot your system and enter System Maintenance Mode.
+        
+   (2) Insert the enclosed disk in the primary floppy drive 
+       and close the door.
+        
+   (3) If you are installing on SCO XENIX type "/etc/install".  If you are
+       installing on SCO UNIX System V/386, type "/etc/xinstall".
+        
+   (4) Follow the instructions on the screen.
+
+If you have any further questions please contact your supplier.
+        
+Yours sincerely,
+
+
+Technical Support Department.
+
+
+ref: lng225 rev b
+
+
+
+     CRYPT(S)                  UNIX System V                  CRYPT(S)
+
+
+     Name
+          crypt - password and file encryption functions
+
+     Syntax
+          cc [flag ...] file ... -lcrypt
+
+          char *crypt (key, salt)
+          char *key, *salt;
+
+          void setkey (key)
+          char *key;
+
+          void encrypt (block, flag)
+          char *block;
+          int flag;
+
+          char *des_crypt (key, salt)
+          char *key, *salt;
+
+          void des_setkey (key)
+          char *key;
+
+          void des_encrypt (block, flag)
+          char *block;
+          int flag;
+
+          int run_setkey (p, key)
+          int p[2];
+          char *key;
+
+          int run_crypt (offset, buffer, count, p)
+          long offset;
+          char *buffer;
+          unsigned int count;
+          int p[2];
+
+          int crypt_close(p)
+          int p[2];
+
+     Description
+          des_crypt is the password encryption function.  It is based
+          on a one-way hashing encryption algorithm with variations
+          intended (among other things) to frustrate use of hardware
+          implementations of a key search.
+
+          key is a user's typed password.  salt is a two-character
+          string chosen from the set [a-zA-Z0-9./].  This string is
+          used to perturb the hashing algorithm in one of 4096
+          different ways, after which the password is used as the key
+          to encrypt repeatedly a constant string.  The returned value
+          points to the encrypted password.  The first two characters
+          are the salt itself.
+
+          The des_setkey and des_encrypt entries provide (rather
+          primitive) access to the actual hashing algorithm.  The
+          argument of des_setkey is a character array of length 64
+          containing only the characters with numerical value 0 and 1.
+          If this string is divided into groups of 8, the low-order
+          bit in each group is ignored; this gives a 56-bit key which
+          is set into the machine.  This is the key that will be used
+          with the hashing algorithm to encrypt the string block with
+          the function des_encrypt.
+
+          The argument to the des_encrypt entry is a character array
+          of length 64 containing only the characters with numerical
+          value 0 and 1.  The argument array is modified in place to a
+          similar array representing the bits of the argument after
+          having been subjected to the hashing algorithm using the key
+          set by des_setkey.  If edflag is zero, the argument is
+          encrypted; if non-zero, it is decrypted.
+
+          Note that decryption is not provided in the international
+          version of crypt(S).  If decryption is attempted with the
+          international version of des_encrypt, an error message is
+          printed.
+
+          crypt, setkey, and encrypt are front-end routines that
+          invoke des_crypt, des_setkey, and des_encrypt respectively.
+
+          The routines run_setkey and run_crypt are designed for use
+          by applications that need cryptographic capabilities (such
+          as ed(C) and vi(C)) that must be compatible with the
+          crypt(C) user-level utility.  run_setkey establishes a two-
+          way pipe connection with crypt(C), using key as the password
+          argument.  run_crypt takes a block of characters and
+          transforms the cleartext or ciphertext using crypt(C).
+          Offset is the relative byte position from the beginning of
+          the file that the block of text provided in block is coming
+          from.  count is the number of characters in block, and
+          connection is an array containing indices to a table of
+          input and output file streams.  When encryption is finished,
+          crypt_close is used to terminate the connection with
+          crypt(C).
+
+          run_setkey returns -1 if a connection with crypt(C) cannot
+          be established.  This will occur on international versions
+          of the UNIX system where crypt(C) is not available.  If a
+          null key is passed to run_setkey, 0 is returned.  Otherwise,
+          1 is returned.  run_crypt returns -1 if it cannot write
+          output or read input from the pipe attached to crypt.
+          Otherwise it returns 0.
+
+     See Also
+          crypt(S), getpass(S), passwd(F), crypt(C), login(M),
+          passwd(C)
+
+     Diagnostics
+          In the international version of crypt(S), a flag argument of
+          1 to des_encrypt is not accepted, and an error message is
+          printed.
+
+     Note
+          The return value in crypt points to static data that are
+          overwritten by each call.
+
+     Standards Conformance
+          crypt is conformant with:
+          AT&T SVID Issue 2, Select Code 307-127;
+          and The X/Open Portability Guide II of January 1987.
+
+

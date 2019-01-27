@@ -1,0 +1,279 @@
+
+
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) unx329 contains a new /boot
+program and is intended for use with the SCO UNIX System V/386 Release
+3.2 Operating System Version 2.0 GT and SCO Open Desktop Version 1.1 GT.
+SLS unx329, the 486 Boot Update, is for 386/486 AT and EISA architecture
+systems that are experiencing random system panics or trouble loading the
+operating system due to memory recognition or cache problems.  Please
+read the entire letter before beginning the installation of this SLS to
+insure proper configuration of your system.
+
+SLS unx329 can be installed only on the GT version of the SCO UNIX System
+V/386 Release 3.2 Operating System Version 2.0, or products based on this
+release, for example, SCO Open Desktop Release 1.1 GT.
+
+SLS unx329 contains two volumes:
+
+	1)  an N0 (N-Zero) Boot Disk and
+	2)  a Custom Install Disk.
+
+The N0 disk is used to allow installation on systems which are unable to boot
+without this supplement.  The custom installation disk is used to install the 
+updated boot program during or following installation of the operating system.
+
+
+I.  BOOTING - OPERATING SYSTEM INSTALLATION
+
+The N0 (N-Zero) disk labeled Volume 1 contains the new boot program in a 
+form that can be directly used to boot the system.  The N0 disk may have to 
+be used to install the operating system on some systems due to severe memory
+recognition or cache control problems.  For these systems, the N0 disk must 
+be used when booting from the floppy device.  
+
+For the operating system installation process, every time you are instructed
+to place the N1 disk into the floppy drive to boot your system, simply place 
+the N0 disk in the drive instead.  When the following boot prompt is displayed 
+on the console:
+
+	Boot
+	:
+
+replace the N0 disk with the N1 disk that came with your operating system
+distribution and proceed with the installation as you would normally.
+
+
+Use the following procedure to install the operating system using the N0
+Boot Disk:
+
+1.  Place the N0 disk in floppy drive
+
+2.  Manually reset the system or turn the power on.
+
+3.  When the boot prompt is displayed:
+
+        Boot
+        :
+
+    remove the N0 and insert the N1 into the floppy drive.
+
+
+4.  Press <Return>, to continue the installation as instructed
+    in the Release and Installation Notes.  Remember, there is
+    one reboot as part of the installation process that will also 
+    require the use of the N0 disk.
+
+    If you forget to replace the N0 disk with the N1 disk, the system
+    will display the boot string followed by the error message:
+
+	unix not found
+	Boot
+	:
+
+    Simply replace the N0 disk with the N1 disk and press <Return>.
+
+5.  Install SLS unx329 as part of the initial installation using the
+    custom utility that is invoked as part of the operating system
+    installation and configuration script.  The installation script 
+    will give you the opportunity to:
+
+	1)  Install additional software (Extended Utilities or Applications)
+	2)  Continue installation
+
+
+    IMPORTANT: You MUST choose option 1, "Install additional software," 
+	       and you MUST install SLS unx329 BEFORE the extended utilities.
+ 
+               The new boot program MUST be installed on the hard disk for 
+	       the system to work correctly. 
+
+               When selecting to install additional software, the custom 
+	       program is run.  Remember to install SLS unx329 BEFORE the 
+	       extended utilities.
+
+   
+   - Position the cursor so that 'Install' is highlighted and 
+     press <Enter>.
+
+   - Make sure that the words 'A New Product' are highlighted in the window 
+     found in the lower right hand corner of the screen; press <Enter>.
+
+   - Make sure the words 'Entire Product' are highlighted in the 'Choose an
+     option' section of the screen; press <Enter>.
+
+   - You will be prompted to 'Insert distribution Volume 1 and press <Return>'.
+     Insert the diskette labeled '486 Boot Update, Custom Install Disk' 
+     and press <Enter>.
+
+   - You will see the following messages:
+
+       Installing custom data files
+       Executing Product Prep Script
+   
+   - At the bottom of the screen, you will be prompted to 'Press any key to
+     continue'.  Press <Enter>
+
+   - The message 'Creating file lists' will flash on the screen.  You will 
+     be prompted to 'Insert the requested Volume and press <Return>'.  The 
+     diskette is already in the drive, therefore press <Enter>
+
+   - You will see the following message:
+
+       Extracting Files
+     
+   - You will then be prompted to 'Press any key to continue'; press <Enter>.
+
+6.  Continue with the rest of the normal operating system installation
+    process as described in the Release and Installation Notes.
+
+
+
+II.   INSTALLATION (for systems already running SCO UNIX System V/386 Release
+		    3.2 Version 2.0 GT or SCO Open Desktop 1.1 GT)
+
+Use the following procedure to install SLS unx329 on an existing operating
+system using the Custom Install Disk:
+
+1.  If the system is running in multiuser mode, log in as root and enter 
+    the command:
+
+	shutdown -g0
+
+    The system will then execute a controlled shutdown operation which
+    will display the following message when the shutdown process has
+    completed:
+
+	**   Safe to Power Off   **
+	           -or-
+	** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+	Type CONTROL-d to proceed with normal startup,
+	(or give root password for system maintenance):
+
+    Enter the root password and press <Return>.
+    Wait until the "#" prompt appears.
+
+4.  Next, insert the custom volume diskette labeled '486 Boot Update, Custom
+    Install Disk' in the floppy drive and enter the command:
+    drive and enter the command:
+
+	/etc/custom
+
+    The custom menu will appear.
+
+5.  To select the following, highlight with the cursor keys and press
+    <Return>:
+
+	Install -> A New Product -> Entire Product
+
+
+   - Position the cursor so that 'Install' is highlighted and 
+     press <Enter>.
+
+   - Make sure that the words 'A New Product' are highlighted in the window 
+     found in the lower right hand corner of the screen; press <Enter>.
+
+   - Make sure the words 'Entire Product' are highlighted in the 'Choose an
+     option' section of the screen; press <Enter>.
+
+   - You will be prompted to 'Insert distribution Volume 1 and press <Return>'.
+     Insert the diskette labeled '486 Boot Update, Custom Install Disk' 
+     and press <Enter>.
+
+   - You will see the following messages:
+
+       Installing custom data files
+       Executing Product Prep Script
+   
+   - At the bottom of the screen, you will be prompted to 'Press any key to
+     continue'.  Press <Enter>
+
+   - The message 'Creating file lists' will flash on the screen.  You will 
+     be prompted to 'Insert the requested Volume and press <Return>'.  The 
+     diskette is already in the drive, therefore press <Enter>
+
+   - You will see the following message:
+
+       Extracting Files
+
+   - You will then be prompted to 'Press any key to continue'; press <Enter>.
+
+   - At the main custom menu, move the highlighted entry to 'Quit' and press
+     <Enter>.  Press <Enter> again on the highlighted 'yes'.  
+     
+
+    The SLS unx329 preparation script will validate the operating system 
+    release, version, and type.  The operating system validation information
+    found will be displayed by the script.
+
+    If the validation is successful, the script will then save the original 
+    boot program to the file named boot.preunx329 in the root (/) directory. 
+
+    If the validation fails, the script informs the user and forces the custom 
+    utility to abort the installation.
+
+
+III. TECHNICAL DESCRIPTION
+
+		    Contents of SLS unx329, the 486 Boot Update
+
+	   o If	the target machine is a	486 processor, the internal
+	     cache is turned off for the duration of the memory sizing
+	     and then turned back on.  The state of the internal cache 
+	     before memory sizing is not queried, so if a machine has 
+	     had the cache turned off previously (from a configuration 
+	     floppy, for example) this code will turn it back on at the 
+	     conclusion of memory sizing.
+
+	   o During memory sizing, after a value has been written to
+	     memory, and before it is compared to see if the memory
+	     existed at	that location, an instruction is issued to
+	     flush the external cache, if it exists.  The hardware 
+	     vendor will need to implement this instruction properly
+	     for their own external cache.
+
+	   o Also, during memory sizing, NMI interrupts are disabled.
+	     Some machines generate an NMI (signifying a parity	error)
+	     when non-existent memory is touched; boot is not built to 
+	     handle such a situation.  After memory sizing is complete, 
+	     NMI interrupts are re-enabled (after clearing any possible 
+	     parity errors that might have occurred).
+
+	   o The values	written	to memory to determine if a given location
+	     is valid are now 32 bits, instead of 16 bits.
+
+	   o There is code in boot to do rudimentary memory specification.
+	     You may specify where the system should look for memory.  The 
+	     syntax is:
+
+	       mem=start-end[/d],start1-end1[/d], ...
+
+	     where start, end, start1, and end1 are examples of	linear
+	     memory addresses, specified as a decimal number and a
+	     multiplier	of either an "m" or "k", meaning megabyte or
+	     kilobyte, respectively.
+
+	     The "/d" option specifies that the region should be memory 
+	     sized from the top of the range down to the bottom of the 
+	     range, instead of from the bottom to the top (the default).
+
+	     The memory specification string is entered at the Boot: prompt.  
+	     The Boot: prompt is then displayed again to allow entry of the 
+	     boot string.
+
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

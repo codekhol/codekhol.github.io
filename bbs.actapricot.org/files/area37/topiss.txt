@@ -1,0 +1,860 @@
+Top Issues - August 1993
+
+These are the most frequently asked questions of Novell's Advanced Technical
+Support Engineers.
+
+
+Q:   Why does the following message appear when logging in?
+
+          Your current context is <xxxxx.xxxxx>.  The user specified does not
+          exist in this context.  Login will try to find the user in the
+          server context.
+
+A:   This message is displayed when login cannot find your user name in the
+     current context or the bindery context.  To resolve the problem, specify
+     the full name of the user when logging in (login
+     server/.cn=admin.o=novell) or specify the context in the NET.CFG file. 
+     To specify the context in the NET.CFG, add the following line under the
+     "NetWare DOS Requester" section:
+
+          NAME CONTEXT="OU=xxx.OU=xxx.O=xxx
+
+
+Q:   Why am I getting "File Server Could Not Be Found" errors and how can I
+     fix the problem?
+
+A:   Several resolutions to this problem are listed below:
+
+     1.   The latest versions of the MLID drivers (such as NE2000.COM) default
+          to frame type Ethernet_802.2.  If you are using Ethernet_802.3 on
+          the server, change the frame type in the "Link Driver" section of
+          the NET.CFG (located by default in C:\NWCLIENT) to Ethernet_802.3.
+
+     2.   If both the Ethernet_802.2 and Ethernet_802.3 frame types are
+          defined in the "Link Driver" section of NET.CFG, make sure that
+          Ethernet_802.3 appears first.
+
+     3.   Do not quit the INSTALL before installing Directory Services because
+          the server will not advertise itself and you cannot attach or log in
+          to the network.  To determine if Directory Services is installed,
+          use the following steps:
+          
+          a.   Load INSTALL.NLM from the file server console.
+
+          b.   Select the "MAINTENANCE/SELECTIVE INSTALL" option from the Main
+               menu.
+
+          c.   Select the "DIRECTORY OPTIONS" from the Maintenance menu.
+
+          d.   Select the "INSTALL DIRECTORY SERVICES ONTO THIS SERVER"
+               option.
+
+          e.   If Directory Services is installed, the following message is
+               displayed:  "This server already contains Directory Services
+               Information..."
+
+               If this message is not displayed, Directory Services is not
+               installed.  Continue from this point to install Directory
+               Services.
+
+               If there is only one NetWare 4.0 server, type DISPLAY SERVERS
+               at the console prompt to check for the server name and tree
+               name.  If Directory Services is not installed, these names will
+               not appear. 
+
+
+Q:   Loading the disk driver while installing NetWare 4.0 causes the server to
+     hang.  Why?
+
+A:   This happens if the hard drive and CD-ROM are on the same SCSI
+     controller, because when the NetWare driver is loaded, it overrides the
+     DOS driver; therefore, the CD-ROM is no longer recognized as a DOS
+     device.  The Release Notes discuss further how to resolve this problem. 
+
+
+Q:   Where is the System Login Script?
+
+A:   NetWare 4.x does not have a system login script.  The "equivalent" is the
+     Container login script; however, the container script only applies to
+     users in that container.  The system login script remains on the server
+     after an upgrade and may still be used by bindery emulation users.
+
+     Note:  If all three login scripts are present, they execute in the
+     following order: Container, Profile, User (CPU).
+
+
+Q:   How can I set up Windows to run with VLMs on the network?
+
+A:   1:   Install the DOS Requester on a workstation, specifying YES for
+          Windows support.  Specify the user's personal WINDOWS directory as
+          the path to install Windows support.
+
+     2:   Copy the following files from the user's personal WINDOWS\SYSTEM
+          directory to network Windows root directory:
+
+                    VNETWARE.386
+                    VIPX.386
+                    NETWARE.DRV
+                    NETWARE.HLP
+                    NWPOPUP.EXE
+     
+     3:   Create a "NLS" subdirectory under the network Windows directory. 
+          Copy all the files and subdirectories from the user's personal
+          WINDOWS\NLS directory into the NLS directory.
+
+          Note:  After this is completed, all users on the network must use
+          the VLMs.  If NETX must be used, use the following the instructions:
+
+          a.   Create a subdirectory under the network Windows directory.
+
+          b.   Copy VIPX.386 and VNETWARE.386 from WINUP7.ZIP  into the
+               subdirectory created above.  WINUP7.ZIP is available from your
+               Novell Authorized Service Center (NASC), Novell Reseller, or
+               from one of Novell's electronic distribution tools (for
+               example, NetWire on CompuServe or the Network Support
+               Encyclopedia on CD-ROM).
+
+          c.   Edit each workstation's SYSTEM.INI (386 Enh Section) to reflect
+               the new path for VNETWARE.386, VIPX.386, and NETWARE.DRV.  For
+               example, if the subdirectory was named NEW, the following
+               example shows the syntax to add the path for the new files to
+               the 386 Enhanced section of the SYSTEM.INI:
+
+                    network=*f:\windows\new\vnetbios,f:\window\new\
+                    vnetware.386,f:\windows\new\vipx.386
+
+                    This allows the NetWare 3.11 virtual drivers to be used
+                    instead of the NetWare 4.0 drivers.
+
+
+Q:   I received the following error when trying to mount a CD-ROM volume:
+
+          Unable to locate user group supervisor access read only error
+
+     After several seconds, the volume starts mounting then a lot of errors
+     (about 100) are displayed and the file server beeps.  However, the volume
+     eventually mounts.  What do all the errors mean?
+
+A:   This is a cosmetic problem (performance is not effected), and Novell is
+     working on a solution.  When NetWare mounts a volume it writes to the
+     device.  The errors occur before the driver checks if it is a READ ONLY
+     device.  When the driver finally verifies that it is a READ ONLY device,
+     NetWAre creates a dummy file on the SYS: volume, writes to that file,
+     then mounts the volume.
+
+
+Q:   How can I backup Directory Services?
+
+A:   You must use an SMS compliant backup application; and currently, SBACKUP
+     is the only certified option.  To backup Directory Services, load SBACKUP
+     and TSA_NDS at the file server console.  Select "Backup the Directory
+     Services" option--any other option will not back up the Directory
+     Services.
+
+     Other vendors are developing SMS compliant solutions; however, SBACKUP is
+     currently the only certified choice.
+
+
+Q:   How do I prevent the default login script from executing?
+
+A:   Add the statement NO_DEFAULT in the profile or container script. 
+     Creating a user login script will also resolve this issue.
+
+
+Q:   What is the correct syntax for NWXTRACT?
+
+A:   If the D: drive is the CD-ROM, and C:\DIR is the directory you want to
+     copy the files to, use the following syntax:
+ 
+     In NetWare 4.0, do the following:
+
+          Type the following from the C:\DIR directory:
+
+                    d:nwxtract d: <filename/group> /t=<type> 
+
+          where type is items such as ser (server), dos (dos files), os2, or
+          win. 
+ 
+     In NetWare 4.01, do the following: 
+
+     1.   Change directories to D:\NetWare.40\English\________ (8
+          underscores).
+ 
+     2.   Change directories on C: to the destination directory.
+ 
+     3.   From the destination directory (C:\DIR), type the following:
+
+                    D:nwx_dos D: <filename/group> /t=<type>
+
+
+Q:   Where is TAPEDAI located?  
+
+A:   TAPEDAI.DSK is not copied off the CD-ROM during installation unless it is
+     selected as a disk driver.  If the installation is already complete, use
+     NWXTRACT to copy it from the CD-ROM.  The TAPEDAI.DSK from the NetWare
+     4.01 CD-ROM is the best to use because it includes a generic driver.
+
+     If the D: drive is the CD-ROM, and C:\DIR is the directory you want to
+     copy the files to, use the following syntax:
+
+     In NetWare 4.0, do the following:
+
+          Type the following from the C:\DIR directory:
+
+                    d:\nwxtract d: tapedai /t=ser
+
+     In NetWare 4.01, do the following: 
+
+          1.   Change directories to D:\NetWare.40\English\
+                    ________ (8 underscores).
+ 
+          2.   Change directories on C: to the destination directory.
+ 
+          3.   From the destination directory (C:\DIR), type the following:
+
+                         D:nwx_dos D: tapedai /t=ser
+
+     
+Q:   Why does the old file server name show up even though I changed the name?
+
+A:   Do not change the name or the internal IPX number in NetWare 4.0.  If you
+     have changed it, change it back.  This can, however, be done in NetWare
+     4.01 without any problems.
+
+
+Q:   How can I prevent the following error message from appearing five times
+     when I log in to the network?
+
+          Attempting to Authenticate
+
+A:   Add the statement below in the NET.CFG under the "NETWARE DOS REQUESTER"
+     section
+
+          LOAD CONN TABLE LOW=ON
+
+
+Q:   If the drive holding the master replica of a partition dies, how can I
+     change another replica of the partition to master?
+
+A:   Use this option only when absolutely necessary because information can be
+     lost if the new master was not yet synchronized to the old master.
+
+     Use the following steps to change the master partition:
+
+     1.   At the file server console type the following:
+
+                    LOAD DSREPAIR
+
+     2.   Select "1 Select Options."
+
+     3.   Toggle option 4 to "Repair replica ring with no master."
+
+     4.   Press 8, "Return to selection menu," and select option 2 "Begin
+          Repair."
+
+     Select the partition to change as the repair runs.
+
+
+Q:   Why am I getting errors when executing a capture statement in the login
+     script?
+
+A:   The LOGIN.EXE and CAPTURE.EXE in NetWare 4.x require more memory than in
+     previous versions of NetWare.  If LOGIN.EXE and CAPTURE.EXE are loaded
+     simultaneously, the workstation will run out of memory.  To resolve this
+     issue, exit to a batch file that runs CAPTURE, or run CAPTURE from the
+     command line after logging in to the network.
+
+
+Q:   When executing commands such as NETADMIN or CX, I receive errors similar
+     to the following:
+
+          You are not logged into Directory Services
+
+     What could be causing this?
+
+A:   The VLMs are not loaded, or you are logged in as a bindery-emulation
+     user.  
+
+
+Q:   Can I use SYSCON to administer my NetWare 4.0 server?
+
+A:   Yes, SYSCON must be used to administer bindery-emulation users.  NETADMIN
+     (for DOS) and NWADMIN (for Windows) have replace SYSCON in NetWare 4.0,
+     and must be used to administer NetWare 4.0 users.
+
+
+Q:   When will NetWare 4.01 be available and how do I get it?
+
+A:   NetWare 4.01 officially shipped on July 23, 1993, and all registered
+     NetWare 4.0 users were sent a free upgrade on August 16, 1993.  To
+     register NetWare 4.0, select the register option in INSTALL (at the end
+     of the installation or by loading INSTALL.NLM).  To register NetWare 4.0
+     without installing first, call 1-800-NETWARE and press 6 as soon as the
+     recording starts.  Then select document 1463 for the applicable
+     documents.
+
+
+Q:   Why doesn't PUPGRADE work after an Across-The-Wire migrate?
+
+A:   The binderies are not transferred during an Across-The-Wire migrate, and
+     PUPGRADE needs to access the binderies.  PUPGRADE will, however, work
+     after an upgrade using INSTALL because the binderies are already on the
+     drive.
+
+
+Q:   How can I change the license on my server?
+
+A:   1.   From the server console, type the following:
+
+                    INSTALL -R
+
+     2.   Select the "Maintenance/Selective Install" option.
+
+     3.   Select the "License Option" option.
+
+     The -R parameter allows you to remove the previous license and replace it
+     with a new license.  The -R is not required when upgrading the number of
+     users. 
+
+
+Q:   Can I have NetWare 4.0 and 4.01 servers in the same tree?
+
+A:   Yes you can have NetWare 4.0 and 4.01 servers in the same tree; however,
+     the NDS communications changed between NetWare 4.0 and 4.01, so the
+     servers cannot synchronize the Directory Services data.  Novell
+     recommends that all servers be upgraded to NetWare 4.01.
+
+
+Q:   How can a CD-ROM be mounted?
+
+A:   1.   Load the driver for the controller
+
+     2.   Load the ASPI layer unless it is loaded automatically by the driver.
+
+     3.   Load CDNASPI.DSK (generic) or ASPICD.DSK (for Adaptec).
+
+     4.   Load CDROM.NLM.
+
+     5.   From the file server console, type the following:
+
+                    CD MOUNT <Volume name> or <device number>
+
+
+Q:   Can a CD-ROM device attached to the serial port be mounted?
+
+A:   The CDROM.NLM will work with any device that can register itself as a
+     NetWare device.  If NetWare drivers were available for the serial port,
+     CDROM.NLM would work.  Currently, however, SCSI devices are the only
+     devices with drivers.
+
+
+Q:   Does the "CD-ROM Products Tested with NetWare 4.0" table in the Release
+     Notes list supported and certified CD-ROM devices?
+
+A:   No, there have be no CD-ROM devices certified.  This table contains a
+     list of CD devices used while certifying the listed adapters to make sure
+     a CD volume could be mounted with the adapter.  No CD-ROMs listed are
+     guaranteed to work.
+
+     Note:  This list was removed from the NetWare 4.01 Release Notes.
+
+
+Q:   The NLIST general help screen is displayed every time NLIST is executed. 
+     How can I fix this?
+
+A:   Add the timezone parameter (TZ=xxxx) to the login script or AUTOEXEC.BAT
+     (TZ=PST8 for example).  Verify that the Time server type at the server is
+     set properly (for example, do not set a single-server tree to primary or
+     secondary).
+
+
+Q:   What is the best way to protect my Directory Services database?
+
+A:   Keep at least two replicas of each partition.  If only one server is in
+     the tree, make sure current backups are kept with an SMS compliant
+     backup.
+
+
+Q:   I am receiving the following two errors:
+
+          Wrong version of IBM$RUN.OVL
+
+          Unable to find file textutil.msg
+
+     How can I resolve this?
+
+A:   Set the following parameters in the CONFIG.SYS:
+
+          files=50 (minimum)
+          buffers=30 (minimum)
+
+
+Q:   Why don't the drive mappings work when logging in to a non-NetWare 4.0
+     server?
+
+A:   If you attach to a NetWare 4.0 server then log in to another server, the
+server name must be included in the MAP statements in the login script. 
+Otherwise, it defaults to mapping to the NetWare 4.0 server.
+
+
+Q:   Why does CX let me change to unavailable contexts before logging in to
+     the network?
+
+A:   This is a problem in NetWare 4.0.  The version of CX.EXE that ships with
+     NetWare 4.01 fixes this problem.
+
+
+Q:   What are the Time server types (single, secondary, primary, or
+     reference)?
+
+A:   A SECONDARY TIME SERVER obtains the time from a Single Reference,
+     Reference, or Primary time server.  One of these types must be present
+     for a secondary server.
+
+     A PRIMARY TIME SERVER synchronizes network time with at least one other
+     primary server and provides time to Secondary time servers and clients. 
+     Do not set up a single server as a primary server.
+
+     A REFERENCE TIME SERVER provides time to which all other servers and
+     clients synchronize.
+
+     A SINGLE REFERENCE TIME SERVER provides time to secondary time servers
+     and clients.  Set single servers to this time server.
+
+     For more information, see the April 93 application notes, Planning a
+     NetWare 4.0 Directory Tree.
+
+
+Q:   Where can I find the DSMERGE file described in the Release Notes?
+
+A:   The release notes are incorrect because the file is not yet available.
+
+
+Q:   Because NetWare 4.0 does not have an attach command, how can I attach to
+     a NetWare 2.x or 3.x server or a server not in my tree?
+
+A:   Use login /ns <server_name>/<user_name>.  ATTACH can be used from within
+     a NetWare 4.0 login script, or ATTACH.EXE can be used by copying it from
+     a NetWare 3.11 server.
+
+
+Q:   During the installation of NetWare 4.0, my server hung.  How can I
+     continue where I left off?
+
+A:   If the files were copied to C:\SERVER.40, load SERVER -NS at the server
+     console, then load INSTALL to continue the automatic install.  If you
+     cannot load SERVER -NS or INSTALL, you must start over with the
+     installation.
+
+
+Q:   Is NPRINTER the same as RPRINTER?
+
+A:   No; however, they are similar.  NPRINTER can specify a specific node that
+     is allowed to load NPRINTER, thus preventing other workstations from
+     loading it.  Also, the NPRINTER default is polled instead of interrupt
+     driven.
+
+
+Q:   How do I preserve my Directory Services database when upgrading from
+     NetWare 4.0 to 4.01?
+
+A:   Select "NO" when prompted to reinstall Directory Services.
+
+
+Q:   How can I resolve the following error?
+
+          General Protection Fault . . . in module NWIPXSPX.DLL
+
+A:   Load TBMI2.COM and run the WIN/OS2 session in standard mode.  This allows
+     applications to run in standard mode and make IPX/SPX calls.  Virtual
+     Device Drivers (VxDs) in a WIN/OS2 session are not currently supported
+     under IBM OS/2 2.1.  Novell and IBM are working together toward a
+     resolution to this issue.  This lack of VxD support causes the error if
+     an application runs in enhanced mode and makes IPX/SPX calls.
+
+      
+Q:   Do the VLMs work in a VDM (DOS session) under OS/2 2.1?
+
+A:   VLMs will work in a VDM (DOS session) under OS/2 2.1 if a "real" DOS
+     kernel (for example, DR DOS 6.0 COMMAND.COM) is used instead of the OS/2
+     emulated DOS kernel.  To boot from a real DOS kernel, create a real DOS
+     image file and set the DOS_STARTUP_DRIVE in the DOS settings notebook to
+     the appropriate drive and path.  For detailed information of how to set
+     up a DOS image file, refer to the OS/2 Master Help Index under "DOS,"
+     then select "image file, starting from an" option.
+
+
+Q:   The performance of the NetWare requester for OS/2 2.01 seems slow, and
+     the following error messages are displayed:
+
+          REQ0815: The program cannot get the connection ID
+
+          REQ1040: The Requester timed out waiting for reply from server
+
+     How can I improve the performance?
+
+A:   The NetWare requester for OS/2 2.01 drivers default to work in a NetWare
+     4.x environment.  When the NetWare 2.01 requester is used in an
+     environment without NetWare 4.x file servers, basic requester functions
+     such as LOGIN and NetWare Tools take longer than they did under the
+     NetWare 2.0 requester.  To resolve this issue, add the statement
+     DIRECTORY SERVICES OFF to the NET.CFG file under the "NETWARE REQUESTER"
+     heading as follows:
+
+               NETWARE REQUESTER
+                     DIRECTORY SERVICES OFF
+
+
+Q:   What CD-ROM formats does the 4.x CDROM.NLM support?
+
+A:   High Sierra Format and ISO 9660.
+
+
+Q:   When logged into a NetWare 4.01 server, the following message is
+     displayed when I try to map a drive to a NetWare 3.11 server:
+
+          MAP-4.01-430: The following drive mapping operation could not be
+          completed. [D:=311TEST\SYS:].1
+ 
+A:   Verify that BIND.VLM and NETX.VLM are contained in the NWCLIENT directory
+     on your boot drive.  If BIND.VLM and NETX.VLM are not there, copy them
+     into the NWCLIENT directory and reboot the machine.
+
+
+Q:   How can I read the ElectroText that comes with NetWare 4.x if I am not
+     running Windows?
+
+A:   To read the online documentation, you must install Windows on a
+     workstation because a DOS based reader is not available.
+
+
+Q:   Why does my NetWare 4.0 server lock when dismounting a CD-ROM volume?
+
+A:   The Adaptec driver ASPICD.DSK dated 02-22-93 can cause the server to hang
+     when a CD-ROM volume is dismounted or causes ABENDS when loaded in the
+     STARTUP.NCF.  ASPICD.DSK dated 06-08-93 resolves the issues.  This driver
+     is included in the NetWare 4.01 Update, which is being mailed to all
+     NetWare 4.0 registered users.
+
+
+Q:   While installing the NetWare 4.01 CBTs (not the NetWare 4.0 CBTs), the
+     following message is displayed:
+
+          Caution!  Int40.ini and NOVINI are pointing to different disk
+          drives.  Please notify your System Administrator
+
+     What causes this?
+
+A:   The NOVCBT subdirectory is not created during the installation of this
+     CBT.  To correct the problem, use the following steps:
+
+     1.   In the Public directory, rename the "COURSE7" subdirectory to
+          "NOVCBT" subdirectory.
+
+     2.   Create a "COURSE7" subdirectory under the "NOVCBT" directory.
+
+     3.   Copy all files from "NOVCBT" to "COURSE7" subdirectory.
+
+     4.   Delete all files from "NOVCBT" subdirectory.
+
+
+MACINTOSH
+
+
+Q:   When binding APPLETLK to the LAN driver, the following error is
+     displayed:
+
+          RTMP mismatched range numbers: local=1-5; 46689 reported on  port 1
+
+     There are no other AppleTalk routers on the network.  Why is this error
+     occurring?
+
+A:   Although not usually considered AppleTalk routers, some devices, such as
+     the Shiva NetModem and Shiva NetSerial, can function as AppleTalk
+     routers.  To check for other AppleTalk routers, use the NetWare for
+     Macintosh non-seed routing option.  Non-Seed routing is a feature of
+     NetWare for Macintosh 3.01 and 3.011, providing the NetWare file servers
+     with each AppleTalk network number and zone name of each backbone network
+     to which the server is attached.
+
+     To set up the file server as a non-seed router, use the following steps:
+
+     1.   Add the following statement to the AUTOEXEC.NCF:
+
+                    BIND APPLETLK <driver name> net=0-0
+
+     2.   At the server console, type the following
+
+                    Load ATCON
+
+     3.   From the main ATCON menu, select "Router Interfaces" to see if the
+          NetWare for Macintosh AppleTalk router "learned" its network
+          number/range and zone information from another AppleTalk router
+          device.  A network number other than "0" means that some other
+          AppleTalk router is on the same cable segment.
+
+
+Q:   How do I rebuild the desktop of my server volume from my System 7
+     Macintosh?
+
+A:   Rebuilding a remote desktop is not a function of Apple's System 7
+     Operating System.
+
+     With NetWare for Macintosh 2.x and 3.x, you must rebuild the desktop from
+     a System 6.x workstation or a System 7.x workstation booted with a System
+     6.x System diskette.
+
+     With NetWare for Macintosh 4.x, the AFP server automatically rebuilds the
+     desktop database if the database is corrupt or the database files are not
+     present when the volume is mounted and AFP.NLM is loaded.  You can also
+     cause a database rebuild using the AFP Console (AFPCON).
+
+
+Q:   With PSERVER.NLM 1.21 loaded, DOS jobs print fine; and although the queue
+     shows up in the Macintosh Chooser, the Macintosh jobs do not print.  How
+     can I fix this?
+
+A:   PSERVER.NLM 1.27 (08-12-92) resolves this problem.  This PSERVER.NLM is
+     contained in PSERV4.EXE, which is available from your Novell Authorized
+     Service Center (NASC), Novell Reseller, or from one of Novell's
+     electronic distribution tools (for example, NetWire on CompuServe or the
+     Network Support Encyclopedia on CD-ROM).
+
+
+Q:   The following error was displayed on the server console:
+
+          RTMP Timer - range xx-xx went down
+
+     What does this mean?
+
+A:   This message usually means that a router or server is down, or that
+     connection to an entire stretch of the network has been lost.  When
+     routers go down, changes in the routing table are not discovered right
+     away; instead, routing table entries are aged.  Every entry in the table
+     has a validity timer.  If the server does not hear from an internet
+     router (such as an Appletalk router or a NetWare server running 3.0x
+     NetWare for Macintosh NLMs) and the validity timer for that entry
+     expires, the entry goes from suspect to bad.  If the entry's validity
+     timer expires two more times, the entry is removed from the Routing Table
+     and the error message is generated.
+
+     Check the cabling and Appletalk routers located in the appropriate range.
+
+     On very large AppleTalk networks, these messages can be generated if the
+     RTMP packet was not delivered because of traffic.
+
+
+Q:   I am installing the NetWare for Macintosh VAPs 2.2 on a computer
+     configured with NetWare's ROUTER.EXE.  Can I configure this machine for
+     AppleTalk routing between the Ethernet and LocalTalk segments?
+
+A:   No, because a PC configured with NetWare's ROUTER.EXE and the NetWare for
+     Macintosh 2.2 VAPs only route IPX.  A standalone PC computer can route
+     IPX, AppleTalk, or IP with Novell's Multi-Protocol router, a NetWare 3.x
+     or 4.x file server, or third-party software or hardware.
+
+
+COMMUNICATIONS
+
+
+Q:   The NetWare Access Server intermittently stops processing and flashes
+     "Please Wait" for a few minutes.
+
+A:   Netware Access Server periodically checks all enabled ports for an
+     initialized modem.  If the modem is not initialized, all of Access
+     Server's resources are used trying to initialize it.  If a port is
+     enabled without a modem or with a broken modem, Access Server will
+     periodically try to initialize it.
+
+
+PRODUCT INFORMATION
+
+
+Q:   Can the CBT that is included with NetWare 4.0 be installed on a
+     workstation, and is documentation available on how to do it? 
+A:   It can be loaded on a workstation but no documentation is provided.
+
+
+Q:   Is Global MHS 2.0 supported on NetWare 4.0?
+
+A:   It is not currently supported;however, it will be in the near future.
+
+
+Q:   Does NetWare 4.0 have a MAKEUSER utility equivalent?
+
+A:   Yes, it is UIMPORT.
+
+
+Q:   Does LANalyzer for Windows 2.0 interpret other protocols?
+
+A:   Yes it does interpret other protocols.  However, it will not decode and
+     filter any protocols besides AppleTalk, TCP/IP, and IPX.
+
+
+Q:   Will Btrieve 6.0 and 6.10 work with NetWare 3.11? 
+
+A:   Yes Btrieve 6.0 work with NetWare 3.11.
+
+
+Q:   Is LAN WorkGroup compatible with versions of NetWare NFS before 1.2b?
+
+A:   No, because LAN WorkGroup uses a new PKernal; therefore, it will not
+     install on a file server that has a version of NetWare NFS earlier than
+     1.2b installed.
+
+
+Q:   Does the NetWare Management Agent 1.5 work with NetWare 4.01? 
+
+A:   Yes it will work.
+
+
+Q:   Can all 12 function keys be remapped in LAN WorkPlace for DOS with VT220
+     emulation?
+
+A:   This question has a two part answer.
+
+     Under DOS, the answer is yes.
+
+     Under Windows, the answer is no because F10 cannot be remapped.
+
+
+Q:   How many printers are supported when printing from NetWare to Unix with
+     NetWare FLeX/IP?
+
+A:   When print from NetWare to Unix with NetWare FLeX/IP, 16 printers are
+     supported.
+
+
+Q:   Does MS-DOS 6.0 work with NetWare SFT III?
+
+A:   Yes MS-DOS 6.0 will work with NetWare SFT III.
+
+
+Q:   When LAN WorkGroup is installed, do the clients automatically get the
+     icons and updates to their system?
+
+A:   No, you must manually run WGSET on each workstation that will need
+     services from LAN WorkGroup.
+
+
+Q:   Do the OS/2 Requesters 1.3 and 2.01 support Search Drive Mappings?
+
+A:   No, OS/2 does not allow modification of the master environment after
+     bootup.  Therefore, search drive mappings are not supported.  To resolve
+     this problem, make a network drive mapping, then include this drive
+     mapping in the path statement.
+
+
+Q:   How many users can be logged into a NetWare Lite network?
+
+A:   25 users can be logged in at any one time.
+
+
+Q:   Will LANalyzer for Windows decode NFS?
+
+A:   In the NETWORK NEWS August 1993 edition, it stated that the LANalyzer for
+     Windows product would decode NFS.  This is incorrect.  The LANalyzer
+     Network Analyzer for Ethernet or Token Ring will decode NFS; however,
+     LANalyzer for Windows will not.
+
+
+NETWARE LITE
+
+
+Q:   What steps should I follow before calling technical support for a
+     resolution?
+
+A:   The list below contains some common troubleshooting ideas for NetWare
+     Lite.
+
+     1.   Try duplicating the problem without the NetWare Lite drivers loaded. 
+          If the problem occurs without the network loaded, you know the
+          problem is not with the network.
+
+     2.   Test the problem from a different node.  If the problem is only
+          reproducible on one machine, the problem is probably not a network
+          issue.
+
+     3.   If there is a Windows problem, try reproducing it from DOS.  Issues,
+          such as printing, that occur in Windows and not in DOS could reflect
+          a problem with the Windows setup.
+
+     4.   Strip the CONFIG.SYS and AUTOEXEC.BAT files to reduce the
+          possibility of a conflicting TSR or device driver.
+
+
+Q:   After upgrading to MS-DOS 6.0, my machine locks when logging in to the
+     network.  Why?
+
+A:   When MS-DOS installs, the SMARTDRV.EXE is loaded by default into the
+     CONFIG.SYS or the AUTOEXEC.BAT.
+
+     The following are two reasons why SMARTDRV.EXE will lock the network.
+
+     1.   SMARTDRV.EXE conflicts with NLCACHE (NetWare Lite's cache).  Never
+          run two caching programs concurrently.  If NLCACHE is running,
+          delete the references to SMARTDRV.EXE in the CONFIG.SYS or the
+          AUTOEXEC.BAT.
+
+     2.   On install SMARTDRV is not set up to run on a network.  To use
+          SMARTDRV instead of NetWare Lite's NLCACHE, delete the reference to
+          NLCACHE in the STARTNET.BAT file, found in the NWLITE directory, or
+          in the AUTOEXEC.BAT.  Turn off the advanced writes to the hard drive
+          when running SMARTDRV.  To do this edit the AUTOEXEC.BAT statement
+          as shown below: For example, if you have a C: and a D: drive, you
+          would edit the AUTOEXEC.BAT file and change the following line:
+
+               C:\DOS\SMARTDRV.EXE
+
+                    to read
+
+               C:\DOS\SMARTDRV.EXE C D
+
+
+Q:   If I am on a server with a network application installed on it, do I need
+     to map a drive to myself to run the network application?
+
+A:   No, you can use the DOS subst command if the application requires that it
+     be run from the same drive letter on all machines.  An example of the
+     syntax is listed:
+
+          SUBST F: C:\APPS
+
+
+Q:   When executing a NET LOGIN, an error message returns stating that
+     SERVER.EXE does not recognize my user account.  What is causing that
+     message?
+
+A:   The newer SMC and NE2000 drivers require a later LSL.COM and IPXODI.COM
+     than those shipping with Netware Lite 1.1.  These files are available in
+     DOSUP7.ZIP which is available from your Novell Authorized Service Center
+     (NASC), Novell Reseller, or from one of Novell's electronic distribution
+     tools (for example, NetWire on CompuServe or the Network Support
+     Encyclopedia on CD-ROM).  This file is also available on Novell's BBS
+     (2400 Baud 408-649-3443/9600 Baud 408-649-3696).
+
+
+DRDOS
+
+
+Q:   I can only see one of my two hard drives.  What could be the problem?
+
+A:   DOS cannot find any hard drive that the computer's BIOS does not report
+     to DOS.  You must have a BIOS that supports the second hard drive or use
+     a SCSI drive that has its own BIOS.
+
+
+Q:   When booting my machine, I get a message that the A20 line is already
+     enabled.  What does this mean?
+
+A:   The A20 handler provides access to the computer's High Memory Area (HMA)
+     and is usually not enabled, so HMA is not available on bootup.  The DR
+     DOS memory managers EMM386.SYS and HIDOS.SYS activate the A20 handler, so
+     the computer's HMA becomes available (this frees up valuable conventional
+     memory for your applications to use.)
+
+     Some computers, such as the IBM PS/2, enable the A20 handler; so when the
+     DR DOS memory manager tries to do it again, this message is received.  On
+     many systems, adding the line /G=PS2 will prevent the message from
+     displaying.  The message itself, however, does not mean there is a
+     problem.

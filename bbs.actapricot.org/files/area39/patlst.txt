@@ -1,0 +1,35 @@
+for SCO UNIX 3.2v4.2
+		UOD368B
+		UOD376C
+		UOD369B
+		UOD374A (only needed if CD-ROM required)
+		UOD378A (only needed if async I/O is used - aioinfo will verify)
+		UOD381A (only needed if async I/O is used - aioinfo will verify)
+                UOD426B Year 2000 supplement
+
+for SCO UNIX 3.2v4.2 + TCP 1.2.1 (in addition to the above)
+		NET382E
+		LLI 3.4
+		NET387A (only needed for AMD PC-Net - LS-Pro)
+
+for SCO UNIX 3.2v4.2 + TCP 1.2.1 + NFS 1.2.1 (in addition to all the above)
+		NET373A (only needed for exporting CD-ROM via NFS)
+		NET398B
+		UOD399A
+
+for SCO OpenServer 5.0.0 
+		Release Supplement		5.0.0d
+		Networking Supplement		NET100
+		Advanced Hardware Supplement	AHS 5.2 + AHS 5.2 BTLD
+		HTFS patch                      OSS434A
+		Console keyboard patch (VS660 - VM only) OSS424A
+                TCP Performance Supplement      OSS449F
+
+for SCO OpenServer 5.0.2 
+                TCP Performance Supplement      OSS449F
+
+for SCO OpenServer 5.0.4 
+                Release Supplement              5.0.4c
+                     If OSS449 is installed, remove before installing
+                     Release Supp 504C
+                TCP Performance Supplement      OSS449F if no RS504C

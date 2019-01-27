@@ -1,0 +1,11 @@
+mach32 DPMS TSR designed for use with Windows 95 and the ATI mach32
+graphics accelerator products (GRAPHICS ULTRA PRO, GRAPHICS ULTRA +, 
+GRAPHICS WONDER, and other mach32 based products). 
+
+Please note that this is a patch for the existing Windows 95 mach32 display
+driver adding DPMS capabilities for VESA compliant Display Power Management
+Signaling (DPMS) monitors only, it does not add any further enhanced features
+to the mach32 display drivers for Windows 95.
+
+Please see the enclosed file called 32W95DPM.TXT for installation 
+instructions.

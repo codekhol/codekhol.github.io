@@ -1,0 +1,322 @@
+Dear SCO Customer, 
+
+The enclosed Support Level Supplement (SLS) UOD376C contains a new enhanced 
+SCSI tape driver which allows for reading and writing of variable block length
+tapes.  This SLS applies to all current SCO UNIX System V/386 Release 3.2 
+Operating System Version 4 based products (Version 4.0, Version 4.0 with
+Maintenance Supplement Version 4.1 and/or 4.2 and Version 4.2) and SCO Open 
+Desktop Release 2.0 and 3.0.  This variable block read and write option is 
+only applicable to tape drives (greater than 150MB) which support a variable 
+tape block size option.  The new driver also allows for an adjustable fixed 
+length read/write.
+
+SLS UOD376C also provides the new functionality of being able to read forward 
+or backward over multiple filemarks.  See section II for further discussion
+of this new functionality. 
+
+SLS UOD376C now includes support for Exabyte SCSI tape drives.  See section 
+III for a list of Exabyte tape drive model numbers that are supported with 
+this SLS.
+
+NOTE: SLS UOD376C replaces both SLS UOD376A and UOD376B.
+
+
+I. Using custom(ADM) to Install or Remove SLS UOD376C
+
+A. Installing SLS UOD376C
+
+1.  If the system is running in multiuser mode, log in as root on the console.
+    After warning the users that the system will be down for some time,
+    enter the command:
+
+        shutdown  -y -g0 
+
+    The system will then execute a controlled shutdown operation which
+    will display the following message when the shutdown process has
+    completed:
+
+        **   Safe to Power Off   **
+                   -or-
+        ** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+4.  Next, insert the custom volume diskette labeled "Enhanced SCSI Tape 
+    Drivers, Custom Install Disk" in the floppy drive and enter the command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+5.  To select the following, highlight each one with the cursor keys 
+    and press <Enter>:
+
+        Install -> A New Product -> Entire Product
+
+
+   - Position the cursor so that "Install" is highlighted and 
+     press <Enter>.
+
+   - Make sure that the words "A New Product" are highlighted in the window 
+     found in the lower right corner of the screen; press <Enter>.
+
+   - Make sure the words "Entire Product" are highlighted in the "Choose an
+     option" section of the screen; press <Enter>.
+
+   - You will be prompted to "Insert distribution Volume 1 and press <Enter>".
+     The diskette is already in the drive, therefore press <Enter>.
+
+   - You will see the following messages:
+
+       Installing custom data files
+       Executing Product Prep Script
+   
+   - The message "Saving files about to be Replaced" will flash on the screen.
+     You will be prompted to "Insert the requested Volume and press <Enter>".
+     The diskette is already in the drive, therefore press <Enter>.
+
+   - You will see the following message:
+
+       Extracting Files
+
+   - When asked if you wish to relink the kernel, reply "y" in order to insure
+     that the modifications from SLS UOD376C are included in the kernel.
+
+     Answer "y" when asked if you want to boot off this kernel.
+
+     Answer "y" when asked if you want to rebuild the kernel environment.
+
+   - You will then be prompted to "Press any key to continue"; press <Enter>.
+
+   - At the main custom menu, move the highlighted entry to "Quit" and press
+     <Enter>.  Press <Enter> again on the highlighted "yes".  
+     
+   - Reboot the computer.
+
+   - SLS UOD376C is now successfully installed.
+
+
+B. Removing SLS UOD376C
+
+1.  If the system is running in multiuser mode, log in as root on the console.
+    After warning the users that the system will be down for some time,
+    enter the command:
+
+        shutdown  -y -g0 
+
+    The system will then execute a controlled shutdown operation which
+    will display the following message when the shutdown process has
+    completed:
+
+        **   Safe to Power Off   **
+                   -or-
+        ** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+4.  Next, use the custom utility to remove this SLS.  At the command line,
+    enter the command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+5.  To select the following, highlight each one with the cursor keys 
+    and press <Enter>:
+
+        Remove -> Enhanced SCSI Tape Drivers -> ALL
+
+
+   - Position the cursor so that "Remove" is highlighted and 
+     press <Enter>.
+
+   - Make sure to move the highlighted cursor to the package "Enhanced
+     SCSI Tape Drivers" to select this package; press <Enter>.
+
+   - Make sure the word "ALL" is highlighted as the selected package to
+     remove; press <Enter>.
+
+   - Make sure the word "ALL" is highlighted under "Please verify the removal
+     of the following packages"; press <Enter>.
+
+   - When asked if you wish to relink the kernel, reply "y" in order to insure
+     that the modifications from SLS UOD376C are removed from the kernel.
+
+     Answer "y" when asked if you want to boot off this kernel.
+
+     Answer "y" when asked if you want to rebuild the kernel environment.
+
+   - You will then be prompted to "Press any key to continue"; press <Enter>.
+
+   - At the main custom menu, move the highlighted entry to "Quit" and press
+     <Enter>.  Press <Enter> again on the highlighted "yes".  
+     
+   - Reboot the computer.
+
+   - SLS UOD376C has now been successfully removed.
+
+
+
+II. New Functionality
+
+
+A. Variable block mode functionality
+
+With SLS UOD376C, you will be able to read tapes with your SCSI tape drive 
+that were written in variable block mode.  To enable the variable block 
+functionality of the newly loaded SCSI tape driver, the tape(C) utility 
+must be invoked with the -a setblk option.  
+
+For example, to set the default SCSI tape drive on your system to variable 
+block mode, type the following command:
+
+     # tape -a 0 setblk
+
+Where "0" indicates that no block size be set, thus enabling the variable
+block mode functionality.  The size of blocks used during reads and writes 
+in variable block mode is set by the utility, such as tar, cpio, or dd.  If 
+reading or writing a tape in variable block mode, using read or write system
+calls from within a C program, the block size must be set from within the C 
+program.  Variable block mode read/write must be supported by the tape drive 
+hardware.  Tape drives of 150MB capacity or less do not support this option.
+
+Non-zero values may also be used to set the fixed block size in which the SCSI
+tape drive will operate.  Non-zero values explicitly set the drive and driver 
+to the block size specified on the tape -a setblk command line.  For example, 
+to set the second SCSI tape drive to operate in 1024 byte block mode, type:
+     
+     # tape -a 1024 setblk /dev/rStp1
+
+The above command sets the drive and driver into a fixed block mode of 
+blocksize 1024 bytes. 
+
+NOTE: The tape -a setblk commands must be issued with a rewound tape 
+      loaded in the SCSI tape drive.
+
+The tape -a setblk command remains in effect for the duration that the tape 
+is in the drive, until the drive is reinitialized, or until another tape -a 
+setblk command is issued.  This means that whenever a tape is placed in the 
+tape drive, the drive will initialize itself to whatever its default block 
+mode is.  This may vary from manufacturer to manufacturer.  The appropriate 
+tape -a setblk command must then be issued to set the drive to the desired 
+mode. 
+
+
+B. Multiple filemark read functionality
+
+The tape command has the ability to request that multiple filemarks be read:
+
+     tape -a <NN> rfm /dev/nrStp0
+
+where <NN> can be positive or negative.
+        
+The "no rewind" device node must be used when reading filemarks, as this will 
+prevent the tape drive from rewinding after positioning itself at the desired 
+filemark. 
+
+NOTE:  The first read after the reverse read filemark fails because
+       reverse positioning places the current location toward the 
+       beginning-of-partition.  Performing a "tape rfm" (1 filemark)
+       or a "tar tv" will read the FM (filemark) immediately preceding 
+       the data and properly position the tape to just after the FM 
+       and before the data.
+
+       So, if the user wanted to position back to the starting location, 
+       then an _extra_ FM must be used in the reverse direction.  Then, 
+       a read of a single FM will position the tape immediately after 
+       the FM and before the data.
+
+The following is taken from the SCSI specifications:
+
+|"When spacing over blocks, filemarks, or setmarks, the count field
+| specifies the number of blocks, filemarks, or setmarks to be spaced
+| over in the current partition.  A positive value N in the count field
+| shall cause forward positioning (toward end-of-partition) over N
+| blocks, filemarks, or setmarks ending on the end-of-partition side of
+| the last block, filemark, or setmark.  A zero value in the count field
+| shall cause no change of logical position.  A negative value -N (two's
+| complement notation) in the count field shall cause reverse positioning
+| (toward beginning-of-partition) over N blocks, filemarks, or setmarks
+| ending on the beginning-of-partition side of the last block, filemark,
+| or setmark.  Support of spacing in the reverse direction is optional."
+
+An example which demonstrates this follows: 
+
+A user has a tape with 7 archives on it -- each archive consists of one 
+file each.  The file on archive one is called file1, the file on archive 2 
+is file2, and so on.  If the user wanted to get to the 4th archive on the 
+tape, they would take the following steps:
+
+- To make sure they are at the beginning of the tape, enter:
+
+  # tape rewind /dev/rStp0      
+
+- From the beginning of archive one, move forward 3 filemarks to archive 4:
+
+  # tape -a 3 rfm /dev/nrStp0   
+
+- Extract contents of archive 4 (tape is now at the beginning of archive 5):
+
+  # tar xvf /dev/nrStp0         
+
+Now, suppose that, with the tape positioned at the beginning of archive 5, 
+the user wishes to view the contents of archive 2.  Since the user wants to
+read backwards 3 filemarks, specify "-4", as instructed previously:
+
+  # tape -a -4 rfm /dev/nrStp0  
+
+- A read is required to position the tape at the beginning of data:
+
+  # tar tvf /dev/nrStp0         
+
+- This time, the contents of archive 2 are listed:
+
+  # tar tvf /dev/nrStp0         
+
+
+III. Exabyte Tape Drives
+
+
+- The following Exabyte tape drive models are now supported with SLS UOD376C:
+
+        Drive Model             Drive Type
+        -----------             ----------
+
+        Exabyte 8200            8mm
+        Exabyte 8205            8mm
+        Exabyte 8500            8mm 
+        Exabyte 8500c           8mm
+        Exabyte 8505            8mm
+        Exabyte 4200            4mm DAT
+        Exabyte 4200c           4mm DAT 
+        Exabyte 4402            4mm DAT
+        Exabyte 4402c           4mm DAT
+        Exabyte 4404            4mm DAT
+        Exabyte 2501            1/4 inch SCSI mini Cartridge
+        Exabyte 2501c           1/4 inch SCSI mini Cartridge
+        Exabyte 2502            1/4 inch SCSI mini Cartridge
+
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.  
+
+We appreciate your business.
+
+SCO Support Services
+

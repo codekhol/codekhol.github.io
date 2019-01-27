@@ -1,0 +1,180 @@
+
+ Introduction
+
+    These Release and Installation Notes document the X11R5 Runtime Shared
+    Libraries Extended Feature Supplement (EFS) product.  Install this EFS
+    only on systems running SCO(r) Open Desktop(r), Release 2.0.
+
+    The software in this EFS provides you with all of the elements your SCO
+    Open Desktop, Release 2.0, system requires to be able to run applications
+    developed with the SCO Open Desktop, Release 3.0, Development System,
+    including new shared libraries and other components.
+
+    See ``Release information'' later in this document for more details.
+
+ Contents of this EFS
+
+    This EFS contains:
+
+    +  one X11R5 Runtime Shared Libraries EFS diskette containing the EFS
+       software
+
+    +  these Release and Installation Notes
+
+    Keep the floppy diskette until the next release of SCO Open Desktop, or
+    your operating system.
+
+ About these Release Notes
+
+    The X11R5 Runtime Shared Libraries EFS Release and Installation Notes are
+    divided into the following sections:
+
+    +  ``Release information,'' describes features and enhancements specific
+       to this release.
+
+    +  ``Installing the EFS,'' describes how to install and remove the soft-
+       ware provided in the X11R5 Runtime Shared Libraries EFS.
+
+
+    Conventions used in this document
+
+    These notes use the following notational conventions:
+
+    bold      represents commands, command options, and special keys that you
+              press.  For example, xset -bc is a complete command line that
+              is executed when you press <Return>.  <Ctrl>x means to hold
+              down the Control key and press the x key, then release them.
+
+    italics   represents files and directories, as well as variables that you
+              supply.  For example, in the command argument path:pathname,
+              you replace pathname with an actual pathname when you type the
+              command.
+
+
+
+ Release information
+
+    SCO Open Desktop, Release 2.0, and the SCO Open Desktop, Release 2.0, De-
+    velopment System both utilize the X11R4 version of the X Window System(r)
+    libraries and version 1.1.4 of the OSF/Motif(r) libraries so that graphi-
+    cal applications created by the development system can run on the operat-
+    ing system. Similarly, SCO Open Desktop, Release 3.0, and its accompany-
+    ing development system, both utilize the X11R5 version of the X Window
+    System and version 1.2.1 of the OSF/Motif libraries.  However, if a
+    graphical applications developer takes advantage of the new features in
+    the SCO Open Desktop, Release 3.0, Development System, to develop new
+    applications, the applications created may not be able to run on SCO Open
+    Desktop, Release 2.0.  This EFS is designed to enable SCO Open Desktop,
+    Release 2.0, to run such applications.
+
+    This EFS includes the following files:
+
+    /shlib/libX11R5_s
+                contains the X11R5 Xlib shared library
+
+    /shlib/libXtXm1.2_s
+                contains the X11R5 X Toolkit Intrinsics and OSF/Motif Version
+                1.2.1 routines
+
+    /usr/lib/X11/C/Codeset
+                provides the standard default codeset information for C,
+                english_us.ascii, C_C.C, and english $LANG environments
+
+    /usr/lib/X11/XErrorDB
+                contains the X11R5 version of the error message database
+
+    /usr/lib/X11/XKeysymDB
+                contains the virtual keysym database used by SCO Open Desk-
+                top, Release 3.0
+
+    /usr/bin/X11/mwm
+                contains a new version of the Motif Window Manager (mwm),
+                Release 1.1.4 with improvements, to correctly manage applica-
+                tions built with OSF/Motif Version 1.2.1 and X11R5
+
+
+
+ Installing the EFS
+
+    When you install this EFS some files in the /usr/bin/X11 and /usr/lib/X11
+    directories are replaced with updated files. The files that previously
+    existed in these directories (XErrorDB, XKeysymDB, and mwm) are automati-
+    cally backed up during installation and saved in the
+    /usr/lib/custom/save/xrtefs directory.
+
+ Installation procedure
+
+    The following procedure installs the X11R5 Runtime Shared Libraries EFS:
+
+    1.   Log in as root.
+
+    2.   Bring the system to system maintenance mode after telling your users
+         to log off.  Refer to shutdown(ADM) for instructions.
+
+    3.   Execute custom from the command line by typing custom and pressing
+         <Return>, or from sysadmsh by making the following sysadmsh selec-
+         tion:
+
+            System->Software
+
+
+    4.   Choose Install, A New Product, and Entire Product.  When you are
+         prompted to insert the requested volume, insert the EFS disk, then
+         select Continue.
+
+    5.   When you are prompted again for the first floppy volume, select Con-
+         tinue.  It takes a few minutes for the files to be extracted.
+
+    6.   Several messages indicate the installation's progress.
+
+    7.   When prompted, enter the serialization number and activation key
+         included with your SCO Open Desktop personal system.
+
+    8.   When prompted, press any key to continue.  The custom menu returns.
+
+    9.   Select Quit to exit custom.
+
+    10.  When the system prompt returns, type init 6 to reboot your system,
+         then press <Return>.
+
+    11.  When the boot prompt appears, press <Return>.  You are given the
+         option of going into multiuser mode.
+
+    12.  Press <Ctrl>D to enter multiuser mode.
+
+         The EFS is now installed.  Store the X11R5 Runtime Shared Libraries
+         EFS distribution media in a safe place.  If an accident or a hard-
+         ware failure damages the X11R5 Runtime Shared Libraries EFS files on
+         your hard disk, you will need the distribution media to re-install
+         the X11R5 Runtime Shared Libraries EFS.
+
+
+ Removing the EFS
+
+    When you remove the EFS, your old system is automatically restored.  Fol-
+    low this procedure to remove the X11R5 Runtime Shared Libraries EFS:
+
+    1.   Log in as root.
+
+    2.   Bring the system to system maintenance mode after telling your users
+         to log off.  Refer to shutdown(ADM) for instructions.
+
+    3.   Execute custom from the command line by typing custom and pressing
+         <Return>, or from sysadmsh by making the following sysadmsh selec-
+         tion:
+
+            System->Software
+
+
+    4.   Choose Remove, then select ``X11R5 Runtime Shared Libraries EFS''.
+
+    5.   Select ALL to remove the ``Entire X11R5 Runtime Libraries EFS''.
+
+    6.   Select Yes to confirm the removal.
+
+    7.   When prompted, press any key to continue.  Several messages indicate
+         the removal's process, then the custom menu returns.
+
+    8.   Select Quit to exit custom.
+
+

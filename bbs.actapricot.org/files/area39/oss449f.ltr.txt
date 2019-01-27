@@ -1,0 +1,250 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) OSS449F, the Network Maintenance
+Supplement, corrects many known problems with the TCP/IP, NFS and UNIX
+components of SCO OpenServer Release 5 family of operating systems.
+
+
+RELEASE INFORMATION
+
+SLS OSS449F is intended for use on these products:
+
+   SCO OpenServer Release 5.0.0, 5.0.2, and 5.0.4
+   SCO Internet FastStart Release 1.0.0 and 1.1.0
+
+If you are installing SLS OSS449F on a system with SCO OpenServer Release
+5.0.0, you must have installed the SCO OpenServer Release Supplement 5.0.0d
+(rs500d) and the Networking Supplement 1.0.0 (net100) prior to installing
+SLS OSS449F.
+
+
+INSTALLATION AND REMOVAL INSTRUCTIONS
+
+Note: Prior to installing SLS OSS449F, be sure to remove any previous
+      version(s) of OSS449 that have been installed on your system.  (This
+      is not an issue for OpenServer 5.0.4 systems.)  The procedure for
+      removing earlier versions of OSS449 is similar to the procedure
+      in section IIb below, except that some earlier versions patched the
+      LLI and TCPDEV components, in addition to the UNIX, TCP/IP, and NFS
+      components.  See the cover letter provided with the specific earlier
+      version of OSS449 for detailed removal instructions.
+
+Note: SLS OSS449F replaces several Link kit "space.c" files.  If you have
+      customized any of the following space.c files, make backup copies of
+      them before installing OSS449F:
+
+         /etc/conf/pack.d/arp/space.c
+         /etc/conf/pack.d/ip/space.c
+         /etc/conf/pack.d/lockd/space.c
+         /etc/conf/pack.d/nfs/space.c
+         /etc/conf/pack.d/str/space.c
+         /etc/conf/pack.d/tcp/space.c
+
+
+I. INSTALLING SLS OSS449F
+
+  1. Prepare the media for installation.
+
+     If you are installing this SLS from diskette media, insert
+     the first diskette and proceed to step 2.
+
+     If you downloaded the OSS449F media image files ("VOL" files), place
+     both VOL files in the /tmp directory (or a different directory of your
+     choice -- see step 5).  For example:
+
+                /tmp/VOL.000.000
+                /tmp/VOL.001.000
+
+
+  2. Run the Software Manager with the command:
+
+           # scoadmin software
+
+     or double click on the Software Manager icon in the desktop.
+
+  3. For SCO OpenServer 5.0.4: Pull down the "Software" menu and select
+     "Install New".
+
+     For SCO Internet FastStart, SCO OpenServer 5.0.0 or 5.0.2: Pull down
+     the "Software" menu and select "Patch Management --> Apply Patch".
+
+  4. When prompted for the host to install from, choose the local machine
+     and then "Continue".
+
+  5. When prompted to select the media device:
+
+     If you are installing this supplement from diskette media, select
+     the appropriate floppy disk drive and then "Continue". Proceed to
+     step 6.
+
+     If you are installing this supplement from media images per step 1,
+     select "Media Images", then "Continue".  When prompted for the
+     "Image Directory", enter "/tmp" (the directory where you placed the
+     VOL files in step 1) and then select "OK".
+
+  6. For SCO OpenServer 5.0.4: When prompted to select software to install,
+     ensure that the "OSS449F" entry is highlighted, then choose "Install".
+
+     For Internet FastStart, OpenServer 5.0.0 or 5.0.2: When prompted to
+     select installation type, choose "Full".
+
+     See the TROUBLESHOOTING section below for notes about some minor
+     problems that may occur during or after the installation.
+
+  7. Once the installation and kernel relink finish, quit the Software
+     Manager, and shut down the system:
+
+           # shutdown -g0 -y
+
+     After shutting down and rebooting the machine, installation of SLS
+     OSS449F is complete.
+
+
+II. REMOVING SLS OSS449F
+
+IIa. Removing SLS OSS449F from SCO OpenServer 5.0.4
+
+  1. Log in as root.
+
+  2. Execute the command:
+
+           # scoadmin software
+
+     or double click on the Software Manager icon in the desktop.
+
+  3. Highlight the "OSS449F:Network Maintenance Supplement" selection.
+
+  4. Pull down the "Software" menu and select "Remove Software".
+
+  5. Once the removal and kernel relink finish, quit the Software
+     Manager and shut down the system:
+
+           # shutdown -g0 -y
+
+     After shutting down and rebooting the machine, removal of SLS OSS449F
+     is complete.
+
+
+IIb. Removing SLS OSS449F patches from SCO OpenServer 5.0.0, 5.0.2 and Internet
+     FastStart 1.0, 1.1
+
+Note: Patches must be rolled back in the reverse order in which they
+      were installed on a per-component basis.  The OSS449F Network
+      Maintenance Supplement consists of patches to SCO UNIX, SCO TCP/IP,
+      and SCO NFS components.  If any of these components were patched after
+      OSS449F was installed, then you will have to roll back those later
+      patches before you can roll back the SLS OSS449F patch.
+
+  1. Log in as root.
+
+  2. Execute the command:
+
+           # scoadmin software
+
+     or double click on the Software Manager icon in the desktop.
+
+  3. SLS OSS449F patches these three software components: SCO TCP/IP; SCO NFS;
+     and SCO UNIX.  Any of these three components present when OSS449F was
+     applied were patched.
+
+     To roll back each of these patches, pull down the "Software" menu and
+     select "Patch Management-->Rollback Patch".
+
+  4. For the SCO UNIX Operating System component patch, take these steps:
+
+    a. You will see the "Begin Rollback Patch" menu and will be asked
+       to select patched software to rollback. Select "SCO UNIX System
+       V Operating System" and choose "Continue".
+
+    b. You will see the "Patch Selection" window. Make sure that "OSS449
+       UNIX patch" is selected.  Choose "Continue".
+
+    c. You will see the "Confirm Selected Patches" window. Choose "Rollback"
+       to confirm removal of the "OSS449F UNIX patch".
+
+    d. You will see the "Rollback Progress" window, as the system
+       performs the rollback of the patch.
+
+  5. Remove the patch to the "SCO TCP/IP" component following the same
+     procedures as step 4 above.  Just select "SCO TCP/IP" from the "Select
+     patched software to rollback" window in step 4a.
+
+  6. Remove the patch to the "SCO NFS" component following the same procedures
+     as step 4 above.  Just select "SCO NFS" from the "Select patched
+     software to rollback" window in step 4a.
+
+  7. Exit the Software Manager by choosing "Exit" from the "Host" menu.
+
+  8. Log in as root and shut down the system:
+
+           # shutdown -g0 -y
+
+    After shutting down and rebooting the machine, removal  of SLS OSS449F
+    is complete.
+
+
+PROBLEMS ADDRESSED BY SLS OSS449F
+
+For Internet FastStart, SCO OpenServer 5.0.0 and 5.0.2, SLS OSS449F
+addresses various problems by updating many important files in the SCO UNIX,
+SCO TCP/IP, and SCO NFS components to SCO OpenServer 5.0.4 versions.
+
+In addition to the fixes to the UNIX, TCP/IP and NFS components provided in
+previous versions of SLS OSS449, SLS OSS449F provides fixes for some problems
+reported against SCO OpenServer 5.0.4.
+
+These new fixes are:
+
+arp -- excessive "arp: info overwritten" warnings;
+ftp -- memory leaks in ftp and ftpd;
+inetd -- memory leaks in inetd;
+rlogin -- rlogin sometimes hangs when the <Del> key is pressed;
+NetBIOS -- NB_KPALIVE failed to timeout on lost connections;
+NetBIOS -- poor performance loading Access database via NetBIOS;
+NFS -- with mounts from Windows95, examining file properties changed
+       modification time;
+NFS -- with mounts from Unixware, device nodes appeared incorrect;
+NFS -- "lock timeout" panics;
+NIS -- useradd failed for all but the last user in /etc/passwd;
+PPP -- cannot use larger mss than the interface allows;
+STREAMS -- streams driver support for very large NSTRPAGES parameter;
+TCP/IP -- excessive "ip: spinning" messages on multi-CPU systems;
+TCP/IP -- "ip: spinning" system hangs on single-CPU systems.
+
+
+TROUBLESHOOTING
+
+You may experience assorted problems with the Java Development Kit (JDK)
+after removing a previous version of the OSS449 supplement.   To rectify
+this situation, remove the "JDK libc patch" (if it is installed) and the
+JDK itself, then re-install the JDK, then install OSS449F.
+
+Installation of OSS449F may result in one or more of the following warnings
+and errors.  These errors generally reflect discrepancies in the packaging
+databases, not actual problems with the software installed.  These warnings
+and errors may safely be ignored:
+
+  - An error indicating that "... /etc/pppd was not copied" may occur
+    during installation.  Just press Return and continue the installation.
+
+  - The Software Manager may incorrectly detect "Verification Errors" for
+    these and possibly other files.  You may ignore errors on these files:
+
+        ./usr/lib/tcprt/ID/ppcid/Driver.o
+        ./usr/lib/tcprt/ID/ppp/Driver.o
+        ./etc/default/inet
+
+  - During startup of /etc/pppd, an error may occur indicating that
+    "/etc/ppphook.sh not found".  This error may be ignored, or eliminated
+    by creating an empty file as follows:
+
+        # cp -i /bin/true /etc/ppphook.sh
+
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services
+

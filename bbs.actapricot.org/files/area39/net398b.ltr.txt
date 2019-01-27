@@ -1,0 +1,229 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) NET398B contains 
+NFS daemons and drivers for these products:
+
+SCO NFS Release 1.2.1 for SCO UNIX System V/386 Release 3.2 Version 4.2
+SCO Open Desktop Release 3.0
+SCO Open Server Network System Release 3.0
+SCO Open Server Enterprise System Release 3.0
+
+SLS NET398B contains the following new features:
+
+1. A new /etc/exportfs and /etc/mountd are provided that correct 
+   problems which might have allowed unauthorized access to the system.
+
+2. A new /etc/yppasswdd daemon is provided that corrects a problem with
+   changing passwords under SCO NIS.  
+
+3. A new /etc/ypxfrd daemon and /etc/yp/ypxfr are provided that correct
+   a problem with SCO NIS when communicating with a SUN system and
+   using short map names. 
+
+4. A new /etc/pcnfsd daemon corrects problems with the recognition of
+   supplemental groups, as well as problems managing more than 24 printers.
+
+5. New /etc/lockd and /etc/statd daemons which address various problems
+   in the lock manager with regard to the lock manager terminating abnormally
+   under heavy load and when trying to interoperate with other lock managers.
+
+6. A new /etc/portmap that corrects a problem where the portmapper
+   would exit abnormally under extreme load.
+
+Additionally, this SLS provides two optional drivers, a new nfs driver
+and a new lockd driver, which include these enhancements:
+
+        Better handling of third party NFS lock requests;
+        Proper handling of the "sticky bit" on directories over NFS;
+        NFS export capability of high-sierra CD-ROM filesystems.
+
+Installation of these drivers is not mandatory. The use of these
+drivers requires the presence of one of the following additional Support
+Level Supplements before configuring the new drivers:
+
+        For systems running SCO MPX Release 3.0, install SLS UOD393C;
+        For systems not running SCO MPX Release 3.0, install SLS UOD399A.
+
+The installation procedure is intelligent and will determine if one of 
+these SLSs is already installed before attempting to install the optional
+drivers. You will also be able to configure the optional drivers at a 
+later date, after installing one of the other SLSs.
+
+INSTALLATION INSTRUCTIONS
+
+1. Shutdown and reboot your system.  Enter System Maintenance
+   mode by typing the root password at the prompt:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance)
+
+2. Type:
+
+        /etc/custom
+
+3. The main custom "menu" will appear.  The "Install" option will
+   be highlighted.  Press <Enter> to select the "Install" option.
+
+4. A list of installed products will appear.  The first item in
+   the list, "A New Product", is highlighted.  Press <Enter> 
+   to select "A New Product".
+
+5. Custom will now display your installation options.  By default,
+   "Entire Product" is highlighted.  Press <Enter> to select
+   "Entire Product".
+
+6. Custom will prompt you to insert "Distribution Floppy 1".  
+   Insert the enclosed disk into the drive and press <Enter> 
+   while "Continue" is highlighted. 
+
+7. After extracting some information from the disk, custom will 
+   display information indicating that it is saving several files.
+   Custom will then once again prompt you to insert volume 1. 
+   Press <Enter> while "Continue" is highlighted.
+
+8. Custom may then prompt you for a serial number and activation 
+   key.  Enter the appropriate serial number and activation key 
+   based on the information displayed on the screen. 
+
+9. Custom will automatically run "mkdev nfs-fix". Proceed with step
+   number 3 in the section that follows. If the "nfs-fix" script determines
+   that your system is not properly configured to install the optional 
+   software, or if you choose not to install the optional drivers, 
+   you may run "mkdev nfs-fix" at a later time. 
+
+10. After running "mkdev nfs-fix", custom will prompt you to 
+    "Press any key to continue". Press <Enter>.  Custom will then 
+    display the message:
+
+        "Checking file permissions...".
+
+11. After completing these steps, you will be returned to the
+    main custom menu.  You may quit out of custom at this time.
+    To reboot the system so that the changes take effect, type:
+
+        /etc/reboot
+
+INSTALLING THE OPTIONAL DRIVERS
+
+1. Reboot your system and enter System Maintenance mode 
+   by typing the root password at the prompt:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance)
+
+2. Execute:
+
+        # mkdev nfs-fix
+
+3. The nfs-fix script will determine if your system is properly configured
+   to install the new drivers. If so, you will be prompted with the message:
+
+        This system appears properly configured to install
+        the optional NFS and LOCKD drivers.
+        Continue with the installation? (y/n)
+
+   Enter "y" and press <Enter> to continue with the installation.
+   
+   If your system is not properly configured to use the new drivers,
+   you will see this message, and the "nfs-fix" script will exit:
+        
+        This SLS contains new NFS and LOCKD drivers.
+        Use of these drivers requires further updates to the
+        kernel available only through a different SLS.
+
+        If you wish to use the new drivers, first install one of the
+        following SLSs and then execute (as root):
+
+                # mkdev nfs-fix
+
+        For systems with SCO MPX 3.0, install SLS UOD393C.
+        For systems without MPX, install SLS UOD399A.
+
+   You will need to install one of the listed SLSs before running 
+   "mkdev nfs-fix" again.
+
+4. If your system is properly configured and you choose to install the 
+   optional drivers, you may be asked to enter a serial number and activation
+   key. Enter the appropriate serial number and activation key based on the
+   information displayed on the screen.
+
+5. The new nfs driver requires that the high-sierra (hs) driver be configured
+   into the kernel. If the high-sierra driver is not already installed 
+   into the kernel, you will be prompted with:
+
+        High Sierra / ISO9660 filesystem Configuration Program
+
+         1. Add High Sierra / ISO9660 filesystem to system configuration.
+         2. Remove High Sierra / ISO9660 filesystem from system configuration.
+
+        Select an option or enter q to quit:
+
+   Enter "1" at the prompt and press <Enter> to continue. If the high-sierra
+   driver is already configured into the kernel, a message indicating this
+   will be displayed, and this step, which configures the high-sierra driver
+   into the kernel, is skipped.
+
+6. After configuring the new drivers into the kernel, you will be asked
+   to re-link the kernel:
+
+        Do you wish to relink the kernel now? (y/n)  
+
+   Enter "y" to continue.  After the kernel is relinked, you will be 
+   asked two questions:
+
+        Do you want this kernel to boot by default? (y/n)
+
+        Do you want the kernel environment rebuilt? (y/n)
+
+   Enter "y"  for each question to complete the installation of the new 
+   kernel.
+
+7. If you are returned to a shell prompt after running "mkdev nfs-fix", 
+   reboot the system for the changes to take affect by typing:
+
+        /etc/reboot
+
+   If "mkdev nfs-fix" was called from within custom, return to the
+   previous section to complete the installation.
+ 
+REMOVAL INSTRUCTIONS
+
+Should you ever need to remove this SLS, do so while in System
+Maintenance mode.  Enter the command:
+
+        /etc/custom
+
+Choose the menu selections:
+
+        Remove -> NET398B -> ALL
+
+Follow the directions displayed on the screen to remove the SLS.
+
+
+NOTES
+
+SLS NET398B can be installed with or without the prior presence
+of SLS NET398A.
+
+SLS NET398B, when using the optional drivers, includes the functionality
+provided by SLS NET373A, namely, NFS export capability of high-sierra
+CD-ROM filesystems.  As such, SLS NET373A should never be installed after
+installing SLS NET398B. 
+
+Due to kernel dependencies within the new nfs driver, the optional nfs 
+driver requires the presence of the high-sierra (hs) driver in the kernel
+whether or not you are exporting CD-ROM filesystems. It also requires the
+presence of other kernel modules provided by either SLS UOD399A or UOD393C.
+
+While this SLS specifically mentions SLS UOD399A and SLS UOD393C, 
+possible later revisions of these SLSs, such as UOD399B or UOD393D, 
+should also suffice for the conditions required to use the optional 
+drivers in SLS NET398B. 
+
+If you have questions regarding this SLS, or the product on which
+it is installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services
+

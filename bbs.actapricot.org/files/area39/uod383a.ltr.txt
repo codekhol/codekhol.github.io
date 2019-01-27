@@ -1,0 +1,294 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) UOD383A contains various feature    
+enhancements and corrections to known problems with SCO Open Desktop Release 
+3.0 and SCO UNIX System V/386 Release 3.2 Operating System Version 4.2
+
+SLS UOD383A applies only to SCO UNIX Version 4.2 based operating systems, 
+including:
+
+SCO UNIX System V/386 Release 3.2 Operating System Version 4.2
+SCO Open Desktop Lite Release 3.0
+SCO Open Desktop Release 3.0
+SCO Open Server Network System Release 3.0
+SCO Open Server Enterprise System Release 3.0
+
+
+See section III for a list of functional components.
+
+SLS UOD383A consists of two new N1 diskettes: one is for SCO Open Desktop 
+3.0 only; the other is for  SCO UNIX System V/386 Release 3.2 Operating 
+System Version 4.2 only.  Be sure to use the correct replacement N1 for your 
+SCO operating system version.  See Troubleshooting, section IV, for further
+details on installation.
+
+The new N1 diskette OBSOLETES your current N1.  Please replace your current 
+N1 with the Replacement N1 diskette from SLS UOD383A. 
+
+
+I. BOOTING - OPERATING SYSTEM INSTALLATION
+
+The Replacement N1 diskette OBSOLETES your previous N1 diskette.  If you
+have not already done so, please mark your previous N1 as obsolete and
+use the N1 supplied with SLS UOD383A.
+
+For the operating system installation process, every time you are instructed
+to place the N1 diskette into the floppy drive to boot your system, simply
+place the Replacement N1 diskette in the drive instead.  Then proceed with
+the normal installation of the operating system distribution.
+
+
+Take the following steps to install the operating system using the SLS
+UOD383A Replacement N1 diskette:
+
+1.  Place the Replacement N1 diskette in the floppy drive.
+
+2.  Manually reset the system or turn the power on.
+
+3.  The boot prompt will be displayed:
+
+        Boot:
+
+4.  Follow normal installation procedures as outlined in the Release and
+    Installation Notes.  
+
+5.  After installation is complete, when you get the "SAFE to POWER OFF"
+    message, take the following steps:
+
+    a. Make sure the Replacement N1 diskette is in the floppy drive.
+    b. Press <Enter> to reboot the computer.
+    c. When the BOOT: prompt appears, type the following:
+
+         fd(64)unix  root=hd(40) swap=hd(41)
+
+    d. After loading text and data you will see the following message:
+    
+         Type CONTROL-d  to proceed with normal startup,
+         (or give root password for system maintenance):
+
+       Enter the root password and press <Enter>.
+       
+    e. Invoke custom(ADM) by typing "custom" at the command prompt; 
+       press <Enter>.
+
+       - Position the cursor so that "Install" is highlighted and 
+         press <Enter>.
+
+       - Make sure that the words "A New Product" are highlighted in the window
+         found in the lower right-hand corner of the screen; press <Enter>.
+
+       - Make sure the words "Entire Product" are highlighted in the "Choose 
+         an option" section of the screen; press <Enter>.
+
+       - You will be prompted to "Insert distribution Volume 1 and press
+         <Enter>."  Insert the diskette for SLS UOD383A and press <Enter>.
+
+       - You will see the following messages:
+
+             Installing custom data files
+
+       - The message "Creating file lists" will flash on the screen.  You will 
+         be prompted to "Insert the requested Volume and press <Enter>."  The 
+         diskette is already in the drive, therefore press <Enter>.
+
+       - You will see the following message:
+
+             Extracting Files
+     
+       - You will then be returned to the main custom menu where you should
+         see "IBM Hardware Support SLS for UNIX/ODT" listed as one of the
+         installed products. 
+
+       - At the main custom menu, move the highlighted entry to "Quit" and 
+         press <Enter>.  Press <Enter> again on the highlighted "yes."
+
+       - Relink the kernel by entering the following commands:
+
+           cd /etc/conf/cf.d
+           ./link_unix
+
+       - During the relink process, you will be asked if you want to boot off
+         the new kernel and if you want to rebuild the kernel environment.
+
+         Reply Y to both questions.
+
+       - Reboot your computer.
+
+       - SLS UOD383A is now correctly installed.
+
+
+
+II. INSTALLATION (for systems already running SCO Open Desktop 3.0 or 
+      SCO UNIX System V/386 Release 3.2 Operating System Version 4.2)
+
+For installations that are upgrading from another SCSI host adapter to 
+the IBM SCSI-2 host adapter, the following procedure should be used before 
+removing the original SCSI host adapter. 
+
+The following procedure outlines how to install SLS UOD383A on an existing
+operating system using custom(ADM):
+
+1.  If the system is running in multiuser mode, log in as root on the 
+    console.  After warning the users that the system will be down for 
+    some time, enter the command:
+
+       init 1 
+
+    The system will then execute a controlled shutdown operation which
+    will bring it to System Maintenance mode.  You will see the prompt: 
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+2.  Next, insert the custom volume diskette for SLS UOD383A 
+    in the floppy drive and enter the command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+3.  To select the following, highlight each one with the cursor keys 
+    and press <Enter>:
+
+        Install -> A New Product -> Entire Product
+
+   - Position the cursor so that "Install" is highlighted and 
+     press <Enter>.
+
+   - Make sure that the words "A New Product" are highlighted in the window 
+     found in the lower right-hand corner of the screen; press <Enter>.
+
+   - Make sure the words "Entire Product" are highlighted in the "Choose an
+     option" section of the screen; press <Enter>.
+
+   - You will be prompted to "Insert distribution Volume 1 and press <Enter>."
+     The diskette is already in the drive, therefore press <Enter>.
+
+   - You will see the following message:
+
+       Installing custom data files
+   
+   - The message "Creating file lists" will flash on the screen.  You will 
+     be prompted to "Insert the requested Volume and press <Enter>."  The 
+     diskette is already in the drive, therefore press <Enter>.
+
+   - You will see the following message:
+
+       Extracting Files
+
+   - You will then be returned to the main custom menu where you should
+     see "IBM Hardware Support SLS for UNIX/ODT" listed as one of the
+     installed products. 
+
+   - At the main custom menu, move the highlighted entry to "Quit" and 
+     press <Enter>.  Press <Enter> again on the highlighted "yes."
+
+   - Relink the kernel by entering the following commands:
+
+           cd /etc/conf/cf.d
+           ./link_unix
+
+   - During the relink process, you will be asked if you want to boot 
+     off the new kernel and if you want to rebuild the kernel environment.
+
+     Reply Y to both questions.
+
+   - Shut down the computer.  Remove the SCSI-1 adapter and install the 
+     SCSI-2 adapter.  Reboot the computer.
+
+   - SLS UOD383A is now successfully installed.
+
+
+
+III. FUNCTIONAL COMPONENTS OF SLS UOD383A
+
+SLS UOD383A includes the following functional components:
+
+1. A new /boot which correctly addresses the IBM SCSI-2 Fast Wide Adapter/A 
+   host adapter; and a new /etc/conf/pack.d/hf/Driver.o and /etc/conf/pack.d/
+   hf/space.c file for the IBM SCSI-2 Fast Wide Adapter/A.  
+
+2. New tape drivers for the IBM 1.2 GB 1/4" Cartridge SCSI Tape Drive, the 
+   2.3 GB 8mm Full High SCSI tape drive, and the 2.0 GB 4mm tape SCSI
+   Tape Drive.
+
+
+IV. TROUBLESHOOTING
+
+The following errors may occur if the wrong N1 diskette is used during
+installation of SCO Open Desktop or SCO UNIX Operating System with SLS 
+UOD383A.  This could happen if the N1 for SCO UNIX Operating System is 
+used for SCO Open Desktop, or the N1 for SCO Open Desktop is used for 
+SCO UNIX Operating System.  
+
+1. If SCO UNIX Version 4.2 is installed using the UOD383A SCO Open Desktop 
+   N1 diskette:
+
+   Installation may fail on M1 with the following error messages:
+
+     " /inst3/fixmaster: mv: not found
+
+      Error: cannot open bundle list
+
+      The /inst4/rtsinstall installation program has failed.
+
+      Call your Support Representative if you require assistance.
+
+      Installation aborted.
+
+      After the "Power off or reboot" prompt is displayed,
+      you may power down the system if required. 
+
+      To resume the installation procedure from the aborted point:
+              1. insert N1 (Boot) floppy in the drive,
+              2. close the drive door, then press any key.
+
+      The screen will clear and display the "Boot:" prompt.
+
+
+      **    Safe to Power Off   **
+               - or -
+      **  Press Any Key to Reboot  ** "
+
+
+2. If SCO Open Desktop 3.0 is installed using the UOD383A SCO UNIX 
+   Version 4.2 N1, then installation may fail on M1 with the following 
+   error message:
+
+     " ERROR:   /inst5/customize
+
+      Call your Support Representative if you require assistance.
+
+      Installation aborted. 
+
+      After the "Power off or reboot" prompt is displayed,
+      you may power down the system if required. 
+
+      To resume the installation procedure from the aborted point,
+              1. insert N1 (Boot) floppy in the drive,
+              2. close the drive door, then press any key.
+
+      The screen will clear and display the "Boot:" prompt.
+
+
+      **    Safe to Power Off   **
+               - or -
+      **  Press Any Key to Reboot  ** "
+
+
+The solution is to be sure to use the correct N1 diskette and restart the 
+installation by booting off the correct N1 and typing the word "restart" 
+at the boot: prompt.
+
+
+If you have any questions, please call our SCO Customer Services Department
+at (408) 425-4726.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

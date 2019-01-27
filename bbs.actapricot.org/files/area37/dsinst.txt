@@ -1,0 +1,186 @@
+
+              NOVELL TECHNICAL INFORMATION DOCUMENT
+
+TITLE:              Partition Manipulation
+DOCUMENT ID:        TID
+DOCUMENT REVISION:  A
+DATE:               30MAR94
+ALERT STATUS:       Yellow
+INFORMATION TYPE:   Issue
+README FOR:         NA
+
+NOVELL PRODUCT and VERSION:
+NetWare 4.01
+
+ABSTRACT:
+
+This document includes suggestion for NetWare Directory Services.
+
+------------------------------------------------------------------
+DISCLAIMER
+THE ORIGIN OF THIS INFORMATION MAY BE INTERNAL OR EXTERNAL TO
+NOVELL.  NOVELL MAKES EVERY EFFORT WITHIN ITS MEANS TO VERIFY
+THIS INFORMATION.  HOWEVER, THE INFORMATION PROVIDED IN THIS
+DOCUMENT IS FOR YOUR INFORMATION ONLY.  NOVELL MAKES NO EXPLICIT
+OR IMPLIED CLAIMS TO THE VALIDITY OF THIS INFORMATION.
+------------------------------------------------------------------
+
+ISSUE
+
+     Recommendations for Using This Information
+
+     This is not an official letter from Novell.  The following
+     are simply pointers from what I have learned from working
+     with users and nothing more.  For this reason, you will not
+     find my suggestions documented in manuals.  I would also
+     like to point out that some may feel that my suggestions
+     create extra work that is not really necessary.  While I
+     somewhat agree with this statement, my point is that the
+     extra safety incurred by following my suggestions is worth
+     the extra time taken.  Also, partition and replica
+     manipulation is not performed that often when compared to
+     the rest of NetWare Directory Services (NDS) management. 
+     When it comes to manipulating replica rings or partitions
+     over WANs, a little bit of planning goes a long ways.
+
+     Checking the WAN Condition when Manipulating Typical Objects
+
+     In my opinion, there are windows of time in a wide area
+     network in which partition replication is not as robust as
+     typical object manipulation and synchronization.  In other
+     words, while I would never bother to check the condition of
+     my WAN when manipulating typical objects, I would first
+     check its condition before manipulating partitions.  To do
+     so I would run DSTRACE on the servers that have replicas of
+     the partition that I am manipulating.
+
+     Avoid Creating Partition or Copying Replicas Through Install
+
+     First of all, a lot of the problems that get escalated to me
+     could be totally prevented if we avoided creating partitions
+     or copying replicas through install.  For that reason, I
+     suggest that you never create a new partition or copy a
+     replica through install.  This way if install is aborted or
+     redone, there is no possibility of getting into a situation
+     where NDS inconsistencies exist, or more frequently, locked
+     out because the NDS is busy.
+
+     If you want to install a new file server into a new
+     partition, first create the partition within partition
+     manager.  Then when installing NDS onto your file server,
+     insert it into the current partition.  When install prompts
+     you to copy a replica to this server, answer no.  At this
+     point, install is complete.
+
+     Multiple Install Recommendations
+
+     If for some reason you want to redo INSTALL over and over,
+     use the following procedure:
+
+     1.   Delete the volume object through NetAdmin.
+
+     2.   Deinstall NDS from the server.
+
+     3.   Then delete the server object through Part Manager.
+
+     Using this procedure, you will be able to reinstall as many
+     times as you would like.  Two exceptions where you must
+     create partitions with install are with the first server in
+     a Tree or with a NetWare 3.x upgrade.
+
+     Master Replicas of New Partitions
+
+     If the end result that you want to accomplish is to have a
+     master replica of this new partition placed on this new file
+     server, do that through Partition Manager after install.  Do
+     not perform any replica operations to that partition until
+     after you have verified through DSTRACE that all copies of
+     that partition have been updated.
+
+     If any of the file servers that has a copy of the partition
+     on it shows errors, resolve those errors first before
+     performing any other changes to that replica.  Those other
+     changes include changing a partition to Master.  Over busy
+     WANs, please give it some time for the NDS to update and
+     possibly resolve some errors.
+
+     Multiple Installs on the Same Server
+
+     I run into a fair number of users that have been locked out
+     of their NDS database because of doing multiple installs of
+     the same server.  When you want to deinstall a server out of
+     a tree, remove all copies of the replica from the server
+     through partition manager instead of through install.  After
+     you have verified the replicas have been moved (through
+     DSTRACE), go ahead and deinstall the server in the same
+     manner previously discussed.
+
+     Broken Trees
+
+     The biggest cause of updates not occurring and corruption
+     not being cleaned up is a broken Tree.  DSTRACE will alert
+     you if you have a broken Tree.  If a server is removed
+     without doing a proper deinstall (crashed and you do not
+     want to replace it), double check on the servers that have
+     copies of the partition containing the server (with DSTRACE
+     again), then remove the server with partition manager.  Then
+     go into NetAdmin and delete the objects that were contained
+     on that server.
+
+     Manipulating Replicas without Waiting for a DSTRACE Clean Up
+
+     If you want the ability to manipulate replicas at a site
+     without waiting for DSTRACE to clean up, have at least two
+     servers per remote site that have replicas.  This way, if
+     NDS needs to be removed and reinstalled (hard disk crash,
+     server crash, strange NDS corruption of a master replicas),
+     you have the ability to immediately reinstall without first
+     fixing DSTRACE errors.  To do so, follow the steps that I
+     already outlined and do not copy a replica over to the
+     reinstalled server until DSTRACE is clean with all servers
+     involved in the replica ring.  This way a newly reinstalled
+     server can immediately access the other servers partition
+     until DSTRACE is cleaned up.  Also, make sure that you run
+     DSPAT in all your NetWare 4.01 servers.
+
+     Hints for Maintaining NDS
+
+          Never Rename Your File Server
+
+          Another hint that will help your NetWare Directory
+          Services easier to maintain is to never rename your
+          file server or give it a different internal IPX number.
+          Most people never have a problem renaming file servers;
+          however, when a problem does arise, it can be difficult
+          to resolve.  Life is easier if you just do not rename
+          the file server.  If you must rename you file server,
+          the safest way to do so is to deinstall your file
+          server out of the tree and reinstall it using the
+          methods previously listed.
+
+          Never Assign Two File Servers the Same Internal IPX
+          Number
+
+          Even more detrimental to you NDS tree, is assigning two
+          file servers the same internal IPX number.  If you do
+          not like using the random IPX number generated by
+          install make sure, 100 percent, that the IPX number you
+          enter is not duplicated, even for a little while.  I
+          have seen damage done to the NDS tree by having
+          duplicate IPX numbers that is not repairable.
+
+          Do Not Enable Auditing
+
+          Please do not enable auditing.  If you already have
+          enabled auditing, you need to completely disable it. 
+          If you need auditing, you will need to upgrade your
+          NetWare Directory Services to version 296.  If you see
+          a problem of high utilization on the file servers,
+          along with extremely slow performance, you might be
+          seeing problems associated with auditing.  Disabling
+          auditing at this point will not fix the problem, you
+          must upgrade your NDS to version 296.
+
+
+
+

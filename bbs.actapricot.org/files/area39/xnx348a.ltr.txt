@@ -1,0 +1,210 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) xnx348a provides a SCSI Badblock 
+Utility called scsibadblk(ADM).  This utility is similar in functionality to 
+badtrk(ADM), but must only be used to detect or replace badblocks on SCSI 
+diskettes.
+
+SLS xnx348a will install the scsibadblk(ADM) utility, and a man page for the 
+utility, onto your system.  It also installs modified SCSI drivers that need 
+to be linked into the SCO XENIX kernel. 
+
+SLS xnx348a will prompt for the installation of the Link kit as part of the 
+installation of the SLS.
+
+SLS xnx348a will only install on SCO XENIX 386 Operating System Release 2.3.4.
+
+SLS xnx348a is custom(ADM) installable and removable and consists of a single
+floppy volume. 
+
+
+                         INSTALLATION INSTRUCTIONS
+                         =========================
+
+To install SLS xnx348a, use custom (ADM) and follow the steps listed below:
+
+1.  Log onto your system in System Maintenance mode.  From the root directory,
+    enter the command: 
+
+                custom
+
+2.  The main custom menu will appear.  Press 4 to select the option:
+
+                Add a Supported Product 
+
+
+3.  You will see the message:
+
+                Installing custom data files...
+
+    followed by a prompt to:
+                
+                Insert distribution volume 1
+                and press <Return> or enter q to quit:
+
+    Put the SCO XENIX SCSI Badblock SLS into the floppy drive and
+    press <Return>.
+
+4.  A menu of custom options is displayed.  Press 1 to select the option:
+
+                Install one or more packages
+
+
+5.  You will then be prompted to specify what package(s) you wish
+    to install.  Type the following and press <Return>:
+
+                all
+
+
+6.  The following prompt will appear:
+
+                Insert SCO XENIX SCSI Badblock SLS (xnx348a) volume 1
+                and press <Return> or enter q to return to the menu:
+
+    Make sure the SLS diskette is in the drive and press <Return>.
+
+7.  The message:
+
+                Extracting files ...
+
+    will appear in the bottom left hand corner of the screen.
+
+8.  The version of the operating system will now be displayed 
+    followed by the prompt:
+
+                Press Enter To Continue :
+
+    Press <Return>.
+ 
+9.  If the Link kit in not installed on your system you will 
+    be prompted to install it at this point.
+
+10. If the version of the operating system is not compatible with 
+    SLS xnx348a, a message to this effect will be displayed and you   
+    will be returned to the custom(ADM) main menu.
+
+11. If the version of the operating system is valid, the message: 
+        
+                Making SLS Directories
+
+    will appear followed by:
+
+                Initializing xnx348a
+        
+                Linking the XENIX Kernel
+
+        
+                Backing up /xenix as /xenix.old
+                Installing xenix on hard disk
+
+                You will need to shut down and reboot the system
+                in order to load the newly installed /xenix into memory
+
+                Press Enter To Continue :
+
+    Press <Return>.
+
+12. A message will be displayed indicating that SLS xnx348a has been verified
+    as being compatible with the version of the SCO XENIX Operating System
+    followed by the prompt:
+
+                Press Enter To Continue :
+   
+    Press <Return>.
+
+13. The message: 
+
+                Checking file permissions ...
+
+    will appear and you will be returned to the main custom(ADM) menu.
+
+14. Select q and press <Return> to exit from the custom(ADM) utility.
+ 
+15. You must now reboot your system before you attempt to use the
+    scsibadblk(ADM) utility.
+
+
+                         REMOVAL INSTRUCTIONS
+                         ====================
+
+Use custom(ADM) to remove SLS xnx348a following the steps listed
+below:
+
+1.  Log onto your machine in System Maintenance mode.  From the root
+    directory, enter the command:
+
+                custom
+
+
+2.  The main custom menu will appear.  Select the following option:
+                
+                SCO XENIX SCSI Badblock SLS (xnx348a)
+
+
+3.  A menu of custom options is displayed.  Press 2 to select the option:
+
+                Remove one or more packages
+
+
+4.  You will now be prompted to specify what package(s) you wish
+    to remove.  Type the following and press <Return>:
+
+                all
+
+
+5.  The version of the operating system will be displayed followed by 
+    the prompt:
+
+                Press Enter To Continue :
+
+    Press <Return>.
+ 
+6.  If the Link kit in not installed on your system you will 
+    be prompted to install it at this point.
+
+7.  If the version of the operating system is valid, the message: 
+        
+                Removing xnx348a
+
+    will be displayed in the top left hand corner of the screen
+    followed by:
+
+
+                Restoring Original OS Files
+        
+                Linking the XENIX Kernel
+
+        
+                Backing up /xenix as /xenix.old
+                Installing xenix on hard disk
+
+                You will need to shut down and reboot the system
+                in order to load the newly installed /xenix into memory
+
+                Press Enter To Continue :
+
+    Press <Return>.
+
+8.  A message will be displayed indicating that your system has been 
+    updated by the removal of SLS xnx348a, followed by the prompt:
+
+                Press Enter To Continue :
+
+    Press <Return>.
+        
+9.  You will be returned to the main custom(ADM) menu.  Select q and 
+    press <Return> to leave the custom(ADM) utility.
+
+10. You must now reboot your system before you attempt to use the
+    scsibadblk(ADM) utility.
+
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

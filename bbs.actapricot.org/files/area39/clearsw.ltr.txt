@@ -1,0 +1,34 @@
+
+On rebooting SCO UNIX System V/386, the message "There may be 
+a system dump memory image in the swap device" is seen and may 
+be seen on subsequent reboots, indicats that a dump of system
+memory may have been written to the swap device following a
+system panic.  If required for debugging purposes the dump
+it can be saved onto floppy or tape for analysis by the crash(ADM)
+utility.  This however does not delete the dump image from 
+/dev/swap.
+
+During the boot sequence, the script "/etc/dumpsave" is run
+which executes the undocumented binary /etc/memsize which can
+be used to detect a saved memory image.  When a system has
+sufficient memory that it does not have to use swap, a saved
+memory image will never be overwritten, and so the message will
+always appear on rebooting.
+
+The program clearswap can be used to overwrite the flag that 
+/etc/memsize uses to detect a dump image.
+
+To install clearswap, copy the compressed (.Z) file into one of
+your bin directories and explode it with the following command:
+
+	uncompress clearswap.Z
+
+You will need to make it executable, as follows:
+
+	chmod 755 clearswap
+
+Note that clearswap should not be run on a live swapping system,
+and requires no parameters:
+
+	clearswap
+

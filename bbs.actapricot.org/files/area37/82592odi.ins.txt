@@ -1,0 +1,14 @@
+InS_StArT
+82592ODI.COM
+1.0
+^Apricot 82592 Ethernet,82592ODI.COM,IE0
+$OIE0(NODE ADDRESS)Optional Node Address
+0
+7FFFFFFFFFFF
+*RIE0(FRAME)Media Frame Type(s)
+?NOTE: Ethernet_802.2 is now the default frame type for ODI drivers. Existing LANs may be using Ethernet_802.3.
+@Ethernet_802.2
+Ethernet_802.3
+Ethernet_II
+Ethernet_SNAP
+InS_EnD

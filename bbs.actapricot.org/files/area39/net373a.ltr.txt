@@ -1,0 +1,222 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) NET373A contains a new SCO NFS
+driver which provides support for mounting High-Sierra (CD-ROM) filesystems 
+across SCO NFS. 
+
+SLS NET373A is only applicable to systems running SCO NFS Release 1.2.1,
+which includes SCO Open Server Enterprise System Release 3.0 and SCO Open 
+Server Network System Release 3.0.  Do not install this SLS on any other 
+releases of NFS.
+
+During installation you may be prompted for the NFS, or SCO Open Server
+System, serial number and activation key depending on your current system
+configuration.  Please read through the installation instructions for 
+further information.
+
+In order to mount High-Sierra filesystems across SCO NFS, install SLS 
+NET373A on the NFS Server (the machine to which the CD-ROM device is 
+physically connected).  You do NOT need to install this SLS on any of 
+the NFS Client machines.
+
+
+(1)    This SLS requires that the High-Sierra filesystem is already
+       configured in the UNIX kernel, otherwise it will fail to 
+       relink the kernel during installation with:
+
+                undefined               first referenced
+                symbol                    in file
+
+                hsinit                  /etc/conf/pack.d/nfs/Driver.o
+
+        ld fatal: Symbol referencing errors. No output written to UNIX
+        ERROR: Can not link-edit unix.
+
+        You can configure the High-Sierra filesystem in the kernel
+        by running:
+
+                mkdev high-sierra    
+
+        You will also need to configure the CD-ROM devices by running:
+
+                mkdev cdrom
+
+
+(2)     Be sure to mount the High-Sierra filesystem locally on the server 
+        first, BEFORE advertising it over NFS with exportfs (NADM).
+        Failure to do so will give the error:
+
+                mount: access denied for <server_name>:/<mount_dir>
+
+        You can correct this by running:
+
+                # exportfs -av
+
+        This will re-export the CD-ROM filesystem after it has been
+        mounted locally first.
+        This is not a problem when the filesystems are automatically
+        mounted when entering multiuser mode, using /etc/default/filesys, 
+	as they will be mounted before exportfs (NADM) is run anyway.
+
+
+INSTALLATION INSTRUCTIONS
+=========================
+
+To install SLS NET373A, take the following steps:
+
+        1. If you have a previous release of this SLS installed, be
+           sure to remove it first.
+
+        2. Shutdown and reboot your system.  Enter System Maintenance
+           mode by typing your root password at the prompt:
+
+                Type <Ctrl>d to proceed with normal startup,
+                (or give root password for System Maintenance)
+
+        3. Type:
+
+                /etc/custom
+
+        4. The main custom menu will appear.  The "Install" option
+           will be highlighted.  Press <Return> to select "Install."
+
+        5. A list of installed products will appear.  The first item in
+           the list, "A New Product," is highlighted.  Press <Return> to
+           select "A New Product."
+
+        6. Custom will now display the installation options.  By default,
+           "Entire Product" is highlighted.  Press <Return> to select
+           "Entire Product."
+
+        7. Custom will prompt you to insert "Distribution Floppy Volume 1."
+           Insert the enclosed floppy disk into the drive and press <Return> 
+	   while "Continue" is highlighted.
+
+        8. After extracting some information from the floppy disk, custom
+           will display information indicating that it is saving some files.
+	   Custom will now prompt you to insert "SCO NFS 1.2.1 CD-ROM SLS 
+	   Floppy volume 1."  Press <Return> while "Continue" is highlighted.
+
+        9. If you are using SCO Open Server System 3.0 skip this step -- 
+	   SCO Open Server 3.0 systems will attempt to serialize 
+	   automatically from previous data.
+           This step is only applicable to SCO NFS 1.2.1 standalone systems.
+
+           After extracting some files you will be asked to enter the 
+           serial number and activation key.  Enter the appropriate 
+           serial number and activation key based on the information 
+           detailed on the screen.
+
+       10. The next prompt will be:
+        
+                "Do you wish to relink the kernel now? (y/n/q)"
+
+           Type "y" at this prompt.
+
+       11. After linking the kernel, custom will prompt you:
+
+                "Do you want this kernel to boot by default? (y/n)"
+
+           Type "y" at the prompt.
+
+       12. Custom will then prompt you:
+
+                 "Do you want the kernel environment rebuilt? (y/n)"
+
+           Type "y" at the prompt.
+
+       13. Custom will prompt you to "Press any key to continue."
+           Press <Return>.  Custom will then display the message:
+
+                "Checking file permissions..."
+
+       14. After completing these steps, you will be returned to 
+           the main custom menu.  You may quit out of custom at
+           this time.
+ 
+           Then type:
+
+               /etc/reboot
+
+           to reboot the system. 
+
+       15. Bring the system up and enter multiuser mode for the 
+           changes to take effect.
+
+
+
+REMOVAL INSTRUCTIONS
+====================           
+
+To remove SLS NET373A, take the following steps:
+
+        1. Shutdown and reboot your system.  Enter System Maintenance
+           mode by typing your root password at the prompt:
+
+                Type <Ctrl>d to proceed with normal startup,
+                (or give root password for System Maintenance)
+
+        2. Type:
+
+                /etc/custom
+
+        3. The main custom menu will appear.  Move the highlight
+           to the "Remove" option and press <Return>.
+
+        4. Custom will display a list of products that can be removed.
+           Use the arrow keys to highlight "SCO NFS 1.2.1 CD-ROM SLS"
+           and press <Return>.
+
+        5. Custom will display a package list.  The first item in the
+           list, "ALL," is highlighted.  Press <Return> to select "ALL."
+
+        6. Custom will then prompt you to verify the removal of this SLS 
+	   with "Do you wish to continue?".  By default, the highlight 
+	   will be on "Yes."  Press <Return> to select "Yes."
+
+        7. After restoring the original files, the next prompt will be:
+        
+                "Do you wish to relink the kernel now? (y/n/q)"
+
+           Type "y" at this prompt.
+
+        8. After linking the kernel, custom will prompt you:
+
+                "Do you want this kernel to boot by default? (y/n)"
+
+           Type "y" at the prompt.
+
+        9. Custom will then prompt you:
+
+                 "Do you want the kernel environment rebuilt? (y/n)"
+
+           Type "y" at the prompt.
+
+       10. Custom will prompt you to "Press any key to continue."
+           Press <Return>.  Custom will then display the message:
+
+                "Creating file list..."
+
+       11. After completing these steps, you will be returned to
+           the main custom menu.  You may quit out of custom at
+           this time.
+ 
+           Then type:
+
+                /etc/reboot
+
+           to reboot the system. 
+
+       12. Bring the system up and enter multiuser mode for the 
+           changes to take effect.
+
+
+If you have any questions, please call our SCO Customer Services Department 
+at (408) 425-4726.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

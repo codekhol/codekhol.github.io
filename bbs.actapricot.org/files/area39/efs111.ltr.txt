@@ -1,0 +1,54 @@
+
+
+        Dear SCO Customer,
+        
+        
+        The High Speed Modems Extended Feature Supplement (EFS) provides
+        software to operate high speed modem devices.  It includes a
+        program that will allow a system administrator to create a dialer
+        for a high speed modem, without a development system.  It is
+        designed to be used with SCO UNIX System V/386 Release 3.2
+        Version 2.0 or SCO's Open Desktop Release 1.1.0.  Default dialer
+        entries for the Hayes Ultra 96-2000US, MICC 9610, MULTITECH
+        MT932EA, and U.S.  Robotics Courier V.32 are included.  These
+        four modems have been tested to work at 9600 bps with CU and
+        UUCP.
+        
+        
+        To install the High Speed Modems EFS, perform the following
+        steps:
+        
+        
+        (1) Log in as root.
+        
+        
+        (2) Make sure that your operating system installation includes
+        the UUCP utilities.  This can be accomplished by listing the
+        available packages within custom utility and checking to make
+        sure that the word YES appears next to UUCP.
+        
+        
+        (3) Use CUSTOM to install the High Speed Modems EFS.  Make sure
+        you are at the / directory and type custom<enter>.  From the
+        custom menu choose Install A New Product.  Next, choose Entire
+        Product.  You will then be prompted to insert the EFS diskette
+        into your primary floppy disk drive.  Insert the floppy in to the
+        drive, close the drive door, then press <enter>.  You will then
+        be asked if you wish to continue installing the High Speed Modems
+        EFS.  Press return.  After the message "Checking File
+        Permissions" appears, you may exit the custom utility by pressing
+        the <F2> key and the <Y> key.
+        
+        
+        (4) The installation is now complete.
+        
+        
+        If you have any questions, please call our SCO Customer Services
+        Department at (800) 347-4381.  SCO Customer Service is available
+        Monday through Friday, 6:00 A.M.  to 5:00 P.M., Pacific Time.
+        
+        
+        We appreciate your business.
+        
+        
+        SCO Support Services

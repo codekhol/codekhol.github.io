@@ -1,0 +1,885 @@
+
+ (c) 1983-1995 The Santa Cruz Operation, Inc.  All rights reserved.
+
+ (c) 1992-1994 AT&T Global Information Solutions Company; (c) 1987 Convergent
+ Technologies,  Inc.;  (c)  1989 Digital Equipment Corporation; (c) 1987-1989
+ Legent Corporation; (c) 1993-1994 Locus Computing Corporation; (c) 1980-1989
+ Microsoft   Corporation;  (c)  1989  Open  Software  Foundation,  Inc.;  (c)
+ 1993-1994 Programmed Logic Corporation; (c) 1994 Sun Microsystems, Inc.; (c)
+ 1988 UNIX Systems Laboratories, Inc. All rights reserved.
+
+ No part of this publication may be  reproduced,  transmitted,  stored  in  a
+ retrieval system, nor translated into any human or computer language, in any
+ form or by any means, electronic, mechanical, magnetic,  optical,  chemical,
+ manual,  or otherwise, without the prior written permission of the copyright
+ owner, The Santa Cruz Operation,  Inc.,  400  Encinal  Street,  Santa  Cruz,
+ California,  95060,  USA.   Copyright infringement is a serious matter under
+ the United States and foreign Copyright Laws.
+
+ Information in this document is subject to change without  notice  and  does
+ not represent a commitment on the part of The Santa Cruz Operation, Inc.
+
+ SCO, the SCO logo, The Santa Cruz Operation,  Open  Desktop,  ODT,  and  SCO
+ OpenServer,  are  trademarks  or  registered  trademarks  of  The Santa Cruz
+ Operation, Inc. in the USA  and  other  countries.   UNIX  is  a  registered
+ trademark  in  the  USA  and  other  countries, licensed exclusively through
+ X/Open Company Limited. All other brand and product  names  are  or  may  be
+ trademarks  of,  and  are  used  to  identify products or services of, their
+ respective owners.
+
+
+ Document Version: 5.0.0d
+ 4 September 1995
+
+ The SCO software that accompanies this publication  is  commercial  computer
+ software  and,  together  with  any related documentation, is subject to the
+ restrictions on US Government use as set forth below. If this procurement is
+ for a DOD agency, the following DFAR Restricted Rights Legend applies:
+
+ RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the Government
+ is subject to restrictions as set forth in subparagraph (c)(1)(ii) of Rights
+ in Technical Data  and  Computer  Software  Clause  at  DFARS  252.227-7013.
+ Contractor/Manufacturer  is  The  Santa  Cruz  Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA  95060.
+
+ If this procurement is for a civilian government agency, this FAR Restricted
+ Rights Legend applies:
+
+ RESTRICTED  RIGHTS  LEGEND:   This  computer  software  is  submitted   with
+ restricted  rights  under Government Contract No. _________ (and Subcontract
+ No.  ________,  if  appropriate).   It  may  not  be  used,  reproduced,  or
+ disclosed by the Government except as provided in paragraph (g)(3)(i) of FAR
+ Clause 52.227-14 alt III or as otherwise expressly stated in  the  contract.
+ Contractor/Manufacturer  is  The  Santa  Cruz  Operation,  Inc., 400 Encinal
+ Street, Santa Cruz, CA  95060.
+
+
+ The copyrighted software that accompanies this publication  is  licensed  to
+ the  End  User  only  for use in strict accordance with the End User License
+ Agreement, which should be read  carefully  before  commencing  use  of  the
+ software.  This  SCO  software  includes software that is protected by these
+ copyrights:
+ (c)  1983-1995  The  Santa  Cruz  Operation,  Inc.;   (c)   1989-1994   Acer
+ Incorporated; (c) 1989-1994 Acer America Corporation; (c) 1990-1994 Adaptec,
+ Inc.; (c) 1993  Advanced  Micro  Devices,  Inc.;  (c)  1990  Altos  Computer
+ Systems;  (c)  1992-1994  American  Power Conversion, Inc.; (c) 1988 Archive
+ Corporation; (c) 1990  ATI  Technologies,  Inc.;  (c)  1976-1992  AT&T;  (c)
+ 1992-1994  AT&T  Global  Information  Solutions  Company;  (c) 1993 Berkeley
+ Network Software Consortium; (c) 1985-1986 Bigelow & Holmes;  (c)  1988-1991
+ Carnegie  Mellon  University;  (c) 1989-1990 Cipher Data Products, Inc.; (c)
+ 1985-1992   Compaq   Computer   Corporation;   (c)   1986-1987    Convergent
+ Technologies,   Inc.;   (c)  1990-1993  Cornell  University;  (c)  1985-1994
+ Corollary, Inc.; (c) 1988-1993 Digital Equipment Corporation; (c)  1990-1994
+ Distributed  Processing  Technology;  (c)  1991 D.L.S.  Associates; (c) 1990
+ Free Software Foundation, Inc.; (c) 1989-1991 Future Domain Corporation; (c)
+ 1994 Gradient Technologies, Inc.; (c) 1991 Hewlett-Packard Company; (c) 1994
+ IBM Corporation; (c) 1990-1993 Intel Corporation; (c)  1989  Irwin  Magnetic
+ Systems, Inc.; (c) 1988-1994 IXI Limited; (c) 1988-1991 JSB Computer Systems
+ Ltd.; (c) 1989-1994 Dirk Koeppen EDV-Beratungs-GmbH;  (c)  1987-1994  Legent
+ Corporation;  (c)  1988-1994  Locus  Computing  Corporation;  (c)  1989-1991
+ Massachusetts Institute of Technology; (c) 1985-1992  Metagraphics  Software
+ Corporation;  (c)  1980-1994  Microsoft  Corporation;  (c)  1984-1989  Mouse
+ Systems Corporation; (c) 1989 Multi-Tech Systems, Inc.;  (c)  1991  National
+ Semiconductor  Corporation;  (c)  1990 NEC Technologies, Inc.; (c) 1989-1992
+ Novell, Inc.; (c) 1989 Ing. C.   Olivetti  &  C.  SpA;  (c)  1989-1992  Open
+ Software  Foundation,  Inc.; (c) 1993-1994 Programmed Logic Corporation; (c)
+ 1989 Racal InterLan, Inc.;  (c)  1990-1992  RSA  Data  Security,  Inc.;  (c)
+ 1987-1994 Secureware, Inc.; (c) 1990 Siemens Nixdorf Informationssysteme AG;
+ (c) 1991-1992 Silicon Graphics, Inc.; (c) 1987-1991 SMNP Research, Inc.; (c)
+ 1987-1994 Standard Microsystems Corporation; (c) 1984-1994 Sun Microsystems,
+ Inc.; (c) 1987 Tandy Corporation; (c) 1992-1994 3COM Corporation;  (c)  1987
+ United  States  Army; (c) 1979-1993 Regents of the University of California;
+ (c) 1993 Board of Trustees of the  University  of  Illinois;  (c)  1989-1991
+ University  of  Maryland; (c) 1986 University of Toronto; (c) 1976-1990 UNIX
+ System Laboratories, Inc.; (c) 1988 Wyse Technology;  (c)  1992-1993  Xware;
+ (c)  1983-1992  Eric P. Allman; (c) 1987-1989 Jeffery D. Case and Kenneth W.
+ Key; (c) 1985 Andrew Cherenson; (c) 1989 Mark H.  Colburn; (c) 1993  Michael
+ A.  Cooper; (c) 1982 Pavel Curtis; (c) 1987 Owen DeLong; (c) 1989-1993 Frank
+ Kardel; (c) 1993 Carlos Leandro  and  Rui  Salgueiro;  (c)  1986-1988  Larry
+ McVoy;  (c)  1992  David L. Mills; (c) 1992 Ranier Pruy; (c) 1986-1988 Larry
+ Wall; (c) 1992 Q. Frank Xia.  All rights reserved.  SCO NFS was developed by
+ Legent  Corporation  based on Lachman System V NFS. SCO TCP/IP was developed
+ by Legent Corporation and is derived from Lachman System V  STREAMS  TCP,  a
+ joint  development  of  Lachman  Associates,  Inc.   (predecessor  of Legent
+ Corporation) and Convergent Technologies, Inc.
+
+
+ About this book                                                            1
+
+ Chapter 1
+ Installation                                                               3
+      Installing SCO OpenServer from an EIDE CD-ROM ....................... 3
+      Release Supplement .................................................. 3
+         Installing packages over the Release Supplement .................. 4
+         Network installation ............................................. 5
+      Installation documentation limitations .............................. 6
+
+ Chapter 2
+ Licensing                                                                  7
+         Installing the licensed product .................................. 7
+         Rebooting after removing a license ............................... 7
+
+ Chapter 3
+ Software features and limitations                                          9
+      Additions and changes ............................................... 9
+      Software limitations and workarounds ............................... 10
+      Removed software limitations ....................................... 10
+         Commands ........................................................ 10
+         Files and filesystems ........................................... 11
+         The Graphical Environment ....................................... 11
+         Hardware support ................................................ 12
+         Systems administration, configuration ........................... 12
+         SMP licensing ................................................... 12
+         Databases ....................................................... 12
+         Systems calls ................................................... 13
+         Kernel .......................................................... 13
+
+ Chapter 4
+ Documentation limitations                                                 15
+      Manual pages ....................................................... 15
+      Operating System User's Guide ...................................... 18
+      SCO OpenServer Handbook ............................................ 18
+      Networking Guide ................................................... 19
+      System Administration Guide ........................................ 19
+      Graphical Environment Guide ........................................ 19
+
+
+
+
+ About this book
+
+    This document describes the SCO OpenServer(TM) Release 5 Release
+    Supplement (version 5.0.0d). It is a supplement to the SCO OpenServer
+    Release 5 documentation. It replaces the SCO OpenServer Installation
+    Notes (provided as a cover letter) and contains information that adds to
+    or replaces the information in the following books:
+
+    +  Release Notes, especially the section ``Release Supplement''.
+
+    +  SCO OpenServer Features and Limitations
+
+    Chapter 1, ``Installation'' describes installation changes for this
+    Release Supplement (version 5.0.0d), followed by Chapter 2,
+    ``Licensing'', Chapter 3, ``Software features and limitations'', and
+    Chapter 4, ``Documentation limitations''.
+
+
+
+
+ Chapter 1
+ Installation
+
+    This chapter describes the installation of the SCO OpenServer Release 5
+    Release Supplement and of the ATAPI Boot-Time Loadable Driver (BTLD),
+    followed by ``Installation documentation limitations''.
+
+    _________________________________________________________________________
+       NOTE  The Release Supplement no longer includes the ATAPI BTLD. It
+       is included as a separate disk with the SCO OpenServer Release 5
+       product.
+    _________________________________________________________________________
+
+
+ Installing SCO OpenServer from an EIDE CD-ROM
+
+    To install SCO OpenServer from an EIDE CD-ROM drive that uses the ATA
+    Packet Interface (ATAPI), you must use the ATAPI Boot-Time Loadable
+    Driver (BTLD).  See ``Installing your system using the ATAPI (EIDE CD-
+    ROM) BTLD'' in the Release Notes for details.
+
+    _________________________________________________________________________
+       NOTE  The ATAPI BTLD only supports EIDE ATAPI CD-ROM drives.  No
+       other proprietary IDE-based or other CD-ROM interfaces are
+       supported.
+    _________________________________________________________________________
+
+
+ Release Supplement
+
+    After you have installed your SCO OpenServer system according to the
+    instructions in the SCO OpenServer Handbook, you must apply the SCO
+    OpenServer Release Supplement.
+
+    If you have obtained the Release Supplement separately from a full SCO
+    OpenServer distribution, you must roll back any previous Release
+    Supplement applied to your system before you apply this Release
+    Supplement. See ``Removing software'' in the SCO OpenServer Handbook for
+    instructions.
+
+    To install the Release Supplement, you must have 14MB free in the root
+    filesystem. The installation process checks that this space is available
+    and warns you if it is not.
+
+*****************************************************************************
+
+NOTE:  If you have downloaded the Release Supplement from SCO via your
+       favorite download protocol.  Please see the "README" or "info" file
+       located in the "Supplements" directory for information on how to     
+       install this Release Supplement from disk images.
+
+*****************************************************************************
+
+    To apply the Release Supplement:
+
+    1.  Log in as root and invoke the Software Manager.  (See ``The Software
+        Manager interface'' in the SCO OpenServer Handbook for instructions.)
+
+    2.  Select Software -> Patch Management -> Apply Patch
+
+    3.  Select the installation host system or device from which you wish to
+        install the Release Supplement (patch).  Click on Continue.
+        (Alternatively, press <Enter> to choose the default.)
+
+    4.  When you are prompted to select your installation media, insert
+        Release Supplement Disk 1 into your primary floppy disk drive, press
+        <Enter>, and follow the instructions on the screen.
+
+ Installing packages over the Release Supplement
+
+    The Release Supplement contains modifications to the following packages:
+
+    SCO OpenServer system:
+
+           +  Base Operating System:
+
+              -  UNIX Run Time System
+
+              -  Software Manager
+
+              -  Run Time System Administration, User Administration, userOSA
+                 package
+
+           +  System V Link Kit files
+
+           +  Extended Utilities:
+
+              -  Basic extended utility set
+
+              -  The vi and ex editors
+
+              -  Additional system administration tools
+
+           +  International Support, Internationalization Admin Client
+
+           +  Optional Utilities
+
+              -  Micnet and local message programs
+
+              -  UUCP utilities, uucp and cu communications utilities
+
+           +  Symmetrical Multiprocessing Support (SMP license)
+
+           +  System V System include files
+
+           +  Online Documentation Framework
+
+    LLI:   SCO Network Drivers, SMC 8216/8416 Adapter
+
+    NFS:   Base Network File System (NFS(r))
+
+    TCP:   TCP/IP Runtime utilities and drivers
+
+    MERGE: SCO Merge(TM) BASE package
+
+    You must roll back the appropriate patch before installing or re-
+    installing any of the packages in the list above, then re-apply the patch
+    after installing the package.
+
+    The following error may occasionally be seen when installing additional
+    products on top of this Release Supplement:
+
+       Packages that are affected by a patch were selected
+
+    These will occur if the UNIX Documentation package was not installed on
+    the system when the Release Supplement was first applied.  To avoid this
+    error, make sure that the UNIX Documentation package is installed before
+    the Release Supplement is first applied to the system. If you cannot
+    install the Documentation package before you apply the Release
+    Supplement, then if the above errors occur, you must remove the Release
+    Supplement before you install the new product and re-apply it afterwards.
+
+ Network installation
+
+    If you are performing a complete installation of SCO OpenServer Release
+    5, you can install the software from an installation server. You must
+    load the Release Supplement onto the installation server.
+
+    To load the Release Supplement:
+
+    1.  Log in as root and invoke the Software Manager.  (See ``The Software
+        Manager interface'' in the SCO OpenServer Handbook for instructions.)
+
+    2.  Select Software -> Patch Management -> Load Patch
+
+    The rest of the procedure is the same as that for applying a patch,
+    described in ``Release Supplement''.
+
+    You can then install SCO OpenServer and the Release Supplement from the
+    server as outlined in ``Installing from remote source machines'' in the
+    Networking Guide.
+
+    If you perform an initial system installation from a network installation
+    server, you must execute this command on the client immediately following
+    client installation:
+
+       /usr/lib/patch/enablepatch
+
+    If you added clients to a network installation server prior to installing
+    the Release Supplement, you must run these commands as root before you
+    install the Release Supplement:
+
+       netisl server off
+       netisl server on
+
+    Installation of the Release Supplement on an installed SCO OpenServer
+    system from a network installation server can be accomplished as outlined
+    in ``Installing from remote source machines'' in the Networking Guide.
+
+
+ Installation documentation limitations
+
+    Note the following limitations to the installation documentation:
+
+    +  The example in ``Overriding the root disk geometry stored in the
+       BIOS'' in the SCO OpenServer Handbook is inaccurate. The unix keyword
+       should occur after the biosgeom keyword, for example:
+
+       Boot: biosgeom unix
+
+       See ''Installation Limitations and Workarounds'' in  the Release Notes
+       for further examples.
+    +  The information in ''About the Preserve hard disk option'' in the SCO
+       OpenServer Handbook is inaccurate.  When you use the preserve option
+       to set up a hard disk, the EAFS root filesystem remains after the
+       upgrade.
+
+    +  A portion of the online services information in the SCO Services
+       Handbook is incorrect. To obtain up-to-date information regarding SCO
+       Services, either contact your local provider or access our online
+       systems.  See  ''SCO online support'' in Chapter 1 of the SCO
+       OpenServer Release 5 Release Notes for information on online access.
+
+
+
+
+ Chapter 2
+ Licensing
+
+    This chapter contains additional notes about licensing SCO products. See
+    Chapter 6, ``Licensing and registering SCO products'' in the SCO
+    OpenServer Handbook for further information.
+
+    You may license additional CPUs for SCO(r) SMP(r) License software on
+    your SCO OpenServer system using your pre-Release 5 MPX Serial
+    Number/Activation Key pair. To do so, enter this on the command line as
+    root:
+
+       brand -g serialno actkey
+
+    (Do not use the License Manager to license the additional CPU using an
+    old Serial Number/Activation Key pair.) After this command has completed
+    successfully, the additional CPU license will be displayed correctly by
+    the License Manager.
+
+ Installing the licensed product
+
+    When you run the Software Manager, select only the product that you are
+    licensing in the list. This is the product that appears on your
+    Certificate of license and Authenticity.  Do not select OpenServer
+    Software as your license is not valid for that product.
+
+ Rebooting after removing a license
+
+    If the Release Supplement is not installed and you have removed a
+    License, it may be necessary to use a special bootstring to successfully
+    boot the system.  At the Boot: prompt, enter:
+
+       defbootstr ksl.disable
+
+
+
+
+
+ Chapter 3
+ Software features and limitations
+
+    This chapter describes changes to the SCO OpenServer software since the
+    initial release, followed by removed software limitations.
+
+
+ Additions and changes
+
+    This release includes the following additions and changes to SCO
+    OpenServer:
+
+    +  There is support for upgrading old custom-style products in
+       custom(ADM).
+
+    +  A ListPatches option to the customquery(ADM) command lists the patches
+       applied to a system. The other command options remain the same. The
+       syntax is:
+
+       customquery ListPatches [-e] [-a accessType] [-D dir] [componentID . . .]
+
+
+    +  The ioctl(S) MT_WMFM writes multiple file markers to tape, as
+       supported by the SCO OpenServer tape subsystems. The number of markers
+       written is specified by the third ioctl argument.
+
+    +  A relax option is available for mount(ADM).  This option applies the
+       checks on ISO9660 CD-ROMs that were previously applied in the SCO Open
+       Desktop Development System. This option may be used to mount CD-ROMs
+       that are not completely conformant to ISO9660.  The syntax is:
+
+       /etc/mount [-r] [-v] -o relax -f [HS|ISO9660],special|resource directory
+
+
+    +  SCO OpenServer Release 5 now supports the ibmide bootstring for Value
+       Point models 355x and 40sx (the models that required the IBM Extended
+       Functionality Supplement 35 in previous releases).
+
+    +  Mapping of /dev/mem has been extended. This allows the support of
+       certain X-graphics drivers for the Advanced Hardware Supplement (AHS).
+
+
+ Software limitations and workarounds
+
+    The following limitations apply in addition to those noted in SCO
+    OpenServer Features and Limitations:
+
+    +  In certain circumstances, the HTFS(TM) filesystem driver spuriously
+       marks unused inodes as allocated.  To free the affected inodes run
+       fsck(ADM) with the -ofull option on your HTFS filesystems.  You must
+       unmount the filesystem to do this.
+
+    +  You cannot view manual pages using a Netscape browser in a
+       Microsoft(r) Windows(TM) session.
+
+    +  It is possible to run a maximum of 32 Merge sessions on any given
+       system.
+
+    +  Products will look partially installed in Software Manager.  This is
+       because only one of MMDF or sendmail for mail is installed.  The
+       product will run properly if is appears to be partially installed for
+       this reason.
+
+
+ Removed software limitations
+
+    This section describes limitations that have been removed.
+
+ Commands
+
+    The following changes remove limitations to commands. These limitations
+    were not noted in SCO OpenServer Features and Limitations:
+
+    +  The following utilities, which may have experienced problems, now work
+       correctly under NIS:
+
+       -  acctcom(ADM)
+
+       -  ale(ADM)
+
+       -  authck(ADM)
+
+       -  df(C)
+
+       -  integrity(ADM)
+
+       -  prwarn(C)
+
+       -  reduce(ADM)
+
+       -  sdd(ADM)
+
+    +  A problem has been resolved that occasionally caused badtrk(ADM) to
+       fail to detect some bad blocks on SCSI drives.
+
+    +  The custom(ADM) command now preserves the modification times of files
+       from the installation media.
+
+    +  dig(ADMN) is now available.
+
+    +  Support for ecc(ADM) is now available for CBUS-II.
+
+    +  fsck(ADM) now recognizes IFNAM files (XENIX shared data and
+       semaphores) on an HTFS filesystem.
+
+       A problem has been resolved that occasionally caused fast fsck on an
+       HTFS filesystem to hang when performing a full check.
+
+    +  Authorized users of lp(C) can now create printers.
+
+    +  Setting the interval time to less than 10 using the setitimer(S)
+       system call results in the signal being generated every 10
+       milliseconds. (The call previously resulted in the signal being
+       generated incorrectly every 20 milliseconds.)
+
+    +  The undelete(C) command with the -m option now examines all
+       directories with the -r option.  This means that it finds all files
+       modified within the specified dates, regardless of the modification
+       date of the directory that contains them.
+
+       The undelete command can now be used on a directory whose ownership
+       has been changed using chown(C).
+
+    +  The vi(C) editor now expands the wildcard characters correctly in
+       filenames.
+
+ Files and filesystems
+
+    The following changes remove limitations to files and filesystems. These
+    limitations were not noted in SCO OpenServer Features and Limitations:
+
+    +  Using NFS(r) with a corrupted client cache no longer corrupts the
+       filesystem.
+
+    +  A problem has been resolved that caused an HTFS filesystem to display
+       the message out of inodes prematurely.
+
+    +  A problem has been resolved that occasionally caused file locking to
+       fail incorrectly with an EDEADLK error or to succeed when a real
+       deadlock is being introduced.
+
+    +  A problem has been resolved where a process could deadlock its copied
+       data between a memory mapped file and a non-memory file if both files
+       resided on a DTFS system.
+
+ The Graphical Environment
+
+    The following changes remove limitations to the Graphical Environment.
+    These limitations were not noted in SCO OpenServer Features and
+    Limitations:
+
+    +  A problem has been resolved that occasionally caused a panic on
+       attempting to swap out a SCO Merge win process.
+
+    +  A problem has been resolved that occasionally caused clients with
+       graphics to hang when starting on a remote X server.
+
+ Hardware support
+
+    The following changes remove limitations to hardware support.  These
+    limitations were not noted in SCO OpenServer Features and Limitations:
+
+    +  The Sdsk(HW) device driver has been modified to avoid performance
+       problems with some disks.
+
+    +  A problem has been resolved that caused the ioctl MF_RFM incorrectly
+       to function like a goto EOD call.
+
+ Systems administration, configuration
+
+    The following changes remove limitations to system administration and
+    configuration.  These limitations were not noted in SCO OpenServer
+    Features and Limitations:
+
+    +  You can now add group names that include a ''-'' character.
+    +  A problem with adding users and groups for auditing in the Audit
+       Manager has been resolved.
+
+    +  A problem has been resolved that caused pseudo-terminals (pttys)
+       occasionally to hang on close due to an infinite loop in ttywait().
+
+    +  There is no longer a limit of 256 pseudo-terminals for telnet(TC),
+       rlogin(TC), and other applications. The configured number of pseudo-
+       terminals can now be used.
+
+       The limit still applies to xterm(XC) and scoterm(XC).
+
+    +  A problem has been resolved that occasionally caused applications
+       polling on TLI endpoints to hang.
+
+    +  Kernel hooks have been added for Computer Associates Unicenter.
+
+    +  Problems in the XENIX(r) 286 emulator have been corrected. It is now
+       possible to execute a wider range of XENIX binaries.
+
+ SMP licensing
+
+    The following changes remove limitations to SMP licensing.  These
+    limitations were not noted in SCO OpenServer Features and Limitations:
+
+    +  A problem has been resolved that occasionally caused a panic with the
+       message PANIC: k_trap - Kernel mode trap type 0x0000000E on SMP-
+       licensed systems.
+
+    +  A problem has been resolved that occasionally caused recurring out of
+       stream events were encountered messages on SMP-licensed systems.
+
+ Databases
+
+    A problem has been resolved in the semaphore driver which caused the
+    Informix(r) database engine to execute unevenly.
+
+ Systems calls
+
+    The following changes remove limitations to system calls.  These
+    limitations were not noted in SCO OpenServer Features and Limitations:
+
+    +  A problem with aio_write(S) calls has been resolved. This problem
+       caused Informix to fail.
+
+    +  The system call utime(S) now updates inodes correctly at all times on
+       an HTFS filesystem.
+
+ Kernel
+
+    The following changes remove limitations to the kernel.  These
+    limitations were not noted in SCO OpenServer Features and Limitations:
+
+    +  Execution of binaries that contain sparse blocks now works correctly.
+
+    +  A problem has been resolved that could cause the kernel to panic when
+       writing core files.
+
+    +  A problem has been resolved that occasionally caused the kernel to
+       panic when an HTFS filesystem was under heavy load.
+
+
+
+
+ Chapter 4
+ Documentation limitations
+
+    Following this list are known limitations in these areas of SCO
+    OpenServer documentation:
+
+    +  Manual pages
+
+    +  Operating System User's Guide
+
+    +  SCO OpenServer Handbook
+
+    +  Networking Guide
+
+    +  System Administration Guide
+
+    +  Graphical Environment Guide
+
+
+ Manual pages
+
+    The following limitations apply to reference manual pages:
+
+    cmp(C)
+         The -l option returns the byte number and line number at which the
+         first difference occurs.
+
+         cmp may also be used to compare text files.
+
+    crash (ADM)
+         The argument stream to the size command should be streams.
+
+         The size command also has an argument htinode that recognizes
+         structures of the type htinode.
+
+    csh(C)
+         The metanotation a{b,c,d}e is shorthand for abe ace ade. Left to
+         right order is preserved, with the results of matches being sorted
+         separately at a low level to preserve this order.
+
+    crontab(C)
+         To submit a file to crontab, as described in ``Executing processes
+         at regular intervals'' in the Operating System User's Guide, you
+         must type the name of the file (for example, cronfile) after the
+         command.
+
+    dd(C)
+         The -lseek option should be -iseek.
+
+    divvy(ADM)
+         The limitation on the size of filesystems in divvy(ADM) is
+         inaccurate. The maximum filesystem size that you can create using
+         divvy is 1 terabyte for DTFS(TM), 512GB for HTFS, and 2GB for other
+         filesystems.
+
+    dktab(F)
+         The example of a concatenated virtual disk provides 1.92GB of usable
+         storage, not 1.92MB as specified.
+
+    dosformats(C)
+         The alternative device path for formatting A: should be /dev/fd0.
+
+    ftp(TC)
+         The description of the file .netrc in ftp(TC) is accurate. The
+         description in netrc(SFF) is less complete, and should be ignored.
+
+    gethostbyname(SLIB)
+         The prototype for gethostbyname is inaccurate.  You should not use
+         it as the basis of your own scripts.
+
+    hosts.equiv(SFF)
+         In addition to the constraints given, the .rhosts file for root must
+         have no read access for other users. It must have permissions 600
+         for root otherwise root login will fail.
+
+    inet(SLIB)
+         The syntax section should specify that you need to link with
+         libsocket.a. Use the following paragraph before the syntax specified
+         in the manual page:
+
+         cc ... - lsocket
+
+
+    lmcrc(LMC)
+         The example on the manual page is inaccurate. There should not be a
+         colon at the end of the mount command.
+
+    lp(C)
+         You can print a raster file, provided both your client and the print
+         server are either of the following:
+
+         +  SCO OpenServer Release 5
+
+         +  A BSD-type system, for example, SunOS(TM) or Solaris(r)
+         To print from an SCO OpenServer Release 5 server, the server must
+         have a printer defined that can accept raster-type input. This is
+         done using the command:
+
+         /usr/lib/lpadmin -pprinter -Traster
+
+         If a printer on the server cannot handle raster types directly, a
+         filter must be defined to convert files to a format that the printer
+         can handle, for example, PostScript(TM). This can be done by the
+         following:
+
+         /usr/lib/lpfilter -fraster -
+         Input types: raster
+         Output types: simple
+         Printer types: any
+         Printers: any
+         Filter type: fast
+         Command: command to convert raster file
+
+         To print the file, type the following from the client:
+
+         lp -d printer -Traster raster_filename
+
+         See lpd(ADMN) for details of raster file support.
+
+    mdevice(F)
+         The x setting no longer has any effect in the ``chars'' field. It is
+         included for backward compatibility.
+
+         The d setting indicates that a device can perform DMA transfers to
+         any address in physical memory, or does not require DMA at all. If
+         this characteristic is not set, the device needs cache  buffers
+         below 16MB. Setting this for devices which do not use DMA may
+         prevent unnecessary use of low buffers.
+
+    mount(ADM)
+         The manual page mount(ADM) is inaccurate. To mount a filesystem of
+         the type LMCFS, the correct form to specify the remote resource is
+         server/share.
+
+    pcipop(ADM)
+         The daemon for pcipop is called popper, not as specified.
+
+    scohelpXC)
+         The default value for the variable trackVisitedAnchors is ``False''.
+
+    tclsh(TCL)
+         The line that you should  include at the start of a script to invoke
+         the script file directly from your shell is:
+
+         #!/bin/tcl
+
+
+    useradd(ADM)
+         The home attribute to the extended options is now called pw_dir.
+
+         The attribute administrativeLockApplied has the opposite effect to
+         that specified. When it is set to 1, the account is locked. When it
+         is set to 0, the lock is removed.
+
+    useradd(ADM) and groupadd (ADM)
+         Attributes containing spaces should be enclosed in single quotes.
+         The single quote character is the simple single quote, not the
+         opening left quote character shown.
+
+    userls(ADM)
+         The nextUID attribute should be nextUid.
+
+    vdisk(HW)
+         The manual page vdisk(HW) is inaccurate. The limit for the size of a
+         virtual disk on an HTFS filesystem is 512GB, not 512MB as specified.
+
+
+ Operating System User's Guide
+
+    In the example in ''Checking the status of pending file transfers'' in
+    ``Using the uucp command'' the output field machine2 names the system on
+    which the job is to be run, not the site name of the recipient's
+    computer.
+
+
+ SCO OpenServer Handbook
+
+    The information  in ``Additional licenses and products'' is inaccurate.
+    The following additional licenses and products are available for purchase
+    with SCO OpenServer systems:
+
+    +  SCO User Licenses  (for 10, 25, 100, 1000, or 5000 users)   (license
+       only)
+
+    +  SCO SMP License (symmetrical multiprocessing)  (license only)
+
+    +  SCO Virtual Disk Manager  (license and media)
+
+    +  SCO Merge  (license, media and documentation)
+
+    +  SCO(r) Wabi(TM)  (license, media and documentation)
+
+    +  SCO OpenServer Development System  (license, media and documentation)
+
+    +  SCO LAN Manager for UNIX  (license, media and documentation)
+
+    +  SCO Distributed Services  (license, media and documentation)
+
+    Where no media is mentioned, the product is already installed as part of
+    SCO OpenServer. Purchasing the license permits you to use the installed
+    product.
+
+    The example of the trchan(C) command in ``Translating files between
+    different codesets'' in the SCO OpenServer Handbook refers to a mapping
+    file that may be invalid.  You can find valid mapping files in
+    /usr/lib/mapchan/ISO8859-1.
+
+    In ``Dialer binaries'' in the SCO OpenServer Handbook, Step 4 of
+    ''Creating a new atdial dialer'' refers to /etc/default. This should be
+    /usr/lib/uucp/default.
+
+
+ Networking Guide
+
+    The instructions in ``Setting up anonymous ftp'' in the Networking Guide
+    are incomplete in the printed manual. See the online documentation for
+    correct instructions.
+
+
+ System Administration Guide
+
+
+    Contents of /etc/motd
+         The information in ``Changing the /etc/motd file'' is inaccurate.
+         The file /etc/motd is initially empty.
+
+    User equivalence for remote administration
+         The documentation does not specify in every case that user
+         equivalence must be set up on a remote machine before you can do
+         remote administration of any kind on it. See ``Establishing backup
+         user equivalence'' for instructions.
+
+
+ Graphical Environment Guide
+
+    The menu option specified in ``Saving a color picture to black and
+    white'' should be SaveAsBW.
+
+    The URL for RFC 1630 in Chapter 3, ``Writing HTML documents'' in Using
+    Help is incorrect.  The URL for RFC 1630 is now:
+
+       http://www.w3.org/hypertext/WWW/Addressing/URL/uri-spec.html
+
+

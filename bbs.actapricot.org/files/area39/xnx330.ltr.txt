@@ -1,0 +1,52 @@
+
+Dear SCO Customer,
+
+Enclosed find your copy of Support Level Supplement (SLS) xnx330b.
+This SLS will allow multiple logins with SCO XENIX 386 Operating Release
+2.3.4p for computers based on Micro Channel Architecture (MCA).  
+
+To install a system from the beginning, simply replace your current N1 disk
+with the disk supplied with SLS xnx330b and install as usual.  To correct
+problems on existing installed systems, use the following procedure:
+
+  Reboot the system and enter System Maintenance mode. 
+  
+	Log in as root and type:
+        
+	shutdown (multi-user) or haltsys (single user)
+
+  Use custom to replace the file "/etc/getty" as follows:
+
+	- Type "custom".
+  	- Select the Operating System option within custom.
+  	- Select the option to Install a single file
+  	- Enter the pathname of the getty program: /etc/getty
+  	- Custom will prompt you for an Operating System Diskette.
+          Insert the N1 from SLS xnx330b included in this package.
+  	- Quit out of custom.
+
+  At the root prompt, type:
+
+        /etc/brand serialno activationkey /etc/getty 
+
+	Note: In the above command line, you must use the Serial Number 
+	(serialno) and Activation Key (activationkey) that was included
+	with your original distribution.  This information can be found 
+	on the pink or blue card entilted: ACTIVATION KEY.
+
+  Reboot the system and enter multi-user mode:
+
+	Type "haltsys".
+	After the system has rebooted hit <Ctrl>-D to enter multi-user mode.
+	 
+  Getty will no longer give the error message "getty: Attempt to exceed 
+  system login limit on ttyXX" as more tty's are enabled.
+
+If you have any questions, please call our SCO Customer Service Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services

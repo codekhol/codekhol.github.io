@@ -1,0 +1,627 @@
+Dear SCO Customer,
+
+Enclosed is Support Level Supplement (SLS) unx249c, the SCO UNIX System V/386 
+Printer Supplement.  Please read this entire letter before beginning the 
+update in order to insure proper configuration of your particular system.
+
+The SCO UNIX System V/386 Printer Supplement contains various modifications for
+the SCO UNIX System V/386 Release 3.2 Operating System, SCO UNIX System V/386
+Release 3.2 Operating System Version 2.0, SCO Open Desktop Release 1.0 and 1.1. The release of the operating system may be obtained by typing one of the 
+following commands (note that the '#' character is the super-user's shell 
+prompt; do not type it):
+
+	# swconfig
+or
+        # grep rel= /etc/perms/inst
+
+If you use the "swconfig" command, examine the set entry "The Operating System"
+for SCO UNIX System V/386 or "Open Desktop" for SCO Open Desktop to determine 
+the release of the operating system. 
+
+The SCO UNIX System V/386 Printer Supplement will update the print service by 
+replacing the model interface scripts and the binary files: lpsched, lpforms, 
+lpadmin, and lp.set.  Each interface script has been revised to provide support
+for the use of filters.  These scripts are found in /usr/spool/lp/model.  If 
+any modifications have been made to the current interface scripts, you may 
+want to make a copy of the script in order to preserve those changes prior to 
+installing SLS unx249c.  Also, a number of terminfo entries are provided (see 
+the "FILE MODIFICATIONS" section of this document).  In addition, there is a 
+new iso8859.ps character set for accessing extended characters when using a 
+postscript printer.  Printing across a network using a postscript printer
+has been enhanced.   
+
+INSTALLATION
+
+In order to install properly, you will need at least 1859 (512-byte) blocks
+free on the root file system.  You may determine the number of free blocks on
+the root file system beforehand by typing the command:
+
+	# df -v /dev/root
+
+To begin the installation of the SCO UNIX System V/386 Printer Supplement, 
+bring the system into System Maintenance mode and issue the following commands:
+
+        # cd /
+	# custom
+
+Choose "Install" and press <Return>
+
+Select "A New Product" and press <Return>
+
+Choose "Entire Product" and press <Return>
+    
+Insert the requested volume and press <Return> to continue
+the installation:
+
+        Insert: Distribution 
+                Floppy Volume 1
+
+       [Continue]    Quit   
+
+Insert: Printer Maintenance Supplement unx249c
+        Floppy Volume 1
+
+       [Continue]    Quit  
+    
+The script will extract files and then tell you it is "Executing Printer
+Maintenance Supplement unx249c Init Script." 
+
+You will see:
+
+Do you wish to relink your kernel now? (y/n) 
+
+Choose "y" and press <Return>.
+
+You will see:
+
+Relinking the kernel....
+
+        The UNIX Operating System will now be rebuilt.
+        This will take a few minutes. Please wait.
+
+        Root for this system build is /.
+
+        The UNIX Kernel has been rebuilt.
+
+Do you want this kernel to boot by default? (y/n) 
+
+Choose "y" and press <Return>.
+
+You will see:
+
+Backing up /unix to /unix.old
+Installing new /unix
+
+The kernel environment includes device node files and /etc/inittab
+The new kernel may require changes to /etc/inittab or device nodes.
+
+Do you want the kernel environment rebuilt? (y/n) 
+
+Choose "y" and press <Return>.
+
+You will see:
+
+The kernel has been successfully linked and installed.
+      To activate the new kernel reboot.
+
+The message "Press any key to continue" will appear at the bottom of the 
+screen.  Another message will appear saying it is checking the "file 
+permissions" and will then take you back to the menu.
+
+The installation of SLS unx249c is now complete.  Reboot and bring the system 
+into multiuser mode.  In order to reboot, issue the following at the # prompt:
+
+         /etc/haltsys            
+ 
+Upon completion, you will need to reconfigure your printer(s) in order to take
+advantage of the support provided by the print service for the use of filters.
+The newly installed enhanced printer interface script(s) will be used when you
+reconfigure the printer(s). 
+
+A description of the features that the SCO UNIX System V/386 Printer Supplement
+provides follows:
+
+UTILITY MODIFICATIONS
+
++ A new version of /usr/lib/lpsched(ADM), engineered especially to handle the
+  use of filters and forms as specified in the documentation.  This corrects
+  problems with /usr/lib/lpsched(ADM) dying with the following message when
+  using the filters option:
+
+     "UX: lp: ERROR: can't receive message from the LP print service. 
+          TO FIX: The LP print service apparently has been stopped. 
+          Get help from your system administrator."  
+ 
+  The new version of lpsched also corrects a race condition that occurs between
+  the scheduler and the device driver because of POSIX conformance standards.
+  The following is the error you will see when this race condition occurs:
+
+     "UX: lp: ERROR: waiting for auto-retry"
+
++ A more robust /usr/lib/lpforms(ADM) binary that corrects problems experienced
+  when attempting to configure a form.
+
++ A more robust /usr/lib/lpadmin(ADM) binary that corrects problems experienced
+  when administering the forms feature of the print service.
+
+FILE MODIFICATIONS
+
++ All of the model printer interface scripts have been revised and upgraded to
+  include support for the filters feature of the print service.  The hpjet
+  model interface script also provides support for the forms feature of the 
+  print service.  These revised model printer interface scripts, which replace
+  the old scripts, can be found in the /usr/spool/lp/model directory. 
+
++ The /usr/spool/lp/bin/lp.set binary has been replaced with a revised
+  /usr/spool/lp/bin/lp.set.
+
++ A new file called forms.readme has been added to the directory /usr/spool/lp.
+  This file is a readable text file that explains how to add support for the
+  forms feature of the print service to either existing interfaces or custom
+  interfaces.  The file is /usr/spool/lp/forms.readme.
+
++ The following files are added to the terminfo database: 
+   
+             /usr/lib/terminfo/4/474 
+             /usr/lib/terminfo/4/473
+             /usr/lib/terminfo/4/495hp
+             /usr/lib/terminfo/a/att473
+             /usr/lib/terminfo/a/att474
+             /usr/lib/terminfo/a/att495hp
+             /usr/lib/terminfo/h/hplaser
+             /usr/lib/terminfo/h/hplaserjet
+             /usr/lib/terminfo/i/ibmgraphics    
+ 
+   These files provide terminfo support for various printers.   
+
+CONFIGURING A FILTER
+
+  The following describes the steps required to configure both a printer and 
+  a filter description file to take advantage of the filter.
+
+  1. Configure the Printer
+
+     If you do not have a printer already configured in the spooler, you will
+     need to use the 'sysadmsh' to do so now.  The SCO UNIX System V/386
+     System Administrator's Guide and the SCO Open Desktop Administrator's 
+     Guide contain a section that explains how to configure a printer.
+     
+     If you already have a printer configured, the printer will need to be 
+     reconfigured using the "sysadmsh" in order to take advantage of the new
+     interface scripts.
+
+  2. Create a Filter Description File
+
+     Create a filter description file to hold the description and specifica-
+     tions of the filter.  The filter description file may contain the 
+     following information:
+
+         ITEM              DEFAULT           DEFINITION
+         -------------     -------           ----------
+
+         Input types:      any               A list of file types that the
+                                             filter can process.   
+
+         Output types:     any               A list of file types that the 
+                                             filter can produce as output.
+
+         Printer types:    any               A list of printer types into which
+                                             the filter can convert files.  For
+                                             most filters this list is identi-
+                                             cal to the output types.
+
+         Printers:         any               A list of printers that are able
+                                             to print the output of the filter.
+
+         Filter type:      slow              A filter can be either 'fast' or
+                                             'slow'.  A fast filter either 
+                                             incurs little overhead or must 
+                                             have access to the printer when 
+					     they run.  Filters which detect 
+					     printer faults must be 'fast'.
+					     Slow filters are used when the 
+					     filter incurs a lot of overhead 
+					     or if they do not have to have 
+					     access to the printer when they 
+					     run.
+
+         Command:          (no default)      The full pathname of the program 
+                                             to run.  Include any fixed options
+                                             that the program may need.
+
+         Options:          (none)            Any options that the filter pro-
+                                             gram will need.
+
+
+     The following is an example of such a filter description file, which 
+     we will call "laser.f":
+
+             Input types: simple 
+             Output types: PR (this is reference to the command)
+             Printer types: hplaserjet
+             Printers: laser
+             Filter type: fast 
+             Command: /bin/pr (this command adds the date on the file)
+
+   3. Configure a Filter Description File
+
+      To configure the filter for use, invoke the 'sysadmsh' and choose
+      Printers->Auxiliary->Filters->Change/Add.  Enter the name you wish 
+      to call the filter.  The filter name cannot be the same as the filter 
+      description file name.  Finally, enter the complete path of the filter
+      description file.
+
+      The following is an example, using the filter description file 'laser.f',
+      which resides in /tmp:
+
+              Filter Name   [laserfilter]
+              Path Name     [/tmp/laser.f]
+
+      In the above example, the name of our filter is now 'laserfilter'.
+
+   4. Configure the Printer Type
+
+      It is necessary for the print service to know what the printer type is 
+      for the printer using the filter.  In order to specify a printer type 
+      for a particular printer, you will need to invoke the 'sysadmsh' and 
+      choose Printers->Configure->Parameters.  Enter the printer name and the 
+      printer type in the terminfo database.  (NOTE: The printer must have an 
+      entry in the terminfo database in order to take advantage of this 
+      feature.)  These entries can be found in /usr/lib/terminfo/x directory, 
+      where x is the first letter of the terminfo entry for the printer type.
+
+      NOTE: If the terminfo database does not contain an entry which is com-
+            patible with your printer, you can create your own entry.   This
+            requires looking at the printer's manual, determining which options
+            are supported by the hardware, determining which of those options
+            are supported by the terminfo language, developing a terminfo 
+	    entry, and finally running tic(C) to re-compile the terminfo 
+	    database. 
+
+            If there is an entry in the terminfo database that is close to the
+            printer type you need, you can use the command 'infocmp'(ADM) To un-
+            compile the driver and edit the file to fit your printer's needs.
+            It is recommended you do this in a different directory and give 
+            the printer definition a different name so you can leave the 
+            original one intact, for example, infocmp ibmproprinter > 
+            /tmp/ibmpro.
+             
+            Change the name "AT" the top of the file to "ibmpro".  Make your 
+            edits according to your printer manual and recompile the file 
+	    ibmpro using the tic(C) command.  It will automatically be 
+	    compiled into the correct directory in the terminfo database.
+
+            For further reading, see the "termcap & terminfo" reference written
+	    by Strange/O'Reilly/Mui and published by O'Reilly & Associates, 
+	    Inc.  This reference provides information necessary for designing 
+	    custom terminfo or termcap entries.
+
+      The following example assumes the printer is called "laser" and that the
+      printer has an entry in the terminfo database called "hplaser":
+
+             Printer name [laser]
+             Printer name in terminfo database [hplaser]
+             Print wheels which can be mounted [  ]
+             Alternate character set mappings  [  ] maps to [  ]
+                                               [  ] maps to [  ]
+                                               [  ] maps to [  ]
+             Default initial settings          length [  ]  width [  ]
+                                               cpi    [  ]  lpi   [  ]
+                                               stty   [  ] 
+                                                      [  ]
+                                                      [  ]
+
+  5. Configuring the Printer's Content Type
+
+     Let the print service know what content type is allowed for the printer.
+     The content type is the same as the output type in the filter description 
+     file.  To configure the content type, invoke the 'sysadmsh' and select
+     Printers->Configure->Content.  Enter the printer's name and its allowable
+     content type.  The default type is 'simple'.
+
+     The following example assumes the same printer as in the above example:
+
+             Printer name  [laser]
+             Content type allowed  [PR]
+             Additional content types allowed  [  ]
+
+  6. Testing the Filter
+
+     In order to queue a job to be printed using a filter, issue the following
+     command:
+ 
+              lp file
+
+     The above example assumes that 'laser' is the default printer.
+
+     You will see the date and time print at the top of the page. 
+
+CONFIGURING A FORM - read /usr/spool/lp/forms.readme
+
+1. Form characteristics - Create the form using your favorite editor.  
+
+ NOTE: The form name may be any combination of letters, digits, and underscores
+       as long as it is fewer than fifteen characters.  There is no fixed limit
+       on the number of forms that can be defined.
+
+   The following is an example of the format to be used in the form description
+   file when specifying the form characteristics.  It is not necessary to have
+   an entry for each of these items.  Any parameters not specified will retain
+   their default values:
+
+                         Page length: 66 
+                         Page width:  80
+                         Number of pages: 1
+                         Line pitch: 6
+                         Character pitch: 10
+                         Character set choice: any
+                         Ribbon color: blue
+                         Comment: 
+                          This is a test form.
+                         Alignment Pattern: 
+                          /tmp/test_pattern
+
+   Define the form's characteristics.  The characteristics of the form can 
+   appear in any order, except the alignment pattern.  The alignment pattern
+   must be last.  If you choose not to define a particular characteristic,
+   then no entry should be included in the file for that characteristic, and 
+   the default value will be used.  Should you include a characteristic in 
+   the file with no value, an error message will be generated. 
+
+   The characteristics and their default values are listed below:
+
+      ITEM                  DEFAULT            DEFINITION
+    ---------             -----------        --------------
+
+    Page Length             66 lines         The length of a form or each 
+					     page in a multiple page form.  
+					     This can be expressed as number 
+					     of lines or the size in inches 
+					     or centimeters.
+
+    Page Width              80 columns       The width of the form expressed in
+                                             columns, inches, or centimeters.
+
+    Number of pages         1 page           The number of pages in a multiple
+                                             page form.  The print service uses
+					     this number with a filter (if
+                                             available) to restrict the align-
+                                             ment pattern to be a single form 
+                                             long.  (See description of align-
+                                             ment pattern later in this sec-
+                                             tion.)  If no filter is available 
+					     to truncate the alignment pattern,
+					     the print service, skip that step.
+
+    Line pitch               6               How close together separate lines
+                                             are on the form.  This can be
+                                             expressed as lines per inch or
+                                             lines per centimeter.
+
+    Character pitch          10              How close together separate char-
+                                             acters are on the form.  This can 
+                                             be expressed as characters per 
+                                             inch or characters per centimeter.
+
+    Character set choice     any             The character set, print wheel, or
+                                             font cartridge to be used with the
+                                             form.  A user can choose a differ-
+					     ent character set for the print
+                                             request using this form, or insist
+                                             that only one character set be
+                                             used.
+
+    Ribbon Color             any             If the form should always be 
+                                             printed using a certain color 
+					     ribbon, then the print service 
+					     can remind you which color to 
+					     use when you mount the form.
+
+    Comment                  (no default)    Any comment you wish to make about
+                                             the form.  This comment is avail-
+                                             able for people to see so they can
+                                             understand what the form is, and
+					     when it should be used. 
+
+    Alignment pattern        (no default)    A sample file that the Print Ser-
+                                             vices use to fill one blank form.
+                                             When mounting the form, you can
+                                             examine this sample to see if the
+                                             printing is lined up properly on
+                                             the form.  If it is not, you can
+                                             adjust the printer to get it lined
+                                             up.
+     
+   The print service does not attempt to mask sensitive information in the 
+   alignment pattern.  If you do not want sensitive information printed on
+   sample forms, then you should mask the appropriate data.
+
+   If the Comment has to contain a line beginning with any of the key phrases 
+   (Page length, Page width, etc....), you should precede it with a ">" charac-
+   ter.  The ">" character will be stripped from the displayed comment.
+
+   YOU MUST DEFINE A TERMINFO DATABASE FILE FOR ANY PRINTER YOU INTEND TO USE
+   FORMS WITH or YOU MUST ADD THE INFORMATION FROM FORMS.README INTO THE 
+   INTERFACE SCRIPT. 
+                    
+2. Adding a form
+
+   To add the form to the correct directory /usr/spool/lp/admins/lp/forms
+   use the command below:
+ 
+   a. /usr/lib/lpforms -f <form_name> -F <form_description>
+
+      This will allow you to specify the form characteristics in a file and 
+      submit that file (file_name) from the command line.
+
+      NOTE: "form_name" indicates the name you are configuring the form to be
+            called, and  "form_description" indicates the file that contains 
+	    the form characteristics you just created.
+
+   b. sysadmsh - To change or modify the form.
+
+         Printers->Auxiliary->PPforms->Modify
+
+      This will allow you to configure the form characteristics from within 
+      the sysadmsh.
+
+3. Changing or Modifying a Form
+
+   To modify a form, re-enter one of the above commands listed in step 2. 
+   "Adding a Form".  Enter only information you want altered, all other 
+   information will remain unchanged.
+
+4. Configuring the Printer to use the Form
+
+   To configure a printer to use a form, invoke the "sysadmsh" and choose
+   Printers->Auxiliary->PPforms->Configure.  Enter the printer's name and
+   the names of the forms that are allowed to be used with this printer.
+
+
+        Printer name [laser]
+        Forms which are allowed [lzr_form]
+        Forms which are not allowed [    ]
+
+
+     The above example assumes that both the printer laser and the form 
+     lzr_form were previously configured.
+
+5. Alerting to mount a form
+
+   If a print request requires a form and it is not mounted, then the print
+   request will be held in the queue until the appropriate form is mounted. 
+
+   The print service allows the administrator to be alerted when the number 
+   of requests waiting has exceeded some predefined threshold.
+
+   The alert can be defined to be received in one of four ways:
+
+        1. The alert can be sent via electronic mail (E-MAIL).
+
+        2. The alert can be sent to which ever terminal you are logged onto.
+           See write(C).
+
+        3. The alert can be sent through a program of your choice.
+
+        4. No alert can be sent.  NOTE: This would require you to be respon-
+           sible for checking for requests.
+
+    The number of requests that must be queued before you are alerted can also 
+    be defined.  The print service can also send repeated alerts every few 
+    minutes until the form is mounted.  The rate at which these alerts appear
+    can also be specified.  You can choose to receive one alert per form.
+
+    To configure alert, invoke the "sysadmsh" and select 
+
+    Printers->Auxiliary->PPforms->Alerts->Specify. 
+
+6.  How to specify the print job with the form
+
+     The form is now ready to be tested.  To queue a job to use the form, 
+     issue the appropriate command found below. 
+
+     If the printer is the default printer, type:
+
+         lp -f <form_name> <file>
+
+     or, if the printer is not the default printer, type:
+
+         lp -d <printer_name> -f <form_name> <file>
+
+7.  Mounting a form
+
+    After a job, whig(êrequires a form, has been queued, disable the printer, 
+    mount the form physically, re-enable the printer, and inform the print 
+    service that the form has been physically mounted.  In order to inform
+    the print service and mount the form, issue the following command:
+
+         /usr/lib/lpadmin -p <printer_name> -M -f <form_name>
+
+    This will allow the print service to send the queued job to the printer.
+
+8.  Un-mounting a form
+
+     To un-mount the form, type the following command:
+
+        /usr/lib/lpadmin -p <printer_name> -M -f none
+
+9. Determining what forms are available
+
+   To determine which forms are configured and available, use the  
+   /usr/lib/lpstat(C) command as follows:
+
+              lpstat -f 
+
+10. Removing a form
+
+   There are two methods to remove a form:
+  
+   a.     /usr/lib/lpforms -f <form_name> -x
+
+   b.     sysadmsh 
+
+              Printers->Auxiliary->PPforms->Remove
+
+11. Restricting User Access
+ 
+   A form's use can be restricted to a subset of users.  However, lp and root
+   will always have access to print using the form.
+
+   The print service uses a list of allowed or denied users for a particular
+   form to restrict the form's use.  The method of listing allowed and denied
+   users is similar to the method used by "cron" and "at".
+
+   The rules are as follows:
+
+      A. An allow list contains a list of users allowed to use the form.  A 
+         deny list contains a list of users who were denied access to a form.
+
+      B. If the allow list is not empty, the deny list is ignored.  If the 
+	 allow list is empty, the deny list is used.  If both lists are empty,
+	 there are NO restrictions.
+
+      C. Placing "any" or "all" into the allow list allows everyone to use the
+         form.   Placing "any" or "all" into the deny list denies everyone 
+         access, except lp and root.
+
+    Three methods to define who is given, or denied, access to a form follow:
+
+       A. To add names to the allow list and remove them from the deny list,
+	  use:
+ 
+               /usr/lib/lpforms -f <form_name> -u allow: <user_list>
+
+       B. To add names to the deny list and remove them from the allow list,
+	  use:
+
+               /usr/lib/lpforms -f <form_name> -u deny: <user_list>
+
+       C. sysadmsh
+
+               Printers->Auxiliary->PPforms->Users
+   
+    "allow:all" allows everyone and "deny:all" denies everyone.  If you choose
+    to list multiple users in the user_list, then the list must take on one of
+    two forms:
+
+    1. Where the list of names is separated by a space and the entire list is 
+       enclosed by quotes, for example:
+
+            /usr/lib/lpforms -f <form_name> -u "allow: jane chris terry"
+
+    2. Where the liw4êof names is separated by commas, for example:
+       
+           /usr/lib/lpforms -f <form_name> -u allow: jane,terry,chris
+
+    NOTE: If you do not add users' names to either the deny or allow lists, 
+	  the print service assumes that everyone can use the form.
+
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

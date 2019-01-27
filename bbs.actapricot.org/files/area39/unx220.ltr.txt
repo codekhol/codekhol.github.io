@@ -1,0 +1,39 @@
+
+Dear Customer,
+
+The enclosed Support Level Supplement (SLS) unx220 contains the 
+software to support the Hayes V-Series 9600 Modem. This modem
+can now be used with SCO XENIX System V and SCO UNIX System V/386
+Operating Systems.
+
+To install SLS unx220, take the following steps:
+
+(1) Make sure that your operating system installation includes
+    the UUCP utilities.
+ 
+(2) Make sure that you are in single user (Maintenance) mode.
+
+(3) Log in as root.
+
+(4) Use 'custom' to install this SLS unx220. Make the 'custom' selections 
+    to install a supported or new product and then the selections to 
+    install an individual package of that product.
+
+(6) Then install one of the following choices as appropriate:
+	
+	Hayes V-Series Modem Support Module (SCO UNIX 386)
+	Hayes V-Series Modem Support Module (SCO XENIX 386)
+	Hayes V-Series Modem Support Module (SCO XENIX 286)
+
+(7) The installation is now complete.
+
+(8) Please note that after the installation is complete, the packages 
+    may show "Part" or "Yes" even though they are not installed. This 
+    is because the packages have files in common. 
+
+Yours sincerely,
+
+
+Technical Support Department
+
+ref: unx220

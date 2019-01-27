@@ -1,0 +1,64 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dear SCO Customer, 
+
+The enclosed Support Level Supplement (SLS) xnx292 corrects a hardware
+problem that can cause your machine to crash if an attached parallel 
+printer is turned off.  The machine may even crash if it receives
+unexpected noise on the parallel printer cable.  The error message will 
+be similar to:
+
+"Panic: Interrupt from unknown device, vector 2"
+
+This problem only occurs on particular machines that contain a specific
+interrupt controller.  It has been seen on Olivetti PCS286 machines and
+Hewlett Packard Vectra 386 machines.  However, this SLS may be installed 
+on any 286 or 386 machine that exhibits the problem.
+
+To install SLS xnx292, please take the following steps:
+
+(1) Reboot your system and enter System Maintenance mode.
+
+(2) Invoke the /etc/install utility.
+
+(3) When prompted for the first floppy, make sure that SLS xnx292 is in the
+    floppy drive and press <Return>.
+
+(4) You will see a message saying that a new driver has been configured into 
+    the kernel before the kernel is relinked.
+
+(5) Type "y" at the prompt "Next Floppy? (y/n)".
+
+(6) The installation is now complete.  Reboot your machine to activate the
+    new kernel.
+  
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+
+
+JP:mhj/6-91
+Xnx292-03CA
+
+
+
+
+
+                                            1

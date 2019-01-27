@@ -1,0 +1,398 @@
+
+
+     Dear SCO Customer,
+
+     Enclosed is Support Level Supplement (SLS) xnx146-c.  This
+     floppy contains a device driver for the following Irwin tape
+     drives running under the SCO XENIX (AT/GT/MC) Operating System
+     Release 2.2.3, 2.3.1 and 2.3.2:
+
+
+     Supported Irwin Tape Drives 
+     ---------------------------
+     10 Megabyte     110 
+     20 Megabyte     125     225     2020 
+     40 Megabyte     145     245     2040 
+     80 Megabyte             285     2080 
+     120 Megabyte            787     2120
+
+     Supported Tape Controllers
+     --------------------------
+        o Primary floppy disk controller
+
+        o Irwin 4251
+
+        o Irwin 4100 bus controller card (For use with the 787 and
+          2120 drives)
+
+     Irwin Tape Driver Installation
+     ------------------------------
+     To install SLS xnx146 boot up your machine and enter System
+     Maintenance mode.  Put the Irwin driver diskette (xnx146) in
+     your floppy drive and type the following at a root prompt:
+
+       1.   cd /
+
+       2.  /etc/install
+
+       3.  You will see the message: First Floppy? (y/n)
+
+           Answer "y" and then enter <RETURN>.
+
+       4.  Next, you will see the message:
+
+                        The driver has been loaded.
+
+                        Run /usr/lib/mkdev/irwin to configure.
+
+                        Please type n at the next prompt
+
+                        Next Floppy? (y/n)
+
+           Answer "n" and then enter <RETURN>.
+
+       5.  The Irwin tape driver has now been extracted.  To
+           actually link the driver into your SCO XENIX kernel,
+
+           type:
+
+                        /usr/lib/mkdev irwin
+
+       6.  Pick the option to:
+
+
+       7.  Next you will be asked:
+
+           		driver change you specified. 
+			Do you wish to create a new kernel now? (y/n)
+
+           Answer "y" and then enter <RETURN>.
+
+       8.  You will then be asked:
+                 
+                        Do you want this kernel to boot by default?
+                        (y/n)
+
+           Again, answer "y" and then enter <RETURN>.
+
+       9.  You will be asked:
+
+                        Do you wish to update your emergency
+           	        Boot/Root floppy? (y/n)
+
+           You should answer "y" so that an emergency Boot/Root
+           floppy with the appropriate tape device on it can be
+           created for you.  This is vital in the case of a system
+           crash where you need to boot from your emergency
+           Boot/Root floppy and restore data from your backup tape.
+
+           At the menu, pick the appropriate option for the type of
+           floppy you are using.
+
+           At the next menu, pick the option for:
+
+                        Root and Boot (for 96ds15 and 135ds18
+                        floppies only)
+
+           unless you have 48ds9, or 135ds9 floppies, in which case
+           you need to first pick the option for:
+
+                        Bootable only
+
+           followed by the option for:
+
+                        Root filesystem only
+
+           This is because 48ds9 and 135ds9 floppies cannot fit the
+           amount of data needed for a single Root/Boot floppy.  In
+           either case, you will be asked:
+
+                        Would you like to format the floppy first?
+                        (y/n)
+
+           In case your floppy is unformatted.  When this process
+           is complete, remove the floppy from the drive and store
+           it in a safe place.
+
+      10.  Finally, you will need to reboot your system to activate
+           the new kernel.  Type:
+
+           /etc/shutdown
+
+           to reboot your system.
+
+     In the Event of A System Crash
+     ------------------------------
+     The emergency Boot/Root floppy that has been prepared for you
+     contains all you will need to boot up and issue a restore
+     command after a system crash.  When you boot up using your
+     emergency floppy, you will be put in System Maintenance mode
+     at a root prompt.  You can then restore your backup using the
+     following two commands:
+
+       1.  /etc/_mcdaemon <RETURN>
+
+       2.  /bin/restore rf /dev/rctmini /dev/hd0root
+
+     The "/etc/mcdaemon" command starts a daemon process which is
+     necessary to the operation of the Irwin tape drive.  When you
+     boot up from the hard disk this daemon is automatically
+     started for you, but when you boot up from your Boot Root
+     floppy, you need to issue the "/etc/mcdaemon" command before
+     your restore command.  The restore command itself restores a
+     root filesystem backup from the Irwin tape device.  This
+     command is to be used for tape backups made using the
+     "backup", or "sysadmin" utilities.
+
+
+     The mcart Utility
+     -----------------
+     The new Irwin utility "/etc/mcart" has also been added to your
+     system.  It enables you to perform a number of useful
+     functions on your Irwin tape drive.  They are summarized
+     below:
+
+        h                This is a help command which allows you to
+                         view a list of available "mcart" commands.
+
+        drive 		 This command provides information about
+                         drive type, controller type and unit
+                         select.
+
+        info             This command provides information about
+                         cartridge state, format and write protect
+                         slider position.
+
+        capicity         This command shows the total cartridge
+                         capacity in 512 byte blocks after
+                         formatting.
+
+        kapacity         This command shows the total cartridge
+                         capacity in 1024 byte blocks after
+                         formatting.
+
+        format           This command enables you to prepare
+                         unformatted tape cartridges for use with
+                         your Irwin tape drive.  If you are using
+                         Accutrak pre-formatted tape cartridges,
+                         you will not need to use this command (SEE
+                         NOTE BELOW).
+
+        rewind           This command is used to rewind a tape
+                         after a backup or restore has been
+                         interrupted.  Normally, the tape is
+                         rewound automatically.
+
+        rewind           This command is used to align a tape that
+                         has not been used for a long time, or has
+                         been exposed to temperature extremes.
+
+     The command syntax is:
+
+		mcart command
+
+     For example, using the "rewind" option, the command would be:
+
+                mcart rewind 
+
+     Notes
+     -----
+       1.      If the mcart "format" option fails, it is due to a
+               hardware inaccuracy, not a software driver problem. 
+	       For data integrity reasons, SCO recommends that 
+	       pre-formatted tapes are used with Irwin tape
+               drives at all times.  The format option is provided 
+	       for use at your own risk!
+
+       2.      The device you write to should be "/dev/rctmini".
+               This device needs to be specified regardless of whether 
+	       you are writing to the drive with tar, backup, cpio, 
+	       or some other utility.
+
+       3.      Also, regardless of which utility you use to write
+               to the drive, you MUST specify a blocking factor.  The 
+	       recommended blocking factor is 20.
+
+       4.      If you choose to format your own tapes, remember
+               that you MUST BULK ERASE the tape to be formatted. 
+	       If you do not bulk erase your tape, you will not be 
+	       able to format it.  Please remember that the format 
+	       option is provided for use at your own risk!
+
+       5.      While installing your hardware, please refer to the
+               hardware guide shipped with your Irwin tape backup unit. 
+	       If you have questions regarding the installation of your 
+	       Irwin hardware, contact Irwin Technical Support.
+
+     If you have any questions please call our SCO Customer
+     Services Department at (800) 347-4381.  SCO Customer Service
+     is available Monday through Friday 6:00 A.M. to 5:00 P.M.
+     Pacific Time.
+
+     We appreciate your business.
+
+     SCO Support Services
+
+
+     Revision C Addendum
+     -------------------     
+     A condition exists in some Micro Channel computers which
+     causes errors reading the first sector of each tape block.
+     Included are the IBM models 50, 60, and 80, and the Olivetti
+     P-500.
+
+     If the following symptoms are experienced, after installing
+     the MC driver in certain Micro Channel machines, the wait-
+     for-index algorithm may need to be enabled:
+
+        o On the first backup this message is seen:
+
+          <mc> tape write error: Defect list has unrecoverable
+          error
+
+        o If "mcart format" gives the error:
+
+                    Formatting failed: Block 0 medium error :
+
+                    phase: CERTIFICATION,  track:  0,  cylinder:  0
+
+        o Extremely poor performance is experienced while listing
+          the content of or restoring a previously written tape.
+          To enable wait-for-index at the root prompt, the
+          following commands may be used:
+
+            1.  # echo iropt=I >> /etc/default/mcconfig
+
+            2.  # reboot
+
+     Using the wait-for-index algorithm has the following drawback:
+     All user system task time processing is stopped until index
+     polling is complete.  This means the user will see sluggish
+     system performance at certain times.  Typically a 3 or 4
+     second dead period at tape track switch time occurs.  This may
+     prove unacceptable in certain installations.
+
+     Error Messages
+     --------------
+     Below is a list of the most found error messages of the Irwin
+     tape driver.
+
+	Block Not Found
+                    A block not found error occurs when the driver
+          	    cannot locate a physical tape block during a read 
+		    or write operation.
+                    Insure the tape head is clean (see the tape drive 
+		    hardware manual for cleaning instructions).
+                    When this message is displayed during a data
+                    restore operation, try and retention the tape; then 
+		    repeat the restore operation.  If this fails, try 
+		    restoring the data using a different tape drive.
+                    When this message is displayed during data
+                    backup operation, try another tape.  If backup is 
+		    successful on another tape, discard or
+                    bulk erase and reformat the original tape.
+
+
+        Data CRC Error
+	ID CRC Error
+                    An "ID CRC error" or "Data CRC error" message
+                    is displayed during a tape read operation when a 
+		    tape block cannot be recovered by ECC.  If this 
+		    message appears, retention the tape and try again.
+                    If this fails, the data might be recovered by
+           	    using a different tape drive.  Causes of persistent 
+		    CRC errors are: poor quality tapes, worn tape head, a 
+		    defect in the drive's record circuitry, or
+                    an incompatible or otherwise defective data
+                    separator circuit on the controller.  CRC errors might 
+		    be stopped by using new tapes, or installing a data 
+		    compensator circuit on the drive.
+
+	Record Not Found
+                    A "Record not found" error occurs when a
+             	    certian sector within a tape block cannot be located.  
+		    This error typically occurs on during a
+                    tape read operation when there are too many
+          	    erroneous sectors to recover data using ECC.  
+		    (See Data CRC Error)
+
+
+	Drive Not Found
+                    When /etc/mcdaemon is run (usually by an "rc"
+          	    script) for the first time after system boot, a 
+		    drive searching algorithm is executed by
+                    the driver.  If this algorithm fails to detect
+          	    the presence of a tape drive, "<mc> Drive not found" is
+                    displayed.  Subsequently, the same message is displayed 
+		    on any read or write access to an opened
+                    MC device file for which no drive is present.
+                    When this message appears, hardware should be checked.
+
+
+                    "Servo failure" is a tape formatting error
+          	    message.  The servo writing function is a one part 
+		    of the tape drive's firmware.  The driver issues a
+		    command to the drive to servo write and awaits
+                    tape drive completion status.  Usually the drive's 
+		    LED will be flashing on servo writing failure.  Try bulk
+          	    erasing the cartridge and restarting the format.  If this 
+		    fails, try another cartridge.
+
+
+	   Insufficient Memory		
+                    "Insufficient memory" messages are given when
+          	    the driver fails to allocate at least three tape block 
+		    buffers.  In some systems sufficient memory may be 
+		    available when single user mode is entered immediately 
+		    after system boot.  Usually adding memory to the system
+                    will stop this message.
+
+
+	   Block 0 Missing Servo Header
+	   Too Many Sequential Missing Servo Headers
+	   Too Many Missing Servo Headers On Track
+	   Too Many Missing Servo Headers
+	   Too Many Sequential Bad Blocks
+	   Too Many Sequential Bad Blocks On A Track
+	   Too Many Bad Blocks
+                    These messages occur during formatting.  When
+                    formatting fails for one of these reasons, try bulk 
+		    erasing the cartridge and re-formatting.  If this 
+		    fails, try another cartridge.
+
+	   Block 0 Medium Error
+                    A "Block 0 medium error" results when, during
+          	    tape state determination, the first tape block has medium
+          	    error which is not recoverable by either redundant 
+		    correction or ECC.  Normally the cartridge should be 
+		    reformatted or discarded.  If the cartridge has
+                    a backup, try using a different drive to read the tape.
+                    If this message persists for multiple cartridges, the 
+		    tape drive's read circuitry may be out of adjustment, 
+		    or there may be an incompatibility between the floppy 
+		    controller's data separator circuit and the tape drive.  
+		    When running on a Micro Channel based machine a problem 
+		    may be overcome, see section on Wait for Index in this 
+		    documentation.
+
+           Defect List Unrecoverable Error	
+                    This message is displayed when both copies of
+          	    the relocation table (kept in the second and third good 
+		    tape blocks) have unrecoverable medium errors or are 
+		    otherwise corrupt.  When this message is displayed on the 
+		    first backup after drive installation in a Micro Channel 
+		    machine, the wait-for-index patch may be needed.
+
+
+	   Defect List Corrupt 
+                    This message is displayed if an error is found
+          	    in the primary defect list kept in block 0. Reformat 
+		    the tape.
+
+           Daemon Not Started
+                    The tape driver uses a single daemon process to
+          	    encode ECC during tape write operations and recover 
+		    data with ECC during tape reads.  When the "Daemon 
+		    not started" message occurs, execute /etc/mcdaemon
+                    and retry the tape operation.
+

@@ -1,0 +1,93 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) NET371A contains two new
+daemons and utilities for SCO NFS Release 1.2.0 and the NFS service of
+SCO Open Desktop Release 2.0.
+
+The new utilities and daemons are as follows:
+
+- /etc/pcnfsd
+
+This new /etc/pcnfsd allows PCNFS clients to understand the use of
+supplemental groups when accessing files on the SCO NFS server as a user
+with a supplemental group vector.  Please note that PCNFS is not supported
+on the SCO Open Desktop Personal System, but PCNFS works with both the SCO
+Open Desktop Server system, as well as SCO NFS Release 1.2.0 running on SCO
+UNIX System V/386 Release 3.2 Operating System Version 4.1.
+
+- /etc/yp/ypshad2pwd
+
+This new utility allows NIS password maps to be successfully converted
+into the /etc/passwd and /etc/shadow files when there are more than
+76 users in the password map.
+
+Additionally, for users of the SCO NFS Development System Release 1.2.0,
+and the NFS component of the SCO Open Desktop Development System Release
+2.0, this SLS provides a new RPC library, /usr/lib/librpc.a, that allows
+a user other than root to register a service with the portmapper. 
+
+To install SLS NET371A, take the following steps:
+
+	1. Shutdown and reboot your system.  Enter System Maintenance 
+	   mode by typing your root password at the prompt:
+
+	   Type CONTROL-d to proceed with normal startup,
+	   (or give root password for system maintenance)
+
+	2. Type:
+
+		   /etc/custom
+
+	3. The main custom "menu" will appear.  The "Install" option will
+	   be highlighted.  Press <Return> to select the "Install" option.
+
+	4. A list of installed products will appear.  The first item in 
+	   the list, "A New Product", is highlighted.  Press <Return> 
+	   to select "A New Product".
+
+	5. Custom will now display your installation options.  By default,
+	   "Entire Product" is highlighted.  Press <Return> to select
+	   "Entire Product".
+
+	6. Custom will prompt you to insert "Distribution Floppy 1".  Insert
+	   the enclosed floppy disk into the drive and press <Return> while 
+	   "Continue" is highlighted.
+
+	7. After extracting some information from the floppy disk, custom 
+	   will display information indicating that it is saving several 
+	   files.  Custom will once again prompt you to insert volume 1.
+	   Press <Return> while "Continue" is highlighted.
+
+	8. After extracting several files, custom will display messages
+	   indicating that it is installing the new daemon and utility.
+	   Custom will then prompt you for a serial number and activation 
+	   key.  Enter the appropriate serial number and activation key 
+	   based on the information displayed on the screen. 
+
+        9. Custom will prompt you to "Press any key to continue".
+	   Press <Return>.  Custom will then display the message:
+
+		"Checking file permissions...".
+
+       10. After completing these steps, you will be returned to the
+	   main custom menu.  You may quit out of custom at this time. 
+	   To reboot the system so that the changes take effect, type:
+
+	        /etc/reboot
+
+Should you install the SCO NFS Development System Release 1.2.0 or the NFS 
+portion of the SCO Open Desktop Development System Release 2.0 at a later 
+time, execute the following commands while in System Maintenance mode to 
+install the new RPC library that is provided with this SLS:
+
+     copy -om /usr/lib/custom/net371/usr/lib/librpc.a /usr/lib/librpc.a
+
+If you have any questions, please call our SCO Customer Services Department
+at (408) 425-4726.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

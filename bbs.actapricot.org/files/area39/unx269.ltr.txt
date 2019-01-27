@@ -1,0 +1,52 @@
+
+
+Dear SCO Customer,
+
+Enclosed is Support Level Supplement (SLS) unx269. This SLS installs
+a new /etc/conf/pack.d/kernel/os.o which is intended to resolve the system
+sigclean panics you may have been experiencing under SCO UNIX System
+V/386 Release 3.2 AT Operating Systems.  In particular SCO customers who
+use the FOCUS application by Information Builders have experienced this
+problem. This SLS is not designed to install on Micro Channel (MC)
+systems, and although it will install, you will not be able to boot
+the new kernel.
+
+To install SLS unx269 follow the instructions below: 
+
+  1. It is recommended but not mandatory that SLS unx269 be installed in
+     System Maintenance mode. To get to System Maintenance mode you must
+     reboot your machine and type the root password at the System Maintenance
+     mode prompt. Otherwise, you must log in as root. 
+
+  2. Ensure that your are located in the root directory by entering the
+     following command:
+
+     # cd /
+
+  3. Run the /etc/xinstall utility by executing the following command:
+
+     # /etc/xinstall
+
+     You will be prompted for the first floppy, insert SLS unx269 into
+     the floppy drive, enter "y" and press <Return>.
+
+     The install script will check and make sure you are on an SCO UNIX
+     System V/386 Release 3.2 Operating System and that the Link Kit is
+     correctly installed.  It will then install the new os.o and relink
+     a new kernel.
+
+     After the installation is complete you will be prompted for the next
+     floppy, you should answer "n" to this prompt and press <Return>.
+
+  4. After you have exited from the /etc/xinstall program you will need to
+     reboot your machine for the SLS to take effect.
+  
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381. SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

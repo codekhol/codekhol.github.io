@@ -1,0 +1,330 @@
+                    DESKTOP COMMUNICATIONS SERVER INSTALLATION
+          
+          The  following  notes  explain  how  to  install  the  Desktop
+          Communications Server  software on  VX-NET allowing the use of
+          remote modems.    These  notes  are  only  a  outline,    full
+          documentation on setting up and using the software is provided
+          in the Desktop Communications Systems Administrators Guide.
+          
+          Some terms  which may  be unfamiliar  are described  under the
+          heading TERMINOLOGY at the end of this document
+          
+          NETWORK CONFIGURATION
+          
+          1.   Ensure that  all the  Users who  wish to  utilize the DTC
+               software can run Windows version 2.1 and have access to a
+               copy of  the DTC  software provided  with the Qi or XEN-S
+               Environment Packs,  these can  be loaded  either from the
+               file-server or locally.  It is better to try and load the
+               Windows  and   DTC  software  locally  as  this  improves
+               performance.
+          
+               The Workstations on which the DTC software is to run will
+               need to have the correct Authorisation Key installed.
+          
+          2.   The Workstations  on the  network which are to be used as
+               Communications Systems need to have the modems installed.
+               Depending on  the type  of modem  being used  it  may  be
+               necessary to  disable the  on-board  serial  port  if  an
+               internal, i.e.  a Triplex  modem, is  to be  addressed as
+               COM1:.
+          
+          SOFTWARE CONFIGURATION
+          
+          Once all  the network  hardware and  software has  been  setup
+          correctly then the installation of the DTC server software can
+          take place.
+          
+          From the disk provided with the VX-NET 3.11 upgrade containing
+          the  DTC   Server  and   Mail  Server   software,   copy   the
+          sub-directory DTCSERV  into the  root directory of a formatted
+          floppy disk.  This disk is now the DTC Server disk and is used
+          for the configuration of the system.
+          
+          1.   Boot the  server and workstations and logon as a user who
+               has access  to Windows  2.1 and  a floppy  drive,  either
+               local or  remote.   Load Windows and place the DTC Server
+               disk in the floppy drive which can be accessed, change to
+               that drive and load the file DTCGEN.
+          
+          2.   The software  will open  a dialogue  box prompting "Drive
+               for DTC  files:", select  the drive  containing  the  DTC
+               Server disk.   Another   dialogue  box may  appear saying
+               that the  DTC data  files cannot  be opened,  continue by
+               pressing the  space bar.   This  dialogue box  will  only
+               appear if  the data files haven't yet been created or the
+               wrong disk is selected from the previous dialogue box.
+          
+          3.   The Desktop Communications Configuration Window will then
+               appear.   At the  stage it  will be necessary to know the
+               following :-   
+          
+               What attributes the modems you are using have.
+               What control files the modems will need.
+               The type of telephone system (tone or pulse).
+               The number needed to obtain an outside line.
+               The locations  of the files for DTC, Windows and a Common
+               area.
+               The type of Security to be implemented.
+               Whether the workstations have modems fitted.
+               The configuration of the Communications Systems.
+               The type of connections the users will have access to.
+          
+          4.   When all the above information is obtained it can then be
+               entered into  the DTCGEN program to create the data files
+               used by the software to configure the system.
+          
+          5.   From the  "System" menu  select the  "Attribute  name..."
+               option, then  add the  various  attributes  for  all  the
+               modems on  the network,  i.e. enter V21, V22 etc..  These
+               should already be present.
+          
+          6.   From the  "System" menu  select  the  "Control  files..."
+               option, then  add the  names of  the control  files which
+               need to be used by the modems on the network, i.e. if you
+               are using  an Apricot Triplex modem enter TRIPLEX or if a
+               Hayes compatible  modem is being used enter HAYES.  These
+               should already be present.
+          
+          7.   From the  "System" menu  select the  "Telephone lines..."
+               option, select the type of lines being used, i.e. tone or
+               pulse, for  both the external and internal lines and also
+               the number  that needs  to be  dialled to  get an outside
+               line.
+          
+          8.   From the  "System" menu  select  the  "Default  paths..."
+               option, then  enter the  drive and  sub-directories  from
+               which the majority of users will access DTC , Windows and
+               common files.
+          
+          9.   From the  "System" menu  select the  "Change Security..."
+               option, select  the type  of security  to be  used.  If a
+               change is made a dialogue box will appear warning the any
+               existing users may be lost, select yes or no depending on
+               whether your selection is correct.
+          
+               If VX-NET security has been selected another dialogue box
+               may be  displayed asking  for the  location  of  the  DTC
+               files, select the letter containing the DTC Server floppy
+               disk.
+          
+          10.  From the  "View" menu  make sure  that the "Workstations"
+               option is  highlighted, then  from the "Edit" menu choose
+               the "Add" option.
+          
+               Enter the  Station number,  this will  be the VX-NET node
+               number.
+          
+               Then the  Number of  Remote Connections,  how many modems
+               the workstation  can access across the network at any one
+               time.
+          
+               Then the  Base Remote Connection, the number of the first
+               modem located  in the  Communications  System  after  any
+               local modems  are taken  into account,  i.e if  two local
+               modems are fitted to the workstation then the base remote
+               connection will be 3.
+          
+               Then change  the paths  for the  DTC and  Windows file if
+               they differ from those setup previously.   If these paths
+               are local  to the  workstation mark the "Files local" box
+               accordingly.
+          
+               This will  need to be done for all the workstations which
+               are going to be running DTC.
+          
+               Local  devices  on  the  workstations  can  be  added  by
+               selecting the  "Devices" option  and following  the  same
+               procedure as  for setting  up the  Communications  System
+               under section 11.
+          
+          11.  From the  "View" menu  make sure that the "Comms systems"
+               option is  highlighted, then  from the "Edit" menu choose
+               the "Add" option.
+          
+               A dialogue  box will  appear, in  this enter  the station
+               number for Communications System, the VX-NET node number,
+               and the  maximum number of connections the Communications
+               System will  support at  any one time, this will normally
+               be the number of modems installed.
+          
+               The   from the  Edit menu select the "Devices" options, a
+               new window  will appear.  From the "Edit" menu select the
+               "Ports..." option.
+          
+               Enter the first 8250 port (serial port) to be used by the
+               Communications System.
+          
+               Then in the next box enter the total number of 8250 ports
+               to be used on this Communications System.
+          
+               Do the same for any Chase ports if fitted.
+          
+               Highlight the  particular port  to be configured and from
+               the "Edit" menu select the "Modems..." option.
+          
+               Enter the  device name,  this is  used  to  differentiate
+               between the  various modems  being used  i.e. TRIPLEX ONE
+               can be entered.
+          
+               Then enter the number of the telephone line that modem is
+               using.
+          
+               Under the  "Device flags"  options  highlight  the  boxes
+               according to  your configuration.   Whether  the modem is
+               connected to  an external  telephone  line,  whether  the
+               modem has  off hook  detection  and  if  a  telephone  is
+               connected to the modems line.
+          
+               Under the  "Control file"  options highlight  the control
+               the modem  requires.  If a Apricot Triplex modem is being
+               installed select "TRIPLEX".
+          
+               Under the  "Attributes" options select the facilities the
+               modem being  configurated is  capable of,  i.e. V21,  V22
+               etc..
+          
+               When these screen has been completed choose the "ADD" box
+               and repeat  for all  the  modems  in  the  Communications
+               Systems.   To  go  back  to  the  original  screen  close
+               Communications Systems window.
+          
+               Repeat this  for all  the Communications  Systems on  the
+               network.
+          
+          12.  If either  Standard or  VX-NET security has been selected
+               it will be necessary to setup and configure the Users, if
+               no security  has been  chosen the  Users option cannot be
+               selected therefore proceed to section 13.
+          
+               To configure  the user select the "Users" option from the
+               "View" menu.
+          
+               If Standard  security was selected then it will necessary
+               to add  all the  Users who will have access to DTC on the
+               network.  This is done by selecting the "Add" option from
+               the "Edit"  menu and  entering the  "user  name"  in  the
+               dialogue box  displayed.  The other entry denotes whether
+               the user is a System Administrator,  if this is select it
+               will  allow   this  user  to  change  the  dialling  card
+               information when  DTC is  loaded, otherwise this facility
+               is disabled.
+          
+               If VX-NET  security was  selected then  all  the  network
+               users setup  by "netgen  are displayed,  it will  then be
+               necessary to  specify which of these users will be System
+               Administrators and  delete any  users who are not allowed
+               access to the DTC software.
+          
+               Once all  the user  have been listed it is then necessary
+               to setup  the types of connections for these users.  This
+               is done by selecting the relevant user and then selecting
+               the "Connections..." option from the Edit menu.  From the
+               new window  which is  displayed select  the "Add"  option
+               from the  "Edit" menu  and from  the dialogue  box  which
+               appears select the desired "Attribute" by highlighting it
+               and selecting  the "Add"  box.  This needs to be done for
+               ever attribute that the user will need.
+          
+               Repeat the above process for all the users.
+          
+          13.  Once all  the  Communications  System,  Workstations  and
+               Users have  been setup  the information has to be written
+               to disk.   this  is  done  by  selecting  the  "Configure
+               system" option  from the  "Configure" menu.    This  will
+               prompt for a drive to store the DTC data files on, select
+               the drive which contains the DTC Server software.
+          
+          14.  The DTCGEN software can now be closed and windows exited.
+               The  DTC   server  disk   now  contains   the   necessary
+               information  the   configure  all  the  Workstations  and
+               Communications Systems.
+          
+               This is done by running a program called DTCMAKE on every
+               Workstation and   Communications  System which  is to use
+               DTC.  The program is on the DTC Server disk used earlier.
+          
+               This program  needs to  be run from MS-DOS, from a floppy
+               drive accessible  by the  workstation  being  configured,
+               either local  or remote.  The software will first ask for
+               the disk  drive that the workstation boots form, then the
+               drive containing  the DTC  data files.  Select the drives
+               according to the workstations configuration, the software
+               will then prompt for a conformation of this.
+          
+               If "Y"  is enter  then the  configuration data is loaded,
+               the  next   prompts  ask   whether  the  Workstations  or
+               Communications Systems CONFIG.SYS and AUTOEXEC.BAT should
+               be changed, select "Y" for both these.
+          
+               The software will the amend these files changing the path
+               command and loading the correct device driver.
+          
+               It will  be necessary  to copy  the driver files into the
+               common disks  softdisk,  MSDOS32I.DSK  and  MSDOS33I.DSK,
+               this is  done by entering the following in the "NETWKMGR"
+               sub-directory on the server :-
+          
+               SOFTCOPY n:WCOMRDR.EXE MSDOS33I.DSK
+               SOFTCOPY n:WCHASE.EXE MSDOS33I.DSK
+               SOFTCOPY n:WCHSRMEM.SYS MSDOS33I.DSK
+               SOFTCOPY n:W8250.EXE MSDOS33I.DSK
+               
+               where n:  is the  source drive  containing the DTC Server
+               disk.
+          
+               This  may  need  to  be  repeated  for  the  MSDOS32I.dsk
+               softdisk.
+          
+          14.  When all the Communications Systems and workstations have
+               been configured reboot the whole network.  You should now
+               be able  to  load  Windows  and  run  DTC  following  the
+               information given  in  the  Desktop  Communications  User
+               Guide provided with the Qi and XEN-S Environment Packs.
+          
+          **** Warning ****
+          
+          If "NETGEN" is used to re-produce any of the Workstations boot
+          disks this  will overwrite any changes made by "DTCMAKE".  The
+          "DTCMAKE" routine  will have  to be  re-done  to  allow  these
+          Workstations to access DTC across the network.
+          
+          TERMINOLOGY
+          
+          COMMUNICATIONS SYSTEMS - These are Workstations on the network
+          dedicated to  communications.   These  computers  have  Modems
+          and/or Chase  cards installed  which are to be accessed by the
+          DTC software running on other workstations on the network.
+          
+          ATTRIBUTES
+          
+          The capabilities of a modem i.e. V21, V22, V23 or V22bis etc..
+          
+          CONTROL FILES
+          
+          These are the files which control the modem.
+          
+          SECURITY
+          
+          DTC Server has three types of security these are :-    
+          None, no logon or password are needed.
+          
+          Standard, users  are created  from within  DTCGEN and  a users
+          logon and password need to entered when DTC is run.
+          
+          VX-NET, the  users VX-NET  logon and  password are accepted as
+          valid for loading DTC.
+          
+          8250
+          
+          This is  what DTC  refers to  as a  serial port  i.e COM1:  or
+          COM2:.
+          
+
+          NOTE:
+          The W8250.EXE line in the AUTOEXEC.BAT of the comms gateway will 
+          have to be edited to include the following switch (after those 
+          that are already there!) 
+                /S:n
+          where n is the number of devices being shared remotely.
+

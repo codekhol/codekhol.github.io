@@ -1,0 +1,122 @@
+Apricot VX-Net Update Disk 2
+
+26th August 1988
+
+
+A number of features have come to light in both MF Rel 7, VX-Net 2(1C) and VX-
+Net 3.03. There are now software fixes/enhancements available, and these are 
+outlined below. This update is NOT mandatory and may only be necessary if a 
+problem detailed below has occurred. 
+
+1) VX-Net 2(1C) & MF Rel 7.
+
+Files changed are as follows..
+
+AEMM.SYS        Vr 4.00.0       A number of changes have been made since 
+                                Vr3.20.3 and are outlined on pages 2.1-11/2.1-
+                                12 of technical bulletin 20. 
+
+OMNINET2.SYS    Vr 3.00.0       Now has the default wait states set as 2 
+                                (required for 386 based servers and 
+                                workstations). 
+
+AMLOAD.EXE      Vr 1.5.7        Now works correctly with AEMM.SYS and a wider 
+                                range of video adaptors. 
+
+VGAPLUS.EXE     Version 1.0     The VGA setup utility that allows the correct 
+                                configuration of the VGA adaptor for use on 
+                                the network. 
+
+SETUP.EXE       Vf 1.2.2        Includes VGA support.
+
+MODEMUSE.EXE    Vr 3.0.0
+MODEMSRV.EXE    Vr 3.0.0 \
+MODEMRDR.SYS    Vr 3.0.0  >     All needed for modem redirection to work.
+MODEMXXX.SYS    Vr 3.1.5 /
+
+XPORT.EXE       Vr 3.0.0 \      Increased virtual circuits for busy networks.
+NETBIOS.EXE     Vr 3.0.0 /
+
+CONMGR.EXE      Vr 3.0.0        Less likely to give character corruption 
+                                whilst displaying lengthy screen outputs. 
+                                        
+SERVER.EXE      Vr 3.0.0        Increased support for busy spool queues.
+
+BOOTSRV.EXE     Vr 1.5.6        Fixes date/time problem on XEN and XEN_i WSs. 
+
+MOUSE.SYS       Vr 3.30.0       Improved mouse support for 386 machines for 
+                                Windows 2/386. 
+
+KEY.COM         Vr 1.1.0        Improved handling of microscreen and 'AT' 
+                                style keyboards with Quickbasic. 
+
+TBACKUP.EXE     Vr 3.20.5  \    Enhanced utility and driver for tape 
+                                backup/restore. 
+TAPES.SYS       Vr 1.0.2   /    See latest Tech Bulletin for details. (Not 
+                                applicable MF Rel 7) 
+
+
+2) VX-Net 3.03
+
+Files changed are as follows:-
+
+MINSES.EXE      Vr 3.0.1        Fixes the problem with the date not rolling 
+                                over at midnight. 
+
+STAT.DSK                        A complete soft-disk file for XEN and XEN_i 
+                                WS's to replace the incomplete file shipped 
+                                with VX-Net 3.03. 
+
+
+3) Files common to both VX-Net 2(1C) and 3.03
+
+Files changed are as follows:-
+
+QUAD.SYS        Vr 3.20.1       Fixes problems associated with using the QUAD 
+                                card over the network that could cause serial 
+                                printers on the QUAD card to hang. 
+
+MSCALC.SYS      Vd 3.30.1       Overcomes some of the 'hanging' keyboard 
+                                problems found with the EECO 'AT style' 
+                                keyboards when odd combinations of CTRL keys 
+                                were used. 
+
+TRESTORE.EXE    Vb 3.20.6       Gives a verify option that checks the data on 
+                                the tape against that on the disk (/c). Also 
+                                includes support for the DOS VERIFY command 
+                                (reads back everything that is written to disk 
+                                to check (/v)). 
+
+
+The Update Procedure :
+
+Before proceeding with any update please ensure that you have an adequate 
+backup of the system. 
+
+In order to update the server software, it is recommended that you ensure that 
+everyone is logged off the network, and that you then stop the network and 
+work at the DOS prompt at the server, either via CONMGR or at the server 
+itself. 
+
+After you have stopped the server, insert the floppy update disk in the floppy 
+drive, and then type the following command:-
+
+        UPDATE <source> <destination>
+
+where <source> is the drive letter of the floppy drive (ie A), and 
+<destination> is the drive letter of the server hard disk where the network 
+software is installed (ie C). The update procedure will then run. 
+
+It is recommended that you do NOT break out of the routine once it is running, 
+as it may leave the network software in an unstable state (you are given the 
+opportunity at the start to quit without making changes if necessary). 
+
+
+NOTE :
+
+After installing this update on a VX_Net release 2(1C) network, the network 
+will then be at Release 2.1 (typing 'WHAT VERSION' on the root of the server 
+will confirm this). Likewise, an MF Release 7 network will become an MF 
+Release 7.1 network. 
+                                        
+

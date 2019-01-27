@@ -1,0 +1,59 @@
+
+Dear Customer,
+
+The enclosed Support Level Supplement (SLS) lng230 contains PC-NFS server 
+support for SCO NFS Release 1.1.0o (stand alone version) and Release 1.1.0m 
+(Open Desktop Release 1.0.0y).  SLS lng230 will only install on SCO UNIX 
+System V/386 Operating System Release 3.2.
+
+To install this SLS execute the steps listed below.
+
+   1. Log in as root. Ensure that you are in the / (root) directory.
+   2. Insert the floppy into the floppy drive. 
+   3. Type "/etc/xinstall"
+   4. Answer "y" to the question "First Floppy? (y/n)"
+   5. The SLS will then install and the appropriate installation messages
+      will be displayed. After the installation is complete you will see the
+      following message:
+
+         SCO PCNFS SLS Installation Complete
+
+         Next Floppy? (y/n)
+
+      Answer "n" to this question.
+
+SLS lng230 adds /etc/pcnfsd to your system.  The install script edits the
+file /etc/nfs such that this daemon will be executed at init(S) time.  The
+file /etc/nfs is linked to /etc/rc0.d/K79nfs and /etc/rc2.d/S89nfs.  Before
+editing the /etc/nfs file, it will back it up in /usr/lib/custom/save.  If
+you have customized /etc/nfs or changed the links to the /etc/rc directories,
+then it is possible that this part of the installation may fail. If the
+installation fails, you will need to edit by hand the /etc/nfs file such that
+it will be executed correctly.  
+
+Here is an example section of code from /etc/nfs:
+
+   # starup the portmapper
+	echo " portmap\c"
+	portmap
+	if [ $? -ne 0 ]
+	then
+		echo ""
+		echo "Troubling starting portmap.  NFS start aborted."
+		exit 1
+	fi
+	# start up pcnfsd daemon
+	echo " pcnfsd\c"
+	pcnfsd
+
+SLS lng230 also creates a /usr/spool/lp/pcnfs directory so that you may 
+set up NFS remote printing. Please see your PC-NFS manual from your vendor 
+for instructions. The pcnfs daemon does not support DOS file locking.  This
+feature will be added at a later date.
+
+Yours sincerely,
+
+
+Technical Support Department
+
+ref: lng230

@@ -1,0 +1,914 @@
+<DOCTYPE HTML PUBLIC "=//IETF//DTD HTML//EN//3.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+ <!-- This document was created from RTF source by rtftohtml version 2.7.5 -->
+ <title>unx003 - Backing up and Restoring</title>
+</head>
+
+<body>
+
+<img src="../../images/apricot.gif.html" alt="apricot">
+
+<hr>
+
+<h1>SCO Unix 3.2v4.2 / OpenServer Release 5</h1>
+
+<h2>Backing up and Restoring</h2>
+
+<h3>
+ John Buckley
+ <br>Unix Support Department
+</h3>
+
+<h3>Release 1.0</h3>
+
+<hr>
+
+<p>
+ <b><i>Table of Contents</i></b>
+</p>
+
+<ol>
+ <li><a href="#RTFToC1">Introduction</a>
+ <ol>
+  <li><a href="#RTFToC2">Why Backup?</a>
+  <li><a href="#RTFToC3">About this guide</a>
+ </ol>
+ <li><a href="#RTFToC4">Basic Requirements</a>
+ <ol>
+  <li><a href="#RTFToC5">Creating the Root and Boot floppies</a>
+  <li><a href="#RTFToC6">Create the tape backups</a>
+  <ol>
+   <li><a href="#RTFToC6b">Additional filesystems</a>
+  </ol>
+  <li><a href="#RTFToC7">Determining the disk division table layout</a>
+ </ol>
+ <li><a href="#RTFToC8">Rebuilding the System</a>
+ <ol>
+  <li><a href="#RTFToC9">Rebuilding the root operating system disk</a>
+  <ol>
+   <li><a href="#RTFToC10">Rebuilding on original disk</a>
+   <li><a href="#RTFToC11">Restoring other filesystems</a>
+   <li><a href="#RTFToC12">Rebuilding on new root disk</a>
+   <ol>
+    <li><a href="#RTFToC13">Creating lost+found</a>
+   </ol>
+   <li><a href="#RTFToC14">Rebuilding non-root disks</a>
+  </ol>
+ </ol>
+</ol>
+
+<hr>
+
+<h1><a name="RTFToC1">Introduction</a></h1>
+
+<p>
+ Throughout this Info Guide the following typefaces have special meaning:
+</p>
+
+<pre>
+<b>unix</b>            - The name of a command, file, menu item,
+                  or on screen option.
+<i>Boot</i>            - Output displayed on screen.
+<u>mkdev fd</u>        - Keyboard input
+</pre>
+
+<h2><a name="RTFToC2">Why Backup?</a></h2>
+
+<p>
+ No computer system can be ever described as 100% reliable. External
+ influences such as mains fluctuations, unauthorised interference with
+ the system, badly written code and of course, the people who use it,
+ are all possible sources of system failure. Computers are now
+ becoming more than ever `Business Critical', and as such are
+ instruments to the likely success or failure of the company's day to
+ day operations.
+</p>
+
+<p>
+ Most systems will suffer `down-time' at some point in their
+ operational life for any number of reasons, so it becomes essential
+ that the impact this has is minimised. A sensible system recovery
+ policy, coupled with regular backups and precautions will go along
+ way toward this.
+</p>
+
+<p>
+ This may all sound familiar, but suprisingly enough, the majority of
+ systems in daily use now, are <i>still not</i> being backed up
+ properly, and much time is being wasted in re-installing software
+ from scratch.
+</p>
+
+<h2><a name="RTFToC3">About this guide</a></h2>
+
+<p>
+ This guide was written to address a requirement that many people do
+ not have the basic knowledge to backup or recover a SCO UNIX system
+ in the event of a major failure. What is covered is not an exhaustive
+ set of methods, but those which will enable the user to get out of
+ the worst scenarios fairly quickly.
+</p> 
+
+<p>
+ It is possible to restore a system onto a new blank disk, without
+ using the SCO master floppies, or having to start off by carrying out
+ a basic UNIX installation. As a rough guide it should take about 20
+ minutes to partition, division and make bootable a new disk prior to
+ restoring the backup tape.
+</p>
+
+<h1><a name="RTFToC4">Basic Requirements</a></h1>
+
+<p>
+ With any SCO UNIX system, the absolute minimum requirement for any
+ backup should be regarded as:
+</p>
+
+<ol>
+ <li>
+  <p>
+   Root and Boot floppies (created using  <b>mkdev fd</b>)
+  </p>
+ <li>
+  <p>
+   Root filesystem backup on cartridge tape, <b>cpio</b>
+   format. (<u>not</u> <b>tar</b> as this does not backup empty
+   directories, empty files, or device nodes)
+  </p>
+ <li>
+  <p>
+   Separate backups of other filesystems (usually containing customers
+   data)
+  </p>
+ <li>
+  <p>
+   Printouts of hard disk(s) division table (output from <b>divvy</b>)
+  </p>
+</ol>
+
+<p>
+ Additionally, for SCO OpenServer 5:
+</p>
+
+<ol>
+ <li>
+  <p>
+   Backup of Boot filesystem (/stand)
+  </p>
+</ol>
+
+<p>
+ These must be created as soon as the system is installed, and
+ maintained up to date to reflect the changes in the system as time
+ goes on.
+</p>
+
+<h2><a name="RTFToC5">Creating the Root and Boot floppies</a></h2>
+
+<p>
+ Make sure that you have to hand, 2 DSHD 1.44Mb floppy disks. These need not be
+ formatted beforehand, as the system will ask you if you want to
+ format during creation of the disk set.
+</p>
+
+<p>
+ As root, type in:
+</p>
+
+<pre>
+  # <u>mkdev fd</u>
+</pre>
+
+<p>
+ and the floppy creation will start.  Use the menu options to create a
+ "Boot" floppy and a "Root filesystem" floppy.  Note that the
+ installed kernel on floppy will take on the characteristics of the
+ main kernel, so all the currently configured devices will be
+ recognised when the system is booted from the floppies. In these later
+ versions of UNIX, most of the utilities you will need are
+ automatically copied over to the root filesystem disk. In earlier
+ versions including Xenix, these had to be added manually.
+</p> 
+
+<p>
+ Ensure that the disks are <b>not</b> write protected.
+</p>
+
+<p>
+ Your emergency floppies are now ready. Label them as `boot disk' and
+ `root filesystem disk' as appropriate:  If the system configuration
+ changes significantly, it may pay to re-create them from time to
+ time.
+</p>
+
+<h2><a name="RTFToC6">Create the tape backups</a></h2>
+
+<p>
+ This can also be done from <b>sysadmsh</b> (up to 4.2) or
+ <b>scoadmin</b> (OpenServer5), using the menu-driven backup
+ options. However, for service requirements, it is often more
+ convenient to do it manually from the command prompt.
+</p>
+
+<p>
+ As root, this can be done from single or multiuser mode. It is
+ preferable to be in single user mode, as this also ensures that only
+ root can be logged in during the backup process. Identify first which
+ filesystems are currently mounted. Ensure that only root is mounted.
+</p>
+
+<p>
+ Type in:
+</p>
+
+<pre>
+  # <u>mount</u>
+</pre>
+
+<p>
+ This should show:
+</p>
+
+<p>
+ On<b> SCO UNIX 3.2v4.x</b>:
+</p>
+
+<pre>
+  / on /dev/root read/write on (some date)
+</pre>
+
+<p>
+ On<b> SCO OpenServer 5.0</b>:
+</p>
+
+<pre>
+  / on /dev/root read/write on (some date)
+  /stand on /dev/boot read only on (some date)
+</pre>
+
+<p>
+ If the output shows additional filesystems that are mounted, type:
+</p>
+
+<pre>
+  # <u>cd /</u>
+  # <u>umountall</u>
+</pre>
+
+<p>
+ Ensure the tape is in the appropriate drive. Make sure you are in the
+root directory:
+</p>
+
+<pre>
+  # <u>pwd</u>
+  /
+</pre>
+
+<p>
+ Enter the cpio backup command as follows:
+</p>
+
+<pre>
+  # <u>find . -mount -depth -print|cpio -ov &gt;/dev/rStp0</u>
+</pre>
+
+<p>
+ Substitute your own tape device name for `rStp0'
+</p>
+
+<p>
+ The <i>-mount </i>option to <b>cpio</b> ensures that only the current
+ filesystem contents are archived. This is particularly important for
+ OpenServer 5, where the /stand filesystem has to be archived
+ separately.
+</p> 
+
+<p>
+ Label this tape as `root filesystem backup'.
+</p>
+
+<p>
+ Additionally, for <b>SCO OpenServer 5</b> only
+</p>
+
+<p>
+Insert new tape:
+</p>
+
+<pre>
+  # <u>cd /stand</u>
+  # <u>find . -print -depth|cpio -ov &gt;/dev/rStp0</u>
+</pre>
+
+<p>
+ Substitute your own tape device name for `rStp0'
+</p>
+
+<p>
+ Label this tape as `boot filesystem backup'.
+</p>
+
+<h3><a name="RTFToC6b">Additional Filesystems</a></h3>
+
+<p>
+ Mount up any additional filesystems that you might have, and back
+ these up on separate tapes as required. In the example, there is a /u
+ filesystem:
+</p> 
+
+<pre>
+  # <u>mountall -f</u>
+  # <u>mount</u>
+  / on /dev/root read/write on (some date)
+  /stand on /dev/boot read only on (some date)
+  /u on /dev/u read/write on (some date)
+  # <u>cd /u</u>
+  # <u>find . -print -depth|cpio -ov &gt;/dev/rStp0</u>
+</pre>
+
+<p>
+ Substitute your own tape device name for `rStp0'
+</p>
+
+<p>
+ Label this up as `/u filesystem backup'
+</p>
+
+<p>
+ Store these in a safe place with the root/boot floppies.
+</p>
+
+<h2><a name="RTFToC7">Determining the disk division table layout</a></h2>
+
+<p>
+ This step is absolutely necessary in order to keep an accurate record
+ of the way the disk is partitioned and split up into filesystems. When
+ the original software is restored, the filesystems will have to be set
+ up exactly as they were previously.  This information is not stored on
+ the root and boot floppies, and therefore has to be manually
+ configured when the system is rebuilt.
+</p>
+
+<p>
+ The command  <b>divvy</b> will report the appropriate information as
+ follows for UNIX 3.2v4.2.  To produce a file for printing with the
+ information below, use the command:
+</p>
+
+<pre>
+  <u>divvy &gt; filename</u>
+</pre>
+
+<p>
+ and then enter
+</p>
+
+<pre>
+  <u>q&lt;return&gt;</u>
+</pre>
+
+<p>
+ followed by
+</p>
+
+<pre>
+  <u>e&lt;return&gt;</u>
+</pre>
+
+<p>
+ (divvy command quit and exit options):
+</p>
+
+<pre>
+  # <u>divvy /dev/hd0a</u><p>
+
+  Name      Type        New FS   #    First Block    Last Block
+  root      EAFS        no       0    0              209715
+  swap      NON FS      no       1    209716         335544
+  u         EAFS        no       2    335545         1056757
+            NOT USED    no       3    -              -               
+            NOT USED    no       4    -              -               
+            NOT USED    no       5    -              -               
+  recover   NON FS      no       6    1056758        1056767
+  hd0a      WHOLE DISK  no       7    0              1057775  
+
+  1056768 1K blocks for divisions,1008 1K blocks reserved for the system.
+</pre>
+
+<p>
+ The previous example corresponds to the root drive. (<b>divvy</b>
+ with no arguments defaults to the root drive).  This drive is 1Gb in
+ total size, with a 200Mb root filesystem, a 32Mb swap area and the
+ remainder of the drive is divided up between a separate filesystem
+ called <b>u</b>, and the recovery area.
+</p>
+
+<p>
+ In SCO OpenServer 5.0, there will be an additional entry called
+ <b>boot</b>. This will appear at the top of the table followed by swap
+ and root.  Any subsequent filesystems will appear after that.
+</p>
+
+<p>
+ The table entry <b>hd0a</b> refers to drive 0 active partition (root
+ disk). If there are other disks on the system, use divvy specifying
+ the appropriate drive number. I.e.:
+</p>
+
+<p>
+  # <u>divvy /dev/hd1a</u>
+</p>
+
+<p>
+ For the second drive, active partition.
+</p>
+
+<p>
+ Print these out and keep a copy of them with the backup media.
+</p>
+
+<p>
+ <u>Do not</u> under any circumstances alter the current settings or
+ names while you are in <b>divvy</b>.  This will seriously compromise
+ the integrity of the data already on the target drive.  If you intend
+ to alter the drive partitioning information to add an another
+ filesystem or expand an existing filesystem for example, then you
+ <u>must</u> backup the whole target disk first.  If you are in any
+ doubt, call UNIX Support first.
+</p>
+
+<p>
+ Use the options `q to quit' and `e to Exit without installing a
+ division table' to quit the program.  This will exit the program
+ <b>without</b> saving any changes whether accidental or otherwise.
+</p>
+
+<h1><a name="RTFToC8">Rebuilding the System</a></h1>
+
+<h2><a name="RTFToC9">Rebuilding the root operating system disk</a></h2>
+
+<p>
+ In general, the drive that tends to suffer after a crash, or just
+ through general wear and tear is the root drive.  This contains the
+ main bulk of the operating system, and any corruption occurring in
+ this area can be regarded as generally critical.  If the drive has
+ failed through excessive bad block reporting, or for any other reason,
+ then it should be replaced with a new one of the same type if
+ possible.
+</p>
+
+<p>
+ If the problem can be traced to other sources such as accidental
+ power down or deletion of system data by the operator, then the disk
+ obviously need not be changed.  In this case, the original partition
+ table will most likely still be intact.  Typically, the system will be
+ unbootable and assuming that all other possible solutions have been
+ exhausted, a re-build from the backups will be necessary.
+<p>
+
+<h3><a name="RTFToC10">Rebuilding on original disk</a></h3>
+
+<p>
+ First, power the system down and insert the floppy labelled `Boot
+ disk'.  Power the system on and allow the machine to boot from the
+ floppy. When this prompt appears:
+</p>
+
+<pre>
+  boot:
+</pre>
+
+<p>
+ press return.  After the initial system load, you will be prompted to
+ insert the filesystem disk.  Remove the boot floppy and insert the
+ `root filesystem' disk.
+</p>
+
+<p>
+ The system will complete its initialisation and leave you at the `#'
+ prompt.
+</p> 
+
+<p>
+ Do <b><u>not</u></b> remove the floppy at any time from now on until
+ you re-boot the system.  This is because the system is running from
+ the floppy, and requires read/write access to it at all times.
+</p>
+
+<p>
+ The hard disk root file system will now need to be cleaned. To do
+ this, type:
+</p>
+
+<pre>
+  # <u>fsck -y /dev/hd0root</u>
+</pre>
+
+<p>
+ and the system should then start the filesystem check.  If it
+ responds instead with:
+</p>
+
+<pre>
+  /dev/hd0root:cannot stat
+</pre>
+
+<p>
+ Or something similar, then the problem may be more severe.  In this
+ case, the root filesystem will need to be re-created from scratch, as
+ it probably contains one or more incorrect files.  Do this as
+ described in the section <a href="#RTFToC12">Rebuilding on new root
+ disk</a>.
+</p>
+
+<p>
+ Additionally, for <b>Openserver 5.0 only</b>
+</p>
+
+<pre>
+  # <u>fsck -y /dev/boot</u>
+</pre>
+
+<p>
+ Once <b>fsck</b> has completed without errors, mount the root
+ filesystem as follows:
+</p>
+
+<pre>
+  # <u> mount /dev/hd0root /mnt</u>
+</pre>
+
+<p>
+ Change directory to /mnt
+</p>
+
+<pre>
+  #<u> cd /mnt</u>
+</pre>
+
+<p>
+ Make sure that you are in the /mnt directory by using:
+</p>
+
+<pre>
+  <u>pwd</u>
+</pre>
+
+<p>
+ Insert your root filesystem backup tape into the tape drive.  Use the
+ following command to restore the data.  Substitute your own tape
+ device name for `rStp0'. (Note that rStp0 will always be the first
+ SCSI tape drive defined in <b>/etc/conf/cf.d/mscsi</b>):
+</p>
+
+<pre>
+  # <u>cpio -ivdum &lt;/dev/rStp0</u>
+</pre>
+
+<p>
+ This will restore the root filesystem data.
+</p>
+
+<p>
+ For <b>SCO Openserver 5.0</b> only, unmount the root filesystem and
+ mount the boot filesystem:
+</p>
+
+<pre>
+  # <u>cd /</u>
+  # <u>umount /mnt</u>
+  # <u>mount /dev/boot /mnt</u>
+</pre>
+
+<p>
+ Insert the `boot filesystem backup' tape.  Continue as before:
+</p>
+
+<pre>
+  # <u>cd /mnt</u>
+  # <u>cpio -ivdum &lt;/dev/rStp0</u>
+</pre>
+
+<p>
+ For <b>All Versions</b>
+</p>
+
+<p>
+ Once this has completed check that the root filesystem (and for
+ OpenServer 5, the boot filesystem) are clean by running <b>fsck</b>
+ again after unmounting them first.  Use the following commands:
+</p>
+
+<pre>
+  # <u>cd /</u>
+  # <u>umountall</u>
+  # <u>fsck /dev/hd0root</u>
+  # <u>fsck /dev/boot</u>
+</pre>
+
+<p>
+ For <b>SCO Openserver 5.0</b> only
+</p>
+
+<pre>
+  # <u>haltsys</u>
+</pre>
+
+<p>
+ And wait for the system to reply with:
+</p>
+
+<pre>
+  ***     Safe to power off       ***
+                 or
+  ***  Press any key to reboot    ***
+</pre>
+
+<p>
+ Power the machine off, remove the floppy disk, and try to reboot from
+ the hard disk.  If the system still fails to boot, attempt to re-write
+ the boot tracks as described in <a href="#RTFToC12">Rebuilding on new
+ root disk</a>. Failing that, contact UNIX Support.
+</p>
+
+<h3><a name="RTFToC11">Restoring other filesystems</a></h3>
+
+<p>
+ If there were additional filesystems on the root filesystem disk, try
+ to ascertain their condition.  If they were auto mount filesystems,
+ the system  will try to clean them automatically when going multiuser.
+ If this was successful, examine the contents to check their integrity.
+ If the data looks suspect or behaves incorrectly, you will have to
+ restore this from the backup you made of this too.
+</p>
+
+<p>
+ Note that it is preferable to be in single user mode to do the
+ restore.  If the system was allowed to go multiuser, use the following
+ command at the console (tty01) responds instead with:
+</p>
+
+<pre>
+  # <u>init 1</u>
+</pre>
+
+<p>
+ Use <b>mount</b> to check if the filesystem is already mounted:
+</p>
+
+<pre>
+  # <u>mount</u>
+  / on /dev/root read/write on (some date)
+  /stand on /dev/boot read only on (some date)
+  /u on /dev/u read/write on (some date)
+</pre>
+
+<p>
+ /u is only used as an example in this document.  In practice, there
+ may be more filesystems of widely differing names on other systems.
+ If the filesystem(s) is/are not mounted, mount it/them now:
+</p>
+
+<pre>
+  # <u>mountall -f</u>
+</pre>
+
+<p>
+ Change directory to the relevant mount point.  In this case:
+</p>
+
+<pre>
+  # <u>cd /u</u>
+</pre>
+
+<p>
+ Insert the appropriate filesystem backup tape.  Start the restore:
+</p>
+
+<pre>
+  # <u>cpio -ivdum &lt;/dev/rStp0</u>
+</pre>
+
+<p>
+ Again, `rStp0' is only an example.  Use your own tape device name if
+different.
+</p>
+
+<p>
+ Once the restore has completed, check the integrity of the data on
+ that filesystem using <b>fsck</b>.
+</p>
+
+<p>
+ Use the same procedure as detailed previously, if the additional
+ filesystems were residing on separate disks.
+</p>
+
+<h3><a name="RTFToC12">Rebuilding on new root disk</a></h3>
+
+<p>
+ This section applies too to an existing disk that has been low level
+ formatted or has lost its boot track and/or its fdisk table.
+</p>
+
+<p>
+ The majority of the procedure is the same as if you were
+ re-installing an original drive, with the notable exception that the
+ drive has to be manually partitioned and made bootable before the
+ restore can take place.  Proceed as follows.
+</p>
+
+<p>
+ For a new drive, ensure that the drive is installed correctly.  In
+ the case of SCSI drives, make sure that the ID matches that of the
+ original drive, and that it is terminated appropriately for it's
+ position on the SCSI bus.
+</p>
+
+<p>
+ Boot off of the root/boot floppy set as detailed at the beginning of
+ the previous section.
+</p>
+
+<p>
+ Use the <b>fdisk</b> command to initialise the UNIX area as
+ follows:
+</p>
+
+<pre>
+  # <u>fdisk</u>
+</pre>
+
+<p>
+ If the disk needs to contain a DOS partition, make sure that this was
+ installed prior to re-booting in UNIX
+</p>
+
+<p>
+ Follow the on-screen instructions to either use the whole disk for
+ UNIX or use rest of disk for UNIX if DOS partition is installed.  Make
+ the UNIX partition active.
+</p>
+
+<p>
+ Next, the disk partition containing SCO UNIX or OpenServer 5 needs to
+ be divided into filesystems.  This is where you will need the details
+ of the original division table installation.
+</p>
+
+<p>
+ Use the <b>divvy</b> command as follows:
+</p>
+
+<pre>
+  # <u>divvy -i /dev/hd0a</u>
+</pre>
+
+<p>
+ The `-i' option to <b>divvy</b> specifies an installation.  Answer
+ the questions about root and swap sizes with any legal number.  Then
+ answer yes to the question about making manual changes.  Edit the
+ start and end blocks of each filesystem according to the original
+ values using the <b>s</b> and <b>e</b> menu options. Ensure that none
+ of the start and end blocks overlap on each filesystem, and that the
+ names of filesystems correspond with the original, using  the <b>n</b>
+ (name) menu option to set the names as required.
+</p>
+
+<p>
+ When each filesystem has been named, and the correct start/end blocks
+ have been selected, use the <b>c</b> (create) option to initialise the
+ filesystems.  Do not, however do this on the `swap' area, as this must
+ remain raw.  Each filesystem will now have a type assigned to it.
+ Ensure this ties up with the original.  The default for UNIX 3.2v4.2
+ is <b>EAFS</b> and in OpenServer 5 the default is <b>HTFS</b>, apart
+ from /boot which has to be EAFS to be bootable.
+</p>
+
+<p>
+ Select the <b>q</b> (quit) option followed by the <b>i</b> (inatall)
+ option from the final menu and the machine should report:
+</p>
+
+<pre>
+  making filesystems
+</pre>
+
+<p>
+ Once this has completed, create a lost+found directory in the new
+ root directory.  In order to do this, you need to mount the hard disk
+ first:
+</p>
+
+<pre>
+  # <u>cd /</u>
+  # <u>mount /dev/hd0root  /mnt</u>
+</pre>
+
+<h4><a name="RTFToC13">Creating lost+found</a></h4>
+
+<p>
+ Create the lost+found directory, and the `slots' in it as follows:
+</p>
+
+<pre>
+  #<u> cd /mnt</u>
+  # <u>mkdir lost+found</u>
+  # <u>cd lost+found</u>
+  # <u>for a in 1 2 3 4 5 6 7 8 9 0</u>
+  &gt; <u>do</u>
+  &gt; <u>for b in 1 2 3 4 5 6 7 8 9 0</u>
+  &gt;  <u>do</u>
+  &gt; <u>&gt;${a}${b}</u>
+  &gt; <u>rm ??</u>
+  &gt; <u>done</u>
+  &gt; <u>done</u>
+  #
+</pre>
+
+<p>
+ Next, re-write the boot tracks as follows:
+</p>
+
+<pre>
+  # <u>dd if=/etc/hdboot0 of=/dev/hd0a</u>
+  # <u>dd if=/etc/hdboot1 of=/dev/hd0a bs=1k seek=1</u>
+  # <u>dparam -w</u>
+</pre>
+
+<p>
+ At this point, check each filesystem with fsck to ensure integrity -
+ this also acts as a check to ensure that the boot track data has not
+ been written over the start of the disk by mistake, which can easily
+ happen if hd00 is specified instead of hd0a in the dd commands above.
+ If the mistake is made the fdisk and divvy tables will be lost so fsck
+ will give an error.
+</p>
+
+<pre>
+  # <u>fsck /dev/hd0root</u>
+  # <u>fsck /dev/boot</u>      (OpenServer 5 only)
+</pre>
+
+<p>
+ The drive is now ready to have the data restored. You can shut the
+ system down at this point, (<b>haltsys</b>) and proceed as detailed in
+ the section `Rebuilding on original disk'.
+</p>
+
+<h3><a name="RTFToC14">Rebuilding non-root disks</a></h3>
+
+<p>
+ For any additional disks that contain good filesystems then the
+ procedure discussed under the section `Rebuilding on original disk'
+ can be followed.
+</p>
+
+<p>
+ For additional disks that are new, re-formatted, or otherwise wiped,
+ it is best to use the mkdev hd command to create them again.  This
+ will run fdisk followed by divvy.
+</p>
+
+<p>
+ The lost+found directory will need creating with empty slots as per
+ the <a href="#RTFToC13">Creating lost+found</a> sub-section, or an
+ easier method is to use the <u>mkdev fs</u> command.  This will ask
+ for the device name, which for a filesystem called user2 would be
+ <u>/dev/user2</u>.  Answer the questions about automatically mounting
+ and whether users can mount the filesystem.  The <b>mkdev fs</b>
+ script will then say <b>Reserving slots in lost+found directory</b>.
+ Once complete you will need to edit the entry that it has added to the
+ file <b>/etc/default/filesys</b> as one will already exist from the
+ original installation.  Below is an example of this file:
+</p>
+
+<pre>
+  bdev=/dev/users cdev=/dev/rusers \
+      desc="users:users:yes:yes:1" \
+      mountdir=/users rcmount=yes mount=no
+  #
+  bdev=/dev/user2 cdev=/dev/ruser2 \
+      desc="user2:user2:yes:yes:1" \
+      mountdir=/user2 rcmount=yes mount=no
+  <b>#
+  bdev=/dev/user2 cdev=/dev/ruser2 \
+      desc="user2:user2:yes:yes:1" \
+      mountdir=/user2 rcmount=yes mount=no</b>
+</pre>
+
+<p>
+ Delete the second entry above.  Note that sometimes such entries
+ appear all on one physical line instead of these logical lines where
+ the backslash is treated as a "continuation" mark.
+</p>
+
+<hr>
+
+</body>
+
+</html>

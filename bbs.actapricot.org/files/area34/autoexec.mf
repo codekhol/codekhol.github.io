@@ -1,0 +1,4 @@
+path=a:\;a:\dosutils\;
+prompt Server $n$g$
+netstart
+

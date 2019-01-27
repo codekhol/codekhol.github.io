@@ -1,0 +1,139 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) NET372A contains two new
+daemons and a new socket driver for the following products:
+
+SCO TCP/IP Release 1.2.1 
+SCO Open Desktop Lite Release 3.0
+SCO Open Desktop Release 3.0
+SCO Open Server Network System Release 3.0
+SCO Open Server Enterprise System Release 3.0
+
+Descriptions of the new daemons and driver provided in SLS NET372A follow:
+
+- /etc/rlogind
+
+This new remote login daemon corrects a problem where extraneous characters
+were occasionally displayed during the login process. 
+
+- /etc/snmpd
+
+This new Simple Network Management Protocol (SNMP) daemon provides support 
+for SNMP Multiplexing (SMUX) peers.  It also fixes a problem that caused the 
+original SNMP daemon to allocate extraneous amounts of memory that would 
+eventually affect system performance.  The new snmpd also allows proper 
+recognition of traps sent from an SMUX peer.  The original snmpd considered 
+all traps sent from an SMUX peer to be Authentication Failure traps.
+
+- /etc/conf/pack.d/socket/Driver.o
+
+This new socket driver provides the ability to set non-blocking mode on
+a socket via the O_NONBLOCK argument to the fcntl() system call.
+
+To install SLS NET372A, take the following steps:
+
+	1. Shutdown and reboot your system.  Enter System Maintenance 
+	   mode by typing your root password at the prompt:
+
+
+	   Type CONTROL-d to proceed with normal startup,
+	   (or give root password for System Maintenance)
+
+	2. Type:
+
+		   /etc/custom
+
+	3. The main custom "menu" will appear.  The "Install" option will
+	   be highlighted.  Press <Return> to select the "Install" option.
+
+	4. A list of installed products will appear.  The first item in 
+	   the list, "A New Product", is highlighted.  Press <Return> 
+	   to select "A New Product".
+
+	5. Custom will now display your installation options.  By default,
+	   "Entire Product" is highlighted.  Press <Return> to select
+	   "Entire Product".
+
+	6. Custom will prompt you to insert "Distribution Floppy 1".  Insert
+	   the enclosed diskette into the drive and press <Return> while 
+	   "Continue" is highlighted.
+
+	7. After extracting some information from the diskette, custom 
+	   will display information indicating that it is saving several 
+	   files.  Custom will once again prompt you to insert volume 1.
+	   Press <Return> while "Continue" is highlighted.
+
+	8. After extracting several files, custom will display messages
+	   indicating that it is installing the new daemons and driver.
+	   Custom will then prompt you for a serial number and activation 
+	   key.  Enter the appropriate serial number and activation key 
+	   based on the information displayed on the screen. 
+
+	9. After entering the serial number and activation key, you
+	   will be prompted:
+
+		"Do you wish to relink the kernel now? (y/n)"
+
+	   Enter "y" at this prompt.
+
+       10. After the relink of the kernel is complete, you will be
+	   prompted:
+
+		"Do you want this kernel to boot by default? (y/n)"
+
+	   Enter "y" at this prompt.
+
+       11. Next, you will be prompted:
+
+		"Do you want the kernel environment rebuilt? (y/n)"
+
+	   Enter "y" at this prompt.
+
+       12. After the kernel environment has been rebuilt, custom 
+	   will prompt you to "Press any key to continue".
+	   Press <Return>.  Custom will then display the message:
+
+		"Checking file permissions...".
+
+       13. After completing these steps, you will be returned to the
+	   main custom menu.  You may quit out of custom at this time. 
+	   To reboot the system so that the changes take effect, type:
+
+	        /etc/reboot
+
+It should never become necessary to remove this SLS. However, should
+you need to do so, remove the SLS while in System Maintenance mode. 
+Enter the command:
+
+	/etc/custom
+
+and choose the menu selections:
+
+	Remove -> Support Level Supplement net372 -> ALL
+
+Follow the directions displayed on the screen to remove the SLS.
+
+During both the installation and removal of this SLS, you are asked to
+relink the kernel. If you should choose not to do so during the installation
+or removal process, execute the following commands at a later time while
+in System Maintenance mode:
+
+	cd /etc/conf/cf.d
+	./link_unix
+
+Answer "y" to the questions presented and then reboot your system with the
+command:
+
+	/etc/reboot
+
+to complete installation or removal of the SLS.
+	  
+If you have any questions, please call our SCO Customer Services Department
+at (408) 425-4726.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

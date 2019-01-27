@@ -1,0 +1,140 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) UOD370A (Sdsk Update 1.0)
+resolves system panics due to memory corruption caused by SCSI disk
+scatter/gather during raw I/O.
+
+In order to install this SLS you must be running SCO UNIX System Release 3.2
+Operating System Version 4.0 with Maintenance Supplement Version 4.1 or SCO 
+Open Desktop Release 2.0.
+
+See section III for a description and list of functional components.
+
+SLS UOD370A consists of a custom installable diskette to be installed after
+the operating system is loaded.
+
+I. Installation
+
+To install SLS UOD370A on an existing operating system using custom(ADM), 
+take the following steps:
+
+1.   If the system is running in multiuser mode, log in as root 
+     on the console and, after warning other users that the system 
+     will be down for some time, enter the command:
+
+          shutdown -y -g0
+
+     The system will then execute a controlled shutdown operation 
+     which will display the following message when the shutdown 
+     process is complete:
+
+                 **   Safe to Power Off   **
+                              or
+              **   Press Any Key to Reboot   **
+
+
+2.   Reboot the system.
+
+3.   When the system reboots, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+       (or give root password for system maintenance):
+
+     Enter the root password and press <Enter>.
+     Wait until the "#" prompt appears.
+
+4.   Next, insert the SLS diskette in the floppy drive and enter
+     the command:
+     
+               /etc/custom
+
+     The custom menu will appear.
+
+5.   To select the following, use the arrow keys to highlight it
+     and press <Enter>:
+
+               Install -> A New Product -> Entire Product
+
+     -    Position the cursor so that 'Install' is highlighted
+          and press <Enter>.
+
+     -    Make sure the words 'A New Product' are highlighted in 
+	  the window found in the lower right hand corner of the 
+	  screen; press <Enter>.
+
+     -    Make sure the words 'Entire Product' are highlighted in 
+	  the 'Choose an option' section of the screen; press <Enter>.
+
+     -    You will be prompted to 'Insert distribution Volume 1 and 
+	  press <Enter>'.   The diskette is already in the drive, 
+	  therefore press <Enter>.
+
+     -    You will see the following messages:
+
+               Installing custom data files
+               Executing Product Prep Script
+
+     -    The message 'Creating file lists' will flash on the
+          screen.  You will be prompted to 'Insert the requested 
+	  Volume and press <Enter>'.  The diskette is already in 
+	  the drive, therefore press <Enter>.
+
+     -    You will see the following message:
+
+               Extracting Files
+
+     -    When asked if you wish to relink the kernel you should 
+	  reply 'Y' in order to ensure the modifications from SLS
+	  UOD370A are included in the kernel.
+
+     -    You will then be prompted to 'Press any key to continue'; 
+	  press <Enter>.
+
+     -    At the main custom menu, move the highlighted entry to 'Quit' 
+	  and press <Enter>.  Press <Enter> again on the highlighted 'Yes'.
+
+     -    Reboot the computer.
+
+     -    UOD370A is now successfully installed.
+
+
+II.  Re-installation
+
+Should it be necessary to re-install this SLS, you must first use custom(ADM)
+to remove it.  After having successfully removed the SLS the system should 
+then be shutdown and rebooted to System Maintenance mode; only then should 
+custom(ADM) be used to re-install SLS UOD370A.
+
+
+III. Functional Components and Description of UOD370A
+
+Within the SCSI disk driver, scatter_rawio() performs I/O directly to user 
+space.  If the I/O transfer size is set to BSIZE (1024), Sdskstart() passes 
+the actual page address to Sdsk_getcmd().  If the I/O transfer size is greater
+than BSIZE then Sdskstart() passes the page table address to Sdsk_getcmd().  
+For transfers of size BSIZE, Sdskstart() doesn't ensure there is adequate 
+space in the user area for the transfer, therefore the page following the 
+user page may get corrupted.
+
+This replacement Sdsk driver solves the problem by checking that adequate
+space does exist in the user page for transfers of BSIZE, and if it does not,
+Sdskstart() passes the page table address to Sdsk_getcmd() rather than the
+actual page address.
+
+The functional file installed by SLS UOD370A is:
+
+     /etc/conf/pack.d/Sdsk/Driver.o
+
+
+NOTE:  Refer to the Release and Installation Notes for more information 
+       on how to use custom(ADM).
+
+
+If you have any questions, please call our SCO Customer Services Department
+at (408) 425-4726.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

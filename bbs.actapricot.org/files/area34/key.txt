@@ -1,0 +1,14 @@
+ DOSUTILS\IBM\KEY.COM
+ ====================
+
+	This is a small program to turn off the APRICOT specific keys on the
+ XEN-i range. This is so that programs such as compiled QUICK BASIC ignore 
+ these keys which otherwise may cause unwanted effects.
+
+ USAGE: Key off 
+
+ However if it is required to use the APRICOT specific keys after exiting from
+ the relevant program then type 
+
+ USAGE: Key on
+ 

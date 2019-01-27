@@ -1,0 +1,482 @@
+
+ ____________________
+ (c) 1998 The Santa Cruz Operation, Inc.  All rights reserved.
+
+
+
+ Release Supplement 505A
+ for SCO OpenServer Release 5.0.5
+
+    For a complete list of the changes that RS505A (Release Supplement for
+    SCO OpenServer(TM) Release 5.0.5) makes to an SCO OpenServer Release
+    5.0.5 system, see this file:
+
+       ftp://ftp.sco.com/Supplements/rs505a/rs505a.fixlist
+
+
+
+    This document covers the following topics:
+
+    +  ``Highlights of this supplement''
+
+    +  ``Who should install the supplement?''
+
+    +  ``Installing the supplement''
+
+    +  ``Installing the supplement across the network''
+
+    +  ``Removing the supplement''
+
+    +  ``SCO SMP and RS505A''
+
+    +  ``Preserving customized files''
+
+    +  ``Year 2000 date-processing fixes''
+
+    +  ``New pkgadd subsystem''
+
+    +  ``New uname -v behavior''
+
+
+
+ Highlights of this supplement
+
+    The following list highlights some of the more prominent changes this
+    supplement makes to an SCO OpenServer Release 5.0.5 system.  For more
+    details on any item, see the fixlist file referred to at the beginning of
+    this cover letter.
+
+    +  Inoperative buttons in the Backup Manager now work.
+
+    +  The DFX driver now works correctly on a Corollary MP system.
+
+    +  The paging daemon vhand no longer consumes excessive resources.
+
+    +  The idrc.d scripts are now executed when expected.
+
+    +  A hang during boot after installing SCO SMP(r) is eliminated.
+
+    +  Performance is improved in Intel Pro100B drivers (versions later than
+       1.1.3).
+
+    +  The system no longer panics when an attached Chase IOLAN
+       communications server is switched off.
+
+    +  MaxSpeed external console stations no longer lose their configuration.
+
+    +  Shared interrupts are now handled correctly on machines with SCO
+       SMP(r), eliminating problems that caused some programs to consume
+       excessive CPU time, generate excessive interrupts, and hang.
+
+    +  Various legacy applications now work correctly under SCO OpenServer
+       Release 5.0.5 286 emulation.
+
+    +  Various programs have improvements related to the millennium change.
+       See this cover letter's section entitled ``Year 2000 date-processing
+       fixes''.
+
+    +  The entire pkgadd subsystem is updated.  See this cover letter's
+       section entitled ``New pkgadd subsystem''.
+
+    +  The -v option to uname(C) now displays the operating system version.
+       See this cover letter's section entitled ``New uname -v behavior''.
+
+    If you have questions regarding this supplement, or the product on which
+    it is installed, please contact your software supplier.
+
+
+ Who should install the supplement?
+
+    Install this supplement on all SCO OpenServer Release 5.0.5 systems,
+    including systems with these supplements installed:
+
+    +  oss459b
+
+    +  oss491a
+
+    RS505A includes and supersedes the above supplements.  You do not need to
+    remove these supplements before installing RS505A.
+
+    _________________________________________________________________________
+       NOTE  RS505A backs out a fix (bug ID SCO-247-112) that oss491a made
+       to the pseudo tty driver (spt).  This fix prevented the select()
+       call on the pty master from always returning ``yes'' after the
+       slave is closed, which caused some programs to hang.  It was
+       discovered that this fix caused other programs, including the
+       Network Configuration Manager, to hang.
+    _________________________________________________________________________
+
+
+
+ Installing the supplement
+
+    _________________________________________________________________________
+       NOTE  If you are installing both RS505A and SCO SMP, install SCO
+       SMP first. If you install SCO SMP at a later time, you must remove
+       RS505A first.  See this cover letter's section entitled ``SCO SMP
+       and RS505A''.
+    _________________________________________________________________________
+
+    You can install RS505A from distribution media (such as a CD-ROM or a
+    floppy disk) or from media images on a software server or web site.
+
+    The supplement consists of four files with names of the form VOL.nnn.nnn.
+    If you download the supplement as media images, make sure you have all
+    four files.
+
+    To install the supplement:
+
+    1.  Log in as root.
+
+    2.  Start the Software Manager by double-clicking on its icon on the
+        desktop, or by entering the following at the command-line prompt:
+
+           scoadmin software
+
+
+    3.  From the Software menu, select Install New.
+
+       _________________________________________________________________________
+           NOTE  You no longer need to select the Load and Apply menu
+           options to install a supplement (which is a software patch), as
+           you did in SCO OpenServer Releases 5.0.0 and 5.0.2.  Now you
+           install a supplement using the same procedure you use to
+           install any software product.
+       _________________________________________________________________________
+
+
+    4.  When prompted for the host (machine), select the current host and
+        then Continue.
+
+    5.  In the Select Media window:
+
+        a.  If you are loading this release supplement from a media image,
+            click on Media Device and select Media Images, then Continue.
+            (You may need to pull down the scroll bar before you see the
+            Media Images option.)
+
+            In the Enter Image Directory window, enter the absolute pathname
+            for the directory in which the media images reside; for example:
+
+               /tmp
+
+            Click on OK.
+
+        b.  If you are loading this release supplement from a CD-ROM or
+            floppy disk, select the appropriate drive and then Continue.
+
+    6.  The Install Selection window lists the two supplements included in
+        RS505A.
+
+           You must install the Software Manager Supplement first.
+
+        Select only the ``Software Manager Supplement'', then click on
+        Install.
+
+        There is a short delay while the installation takes place, and a
+        message instructs you to restart the Software Manager before
+        installing the rest of RS505A.
+
+    7.  In the Installation Complete window, click on OK.  The Software
+        Manager should now list the Software Manager Supplement.
+
+    8.  Exit the Software Manager by selecting Host, then Exit.  Then restart
+        the Software Manager, now patched by the supplement you just
+        installed.
+
+    9.  From the Software menu, select Install New.
+
+    10. When prompted for the host (machine), select the current host and
+        then Continue.
+
+    11. In the Select Media window:
+
+        a.  If you are loading this release supplement from a media image,
+            click on Media Device and select Media Images, then Continue.
+            (You may need to pull down the scroll bar before you see the
+            Media Images option.)
+
+            In the Enter Image Directory window, enter the absolute pathname
+            for the directory in which the media images reside; for example:
+
+               /tmp
+
+            Click on OK.
+
+        b.  If you are loading this release supplement from a CD-ROM or
+            floppy disk, select the appropriate drive and then Continue.
+
+    12. In the Install Selection window, select the remaining supplement.
+        Click on Install.
+
+        There is a short delay while the installation takes place.
+
+    13. In the Installation Complete window, click on OK.  The Software
+        Manager should list the supplements you selected.  The patched
+        software is now installed.
+
+    14. Exit the Software Manager by selecting Host, then Exit.
+
+    15. Reboot the machine.  The Software Manager automatically relinks the
+        kernel after each installation.  You must reboot before the new
+        kernel takes effect.
+
+
+ Installing the supplement across the network
+
+    You can install the supplement from one SCO OpenServer Release 5.0.5
+    machine onto another across a TCP/IP network.  To do so, you need a
+    software server, which you can create as described in Chapter  21,
+    ``Installing and managing software over the network'' in the Networking
+    Guide.  This server has a user account called swadmin.
+
+    Use the Software Manager to install or load RS505A on the software
+    server.  (See this cover letter's section entitled ``Installing the
+    supplement''.)
+
+    To install the supplement onto a local machine from the software server,
+    start the Software Manager and select Install New.  In the Begin
+    Installation window, you are prompted for the source location of the
+    patch.  Select From Another Host.  You will need to provide the name of
+    the software server, as well as the password of the swadmin user on the
+    software server.
+
+
+
+ Removing the supplement
+
+    _________________________________________________________________________
+       NOTE  You must remove software patches (such as release
+       supplements) in the reverse order of their installation.  In other
+       words, if you installed ``Patch1'', then ``Patch2'', then
+       ``Patch3'', you must remove ``Patch3'', then ``Patch2'', before you
+       can remove ``Patch1''.
+    _________________________________________________________________________
+
+
+    To remove a supplement:
+
+    1.  Log in as root.
+
+    2.  Start the Software Manager by double-clicking its icon on the
+        desktop, or by entering the following at the command-line prompt:
+
+           scoadmin software
+
+
+    3.  Select the title of the supplement you are removing.
+
+    4.  From the Software menu, select Remove Software.  In the confirmation
+        window, verify that you selected the right supplement, then click on
+        Remove.
+
+       _________________________________________________________________________
+           CAUTION  Removing a supplement (patch) in the current SCO
+           OpenServer release corresponds to rolling it back and unloading
+           it in earlier SCO OpenServer releases.  If you need to keep a
+           copy of a patch loaded, click on More Options in the Confirm
+           Selected Software window. Then, specify Leave Loaded, and click
+           on Remove.
+       _________________________________________________________________________
+
+        There is a short delay, then the Removal complete window appears.
+        Click on OK.  The Software Manager should no longer list the
+        supplement you removed.
+
+       _________________________________________________________________________
+           NOTE  Some effects of certain supplements are irreversible
+           because of the nature of the correction (for example, restoring
+           correct permissions on system directories).  However, removing
+           the supplement will remove the patch name from the system.
+       _________________________________________________________________________
+
+
+    5.  When you have finished removing and installing software, exit the
+        Software Manager by selecting Host, then Exit.
+
+    6.  Reboot the machine.  The Software Manager automatically relinks the
+        kernel after software is removed.  You must reboot before the new
+        kernel takes effect.
+
+
+ SCO SMP and RS505A
+
+    If you are installing both RS505A and SCO SMP, install SCO SMP first.  If
+    you install SCO SMP at a later time, remove RS505A first, then reinstall
+    RS505A after installing SCO SMP.
+
+    When you remove RS505A:
+
+         In the Confirm Selected Software window, click on More options, then
+         select Leave Loaded.
+
+    To reinstall RS505A:
+
+         In the Select Media window, select Loaded Software as the media
+         device.  Then select RS505A for installation.
+
+    See this cover letter's sections entitled ``Removing the supplement'' and
+    ``Installing the supplement''.
+
+
+ Preserving customized files
+
+    RS505A backs up the following user-configurable files, then modifies or
+    replaces them:
+
+       /etc/conf/pack.d/str/space.c
+       /etc/conf/pack.d/tcp/space.c
+       /etc/default/device.tab
+       /etc/rc2
+       /etc/rc2.d/P86scologin
+       /etc/syslog.conf
+       /usr/adm/install/admin/default
+       /usr/lib/hw/pci.cfg
+
+    If you have customized any of these files, you can restore your changes
+    from the backed-up copies after you install the supplement.  The files
+    are backed up to:
+
+       /usr/lib/custom/rs505a.sav/etc/conf/pack.d/str/space.c
+       /usr/lib/custom/rs505a.sav/etc/conf/pack.d/tcp/space.c
+       /usr/lib/custom/rs505a.sav/etc/default/device.tab
+       /usr/lib/custom/rs505a.sav/etc/rc2
+       /usr/lib/custom/rs505a.sav/etc/rc2.d/P86scologin
+       /usr/lib/custom/rs505a.sav/etc/syslog.conf
+       /usr/lib/custom/rs505a.sav/usr/adm/install/admin/default
+       /usr/lib/custom/rs505a.sav/usr/lib/hw/pci.cfg
+
+
+
+ Year 2000 date-processing fixes
+
+    The following modifications have been made to system utilities and ioctls
+    that affect date display or date processing:
+
+    sddate(C), rtc(HW), getdate(S), sysi86(S), strptime(S)
+         Year values in the range 69-99 refer to years in the twentieth
+         century (1969 to 1999 inclusive); values in the range 00-68 refer to
+         years in the twenty-first century (2000 to 2068 inclusive).
+
+    getclk(M), setclock(ADM)
+         A new flag, -t, calls date(C) with the -t flag (which includes the
+         century).
+
+    passwd(C)
+         Output of the -s option displays the four-digit year.
+
+    asktime(ADM)
+         Now accepts dates in the following format:
+
+            [[CC]YYMMDD]hhmm[.ss]
+
+         CC is the (optional) century.
+
+    pkginfo(F)
+         PSTAMP now displays four-digit years.
+
+    get(CP), prs(CP)
+         The -ccutoff option now uses the same algorithm described for
+         sddate(C) above.
+
+    SCO offers a Year 2000 Date Processing Limited Warranty for designated
+    software that adheres to the year 2000 date processing requirements
+    listed in the warranty and meets other criteria also stated in the
+    warranty.  For information on Year 2000 and SCO, see:
+
+       http://www.sco.com/year2000
+
+
+
+ New pkgadd subsystem
+
+    The pkgadd subsystem has been replaced with an updated version based on
+    the pkgadd in UnixWare(r) 7.  The changes consist of additions to the
+    previous pkgadd functionality, so commands you are currently using in
+    scripts and programs will continue to behave as expected.
+
+    The related manual pages will be updated as soon as possible.  Until
+    then, for information or instructions on using the new features of the
+    pkgadd subsystem, please see the UnixWare 7 manual pages, at:
+
+       http://uw7doc.sco.com/man/html.1
+
+       http://uw7doc.sco.com/man/html.1M
+
+       http://uw7doc.sco.com/man/html.4
+
+
+    The following manual pages are relevant:
+
+       displaypkg(1M)      pkginfo(1)
+       installpkg(1M)      pkgmk(1)
+       pkgadd(1M)          pkgparam(1)
+       pkgask(1M)          pkgproto(1)
+       pkgchk(1M)          pkgtrans(1)
+       pkgrm(1M)           depend(4)
+       removepkg(1M)       pkginfo(4)
+                           pkgmap(4)
+
+
+
+ New uname -v behavior
+
+    In SCO OpenServer Release 5.0.5, the uname(C) command was changed so that
+    uname -v now displays the version number of the SCO(r) operating system
+    (for example, 5.0.5), rather than the AT&T sub-version number, 2.  (This
+    change was left out of the latest SCO OpenServer documentation.)
+
+    Once you install RS505A, you can recover the old behavior of the -v
+    option by setting the environment variable UNAME_OLD.
+
+    Setting UNAME_OLD also causes uname to display the machine's node name
+    instead of the operating system name when you use the -a or -s option to
+    uname, or execute uname with no options.
+
+    To set UNAME_OLD, include it in the environment in which you are running
+    uname; for example:
+
+       UNAME_OLD=yes uname -v
+
+    Alternatively, set and export UNAME_OLD at the command line:
+
+       set UNAME_OLD=yes; export UNAME_OLD
+
+    If you set and export UNAME_OLD, you must explicitly unset it to remove
+    its effect:
+
+       unset UNAME_OLD
+
+
+    ____________________
+        SCO, The Santa Cruz Operation, the SCO logo, SCO Doctor, SCO Doctor
+        Lite, SCO Doctor for Networks, SCO OpenServer, SCO TermLite, SCO
+        TermVision, SCO Vision97, SCO VisionFS, Skunkware, and UnixWare are
+        trademarks or registered trademarks of The Santa Cruz Operation, Inc. in
+        the US and other countries.  SQL-Retriever, SuperVision, TermVision and
+        XVision are trademarks or registered trademarks of Visionware Limited, a
+        subsidiary of The Santa Cruz Operation, Inc. UNIX is a registered
+        trademark of The Open Group in the US and other countries.  Sun, Sun
+        Microsystems, Java, Java Studio, and Java Workshop are trademarks or
+        registered trademarks of Sun Microsystems, Inc.  in the United States
+        and other countries, and are used under license.  Netscape, Netscape
+        Communicator, Netscape Enterprise Server, Netscape FastTrack Server,
+        Netscape Mail Server, Netscape Navigator, Netscape Navigator Gold, and
+        LiveWire are trademarks or registered trademarks of Netscape
+        Communications Corporation in the US and other countries.  Basic Server
+        Plus, RealNetworks, and RealSystem are trademarks of RealNetworks, Inc.
+        in the US and other countries.  ARCserve and Cheyenne are registered
+        trademarks of Cheyenne Software, Inc.  The Santa Cruz Operation, Inc.
+        and SCO Skunkware are not related to, affiliated with or licensed by the
+        famous Lockheed Martin Skunk Works(r), the creator of the F-117 Stealth
+        Fighter, SR-71, U-2, Venturestar(TM), Darkstar(TM), and other pioneering
+        air and spacecraft.   All other brand and product names are or may be
+        trademarks of, and are used to identify products or services of, their
+        respective owners.  The Santa Cruz Operation, Inc. reserves the right to
+        change or modify any of the product or service specifications or
+        features described herein without notice.  This document is for
+        information only.  The Santa Cruz Operation, Inc. makes no express or
+        implied representations or warranties in this document. Copyright (c)
+        1998 The Santa Cruz Operation, Inc.  All Rights Reserved.
+
+

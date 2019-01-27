@@ -1,0 +1,86 @@
+
+Dear SCO Customer, 
+
+Enclosed is Support Level Supplement (SLS) unx318.  This SLS provides a new
+serial driver for SCO UNIX System V/386 Release 3.2 Operating System Version 
+2.0 and SCO Open Desktop Release 1.1 for computers based on Micro Channel 
+Architecture (MCA). This new driver addresses problems with system panics 
+that may be experienced when using non-intelligent serial multiport cards.  
+SLS unx318 should ONLY be applied to systems running SCO UNIX System V/386 
+Release 3.2 Operating System Version 2.0 or SCO Open Desktop Release 1.1 for 
+computers based on Micro Channel Architecture (MCA).
+
+Following are instructions for the installation of SLS unx318:
+
+(1) Bring the system into System Maintenance mode. 
+   
+(2) Type the following commands after the system prompt:
+
+       	# cd /
+	# /etc/custom
+  
+	(do not type the "#", this is the system prompt)
+
+(3) Choose "Install".  Then choose "A New Product".  Next choose 
+    "Entire Product".  Insert the Micro Channel Serial Driver Enhancement 
+    disk and choose "Continue".  After driver backup, press any key to 
+    continue.  At this point, choose "Continue" again.  It is not necessary 
+    to remove the Micro Channel Serial Driver Enhancement disk.  
+ 
+(4) Answer "y" to the question about relinking a new kernel.  Answer "y" to 
+    the question about allowing the kernel to boot by default.  You will also 
+    want to answer "y" to the question about rebuilding the kernel environment.
+    Press any key to continue after the kernel relink has completed.  
+
+(5) After the kernel relink completes, choose "Quit" to exit custom.  At this 
+    point, type the following to reboot your system:
+
+	# /etc/shutdown 
+
+	(do not type the "#", this is the system prompt)
+
+(6) Installation of the Micro Channel Serial Driver Enhancement is now 
+    complete. 
+
+Following are instructions for the removal of SLS unx318:
+
+If you want to restore the previous serial drivers on the system, use the 
+following procedure: 
+
+(1) Bring the system into System Maintenance mode. 
+
+(2) Type the following: 
+
+        # cd /
+	# /etc/custom
+        
+	(do not type the "#", this is the system prompt)
+
+(3) Choose "Remove".  Then choose "Micro Channel Serial Driver Enhancement". 
+    Next choose "ALL".  Choose "Yes" to continue. 
+ 
+(4) Answer "y" to the question about relinking a new kernel.  Answer "y" to 
+    the question about allowing the kernel to boot by default.  You will also 
+    want to answer "y" to the question about rebuilding the kernel environment.
+    Press any key to continue after the kernel relink has completed.  
+
+(5) After the kernel relink completes, choose "Quit" to exit custom.  At this 
+    point, type the following to reboot your system:
+
+	# /etc/shutdown 
+
+	(do not type the "#", this is the system prompt)
+
+(5) At this point, the serial drivers have been restored to their original 
+    configuration. 
+
+NOTE: In order to determine if SLS unx318 is currently installed, run "custom" 
+      to view Products Currently Installed. 
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business
+
+SCO Support Services

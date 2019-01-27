@@ -1,0 +1,58 @@
+InS_StArT
+PCNTNW.COM
+1.0
+^AMD PCNet DOS-ODI For ISA/ISA+/ISA-II/32/PCI/PCI-II,PCNTNW.COM,IE0
+?The "PCNTNW.COM" driver supports AMD PCNet family chips.
+!OIE0(BUSTYPE)PCNet Device
+?If you know the device type, you can specify here.
+PCI
+VESA
+PNP
+ISA
+!OIE0(PORT)Base I/O Port
+?You can specify the I/O port address, or let the driver scan for you.
+@
+300
+320
+340
+360
+!OIE0(INT)Hardware Interrupt
+?If you use PCNetISA, you must select a interrupt number.
+@
+3
+4
+5
+9
+!OIE0(DMA)DMA Channel
+?If you use PCNetISA, you must select a DMA channel.
+@
+3
+5
+6
+7
+$OIE0(LED0 Value)Optional LED0 value
+0
+FFFF
+$OIE0(LED1 Value)Optional LED1 value
+0
+FFFF
+$OIE0(LED2 Value)Optional LED2 value
+0
+FFFF
+$OIE0(LED3 Value)Optional LED3 value
+0
+FFFF
+!OIE0()Optional Keyword
+TP
+FASTISA
+DMAROTATE
+$OIE0(NODE ADDRESS)Optional Node Address
+0
+7FFFFFFFFFFF
+*RIE0(FRAME)Media Frame Type(s)
+?NOTE: Ethernet_802.2 is now the default frame type for ODI drivers. Existing LANs may be using Ethernet_802.3.
+@Ethernet_802.2
+Ethernet_802.3
+Ethernet_II
+Ethernet_SNAP
+InS_EnD

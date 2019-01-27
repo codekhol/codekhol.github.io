@@ -1,0 +1,75 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) lng287b contains a new Network 
+Lock Manager (NLM) for SCO NFS.  This NLM improves the performance of locking 
+files on the local file system when the lock manager (/etc/lockd) is running.
+Previously all lock requests, both local and remote, had to be processed 
+through /etc/lockd.  With the new lock manager, locks of local files bypass 
+/etc/lockd, thereby improving performance. 
+
+This SLS is applicable to any platform with a base operating system of
+SCO UNIX System V/386 Release 3.2 Version 2.0, running SCO NFS Release 
+1.1.1.  This includes SCO Open Desktop Release 1.1.0.  This SLS also works 
+properly on systems running SCO MPX 1.1.0 with MPX Update A in any of the 
+above configurations. 
+
+On multi-processor systems, this SLS must be installed after installing
+SCO MPX 1.1.0 and SCO MPX Update A Release 1.0.0.
+
+If a previous version of this SLS is already installed, this SLS need
+only be reinstalled if SCO MPX Release 1.1.0 and SCO MPX Update A
+Release 1.0.0 are also installed. 
+
+This SLS is not applicable to systems running SCO UNIX System V/386 Release 
+3.2 Version 4.0, or to systems running a release of SCO MPX other than 1.1.0.
+
+To install SLS lng287b, take the following steps:
+
+	1. Shutdown and reboot your system.  Enter System Maintenance 
+	   mode by typing your root password at the prompt:
+
+	   Type <Ctrl>d to proceed with normal startup,
+	   (or give root password for System Maintenance)
+
+	2. Type:
+
+	   /etc/xinstall
+
+	3. Type "y" at the prompt "First Floppy? (y/n)".
+
+	4. You will be asked to enter your serial number and 
+	   activation key.  Enter the appropriate serial number 
+	   and activation key as detailed on the screen.
+	
+	5. Type	"y" at the prompt:
+	
+	   "Do you wish to relink the kernel now? (y/n/q)"
+
+	6. Type "y" at the prompt:
+
+	   "Do you want this kernel to boot by default? (y/n)"
+
+	7. Type "y" at the prompt:
+
+	   "Do you want the kernel environment rebuilt? (y/n)"
+
+	8. Type "n" at the prompt "Next Floppy? (y/n)".
+
+	9. Type:
+
+	   /etc/reboot
+
+	   to reboot the system. 
+
+       10. Bring up the system and enter multiuser mode for the 
+	   changes to take effect.
+
+
+If you have any questions, please call our SCO Customer Services Department 
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday, 
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

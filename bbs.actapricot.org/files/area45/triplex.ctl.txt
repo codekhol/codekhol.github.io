@@ -1,0 +1,275 @@
+
+;****************************************************************
+;								*
+;		  TripleX Modem Control File			*
+;								*
+;	    Copyright (C) 1988 Apricot Computers plc.		*
+;								*
+;****************************************************************
+
+; @(#) DTC Triplex modem control file  VR 1.0.0  9th February 1990
+
+; Default comms settings
+
+InitialSettings
+Begin
+    $BaudRate	     = 1200
+    $WordLength      = 8
+    $StopBits	     = one
+    $Parity	     = none
+    $Handshake	     = none
+End
+
+
+Event DialStatus
+Begin
+    "OK^M^J"	       :  $1 =	0, endevent	
+    "CONNECT^M^J"      :  $1 =	0, endevent
+    "NO CARRIER^M^J"   :  $1 = -2, endevent
+    "NO DIALTONE^M^J"  :  $1 = -3, endevent
+    "BUSY^M^J"	       :  $1 = -4, endevent
+    "ERROR^M^J"        :  $1 = -5, endevent
+End
+
+
+Event OffHookTest
+Begin
+    "OFF HOOK^M^J" : $2 = 1
+    "ON HOOK^M^J"  : $2 = 0
+    "OK^M^J"	   : endevent
+End
+
+
+Event ModemTest
+Begin
+    "OK^M^J" : endevent
+    "0^M"    : endevent
+End
+
+
+Control
+Begin
+    $SendMode = 2
+
+    if $action = 1
+	call VoiceDial
+    else
+	if $action = 2
+	    call DataDial
+	else
+	    if $action = 3
+		call VoiceHangup
+	    else
+		if $action = 4
+		    call DataHangup
+		else
+		    if $action = 5
+			call AutoanswerOn
+		    else
+			if $action = 6
+			    call AutoanswerOff
+End
+
+
+;********************************
+;      Make a voice call	*
+;********************************
+
+Procedure VoiceDial
+Begin
+    call CheckModemPresent
+
+    DialState 1 			;Dialling
+
+    send "ATD" nocr			;Dial command
+
+    if $DialMode = tone
+	send "T" nocr			;Tone dial
+    else
+	if $DialMode = pulse
+	    send "P" nocr		;Pulse dial
+
+    send $Telephone nocr		;Telephone number
+    send ";"				;Remain in command mode
+
+    $1 = -5				;Default - error
+
+    waitevent DialStatus timeout 600	;Wait for completion of dialling
+
+    if $1 = 0
+	DialState 2			;Dialled ok
+    else
+    begin
+	DialState $1			;Error in dialling
+	exitcontrol
+    end
+
+    $2 = 0				;Phone initially on the hook
+
+WaitOffHook:
+    send "ATI3" 			;Off-hook enquiry
+
+    waitEvent OffHookTest timeout 50
+
+    if $timeout
+    begin
+	DialState -5			;Error
+	exitcontrol
+    end
+
+    if $2 = 0
+	goto WaitOffHook		;Phone on the hook
+
+    send "ATH0" 			;Hangup and put call through handset
+    wait "OK^M^J" timeout 30
+
+    DialState 4 			;Phone off the hook
+
+WaitOnHook:
+    send "ATI3" 			;On-hook enquiry
+
+    waitEvent OffHookTest timeout 50
+
+    if $timeout
+    begin
+	DialState -5			;Error
+	exitcontrol
+    end
+
+    if $2 = 1
+	goto WaitOnHook 		;Phone off the hook
+
+    DialState 5 			;Phone on the hook
+End
+
+
+;********************************
+;	Make a data call	*
+;********************************
+
+Procedure DataDial
+Begin
+    call CheckModemPresent
+
+    DialState 1 			;Dialling
+
+    send "ATD" nocr			;Dial command
+
+    if $DialMode = tone
+	send "T" nocr			;Tone dial
+    else
+	if $DialMode = pulse
+	    send "P" nocr		;Pulse dial
+
+    send $telephone nocr		;Telephone number
+
+    if $ConnectionType = "V23"
+    begin
+	if $originator = computer
+	    send "+23C" nocr		;Dial in V23 computer mode
+	else
+	    send "+23T" nocr		;Dial in V23 terminal mode
+    end
+
+    send "^M" nocr			;Carriage return
+
+    $1 = -2				;Default - no carrier
+
+    waitevent DialStatus timeout 600	;Wait for completion of dialling
+
+    if $1 = 0
+	DialState 3			;Connect
+    else
+    begin
+	DialState $1			;Error in dialling
+	exitcontrol
+    end
+End
+
+
+;********************************
+;	Hangup voice call	*
+;********************************
+
+Procedure VoiceHangup
+Begin
+    delay 10				;Delay in case of any pending
+					;off-hook inquiry
+
+    send "ATH0" 			;Hangup call
+    wait "OK^M^J" timeout 30
+
+    DialState 8 			;Hangup
+End
+
+
+;********************************
+;	Hangup data call	*
+;********************************
+
+Procedure DataHangup
+Begin
+    delay 10
+
+    send "+++" nocr			;Switch to command mode
+    wait "OK^M^J" timeout 30
+
+    send "ATH0" 			;Hangup call
+    wait "OK^M^J" timeout 30
+
+    DialState 8 			;Hangup
+End
+
+
+;************************************************
+;  Enable autoanswer and wait for a connection	*
+;************************************************
+
+Procedure AutoanswerOn
+Begin
+    call CheckModemPresent
+
+    send "ATS0=1"			;Switch autoanswer on after one ring
+    wait "OK^M^J" timeout 30
+
+    DialState 6 			;Autoanswer on
+
+WaitConnect:
+
+    wait "CONNECT^M^J"			;Wait forever
+    delay 10				;Ensure Xmodem caller starts first
+
+    DialState 3 			;Connect
+    goto WaitConnect
+End
+
+
+;********************************
+;	Disable autoanswer	*
+;********************************
+
+Procedure AutoanswerOff
+Begin
+    send "ATS0=0"			;Switch autoanswer off
+    wait "OK^M^J" timeout 30
+
+    DialState 7 			;Autoanswer off
+End
+
+
+;********************************************
+;    Test for presence of a Triplex modem   *
+;********************************************
+
+Procedure CheckModemPresent
+Begin
+    send "ATZ"				;Reset modem
+    waitevent ModemTest timeout 30	;Test for presence of modem
+
+    if $timeout
+    begin
+	DialState -1			;No modem
+	exitcontrol			;Exit control file
+    end
+End
+

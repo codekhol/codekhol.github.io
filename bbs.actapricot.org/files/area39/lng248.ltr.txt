@@ -1,0 +1,41 @@
+
+Dear SCO Customer:
+
+Enclosed is Support Level Supplement (SLS) lng248 which contains a new
+/etc/cpd daemon for SCO TCP/IP release 1.0.1, running on SCO XENIX. 
+This new daemon checks for copy protection violations only on startup of
+SCO TCP/IP as opposed to a periodic check which presents an unwanted
+network load. 
+
+Note that this same problem for SCO TCP/IP release 1.1.1 running
+standalone under SCO UNIX 3.2 and under SCO Open Desktop release 1.0.0
+is fixed by installing SLS lng227. 
+
+Below are the instructions for installing this Supplement:
+
+	1. Reboot your system and enter System Maintenance Mode by typing
+	   your root password at the prompt:
+
+		Type CONTROL-D to proceed with normal startup,
+		(or give root password for system maintenance):
+
+	2. Type:
+
+		/etc/install
+
+	3. Type "y" at the prompt "First Floppy? (y/n)"
+	
+	4. Type "n" at the prompt "Next Floppy? (y/n)"
+
+	5. Type Control-D and enter Multi-User Mode 
+	   for the change to take affect.
+
+
+If you have any questions, please call our SCO Customer Services
+Department at (800) 347-4381. SCO Customer Service is available
+Monday through Friday, 6 A.M. to 5 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

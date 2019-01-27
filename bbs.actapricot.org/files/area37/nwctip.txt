@@ -1,0 +1,372 @@
+NOVELL TECHNICAL INFORMATION DOCUMENT
+
+DOCUMENT PROCESSING INFO:
+TITLE:  NWCTIP.TXT; NetWare Connect Tips 
+DOCUMENT ID:  TID250047
+DOCUMENT REVISION:  C
+DATE:  03MAR95
+AUTHOR:  JCANDELA
+ALERT STATUS:  Yellow
+DISTRIBUTION:  Public
+INFORMATION TYPE:  Issue
+README FOR:  NA
+NOVELL PRODUCT CLASS:
+
+Dial-In/Dial-Out Connectivity
+
+NOVELL PRODUCT and VERSION:
+
+NetWare Connect 1.0
+
+CATEGORY:
+
+NA
+
+ABSTRACT:
+
+Important technical information regarding NetWare Connect 1.0.
+
+-----------------------------------------------------------------
+DISCLAIMER
+THE ORIGIN OF THIS INFORMATION MAY BE INTERNAL OR EXTERNAL TO NOVELL.  NOVELL MAKES EVERY EFFORT WITHIN ITS MEANS TO VERIFY THIS INFORMATION.  HOWEVER, THE INFORMATION PROVIDED IN THIS DOCUMENT IS FOR YOUR INFORMATION ONLY.  NOVELL MAKES NO EXPLICIT OR IMPLIED CLAIMS TO THE VALIDITY OF THIS INFORMATION.
+----------------------------------------------------------------- 
+
+ISSUE
+
+I. General Connect Tips
+-----------------------
+A. Patches 
+The following "patches" correct many problems.  They should be applied before any troubleshooting is done.  (All NetWare Connect patches are in NOVLIB, Library 9).
+
+|  1. Maintenance Patch
+|  Currently (3/3/95), everyone with NetWare Connect 1.0 should apply one or more "Maintenance Patches".   The way to tell which one(s) is as follows:
+|      - Load INSTALL at the Netware Connect server.
+|      - Select "Product Options".
+|      - If it shows rev 1.0.33 or lower, install NWC001.EXE, NWC002.EXE, and NWC003.EXE.
+|      - If it shows rev 1.0.34, or higher, install NWC003.EXE. 
+
+|  2. NetWare Connect works best with workstations which have the latest client files.  If you do not have reasonably current client files, the latest client files are currently in VLMUP2.EXE, WINDR2.EXE, and NWDLL2.EXE in NOVFILES.
+
+B. If your modem is not included on the NetWare Connect menu:
+|     - Check the latest NWCMOD.EXE, to see if your modem has been added yet.  Novell will update NWCMOD.EXE periodically.
+
+|     - NWCWRT.EXE, is a script writer which will allow you to write your own scripts.
+
+|     - Try choosing a similar modem.  Its script might work.
+
+|     - The choice "Hayes Compatible" should work with most modems and is useful for troubleshooting.  However, expect a maximum speed of 2400bps with it.
+
+C. If installed NetWare Connect is to be installed in a NetWare 4.x server, that server must have Bindery Emulation enabled.  If you have already installed NetWare Connect in a NetWare 4 server, you must first enable Bindery Emulation and then reinstall NetWare Connect.
+
+D. When using V.42 modems with NetWare Connect, you may see a NCS incoming call processed by NetWare Connect as an ARAS connection followed by the phone hanging up.
+
+This is caused by a conflict between AppleTalk Remote Access 1.0 connection negotiation and the modems V.42 negotiation.
+
+We recommend the following solution:
+Do not use the ARAS service of NetWare Connect on a NCS Dial In port, and add the "Additional Modem Initialization String, AT&F, in the NetWare Connect modem configuration field, for the NCS Dial In ports. V.42 compression should then be enabled.
+
+E. NetWare Connect should not be installed in a NetWare 4.x server unless you have "Revision 34" or later, of NetWare Connect.
+
+|   - The Install Menu's "Product Options" screen will show you which revision you have.
+
+|   - If you have a revision prior to #34, you can upgrade by downloading NWC001.EXE and NWC002.EXE. 
+
+|   - All registered owners of 8 port or 32 port NetWare Connect have been sent a CD-ROM with RunTime NetWare 4.0x.
+
+F. In AUTOEXEC.NCF, the first AIO multi-port board should always be board 0, and the first AIO port should be port 0.
+
+The mapping should look similar to the following:  (DRIVER_NAME,0,0) where DRIVER_NAME is the currently loaded AIO driver.
+
+On the board driver LOAD line, put NODE=0 for the first board, NODE=1 for the second board, and so forth.  (NOTE: A WNIM board neither supports nor requires a NODE= statement).
+
+Example: load AIODGXI port=200 mem=d0000 node=0.
+
+G. Question:
+The LOAD Btrieve description on page 1-29 and page 4-5 differ.
+Which is correct?
+
+Answer:
+Page 1-29 has a typographical error.  Page 4-5 is correct.
+
+H. Load neither LSLENH.NLM nor MSM31X.NLM in a NetWare 3.12 server (including RunTime).  However, they must be loaded in a NetWare 3.11 server.
+
+I. If you use "Modem Independence,":
+|   - The modem strings will be supplied by NetWare Connect instead of the application.
+
+|   - 7-EVEN-1 is not compatible with Modem Independence.
+
+|   - Inform the application that the modem type is "Hayes Compatible".
+
+|   - Within NetWare Connect set "Modem Type" to "None" on both sides. 
+|   - Expect a delay in the dialing.  The delay is caused by NetWare Connect "translating" the initialization string.
+
+|   - Applications vary in their efficiency in relating to Modem Independence.  If you experience problems with ports in a Modem Independence Group, disabling Modem Independence may help.
+
+J. Tech Support
+1. Technical support for NetWare Connect is available on CompuServe in Section 2 of the NCONNECT Forum and by calling 800-NETWARE.  If you call 800-NETWARE after trying the tips in this document, the Technical Support Engineer will expect you to have the following documents ready for FAXing or uploading:
+|   AUTOEXEC.NCF
+|   STARTUP.NCF
+|   CONSOLE.LOG
+|  The workstations 
+|    - CONFIG.SYS  
+|    - NET.CFG
+|    - AUTOEXEC.BAT
+
+2. Various NetWare Connect documents will be FAXed to you if you call 801-429-7642.
+
+II. NASI/NCS Tips
+-----------------
+A. Only use the /NS parameter if you have an application which is aware of it, and prepared to take over the security role.  Few such applications yet exist.  (We understand that Crosstalk Mark IV LAN Pack does support the /NS parameter.)
+
+If you want to decrease the amount of security involved in LOGIN, see pages 9, 10, and 11 of the NetWare Connect Addendum.
+
+B. Ordinarily you will want to define both OutBound and InBound port groups for NCS because, that way both NASI DialOut and NASI Remote Host applications can share the same ports.
+
+In order to do this:
+|  1. Create two port groups.
+|       OutBound
+|       InBound
+
+|  2. Add ports to both groups.
+
+|  3. Add both groups to the General Names list of "Configure NCS".
+
+|  4. If you want to use Modem Independence for Outgoing Calls add "OutBound" to the "Modem Independence" field.
+
+|  5. Add "InBound" to the DialIn Group.
+
+|  6. Save changes.
+
+|  7. NWCSTOP
+
+|  8. NWCSTART
+
+InBound Port Group (One per server)
+- All ports in the InBound group will be available to remote users calling in with remote control applications (like PC AnyWhere).
+
+- All the ports in the InBound group will have a single logical port name consisting of the first eight characters of the NetWare Connect server name plus "dialin."
+
+For example, if the server name is "Communications," the logical port name will be COMMUNICDIALIN.
+
+All workstations and application servers put in the host mode must use that logical port name.
+
+|  - Attempting to dial out using the InBound logical port name will cause an error.
+
+OutBound Port Groups
+|  - Use only ports that are in an OutBound group for dialing out.
+
+|  - OutBound Ports may be selected by group name or individual name.
+
+|  - If you select a port by group name, NetWare Connect will select an available port within the group.
+
+|  - Unlike NASI, NINT14 does not release a port until NINT14 is unloaded.     NINT14 /U
+
+InBound/OutBound Ports
+A port may be placed in both the InBound group and one or more OutBound groups.  This allows InBound ports to be used for OutBound calls, except when a remote user is actually connected.
+
+B. DOS Communications Applications
+If your DOS application supports both NASI and Int14, choose NASI when using NetWare Connect because:
+	- Few, if any, Int14 applications go faster than 9,600 (at least not in this environment.)
+
+	- As described in the manual, NetWare Connect supports only the Basic Int14 features (Functions 0-3).
+
+You must run NASI to be able to run Int14.  The reverse is not true.
+
+C. Windows Communications Applications
+If you download WINNCS.EXE from Library 9, you should be able to use any Windows communications application which uses the standard Windows API calls, whether "NASI Compatible" or not.
+
+D. NetWare Connect NCS Dialback
+To use NCS Dialback with Netware Connect 1.0, you must choose between the following two options:
+
+Option 1:
+Use Option 1 if you will be using the remote control software's dialback:
+|    PC Anywhere LAN 4.5 or later
+|    Reachout 4.02 or later
+instead of NetWare Connect's dialback.
+
+Option 1 has two drawbacks:
+1. As each PC is put into host mode, it will tie up a NWC port.
+
+2. The remote caller will not be prompted for user id and password.
+
+To use Option 1, do the following:
+Do not add a port group into the DIAL-IN Group field under NCS
+configuration under configure service.  NCS will then broadcast the ports.
+
+Option 2
+If you will be using NetWare Connect's dialback function instead of the remote control software's dialback, use the DIAL-IN Group field in NCS configuration.
+
+Option 2 has two drawbacks:
+1. The remote user must manually put their PC into Auto Answer (Host) Mode during the interval between dialing in and receiving NetWare Connect's dialback.
+
+2. The remote user will be prompted for a User Name and Password before reaching the host.
+
+To use Option 2, do the following:
+1. Within the third-party remote control software, disable Dialback.
+
+2. Within NetWare Connect, do the following:
+|   a. Go into Configure Security under Configuration Options.
+
+|   b. Choose Set User Parameters.
+
+|   c. Choose a user (the same user as the NASI defined user on the host PC).
+
+|   d. Choose dialback mode option, to "Force Dialback" to a specific number.
+
+F. Symptom: NCS application unable to acquire a port.
+
+Solution:
+1. Load NASI using a valid username and password in the NetWare Connect server's bindery.
+
+2. Run NASIDIAG, if you are able to see ports using the "List Available Ports Option, reexamine the application set up.
+
+3. If you are using the comm ports on the server, try lowering the baud rate in "Port Configuration" and in the application.
+
+G. Windows for Workgroups with NCS (NASI Connection Service)
+The keys to using Windows for Workgroups with NCS are:
+
+|   1. Download and apply WINNCS.EXE.
+
+|   2. Do the following in setting up Windows for Work Groups.
+|       a. Open the "Network Setup" dialogue box.
+|       b. In the "Networks" section, you should have both the Windows Network and the NetWare Workstation Version number installed.
+|       c. In the "Drivers" section, put the driver for your network card.  Do NOT choose "IPX/SPX Compatibility".
+|       d. When the "Drivers" dialogue box comes up, highlight the "IPX/SPX Compatible Transport" line, and click on "Remove".
+|       e. Close the dialogue boxes and exit to DOS by manually closing Windows for Workgroups.  Do not use the "Restart Computer" button.
+
+This should result in ports being found without problems or lockups.
+
+The only drawback is that you will be using NETBEUI, which can not cross an IPX router.
+
+III. NRN/RNS Tips
+-----------------
+
+A. To Improve Performance
+|    1. Remote Node users should treat NET.CFG as though they are on the LAN.  Increasing CACHE BUFFERS and FILE HANDLES will usually help performance.
+
+|      The Syntax is as follows:
+|      CACHE BUFFERS=nn  start at 20 and increase until performance is optimized.
+|      FILE HANDLES=nn   start at 15 and increase until performance is optimized.
+
+|    2. The packet length parameter will also increase remote node performance. It also goes in the NET.CFG and the syntax is as follows....
+|     PACKET LENGTH nnnn
+|    start with 1024 and increase until you get network errors or file transfer problems.  Most people should just use 1024.  Many people have problems with larger packet lengths.
+
+|    3. The new RNS.LAN in NWCRNS.EXE (in Library 9) increases the buffer size for multiple RNS connections.  The result is a significant performance increase for Remote Node users.
+
+B. We recommend VLMs rather than NETX.
+
+C. Users calling in or out with a remote control application must use a name and password which, exist in the bindery of the NetWare Connect server.  Names and passwords must consist of only alpha-numeric characters without spaces.
+
+D. NET.CFG on the remote NRN client must specify a Preferred Server, for the shell to be able to find a server.  Also SET REPLY TO GET NEAREST SERVER=ON parameter at the server console.
+
+E. If you have problems connecting:
+|   - Try dropping the baud rate.
+|   - A useful troubleshooting tool is to use a null modem cable, and do a direct connect to the NetWare Connect server.
+
+E. When running NRN/Dialcon and Windows in enhanced mode, serial port contention problems will occur unless the SYSTEM.INI of the remote workstation is modified to lock Windows out of the port used by NetWare Connect.
+
+Adding one of the following case sensitive lines to the 386enh section
+of the SYSTEM.INI file corrects the problem:
+
+|   MaxComPort=0
+
+|     Locks Windows out of all the remote workstations serial ports.
+
+|   COM1Irq=-1
+
+|     Locks Windows out of port 1.
+
+|   COM2Irq=-1
+
+|     Locks Windows out of port 2.
+
+F. If you will be using the servers comm ports.
+- When AIOCOMX detects a 16550 UART, the maximum port speed defaults to 19.2kbps.
+
+- When a 16550 UART is not detected, the maximum port speed defaults to 2400bps.
+
+However, some devices (including many internal modems) are capable of
+properly supporting a higher speed than the default values.
+
+If you have a buffered device capable of supporting speeds higher than the default rate, use the following load command where N is the maximum speed rating override:  MAXRATE=N
+NOTE: MAXRATE is only supported by AIOCOMX.NLM dated 6/1/94 (or later).  The latest AIOCOMX.LAN, together with instructions is in the latest maintenance PTF for NetWare Connect (currently NWC001.EXE & NWC002.EXE in NOVLIB, Library 9).
+
+For example:
+  LOAD AIOCOMX MAXRATE=14400 PORT=3F8 INT=4 NODE=0 NAME=BOARD0
+would set an internal modem at comm1 to 14.4.
+ 
+NOTE!! In theory, very high speeds can be set.
+However, it is important the MAXRATE command not be abused.
+|  1. The practical safe speed is determined by the buffering ability   of the communications device.
+|  2. Even with extremely capable devices, speeds above 38400 are  likely to result in lost characters.
+|  3. The CPU of a busy file server will be stressed, if it has to  drive a comm port at very high speeds.
+
+F. To use DIALCON from the Windows DOS Box, download NWCWIN.EXE.
+
+G. The NetWare Connect modem scripts turn off modem hardware compression.  Instead, if you have EMS memory, compression is performed in the computers RAM.  This should result in a performance increase.  However, if you do not have EMS available and will not be using ARAS on the port, you may enable V.42 with the additional initialization specified by your modem manual to enable compression.
+
+H. Before running TCP/IP and IPX over Remote Node, do the following:
+|   1. Do a NWCSTOP.
+|   2. UNLOAD AIOnameofdriver
+|   3. UNLOAD AIO
+|   4. LOAD NWCNCF
+|   5. Configure RNS for IP protocol.
+|   6. Choose the Frame Type of Ethernet_II.
+|   7. Configure RNS for IPX protocol.
+|   8. Choose the appropriate Frame Type. 
+|   9. Hit ESC and save.
+|  10. At the Console Prompt, LOAD EDIT SYS:SYSTEM\NWCSTART.NCF
+|  11. NWCSTART.NCF will contain the line LOAD RNS...  At the end of the line add a space followed by    /EB
+|  12. Save NWCSTART.NCF
+|  13. Do a NWCSTART
+|  14. At the NRN workstation, edit NET.CFG to use Ethernet_II frame.
+|  15. Then enter the following commands from the C: prompt.  
+|        LSL
+|        NRN
+|        DIALCON
+|        IPXODI
+|        TCPIP     (unless you will be using BootP)
+|        VLM  (or NETX)
+|        LOGIN
+
+You should now be logged into the NetWare server and should be able to PING IP hosts.
+
+J. To run TCP/IP over Remote Node, specify the Node Address in the Link Driver NRN heading of NET.CFG.  This node address must be unlike any other on the WAN.
+
+On an Ethernet or Token Ring LAN, this unique address would be supplied by a 12 digit hex address burned into the network board.
+
+Example:  1a2b3c4d5e6f
+
+However, NetWare Connect Remote Mode connections use a serial port instead of a network board; therefore, the unique address must be specified during configuration.
+
+254 nodes can be specified by two hex digits.  This is more than enough since the maximum number of workstations which can be supported by Netware Connect through Remote Node is 64.  The digits used by NRN are the seventh and eighth digits of the 12 digit number.  All other digits should be filled in with zeros.
+
+Example: 000000nn0000  (where n is a hex number from 0 to F)
+
+The six leading zeros may be omitted if desired; however, the four trailing zeros must be present as place holders.
+
+K. On the Connect server, the subnet mask for all adapters must be the same and the network addresses must be unique (use the same rules you would for any two or more adapters in the server).
+
+L. Symptom: User authentication fails in Dialcon.
+
+Solution: Ensure that the user name and password exists in the bindery of the NetWare Connect server.
+
+M. A workstation can not run NRN until it logs out of its local LAN.  IPX will not bind to both the serial driver and the network board.
+
+N. Symptom: (RNS/NRN) is unable to attach to a server.
+
+Solutions:
+1. Make sure you have selected the correct frame type for RNS in NWC Setup and on the NRN that client will be calling into the server (they must match).
+
+2. Put a preferred server statement in the NET.CFG of the NetWare Connect server.
+
+3. On the workstation, set "Reply to Get Nearest Server" to ON.
+
+4. If problems continue, update the client side with the latest Client updates from NOVFILES and the latest NetWare Connect maintenance PTFs.
+
+O. Appletalk may fail to connect, even though all configuration is correct.  Strangely, adding a user to the server's bindery seems to correct the problem.
+
+-----------------------------------------------------------------
+Any trademarks referenced in this document are the property of their respective owners.  Consult your product manuals for complete trademark information.
+-----------------------------------------------------------------

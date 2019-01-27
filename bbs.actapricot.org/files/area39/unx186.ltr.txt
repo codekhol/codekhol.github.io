@@ -1,0 +1,54 @@
+
+Dear Customer,
+
+Enclosed find your copy of Support Level Supplement (SLS) unx186.  This SLS
+will allow you to install SCO UNIX System V/386 Release 3.2.0 for computers
+based on Micro Channel Architecture (MCA) on systems using the Adaptec 1640
+SCSI host adapter with BIOS revision A.  To use this supplement, replace the
+N1 and UFA1 diskettes that were provided with your original distribution, with
+the new SLS unx186 diskettes; use the new SLS unx186 diskettes during the
+installation process.  You must have the Operating System LINK kit package
+installed before installing Operating System Maintenance Supplement (UFA).
+To find out if the LINK kit package is installed, you may use the following
+sysadmsh command:
+
+	System->Software->List->The Operating System->Package
+
+Use the "Pg Dn" key on your console keyboard to scroll down to the bottom of
+the menu.  If the word "Yes" appears next to "LINK" then the LINK kit is
+installed.  If not, then you will need to install this package with the
+sysadmsh command:
+
+	System->Software->Install->The Operating System->Packages->LINK
+
+If you already have SCO UNIX System V/386 Release 3.2.0 for MCA based machines
+installed and running, but you want to install your SCSI system as secondary
+hardware, use the sysadmsh command:
+
+	System->Software->Install->The Operating System->Packages->UPD.UFA
+
+To re-install the operating system UFA package using the replacement UFA1
+diskette provided with SLS unx186.  As above, make certain that the LINK kit
+package is installed prior to installing UFA.  At this time, run the command:
+
+	mkdev scsi
+
+You will be prompted for information about your new SCSI host adapter and SCSI
+support for your SCSI peripherals will be added into the kernel.  It is then
+necessary to reboot the system using the sysadmsh command:
+
+	System->Terminate
+
+Once the system has rebooted, you may then run either the "mkdev tape"
+command, to install a SCSI tape drive, or the "mkdev hd" command to add a SCSI
+hard disk to your system.  Refer to Chapter 16 of the SCO UNIX System V/386
+Operating System Administrator's Guide manual for further information on
+installing your SCSI tape drive or Chapter 22 of the same manual for details
+about the installation of a secondary SCSI hard disk.
+
+Yours sincerely,
+
+
+Technical Support Department
+
+ref: unx186

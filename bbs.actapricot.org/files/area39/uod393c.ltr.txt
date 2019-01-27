@@ -1,0 +1,268 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) UOD393C corrects problems 
+found in the sar utilities and kernel modules.  Modifications and new 
+utilities have also been added to assist with performance issues.
+
+SLS UOD393C is incompatible with the following SCO software:
+
+   - The XPG4 EFS
+   - The Local Desktop EFS
+   - The MPX mpsar Supplement
+
+In all cases, if any of these packages are installed, remove them before 
+installing SLS UOD393C.  After installing SLS UOD393C, do not install 
+any of the packages listed above.    
+
+Note: If SLS UOD393A, UOD393B, UOD396A or any beta MPX performance or 
+      MPX mpsar supplements are installed on the system, please remove 
+      them before installing SLS UOD393C.
+
+To add another license for SCO MPX 3.0, after installing SLS UOD393C:
+
+   - Remove this SLS (see instructions below)
+   - Add the additional license
+   - Reinstall this SLS (see instructions below)
+
+
+SLS UOD393C corrects these problems:
+
+   - Intensive use of pipes and select system calls no longer 
+     cause the select system call to hang.
+
+   - Under heavy use, processes no longer hang on reading from pipes.
+
+   - The spin loop for exclusive locking of critical kernel code has
+     been increased.  This should avoid lock timeout panics on fast 
+     systems.
+
+   - A synchronous write to a file when the file system is full 
+     no longer hangs the operating system.
+
+   - Multiple processors accessing the same static array now all
+     receive correct data. 
+
+   - A panic condition no longer occurs on computers using SCO
+     MPX 3.0, 32MB or greater of memory, and IDE hard drives.
+
+   - vmstat did not gather reliable MPX information.  This utility
+     can now be used to monitor MPX systems and collect reliable
+     system statistics.
+
+   - sadc now returns memory to the memory pool that it had allocated
+     for its use.
+
+   - A circumstance where file copies could fail when using SCO MPX
+     has been corrected.
+
+   - Rapid screen switching between graphical and character screens
+     when using PCI video cards now works correctly.
+
+   - Accessing QIC tape devices or floppy devices on a system with 
+     SLS UOD393A installed could result in a system panic.
+
+Performance enhancements: 
+
+   - The system now responds more rapidly to the situation where multiple
+     processes accessed the same file (sleeping on inode access).
+
+   - The semaphore structure allocation mechanism has been modified 
+     to improve performance and avoid data structure corruption.
+
+   - Calls to the poll routine are handled more efficiently. 
+
+
+mpsar/cpusar specific enhancements and corrections:
+
+   - freemem is now reported more accurately.
+
+   - runocc/swpocc now reports the run queue occupancy more accurately.
+
+   - pswtch now looks at the per processor sysinfo.
+
+   - All processors now update their own syswait structure. 
+
+   - Buffer reads and writes are now reported more accurately.
+
+   - Sdsk now records the duration of requests properly.
+
+   - IDA service time statistics are now more accurate.
+
+
+New utilities:
+
+   - A new sar option to see the number of requests for SCSI request 
+     blocks and out of SCSI request blocks has been added.  The new 
+     option to sar '-S' reports each new counter per second.
+
+   - The  mthread  utility was added to report which kernel drivers 
+     are multithreaded.
+
+
+Using custom(ADM) to Install or Remove SLS UOD393C
+
+A. Installing SLS UOD393C
+
+1.  If the system is running in multiuser mode, log in as root on 
+    the console.  After warning the users that the system will be 
+    down for some time, enter the command:
+
+        shutdown  -y -g0 
+
+    The system will then execute a controlled shutdown operation 
+    which displays this message when the shutdown process has 
+    completed:
+
+        **   Safe to Power Off   **
+                   -or-
+        ** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+4.  Insert the custom volume diskette labeled "UOD393C: MPX 3.0
+    Performance Supplement 1.0" in the floppy drive and enter the 
+    command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+5.  To select the following, highlight each one with the cursor keys
+    and press <Enter>:
+
+        Install -> A New Product -> Entire Product
+
+
+   - Position the cursor so that "Install" is highlighted and 
+     press <Enter>.
+
+   - Make sure the words "A New Product" are highlighted in the window
+     found in the lower right corner of the screen; press <Enter>.
+
+   - Make sure the words "Entire Product" are highlighted in the 
+     "Choose an option" section of the screen; press <Enter>.
+
+   - You will be prompted to "Insert: Distribution Floppy Volume 1 
+     and press <Enter>".  The diskette is already in the drive, 
+     therefore press <Enter>.
+
+   - You will see the following messages:
+
+       Installing custom data files ...
+       Executing Product Prep Script
+   
+   - You will be prompted to "Insert the requested Volume and 
+     press <Enter>".  The diskette is already in the drive, 
+     therefore press <Enter>.
+
+   - You will see the message:
+
+       Extracting Files
+
+   - When asked if you wish to relink the kernel, reply "y" in order 
+     to ensure that the modifications from SLS UOD393C are included 
+     in the kernel.
+
+     Answer "y" when asked if you want to boot off this kernel.
+
+     Answer "y" when asked if you want to rebuild the kernel 
+     environment.
+
+   - You will then be prompted to "Press any key to continue"; 
+     press <Enter>.
+
+   - At the main custom menu, move the highlighted entry to "Quit" 
+     and press <Enter>.  Press <Enter> again on the highlighted "yes".
+     
+   - Remove the diskette and reboot the computer.
+
+   - SLS UOD393C is now successfully installed.
+
+
+B. Removing SLS UOD393C
+
+1.  If the system is running in multiuser mode, log in as root on 
+    the console.  After warning the users that the system will be 
+    down for some time, enter the command:
+
+        shutdown  -y -g0 
+
+    The system will then execute a controlled shutdown operation 
+    which displays this message when the shutdown process has
+    completed:
+
+        **   Safe to Power Off   **
+                   -or-
+        ** Press Any Key to Reboot **
+
+2.  Reboot the system.
+
+3.  When the system reboots, you will see the message:
+
+        Type CONTROL-d to proceed with normal startup,
+        (or give root password for System Maintenance):
+
+    Enter the root password and press <Enter>.
+    Wait until the "#" prompt appears.
+
+4.  Use the custom utility to remove this SLS.  At the command line,
+    enter the command:
+
+        /etc/custom
+
+    The custom menu will appear.
+
+5.  To select the following, highlight each one with the cursor keys 
+    and press <Enter>:
+
+        Remove -> MPX 3.0 Performance Supplement 1.0 -> ALL
+
+   - Position the cursor so that "Remove" is highlighted and 
+     press <Enter>.
+
+   - Make sure to move the highlighted cursor to the package "UOD393C: 
+     MPX 3.0 Performance Supplement 1.0" to select this package; press 
+     <Enter>.
+
+   - Make sure the word "ALL" is highlighted as the selected package to
+     remove; press <Enter>.
+
+   - Make sure the word "ALL" is highlighted under "Please verify the 
+     removal of the following packages"; press <Enter>.
+
+   - When asked if you wish to relink the kernel, reply "y" in order 
+     to ensure that the modifications from SLS UOD393C are removed 
+     from the kernel.
+
+     Answer "y" when asked if you want to boot off this kernel.
+
+     Answer "y" when asked if you want to rebuild the kernel 
+     environment.
+
+   - You will then be prompted to "Press any key to continue"; 
+     press <Enter>.
+
+   - At the main custom menu, move the highlighted entry to "Quit" 
+     and press <Enter>.  Press <Enter> again on the highlighted "yes".
+     
+   - Reboot the computer.
+
+   - SLS UOD393C has now been successfully removed.
+
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.  
+
+We appreciate your business.
+
+SCO Support Services
+
+

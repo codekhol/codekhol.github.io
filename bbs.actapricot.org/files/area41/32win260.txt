@@ -1,0 +1,166 @@
+32WIN260.ZIP - ATI Technologies Inc.
+ллллллллллллллллллллллллллллллллллллллллллллл   ATI Technologies Inc.
+лллллллл(R)лллп                      ммм  плл   33 Commerce Valley Drive East
+ллллллллллллп                        ппп  млл   Thornhill, ON  L3T 7N6
+ллллллллллп      мллллл     ллллллллллллллллл   CANADA
+ллллллллп      мллппллл     ллллллллп   плллл
+ллллллп      мллл    лл     лллллллл     лллл   Support:     (905) 882-2626
+ллллп      мллллллммллл     лллллллл     лллл   Support FAX: (905) 882-0546
+ллп      мллллллллллллл     лллллллл     лллл   Compuserve:  GO ATITECH
+ллм    млллллллллллллллм   мллллллллм   млллл   кФФФФФФФФФФФФФФФФФФФФФФФФФФФФФП
+ллллппппппппппппппппппппппппппппппппппппллллл   Г   mach32 v2.6 Windows 3.1   Г
+лллн T E C H N O L O G I E S    I N C . олллл   Г   display and MVA drivers   Г
+ллллммммммммммммммммммммммммммммммммммммллллл   Г  requires LOADER to install Г
+ллллллллллллллллллллллллллллллллллллллллллллл   РФФФФФФФФФФФФФФФФФФФФФФФФФФФФФй
+
+ Length  Method   Size  Ratio   Date    Time    CRC-32  Attr  Name
+ ------  ------   ----- -----   ----    ----   -------- ----  ----
+ 269299  Stored  269299   0%  05-30-95  15:48  cc1ae472 --w-  WINVIDS.LZH
+ 257558  Stored  257558   0%  05-30-95  15:47  eea262b2 --w-  MACHS.LZH
+ 248961  Stored  248961   0%  05-31-95  12:57  d5befb83 --w-  MACHW.LZH
+ 209074  Stored  209074   0%  05-30-95  15:48  5bf331f9 --w-  MACHE.LZH
+  62611  Stored   62611   0%  05-30-95  15:48  bf523a45 --w-  TIMEWARP.LZH
+  52623  Implode  27625  48%  05-10-95  12:43  fab7235e --w-  WININST.EXE
+   5099  Stored    5099   0%  05-30-95  15:48  a7224d86 --w-  WINVIDW.LZH
+   1951  Implode    821  58%  04-28-95  10:27  e24b02fa --w-  WININST.HLP
+    821  DeflatN    292  65%  06-08-95  10:32  51d94cbd --w-  LOADER.VSF
+ ------          ------  ---                                  -------
+1107997         1081340   3%                                        9
+
+
+*****************************
+
+1.0     Introduction
+2.0	Installation Notes
+3.0	2.6 Fixed list
+
+*****************************
+
+1.0     Introduction
+
+The Graphics device drivers supplied here are for the Microsoft Retail
+Release of the Windows 3.1 and Windows for Work Groups 3.11.
+
+*****************************
+
+2.0	Installation Notes
+
+IF YOU HAVE NOT INSTALLED A MACH32 WINDOWS DRIVER PREVIOUSLY, YOU MAY
+REQUIRE YOUR MICROSOFT WINDOWS DISKETTES TO COMPLETE THE INSTALLATION OF
+THIS DRIVER.
+
+1. Ensure that you have a copy of LOADER.ZIP.  It is available on the ATI
+BBS, ftp site (ftp.atitech.ca), and on our CompuServe forum (GO ATITECH).
+
+2. Ensure that you have a copy of PKUNZIP.EXE, v1.10 or later.  PKUNZIP
+is available on most BBS and information services, including the ATI
+BBS and CompuServe.
+
+3. Do NOT attempt to perform the driver installation from within Windows.
+Exit Windows completely, and perform the following operations in DOS.
+
+4. Unzip LOADER.ZIP and 32WIN260.ZIP into the same temporary directory on
+your hard disk, then run the LOADER utility.  For example:
+
+MD \ATITEMP
+PKUNZIP LOADER.ZIP \ATITEMP
+PKUNZIP 32WIN260.ZIP \ATITEMP
+CD \ATITEMP
+LOADER
+
+5. Follow the screen prompts for installing the Windows driver.
+
+IF YOU RECEIVE AN ERROR MESSAGE, INDICATING THAT A CERTAIN FONT (.fon)
+FILE IS NOT PRESENT, YOU WILL NEED TO RUN WINDOWS SETUP FROM DOS TO
+COMPLETE THE INSTALLATION.  WINDOWS SETUP WILL PROMPT YOU FOR THE
+DISKS ON WHICH THESE FONT FILES ARE FOUND.
+
+6. Once the driver has been installed, you can delete the contents of the
+temporary directory (DEL \ATITEMP\*.*) and delete the directory itself
+(RD \ATITEMP).
+
+7. We recommend that you keep a copy of the ZIP files (32WIN260.ZIP and
+LOADER.ZIP), in case you need to install the driver again.
+
+*****************************
+
+3.0	2.6 Fixed list
+
+
+Application     Summary
+-----------     -------
+
+AAplay          Top 1/4 of display does not repaint
+
+Album Spanish   Power Album Spanish v1.05 GPFs
+
+AntiVirus       Locks system starting MS ANTIVIRUS for WINDOWS
+
+Bibleworks      Corrupted characters using Bibleworks
+
+C++             Font Corruption occurs when screen shifts to the left.
+C++             GPF when selecting print preview, C++
+
+ChemWindows     GPF, Rotating objects in ChemWindows
+
+Complete 
+Baseball        GPF occurs starting MS COMPLETE BASEBALL.
+
+CorelPaint      CorelPaint 5.0 GPFs on exit after loading a BMP image.
+
+Designer        Overlapping colored polygons appear transparent when printed.
+
+Finale          Divide by Zero error running Finale
+
+Heapwalk        System hangs running Heapwalk
+
+Hijaak          Changing contrast and brightness causes a GPF
+
+Hyperguide      Running Windows Hyperguide displays washed-out images.
+
+Lotus 123       GPF occurs during PASTE from clipboard
+
+Lotus ScreenCam Lotus ScreenCam GPFs during playback
+Lotus ScreenCam Lotus ScreenCam, screen corruption during playback.
+
+Midisoft        Characters are corrupted
+
+Netware         HANGS Windows on exit, Netware
+
+Powerpoint      ARROWHEAD appears transparent when pointing down
+PowerPoint      Corrupt display using gradient fill.
+
+Prodigy         CORRUPT FONTS in PRODIGY for WINDOWS
+
+Publisher       GPF occurs at MACH.DRV importing graphics
+
+Smart Video 
+Recorder        Smart Recorder Software will not install if display 
+		configured to mach32
+
+Tablecurve      MISSING BOXES when viewing a 3D graph
+
+Telnet          TELNET sessions disconnect
+
+Terminal        Corrupted characters in WINDOWS TERMINAL
+
+Visual Basic    Out of memory error running VISUAL BASIC
+
+Word            Word's clipboard reports insufficient memory when 
+		exiting word
+Word            GPF occurs in WORD
+Word            GPF starting WORD 
+Word            Scrolling Up & Down causes text corruption just below 
+		the main tool bars. 
+
+WP 6.0          Lower case letter "j" does not print
+
+
+NOTE: To correct the printing problem associated with the HP550C/560C
+      you will require the updated mach32 display driver and the HP
+      printer driver, version 5 or better. 
+
+HP 550C         Missing lines of print
+HP 560C         MISSING TEXT from printed output in Landscape mode
+HP 560C         Text missing from printout
+

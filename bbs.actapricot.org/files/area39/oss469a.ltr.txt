@@ -1,0 +1,160 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement, (SLS) OSS469A, the Networking and 
+SMP Supplement, corrects problems in multi-processor systems and in 
+networking.  See the list below for more details on specific problems
+addressed by this SLS.
+
+RELEASE INFORMATION
+
+SLS OSS469A is intended for use on these products:
+
+          SCO OpenServer System Release 5.0.4 (all configurations)
+
+NOTE: To obtain the same set of corrections for SCO OpenServer Release
+      5.0.0 and 5.0.2, and Internet FastStart 1.0.0 and 1.1.0, please
+      see SLS OSS468A.
+
+Prerequisites:
+
+        On OpenServer 5.0.4, the following update MUST be installed
+        prior to this patch:
+
+           - SCO OpenServer Release Supplement 5.0.4c (rs504c)
+             ftp://ftp.sco.com/Supplements/rs504c/
+
+NOTE: OSS469A supersedes the SCO Security Patch SSE010, a patch for IP
+      denial of service vulnerabilities. 
+
+OSS469A corrects the following problems:
+
+1. System "hang" (no keyboard response or other apparent system activity)
+   under a network load which may be followed, after several minutes, by 
+   a warning message similar to:
+
+        WARNING: IP: spinning on pcb ... 
+
+   This only occurs on multi-processor systems, and may be accompanied 
+   by a depletion of streams buffers.
+
+2. Lock timeout panic in "narrowcast" or "cpuintr"; this only occurs on
+   multi-processor systems.
+
+3. Unexpected Out of Band Data denial-of-service attack; an exploit has 
+   been distributed under the name "winnuke".
+
+4. Spoofed Self-connect Packets denial-of-service attack; exploits have 
+   been distributed under the names "land" and "latierra".
+
+NOTE: OpenServer systems are NOT vulnerable to IP denial-of-service
+attacks based on fragmented packets with invalid sizes.  Exploits
+have been distributed under the names "teardrop", "bonk", and "newtear".
+
+5. Warning message "WARNING: NLM: request to server failed:", followed 
+   by a panic in "printf" called from the NFS lock manager.
+
+6. Incoming udp broadcasts can bring down a system by using up all its 
+   streams buffers.  This may be caused because a program, such as 
+   scologin, has stopped reading incoming packets, or by a flood of 
+   incoming packets which are arriving too fast for a slow system.
+
+7. AFPS performance problem. Setting the option TCP_NODELAY improves 
+   performance of certain size transactions, which would otherwise show 
+   large degradation in performance.
+   
+8. UNIX domain sockets performance problem. Performance of UNIX domain 
+   sockets would degrade with multiple CPUs compared with a single CPU.
+
+
+I. INSTALLING SLS OSS469A
+
+  1. Prepare the media for installation.
+
+     Download the OSS469A media image file (oss469a.Z file), place
+     the file in the /tmp directory, uncompress and rename the file
+     by typing the following commands:
+
+                uncompress /tmp/oss469a.Z
+                mv /tmp/oss469a /tmp/VOL.000.000
+
+  2. Run the Software Manager with the command:
+
+             # scoadmin software
+
+     or double-click on the Software Manager icon in the desktop.
+
+  3. Pull down the "Software" menu and select "Install New".
+
+  4. When prompted for the host to install from, choose the local
+     machine and then "Continue".
+
+  5. When prompted to select the media device:
+
+     If you are installing this SLS from diskette media, select the 
+     appropriate floppy disk drive and then "Continue". Proceed to step 6.
+
+     If you are installing this SLS from media images per step 1, select 
+     "Media Images", then "Continue".  When prompted for the "Image 
+     Directory", enter "/tmp" (or the directory where you placed the VOL 
+     file in step 1) and then select "OK".
+
+  6. When prompted to select software to install, ensure that the "OSS469A" 
+     entry is highlighted. Choose "Install".
+
+  7. You will be asked whether or not you want to relink the kernel.
+
+     Enter "y" or "n" based on this message. Note that you will not be able 
+     to make use of the patch until you relink the kernel. Therefore, it is 
+     suggested that you answer "y" to this question.
+
+  8. Once the installation finishes, quit the Software Manager.  Installation 
+     of SLS OSS469A is now complete. The changes will take effect the next 
+     time you reboot the system.
+
+  9. Log in as root on tty01, and shut down the system:
+
+              # shutdown -g0 -y
+
+    After shutting down and rebooting the machine, application of the patch 
+    is complete.
+
+
+II. REMOVING SLS OSS469A
+
+Note: Patches must be rolled back in the reverse order in which they
+      were installed on a per-component basis.
+
+  1. Log in as root.
+
+  2. Execute the command:
+
+             # scoadmin software
+
+     or double-click on the Software Manager icon in the desktop.
+
+  3. Highlight "OSS469A: The Networking and SMP Supplement."
+
+  4. Pull down the "Software" menu and select "Remove Software".
+
+  5. You will be asked whether or not you want to relink the kernel.
+
+     Enter "y" or "n" based on this message. Note that package removal
+     will not take effect until you relink the kernel.  Therefore, it 
+     is suggested that you answer "y" to this question.
+
+  6. Once the removal finishes, quit the Software Manager.
+
+  7. As root on tty01, shut down the system:
+
+              # shutdown -g0 -y
+
+    After shutting down and rebooting the machine, application of the patch 
+    is complete.
+
+
+If you have questions regarding this SLS, or the product on which it is 
+installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services

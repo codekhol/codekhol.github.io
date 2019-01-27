@@ -1,0 +1,167 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) unx347a provides a SCSI Badblock 
+Utility called scsibadblk(ADM).  This utility is similar in functionality to 
+badtrk(ADM), but must only be used to detect or replace badblocks on SCSI 
+diskettes.
+
+SLS unx347a will install the scsibadblk(ADM) utility, and a man page for
+the utility, onto your system.
+
+SLS unx347a will only install on SCO UNIX System V/386 Release 3.2 Operating
+System Version 2.0 and SCO Open Desktop Release 1.1.x.
+
+SLS unx347a is custom(ADM) installable and removable and consists of a single
+floppy volume. 
+
+
+                         INSTALLATION INSTRUCTIONS
+                         =========================
+
+To install SLS unx347a, use custom(ADM) and follow the steps listed below:
+
+1.  Log onto your machine as root.  From the root directory, enter 
+    the command: 
+
+    custom
+
+2.  The main custom menu will appear.  Press <Return> to select Install.
+
+3.  A window of options opens in the lower right-hand corner of the screen.
+    Press <Return> again to select A New Product from among these options.
+
+4.  The next screen highlights the Entire Product option.  Press <Return> 
+    to select this option.
+
+5.  Custom prompts you to insert Floppy Volume 1.  Insert SLS unx347a and
+    press <Return>.  You will see the message:
+
+         Installing custom data files...
+
+    followed by:
+
+        Executing Product Prep Script.
+
+6.  The Prep Script will display the version of the operating system and
+    prompt:
+
+        Press Enter to Continue :
+
+    Press <Return>.
+
+7.  If the operating system is invalid, a message will be displayed 
+    indicating that the installation has been aborted, followed by the
+    prompt:
+
+        Press Enter to Continue :
+        
+    Press <Return> to get the prompt:
+
+        Press any key to continue
+
+    Press any key and custom will display ERROR in the top right hand corner
+    of the screen and: 
+
+        Error: Init script failed
+
+    in the bottom left hand corner.  Press <Esc> to be returned to the 
+    Products Currently Installed screen of custom(ADM).
+
+8.  If the operating system is valid, a message will be displayed indicating
+    that the system is compatible with SLS unx347a, followed by the prompt:
+        
+        Press Enter to Continue :
+
+    Press <Return>.
+
+9.  Custom will display the message "Creating files list ..." in the top
+    left hand corner of the screen.
+
+10. You will be prompted to: 
+
+        Insert: SCO UNIX SCSI Badblock SLS 
+                Floppy Volume 1
+
+    into the floppy drive.  Ensure that the correct volume is in the 
+    floppy drive and select Continue.
+
+11. Custom will display the message "Extracting files ..." followed by
+    "Checking file permissions..." in the top left hand corner of the
+    screen.
+
+12. You will be returned to the Products Currently Installed screen of the
+    custom(ADM) utility.  Press q to quit custom, or use the left arrow key
+    to select Quit and press <Return>.
+
+
+                         REMOVAL INSTRUCTIONS
+                         ====================
+
+To remove SLS unx347a, use custom(ADM) and follow the steps listed below:
+
+1.  Log onto your machine as root.  From the root directory, enter the 
+    command: 
+
+    custom
+
+2.  Use the left/right arrow keys to select Remove and press <Return>.
+
+3.  A window of options opens.  Use the up/down arrow keys to select:
+
+        SCO UNIX SCSI Badblock SLS (unx347a)
+
+    from the list of options and press <Return>.
+
+4.  A "SCO UNIX SCSI Badblock SLS (unx347a)" window opens.  Use the 
+    up/down arrow keys to select the "ALL" option and press <Return>.
+
+5.  Custom will then ask:
+
+        Do you wish to continue?        [Yes]   No
+
+    Select Yes and press <Return>.
+
+6.  The removal script will then validate the operating system and check to 
+    see if the SLS can be removed.  If the operating system is not valid or
+    the SLS is not removable you will be returned to custom(ADM) with an
+    error.
+
+7.  If the operating system is valid and the SLS is removable, the operating 
+    system version is displayed and you will see the prompt:
+
+        Press Enter to Continue :
+
+    Press <Return>.
+
+8.  You will then see the message "Removing unx347a" followed by:
+
+        Press Enter to Continue :
+
+    Press <Return>.
+
+9.  The removal script will now return to custom(ADM) with the prompt:
+
+        Press Enter to Continue :
+        
+    Press <Return>.
+
+10. Custom will display the message "Creating files list ..." in the top
+    left hand corner of the screen.
+
+11. Custom will display the message "Removing files ..." in the top left
+    hand corner of the screen.
+
+12. You are then returned to the Products Currently Installed screen of the
+    custom(ADM) utility.  Press q to quit custom, or use the left arrow key
+    to select Quit and press <Return>.
+
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

@@ -1,0 +1,136 @@
+
+Dear SCO Customer,
+
+Enclosed is Support Level Supplement (SLS) unx212.  This SLS contains a 
+device driver for the following Tecmar/Wangtek tape drive/controller 
+combinations running with the SCO UNIX System V/386 Release 3.2 Operating 
+System, SCO UNIX System V/386 Release 3.2 Operating System Version 2.0, 
+Open Desktop Release 1.0, or Open Desktop Release 1.1 for computers based 
+on Micro Channel Architecture (MCA).
+
+NOTE: A copy of the reference file for this controller is included on SLS
+unx212.  After installing SLS unx212, the adf file may be found in 
+/ADF/@5125.adf.  Use doscp to copy this option file onto your reference disk.  
+If you are not sure how to use doscp, refer to the section on DOS(C) in your 
+SCO UNIX System V/386 Operating System User's Reference manual.
+
+Tape Drive                         Tape Controller
+==========                         ===============
+
+QT  60E   60 Megabyte External     Tecmar MC Single Chip Qic-02 Host Adaptor
+QT  90E   90 Megabyte External     Tecmar MC Single Chip Qic-02 Host Adaptor
+QT 125E  125 Megabyte External     Tecmar MC Single Chip Qic-02 Host Adaptor
+QT 150E  150 Megabyte External     Tecmar MC Single Chip Qic-02 Host Adaptor
+
+5099EG    60 Megabyte Internal     Wangtek PC-02 Single Chip Host Adaptor
+5125EG   125 Megabyte Internal     Wangtek PC-02 Single Chip Host Adaptor
+5150EG   150 Megabyte Internal     Wangtek PC-02 Single Chip Host Adaptor
+
+LS5099EN  60 Megabyte External     Wangtek PC-02 Single Chip Host Adaptor
+LS5150EQ 150 Megabyte External     Wangtek PC-02 Single Chip Host Adaptor
+
+
+Remember that the configuration information on your Micro Channel machine 
+must be updated before it will allow you to run SCO UNIX System V/386 with 
+the Tecmar/Wangtek Micro Channel Single Chip Qic-02 Host Adaptor installed.
+The setup/configuration routine varies slightly on different Micro Channel 
+machines, but they all have a way to copy configuration files from option 
+diskettes so that added cards may be recognized by the machine's setup 
+program.  Refer to your machine's hardware manual to determine how it is 
+done.  This operation is necessary for DOS as well as SCO UNIX System V/386.
+
+The Tecmar option diskette is called a Tecmar Quality Tape Operating Software
+Diskette.
+
+The Wangtek option diskette is called a SYTOS Tape Operating System Software
+Diskette.
+
+Once you have configured your machine so that it is aware of the tape adaptor
+card, you can proceed with the installation of SLS unx212.  Be aware that you
+need to configure your tape adaptor card so that it is using a free interrupt
+vector.  Below is a list of typically used interrupts:
+
+
+Interrupt         Used For
+---------         --------
+    0             Clock
+    1             Console
+    2 (25)        Network Cards
+    3             Serial COM2
+    4             Serial COM1
+    5             Parallel LP2
+    6             Floppy Drive
+    7             Parallel LP0 or LP1
+ 
+
+
+SCO UNIX System V/386 Tape Driver Install
+=========================================
+
+To install SLS unx212, log in as root, insert the floppy into your floppy 
+drive and type:
+
+     /etc/xinstall
+
+You will see the message:
+
+     First Floppy? (y/n)
+
+Answer "y" and then enter <Return>.
+
+At the next menu, pick the option to:                                     
+
+     Install a Tape Driver
+
+A second menu will come up and you should pick the option to:
+
+     Install Cartridge Tape Driver
+
+A third menu will come up, asking you to display, modify, select previous,
+or take default tape parameters.  Type "q" for quit and you will see the
+message:
+
+     Updating system configuration.
+     Installing tape driver.
+
+Picking "q" allows the tape driver to automatically use the tape controller's
+parameters based on how they were defined when you updated your Micro Channel
+machine's configuration information.
+        
+Choose "q" for quit at the final menu.  You will see the message:
+        
+     You must create a new kernel to effect the driver change you
+     specified.  Do you wish to create a new kernel now?  (y/n)
+        
+Choose "y" and you will see the message:                  
+
+     Re-linking the kernel...
+
+This will take a moment and then you will be asked:
+
+     Do you want this kernel to boot by default?
+
+Answer "y" and you will see the message:
+
+     Do you wish your kernel environment to be rebuilt now? (y/n)
+
+Answer "y".  When you receive a root prompt, type:
+
+     /etc/shutdown -g0 -y
+
+to reboot your system and activate the new kernel with the tape driver
+linked in.
+
+Your original kernel has been renamed "unix.old."  If you ever need to
+boot your original kernel, after a system crash for example, just type
+"unix.old" at the "boot:" prompt.
+
+If you have any questions, please call our SCO Customer Services Department
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+
+SCO Support Services
+

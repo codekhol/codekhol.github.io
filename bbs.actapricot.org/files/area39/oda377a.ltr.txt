@@ -1,0 +1,159 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) ODA377A addresses the following
+issues:
+
+        1. SLS ODA377A prevents non-root users from gaining root access
+           via scosession, scoterm, xterm, and clean_screen.
+
+        2. The logging feature of scoterm and xterm was disabled in
+           SCO Open Desktop Release 3.0.  SLS ODA377A re-introduces
+           this feature in a secure manner.
+
+SLS ODA377A will install on:
+
+    SCO Open Desktop Release 2.0
+    SCO Open Desktop Release 3.0
+
+SLS ODA377A is custom(ADM) installable and removable. 
+
+SLS ODA377A consists of a single floppy volume.
+
+                         INSTALLATION INSTRUCTIONS
+                         =========================
+
+To install SLS ODA377A, use custom(ADM) and take the following steps:
+
+1.  Enter the command:
+
+    custom
+
+    NOTE:  If you are installing SLS ODA377A on your second floppy drive,
+           enter the following command:
+
+    custom -m /dev/rinstall1
+
+2.  The main custom menu will appear.  Press <Return> to select "Install".
+
+3.  A window of options opens in the lower right-hand corner of the screen.
+    Press <Return> again to select "A New Product" from among these options.
+
+4.  The next screen highlights the "Entire Product" option.  Press <Return> 
+    to select this option.
+
+5.  Custom prompts you to insert Floppy Volume 1.  Insert SLS ODA377A and
+    press <Return>.  You will see the message:
+
+         Installing custom data files...
+
+    followed by:
+
+        Executing Product Prep Script.
+   
+6.  The Prep Script will check the release of the operating system.  If
+    the operating system is invalid, a message will be displayed indicating
+    that the installation has been aborted, followed by the prompt:
+
+        Press any key to continue
+
+    Press <Return> and custom will display "ERROR" in the top right-hand corner
+    of the screen and: 
+
+        Error: Init script failed
+
+    in the bottom left-hand corner.  Press <Esc> to be returned to the 
+    "Products Currently Installed" screen of custom(ADM).
+
+7.  Custom will briefly display the message "Creating file list ..." in
+    the top left-hand corner of the screen.
+
+8.  You will be prompted to: 
+
+        Insert: Security Enhancements For Open Desktop 2.0 and 3.0
+                Floppy Volume 1
+
+    into the floppy drive.  Ensure that the correct volume is in the 
+    floppy drive and select "Continue".
+
+9.  Custom will display the message:
+
+        Extracting files ...
+
+    followed by:
+
+        Executing Security Enhancements For Open Desktop 2.0 and 3.0 Init Script
+
+10. After the Init Script has executed, custom then displays:
+
+        Press any key to continue
+
+    Press <Return>.
+
+11. Custom will display the message "Checking file permissions..."
+    before you are returned to the "Products Currently Installed" screen of 
+    the custom(ADM) utility.  Press q to quit custom, or use the left arrow 
+    key to select "Quit" and press <Return>.
+
+
+                         REMOVAL INSTRUCTIONS
+                         ====================
+
+To remove SLS ODA377A, use custom(ADM) and take the following steps:
+
+1.  Enter the command:
+
+    custom
+
+    NOTE:  If you are installing SLS ODA377A on your second floppy drive,
+           enter the following command:
+
+    custom -m /dev/rinstall1
+
+2.  Use the left/right arrow keys to select "Remove" and press <Return>.
+
+3.  A window of options opens.  Use the up/down arrow keys to select:
+
+        Security Enhancements For Open Desktop 2.0 and 3.0
+
+    from the list of options and press <Return>.
+
+4.  A "Security Enhancements For Open Desktop 2.0 and 3.0" window opens.
+    Use the up/down arrow keys to select the "ALL" option and press
+    <Return>.
+
+5.  Custom will then ask:
+
+        Do you wish to continue?        [Yes]   No
+
+    Select "Yes" and press <Return>.
+
+6.  The removal script will then validate the operating system release and
+    version and check for an SCO Open Desktop environment.  If the operating 
+    system is not valid or the SLS is not removable you will be returned to 
+    custom(ADM) with an error.
+
+7.  custom(ADM) presents you with the prompt:
+
+        Press any key to continue
+        
+    Press <Return>.
+
+8.  Custom will display the message "Creating files list ..." in the top
+    left-hand corner of the screen.
+
+9.  Custom will briefly display the message "Removing files ..." in the
+    top left-hand corner of the screen.
+
+10. You are then returned to the "Products Currently Installed" screen of the
+    custom(ADM) utility.  Press q to quit custom, or use the left arrow key
+    to select "Quit" and press <Return>.
+
+
+If you have any questions, please call our SCO Customer Services Department
+at (408) 425-4726.  SCO Customer Service is available Monday through Friday,
+6:00 A.M. to 5:00 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

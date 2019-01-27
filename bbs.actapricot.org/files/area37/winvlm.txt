@@ -1,0 +1,189 @@
+
+              NOVELL TECHNICAL INFORMATION DOCUMENT
+
+TITLE:              Windows for Workgroups Using VLM/NETWARE.DRV
+DOCUMENT ID:        TID015144
+DOCUMENT REVISION:  A
+DATE:               02MAR94
+ALERT STATUS:       Yellow
+INFORMATION TYPE:   Symptom Solution
+README FOR:         WINVLM.EXE
+
+NOVELL PRODUCT and VERSION:
+NetWare Client for DOS/MS Windows 1.1
+
+ABSTRACT:
+
+This file includes both a summary and in-depth article for Windows 3.x and
+Windows for Workgroups 3.11 (WFWG) users using VLMs with updated NETWARE.DRV
+(v3.02).
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+DISCLAIMER
+THE ORIGIN OF THIS INFORMATION MAY BE INTERNAL OR EXTERNAL TO NOVELL.  NOVELL
+MAKES EVERY EFFORT WITHIN ITS MEANS TO VERIFY THIS INFORMATION.  HOWEVER, THE
+INFORMATION PROVIDED IN THIS DOCUMENT IS FOR YOUR INFORMATION ONLY.  NOVELL
+MAKES NO EXPLICIT OR IMPLIED CLAIMS TO THE VALIDITY OF THIS INFORMATION.
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ADDITIONAL CONFIGURATION
+
+     Third-Party Product and Version:
+
+     þMicrosoft Windows 3.x
+     þMicrosoft Windows for Workgroups 3.11 (WFWG)
+
+SYMPTOM
+
+     When updating the NETWARE.DRV for Virtual Loadable Modules (VLM)
+     contained in WINUP9.EXE (v3.02), you may run into the following an error
+     after starting Windows 3.x or Windows for Workgroups 3.11:
+
+     MESSAGE
+
+          Application Error: Call to Undefined Dynalink
+          
+SOLUTION
+
+     The updated NETWARE.DRV (v3.02) for VLMs contained in WINUP9.EXE now
+     requires the NWGDI.DLL file (also found in WINUP9.EXE) to be copied to
+     the WINDOWS/SYSTEM directory for both Windows 3.x and WFWG 3.11.
+
+     Note:     The NETX.EXE users are not affected because NETX (shell) uses
+               the NETWARE.DRV v2.02 file that does not require the NWGDI.DLL
+               file.
+
+     Additional information on this issue can be found for Windows for
+     Workgroups 3.11 users in WINVLM.EXE on FTP.NOVELL.COM or NOVFILES on
+     CompuServe.
+
+
+     Self-Extracting File Name:  WINVLM.EXE     Revision:  A
+
+     Files Included     Size     Date      Time
+
+     \
+       WINVLM.TXT         (This File)
+
+
+     Solution Specifics:
+
+     Windows for Workgroups 3.11 (WFWG) and VLMs
+
+     Overview:
+
+     Windows for Workgroups 3.11, the latest update from Microsoft, now
+     supports ODI drivers using Virtual Loadable Modules (VLMs).  The earlier
+     version (3.1) of WFWG only supported monolithic IPX with NETX.EXE (shell)
+     using ODINSUP.COM.  In addition, the earlier version (3.1) required
+     manual modifications of the configuration files to have both NDIS and IPX
+     support.  VLMs were not supported in the WFWG 3.1 environment because of
+     several incompatibilities between the two redirectors.
+
+     The current release of WFWG 3.11 no longer requires manual modifications
+     of the user's configuration files or the use of ODISUP.COM when using the
+     ODI drivers.  This extra step is eliminated when using Microsoft's
+     Network Setup and their VXD's (NWLINK.386, NDIS.386, and MSODISUP.386)
+     that perform the ODINSUP function.
+
+     Steps:
+
+     The following are some steps to include when updating from Windows 3.x to
+     WFWG or from WFWG 3.1 to 3.11 and using the VLMs:
+
+     1.   First, you need to make sure that you have installed the DOS Client
+          Kit version 1.1 (VLMs) and include the support for Windows in the
+          client install.  (This kit can be obtained by calling
+          1-800-UPDATE1.)  If you have previously installed the VLM client kit
+          (1.02), make sure you have obtained and applied the latest updates
+          from DOSUP9.EXE and WINUP9.EXE from NOVFILES on CompuServe.
+
+     2.   Start the WFWG 3.11 Setup.  When you reach the Network Setup option,
+          choose the following: **This example assumes you are using NE2000
+          adapter with ODI and NDIS3**
+
+          ===========================================================
+          Networks... Microsoft Windows Network (version 3.11)
+                     Novell NetWare (Workstation Shell 4.0 and above)
+          Drivers....
+                    Novell/Anthem NE2000 [ODI/NDIS3]
+                    IPX/SPX Compatible transport with NETBIOS
+                    Microsoft NETBEUI
+
+          Default  Protocol Set at
+          IPX/SPX Compatible transport with NETBIOS
+
+          Driver type [ODI Driver]
+          ============================================================
+
+     3.   WFWG 3.11 will now prompt you for the Novell files that you will
+          have already installed from the DOS client kit. If WFWG cannot find
+          them, give the path to C:\WINDOWS\SYSTEM and it will find the
+          NETWARE.DRV file and other Windows files needed to complete the
+          install.
+
+     4.   Now exit to DOS and copy over the NWGDI.DLL from WINUP9.EXE to the
+          WINDOWS\SYSTEM directory.  This DLL is new and required when using
+          NETWARE.DRV 3.02.*
+
+     If these four steps are followed, then WFWG 3.11 will modify and build
+     the Windows SYSTEM.INI, WIN.INI, and PROTOCOL.INI. The following DOS
+     files will also be modified AUTOEXEC.BAT, CONFIG.SYS and NET.CFG.
+
+     *Note: Previously we have stated that the client kit should be installed
+     before starting the WFWG update.  However, some users are updating their
+     1.02 client kit with DOSUP9.EXE and WINUP9.EXE.  The NetWare Client for
+     DOS/Windows Install 1.02 (which shipped with NetWare 4.01, 3.12, and was
+     available on CompuServe) and WFWG 3.11 Setup does not copy the NWGDI.DLL
+     file. However, the current NetWare Client for DOS/Windows 1.1 does copy
+     NWGDI.DLL file to the appropriate location.
+
+     In the WINUP9.TXT file, it states that you should copy the following
+     files to the WINDOWS\SYSTEM directory when using VLMs:
+
+     NETWARE.DRV    v3.02
+     NETWARE.HLP    6-17-93
+     *** NWGDI.DLL  NetWare Graphical Device Interface (required for
+                    NETWARE.DRV v3.02)***
+
+     If the NWGDI.DLL is not found when NETWARE.DRV initailizes, it will
+     return the following message:
+
+     MESSAGE
+
+          Application Error: Call to undefined  dynalink.
+
+     Therefore, after installing WFWG 3.11, manually copy the NWGDI.DLL to the
+     WINDOWS\SYSTEM directory when using the NETWARE.DRV 3.02 file.
+
+     ========================================================
+
+     Other Windows for Workgroups 3.11 / Novell Issues
+
+     Note:     The AUTOEXEC.BAT file needs to have ODIHLP.EXE (Real Mode stub
+               for ODI support that binds NWLINK to the ODI driver) placed
+               after the LSL.COM file.  An issue can arise if you are using
+               STARTNET.BAT file created by the client install.  If you are
+               using the "CALL STARTNET.BAT" command, then you should move
+               ODIHLP.EXE file to the STARTNET.BAT file after LSL.COM and
+               NE2000.COM lines.
+
+     Note:     NWLINK.386 (32-bit IPX/SPX compatible transport VxD) defaults
+               to ETHERNET_802.3 frame type.  In a NetWare 4.01 or 3.12
+               environment, the default frame type is ETHERNET_802.2. Running
+               RCONSOLE in a DOS box in WFWG will utilize the NWLINK.386 when
+               it sends raw SPX packets.  Because it will send ETHERNET_802.3
+               frames, no servers will show up on the RCONSOLE server
+               available list.  By changing  NWLINK.386 to ETHERNET_802.2
+               frames, the problem is resolved.
+
+     Note:     The user was using the 32-file access parameter in Windows for
+               Workgroups 3.11 and NETX.  Performance was slow when starting
+               Windows applications.  If they turned the 32-bit files access
+               off WFWG, the problem went away.  The NETWARE.DRV 11-24-93 file
+               that the user was using was for the VLMs instead of the one for
+               NETX.  After the user changed to using the NETWARE.DRV 10-27-92
+               for NETX found in WINUP9.EXE, the problem was resolved
+
+
+ÿ

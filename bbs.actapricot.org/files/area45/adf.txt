@@ -1,0 +1,861 @@
+001D     DR-one SC306 Video Standards Converter
+0024     ACCTON RingPair 4/16 Token-Ring Adapter
+002D     Madge 16/4 Ringnode
+0038     YARC u785+ Coprocessor
+0041     EtherLink 32
+004E     NCR SCSI Host Adapter
+0050     Cabletron 4/16 Mbps Token Ring Adapter
+0051     Thomas-Conrad TC4046
+0063     RAC/M IX
+006C     Thomas-Conrad TC5046 16/32 bit Ethernet Adapter
+006E     Aox MicroMaster 386 32 bit
+006F     Aox MicroMaster 486
+0074     Madge 16/4 32 Ringnode
+0086     Orchid Pro II v2.0/HiColor
+008E     MC Master v2.2
+00C4     Racore 16/4 Token-Ring Adapter
+0100     NCR 16/4 Token Ring Adapter
+0101     p1840 ProNET-4 Network Adapter
+01B2     Cogent E/MASTER III 32-bit Ethernet Adapter
+0202     Proteon p1890 4/16 Mbit/S Token Ring Adapter
+0301     3514 External Disk Array Adapter
+0425     Pacific Image Superfax Adapter
+04DC     Omninet/4 Transporter
+04FF     Viking Display Controller
+0500     CORE CNT-MCK Fixed Disk Adapter
+0503     Kurzweil Discoverer SCSI Adapter
+05FF     Viking 1600 Display Controller
+0611     Hercules Graphics Station
+0616     Jones Futurex Encryption Adapter (Model 526)
+0700     Proteon p1892 4/16 Mbps Token Ring Adapter
+0708     BusTek BT-640A SCSI Host Adapter
+07F4     NCR SCSI Host Adapter
+0800     DR-one Multiple Display Adapter
+0803     Madge Ringnode
+0808     BICC ISOLINK IEEE 802.3 Network Adapter
+080E     Madge Ringnode (2nd generation)
+0813     Analog/Digital-Digital/Analog-TTL-Multifunctionboard
+0818     12-Bit 16-Channel Analog to Digital Converter Board
+0819     12-Bit 8-Channel Digital to Analog Converter Board
+081A     32-Bit Photocoupler I/O-Board
+0A84     Olicom 16/4 Token-Ring Adapter
+0A85     Token Ring Adapter
+0DE0     XGA Display Adapter
+0EFF     Northern Telecom Lanstar Card
+0F1F     Adaptec AHA-1640 SCSI Host Adapter
+0F5F     Multisync Graphics Engine
+0F7F     PScomm4
+0FC7     Wizard i860 Attached Processor Adapter
+0FCC     D-Link Ethernet Card
+0FDF     NI9210 Network Controller
+1185     VEN-TEL 2400 modem
+3DB3     M-Motion Adapter
+500A     Bus QIC 02 Adapter
+5017     MetraByte uCDAS-16G A/D, D/A & Digital I/O Interface
+501C     DT2901/05: Data Translation Analog/Digital I/O Adapter
+5022     Online CDI-210S (Sony) CD ROM Controller
+5023     PCM Audio Record/Playback Unit
+5025     Online CDI-210H (Hitachi) CD ROM Controller
+5028     Emerald System SCSI Tape Adapter
+502E     IDT FAME 9 Track Tape Coupler
+5035     Panasonic FX-RS505/RS506 Image Scanner Adapter
+5039     Kurzweil Flatbed Scanner Adapter
+503A     Kurzweil Discover 7320 Optical Char Recognition Scanner
+5047     GE Fanuc Series 90 Work Station Interface
+5061     PlusTek SCANPLUS Colour Scanner Adapter
+506C     Intel Visual Edge
+506E     MIDIator
+5073     Bi-Tech 2300 Smart SCSI Interface
+5075     AMS MULTI-IO-10 Adapter
+5077     Rabbit RB77 Remote Communications Adapter
+5078     AMS Multi-Serial Adapter
+507E     AMS MULTI-PARALLEL Adapter
+507F     AMS MULTI-IO-10 Adapter
+5080     Chi NineTrack Tape Controller
+5082     Storage Plus Inc. SCSI Host Adapter
+5084     Creative Labs Sound Blaster Adapter
+508C     Trantor T228 SCSI Host Adapter
+50A1     Professional DG/LAN Controller
+50C0     KEYWORD CB-III
+50C1     Artisoft Inc. LANtastic Voice
+50CD     200E NIC
+50CE     CN800E NIC
+50D2     1Mb/s - 500Kb/s Tape Controller - H/W Data Compression
+50D4     QIC02 Tape Controller - H/W Data Compression
+5101     AMS IOSIX Adapter (Serial/Parallel)
+5103     Creative Labs Soundblaster Pro
+5108     Procom Technology, Inc. PIRA 55
+511F     NetWorth, Inc. - v Series
+5124     Emerald Systems SCSI-HAC Tape Adapter
+5125     Tecmar QIC-60 QT-60, QT-90, QT-125 Tape Drive
+5126     Tecmar Floppy Tape Controller
+5127     Tecmar QIC-02 Host Adapter w/Data Compression
+5128     Tecmar SCSI Host Adapter
+5130     Tecmar HDE+ SCSI Host Adapter
+5152     Intel Connection CoProcessor
+5156     Intel Channel Connection CoProcessor w/Modem Option
+5186     Daitoh SCSI Interface Adapter
+51FF     ETen Laser Printer Controller
+5278     RPTI-NET 1000M (R1000M-001/3)
+5323     Cumulus / 3 Plus SCSI Adapter C5640B Adapter
+5327     Emerald Systems SCSI-HAC Tape Adapter
+5333     National Instruments GPIB IEEE-488 Interface
+5347     Invisible Ethernet
+5348     Invisible Network Model 300
+5349     Invisible Network Model 200
+5353     National Instruments DIO-32F
+5356     TOPS FlashCard LocalTalk Adapter
+53FF     CORE SCSI Host Adapter
+5500     COREtape Controller
+5502     CORE CNT-MCF Tape Controller
+5600     Cabletron Ethernet Board E3020
+5601     Cabletron Ethernet Board E3020-X
+5602     Cabletron Ethernet Board E3030
+5603     Cabletron Ethernet Board E3030-X
+5604     Cabletron Ethernet Board E3040
+5605     Cabletron Ethernet Board E3040-X
+5606     Cabletron Ethernet Board E3010
+5607     Cabletron Ethernet Board E3010-X
+5608     Cabletron Systems E3100 Series Ethernet Adapter w/ 16K RAM
+5609     Cabletron Systems E3100-X Series Ethernet Adapter w/ 64K RAM
+5666     Scanner Adapter GSII
+568B     MaynStream QIC-02 Tape Adapter
+568D     MaynStream SCSI Tape Adapter
+56AF     ICOT Multiprotocol Adapter
+56CE     D-Link (DN-300)
+56EA     D-Link Ethernet Card DE-320CT
+5756     Alloy FTC500 Tape Adapter
+57DF     DFI Handy Scanner HS-3000-II
+57FE     Tape Drive Host Adapter
+5800     DI400
+5818     Ines IEEE488 Adapter
+5822     4 Port Chase Research Intelligent Serial I/O Controller
+5823     4 Port Chase Research Intelligent Serial I/O Controller
+5824     8 Port Chase Research Intelligent Serial I/O Controller
+5825     16 Port Chase Research Intelligent Serial I/O Controller
+582F     EDS 424 PCMAC Tape Drive Adapter
+5C0F     Land Computer SCSI Interface Adapter
+5C1C     IRMAtrac - DCA Token Ring Adapter
+5C1D     IRMAtrac Token-Ring Adapter/Convertible
+5CC1     Concord Communications MAP 3.0 Type 1410 Adapter
+5CCC     IOtech Personal 466 Interface
+5CEC     CEC PS<>488 GPIB Adapter
+5CED     PS<>488 IEEE-488 Adapter from CEC
+5CFF     GammaFax CMPC Communications Adapter
+5D59     Scientific Solutions DAS-1612
+5DEF     AGA SCSI Adapter
+5DFF     GammaFax Fax Communication Adapter
+5EDF     National Instruments MIO-16 Data Acquisition Card
+5EEE     HITACHI CD-ROM Adapter
+5F2F     Tape Drive Host Adapter
+5F51     IDEA Minicom serial controller
+5F60     Tiara Local Area Networks LANcard/A-II ARCnet Adapter
+5F77     Future Domain SCSI Adapter
+5FA6     Flagstaff Engineering Disk Controller
+5FAA     Flagstaff Engineering Tape Controller
+5FCB     Iomega PC4B/HD SCSI Host Adapter Board
+5FD6     ALICE Processor
+5FD7     Pentax SB-X4301 Scanner Interface Card
+5FD8     ES-2000/ES-3000 Eight Asynchronous RS-422/RS-485
+5FE1     MXI-1000 GPIB interface Adapter
+5FE3     Qua Tech RS-422 Driver Adapter
+5FE5     Qua Tech GPA-1000 Game port Adapter
+5FE6     DS-1000 Dual Asynchronous RS-232
+5FE8     QUA TECH SP-1000 Parallel printer Adapter
+5FE9     QUA TECH SP-1050 Serial/Parallel port Adapter
+5FF8     PLUS PASSPORT Adapter
+6000     Tiara LanCard/EII ETHERNET/CHEAPERNET Adapter
+6001     Tiara LanCard/E TWISTED PAIR Adapter
+6002     Tiara LanCard/E 10BT (AUI/10BaseT UTP) Adapter
+6007     MCNIC
+6011     Computer Logics LTD MicroLogic II Adapter
+6014     Standard Microsystems Corporation ARCNET-PS110
+6016     SMC3016
+6018     Gateway Communications G/Ethernet Controller
+601C     Multi-Tech Systems MT224PS/ES
+601F     Hewlett-Packard Scanner Interface Adapter
+6020     Cumulus CuRAM-16 Plus 2 MB Memory Multifunction Adapter
+6021     Cumulus CuRAM-16 Plus 4 MB Memory Multifunction Adapter
+6022     Cumulus CuRAM-16 Plus 6 MB Memory Multifunction Adapter
+6023     Cumulus CuRAM-16 Plus 8 MB Memory Multifunction Adapter
+6024     Cumulus CuRAM-16 Plus Memory Multifunction Adapter
+6028     I.C.S. UCDIO-24 Parallel Port Interface
+6029     MetraByte UCDAS-8PGA Data Acquisition Adapter
+602A     MetraByte uCCOM-422 RS-232/422 Communications Interface
+602D     AMS 2400 INTERNAL MODEM (FAXPACK2)
+6038     DEST Corp. Scanner Controller
+6040     Intel 2400B Modem
+6042     3Com EtherLink Ethernet Adapter
+6043     Multi-Tech 3270 Emulation Adapter
+6054     Kronos RS-485 Comm/Key Adapter 6600133-001
+605F     Tiara Computer Systems LANCARD A/II ARCNet Adapter
+6060     IDEAcomm 5251 4 LU short card
+6061     IDEAcomm 3278/DFT Gateway
+6073     Datacopy MicroFax FAX Adapter
+6077     Periscope Model I
+608D     Hyperam 32/16 SIMM
+608E     Hyperam 32/16 MF
+608F     HYPERPORT II
+6092     Rabbit RB78 Coax Adapter
+609B     MetraByte UCDISO-8 Control Input & Relay Output Interface
+609E     MICROTEK MS-PS/2 Interface Adapter
+60C2     Boca Research Dual Async/Parallel Adapter
+60C6     Allen-Bradley Company, Inc. 1784-KT2
+60C9     Boca Research Bidirectional Parallel Adapter
+60D0     Hayes JT Fax 4800P
+60DF     Rabbit RB74 Remote Communications Processor
+60E5     Boca Research Serial/Parallel Adapter
+60E7     MicroWay mW1167-M70/80 w/3167
+60E9     IBM SCSI-2 Adapter
+60ED     MDCB/2 & FDCB/2 Disc Coprocessor Board
+60FE     Datapoint MicroChannel RIM IV Adapter
+6103     SCANCAD 128
+6106     Altera LP5 Logic Programmer
+611B     Raster Devices Controller
+611E     Corel LS2000
+611F     NetWorth, Inc. - EtherNext Network Adapter
+6127     Future Domain MCS-700 SCSI Adapter
+612D     DaynaTALK LocalTalk Interface Card
+613A     Dialogic VR/81, VR/41 Voice Recognition Adapter
+613D     Rabbit RB75 Remote Communications Processor
+6147     Micro Channel Compatible Key Card
+614E     CLI 5250e Adapter
+6167     5136-SD-M Direct-Link Interface Card
+6169     AGCT Ltd. Game Card
+616A     Wide Area Network Interface Co-Processor (WNIC)
+616C     A-Bus Data Acquisition and Control Adapter
+6175     InfoChip Systems 105 Data Compression Coprocessor
+617B     Wall Data Datagate/Coax
+6180     LavaLink Dual Async Adapter
+6181     Lava Systems Parallel Adapter
+61A2     Digital Audio Playback Adapter
+61B4     CAERE TYPIST INTERFACE
+61BF     Intel SatisFAXtion Adapter
+61C4     LanWay TR 16/4
+61C7     AVM ISDN-Controller B1
+61C8     SMC EtherCard PLUS (SMC8013EP)
+61C9     SMC EtherCard PLUS (SMC8013WP)
+61D6     MSA Multi-Serial Adapter
+61DF     ATTACHMATE - Asynchronous SNA Adapter
+61E1     Cardinal Internal Modem
+61E8     LASAT PSM96Prestige or PSM96Plus or PSM24Prestige
+61EB     FAXPRO 1402-IO
+61EC     FAXPRO 6000-PP
+61ED     FAXPRO 3L52-IO
+61FD     IntelliPort Cluster Controller PSCC and C16 Remote Cluster
+61FE     Telebit Trailblazer Plus Internal Modem
+6205     Excelan EXOS 215T Intelligent Ethernet Adapter
+6213     C1000 IDE Hard Drive Adapter
+6217     Everex Speedlink Ethernet Adapter
+621D     VideoWindows
+621F     HP ScanJet IIC Adapter
+6221     The ITI LinkUp COAX - 3270 Emulation Adapter
+6226     Asante Technologies EtherPaC Ethernet Adapter
+6232     LaserMaster WinPrinter Controller
+6237     LANSprint High Speed Printer Controller
+6247     Lasergraphics RASCOL IV
+6250     DataTrac/MTC-16 Half-Inch Tape Drive Controller
+6253     Touchscreen Controller Model E271-2202 Accutouch Touchscreen
+6262     p1800 ProNET-10 Network Adapter
+6263     Arco Electronics AC-1070 IDE Controller
+626C     MS1553 MIL-STD1553 Adapter
+6271     CLI 5250 EMULATION ADAPTER
+627A     Kingston Technology Data Master
+627C     3Com 3C529 Network Adapter
+627D     3Com 3C529-TP Network Adapter
+6283     NCR 53C400 SCSI Host Bus Adapter (HBA)
+628B     Intel EtherExpress Network Adapter
+628D     Digital Ethernet Adapter
+6293     Rabbit RB62 Coaxial Communications Adapter
+629F     Reply AT IDE Drive Adapter
+62DB     VocalCard/Digital
+62E9     PM14400 Internal Modem
+62F0     Advanced Image Processor
+62F4     Memorex Telex 6508 SSI LINK Adapter
+62FC     The Quadram MainLink IIM - 3270 Connection
+62FE     The Quadram MainLink IIM - 3270 Connection
+62FF     The Quadram MainLink IIM - 3270 Connection
+6300     ProModem 2400
+630A     Dialogic D/81, D/41 Voice Processing Adapter
+6320     MCL-920 Digital I/O and Counter Card
+6322     MicroPort
+6323     Microport
+6343     LANtastic (tm) Artisoft Inc. 2Mbps Network Adapter
+6348     MCL-948 IEEE-488 Interface Card
+6361     Arnet Corporation, Smartport Communications Adapter
+63B3     CH Products Gamecard III
+63CA     Hewlett Packard StarLAN-10 Adapter
+63FE     NCR 796 Terminal Emulator
+63FF     Local 5250 Adapter
+6405     IDE Controller for Model 60 & 80
+642F     PS2000 OCR Reader Adapter
+6442     NCR ISDN Personal Computer Terminal Adapter
+6449     NCR ISDN Data Terminal Adapter
+64B6     Thomas-Conrad ARC-CARD
+64B7     Thomas-Conrad TCNS
+64FF     The Quadram MainLink IIM - 3270 Connection
+6508     PDIUC508 ARCNET Interface Adapter
+6509     PDuC8025 TRN Interface Adapter
+650B     PUREDATA PDuC8023 Ethernet
+651B     Racore Token-Ring Adapter
+655B     Wang Local Office Connection
+6571     Keithley Instruments Series 500 Interface
+6578     Exchange Series Sync Interface Adapter
+657D     CONTROL HOSTESS 550 Four Port Serial Adapter
+657E     DFL 104 Multi Function I/O Adapter
+65AC     ISAC 3200
+65D4     Howtek Personal Color Scanner
+65F1     ShineLink 3270 Terminal Emulator (LCS-8848/II)
+65F2     ShineNet LAN Card (LCS-8834-II)
+65F3     Shine Modem Card (LCS-8824B/II)
+6600     Ziatech GPIB Adapter
+6612     Evercom 24 Modem
+6666     SYSTEM GOLD COMMUNICATIONS CARD
+6674     DayStar LocalTalk AppleTalk Adapter - DayStar Digital
+6688     MC-8 Intelligent Multi-Serial Controller
+66C0     POWERPORTS 8/16/32
+6767     3270 Coax Adapter
+6769     Hardlock on Card
+676B     AQUILA COMMUNICATIONS ARCNET
+677F     ATTACHMATE - Advanced 3270 Adapter
+6780     NEOTECH FOUR CHANNEL SERIAL Adapter
+6781     NEOTECH SERIAL Adapter
+6782     NEOTECH PARALLEL Adapter
+6783     NEOTECH SERIAL/PARALLEL Adapter
+6784     NEOTECH DUAL RS-422/RS-485 SERIAL Adapter
+6785     S/485 RS-422/485 Serial Adapter
+6786     NEOTECH TWO CHANNEL PARALLEL Adapter
+678D     MSP/4 Four-Channel Serial + Parallel Adapter
+678F     BBS GPIB-3000
+6790     MSI-QSA - Quad Serial Adapter
+6791     MSI-SA - Serial Adapter
+6792     MSI-PA - Parallel Adapter
+6793     MSI-PSA - Parallel/Serial Adapter
+6794     MSI-DDA - Dual RS-422/485 Differential Serial Adapter
+6796     MSI-DPA - Dual Parallel Adapter
+679F     MSI-GPIB - General Purpose Interface Bus (IEEE 488) Adapter
+67B0     Artisoft LANtastic AE Ethernet
+67C0     MS Dual RS-232 Serial Adapter
+67C1     MAS Dual Asynch/Synch Adapter
+67E1     Star Gate ACL Adapter
+67E7     KRAFT G/3+ Adapter
+67EA     IRIScom III Coax Adapter
+67F8     Star Gate PLUS 8 Adapter
+67FD     Artist 12 Graphics Controller
+67FE     Artist 16 Graphic Controller
+67FF     Formwriter Adapter/Print Controller
+6954     MicroCAT Ceasurement Coprocessor
+69DC     CorNet Adapter
+69DD     TokenNet 1000
+69E7     COMLIB 2 - Sync/Async Adapter for Library Applications
+69EB     Voicecard 2000
+69EC     IF-330 9-channel Counter/Timer Adapter
+69EF     KORTEX 9600 SDLC
+69F0     Phase 1 Adapter
+69F2     5250 60 Cal Emulation Card Mod. 3M50
+69F8     DX-6600 Tape Drive Controller
+69F9     ibex ISC-Intelligent Serial Communication Adapter
+69FF     ARC 500 LAN card
+6A03     IMS B017 Transputer Module Motherboard
+6A0A     IF-800 Universal (E)EPROM Programmer
+6A12     OST RNIS Adapter
+6A13     XYNOX Modem
+6A14     NCR WaveLAN Network Interface Card
+6A15     SAKHR Arabic ROM Card (Model AX35)
+6A22     RM Ethernet Adapter
+6A2D     9100 Kit
+6A3C     T.D.T. Single Pad Karte Synchron
+6A40     Microeye Picturebook Adapter
+6A41     Evaluator Channel 1
+6A47     Scanner Interface Mod. CT 1020
+6A48     Connection Board for Expansion Chassis Mod. CT 971
+6A4A     PE 117 Smart Card Security Device
+6A4E     IX22 Data/Fax Modem
+6A51     Terminal Emulation Adapter
+6A59     AC-2060 ESDI Controller
+6A5A     MainLan Ethernet Adapter
+6A62     PSP400 Cryptographic Module
+6A65     PCX.21 P/A Multi-protocol Communication Adapter
+6A76     IF-120 Optocoupler Card
+6A77     IF-140 32 bit Digital I/O, 16 bit Counter
+6A78     IF-230 Multifunction Card
+6A79     IF-450 Intelligent RS422/RS485/RS232-Interface
+6A7A     IF-600 Reed Relay Card
+6A7B     Dual Channel Printer Port Adapter
+6A8D     Quattro Modem
+6A90     DragonDictate Speech Adapter
+6A93     ISDN-S/2 Adapter
+6AB4     Mayze Systems Ltd - Syncro 24PS V26 bis Modem
+6AB5     Mayze Systems Ltd - Syncro 48PS V27 ter Modem
+6AC2     SNM 12 Modem
+6AC3     SNM 16 Modem
+6AC6     SIO-4 Serial Input/Output Communications Card
+6ACB     PIO-48 Programmable Input/Output Card
+6ACF     Modem Fonico R.C. Sysnet SMF-22
+6AE0     SCSI Fixed Disk Controller
+6AE2     Polytel Super Keycard
+6AE7     Dacom Asynchronous Modem
+6AFB     Miracom Keycard/PS Modem
+6AFD     SKNET Ethernet Adapter/G
+6B06     Cristie SCSI Adapter
+6B0F     Siemens BAM Adapter (FM9750 Emulation)
+6B1B     REDIO RAMPA Engineering Digital I/O Card
+6B28     Mainlan Network Adapter
+6B29     Techland Sync Comms Adapter
+6B2C     XIONICS XIP-D Image Processor
+6B4D     PCX.21 N/A Multi-protocol Communication Adapter
+6B74     La Commande Electonique LCE 1245 Modem Adapter
+6B76     Network Designers Ltd Garnet Card
+6B78     Network Designers Ltd ONYX Card
+6B80     Dataflex Design Biscom Modem
+6B84     NCPe Multiboard
+6B8F     M6520 ARCNET 4-port Internal Active Hub Master Controller
+6B94     CORE ESDI Fixed Disk Controller
+6B95     CORE ESDI Fixed Disk Controller
+6B9A     Technology Concepts CCB
+6B9B     Specialix SI Family
+6BA7     T.D.T. Single Pad Karte Asynchron
+6BA9     HEMA Transputer Adapter
+6BB6     MARCP2 ARCNET Adapter
+6BBA     Internal Ethernet Controller
+6BBB     BARR/6BBB Synchronous Communications Adapter
+6BBC     Internal Synchronous Communications
+6BBE     M6060 Serial/Parallel Printer Adapters
+6BBF     M6600 Ethernet Adapter
+6BC0     M6620 Ethernet Adapter w/Boot PROM Option
+6BC1     M6550 16-bit ARCNET Adapter
+6BCB     CONNECT ARCnet Adapter
+6BDB     IBM PC Network Baseband Adapter
+6BF2     Carte Modem KORTEX
+6BF3     ESP ELETTRONICA SILLARO Adapter serial ports
+6BF8     Serial Communications Card
+6BFD     PCX.21 /A Multi-protocol Communication Adapter
+6BFF     Torus Ethernet Adapter
+6C06     Sanyo CD-ROM Adapter
+6C07     ImagetScanner Adapter Kit IK
+6C0F     Roland MIDI Processing Unit
+6C3A     ModConnect 984 Programmable Controller
+6C3B     Modicon SM85/Modbus Plus Adapter
+6C67     Opto 22 Isolated RS-485 Serial Port
+6C68     Opto 22 Dual RS-485 Serial Port
+6C69     Opto 22 Pamux 4 Adapter
+6C7C     Phaser Two Model 50+
+6C7E     Jovian Logic Corp. SYLVIA
+6CBB     DATEM dDCM800 BITBUS Interface Adapter
+6CC7     CCS7 Attachment
+6CEC     GAT Coprocessor
+6CFD     OPTIPAC Series 250
+6D6D     EICON TECHNOLOGY Laser Printer Adapter
+6D78     Memorex Telex 3270 Coax Adapter
+6DAC     Logitech ScanMan
+6DBB     Multi-Tech Systems MT224ES7
+6DD4     FasTalk V.32/5/V.32/42b
+6DD5     Sync-Up v.32
+6DD6     Sync-Up 201
+6DE0     Sync-Up 9600 V.32 Modem
+6DE1     Sync-Up T9628B
+6DE2     Fastalk V.32
+6DE3     Fastalk 2400
+6DE4     Fastalk 1200
+6DE5     Sync-Up V.22 bis
+6DE6     Sync-Up 201/212
+6DE7     Sync-Up 208/201
+6DED     US Robotics Courier 2400 eps Modem
+6DEF     Digital Ethernet Adapter
+6DF0     Emerald Technology, Inc. 3XTwin
+6DF1     Emerald Technology, Inc. 3XPlus
+6DF4     Emerald Technology, Inc. 3XPlus
+6E03     Contex SCSI Adapter
+6E6C     IBM Audio Capture & Playback Adapter
+6E6E     EICON Technology Single Port Communication Adapter
+6E78     IRMA2 Adapter
+6E79     IRMA 3 3270 Coax Adapter
+6E7A     DCA Link
+6E7C     DCA Intelligent Comm Adapter
+6E7D     DCA Smart Alec 5250/90
+6E7E     Linkup M/COAX
+6EBE     Applied Creative Technology Systemizer MSC
+6EC6     SMC TokenCard Elite (8115T)
+6EDD     U.S. Robotics Courier Modem
+6EE7     IMC Networks Corporation PCnic II Ethernet Controller
+6EEE     Sync-Up Multi-Protocol Adapter
+6EF0     10NET/STARLAN LAN Adapter
+6EF1     DCA 10NET Coaxial LAN Adapter
+6EF2     DCA 10NET 10BASE Twisted Pair LAN Adapter
+6EF8     IRMA 3t 3270 Coax Adapter
+6EFF     CLEO SIB (Synchronous Interface Board)
+6F01     Hayes 2400 bps Smartmodem Model 2400P
+6F04     Hayes Enhanced Serial Port Adapter
+6F0A     CAMAC Interface (Model 2928-Z1A)
+6F4B     RTI-220 Analog Input/Output Expansion Board
+6F4D     RTI-217 High Density Digital Input/Output Board
+6F4E     RTI-205 Multifunction Analog and Digital Input/Output Board
+6F4F     RTI-204 Analog Input and Digital Input/Output Board
+6F5B     RTI-222 Analog Output Expansion Board
+6F6B     AccuSpec Acquisition Interface
+6F6F     EICON Technology Single Port Communication Adapter
+6F7E     Street Electronics 'ECHO' Speech Synthesizer
+6FAD     CodeNet 8320/8322 Fiber Optic / 8321 FOIRL Ethernet Adapter
+6FB0     VBX200 by Natural Microsystems
+6FB3     SCS Communications Co-Processor
+6FB4     STACKER 16 - Data Compression CoProcessor Card
+6FB5     Reply On-Board Serial/Parallel Adapter
+6FB9     Attachmate 19.2Kb SLDC Adapter
+6FBB     Racal-Vadic 2400 Autodial Modem
+6FBE     X-LINK File Accelerator
+6FBF     WATSON Board by Natural MicroSystems
+6FC0     Western Digital WD8003ET Ethernet Adapter
+6FC1     Western Digital WD8003ST Starlan Adapter
+6FC2     WD EtherCard PLUS 10T (WD8003W)
+6FC9     Applied Digital Parallel Adapter
+6FCB     Practical Peripherals PM2400 Internal Modem
+6FD7     CHI Communications Adapter
+6FDB     National Instruments DIO-24 Digital I/O Interface
+6FDD     ICC/Intercom Adapter
+6FE4     DigiBoard COM/16
+6FE5     DigiBoard COM/8
+6FE6     DigiBoard COM/4
+6FE9     DigiBoard Open-Ender
+6FEA     DigiBoard Open-Ender RS422
+6FEC     DigiCHANNEL C/X System
+6FF0     Arnet Corporation, Multiport Communications Adapter
+6FF1     STB Serial/Parallel Adapter
+6FF3     Micro-Integration COAXXSYS Adapter
+6FF6     Modem DIGICOM SNM
+6FFC     Jovian Logic Corp. VIA
+6FFF     Interactive Images Touch Screen Adapter
+7000     AST Advantage 286 0-8M
+7001     AST Advantage 286 w/Dual Serial Port Option
+7002     AST Advantage 286 w/Serial & Parallel Port Option
+7003     AST RampagePlus 386
+7005     AST RampagePlus 386 w/Serial & Parallel Port Option
+7007     HYPERAM 32/16
+7010     Tecmar MicroRAM 386 Multifunction Board
+7011     Tecmar MicroRAM AD Multifunction Board
+7012     Ungermann-Bass PC3030 Ethernet Adapter
+7016     BOCA Research Model 50/60 Memory Expansion Board
+701A     TrueScan Version: Calera Recognition Systems Inc.
+7020     Cumulus 2 Meg Expanded/Extended Memory Multifunction Adapter
+7025     CuRAM 32 Plus Extended Memory Multifunction Adapter
+7027     Cumulus CuPORT-SSP 2 Serial 1 Parallel Port Adapter
+7048     EDSUN Memory board
+7049     PIICEON Memory Board w/ROM
+704E     IBM AVC Video Capture Adapter (NTSC)
+704F     Multi-Protocol Communication Adapter
+7050     AST RampagePlus
+7051     AST RampagePlus w/I/O Pak/S Option
+7052     AST RampagePlus w/I/O Pak/SP Option
+7055     Kofax Image Products Document Processor
+705F     4MB Memory Expansion Card
+7064     AW-RCP (Register Communications Processor)
+7069     Dual Asynchronous Card
+706A     Monolithic Systems JustRAM/8 Memory Board
+706C     Corvette Display
+706F     Aox Micromaster 386 Card
+7071     PACSTOR SCSI Host Adapter
+7074     Video Capture Adapter
+707C     JLASER-6
+707E     Irwin 4100 Controller
+7081     AST Advantage 386 w/Dual Serial Port Option
+7082     AST Advantage 386 w/Serial & Parallel Port Option
+7083     AST Advantage 386 0-8M memory Adapter
+7086     CRi 'Coherent Processor' Content Addressable Memory
+708D     SCSI Host Adapter
+708E     Kingston KTM-8000/286 Expansion Memory Adapter
+708F     Kingston KTM-8000/386 Expansion Memory Adapter
+7090     AST-5251/11A Enhanced Adapter
+7091     AST-3270/CoaxIIA Adapter
+7092     AST-CC423/A Adapter
+7093     AST-CC832/A Adapter
+70B0     Intel Above Board 32
+70C3     High Speed Comms Adapter
+70C4     Excalibur EXC-1553 card
+70C9     Twinax Work Station Emulation Adapter
+70CD     CLI 5250GATE-SDLA COMM BOARD
+70CE     IBM Video Capture Adapter (PAL)
+70D0     Kingston KTM 16000/386 Memory Expansion Adapter
+70D1     Above Board
+70D4     Kingston KTM 609/16 Memory Expansion Adapter
+70D7     AdLib Music Synthesizer Adapter
+70D8     RAMXtender 16 Memory Expansion Board
+70DC     Z-Com 16-bit Memory Expansion Adapter
+70DE     Compex ENET-16/U
+7125     PIRA
+7130     NCL 600 SCSI Host Adapter
+7151     NE-32
+7154     NetWare NE NIC
+7180     Parity + Plus Model P32110
+7181     Parity + Plus Model P16110
+7188     Mountain QIC-02 Adapter
+71B0     Cumulus CuPORT-P Parallel Port Adapter
+71B1     CUMULUS SILHOUETTE Adapter
+71BF     CUMULUS CuRAM-32 MEMORY ADAPTER
+71D0     Kingston 64MB Memory Expansion Adapter
+71D4     Kingston Technology DataCard 16
+7200     MicroGate SyncLink Communications Card
+7201     Unified Serial Adapter
+7283     Bit3 Adapter
+72F1     (DAYI) Chinese-Input Interface Card
+72F6     HYPERTEC HYPERPORT II
+72F7     ETen Chinese Font Card
+72FC     QIC-02 Tape Adapter (LCS-6818/II)
+7300     MicroGate SyncLink Modem Card
+7322     the super pink board
+73EC     AIC HBA SCSI Device Controller
+73FF     OmniTel Encore 2400 Internal Modem
+7400     MicroGate SV32 Modem - SDLC - 9600bps
+7401     Mountain Computer MACH2 Streaming Tape Drive Adapter
+7411     Quadboard Multifunction Adapter (primary ID)
+7422     Quadboard Multifunction Adapter (secondary ID)
+7430     Paragon Enhanced 80386 4-16MB Memory Expansion
+7491     Tecmar MicroRAM SC Extended Memory Adapter
+74FD     NCR 3421 SCSI Controller
+7561     Alert Technology Serial Adapter
+75FF     Trantor SCSI Host Adapter
+76DA     QUADMEG PS/Q Memory Adapter (primary)
+76DE     QUADMEG PS/Q Memory Adapter (secondary)
+777D     Elite 16/2-386 Memory Expansion Adapter
+7788     Above Board 2 Plus
+77FB     Everex 4 Megabyte Memory Adapter EV-136
+77FF     Alloy HI-2 PC Expansion Bus Interface Card
+7803     PS Multiport Adapter
+780C     AD/DA 110 Card
+781E     Raster Image Processor Mod. CT 5177
+7823     EMA/Extra Memory Adapter
+7825     IB-232-16-Ultimate RAM System
+7826     IB-232-32-Ultimate RAM System
+7878     SR32BI 32 Bit Memory/IO Adapter
+7A7A     Boca Research BOCARAM PLUS Memory Expansion Board
+7B7F     Legend RAMaster 2/8
+7C36     Contex Scanboard
+7CEC     OS/RAM4 Memory Adapter
+7CED     OS/RAM8 Memory Adapter, Capital Equipment Corp.
+7CEE     OS/RAM32 Memory Adapter, Capital Equipment Corp.
+7CEF     OS/RAM32plus Memory Adapter, Capital Equipment Corp.
+7D7F     Orchid Ramquest Extra 16/32
+7DDE     Mountain 16 Bit SCSI Host Adapter
+7DF0     SYSGEN PST100 Tape Adapter
+7DF1     SYSGEN PSH200 SCSI Host Adapter
+7E76     Overland Data 9 Track Tape Coupler Model XL
+7E7F     AccuLogic SIMMply RAM
+7EC0     AccuLogic SIMMply RAM
+7EE4     Anchor PS24 Modem Adapter
+7EFF     The Coax Connection
+7F00     Compex Inc. ANET Adapter
+7F01     ProCom Technology Inc. SCSI Enabler
+7F3F     NCR 4700 Banking Card
+7F4C     NCR 53C94 SCSI Controller
+7F4D     NCR 3421 SCSI Controller
+7F4F     NCR SCSI Host Adapter
+7F7D     2400 baud internal modem
+7F7E     ORCHID RamQuest EXTRA
+7F7F     SBCA Communications Adapter
+7F8F     TALLGRASS SCSI Adapter
+7F99     DigiCHANNEL 4i or 8i
+7FAE     XTEND Renaissance Expansion Board
+7FBE     FTG PXL-480 HI-RES Lightpen Board
+7FCE     QUA TECH SmartLynx ESI-1000
+7FD8     Koax 3270 Adapter
+7FE9     DigiBoard Open-Ender DOS
+7FEA     DigiBoard Xi DOS RS422
+7FEB     Advanced Digital PC EXBUS
+7FEC     CSM Inc. SCSI Host Adapter
+7FF9     IOMEGA PC4 Host Adapter
+7FFA     IOMEGA PC4B-50 SCSI Host Adapter
+7FFE     Micro to Mainframe Product
+8000     AHEAD System VGA Enhancer
+8002     AHEAD Systems Inc. VGA Enhancer-Z
+8007     Page Manager Series 7 or Series 12 or Page Manager 100
+8009     Vermont Microsystems COBRA
+800D     PIXELWORKS Ultra Clipper Graphics Subsystem
+800F     Microcomp DR-one MultiVGA
+8010     Microeye IC Video Digitiser
+8016     ATRIS QUATTRO/20 or ATRIS/20 or NEFTIS/20 Display Adapter
+8025     ELSA XHR Spectra Video-Board
+8027     ELSA XHR Alpha Video Board
+8028     VideoLogic DVA-4000
+8029     Datagraph Pixelstar
+803B     SPEA Graphiti Flash 1-GS/HE or SPEA Graphiti Flash 1-P
+8044     Paradise 8514 Plus Video Adapter
+8048     Sigma Designs' L-VIEW
+8051     egs-VGA
+8052     Liberty Graphics Board
+8053     Rasterex (Int.) a.s, Light Graphics Board
+8054     GS80B
+8055     GS16B
+8057     Microeye Video Output Board
+8058     Frame Buffer and H.R. Monitor Mod. CT 820
+8060     High Resolution Graphic Board
+8065     Videogenesis/24
+8067     TV Tuner
+8069     miroMAGIC Grafikcontroller
+8077     Periscope 1
+807B     KF-9200 Document Display System
+807F     MICRO DISPLAY SYSTEMS Video Adapter
+8080     Control Systems Artist 10
+8081     Telesensory System Vista Adapter
+8085     Truevision TARGA+
+8088     ATI 8514/Ultra Graphics Adapter
+8099     Number Nine Pepper PRO1024 Graphics Adapter
+809A     #9GXi Graphix Coprocessor
+80A5     Cornerstone SinglePage XL Display
+80A6     Cornerstone High Res Adapter
+80A9     Intel Action Media i750 DS1 DVI Adapter
+80AB     ATC-1148 Flat Panel Display Adapter
+80AC     PageView
+80AD     SilverView
+80AE     Sigma Designs' L-VIEW w/VGA Emulation
+80AF     Cornerstone DualPage Hi-Res Monitor and Adapter
+80B0     AHEAD VGA ENHANCER-Z
+80B3     M-Motion Video Adapter
+80B7     Radius SVGA MultiView
+80C3     ARTIST XJS Graphic Controller
+80C4     ARTIST TI16 Graphic Controller
+80C7     ARTIST 10001 Series
+80C9     SilverView
+80CB     Arlunya SC306 Standards Converter
+80CC     Microfield T8 High Resolution Graphics Controller
+80E6     RasterOps Colorboard 1024
+80E7     Nth Engine 330 Display Controller
+80E8     Matrox MG-104/108-M Adapter
+80EE     ILLUM-16 Video Graphics Board
+80F2     Tseng Labs ET4000 VGA Adapter
+80F8     Matrox PG2-1281 Hi-res Graphics Controller
+80F9     MICRO DISPLAY SYSTEMS, INC. 34010 MONOCHROME VIDEO Adapter
+80FC     Powergraph Ergo-VGA
+8100     AHEAD VGA EAGLE-I
+8102     Colorgraphics Corp. Dual VGA
+810E     DrawingCard
+8110     Radius TPD/PC
+8115     Master Graphics CADcelerator
+8117     SORAC VideoCapture S0-212
+8118     VGA/PAL Video Conversion Card
+8119     VGA/NTSC Video Conversion Card
+8127     Stone Multivideo Multiuser Terminal Adapter
+8128     SPEA - HiLite
+812F     Laser Video Interface
+8174     Ultra Clipper Rainbow
+8175     Quad VGA
+8176     MVGA Multi-VGA Video Adapter
+8202     AHEAD VGA ENHANCER-Z
+8484     IBM 5080 Serial Link Adapter
+8888     Metaphor WS2XP
+8DF0     IBM Image Adapter
+8DF1     IBM Image Adapter w/Printer/Scanner Option
+8DF2     DSS and Sub card 2
+8DF3     DSS and Sub card 3
+8DF4     IBM Image Adapter
+8DF5     IBM Image Adapter w/Printer/Scanner Option
+8EE6     SGI IRISVISION Adapter
+8EF4     IBM FDDI Network Adapter
+8EF5     IBM Ethernet Busmaster Adapter
+8EF7     IBM Gearbox Model 800 System Resource Card
+8EF8     IBM Expansion Unit SCSI Controller
+8EFD     IBM 7568 Industrial Computer SCSI Adapter w/cache
+8EFE     IBM SCSI Adapter
+8EFF     IBM SCSI Adapter w/Cache
+8F70     IBM Realtime Interface Co-Processor Portmaster Adapter
+8FA0     IBM LANStreamer 32 Network Adapter
+8FA4     IBM LANStreamer 16 Network Adapter
+8FC4     IBM Personal/370 Processor
+8FC8     IBM Token-Ring 16/4 Busmaster Adapter
+8FCF     IBM Remote 5250 Adapter
+8FD6     IBM Audio Adapter
+8FD7     IBM W4 Adapter
+8FD9     IBM XGA Video Adapter
+8FDA     IBM XGA-2 Display Adapter
+8FDB     IBM XGA Display Adapter
+8FDE     IBM Japanese Voice Adapter
+8FFF     IBM Gearbox Model 800 Processor Card
+90EE     IBM SVGA Display Adapter
+90EF     IBM Display Adapter
+A980     DVT/EVT Intel Action Media i750 DS1 DVI Adapter
+C1FF     IBM Hi Speed Parallel Adapter
+CC06     ELSA XHR Spectra Video-Board
+CFCF     CNET ARCNET CN190 NIC
+D77F     IBM 4755 Cryptographic Adapter
+DDCD     IBM Sync/Async V.32 Internal Modem Adapter
+DDFF     IBM ESDI Fixed Disk Controller
+DE90     IBM 5582 Printer/Scanner Adapter
+DEFF     IBM Multi-Protocol Communications Adapter
+DF3F     IBM IEEE488 Adapter
+DF7F     IBM 3363 Optical Disk
+DF9F     IBM Integrated Fixed Disk Controller
+DFAF     IBM Print Service Adapter
+DFBF     IBM 6157 Streaming Tape Adapter
+DFF6     IBM 3890/XP Interface Adapter
+DFFA     IBM 1.2M 5.25 Inch Diskette Drive Adapter
+DFFC     IBM INFOWINDOW GPIB2 CARD
+DFFD     IBM ST506 Fixed Disk Controller
+E000     IBM Token-Ring Adapter
+E001     IBM 16/4Mb Token Ring Adapter
+E00F     Computer Lab International Token Adapter
+E014     IBM S/370 Channel Emulator
+E016     IBM 300/1200/2400 Internal Modem
+E04E     IBM High Speed Adapter
+E04F     IBM 3119 Scanner Adapter
+E1FF     IBM 3270 Connection B
+E400     Martin Speech Accelerator Card
+E7FF     IBM 3270 Connection A
+E9FF     Expansion Unit Model 002
+EA10     IBM Analog Input/Output Card
+EAA8     IBM Engineering Graphics Adapter
+EAFF     IBM 4 port serial Adapter
+ECCE     IBM Display Adapter 1.10
+ECEC     IBM Display Adapter 1.00
+ECFF     IBM 5250 Emulation Adapter
+EDAF     IBM P70 Plasma Display controller
+EDD7     IBM RAS Adapter
+EDDE     IBM Japanese OCR Processor Card
+EDFF     IBM 1200/2400 Baud Internal Modem
+EECE     IBM 4684 Device Channel
+EECF     IBM 4684-300 Device Channel
+EEE7     IBM Model 90 Planar Serial Port
+EEFF     IBM Dual Async Adapter
+EF7F     IBM 8514 Display Adapter
+EF8F     IBM Extended Async Communication Adapter
+EFB0     IBM ISDN Interface Co-Processor Model 2
+EFBF     INFOWINDOW VGA CONTROL CARD
+EFCF     IBM Store Loop Adapter
+EFD4     IBM Ethernet Adapter
+EFD5     IBM Ethernet Adapter
+EFDC     IBM ActionMedia II Display Adapter
+EFE0     IBM ISDN Interface Co-Processor
+EFE1     Modem Adapter (300/1200/2400)
+EFE2     IBM FAX Server Card
+EFE5     IBM Ethernet Adapter
+EFE6     IBM Data Exchange Adapter for 9391 Model 14
+EFEF     IBM PC Network Adapter
+EFF0     IBM Realtime Interface Co-processor Multiport or X.25
+EFF2     IBM G3 Adapter
+EFF3     IBM MSR-J Adapter
+EFF5     Ungermann-Bass NICps Ethernet LAN Adapter
+EFF6     IBM Personal Pageprinter Adapter
+EFF8     IBM TTL Async Communication Adapter
+EFFD     IBM VGA Adapter
+EFFE     IBM Display Adapter II
+EFFF     IBM Video Adapter-J
+F000     IBM Bus Adapter
+F04F     IBM 3117 Scanner Adapter
+F7CE     IBM EMS Support Card (for PS/55 5530Zxx)
+F7F7     IBM Memory Expansion Adapter 2-8M 80286
+F7FE     IBM Extended Memory Adapter (2M or 0-8M)
+F8FC     DUAL ASNC + PARALLEL ADAPTER
+FA74     IBM 7437 Interface Adapter
+FAFF     IBM Memory Expansion Adapter 2-6M 80386
+FBFF     Built in Features
+FCF0     Serial/Parallel Adapter
+FCF4     VISION LOGIC Game Port Adapter
+FCFF     IBM Memory Expansion Adapter 2-8M 80386
+FDDE     IBM Enhanced Memory Adapter 80386 w/ROM
+FDDF     IBM Enhanced Memory Adapter 80386
+FE92     IBM Parallel Channel Adapter (370)
+FEFE     IBM Memory Expansion Adapter 1-2M 80286
+FF7F     Built In Features
+FFAF     Built In Features
+FFCF     IBM Store Loop Adapter
+FFDE     IBM Gearbox Model 800 0-16MB Extended Memory Adapter
+FFE0     IBM LAN Adapter for Ethernet
+FFF7     Future Domain SCSI Adapter
+FFF8     IBM S36/38 Workstation Emulation Adapter
+FFFE     IBM External 360K Diskette Drive Adapter

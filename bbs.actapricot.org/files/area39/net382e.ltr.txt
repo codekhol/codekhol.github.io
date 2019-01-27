@@ -1,0 +1,334 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) NET382E contains 
+TCP/IP drivers and daemons for these products:
+
+SCO TCP/IP Release 1.2.1 for SCO UNIX System V/386 Release 3.2 Version 4.2
+SCO Open Desktop Lite Release 3.0
+SCO Open Desktop Release 3.0
+SCO Open Server Network System Release 3.0
+SCO Open Server Enterprise System Release 3.0
+
+
+SLS NET382E contains these new features:
+
+1. A new /usr/lib/sendmail that addresses security issues.
+
+2. A new socket driver that corrects problems with hanging
+   network connections with SLS NET382D.
+
+These new drivers and binaries contain all the features mentioned 
+below where appropriate.
+
+SLS NET382E contains the following features that were also part of
+SLS NET382C, SLS NET382B, and NET382D:
+
+1. A new PPP driver that properly rejects unknown options. 
+
+2. A new /usr/lib/sendmail that includes additional security enhancements.
+
+3. A new TCP driver that corrects problems with streams buffer allocation.
+
+4. A new socket driver that corrects problems encountered using some
+   advanced socket functions.
+
+5. A new /usr/bin/rdist is provided that corrects problems which might 
+   have allowed unauthorized access to the system.
+
+6. A new /usr/lib/sendmail and /usr/bin/lmail are provided for those sites 
+   using sendmail as their mail system. These new binaries correct problems 
+   that might have allowed unauthorized access to the system.
+
+7. A new /etc/cpd daemon that corrects a problem that caused a system
+   using PPP to dial out upon bootup.
+
+8. A new /usr/bin/rcp corrects a condition where permission to open 
+   a socket is denied when using wild cards to copy files.
+
+9. A new /etc/telnetd designed to eliminate core dumps when TCP/IP 
+   is used in conjunction with MPX.
+
+10. A new tcp driver (/etc/conf/pack.d/tcp/Driver.o) modified for 
+    these reasons:
+
+    a. This new driver allows multiple bytes of OOB data.
+    b. A panic situation is avoided when a TCP state variable is equal to 0.
+    c. A panic situation is avoided when using TLI expedited data.
+    d. Eliminates duplicate <RST> being sent when a <SYN> is received on a
+       connection.
+    e. A panic situation is avoided when using TCP_DEBUG on a socket.
+    f. A possible six second delay is eliminated between multiple 
+       invocations of rcmd or rcp.
+
+11. A new netbios driver (/etc/conf/pack.d/nb/Driver.o and 
+    /etc/conf/pack.d/nb/space.c) modified for these reasons:
+
+    a. A panic situation is avoided during multiple inits.
+    b. Eliminates problems with a NEC localized LAN Manager server 
+       connecting to a Microsoft LAN Manager for SCO UNIX server.
+    c. A new configurable parameter in /etc/conf/pack.d/nb/space.c
+       (nb_sendkeepalives) has been created and can be set to 0 (default) 
+       to disable netbios keepalives, or to 1 to enable them.
+
+12. A new pseudo tty driver (/etc/conf/pack.d/spt/Driver.o) corrects 
+    a hang condition which occurs when using PC-Interface for DOS to 
+    create virtual terminal connections.
+
+13. A new /usr/bin/tftp and the associated daemon, /etc/tftpd, have been 
+    modified to avoid a situation in which the tftpd daemon loses 
+    synchronization and will not respond to incoming or outgoing packets.
+
+14. A new /etc/snmpd daemon is included that provides support for SNMP 
+    Multiplexing (SMUX) peers. The new daemon also corrects a problem 
+    that caused the original SNMP daemon to allocate extraneous amounts 
+    of memory that would eventually affect system performance.  The new 
+    snmpd also allows proper recognition of traps sent from a SMUX peer.
+    The original snmpd considered all traps sent from a SMUX peer to be 
+    Authentication Failure traps.
+
+15. A new socket driver, (/etc/conf/pack.d/socket/Driver.o), is included
+    that provides the ability to set non-blocking mode on a socket via the 
+    O_NONBLOCK argument to the fcntl() system call.
+
+16. A new /etc/rlogind is provided that corrects a problem where extraneous 
+    characters were occasionally displayed during the login process. 
+    Additionally, this new /etc/rlogind daemon allows the TERM environment 
+    variable to be passed correctly to the new shell that is spawned by the 
+    login process.
+
+17. A new /etc/bootpd is provided that correctly handles requests for files 
+    to be downloaded via tftp when the tftp daemon is running in secure mode.
+
+18. A new /etc/rshd is provided that correctly handles time zone variables
+    when using rcmd(TC).
+
+Additionally, this SLS provides the following drivers, daemons, utilities, 
+and files that provide better interaction between the Point-to-Point Protocol
+(PPP) subsystem and the rest of the TCP/IP software:
+
+         /etc/conf/pack.d/ip/Driver.o
+         /etc/conf/pack.d/ppp/Driver.o
+         /etc/conf/pack.d/asyh/Driver.o
+         /etc/pppd
+         /etc/pppstat
+         /usr/lib/ppp/ppp
+         /etc/syslogd
+         /usr/include/sys/netinet/ppp.h
+         /usr/include/sys/netinet/asyhdlc.h
+
+Some of the features provided by the new PPP subsystem are:
+
+         Ability to log PPP start-up negotiation sequences to 
+          /usr/adm/syslog - see the usage notes below.
+
+         Proper use of Domain Name Service (DNS) to avoid querying 
+          a remote nameserver during connection establishment.
+
+         Ability to reset an interface when a connection has been
+          aborted.
+
+         The default Async Control Character Map is now ffffffff
+          for Request for Comments (RFC) 1331 compliancy.
+
+
+Notes Regarding SCO Global Access:
+
+SCO Global Access Release 3.0.0 and 3.0.1 contain SLS NET382B, a previous
+revision of SLS NET382E.  Although SLS NET382E supersedes the previous SLS,
+due to the custom(ADM) bundle technology with which SCO Global Access is
+built, care must be taken when attempting to install both SCO Global Access
+and SLS NET382E.
+
+If you are about to install SLS NET382E on a system with SCO Global Access 
+Release 3.0.0 or 3.0.1 already installed, you must first edit the file 
+/etc/perms/bundle/gaccessb and locate the following set of lines:
+
+#
+macropkg="NET382B" : macro="SCO NET382B SLS"
+#
+macropkg="NET382B" : prd=net382 : perms=./tmp/perms/net382 : rel=2.0.0 :
+ comp="SCO NET382B SLS" : vols=01 : mapping=1 : compsize=2880
+#
+
+Comment out the lines with the "#" character as follows:
+
+#
+# macropkg="NET382B" : macro="SCO NET382B SLS"
+#
+# macropkg="NET382B" : prd=net382 : perms=./tmp/perms/net382 : rel=2.0.0 :
+#  comp="SCO NET382B SLS" : vols=01 : mapping=1 : compsize=2880
+#
+
+This will prevent the system from requiring that the SLS be installed 
+from the Global Access media.  While editing this file, do not make a 
+copy of the file /etc/perms/bundle/gaccessb in the directory 
+/etc/perms/bundle, as that will confuse the custom(ADM) program.
+
+Do NOT attempt to install SCO Global Access Release 3.0.0 or 3.0.1 on 
+a system where SLS NET382E is already installed.  If you wish to install 
+SCO Global Access Release 3.0.0 or 3.0.1 at a later time, please remove 
+SLS NET382E with custom(ADM) prior to doing so.  You may then reinstall 
+SLS NET382E after installing SCO Global Access Release 3.0.0 or 3.0.1, 
+taking note of the step previously outlined in this section. 
+
+
+Notes Regarding the SCO Secure TCP/IP Utilities:
+
+SLS NET382E does not have any knowledge of the SCO Secure TCP/IP 
+Utilities packaged with SCO Security Server Release 1.0.3.  If SLS 
+NET382E is installed after the SCO Secure TCP/IP Utilities are 
+installed, you will have to reinstall /etc/rlogind and /etc/telnetd 
+from the SCO Secure TCP/IP Utilities media.  Alternatively, you could 
+back up these two files prior to installing SLS NET382E, so that they 
+can be restored after installing the SLS. 
+
+
+INSTALLATION INSTRUCTIONS
+
+This SLS supersedes SLS NET372A, SLS NET379A, SLS NET382A, SLS NET382B, 
+SLS NET382C, and NET382D.  You may install SLS NET382E with or without 
+the presence of any combination of the older supplements already installed 
+on a system.  However, the earlier supplements should never be installed 
+after SLS NET382E has been installed, as this may cause earlier revisions 
+of software to over-write later revisions.  The releases of SCO products 
+to which this SLS applies are listed at the beginning of this document. 
+
+Should your system already have SCO Global Access installed, or if you
+plan to install SCO Global Access at a later date, please see the notes
+above regarding SCO Global Access before proceeding with the installation 
+of this SLS or SCO Global Access. 
+
+To install SLS NET382E:
+
+1. Shutdown and reboot your system.  Enter System Maintenance 
+   mode by typing your root password at the prompt:
+
+   Type CONTROL-d to proceed with normal startup,
+   (or give root password for System Maintenance)
+
+2. Type:
+
+   /etc/custom
+
+3. The main custom "menu" will appear.  The "Install" option will
+   be highlighted.  Press <Enter> to select the "Install" option.
+
+4. A list of installed products will appear.  The first item in 
+   the list, "A New Product", is highlighted.  Press <Enter> 
+   to select "A New Product".
+
+5. Custom will now display your installation options.  By default,
+   "Entire Product" is highlighted.  Press <Enter> to select
+   "Entire Product".
+
+6. Custom will prompt you to insert "Distribution Floppy 1".  Insert
+   the enclosed diskette into the drive and press <Enter> while 
+   "Continue" is highlighted. Note that if SLS NET382A, SLS NET382B,
+   SLS NET382C, or NET382D is already installed on the system, you 
+   will be prompted to verify that you want to install the newer SLS.
+
+7. After extracting some information from the diskette, custom 
+   will display information indicating that it is saving several 
+   files or will indicate that it is doing an update from a previous
+   release of the SLS.  Custom will then once again prompt you to 
+   insert volume 1. Press <Enter> while "Continue" is highlighted.
+
+8. Custom may then prompt you for a serial number and activation 
+   key.  Enter the appropriate serial number and activation key 
+   based on the information displayed on the screen. 
+
+9. After entering the serial number and activation key, you
+   will be prompted:
+
+   "Do you wish to relink the kernel now? (y/n)"
+
+   Enter "y" at this prompt.
+
+10. After the relink of the kernel is complete, you will be
+    prompted:
+
+    "Do you want this kernel to boot by default? (y/n)"
+
+    Enter "y" at this prompt.
+
+11. Next, you will be prompted:
+
+    "Do you want the kernel environment rebuilt? (y/n)"
+
+    Enter "y" at this prompt.
+
+12. After the kernel environment has been rebuilt, custom 
+    will prompt you to "Press any key to continue".
+    Press <Enter>.  Custom will then display the message:
+
+    "Checking file permissions...".
+
+13. After completing these steps, you will be returned to the
+    main custom menu.  You may quit out of custom at this time. 
+    To reboot the system so that the changes take effect, type:
+
+    /etc/reboot
+
+Should you ever need to remove this SLS, do so while in System
+Maintenance mode.  Enter the command:
+
+      /etc/custom
+
+Choose the menu selections:
+
+      Remove -> NET382E -> ALL
+
+Follow the directions displayed on the screen to remove the SLS.
+
+During both the installation and removal of this SLS, you are asked to 
+relink the kernel.  If you should choose not to do so during the installation 
+or removal process, execute the following commands at a later time while in 
+System Maintenance mode:
+
+        cd /etc/conf/cf.d
+        ./link_unix
+
+To complete installation or removal of this SLS, answer "y" to the questions 
+presented and then reboot your system with the command:
+
+        /etc/reboot
+
+
+USAGE NOTES
+
+Notes for the Point-to-Point Protocol (PPP) subsystem:
+
+If you install this SLS before configuring PPP, the new PPP drivers will
+be installed the next time you run netconfig(ADM) and configure PPP.  If
+you install this SLS after configuring PPP, the SLS installation script 
+will detect that PPP is already installed and link in the new PPP drivers 
+during the installation of the SLS.
+
+To enable the new PPP start-up debug option, add the string "debug" to the 
+entry for a particular machine in /etc/ppphosts.  For example, to enable 
+the debug option for machine bomb20, whose entry in /etc/ppphosts reads as 
+follows:
+
+132.147.144.30 - bomb20 idle=5 tmout=3
+
+add the string "debug" to the line so that it reads as follows:
+
+132.147.144.30 - bomb20 idle=5 tmout=3 debug
+
+As PPP attempts to establish a connection to the machine bomb20, information
+regarding the status of various options that are negotiated will now be logged
+to the file /usr/adm/syslog.  Similarly, you can add the debug option to lines
+that control incoming PPP connections in the /etc/ppphosts file as follows:
+
+*nppp - - idle=5 tmout=3 debug
+
+This will enable logging for incoming PPP connections.  Editing of
+/etc/ppphosts is best accomplished while in System Maintenance mode.
+
+If you have any questions regarding this SLS, or the product on which
+it is installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services
+

@@ -1,0 +1,274 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) OSS434A, the HTFS Supplement,
+provides a new HTFS driver that resolves the following known problems 
+with the HTFS filesystem on SCO OpenServer Release 5.0.0 with Release 
+Supplement 5.0.0d applied:
+
+         o Buffer cache deadlock when installing Oracle with 16 Mb of memory.
+           This was resolved in Support Level Supplement OSS415A.  However,
+           OSS415A could not install on top of Release Supplement 5.0.0d.  
+           Thus, OSS434A, installed on top of Release Supplement 5.0.0d, 
+           replaces OSS415A.
+
+         o Filesystem corruption induced by certain combinations of file
+           moves and overwrites. This problem is indicated by different 
+           behaviors and messages:
+
+            - "PANIC: HTFS: Free block #### epi freed on HTFS dev hd(#/#)"
+            - "NOTICE: HTFS: Allocated inode ### in HTFS dev hd(#/#) superblock"
+            - "PANIC: HTFS: Free block #### freed on HTFS"
+            - 'fsck -o full' reports the file system is corrupted (wrong link 
+              counts and missing blocks)
+
+         o Unmounting an S51K filesystem that has had changes made results 
+           in it not being marked clean, so fsck(ADM) has to be run.
+       
+         o Occasionally jerky system performance under heavy filesystem I/O.
+
+         o "Out of inodes" problems and error messages:
+
+            - When there are not many free inodes left on the system, the
+              filesystem seems to run out of inodes prematurely.
+            - System reports "out of inodes" even when there are plenty
+              of free inodes left on the system.
+            - 'fsck -o full' occasionally reports that it is updating the 
+              inode bitmap segment.
+
+At the time these instructions were written, there were two Release
+Supplements available for OpenServer 5.0.0.  Release Supplement version 
+5.0.0c was shipped with the original OpenServer 5.0.0 distribution, and 
+version 5.0.0d was shipped in late September 1995.  This SLS is applicable 
+to OpenServer Release 5.0.0 with Release Supplement version 5.0.0d
+installed.  This SLS will _not_ install unless Release Supplement version
+5.0.0d has already been applied.  The changes included in this SLS have 
+been incorporated into SCO OpenServer Release 5.0.2.
+
+
+INSTALLATION AND REMOVAL INSTRUCTIONS
+
+Installing patches on SCO OpenServer 5.0.0 usually consists of two phases:
+"Loading" and "Applying".  The instructions that follow enable you to 
+both install the patch from distribution media or media image, as well 
+as configure the patch to be installed from a remote SCO OpenServer 5.0.0 
+system over a TCP/IP network.
+
+
+I. BEFORE LOADING THE PATCH
+
+Ensure that the SCO OpenServer Release Supplement version 5.0.0d has been 
+applied on the system BEFORE loading and applying this SLS.
+
+Release Supplement version 5.0.0d may be downloaded from the SCO Online
+Support (SOS) system.  The relevant ftp site is:
+
+        ftp://ftp.sco.com/Supplements/rs500d
+
+You can also access this same site via the SCO web site http://www.sco.com;
+downloadable software from SCO Services can be viewed and chosen at:
+
+        http://www.sco.com/Support/download.html
+
+
+
+II. LOADING THE PATCH
+
+1.  Log in as root.
+
+2.  If you are installing this SLS from a media image, there is a file
+    called oss434a.Z.  Uncompress this file with this command:
+
+        # uncompress oss434a.Z
+
+    Copy the file to the /tmp directory and name it VOL.000.000:
+
+        # cp oss434a /tmp/VOL.000.000
+
+    If you are installing this SLS from floppy disk media, skip this
+    step and proceed to step 3. 
+
+3.  Execute the command:
+        
+        # scoadmin software
+
+    or double click on the Software Manager icon on the desktop.
+
+4.  Pull down the "Software" menu and select 
+    "Patch Management-->Load Patch".
+
+5.  You will see the "Begin Load Patch" menu.  Be sure the
+    local machine name is selected and choose "Continue".
+
+6.  You will see the "Select Media" menu. 
+
+    a. If you are loading this SLS from a media image per step 2,
+       pull down the "Media Device" menu and select "Media Images",
+       then choose "Continue".  You will then see the "Enter Image 
+       Directory" menu.  Enter /tmp and choose "OK".
+
+    b. If you are loading this SLS from floppy disk media, 
+       select the appropriate floppy disk drive and
+       choose "Continue".  Proceed to step 7.
+
+7.  You will see the "Load Patch Preference" menu.  Choose "Full".
+
+8.  You will see the "Load Patch Progress" window.  If the patch loads
+    successfully, you will see a "Message" window which states "Load 
+    Patch complete".  Choose "OK".  You are then returned to the main 
+    Software Manager window.
+
+9.  To apply the patch now, continue with step 2 under section III, 
+    "Applying the Patch".  To exit the Software Manager now, select
+    "Exit" from the "Host" menu.
+      
+
+III. APPLYING THE PATCH
+
+1.  Log in as root. Execute the command:
+
+        # scoadmin software 
+
+    or double click on the Software Manager icon on the desktop.
+
+2.  Pull down the Software menu and select "Patch Management-->Apply Patch".
+
+3.  You will see the "Begin Apply Patch" menu.  Be sure that the local
+    machine name is selected and choose "Continue".
+
+4.  You will see the "Select Media" menu. The "Hard Disk" menu item 
+    should already be selected.  Choose "Continue".
+
+5.  You will be presented with the "Select Patch-product to Apply" menu.
+    Highlight the "HTFS Supplement" patch and then choose 
+    "Full" to continue.
+
+6.  You will see the "Apply Patch Progress" window as the system applies
+    the patch.
+
+7.  You will see this message:
+
+    NOTE: Application or rollback of this patch requires a kernel relink.
+          If you are applying or rolling back several patches at this time,
+          you may choose to defer the relink until the last patch
+          application or rollback.
+          Do you want to relink the kernel now? (y/n)
+
+    Enter "y" or "n" based on this message. Note that you will not be able
+    to make use of the the patch until you relink the kernel. Therefore, 
+    it is suggested that you answer "y" to this question.
+
+8.  If you chose "y", the kernel will be relinked. In either case, you 
+    will then see:
+   
+        Press <RETURN> to continue
+
+    After pressing the <RETURN> key, you will see the "Apply Patch Progress" 
+    window, after which you will see a "Message" window stating "Apply Patch 
+    Complete".  Choose "OK" and you will be returned to the Software Manager's
+    main menu.  Exit the Software Manager by choosing "Exit" from the
+    "Host" menu.
+
+9.  Log in as root on tty01, and shut down the system:
+
+        # shutdown -g0 -y
+
+    After shutting down and rebooting the machine, application of the patch
+    is complete.
+
+
+IV. NOTES ON NETWORK INSTALLATION
+
+To install the patch on other SCO OpenServer 5.0.0 machines over the 
+network, first load the patch as in section II above on a designated 
+installation server.  Then create the user "swadmin" on the installation 
+server.
+
+When running the Software Manager on the system where the patch will be
+installed, you will be prompted for the source location of the patch in 
+the "Begin Load Patch" window.  Be sure to choose "From Another Host" 
+during this phase.  You will need to provide the name of the installation 
+server, as well as the password of the "swadmin" user on the installation 
+server, to initiate the installation process.
+
+
+V. PATCH REMOVAL
+
+NOTE: Patches must be rolled back in the reverse order in which they 
+were installed on a per-component basis.  Hence, if the "HTFS Supplement"
+patch is not the most recent patch applied to the UNIX component
+of the product, you will have to rollback all patches applied after
+the "HTFS Supplement" patch prior to rollback of the "HTFS Supplement".
+
+
+
+1.  Log in as root.
+
+2.  Execute the command:
+
+        # scoadmin software
+
+    or double click on the Software Manager icon in the desktop.
+
+3.  Pull down the "Software" menu and select 
+    "Patch Management-->Rollback Patch".
+
+4.  You will see the "Begin Rollback Patch" menu, and be asked to select
+    patched software to rollback. Select "SCO UNIX System V Operating System"
+    and choose "Continue".
+
+5.  You will see the "Patch Selection" window. Make sure that the 
+    "HTFS Supplement" patch is selected, and choose "Continue".
+
+6.  You will see the "Confirm Selected Patches" window. Choose
+    "Rollback" to confirm removal of the "HTFS Supplement" patch.
+
+7.  You will see the "Rollback Progress" window, as the system 
+    performs the rollback of the patch.
+
+8.  You will see this message:
+   
+    NOTE: Application or rollback of this patch requires a kernel relink.
+          If you are applying or rolling back several patches at this time,
+          you may choose to defer the relink until the last patch
+          application or rollback.
+          Do you want to relink the kernel now? (y/n)
+
+    Enter "y" or "n" based on this message. Note that complete rollback of
+    this patch requires a relink of the kernel to be complete. Therefore,
+    it is suggested that you answer "y" to this question, unless you are 
+    installing or removing other patches.
+
+9.  If you chose "y", the kernel will be relinked. In either case, you 
+    will then see:
+   
+        Press <RETURN> to continue
+
+    After pressing the <RETURN> key, you will see the "Rollback Progress" 
+    window, after which a "Message" window stating "Rollback Patch Complete". 
+    Choose "OK" and you will be returned to the Software Manager's main 
+    menu. Exit the Software Manager by choosing "Exit" from the "Host" menu.
+
+10. Log in as root on tty01, and shut down the system:
+
+        # shutdown -g0 -y
+
+    After shutting down and rebooting the machine, rollback of the patch
+    is complete.
+
+11. To also unload the patch, making it no longer available to be applied, 
+    follow steps 1 through 10 in this section.  However, in step 3, choose:
+
+        "Patch Management-->Unload Patch"
+
+    instead of:
+ 
+        "Patch Management-->Rollback Patch"
+
+
+If you have questions regarding this SLS, or the product on which it is
+installed, please contact your software supplier.  
+
+We appreciate your business.
+
+SCO Support Services
+

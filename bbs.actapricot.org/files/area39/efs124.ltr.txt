@@ -1,0 +1,246 @@
+ Introduction
+
+    The enclosed disks provide additional support for the following IBM
+    Personal System/2 (PS/2) model numbers:
+
+    8556, 9556, 8557, 9557, 9576, 9577, 8585, 9585, 8590, 9590, 8595, 9595.
+
+    _________________________________________________________________________
+       NOTE  PS/2 models 8595 and 9595 using the IBM SCSI-2 Fast/Wide
+       Adapter/A are not supported by this EFS.
+    _________________________________________________________________________
+
+    These PS/2 models use the Micro Channel Architecture (MCA).  Install SCO
+    XENIX System V Release 2.3.4 for 386MC platforms using this supplement.
+
+    SCO XENIX for 386GT platforms (AT or ISA bus) and SCO XENIX releases
+    prior to 2.3.4 are not supported with this supplement.
+
+    The supplement is required to support the following features of the
+    systems above:
+
+    +  2.88MB 3.5 inch floppy drive
+
+    +  embedded SCSI controller on Models 56, 57, 76 and 77
+
+    +  IBM 8mm 2.3GB SCSI tape drives
+
+    +  level 2 cache auto disable (unless cache=on is added to the
+       bootstring)
+
+    +  Zimmer 486 memory controller to locate the precise origin of memory-
+       induced NMIs
+
+    The supplement also corrects known problems with:
+
+    +  warm reboot
+
+    +  mkdev hd command
+
+    +  functionality of the parallel port driver
+
+    With some versions of the Model 56 and 57 running XENIX there is a
+    problem with the hard disk microcode.  Data corruption can occur in
+    certain heavy load conditions. This problem can be overcome by installing
+    the microcode update supplied with this supplement before installing
+    XENIX. The microcode need only be installed once on any hard disk.
+
+    The package consists of three disks:
+
+    +  A microcode update disk to ensure the hard disk is compatible with
+       XENIX.
+
+    +  A replacement N1 (Boot) disk to be used in place of the one supplied
+       with the operating system package.
+
+    +  A LINK kit update disk to modify the appropriate drivers.
+
+ Installation
+
+    The installation consists of up to three stages as follows:
+
+    1.  Updating the disk microcode if necessary using the microcode floppy.
+
+    2.  Installing the operating system using the replacement N1 floppy.
+
+    3.  Updating the LINK kit with the LINK kit floppy.
+
+    These stages are described in detail below.
+
+ Updating the hard file microcode
+
+    Insert the microcode update disk in the floppy drive and boot the system
+    with all the hard disks you intend to use with XENIX in the system. The
+    update program will run automatically and detect any drive that needs new
+    microcode. Only these drives will be changed: any others will be
+    unaffected.
+
+    Should a disk be changed or added to the system later, this update disk
+    should be rebooted before the disks are used with XENIX.
+
+    After running the microcode update the system should be powered down and
+    restarted to activate any changes.
+
+    You will not be prompted for any input during this process, though a num-
+    ber of messages will be displayed.  The screen should appear similar to
+    the following example.  The exact text in the lines describing the
+    hardfiles detected will vary depending on the number of disks present in
+    the system and the revision of microcode found on each one.
+
+       SCO System V/386
+
+       Boot
+       :
+       fd(60)wdsfix auto
+
+       WDS-L40S/380/3160 SCSI Upgrade Procedure.
+       SCSI hardfiles detected = 1  SCSI Adapters detected = 1
+
+       SCSI hardfile detected, Adapter 1, ID 6: Revision 143.
+       no upgrade required
+
+    or
+
+       SCSI hardfile detected, Adapter 1, ID 6: Revision 146. Model WDS-3160
+       Downloading new microcode . . . Complete
+
+       WDS-L40S/380/3160 SCSI Update Procedure Complete.
+       Please turn your computer OFF, then ON.
+
+       **   Safe to Power Off   **
+
+ 
+Installing the operating system
+
+    Install the operating system on the machine as normal, using the
+    replacement N1 (Boot) disk in place of the standard N1.  Make sure you
+    install the LINK kit by installing all the product or by specifying that
+    the LINK kit is one of the components to be installed.
+
+    Boot the system and enter ``System Maintenance'' mode by entering the
+    ``root'' password at the prompt.
+
+ Installing the LINK kit update
+
+    Install the LINK kit update disk using install(ADM) by typing the
+    following:
+
+    /etc/install?
+
+    You will see the message:
+
+       First Floppy? (y/n)
+
+       Ensure the LINK kit update disk is in the drive.
+
+    Answer ``y'' and enter Return.
+
+    You will then see the messages:
+
+       Extracting files
+
+       Installing IBM Micro Channel EFS Release 2.0.0 for SCO XENIX 2.3.4 . . .
+
+    If the LINK kit is not installed you will be given a chance to install it
+    now. However, it should already be installed due to the previous steps.
+
+    The LINK kit update is installed and you will see the message:
+
+       Updating system configuration
+
+    You will be prompted to enter your serial number and activation key to
+    brand some of the components.
+
+    You will be asked if you wish to relink the kernel.  It is recommended
+    that you respond with ``y'' so that modifications to make the warm reboot
+    command work properly can be made automatically to the relinked kernel.
+
+    If the relink is successful, the new kernel will be installed ready to
+    reboot.  The previous kernel is saved in /xenix.old.
+
+    You will see a message informing you that the replaced files are saved in
+    /usr/lib/ibmefs/save. The saved files can be deleted if the space is
+    needed.
+
+    You will see the message:
+
+       Next Floppy? (y/n)
+
+    Enter ``n'' and then Return.
+
+    You will see the message:
+
+       Installation complete.
+
+    You will then be returned to the system prompt.
+
+    Reboot your system to utilize the new kernel by entering reboot and then
+    Return.
+
+    If the LINK kit is ever reinstalled it will be necessary to reinstall the
+    LINK kit update also.
+
+ Additional information
+
+    IBM 2.88MB floppy disk drive
+
+    The file /etc/default/tar is modified during installation to add the
+    numeric key 10 for the 2.88MB device rfd0135ds36. For example, the
+    command tar tv10 could be used to list the names of files on a 2.88MB
+    floppy disk.  This device uses a blocking factor of 18.
+
+    IBM 8mm 2.3GB tape drive
+
+    To avoid the situation where the 8mm tape cartridge is ejected after each
+    use, a ``no unload'' device node may be created for use with this SCSI
+    tape drive. The mknod command is used to add new device nodes.  To create
+    a ``no unload'' device for your SCSI tape drive, use the major number of
+    your normal tape device (/dev/rct0) and add 32 to the minor device num-
+    ber. To determine the major and minor numbers of your normal tape device,
+    do a long listing of the /dev/rct0 device node by issuing the following
+    command:
+
+       l /dev/rct0
+
+    You should see something similar to the following:
+
+       crw-rw-rw-  2 root  lp  10,  0  Sep 26 21:51 /dev/rct0
+
+    In this example the major number is 10 and the minor number is 0. To cre-
+    ate the ``no unload'' counterpart to the above /dev/rct0 device node, log
+    in as root and issue the following command:
+
+       mknod /dev/nurct0 c 10 32
+
+    This creates a device called /dev/nurct0 with a major number of 10 and a
+    minor number of 32.  You should use this device explicitly when you
+    access your tape drive.  Or you can link /dev/rct0 to /dev/nurct0.  To
+    link the two devices, type the following:
+
+       rm /dev/rct0
+       ln /dev/nurct0 /dev/rct0
+
+    With the two devices linked, access to either device will no longer
+    result in the tape being ejected after each use.
+
+    _________________________________________________________________________
+       NOTE  You do not need to use a ``no unload'' device if you are
+       already using a ``no rewind'' device - this device does not auto-
+       matically unload the tape.
+    _________________________________________________________________________
+
+    _________________________________________________________________________
+       NOTE  The command tape -s erase will take typically two hours to
+       complete on this type of tape drive.  This is because the tape is
+       erased by writing data to the entire contents of the tape.
+    _________________________________________________________________________
+
+    Saved files
+
+    The files on the original distribution which have been replaced are saved
+    in /usr/lib/ibmefs/save. The saved files can be deleted if the space is
+    needed.
+
+    If you have any questions, please contact your SCO support provider.
+
+                                                                                

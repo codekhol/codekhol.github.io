@@ -1,0 +1,295 @@
+Dear SCO Customer,
+
+The enclosed Support Level Supplement (SLS) OSS468A, the Networking
+and SMP Supplement, corrects problems in multiprocessor systems and 
+in networking.
+
+
+RELEASE INFORMATION
+
+SLS OSS468A is intended for use on these products:
+
+        SCO OpenServer Host System Release 5.0.0, 5.0.2
+        SCO OpenServer Desktop System Release 5.0.0, 5.0.2
+        SCO OpenServer Enterprise System Release 5.0.0, 5.0.2
+        SCO Internet FastStart Release 1.0.0, 1.1.0
+
+Note: To address the same issues in SCO OpenServer Release 5.0.4, 
+please see Support Level Supplement OSS469A, the Networking and SMP 
+Supplement for OpenServer 5.0.4.
+
+Prerequisites:
+
+        On OpenServer 5.0.0, the following updates MUST be installed
+        prior to this patch:
+
+        - Release Supplement 5.0.0d (rs500d)
+          ftp://ftp.sco.com/Supplements/rs500d/
+
+        - Networking Supplement 1.0 (net100)
+          ftp://ftp.sco.com/Supplements/net100/
+
+        - SLS OSS449F (Network Maintenance Supplement)
+          ftp://ftp.sco.com/SLS/oss449f/
+
+
+        On OpenServer 5.0.2, the following updates MUST be installed
+        prior to this patch:
+
+        - SLS oss449f (Network Maintenance Supplement)
+          ftp://ftp.sco.com/SLS/oss449f/
+
+OSS468A supersedes sse010.
+
+
+SLS OSS468A corrects the following problems:
+
+1.  System "hang" (no keyboard response or other apparent system activity)
+    under network load.  May be followed by a warning message similar to 
+    "WARNING: IP: spinning on pcb ..." after several minutes.  May be 
+    accompanied by a depletion of streams buffers.  Only occurs on 
+    multiprocessor systems.
+
+2.  Lock timeout panic in "narrowcast" or "cpuintr".  Only seen on 
+    multiprocessor systems.
+
+3.  Unexpected Out of Band Data denial-of-service attack.  An exploit 
+    has been distributed under the name "winnuke".
+
+4.  Spoofed Self-connect Packets denial-of-service attack.  Exploits 
+    have been distributed under the names "land" and "latierra".
+
+Note: OpenServer systems are NOT vulnerable to IP denial-of-service
+attacks based on fragmented packets with invalid sizes.  Exploits
+have been distributed under the names "teardrop", "bonk", and "newtear".
+
+5.  Warning message "WARNING: NLM:  request to server  failed:", followed 
+    by panic in "printf" called from NFS lock manager.
+
+6.  Incoming udp broadcasts can bring down a system by using up all its 
+    streams buffers.  May be caused because a program, such as scologin, 
+    has stopped reading incoming packets.  May be caused by a flood of 
+    incoming packets which are arriving too fast for a slow system.
+
+7.  AFPS performance problem.  Setting the option TCP_NODELAY improves 
+    performance of certain size transactions, which would otherwise show 
+    large degradation in performance.
+
+8.  UNIX domain sockets performance problem.  Performance of UNIX domain 
+    sockets would degrade with multiple CPUs compared with a single CPU.
+
+9.  Lock timeout panic associated with "nsmsrv" processes.  Panic typically 
+    occurs in routine "select."
+
+10. Invalid information reported on lock timeouts.  The addresses printed 
+    on a lock timeout panic were inaccurate.
+
+11. Divide-by-zero panic introduced in OSS449F.  Corrects problem with 
+    "ip_spinreport" variable which could provoke a trap type 0.
+
+
+INSTALLATION AND REMOVAL INSTRUCTIONS
+
+Installing patches on SCO OpenServer Release 5 usually consists of two 
+phases: "Loading" and "Applying".  The instructions that follow enable 
+you to both install the patch from distribution media or media image, 
+as well as configure the patch to be installed from a remote SCO OpenServer 
+Release 5 system over a TCP/IP network.
+
+
+I. LOADING THE PATCH
+
+1.  Log in as root.
+
+2.  If you are installing this SLS from floppy disk media, skip
+    this step and proceed to step 3.
+
+    If you are installing this SLS from a media image, there is a
+    file called oss468a.Z.  Uncompress this file with this command:
+
+              # uncompress oss468a.Z
+
+    Copy the file to the /tmp directory and name it VOL.000.000:
+
+              # cp oss468a /tmp/VOL.000.000
+
+3.  Execute the command:
+
+              # scoadmin software
+
+    or double-click on the Software Manager icon on the desktop.
+
+4.  Pull down the "Software" menu and select "Patch Management-->Load Patch".
+
+5.  You will see the "Begin Load Patch" menu.  Be sure the local machine 
+    name is selected and choose "Continue".
+
+6.  You will see the "Select Media" menu.
+
+    a.  If you are loading this SLS from floppy disk media,
+        select the appropriate floppy disk drive and choose
+        "Continue".  Proceed to step 7.
+
+    b.  If you are loading this SLS from a media image per step 2, 
+        pull down the "Media Device" menu and select "Media Images", 
+        then choose "Continue".  You will then see the "Enter Image 
+        Directory" menu.  Enter /tmp and choose "OK".
+
+7.  You will see the "Load Patch Preference" menu.  Choose "Full".
+
+8.  You will see the "Load Patch Progress" window.  If the patch loads 
+    successfully, you will see a "Message" window which states "Load 
+    Patch complete".  Choose "OK".  You are then returned to the main 
+    Software Manager window.
+
+9.  To apply the patch now, continue with step 2 under section II, 
+    "Applying the Patch".  To exit the Software Manager now, select 
+    "Exit" from the "Host" menu.
+
+
+II. APPLYING THE PATCH
+
+1.  Log in as root. Execute the command:
+
+              # scoadmin software
+
+    or double-click on the Software Manager icon on the desktop.
+
+2.  Pull down the Software menu and select "Patch Management-->Apply Patch".
+
+3.  You will see the "Begin Apply Patch" menu.  Be sure that the local 
+    machine name is selected and choose "Continue".
+
+4.  You will see the "Select Media" menu. The "Hard Disk" menu item should 
+    already be selected.  Choose "Continue".
+
+5.  You will be presented with the "Select Patch-product to Apply" menu.  
+    Highlight the "Networking and SMP Supplement" patch and then choose 
+    "Full" to continue.
+
+6.  You will see the "Apply Patch Progress" window as the system applies 
+    the patch.
+
+7.  You will see this message:
+
+     NOTE: Application or rollback of this patch requires a kernel
+           relink.  If you are applying or rolling back several
+           patches at this time, you may choose to defer the
+           relink until the last patch application or rollback.
+           Do you want to relink the kernel now? (y/n)
+
+    Enter "y" or "n" based on this message.  Note that you will not be able 
+    to make use of the patch until you relink the kernel.  Therefore, it is 
+    suggested that you answer "y" to this question.
+
+8.  If you chose "y", the kernel will be relinked. In either case, you 
+    will then see:
+
+              Press <Enter> to continue
+
+    After pressing <Enter>, you will see the "Apply Patch Progress" window, 
+    after which you will see a "Message" window stating "Apply Patch Complete".     Choose "OK" and you will be returned to the Software Manager's main menu.  
+    Exit the Software Manager by choosing "Exit" from the "Host" menu.
+
+9.  Log in as root on tty01, and shut down the system:
+
+              # shutdown -g0 -y
+
+    After shutting down and rebooting the machine, application of the patch 
+    is complete.
+
+
+III. NOTES ON NETWORK INSTALLATION
+
+To install the patch on other SCO OpenServer 5.0.0/5.0.2 machines over the 
+network, first load the patch as in section I above on a designated 
+installation server.  Then create the user "swadmin" on the installation 
+server.
+
+When running the Software Manager on the system where the patch will be 
+installed, you will be prompted for the source location of the patch in the 
+"Begin Load Patch" window.  Be sure to choose "From Another Host" during this 
+phase.  You will need to provide the name of the installation server, as well 
+as the password of the "swadmin" user on the installation server, to initiate 
+the installation process.
+
+
+IV. PATCH REMOVAL
+
+Note: Patches must be rolled back in the reverse order in which they were 
+installed on a per-component basis.  Hence, if the Networking and SMP 
+Supplement patch is not the most recent patch applied to the UNIX component 
+of the product, you will have to roll back all patches applied after the 
+Networking and SMP Supplement patch prior to rollback of the Networking 
+and SMP Supplement patch.
+
+1.  Log in as root.
+
+2.  Execute the command:
+
+              # scoadmin software
+
+    or double-click on the Software Manager icon in the desktop.
+
+3.  Pull down the "Software" menu and select "Patch Management-->
+    Rollback Patch".
+
+4.  You will see the "Begin Rollback Patch" menu, and be asked to select 
+    patched software to roll back. Select "SCO UNIX System V Operating 
+    System" and choose "Continue".
+
+5.  You will see the "Patch Selection" window. Make sure that the Networking 
+    and SMP Supplement patch is selected, and choose "Continue".
+
+6.  You will see the "Confirm Selected Patches" window. Choose "Rollback" 
+    to confirm removal of the Networking and SMP Supplement patch.
+
+7.  You will see the "Rollback Progress" window, as the system performs 
+    the rollback of the patch.
+
+8.  You will see this message:
+
+     NOTE: Application or rollback of this patch requires a kernel
+           relink.  If you are applying or rolling back several
+           patches at this time, you may choose to defer the
+           relink until the last patch application or rollback.
+           Do you want to relink the kernel now? (y/n)
+
+    Enter "y" or "n" based on this message.  Note that complete rollback of 
+    this patch requires a relink of the kernel to be complete.  Therefore, 
+    it is suggested that you answer "y" to this question, unless you are 
+    installing or removing other patches.
+
+9.  If you chose "y", the kernel will be relinked. In either case, you will 
+    then see:
+
+              Press <Enter> to continue
+
+    After pressing the <Enter> key, you will see the "Rollback Progress" 
+    window, after which a "Message" window stating "Rollback Patch Complete".  
+    Choose "OK" and you will be returned to the Software Manager's main menu. 
+    Exit the Software Manager by choosing "Exit" from the "Host" menu.
+
+10. Log in as root on tty01, and shut down the system:
+
+              # shutdown -g0 -y
+
+    After shutting down and rebooting the machine, rollback of the patch 
+    is complete.
+
+11. To also unload the patch, making it no longer available to be applied, 
+    follow steps 1 through 10 in this section.  However, in step 3, choose:
+
+              "Patch Management-->Unload Patch"
+
+    instead of:
+
+              "Patch Management-->Rollback Patch"
+
+
+If you have questions regarding this SLS, or the product on which it is 
+installed, please contact your software supplier.
+
+We appreciate your business.
+
+SCO Support Services

@@ -1,0 +1,10 @@
+Link Support
+	Buffers 40 2048
+	MemPool 80
+
+Link driver 82596ODI
+  NETID 1
+  SEQUENCE 1
+  Frame ETHERNET_802.3
+  protocol IPX 0 ETHERNET_802.3
+

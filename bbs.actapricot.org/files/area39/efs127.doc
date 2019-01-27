@@ -1,0 +1,1411 @@
+
+ Introduction
+
+    These Release and Installation Notes document the Advanced Graphics
+    Adapters Extended Feature Supplement (EFS) product.  The software in this
+    EFS provides server support for additional graphics adapters.
+
+
+ Contents of this EFS
+
+    This EFS contains:
+
+    +  one Advanced Graphics Adapters EFS diskette containing the EFS soft-
+       ware
+
+    +  these Release and Installation Notes
+
+    Keep the floppy diskette until the next release of SCO(r) Open Desktop(r)
+    or your operating system.  You may need to install or reinstall the
+    Advanced Graphics Adapters EFS if you upgrade the software or hardware on
+    your system.
+
+ Software requirements
+
+    This EFS can be installed on systems running:
+
+    +  SCO Open Desktop, Release 2.0 (or later)
+
+    +  SCO Open Desktop, Release 1.1 with Update G and the SCO X11R4 EFS
+       installed
+
+    +  MPX with any of the above environments
+
+    +  the International Supplement with any of the above environments
+
+    +  the Maintenance Supplement (MS V.1) with SCO UNIX System V/386 Release
+       3.2 Version 4 and Xsight 4.1 (or later)
+
+    No serialization is required to install this EFS.
+
+    _________________________________________________________________________
+       NOTE  Systems with S3-based graphics adapters may exhibit a problem
+       with the console hanging.  To prevent this, if you have an S3-based
+       graphics adapter and SCO Open Desktop, Release 1.1, you must also
+       have the SCO WD & Video Drivers Update for GT Systems (SLS unx344)
+       installed.  If you have an S3-based graphics adapter and SCO UNIX
+       System V/386 Release 3.2 Version 4, you must install the Mainte-
+       nance Supplement (MS V.1), available early July, 1992.  The
+       enhancements provided by these supplements are included in SCO Open
+       Desktop, Release 2.0.
+    _________________________________________________________________________
+
+
+ About these Release Notes
+
+    The Advanced Graphics Adapters EFS Release and Installation Notes are
+    divided into the following chapters:
+
+    +  Chapter 1, ``Installing the EFS,'' describes how to install the soft-
+       ware provided in the Advanced Graphics Adapters EFS.
+
+    +  Chapter 2, ``Release information,'' describes features and enhance-
+       ments specific to this release.
+
+
+ Conventions used in this document
+
+    This guide uses the following notational conventions:
+
+    bold      represents commands, command options, parameters in files, data
+              structures, and special keys that you press.  For example, xset
+              -bc is a complete command line that is executed when you press
+              <Return>.  <Ctrl>x means to hold down the Control key and press
+              the x key, then release them.
+
+    italics   represents files and directories, as well as variables that you
+              supply.  For example, in the command argument path:pathname,
+              you replace pathname with an actual pathname when you type the
+              command.
+
+    courier   represents system responses, excerpts from files, and program-
+              ming examples.  For example, the following is a line from a
+              file:
+
+
+               XDRIVER = "xga";
+
+
+
+
+
+
+ Chapter 1
+ Installing the EFS
+
+    When you install this EFS, new graphics drivers and supporting software
+    are installed in the /usr/lib/X11 and /usr/lib/mkdev directories.  Sub-
+    directories containing graphics information (grafinfo) files are added to
+    the /usr/lib/grafinfo directory.  Additionally, some previously existing
+    grafinfo files are replaced with updated files.
+
+    If you have customized one or more of your existing grafinfo files, back
+    up the /usr/lib/grafinfo directory before installing this EFS.  Then,
+    after installing the EFS, you can merge portions of your X11R4 grafinfo
+    files into the new grafinfo files, and then re-configure the server for
+    your graphics adapter.
+
+    Before you install the Advanced Graphics Adapters EFS:
+
+    +  If you have SCO Open Desktop, Release 1.1, and if you have not yet
+       installed the SCO Open Desktop X11R4 EFS, install it now using the
+       procedures in the SCO Open Desktop X11R4 Extended Feature Supplement
+       Release and Installation Notes.
+
+    +  If you are using an XGA card, make sure it is installed in a 32-bit
+       slot.
+
+    +  If you have an earlier version of the Advanced Graphics Adapters EFS,
+       remove it before installing this release.  For instructions, see
+       ``Removing the Advanced Graphics Adapters EFS'' later in this chapter.
+
+
+
+ Installation procedure
+
+    The following procedure installs the Advanced Graphics Adapters EFS:
+
+    1.   Log in as root.
+
+    2.   Bring the system to system maintenance mode after telling your users
+         to log off.  Refer to shutdown(ADM) for instructions.
+
+    3.   Execute custom from the command line by typing custom and pressing
+         <Return>, or from sysadmsh by making the following sysadmsh selec-
+         tion:
+
+            System->Software
+
+
+    4.   Choose Install, A New Product, and Entire Product.  When you are
+         prompted to insert the requested volume, insert the EFS disk, then
+         select Continue.
+
+    5.   When you are prompted again for the first floppy volume, select Con-
+         tinue.  It takes a few minutes for the files to be extracted.
+
+    6.   Several messages indicate the installation's progress.
+
+    7.   When prompted, select the appropriate adapter from the displayed
+         list.
+
+    8.   If you are installing a graphics adapter for a Number Nine GXi, an
+         Imagraph ITX, a Microfield I8, or an Appian Rendition III, you must
+         provide some preliminary information at this time.  An explanation
+         of the required information is provided in the following section,
+         ``Special initialization scripts.''  Enter this information as you
+         are prompted.  If you do not have one of these four adapters, press
+         q to continue.
+
+    9.   Select the Update option from the Video Configuration menu.
+
+    10.  From the Update screen, use the arrow keys or the <PgUp> and <PgDn>
+         keys to move the highlight through the list of supported graphics
+         adapters.  When you have highlighted the desired adapter, press
+         <Enter>.
+
+    11.  Highlight the resolution at which you would like your graphics
+         adapter to function and press <Enter>.
+
+    12.  Highlight the monitor that you are configuring and press <Enter>.
+         Choose IBM VGA if you are unsure of your monitor type.
+
+    13.  Select Default or Specify to assign the graphics adapter to the con-
+         sole multiscreens.  If you select Specify, you must also use <Space>
+         to indicate the desired console multiscreens from the pop-up list.
+         When you are finished, select Accept.
+
+    14.  Verify the new selections by selecting the View option from the
+         Video Configuration menu.
+
+    15.  When you are satisfied with your new choices, select Quit, then
+         select one of the following:
+
+         +  Save to store your new graphics configuration choices
+
+         +  Exit to end your configuration session without saving your new
+            configuration
+
+         +  Cancel to return to the Video Configuration menu
+         Select Save to save your changes.
+
+    16.  You are prompted to relink the kernel.
+
+    17.  When prompted, press any key to continue.  The custom menu returns.
+
+    18.  Select Quit to exit custom.
+
+    19.  When the system prompt returns, type init 6 to reboot your system,
+         then press <Return>.
+
+    20.  When the boot prompt appears, press <Return>.  You are given the
+         option of going into multiuser mode.
+
+    21.  Press <Ctrl>D to enter multiuser mode.
+
+         The EFS is now installed.  Store the Advanced Graphics Adapters EFS
+         distribution media in a safe place.  If an accident or a hardware
+         failure damages the Advanced Graphics Adapters EFS files on your
+         hard disk, you will need the distribution media to re-install the
+         Advanced Graphics Adapters EFS.
+
+
+
+ Extracting single files from the distribution
+
+    You can use custom to extract single files from the Advanced Graphics
+    Adapters EFS distribution.
+
+    _________________________________________________________________________
+       NOTE  Installing a package from this EFS is not supported.  You
+       must install either the entire product or single files.
+    _________________________________________________________________________
+
+
+    1.   Log in as root.
+
+    2.   Execute custom from the command line.
+
+    3.   Choose Install, SCO Advanced Graphics Adapters EFS, and Files.
+         Press <Return> to select ALL and use arrow keys to highlight the
+         name of the file you want to extract.
+
+         _________________________________________________________________________
+            NOTE  If you have SCO Open Desktop, Release 1.1 with Update G
+            and the SCO X11R4 EFS, you must extract /tmp/uncompress before
+            you extract the file.
+         _________________________________________________________________________
+
+
+    4.   Press <Return> to select the file.  Note the directory in which it
+         will be installed.
+
+    5.   When you are prompted for the first floppy volume, make sure the EFS
+         disk is inserted, and select Continue.  It may take a few minutes
+         for the file to be extracted.
+
+    6.   Exit Custom.
+
+    7.   You must now uncompress the file.
+
+         _________________________________________________________________________
+            NOTE  All files are distributed in compressed format even
+            though they are not named with the filename.Z format that is
+            typical for compressed files.
+         _________________________________________________________________________
+
+         Change to the directory in which the file was installed.
+
+    8.   Type cat filename | uncompress > file.tmp
+
+         _________________________________________________________________________
+            NOTE  If you have SCO Open Desktop, Release 1.1 with Update G
+            and the SCO Open Desktop X11R4 EFS installed, instead of using
+            the above command, type cat filename | /tmp/uncompress >
+            file.tmp
+         _________________________________________________________________________
+
+
+    9.   Then type mv file.tmp filename
+
+    10.  Type cd /
+
+    11.  Finally, type fixperm -d AGA /etc/perms/xaga
+
+
+
+ Special initialization scripts
+
+    If you want to configure the server for a Number Nine GXi, an Imagraph
+    ITX, a Microfield I8, or an Appian Rendition III, the Advanced Graphics
+    Adapters EFS requires some preliminary information.
+
+    _________________________________________________________________________
+       NOTE  After the EFS has been installed, if you want to configure
+       the server for one of these graphics adapters, you must run the
+       appropriate initialization script as explained in the section,
+       ``Changing monitors and graphics adapters.''
+    _________________________________________________________________________
+
+    The adapters in this list can be installed with hardware configurable I/O
+    ports and/or a software configurable memory window. Instructions on ini-
+    tializing the Advanced Graphics Adapters EFS for such adapters are pro-
+    vided in the following sections.
+
+ Number Nine GXi
+
+    This card has both switchable I/O ports and software configurable memory
+    windows.  Check the installation documentation for the board to determine
+    where the I/O ports for the card will appear in the computer's I/O space.
+    This information is required for Advanced Graphics Adapters EFS server
+    installation for this card.
+
+    The Number Nine GXi can be run with or without an optional 64K memory
+    window mapped into the computer's physical address space.  Server perfor-
+    mance is improved when the card is run with a memory window.  You are
+    prompted for the address of this window as part of the configuration pro-
+    cess, so check available address ranges on your machine if you intend to
+    use this feature.  Be sure the address you choose does not conflict with
+    those of your network cards or other miscellaneous hardware that requires
+    mapping in the computer's address space.  Consult your hardware manuals
+    and any notes made when you installed the cards.
+
+ Imagraph ITX and Microfield I8
+
+    These cards have both switchable I/O ports and software configurable mem-
+    ory windows.  Check the installation documentation for the board to
+    determine where the I/O ports for the card will appear in the computer's
+    I/O space.  This information is required for Advanced Graphics Adapters
+    EFS server installation for this card.
+
+    The ITX and I8 are run with a 64K memory window mapped into the
+    computer's physical address space.  You are prompted for the address of
+    this window as part of the configuration process, so determine available
+    address ranges on your machine.  Be sure the address you choose does not
+    conflict with those of your network cards or other miscellaneous hardware
+    that requires mapping in the computer's address space.  Consult your
+    hardware manuals and any notes made when you installed the cards.
+
+ Appian Rendition III
+
+    This card has I/O ports with a hardwired base at 0x2B0.  The Advanced
+    Graphics Adapters EFS utilizes a 32K software configurable memory window
+    for the Rendition III.  You are prompted for the address of this window
+    as part of the configuration process, so determine available address
+    ranges on your machine.  Be sure the address you choose does not conflict
+    with those of your network cards or other miscellaneous hardware that
+    requires mapping in the computer's address space.  Consult your hardware
+    manuals and any notes made when you installed the cards.
+
+
+ Changing monitors and graphics adapters
+
+    This section explains how to change monitors and video graphics adapter
+    cards on your system after the Advanced Graphics Adapters EFS has been
+    installed.
+
+    To configure the server for a new graphics adapter or monitor, perform
+    the following steps:
+
+    1.  Log in as root.
+
+        _________________________________________________________________________
+           NOTE  If you perform this task in multi-user mode, users
+           currently logged in and running the X server through either xdm
+           or scologin will not see any changes until they restart the
+           server.  scologin replaces xdm on SCO Open Desktop 2.0  and
+           Xsight 4.1 systems.
+        _________________________________________________________________________
+
+
+    2.  If you are configuring the server for a Number Nine GXi(TM), an Ima-
+        graph ITX(TM), a Microfield I8(TM), or an Appian Rendition III(TM),
+        you must run a special initialization script.  If you are not in-
+        stalling one of these, skip this step.
+
+        At the system prompt, enter the following command:
+
+           # mkdev scriptname
+
+        In this command, scriptname is one of:
+
+             n9gxi  (Number Nine GXi)
+
+             mfgi8  (Microfield I8)
+
+             imaitx (Imagraph ITX)
+
+             reniii (Appian Rendition III)
+        You are prompted for preliminary information specific to your
+        adapter.   For instructions, see the previous section, ``Special ini-
+        tialization scripts.''
+
+    3.  At the system prompt, enter the following command:
+
+           # mkdev graphics
+
+        Then select the Update option from the Video Configuration menu.
+
+    4.  From the Update screen, use the arrow keys or the <PgUp> and <PgDn>
+        keys to move the highlight through the list of supported graphics
+        adapters.  When you have highlighted the desired adapter, press
+        <Enter>.
+
+    5.  Highlight the resolution at which you would like your graphics
+        adapter to function and press <Enter>.
+
+    6.  Highlight the monitor that you are configuring and press <Enter>.
+
+    7.  Select Default or Specify to assign the graphics adapter to the con-
+        sole multiscreens.  If you select Specify, you must also indicate the
+        desired console multiscreens from the pop-up list.
+        When you are finished, select Accept.
+
+    8.  Verify the new selections by selecting the View option from the Video
+        Configuration menu.
+
+    9.  When you are satisfied with your new choices, select Quit to exit
+        mkdev graphics, then select one of the following:
+
+        +  Save to store your new graphics configuration choices
+
+        +  Exit to end your mkdev graphics session without saving your new
+           configuration
+
+        +  Cancel to return to the Video Configuration menu
+        Select Save to save your changes.
+
+    _________________________________________________________________________
+       NOTE  You may be prompted to relink the kernel if you reconfigured
+       your 340x0-based grafinfo files using one of the special initiali-
+       zation scripts or if you modified one of your other grafinfo files.
+    _________________________________________________________________________
+
+    When you have completed your mkdev graphics session, test your new con-
+    figuration by running the X server.
+
+
+ Removing the Advanced Graphics Adapters EFS
+
+    Follow this procedure for removing the Advanced Graphics Adapters EFS:
+
+    1.   Log in as root.
+
+    2.   Bring the system to system maintenance mode after telling your users
+         to log off.  Refer to shutdown(ADM) for instructions.
+
+    3.   Execute custom from the command line by typing custom and pressing
+         <Return>, or from sysadmsh by making the following sysadmsh selec-
+         tion:
+
+            System->Software
+
+
+    4.   Choose Remove, and select ``SCO Advanced Graphics Adapters EFS.''
+
+    5.   Select ALL to remove the entire Advanced Graphics Adapters EFS.
+
+    6.   Select Yes to confirm the removal.
+
+    7.   When prompted, press any key to continue.  The custom menu returns.
+
+    8.   Select Quit to exit custom.
+
+
+
+ The xsrvr package and fixperm
+
+    When you install the Advanced Graphics Adapters EFS, a few files from the
+    existing xsrvr package are removed.  If you run fixperm on
+    /etc/perms/xsrvr at a later time, you receive the following error mes-
+    sages:
+
+       fixperm: file not found: ./usr/lib/grafinfo/moninfo/compaq/svga.mon
+       fixperm: file not found: ./usr/lib/grafinfo/moninfo/compaq/vga-lcd.mon
+       fixperm: file not found: ./usr/lib/grafinfo/moninfo/compaq/vga.mon
+       fixperm: file not found: ./usr/lib/grafinfo/moninfo/olivetti/svga.mon
+       fixperm: file not found: ./usr/lib/grafinfo/trident/impact2.xgi
+       fixperm: file not found: ./usr/lib/grafinfo/trident/impact3.xgi
+
+    These messages can be ignored.
+
+
+
+
+
+ Chapter 2
+ Release information
+
+
+
+ Supported graphics adapters
+
+    Table 2.1 lists the graphics adapter modes supported by graphics informa-
+    tion files in this EFS.  This list extends the list of adapters that are
+    already supported.
+
+    If your graphics adapter is not listed as supported, and if it is not
+    supported by your existing SCO Open Desktop 2.0 or X11R4 EFS server, you
+    may still use it if it is equivalent to a supported graphics adapter. To
+    determine whether your adapter is supported, consult your graphics
+    adapter documentation for details about its class (for example, VGA, XGA,
+    and so on) and supported resolutions.
+
+    Table 2-1  Supported Graphics Adapters
+
+    ___________________________________________________________________________
+   | Vendor              |  Model                     |  Mode                 |
+   |_____________________|____________________________|_______________________|
+   | Appian (Renaissance)|  Rendition II(TM) & II/XE  |  640x480 256 colors   |
+   |                     |  (1 Mbyte VRAM,            |  1024x768 16 colors   |
+   |                     |  .5 Mbyte DRAM minimum)    |  1024x768 256 colors  |
+   |_____________________|____________________________|_______________________|
+   | Appian              |  Rendition III             |  640x480 16 colors*   |
+   |                     |  (2 Mbyte VRAM,            |  1024x768 16 colors   |
+   |                     |  1 Mbyte DRAM)             |  1024x768 256 colors  |
+   |                     |                            |  1280x1024 16 color   |
+   |                     |                            |  1280x1024 256 color  |
+   |_____________________|____________________________|_______________________|
+   | AST                 |  WD 90C31(TM) (motherboard)|  640x480 16 colors    |
+   |                     |  Power Premium             |  640x480 256 colors   |
+   |                     |                            |  800x600 16 colors    |
+   |                     |                            |  800x600 256 colors   |
+   |                     |                            |  1024x768 16 colors   |
+   |                     |                            |  1024x768 256 colors  |
+   |_____________________|____________________________|_______________________|
+   | ATI                 |  Vantage(TM)               |  640x480 16 colors    |
+   |                     |                            |  640x480 256 colors   |
+   |                     |                            |  1024x768 16 colors   |
+   |                     |                            |  1024x768 256 colors  |
+   |_____________________|____________________________|_______________________|
+   | ATI                 |  Wonder XL(TM)             |  640x480 16 colors    |
+   |                     |                            |  800x600 16 colors    |
+   |                     |                            |  800x600 256 colors   |
+   |                     |                            |  1024x768 16 colors   |
+   |                     |                            |  1024x768 256 colors  |
+   |_____________________|____________________________|_______________________|
+
+    (Continued on next page)
+
+
+    * Select IBM VGA for this mode
+
+    Table 2-1  Supported Graphics Adapters   (Continued)
+
+    ____________________________________________________________________________
+   | Vendor      | Model                               | Mode                  |
+   |_____________|_____________________________________|_______________________|
+   | COMPAQ      | Advanced VGA                        | 640x350 16 colors     |
+   |             |                                     | 640x480 16 colors     |
+   |             |                                     | 640x480 256 colors    |
+   |             |                                     | 800x600 16 colors     |
+   |_____________|_____________________________________|_______________________|
+   | COMPAQ      | AG1024(TM)                          | 640x480 16 colors     |
+   |             | (1 Mbyte VRAM,                      | 640x480 256 colors    |
+   |             | requires optional .5 Mbyte          | 1024x768 16 colors    |
+   |             | VRAM module.)                       | 1024x768 256 colors   |
+   |_____________|_____________________________________|_______________________|
+   | COMPAQ      | Plasma(TM)                          | 640x400 2 colors      |
+   |_____________|_____________________________________|_______________________|
+   | COMPAQ      | VGA LCD(TM)                         | 640x480 16 colors     |
+   |_____________|_____________________________________|_______________________|
+   | COMPAQ      | QVision(TM) 1024/E (EISA)           | 640x480 256 colors    |
+   |             | QVision(TM) 1024/I (ISA)            | 800x600 256 colors    |
+   |             | (1 Mbyte VRAM,                      | 1024x768 256 colors   |
+   |             | requires optional .5 Mbyte          |                       |
+   |             | VRAM module on DeskPro/i.)          |                       |
+   |_____________|_____________________________________|_______________________|
+   | COMPAQ      | VGC(TM)                             | 640x350 16 colors     |
+   |             |                                     | 640x480 16 colors     |
+   |_____________|_____________________________________|_______________________|
+   | COMPAQ      | VGC-132(TM)                         | 640x350 16 colors     |
+   |             |                                     | 640x480 16 colors     |
+   |             |                                     | 800x600 16 colors     |
+   |_____________|_____________________________________|_______________________|
+
+   |_____________|_____________________________________|_______________________|
+   | Cornerstone | DualPage 150(TM)                    | 2048x1538 (monochrome)|
+   |_____________|_____________________________________|_______________________|
+   | DEC(r)      | Intelligent Graphics Controller(TM) | 640x480 16 colors*    |
+   |             |  (for the DECpc 433W(TM))           | 1280x1024 256 color   |
+   |_____________|_____________________________________|_______________________|
+
+    (Continued on next page)
+
+
+    * Select IBM VGA for this mode
+
+    Table 2-1  Supported Graphics Adapters   (Continued)
+
+    _______________________________________________________________________________
+   | Vendor         |  Model                     |  Mode                          |
+   |________________|____________________________|________________________________|
+   | DEC(r)         |  WD 90C30(TM) (motherboard)|  640x480 16 colors             |
+   |                |                            |  640x480 256 colors            |
+   |                |                            |  800x600 16 colors             |
+   |                |                            |  800x600 256 colors            |
+   |                |                            |  1024x768 16 colors            |
+   |                |                            |  1024x768 256 colors           |
+   |________________|____________________________|________________________________|
+   | Dell Computers |  WD 90C31(TM) (motherboard)|  640x480 16 colors             |
+   |                |                            |  640x480 256 colors            |
+   |                |                            |  800x600 16 colors             |
+   |                |                            |  800x600 256 colors            |
+   |                |                            |  1024x768 16 colors            |
+   |                |                            |  1024x768 256 colors           |
+   |________________|____________________________|________________________________|
+   | Diamond        |  STEALTH(TM)               |  640x480 256 colors            |
+   |________________|____________________________|________________________________|
+   | Genoa          |  7000(TM) Series           |  640x480 16 colors             |
+   |                |                            |  640x480 256 colors            |
+   |                |                            |  800x600 16 colors             |
+   |                |                            |  800x600 256 colors            |
+   |                |                            |  1024x768 256 colors           |
+   |________________|____________________________|________________________________|
+   | Hewlett Packard|  UltraVGA(TM)              |  640x480 256 colors            |
+   |                |  (.5 Mbyte VRAM minimum)   |  800x600 16 colors             |
+   |                |                            |  800x600 256 colors*           |
+   |                |                            |  1024x768 16 colors            |
+   |                |                            |  1024x768 256 colors*          |
+   |                |                            |  1280x960 16 color interlaced  |
+   |                |                            |  1280x1024 16 color interlaced*|
+   |________________|____________________________|________________________________|
+
+    (Continued on next page)
+
+
+    * These modes supported only with 1 Mbyte VRAM minimum
+
+    Table 2-1  Supported Graphics Adapters   (Continued)
+
+     ______________________________________________________________________
+    | Vendor      | Model                  | Mode                         |
+    |_____________|________________________|______________________________|
+    | IBM(r)      | XGA-2(TM)              | 640x480 2 colors             |
+    |             |                        | 640x480 16 colors            |
+    |             |                        | 640x480 256 colors           |
+    |             |                        | 640x480 65,535 color         |
+    |             |                        | 800x600 2 colors             |
+    |             |                        | 800x600 16 color             |
+    |             |                        | 800x600 256 color            |
+    |             |                        | 800x600 65,535 color         |
+    |             |                        | 1024x768 2 color interlaced  |
+    |             |                        | 1024x768 16 color interlaced |
+    |             |                        | 1024x768 256 color interlaced|
+    |             |                        | 1024x768 2 colors            |
+    |             |                        | 1024x768 16 colors           |
+    |             |                        | 1024x768 256 colors          |
+    |_____________|________________________|______________________________|
+    | Imagraph    | ITX                    | 1280x1024 256 colors         |
+    |             | (2 Mbyte VRAM,         |                              |
+    |             | 1 Mbyte DRAM)          |                              |
+    |_____________|________________________|______________________________|
+    | Intel       | WD 90C30 (motherboard) | 640x480 16 colors            |
+    |             |                        | 640x480 256 colors           |
+    |             |                        | 800x600 16 colors            |
+    |             |                        | 800x600 256 colors           |
+    |             |                        | 1024x768 16 colors           |
+    |             |                        | 1024x768 256 colors          |
+    |_____________|________________________|______________________________|
+    | Intel       | WD 90C31 (motherboard) | 640x480 16 colors            |
+    |             |                        | 640x480 256 colors           |
+    |             |                        | 800x600 16 colors            |
+    |             |                        | 800x600 256 colors           |
+    |             |                        | 1024x768 16 colors           |
+    |             |                        | 1024x768 256 colors          |
+    |_____________|________________________|______________________________|
+
+    (Continued on next page)
+
+    Table 2-1  Supported Graphics Adapters   (Continued)
+
+     ______________________________________________________________________
+    | Vendor          |  Model                    |  Mode                 |
+    |_________________|___________________________|_______________________|
+    | Matrox          |  PG 1281(TM)              |  1280x1024 256 colors |
+    |_________________|___________________________|_______________________|
+    | Matrox          |  PG 1281/S(TM)            |  1280x1024 16 colors  |
+    |_________________|___________________________|_______________________|
+    | Microfield      |  I8                       |  1280x1024 256 colors |
+    |                 |  (2 Mbyte VRAM,           |                       |
+    |                 |  1 Mbyte DRAM)            |                       |
+    |_________________|___________________________|_______________________|
+    | Micronics       |  MVC(TM) (motherboard)    |  1024x768 256 colors  |
+    |                 |                           |  1152x900 256 colors  |
+    |                 |                           |  1280x1024 256 colors |
+    |_________________|___________________________|_______________________|
+    | NCR             |  NCR(TM) VGA (motherboard)|  320x200 256 colors   |
+    |                 |                           |  640x350 16 colors    |
+    |                 |                           |  640x480 16 colors    |
+    |                 |                           |  640x480 256 colors   |
+    |                 |                           |  800x600 16 colors    |
+    |                 |                           |  800x600 256 colors** |
+    |                 |                           |  1024x768 16 colors   |
+    |                 |                           |  1024x768 256 colors**|
+    |_________________|___________________________|_______________________|
+    | Number Nine     |  GXi & GXi Lite           |  640x480 256 colors   |
+    |                 |  (1 Mbyte VRAM minimum,   |  1024x768 16 colors   |
+    |                 |  1 Mbyte DRAM)            |  1024x768 256 colors  |
+    |                 |                           |  1280x1024 16 colors* |
+    |                 |                           |  1280x1024 256 colors*|
+    |_________________|___________________________|_______________________|
+    | Oak Technologies|  Oak OTI-077(TM) chipset  |  640x480 16 colors    |
+    |                 |                           |  800x600 16 colors    |
+    |                 |                           |  1024x768 16 colors   |
+    |                 |                           |  1024x768 256 colors  |
+    |_________________|___________________________|_______________________|
+
+    (Continued on next page)
+
+
+    * These modes are expected to work but have not been tested
+    ** These modes are only supported on newer revisions of NCR motherboards
+
+
+
+    Table 2-1  Supported Graphics Adapters   (Continued)
+
+    _________________________________________________________________________________
+   | Vendor              |  Model                  |  Mode                          |
+   |_____________________|_________________________|________________________________|
+   | Orchid Technology   |  Fahrenheit 1280(TM)    |  640x480 256 colors            |
+   |_____________________|_________________________|________________________________|
+
+
+
+   |                     |  (.5 Mbyte VRAM minimum)|  640x480 32,767 colors*        |
+   |                     |                         |  800x600 256 colors*           |
+   |                     |                         |  1024x768 256 colors*          |
+   |                     |                         |  1280x960 16 color             |
+   |                     |                         |  1280x1024 16 color interlaced*|
+   |_____________________|_________________________|________________________________|
+   | Pixelworks          |  WhirlWIN(TM)           |  1024x768 256 colors           |
+   |                     |                         |  1280x1024 256 color           |
+   |_____________________|_________________________|________________________________|
+   | STB Systems         |  Wind/X(TM)             |  640x480 256 colors            |
+   |                     |  (.5 Mbyte VRAM minimum)|  640x480 32,767 colors*        |
+   |                     |                         |  800x600 16 colors             |
+   |                     |                         |  800x600 256 colors*           |
+   |                     |                         |  1024x768 16 colors            |
+   |                     |                         |  1024x768 256 colors*          |
+   |                     |                         |  1280x960 16 color             |
+   |                     |                         |  1280x1024 16 color interlaced*|
+   |_____________________|_________________________|________________________________|
+   | Video Dynamics, Inc.|  Sprint/GXU(TM)         |  640x480 256 colors            |
+   |                     |  (.5 Mbyte VRAM minimum)|  640x480 32,767 colors*        |
+   |                     |                         |  800x600 16 colors             |
+   |                     |                         |  800x600 256 colors*           |
+   |                     |                         |  1024x768 16 colors            |
+   |                     |                         |  1024x768 256 colors*          |
+   |                     |                         |  1280x960 16 color             |
+   |                     |                         |  1280x1024 16 color interlaced*|
+   |_____________________|_________________________|________________________________|
+
+
+
+   |_____________________|_________________________|________________________________|
+   | Western Digital     |  90C30 Chipset          |  640x480 16 colors             |
+   |                     |                         |  640x480 256 colors            |
+   |                     |                         |  800x600 16 colors             |
+   |                     |                         |  800x600 256 colors            |
+   |                     |                         |  1024x768 16 colors            |
+   |                     |                         |  1024x768 256 colors           |
+   |_____________________|_________________________|________________________________|
+
+    (Continued on next page)
+
+
+    * These modes supported only with 1 Mbyte VRAM minimum
+
+    Table 2-1  Supported Graphics Adapters   (Continued)
+
+       __________________________________________________________________
+      | Vendor         |  Model                 |  Mode                 |
+      |________________|________________________|_______________________|
+      | Western Digital|  90C31 Chipset         |  640x480 16 colors    |
+      |                |  (1 Mbyte VRAM)        |  640x480 256 colors   |
+      |                |                        |  800x600 16 colors    |
+      |                |                        |  800x600 256 colors   |
+      |                |                        |  1024x768 16 colors   |
+      |                |                        |  1024x768 256 colors  |
+      |________________|________________________|_______________________|
+      | ZDS            |  WAM(TM)               |  640x480 16 colors    |
+      |                |                        |  640x480 256 colors   |
+      |                |                        |  1024x768 16 colors   |
+      |                |                        |  1024x768 256 colors  |
+      |________________|________________________|_______________________|
+      | Zenith/Bull    |  WD 90C30 (motherboard)|  640x480 16 colors    |
+      |                |                        |  640x480 256 colors   |
+      |                |                        |  800x600 16 colors    |
+      |                |                        |  800x600 256 colors   |
+      |                |                        |  1024x768 16 colors   |
+      |                |                        |  1024x768 256 colors  |
+      |________________|________________________|_______________________|
+      | Zenith/Bull    |  WD 90C31 (motherboard)|  640x480 16 colors    |
+      |                |                        |  640x480 256 colors   |
+      |                |                        |  800x600 16 colors    |
+      |                |                        |  800x600 256 colors   |
+      |                |                        |  1024x768 16 colors   |
+      |                |                        |  1024x768 256 colors  |
+      |________________|________________________|_______________________|
+
+
+
+ Supported monitors
+
+    In addition to existing supported monitors, this EFS supports these moni-
+    tor models:
+
+    +  Compaq QVision(TM) line
+
+    +  NEC FG(TM) line
+
+    The server also supports other monitors that are functionally identical
+    to those listed above.
+
+    _________________________________________________________________________
+       NOTE  Not every supported monitor may necessarily work properly
+       with every supported adapter.
+    _________________________________________________________________________
+
+
+    Grafinfo file modes at frequencies above 60 Hz may not work on your moni-
+    tor.  Please check your monitor specifications before trying these modes.
+
+    Ensure that 640x480 16-color mode works properly on your monitor if you
+    experience problems with higher resolutions or more colors.
+
+ Zenith Data Systems monitors
+
+    The following table illustrates the refresh rates (Hz) used by Zenith
+    Data Systems monitors.
+
+    When configuring one of the graphics modes listed below for a Zenith Data
+    System's Monitor be sure to select a mode with a refresh rate that
+    matches an entry in the table below.
+
+    _________________________________________________________________________
+   | Resolution|  Hz      | Mode           | Monitor                        |
+   |___________|__________|________________|________________________________|
+   | 800x600   |  56      | non interlaced | ZCM-1420                       |
+   | 800x600   |  56      | non interlaced | ZCM-1430                       |
+   | 800x600   |  60      | non interlaced | ZCM-1650                       |
+   | 800x600   |  56      | non interlaced | ZCM-1790                       |
+   | 1024x768  |  87      | interlaced     | ZCM-1420                       |
+   | 1024x768  |  60      | non interlaced | ZCM-1430                       |
+   | 1024x768  |  60      | non interlaced | ZCM-1650                       |
+   | 1024x768  |  60,70,72| non interlaced | ZCM-1790                       |
+   |___________|__________|________________|________________________________|
+
+
+
+ Known limitations
+
+    The following are known limitations in this EFS.
+
+ Matrox PG-1281
+
+    Users of the Matrox PG-1281 Series must install the SCO UNIX software
+    that came with the adapter.  The software includes two floppies labeled:
+
+       PG-S1-DR/SCO5
+       LIB SHELL DRIVER/SCO UNIX
+
+    If you do not have this software, order it from Matrox.
+
+ Matrox PG-1281 and SINIX 1.1 to Open Desktop 2.0 upgrade
+
+    If you have a Matrox PG-1281 Series adapter and you are upgrading from
+    Siemens SINIX 1.1 to SCO Open Desktop 2.0, read the following carefully:
+
+    Before you install SCO Open Desktop 2.0 you must save the following
+    directory from your SINIX system.  With a floppy in the first disk drive,
+    execute the following commands as root:
+
+       cd /
+       tar cv ./usr/lib/matrox
+
+    This saves the matrox directory on the floppy disk.  Once you have
+    installed SCO Open Desktop 2.0, use this tar command to extract the
+    directory from the floppy disk:
+
+       cd /
+       tar xv
+
+    If you cannot save or retrieve this directory you must obtain the SCO
+    UNIX Lib Shell Driver from Matrox to use your PG1281 adapter.
+
+    A special keyboard configuration file is included to help the SCO X
+    server treat the Siemens WX200 German keyboard the same way that the
+    SINIX X server did.  If you have a WX200 German keyboard you should run
+    the following commands as root, after installing the Advanced Graphics
+    Adapters EFS:
+
+       cd /usr/lib/X11/xsconfig
+       /usr/bin/X11/xsconfig -o .Xsco.cfg config.txt wx200.kbd
+       mv .Xsco.cfg /usr/lib/X11
+
+
+ Pixelworks
+
+    Some older versions of the Pixelworks WhirlWIN cards have address decod-
+    ing problems which can result in abnormal process behavior and system
+    crashes.  Near the top right corner of the cards there is a 26 pin con-
+    nector.  On that connector is a sticker which contains assembly and board
+    revision information.  If the board has an on-board VGA, then the last
+    letter should be 'J' or more.  If the board has no VGA on it, then the
+    last letter should be 'F' or more.  If is is not, you should contact Pix-
+    elworks to obtain an updated version of the WhirlWIN card.
+
+ DECpc 433W and screen switching
+
+    When screen switching on a DECpc 433W, note that there is approximately a
+    three-second delay before the new image displays.
+
+ Adapters with 64K color display
+
+    The IBM XGA-2 is the only adapter supported in this release that works in
+    65,535-color mode.
+
+ TrueColor and DirectColor with Open Desktop X clients
+
+    Scocolor, scopaint, and scoterm with the -cmap option do not work with
+    TrueColor or DirectColor visual types.  This is also true if you start
+    Xsco with the -static option.  These are the visual types where the rgb
+    values are stored directly in the display memory of the adapter.  Consult
+    the documentation accompanying your graphics adapter.  If there are dis-
+    play modes that support 32K or 64K colors in video RAM, do not use these
+    modes.  Also, these applications will not work with fixed colormap graph-
+    ics adapters.
+
+ 340x0-based grafinfo files
+
+    Note that 340x0-based grafinfo files are not user-configurable.
+
+ COMPAQ QVision graphics adapter configuration
+
+    After using the COMPAQ EISA System Configuration Utility to enable or
+    disable QVision High Memory Address (HMA) mode or to change the HMA
+    address, mkdev graphics should be re-run and QVision 1024 re-selected to
+    effect this change.
+
+    If you have a COMPAQ DESKPRO 486/33L, 486/33M, 486/50L, or COMPAQ SYSTEM-
+    PRO 486/33 with a COMPAQ QVision 1024/E (EISA) graphics adapter
+    installed, running DOS Merge on a non-graphical virtual terminal may
+    result in a blank or color corrupted screen, unless one of the following
+    procedures is performed as root:
+
+    On SCO Open Desktop 1.1:
+
+    1.   Type cd /usr/lib/merge
+
+    2.   Type cp vgarom.img vgarom.orig
+
+    3.   Type /etc/_fst -w vgarom.img
+
+    4.   At the prompt, type 322e?w fe90
+         The _fst response is:
+
+            0x0:0x322e: 0xfeee= 0xfe90
+
+
+    5.   Type 3234?w 3290
+         The _fst response is:
+
+            0x0:0x3234: 0x32ee= 0x3290
+
+
+    6.   Type $q
+
+    On SCO Open Desktop 2.0:
+
+    1.   Type cd /usr/lib/merge
+
+    2.   Type cp std_vga.rom std_vga.rom.orig
+
+    3.   Type /etc/_fst -w std_vga.rom
+
+    4.   At the prompt, type 322e?w fe90
+         The _fst response is:
+
+            0x0:0x322e: 0xfeee= 0xfe90
+
+
+    5.   Type 3234?w 3290
+         The _fst response is:
+
+            0x0:0x3234: 0x32ee= 0x3290
+
+
+    6.   Type $q
+
+    7.   Type cp std_vga.rom /usr/merge/image/std/vga/vga.rom
+
+    Note that this problem does not occur if a QVision 1024/I (ISA) graphics
+    adapter is installed or if the QVision 1024/E is installed in a slower-
+    than 486/33 machine.
+
+ Orchid Fahrenheit 1280 cards
+
+    If you have an Orchid Fahrenheit 1280 card on an Omnipro(TM) 486/50 DX
+    EISA motherboard with an AMI BIOS, the system will not boot DOS or UNIX
+    unless the compatibility jumper (labeled CMP) located at JP2 on the
+    Fahrenheit board is jumpered on pins 2 and 3.  Also, DIP switch #3 on the
+    Fahrenheit board must be set to ON (closed).  This is not noted in the
+    Fahrenheit documentation at this time.
+
+ Bresenham line drawing
+
+    Extremely long zero-width lines may be drawn incorrectly on video cards
+    that support Bresenham line drawing in hardware.  Video cards that use an
+    S3 chip, an 8514/A or 8514/A clone chip, or an XGA chip may have this
+    problem.
+
+ SCO Open Desktop 1.1 Merge Zoom
+
+    On some adapters (Pixelworks, all S3, 8514 and 340x0-based) the following
+    sequence of events may cause the X server to crash:
+
+    1.   Run Merge.
+
+    2.   Press <Alt>D and select Focus.
+
+    3.   Press <Alt>D and select Zoom.
+
+    4.   Press <Alt>D.
+
+    This happens only on SCO Open Desktop 1.1 and only if you select Focus
+    before selecting Zoom.
+
+    Avoid this problem by selecting Zoom before Focus or by running Merge on
+    a different multiscreen than the server.
+
+ Problems exiting the server
+
+    If you use startx to start the X server, you may notice problems when
+    exiting the Desktop or server.  Sometimes, the screen may remain in
+    graphics mode, or the keyboard will not function correctly after exiting.
+
+    To prevent this problem, use /etc/clean_screen along with startx by typ-
+    ing this command line:
+
+       startx; /etc/clean_screen
+
+    If you log in via scologin you should not encounter any problems.
+
+ WordPerfect problems
+
+    If you run WordPerfect(r) with any except a VGA-based adapter, and you
+    move a window or the cursor off the screen, the text screen does not dis-
+    play correctly.
+
+    If you run WordPerfect with a VGA-based adapter, and you move the Word-
+    Perfect cursor off the screen to the left and then type, you see multiple
+    cursor images (to the right of the text you are typing).
+
+    In both cases, you can restore the correct screen display by selecting
+    Refresh from the Root menu.
+
+ S3-based adapters
+
+    A problem has been noted on S3 cards when displaying some types of cur-
+    sors.  When this problem occurs, the cursor is not displayed properly,
+    but it does function correctly.
+
+ Cornerstone DualPage 150
+
+    DOS Merge is unable to run on the Cornerstone DualPage 150 adapter in
+    Zoom mode.  If Zoom is selected from the DOS Merge menu, the keyboard and
+    screen are locked and the system must be rebooted.
+
+
+
+
+
+ Chapter 3
+ Grafinfo parameters
+
+    This chapter describes the new parameters that are used by the grafinfo
+    files supplied in this EFS.
+
+    Table 3-1  New grafinfo parameters
+
+
+
+
+    _________________________________________________________________________
+    Parameter              Purpose
+    _________________________________________________________________________
+    BASEADDRESS            base address of the WhirlWIN adapter
+    CGA_EMU                specifies PG1281 is emulating a CGA adapter
+    COPREGOFF              offset of XGA coprocessor registers from the PROM
+                           base address
+    CTLREGBASE             base address of XGA control registers
+    FBTYPE                 used to choose the frame buffer type of the
+                           adapter
+    FUNCLEV                specifies functional level of XGA adapter
+    GLYPH_CACHE            specifies attempt to cache font glyphs on the
+                           adapter
+    HYPER_LINK_KIT         use non-standard routines within the SCO X Server
+                           Link Kit
+    LIBSHELL               points to the location of the Matrox LIBShell
+    MAPFLAGS               instance number of XGA adapter
+    OFFSCRH                height of off-screen memory
+    OFFSCRW                width of off-screen memory
+    OFFSCRX                x coordinate for off-screen memory
+    OFFSCRY                x coordinate for off-screen memory
+    REPBUG                 slows down drawing mono images
+    RGBBITS                number of red, green, blue bits used for a pixel
+    SETVGA                 indicates that VGA adaptor must be in graphics
+                           mode before starting X server
+    USEDFB                 indicates whether or not to ignore the coprocessor
+
+
+
+ New parameter descriptions
+
+    The following grafinfo parameters are used by the Compaq Q-Vision only:
+
+       FBTYPE
+       GLYPH_CACHE
+       HYPER_LINK_KIT
+
+    The following grafinfo parameters are used by the EFF (8514) driver only:
+
+       OFFSCRH
+       OFFSCRW
+       OFFSCRX
+       OFFSCRY
+       REPBUG
+
+    The following grafinfo parameters are used by the Matrox PG1281 and
+    PG1281/S only:
+
+       CGA_EMU
+       LIBSHELL
+
+    The following grafinfo parameters are used by the Pixelworks WhirlWIN:
+
+       BASEADDRESS
+       SETVGA  (applies to EFF 8514 driver also)
+
+    The following grafinfo parameters are used only by the XGA driver and XGA
+    compatibles.
+
+       CTLREGBASE
+       COPREGOFF
+       FUNCLEV
+       MAPFLAGS
+       USEDFB
+
+    The new grafinfo parameters in this release are listed in alphabetical
+    order below.  These parameters can be coded in either upper- or lower-
+    case.  Note that command syntax descriptions indicate if a terminating
+    semicolon is required.
+    _______________________________________________
+
+    Syntax:        BASEADDRESS = value
+    Description:   the BASEADDRESS of the WhirlWIN
+                   adapter.  This is configurable via
+                   the dip switches on the back panel of
+                   the adapter.
+    Example:       The value of BASEADDRESS can be
+                   specified as:
+
+                      BASEADDRESS  = 0x340
+
+    Note:          Applies to Pixelworks WhirlWIN only.
+
+    _______________________________________________
+
+    Syntax:        CGA_EMU = value
+    Description:   only used if the PG1281 is emulating
+                   a CGA adapter, or if there is another
+                   CGA adapter in the machine.  If there
+                   is another CGA adapter in the machine
+                   that is not a PG1281, set CGA_EMU to
+                   0.
+    Example:       The value of CGA_EMU can be specified
+                   as:
+
+                      CGA_EMU    = 1
+
+    Note:          Applies to Matrox PG1281 and PG1281/S
+                   only.
+
+    _______________________________________________
+
+    Syntax:        COPREGOFF = address;
+    Description:   sets the offset of the coprocessor
+                   registers from the PROM base address
+    Example:       The address can be specified as:
+
+                      COPREGOFF = 0x1c80;
+
+    Note:          Applies to XGA driver only.
+
+    _______________________________________________
+
+    Syntax:        CTLREGBASE = address;
+    Description:   sets the base address of the con-
+                   troller registers
+    Example:       The base address can be specified as:
+
+                      CTLREGBASE = 0x2110;
+
+    Note:          Applies to XGA driver only.
+
+    _______________________________________________
+
+    Syntax:        FBTYPE = value
+    Description:   used to choose the frame buffer type
+                   of the adapter.  This variable is set
+                   automatically by mkdev graphics and
+                   should not be changed by the user.
+    Example:       The value of FBTYPE is specified as:
+
+                      FBTYPE      = "BANK"
+
+    Note:          Applies to Compaq Q-Vision only.
+
+    _______________________________________________
+
+    Syntax:        FUNCLEV = value
+    Description:   specifies functional level of XGA
+                   adapter.  Used to differentiate
+                   between XGA versions.  The value for
+                   the original XGA is 0x3.  For XGA-2
+                   use 0x5.
+    Example:       The value of FUNCLEV is specified as:
+
+                      FUNCLEV = 0x5
+
+    Note:          Applies to XGA driver only.
+
+    _______________________________________________
+
+    Syntax:        GLYPH_CACHE = value
+    Description:   specifies whether to attempt to cache
+                   font glyphs on the adapter or not.
+                   Better performance has been observed
+                   with font caching disabled.
+    Example:       The value of GLYPH_CACHE is specified
+                   as:
+
+                      GLYPH_CACHE = "NO"
+
+    Note:          Applies to Compaq Q-Vision only.
+
+    _______________________________________________
+
+    Syntax:        HYPER_LINK_KIT = value
+    Description:   specifies whether to use non-standard
+                   routines within the SCO X Server Link
+                   Kit.  This should only be changed if
+                   a new version of the SCO X server is
+                   released that does not work with this
+                   driver.
+    Example:       The value of HYPER_LINK_KIT is speci-
+                   fied as:
+
+                      HYPER_LINK_KIT = "YES"
+
+
+
+
+    Note:          Applies to Compaq Q-Vision only.
+
+    _______________________________________________
+
+    Syntax:        LIBSHELL = value
+    Description:   points to the location of the Matrox
+                   LIBShell.  It can also be put into
+                   the moninfo file since different LIB-
+                   Shells can be used for different mon-
+                   itors.  The string must point to the
+                   location of this file for the server
+                   to work.
+    Example:       The value of LIBSHELL can be speci-
+                   fied as:
+
+                      LIBSHELL    = "/usr/lib/matrox/ls.out"
+
+    Note:          Applies to Matrox PG1281 and PG1281/S
+                   only.
+
+    _______________________________________________
+
+    Syntax:        MAPFLAGS = value;
+    Description:   indicates the instance number of the
+                   XGA adapter.  The instance number
+                   usually starts at 6, and from there
+                   are numbered down to from 1.
+
+
+
+    Example:       The value of MAPFLAGS can be speci-
+                   fied as:
+
+                      MAPFLAGS = 0;
+
+    Note:          Applies to XGA driver only.
+
+    _______________________________________________
+
+    Syntax:        OFFSCRH = value;
+    Description:   defines the height of off-screen
+                   memory. The EFF driver requires at
+                   least 160 scan lines of off-screen
+                   memory.
+    Example:       The height can be specified as:
+
+                      OFFSCRH = 1034;
+
+    Note:          Applies to EFF driver only.
+
+    _______________________________________________
+
+    Syntax:        OFFSCRW = value;
+    Description:   defines the width of off-screen .
+                   The EFF driver requires at least 160
+                   scan lines of off-screen memory.
+    Example:       The width can be specified as:
+
+                      OFFSCRW = 768;
+
+    Note:          The value should be greater than or
+                   equal to the PIXWIDTH.  Applies to
+                   EFF driver only.
+
+    _______________________________________________
+
+    Syntax:        OFFSCRX = address;
+    Description:   defines the starting address of the x
+                   coordinate for off-screen memory.
+    Example:       The starting address can be specified
+                   as:
+
+                      OFFSCRX = 1280;
+
+    Note:          Applies to EFF driver only.
+
+    _______________________________________________
+
+    Syntax:        OFFSCRY = address;
+    Description:   defines the starting address of the y
+                   coordinate for off-screen memory.
+    Example:       The starting address can be specified
+                   as:
+
+                      OFFSCRX = 0;
+
+    Note:          Applies to EFF driver only.
+
+    _______________________________________________
+
+    Syntax:        REPBUG = value;
+    Description:   corrects the problem that old ver-
+                   sions of the WD 95C00 have with
+                   across plane mono images being drawn
+                   in high resolution using the rep asm
+                   instruction. If you notice stippling
+                   or bitmaps being drawn incorrectly,
+                   set REPBUG to 1 to slow down the
+                   drawing of mono images. Otherwise,
+                   set to 0.
+    Example:       The value of REPBUG can be specified
+                   as:
+
+                      REPBUG = 0;
+
+    Note:          Applies to EFF driver only.  This
+                   problem is most commonly found on the
+                   Paradise 8514A card.
+
+    _______________________________________________
+
+    Syntax:        RGBBITS = number;
+    Description:   indicates the total number of red,
+                   green, and blue bits used to
+                   represent a pixel on the screen
+    Example:       The number can be specified as:
+
+                      RGBBITS = 8;
+
+    Note:          Applies to many different drivers.
+
+    _______________________________________________
+
+    Syntax:        SETVGA = value
+    Description:   used to tell the WhirlWIN driver that
+                   the VGA adaptor must be put into
+                   graphics mode before starting the X
+                   server.  This is only necessary when
+                   using the WhirlWIN's on board VGA
+                   chip.
+    Example:       The value of SETVGA can be specified
+                   as:
+
+                      SETVGA    = 1
+
+    Note:          Applies to Pixelworks WhirlWIN and
+                   EFF 8514 only.
+
+    _______________________________________________
+
+    Syntax:        USEDFB = value;
+    Description:   indicates whether or not to ignore
+                   the coprocessor on the XGA and is
+                   used primarily for testing purposes.
+                   The actual value does not matter: as
+                   long as a value is specified, the XGA
+                   graphics coprocessor will not be
+                   used.
+    Example:       The value of USEDFG can be specified
+                   as:
+
+                      USEDFG= 1;
+
+    Note:          Applies to XGA driver only.
+
+

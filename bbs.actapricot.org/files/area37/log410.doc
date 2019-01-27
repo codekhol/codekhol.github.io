@@ -1,0 +1,131 @@
+Example Login Script showing identifiers used by LOGIN.EXE for NetWare 4.10
+===========================================================================
+
+The following text illustrates identifier variables available for use in a
+NetWare 4.10 Login Script.
+
+Also shown are :
+The use of <variable> to display an environment variable 
+The use of the MAP command to MAP to the user's Home Directory
+The use of the MAP command to MAP to the 'nearest' SYS:PUBLIC and SYS:APPS
+ directories
+
+To copy this into a user's login script please do the following in the Windows
+environment :
+
+1. Run NOTEPAD and open the file LOG410.DOC
+
+2. Edit / Select All
+
+3. Edit / Copy
+
+4. Flip to NWADMIN and select a user object
+
+5. Select the Login Script button
+
+6. Press Shift and Insert
+
+7. Use the shift and arrow keys to remove the top and bottom of this
+   document from within the login script editor.
+
+
+WRITE "Login script begin"                                                    
+MAP DISPLAY ON
+WRITE ""
+WRITE "Access Server                    : %ACCESS_SERVER"
+WRITE "Account Balance                  : %ACCOUNT_BALANCE"
+WRITE "Administrative Assistant         : %ADMINISTRATIVE_ASSISTANT"
+WRITE "Allow Unlimited Credit           : %ALLOW_UNLIMITED_CREDIT"
+WRITE "Certificate Validity Interval    : %CERTIFICATE_VALIDITY_INTERVAL"
+WRITE "CN (Common Name)                 : %CN"
+WRITE "Description                      : %DESCRIPTION"
+WRITE "E-Mail Address                   : %EMAIL_ADDRESS"
+WRITE "Employee ID                      : %EMPLOYEE_ID"
+WRITE "Equivalent To Me                 : %EQUIVALENT_TO_ME"
+WRITE "Fax Number                       : %FACSIMILE_TELEPHONE_NUMBER"
+WRITE "File Server                      : %FILE_SERVER"
+WRITE "Full Name                        : %FULL_NAME"
+WRITE "Generational Qualifier           : %GENERATIONAL_QUALIFIER"
+WRITE "Given Name                       : %GIVEN_NAME"
+WRITE "Group Membership                 : %GROUP_MEMBERSHIP"
+WRITE "Higher Privileges                : %HIGHER_PRIVILEGES"
+WRITE "Home directory                   : %HOME_DIRECTORY"
+WRITE "Initials                         : %INITIALS"
+WRITE "L (Locality)                     : %L"
+WRITE "Language                         : %LANGUAGE"
+WRITE "Last Name                        : %LAST_NAME"
+WRITE "Locked By Intruder               : %LOCKED_BY_INTRUDER"
+WRITE "Login Context                    : %LOGIN_CONTEXT"
+WRITE "Login Disabled                   : %LOGIN_DISABLED"
+WRITE "Login Maximum Simultaneous       : %LOGIN_MAXIMUM_SIMULTANEOUS"
+WRITE "Login Name                       : %LOGIN_NAME"
+WRITE "Machine                          : %MACHINE"   
+WRITE "Mailbox ID                       : %MAILBOX_ID"
+WRITE "Mailbox Location                 : %MAILBOX_LOCATION"
+WRITE "Mailstop                         : %MAILSTOP"
+WRITE "Message Server                   : %MESSAGE_SERVER"
+WRITE "Minimum Account Balance          : %MINIMUM_ACCOUNT_BALANCE"
+WRITE "Network Address                  : %NETWORK" 
+WRITE "Object Class                     : %OBJECT_CLASS"
+WRITE "OS                               : %OS"
+WRITE "OS Version                       : %OS_VERSION"
+WRITE "OU (Department)                  : %OU"
+WRITE "Password Allow Change            : %PASSWORD_ALLOW_CHANGE"
+WRITE "Password Expires                 : %PASSWORD_EXPIRES"
+WRITE "Password Minimum Length          : %PASSWORD_MINIMUM_LENGTH"
+WRITE "Password Required                : %PASSWORD_REQUIRED"
+WRITE "Password Unique required         : %PASSWORD_UNIQUE_REQUIRED"
+WRITE "Physical Station                 : %P_STATION"
+WRITE "Postal Office Box                : %POSTAL_OFFICE_BOX"
+WRITE "Postal Code                      : %POSTAL_CODE"
+WRITE "Private Key                      : %PRIVATE_KEY"
+WRITE "Profile                          : %PROFILE"
+WRITE "Requester Context                : %REQUESTER_CONTEXT"
+WRITE "Requester Version                : %REQUESTER_VERSION"
+WRITE "Revision                         : %REVISION"
+WRITE "S (State)                        : %S"
+WRITE "SA (Street Address)              : %SA" 
+WRITE "Security Equals                  : %SECURITY_EQUALS"
+WRITE "Security Flags                   : %SECURITY_FLAGS"
+WRITE "See Also                         : %SEE_ALSO"
+WRITE "Server Holds                     : %SERVER_HOLDS"
+WRITE "Shell Version                    : %SHELL_VERSION"
+WRITE "Station                          : %STATION" 
+WRITE "Supervisor                       : %SUPERVISOR"
+WRITE "Surname                          : %SURNAME"
+WRITE "Telephone number                 : %TELEPHONE_NUMBER"         
+WRITE "Title                            : %TITLE"
+WRITE "User ID                          : %USER_ID"
+WRITE ""
+REM
+REM Display Last Login Date and Time
+REM
+LASTLOGIN
+WRITE ""
+REM
+REM Display Environment Variables
+REM
+WRITE "COMSPEC                          : "; <COMSPEC>
+WRITE "NWLANGUAGE                       : "; <NWLANGUAGE>
+WRITE "TZ (Timezone)                    : "; <TZ>
+WRITE ""
+REM
+REM Perform drive mappings
+REM
+MAP S1:=%FILE_SERVER/SYS:PUBLIC
+MAP S2:=%FILE_SERVER/SYS:APPS
+MAP H:=%"HOME DIRECTORY"
+DRIVE H:
+REM
+WRITE ""
+WRITE "Login script end"                                                      
+
+
+13 Feb 95
+Marcus Williamson
+Novell Consulting Services (Europe)
+
+MHS : MJWILLIA@NOVELL
+INT : Marcus_Williamson@NOVELL.COM
+CIS : 71333,1665
+

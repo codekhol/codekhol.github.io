@@ -1,0 +1,245 @@
+
+;****************************************************************
+;                                                               *
+;         Dacom Unity Gold + & /2+  Modem Control File.         *
+;                                                               *
+;           Copyright (C) 1989 Apricot Computers plc.           *
+;                                                               *
+;                   Version Vb 1.00.00                          *
+;                                                               *
+; 11/7/89 JDK                                                   *
+;                                                               *
+;****************************************************************
+
+
+; Default comms settings
+
+InitialSettings
+Begin
+    $BaudRate        = 9600
+    $WordLength      = 8
+    $StopBits        = one
+    $Parity          = none
+    $Handshake       = none
+End
+
+
+Event DialStatus
+Begin
+    "0^M"                    :  $1 = 0, endevent     
+    "OK^M"                   :  $1 = 0, endevent     
+    "CONNECT^M"              :  $1 = 0, endevent
+    "CONNECT 1200^M"         :  $1 = 0, endevent
+    "CONNECT 2400^M"         :  $1 = 0, endevent
+    "CONNECT MNP^M"          :  $1 = 0, endevent
+    "CONNECT 1200 MNP^M"     :  $1 = 0, endevent
+    "CONNECT 2400 MNP^M"     :  $1 = 0, endevent
+    "CONNECT 1200 MNP 5^M"   :  $1 = 0, endevent
+    "CONNECT 2400 MNP 5^M"   :  $1 = 0, endevent
+    "NO CARRIER"             :  $1 = -2, endevent
+    "NO DIALTONE"            :  $1 = -3, endevent
+    "BUSY"                   :  $1 = -4, endevent
+    "ERROR"                  :  $1 = -5, endevent
+End
+
+
+
+
+Event ModemTest
+Begin
+    "OK"     : endevent
+    "0"      : endevent
+End
+
+
+Control
+Begin
+    $SendMode = 2
+
+    if $action = 1
+        call VoiceDial
+    else
+        if $action = 2
+            call DataDial
+        else
+            if $action = 3
+                call VoiceHangup
+            else
+                if $action = 4
+                    call DataHangup
+                else
+                    if $action = 5
+                        call AutoanswerOn
+                    else
+                        if $action = 6
+                            call AutoanswerOff
+End
+
+
+;********************************
+;      Make a voice call        *
+;********************************
+
+Procedure VoiceDial
+Begin
+    DialState 1                         ;Dialling
+
+    send "ATD" nocr                     ;Dial command   
+                                        ;               
+    if $DialMode = tone                 ;               
+        send "T" nocr                   ;Tone dial      
+    else                                ;               
+        if $DialMode = pulse            ;               
+            send "P" nocr               ;Pulse dial     
+
+    send $Telephone nocr                ;Telephone number
+    send ";"                            ;Remain in command mode
+
+    $1 = -5                             ;Default - error
+
+    waitevent DialStatus timeout 600    ;Wait for completion of dialling
+
+    if $1 = 0
+        DialState 2                     ;Dialled ok
+    else
+    begin
+        DialState $1                    ;Error in dialling
+        exitcontrol
+    end
+
+    $2 = 0                              ;Phone initially on the hook
+
+End
+
+
+;********************************
+;       Make a data call        *
+;********************************
+
+Procedure DataDial
+Begin
+    call CheckModemPresent
+
+    DialState 1                         ;Dialling
+
+    send "ATD" nocr                     ;Dial command  
+                                        ;               
+    if $DialMode = tone                 ;               
+        send "T" nocr                   ;Tone dial      
+    else                                ;               
+        if $DialMode = pulse            ;               
+            send "P" nocr               ;Pulse dial     
+
+    send $telephone nocr                ;Telephone number
+
+    if $ConnectionType = "V23"
+    begin
+        if $originator = computer
+            send "+23C" nocr            ;Dial in V23 computer mode
+        else
+            send "+23T" nocr            ;Dial in V23 terminal mode
+    end
+
+    send "^M" nocr                      ;Carriage return
+
+    $1 = -2                             ;Default - no carrier
+
+    waitevent DialStatus timeout 600    ;Wait for completion of dialling
+
+    if $1 = 0
+        DialState 3                     ;Connect
+    else
+    begin
+        DialState $1                    ;Error in dialling
+        exitcontrol
+    end
+End
+
+
+;********************************
+;       Hangup voice call       *
+;********************************
+
+Procedure VoiceHangup
+Begin
+    delay 10                            ;Delay in case of any pending 
+                                        ;off-hook inquiry             
+    send "ATH0"                         ;Hangup call
+    wait "OK^M^J" timeout 30
+   
+
+    DialState 8                         ;Hangup
+End
+
+
+;********************************
+;       Hangup data call        *
+;********************************
+
+Procedure DataHangup
+Begin
+    delay 10
+
+    send "+++" nocr                     ;Switch to command mode
+    wait "OK^M^J" timeout 30
+
+    send "ATH0"                         ;Hangup call
+    wait "OK^M^J" timeout 30
+
+    DialState 8                         ;Hangup
+End
+
+
+;************************************************
+;  Enable autoanswer and wait for a connection  *
+;************************************************
+
+Procedure AutoanswerOn
+Begin
+    call CheckModemPresent
+
+    send "ATS0=1"                       ;Switch autoanswer on after one ring
+    wait "OK^M^J" timeout 30
+
+    DialState 6                         ;Autoanswer on
+
+WaitConnect:
+
+    wait "CONNECT"                      ;Wait forever
+    delay 10                            ;Ensure Xmodem caller starts first
+
+    DialState 3                         ;Connect
+    goto WaitConnect
+End
+
+
+;********************************
+;       Disable autoanswer      *
+;********************************
+
+Procedure AutoanswerOff
+Begin
+    send "ATS0=0"                       ;Switch autoanswer off
+    wait "OK^M^J" timeout 30
+
+    DialState 7                         ;Autoanswer off
+End
+
+
+;********************************************
+;    Test for presence of a Dacom modem     *
+;********************************************
+
+Procedure CheckModemPresent
+Begin
+
+    send "ATZ0"                         ;Reset modem
+    waitevent ModemTest timeout 60      ;Test for presence of modem
+
+    if $timeout
+    begin
+        DialState -1                    ;No modem
+        exitcontrol                     ;Exit control file
+    end
+End
+

@@ -1,0 +1,1128 @@
+
+            Windows vs. NetWare Troubleshooting Tips
+        Compiled by Brett Warthen (Infinite Technologies)
+                  Fourth Edition:  July 8, 1994
+
+The most important troubleshooting tip for solving conflicts
+between Windows and NetWare is to remember to use logical
+deduction and the process of elimination to isolate and identify
+conflicts.
+
+For example, if you are using a 3rd party memory manager like
+QEMM or 386-to-the-MAX, de-install it and try your configuration
+running Microsoft's HIMEM.SYS that ships with Windows 3.1 instead
+(try without EMM386).  Then, if the problem is related to your
+memory manager, you should contact that vendor for technical
+support suggestions.
+
+If you are loading any additional TSRs or device drivers, try
+your configuration without them loaded, and add them back into
+your system one by one to determine which is causing the
+conflict.
+
+If you are using EMSNETX or XMSNETX, try using regular old NETX
+instead.  If you are attempting to use the newer VLM drivers, you
+may also want to try your configuration with NETX.
+
+While far from being a comprehensive guide to all possible
+Windows and NetWare conflicts, this document contains some
+troubleshooting tips for common problems running Windows in the
+NetWare environment.  (Thanks to everyone in NOVCLIENT Section 6,
+the Windows section of the Novell NetWire forums on CompuServe
+for helping to compile this list.  Acknowledgements are presented
+at the end of this document.)
+
+Recommendations for ALL Systems:
+
+     1.)  In the Windows SYSTEM.INI file, verify the following
+          settings:
+
+          Under the [boot] section header:
+          network.drv=netware.drv
+
+          Under the [386Enh] section header:
+          network=*vnetbios,vnetware.386,vipx.386
+
+          NOTE: *vnetbios can cause some problems with some
+          current LAN card drivers, especially the IBM LAN
+          Support drivers.  If you are not using any NETBIOS
+          applications, then you may be better off leaving
+          *vnetbios out of this statement.  If you are using
+          NETBIOS and the IBM LAN Support drivers, then you may
+          want to consider using the native Token Ring drivers in
+          TOKWS.EXE in NOVLIB Library 6 on CompuServe.
+
+     2.)  Update to the latest NetWare drivers, a minimum level
+          of IPXODI v2.10 and NETX v3.32 or VLM v1.10 for proper
+          support of the Windows 3.1 environment.
+
+          If you must use the linked IPX driver (IPX.COM), use
+          v3.10, however note that the last VIPX.386 driver
+          released by Novell that was explicitly tested with the
+          linked IPX was v1.10.  The ODI drivers should be used
+          whenever possible.
+
+          The current versions of NetWare-related DOS/Windows
+          drivers is presented at the end of this section.
+
+     3.)  Check for duplicate copies of the NWPOPUP.EXE,
+          VNETWARE.386, VIPX.386 and NETWARE.DRV files.  (You may
+          find one version in the Windows directory and another
+          in Windows\SYSTEM.)  Make sure that the only versions
+          that remain on your system are 1992 or 1993 (or later)
+          dated versions.  (The latest versions are available for
+          download from the WINUP*.EXE file in the NOVFILES file
+          area on CompuServe, which is currently WINUP9.EXE.)
+
+     4.)  Verify that the NETWARE.DRV file is at least 125,000
+          bytes in size.  We've seen plenty of problems where
+          installation routines did not properly expand this
+          file.
+
+          An old version of the NetWare DOS/Windows Workstation
+          Kit NWSETUP installation procedure was particularly
+          notorious for this type of problem.
+
+     5.)  Use WINSTART.BAT with care.  There is a bug with
+          WINSTART.BAT processing under Windows 3.1 on some PCs,
+          which can cause Windows to hang-up when exiting.
+
+          An old version of the NetWare DOS/Windows Workstation
+          Kit NWSETUP installation procedure created a dummy
+          WINSTART.BAT which can trigger this problem.
+
+     6.)  If you want to receive broadcast messages while in
+          Windows, then make sure that NWPOPUP.EXE is included in
+          the "load=" statement in your WIN.INI file.
+          (Alternatively, NWPOPUP can be included in your Windows
+          startup group.)
+
+     7.)  In your NET.CFG (or SHELL.CFG) file, be sure to
+          allocate plenty of file handles.  FILE HANDLES=80 is a
+          recommended minimum.
+
+     8.)  If you must use NETX v3.26 or earlier:
+
+          In your NET.CFG (or SHELL.CFG) file, allocate
+          additional stacks for IPX/SPX usage by specifying GET
+          LOCAL TARGET STACKS = 5.
+
+          The default setting is 1 stack, which can lead to
+          system lockup problems when receiving NetWare broadcast
+          messages.
+
+          If you plan on making use of IPX/SPX applications on a
+          regular basis, then you should increase this value to
+          GET LOCAL TARGET STACKS = 10.
+
+          (The GET LOCAL TARGET STACKS setting works around a bug
+          in NETX v3.26, and is not necessary if you are running
+          NETX v3.31 or later, which fixes this bug.)
+
+     9.)  If you are running DR-DOS 6, make sure that you have
+          the April 1992 Business update installed for Windows
+          3.1 compatibility.
+
+          This file can be downloaded from the Novell Library
+          forum (NOVLIB) on CompuServe, DR6UP2.EXE in Library 12.
+
+     10.) If you are attempting to use the Burst Mode shell
+          (BNETX) with Windows 3.1, it may be a futile effort, as
+          there are some timing problems which can cause severe
+          system slowdowns.  Note that Novell has since
+          discontinued the BNETX shell, and packet burst is only
+          supported from a DOS workstation when using the VLM
+          requester.
+
+     11.) The VIPX.386 driver can only virtualize packets that
+          are 8000 bytes or smaller.  You should not attempt to
+          use a driver with larger packet sizes with Windows (for
+          example, IBM Token Ring can be configured for 16KB
+          packets).
+
+     12.) Microsoft's VTDA.386 driver should be loaded on your
+          system.  This file should be located in your Windows
+          SYSTEM directory.  If you do not have this file,
+          acquire either the WW0863.EXE or WW0981.EXE file from
+          Microsoft, which include the VTDA.386 file (on
+          CompuServe, these files are available in the Microsoft
+          Software Library - GO MSL).  WW0863.EXE includes
+          VTDA.386 only.  WW0981.EXE includes VTDA.386 as part of
+          the Windows 3.1 to Windows 3.11 upgrade files.
+
+          If VTDA.386 is present on your system, it must be
+          activated.  In the [386Enh] section of SYSTEM.INI, a
+          "device=vtda.386" statement should be present, and a
+          "device=*vtd" statement should NOT be present.
+          (VTDA.386 replaces the built-in *VTD driver.)
+
+     13.) If using IBM LAN Support, be sure that you are using
+          VIPX.386 v1.15 or later.  In the SYSTEM.INI file, you
+          also need to let VIPX.386 know what IRQ your network
+          card is using to prevent possible conflicts.  This is
+          done by creating/updating a [VIPX] section in
+          SYSTEM.INI, and including a VirtualizeIRQx=TRUE
+          statement, where "x" is the IRQ that is being used by
+          the network adapter.  Valid values for this IRQ are 2
+          thru F, and are specified in hexidecimal notation (A =
+          10, F = 15).
+
+     14.) Novell recommends including the statement
+          "TimerCriticalSection=10000" under the [386Enh] section
+          header of SYSTEM.INI when using VIPX.386 v1.15 or
+          higher.
+
+     15.) NETX and the VLM drivers require the use of a different
+          NETWARE.DRV file, depending on what client software you
+          are running.  To determine the version of NETWARE.DRV,
+          use the NetWare VERSION.EXE program (e.g., VERSION
+          NETWARE.DRV).  v2.x versions of NETWARE.DRV should be
+          used only with NETX, while v3.x versions of NETWARE.DRV
+          are for the VLM client only.
+
+Latest Versions of NetWare-related drivers for DOS/Windows:
+
+   Novell and Microsoft periodically release new drivers to
+   address problems in existing drivers.  As new drivers are
+   released, older drivers/patches are often deleted and replaced
+   by the newer files.  These filenames are current as of the
+   release of this document, but are subject to change.
+
+   Novell drivers in the NOVFILES file area on CompuServe:
+
+      DOSUP9.EXE - Contains updates for the DOS ODI drivers, NETX
+      (v3.32 PTF), and the VLMs (v1.10).
+
+      WINUP9.EXE - Contains updates for the Windows-specific
+      drivers.
+
+      NOTE:  As Novell releases new drivers, the filenames will
+      be updated.  The next release will most likely be
+      DOSUPA.EXE and WINUPA.EXE or DOSUP10.EXE and WINUP10.EXE.
+
+   Novell drivers in NOVLIB Library 5 on CompuServe:
+
+      VPX118.EXE - Contains an update to VIPX.386 v1.18.
+
+      VLMUP2.EXE - Updates selected VLMs (FIO, AUTO, CONN, REDIR,
+      GENERAL and VLM.EXE) to v1.11.
+
+      PBURST.EXE - Contains patches for packet burst to be used
+      with VLM v1.11.  Includes an updated PBURST.NLM for NetWare
+      3.11, and patches for NetWare 3.12 and 4.01.
+
+      NOTE:  As Novell releases new drivers, the above files may
+      be deleted, and rolled into future DOSUPx and WINUPx
+      releases.
+
+   Other Novell Pre-Release Drivers on CompuServe:
+
+      VPX119.EXE - Contains an update to VIPX.386 v1.19 to
+      correct a problem that could cause a "Black Screen of
+      Death" error.
+
+      This file is not officially released, but is available in
+      the NSD area (GO NSD) of CompuServe or on the NSE Pro.  The
+      existence of this file is documented by Novell's Technical
+      Information Database:  TID021138 and TID021125.
+
+   Microsoft driers in the Microsoft Software Library (MSL) on
+   CompuServe:
+
+      WW0863.EXE - Includes VTDA.386
+
+      WW0981.EXE - Upgrade files for upgrading Windows 3.1 to
+      Windows 3.11 (also includes VTDA.386).
+
+      WW1000.EXE - Includes VSHARE.386 (a Windows replacement for
+      SHARE.EXE).
+
+    Filename          Date      Size      Version   Where
+    ----------------------------------------------------------
+    LSL.COM           9/10/93   17805     2.05      DOSUP9.EXE
+    IPXODI.COM        3/14/94   30126     2.20      VLMUP2.EXE
+    NETX.EXE          11/17/93  78654     3.32 PTF  DOSUP9.EXE
+    VLM.EXE           3/14/94   36635     1.11      VLMUP2.EXE
+     (NOTE:  Individual VLMs are v1.10 or v1.11 from DOSUP9.EXE
+      and VLMUP2.EXE)
+    VIPX.386          1/19/94   23855     1.18      VPX118.EXE
+     (prerelease)     5/23/94   23855     1.19      VPX119.EXE
+    VNETWARE.386      11/19/93  15133     2.03      WINUP9.EXE
+    NWPOPUP.EXE       10/28/93  4592      3.01      WINUP9.EXE
+    NETWARE.DRV (vlm) 11/24/93  146736    3.02      WINUP9.EXE
+    NWUSER.EXE (vlm)  10/28/93  5072      1.02      WINUP9.EXE
+    NWGDI.DLL (vlm)   11/19/93  81792     1.0       WINUP9.EXE
+    NETWARE.DRV (netx)10/27/92  126144    2.02      WINUP9.EXE
+    VTDA.386          10/1/93   6816      n/a       WW0863.EXE
+     (same as above)  12/31/93  6816      n/a       WW0981.EXE
+    VSHARE.386        1/11/94   14933     n/a       WW1000.EXE
+
+Windows hangs while loading:
+
+     1.)  For Windows 3.0, is your network card set to IRQ 2 or
+          9, 10 or higher?  If it is, then you will need to
+          install the VPICDA.386 patch (included in WINUP*.* in
+          the NOVFILES file area on CompuServe).  Copy VPICDA.386
+          into your Windows\SYSTEM directory, and edit your
+          SYSTEM.INI, replacing the line "device=*vpicd" with
+          "device=vpicda.386".
+
+          NOTE:  VPICDA.386 is not required for Windows 3.1, you
+          should specify "device=*vpicd" instead.  Using
+          VPICDA.386 with Windows 3.11 can cause severe problems.
+
+     2.)  Try loading Windows with a command-line parameter of
+          /D:XSFV (e.g., WIN /D:XSFV).
+
+          Each of the letters following the /D: are equivalent to
+          placing the following statements under the [386Enh]
+          section header in SYSTEM.INI, one time only:
+
+          X -> EMMExclude=A000-EFFF
+          S -> SystemRomBreakpoint=OFF
+          F -> 32BitDiskAccess=OFF
+          V -> VirtualHDIrq=OFF
+
+          If Windows now works, use a process of elimination to
+          determine which of the parameters was the key to your
+          success.
+
+          WIN /D:X is most often the solution to these types of
+          problems, which indicates that the shared RAM area used
+          by your network adapter is not properly excluded from
+          your memory manager, or the Windows internal memory
+          manager.
+
+          For Windows internal memory manager, you exclude this
+          memory range with an EMMExclude=xxxx-xxxx statement
+          under the [386Enh] section header of your SYSTEM.INI.
+          If you are unsure of this range, use EMMExclude=A000-
+          FFFF while troubleshooting.  As an example, to exclude
+          a 16KB range of memory at segment D000h, you would
+          specify EMMExclude=D000-D3FF.
+
+          For the Microsoft EMM386.EXE memory manager, use a
+          /X=xxxx-xxxx parameter to tell it what range of memory
+          to exclude for your network card.
+
+          For the DR-DOS EMM386.SYS memory manager, use a
+          /E=xxxx-xxxx parameter to tell it what range of memory
+          to exclude for your network card.
+
+          Disabling 32-bit disk access (WIN /D:F) has been
+          necessary for getting Windows to load properly on some
+          systems using the new NetWare VLM drivers.
+
+     3.)  Are you loading MS-DOS SHARE or running MS-DOS 4 (DOS 4
+          automatically loads SHARE if you have a hard disk
+          larger than 32MB)?
+
+          If you can avoid loading SHARE, do so.
+
+          If you cannot, be sure to load SHARE before IPX and
+          NETX, and avoid specifying more than FILE HANDLES = 127
+          in the NET.CFG file.
+
+          Additionally, a Windows based replacement for
+          SHARE.EXE, called VSHARE.386, is available from
+          Microsoft as part of a patch file called WW1000.EXE.
+          Instead of loading SHARE.EXE from DOS, VSHARE.386 is
+          loaded by a "device=vshare.386" statement in the
+          [386Enh] section of SYSTEM.INI.
+
+     4.)  There are conflicts between some LAN card drivers, most
+          notably the IBM LAN Support drivers for Token Ring, and
+          the "*vnetbios" driver supplied with Windows.
+
+          If you can use the NetWare drivers that talk directly
+          to the Token Ring adapter (TOKWS.EXE in NOVLIB Library
+          6), this should work.
+
+          Otherwise, do not include "*vnetbios" on the "network="
+          line under the [386Enh] section header of your
+          SYSTEM.INI file, and avoid running any applications
+          that use NETBIOS under Windows.
+
+     5.)  If using IBM LAN Support, be sure that you are using
+          VIPX.386 v1.15 or later.  In the SYSTEM.INI file, you
+          also need to let VIPX.386 know what IRQ your network
+          card is using to prevent possible conflicts.  This is
+          done by creating/updating a [VIPX] section in
+          SYSTEM.INI, and including a VirtualizeIRQx=TRUE
+          statement, where "x" is the IRQ that is being used by
+          the network adapter.  Valid values for this IRQ are 2
+          thru F, and are specified in hexidecimal notation (A =
+          10, F = 15).
+
+     6.)  Are you loading SuperStor 2.0, a disk compression
+          device driver?  There is a deadlock problem between
+          NETX v3.26 and SuperStor 2.0 under Windows.  As a
+          temporary work-around, use the NETX v3.22 shell and
+          contact the software manufacturer for other possible
+          work-arounds.
+
+     7.)  There could be an interrupt or I/O conflict between
+          your network card, and Windows searching your COM ports
+          for a mouse.   These are the default COM port interrupt
+          (IRQ) & I/O assignments:
+
+          COM1 = IRQ 4, I/O 3F8h
+          COM2 = IRQ 3, I/O 2F8h
+          COM3 = IRQ 4, I/O 2E8h
+          COM4 = IRQ 3, I/O 2E0h
+
+          (NOTE:  On IBM PS/2s, the settings for COM3 or COM4 are
+          different.)
+
+          Windows looks for a serial mouse starting at the
+          highest numbered COM port in your system.  So, if a
+          serial mouse is attached to COM1 (IRQ 4), and your
+          network adapter is configured for IRQ 3, when Windows
+          searches for a mouse on COM2, using IRQ 3, this may
+          disrupt the network connection.
+
+          In the [386Enh] section header of SYSTEM.INI, you can
+          specify COM#Irq=-1 to disable a particular port.  For
+          example, specify COM2Irq=-1 to disable COM2.
+
+          You could also specify MaxCOMPort=2 under the [386Enh]
+          section header to ensure that COM3 and COM4 are not
+          being used.  COM4 may sometimes conflict with Arcnet
+          boards configured for I/O address 2E0h.
+
+     8.)  Are you using an NE3200 32-bit EISA network adapter, or
+          an OEM version of this adapter, such as the Intel
+          EtherExpress/32?  If so, in the NET.CFG file, under the
+          "LINK DRIVER" section for this adapter, include an
+          indented statement reading "DOUBLE BUFFER".
+
+     9.)  If you are using the VLMs, try disabling packet burst,
+          by putting a PB BUFFERS = 0 statement in your NET.CFG
+          file.  If you do not encounter problems with this
+          configuration change, then investigate Novell's packet
+          burst updates for 3.11, 3.12 and 4.01.  (PBURST.EXE in
+          NOVLIB Library 5.)
+
+System Hang-ups running RCONSOLE or other IPX/SPX applications
+under Windows:
+
+     1.)  Verify that you have all of the latest drivers for
+          running IPX/SPX under Windows.
+
+          A minimum version level of IPX v3.10 or IPXODI v2.10 is
+          required, with IPX ODI drivers preferred.
+
+          For Windows in 386 Enhanced Mode, make sure that you
+          have VIPX.386 v1.18 or higher.  (Use the NetWare
+          VERSION utility to run against VIPX.386 to determine
+          the version.)  Make sure that you do not have duplicate
+          copies of VIPX.386 elsewhere in your path.  In
+          particular, check both the Windows and Windows\SYSTEM
+          directories for duplicates.  Furthermore, ensure that
+          VIPX.386 is included in the "network=" statement under
+          the [386Enh] section header of your SYSTEM.INI.
+
+          For Windows in Standard Mode, make sure that TBMI2.COM
+          is loaded before going into Windows, but this will not
+          be sufficient for many IPX/SPX applications.
+
+     2.)  If you are running NETX v3.26 or lower, place the
+          statement GET LOCAL TARGET STACKS = 10 in your NET.CFG
+          (or SHELL.CFG) file to allocate additional stacks for
+          IPX/SPX multi-tasking.
+
+     3.)  For RCONSOLE, if all servers do not show up in the
+          display, you need RCONSOLE v2.9 or higher, which is
+          currently available for download from
+          CompuServe/NetWire as RCNSLE.EXE in NOVLIB Library 4.
+
+System Hang-ups running NETBIOS applications under Windows:
+
+     1.)  Follow the same guidelines as described for running
+          IPX/SPX applications under Windows above.
+
+     2.)  Include a statement "TimerCriticalSection=10000" under
+          the [386Enh] section header of SYSTEM.INI.  This
+          statement will help prevent deadlocks and re-entrancy
+          problems associated when network activity is generated
+          from a timer interrupt.
+
+Cannot locate NETWARE.DLL error when loading NetWare Tools or
+another application:
+
+     1.)  See the "Recommendations for ALL Systems" section.
+          There is no NETWARE.DLL, it is actually NETWARE.DRV,
+          which is either not specified as
+          "network.drv=netware.drv" under the [boot] section of
+          SYSTEM.INI, or the NETWARE.DRV file is corrupt.
+
+Remote Boot PCs cannot find WINA20.386:
+
+     1.)  WINA20.386 is a DOS 5 file that is required for running
+          Windows 3.0 in enhanced mode with DOS=HIGH in the
+          CONFIG.SYS.  (It is supposedly no longer used by
+          Windows 3.1.)
+
+          Windows looks for WINA20.386 when it is loading in the
+          root of the boot drive *UNLESS* you include SWITCHES=/W
+          in your CONFIG.SYS file, and specify
+          "device=d:\path\WINA20.386" under the [386Enh] section
+          header of SYSTEM.INI to tell Windows where to find this
+          driver.
+
+Remote Boot PCs cannot find EMM386.EXE:
+
+     1.)  If you are using the Microsoft EMM386.EXE device driver
+          to provide expanded memory emulation, then be aware
+          that Windows needs to reload EMM386.EXE when Windows is
+          started to load a virtual device driver for upper
+          memory management in 386 enhanced mode.
+
+          Windows looks for EMM386.EXE in the drive/directory
+          that it was loaded from in CONFIG.SYS.  If you need to
+          specify an alternate path, include a
+          /y=d:\path\EMM386.EXE parameter when loading EMM386.EXE
+          in CONFIG.SYS.  This path should be a path that will be
+          valid when Windows is later started.
+
+Remote Boot PCs running QEMM v6.0x will not run Windows in
+enhanced mode:
+
+     1.)  Similar to the EMM386 issue above, if you are running
+          QEMM v6.0x, several files need to be reloaded when
+          Windows v3.x is being initialized.  These files are
+          WINHIRAM.VXD and WINSTLTH.VXD.  Windows looks for these
+          files in the drive/directory that QEMM was loaded from
+          in CONFIG.SYS.  If you need to specify an alternate
+          path, include a VXDDIR=d:\path parameter when loading
+          QEMM in CONFIG.SYS.  This path should be a path that
+          will be valid when Windows is later started.
+
+Broadcast Messages do not display when in Windows applications:
+
+     1.)  Verify that NWPOPUP.EXE is included in the "load="
+          statement of your WIN.INI file.
+
+     2.)  In the Windows Control Panel, Network Options, ensure
+          that the "Messages Enabled" button is clicked.
+
+     3.)  Older versions of NWPOPUP.EXE cannot be used with newer
+          versions of NETWARE.DRV (and vice versa).  If v2.02 or
+          higher of either of these files is in use (run the
+          NetWare VERSION.EXE utility to determine versions),
+          then both must be at least at v2.02 in order for
+          NWPOPUP.EXE to process broadcast messages properly.
+
+     4.)  See the "Recommendations for ALL Systems" section.
+
+Broadcast Messages lock up Windows:
+
+     1.)  See the "Recommendations for ALL Systems" section.  In
+          particular, focus on the GET LOCAL TARGET STACKS
+          statement that should be placed in your NET.CFG (or
+          SHELL.CFG) file.  It is recommended that you upgrade to
+          NETX v3.31 or higher to avoid this problem.
+
+          Ensure that this statement is echoed to the screen when
+          IPX or IPXODI is loaded.
+
+     2.)  To verify that broadcast messages are indeed related to
+          the problem, you may wish to experiment with disabling
+          these messages through the "Network" option in the
+          Windows Control Panel.
+
+DOS DIR Command Shows No Files when used on Network Drives:
+
+     1.)  See the "Recommendations for ALL Systems" section.  In
+          particular, focus on the GET LOCAL TARGET STACKS
+          statement that should be placed in your NET.CFG (or
+          SHELL.CFG) file.  It is recommended that you upgrade to
+          NETX v3.31 or higher to avoid this problem.
+
+          Ensure that this statement is echoed to the screen when
+          IPX or IPXODI is loaded.
+
+Windows hangs when opening a DOS Window or DOS application:
+
+     1.)  Make sure that you have the NetWare drivers for Windows
+          loaded:  "network.drv=netware.drv" under the [boot]
+          section of SYSTEM.INI, and for 386 enhanced mode,
+          "network.drv=vnetware.386" (*vnetbios & vipx.386 may
+          also be specified in this command) under the [386Enh]
+          section of SYSTEM.INI.
+
+     2.)  The *vnetbios driver can cause some problems with some
+          current LAN card drivers, especially the IBM LAN
+          Support drivers.  If you are not using any NETBIOS
+          applications, then you may be better off leaving
+          *vnetbios out of "network=" statement under the
+          [386Enh] section header of SYSTEM.INI.  If you are
+          using NETBIOS and the IBM LAN Support drivers, then you
+          may want to consider using the native Token Ring
+          drivers in TOKWS.EXE in NOVLIB Library 6 on CompuServe.
+
+     3.)  For Windows 3.0, is your network card set to IRQ 2 or
+          9, 10 or higher?  If it is, then you will need to
+          install the VPICDA.386 patch (included in WINUP*.ZIP in
+          NOVLIB on CompuServe).  Copy VPICDA.386 into your
+          Windows\SYSTEM directory, and edit your SYSTEM.INI,
+          replacing the line "device=*vpicd" with
+          "device=vpicda.386".
+
+          NOTE:  VPICDA.386 is not required for Windows 3.1, you
+          should specify "device=*vpicd" instead.
+
+     4.)  If using IBM LAN Support, be sure that you are using
+          VIPX.386 v1.15 or later.  In the SYSTEM.INI file, you
+          also need to let VIPX.386 know what IRQ your network
+          card is using to prevent possible conflicts.  This is
+          done by creating/updating a [VIPX] section in
+          SYSTEM.INI, and including a VirtualizeIRQx=TRUE
+          statement, where "x" is the IRQ that is being used by
+          the network adapter.  Valid values for this IRQ are 2
+          thru F, and are specified in hexidecimal notation (A =
+          10, F = 15).
+
+     5.)  You may be running out of file handles.  Increase the
+          value specified in the FILE HANDLES statement in your
+          NET.CFG (or SHELL.CFG) file.
+
+     6.)  You may be experiencing swap file corruption.  Refer to
+          the section entitled "Controlling Windows Swap Files"
+          to ensure that swap files are being created in the
+          correct locations.  (If you are swapping to the
+          network, swap files must be stored in unique
+          directories.)
+
+     7.)  A TSR that you are running may require that you specify
+          "TimerCriticalSection=10000" under the [386Enh] section
+          header of your SYSTEM.INI
+
+Windows locks up during operation with the "Black Screen of Death
+(BSOD)":
+
+   The BSOD is a term of endearment for Windows locking up with
+   nothing but a blank screen and blinking cursor, or with the
+   user being dropped out of Windows completely and left at a DOS
+   prompt.
+
+   Several different BSOD problems have been isolated, which are
+   outlined below.  In all cases, in addition to checking the
+   possible solutions listed below, it may be prudent to check to
+   see if Novell has released an updated version of VIPX.386
+   (this would most likely be part of a file named WINUP*.EXE or
+   VPX*.EXE), as Novell periodically releases updates to this
+   driver..
+
+   Additionally, the *vnetbios driver can cause some problems
+   with some current LAN card drivers, especially the IBM LAN
+   Support drivers.  If you are not using any NETBIOS
+   applications, then you may be better off leaving *vnetbios out
+   of "network=" statement under the [386Enh] section header of
+   SYSTEM.INI.  If you are using NETBIOS and the IBM LAN Support
+   drivers, then you may want to consider using the native Token
+   Ring drivers in TOKWS.EXE in NOVLIB Library 6 on CompuServe.
+
+   If using IBM LAN Support, be sure that you are using VIPX.386
+   v1.15 or later.  In the SYSTEM.INI file, you also need to let
+   VIPX.386 know what IRQ your network card is using to prevent
+   possible conflicts.  This is done by creating/updating a
+   [VIPX] section in SYSTEM.INI, and including a
+   VirtualizeIRQx=TRUE statement, where "x" is the IRQ that is
+   being used by the network adapter.  Valid values for this IRQ
+   are 2 thru F, and are specified in hexidecimal notation (A =
+   10, F = 15).
+
+     1.)  Lock up occurs when opening a new DOS application:
+
+          a.)  See "Windows hangs when opening a DOS Window or
+               DOS application" above.
+
+     2.)  Lock up occurs during regular operation:
+
+          a.)  Problems in processing NetWare broadcast messages
+               can trigger this problem under certain conditions.
+               See "Broadcast Messages Lock Up Windows" above.
+
+          b.)  IPX/SPX applications can generate these types of
+               lockups with older NetWare drivers.  See "System
+               Hang-ups running RCONSOLE or other IPX/SPX
+               applications under Windows" above.
+
+          c.)  If you are using the Windows Net-Library (NIK) for
+               Microsoft SQL Server, then there is an updated
+               version of DBMSSPX3.DLL available for download in
+               the MSSQL forum on CompuServe which addresses BSOD
+               problems with this application.  The current
+               filename is SPXNL.ZIP in Library 8 of the MSSQL
+               forum.
+
+"Cannot Find NETWARE3.DRV or NETWARE4.DRV" Error Starting
+WordPerfect for Windows 6.0:
+
+     1.)  WPWin is getting confused by a "Multinet=NetWare3" or
+          "Multinet=NetWare4" statement under the [network]
+          section of SYSTEM.INI.  Change this statement to
+          "Multinet=NetWare".
+
+          This error is generally specific to Windows for
+          Workgroups configurations.
+
+"Cannot find NWGDI.DLL" Error Starting Windows
+
+     1.)  If you are using the VLM requester, this indicates that
+          the NWGDI.DLL driver cannot be found in the Windows
+          system directory.  This driver can be found in the
+          WINUP9.EXE file referenced in the "latest versions"
+          section of this document.
+
+     2.)  If you are using the NETX shell, this indicates that
+          you are using the wrong version of NETWARE.DRV.  v2.x
+          of NETWARE.DRV should be used with NETX, and v3.x
+          should only be used with the VLM requester.
+
+"NWDRV-3.00-00: The NetWare VLM is not loaded or not configured
+correctly.  Disable Network?" Error Starting Windows
+
+     1.)  This indicates that either no NetWare shell is loaded,
+          or you are trying to use the NETX shell with the VLM
+          version of the NETWARE.DRV file.v2.x of NETWARE.DRV
+          should be used with NETX, and v3.x should only be used
+          with the VLM requester.
+
+"NWDRV-3.00-30: Unable to load the unicode tables" Error Starting
+Windows
+
+     1.)  This indicates that you are using the VLMs with the VLM
+          version of NETWARE.DRV, and NETWARE.DRV was unable to
+          locate the Unicode tables that it requires.
+
+          The Unicode tables are normally installed in an NLS
+          subdirectory beneath the Windows directory.  An
+          American English system requires only these files in
+          the NLS directory:
+
+          UNI_COL.001
+          UNI_NON.001
+          1252_UNI.001
+          UNI_1252.001
+          437_UNI.001
+          UNI_437.001
+
+          Other languages may require different tables, based on
+          the code page settings in CONFIG.SYS and/or the
+          language specified in the NWLANGUAGE environmental
+          variable.
+
+"NWDRV-3.00-20: There was a problem loading or executing the
+NetWare Directory Support Libraries.  All NDS functions are
+disabled." Error Starting Windows
+
+     1.)  See the description for the similar error "NWDRV-3.00-
+          30" above.
+
+     2.)  In order for NDS functions to be supported, the
+          following DLLs are required:
+
+          NWLOCALE.DLL
+          NWCALLS.DLL
+          NWNET.DLL
+
+          Ensure that these files can be found in the Windows or
+          Windows System directory.
+
+How do I update to IPX.COM v3.10?:
+
+     1.)  Note that Novell has discontinued support for the
+          linked version of IPX in recent releases of the NetWare
+          Windows drivers (specifically VIPX.386).  If at all
+          possible, upgrade to an ODI version of your LAN card
+          driver.
+
+     2.)  If you installed Windows 3.1 for a Novell network, it
+          should have copied an IPX.OBJ file to your
+          Windows\SYSTEM directory.
+
+          Copy this file to your WSGEN or SHGEN diskette, and re-
+          run the WSGEN or SHGEN procedure to create an updated
+          IPX.
+
+          Now might be a good time to consider migrating to the
+          IPX ODI drivers, which do not require this generating
+          process, and are generally more up-to-date, as Novell
+          is no longer certifying new drivers for the linkable
+          IPX.COM.
+
+          The IPX ODI drivers are included in the DOSUP*.* file
+          in the NOVFILES file area on CompuServe/NetWire.
+
+Windows is very slow while loading:
+
+     1.)  This is probably due to Windows creating a temporary
+          swap file when loading, possibly to a network drive.
+
+          Under NetWare 2.x, this process is much slower than
+          with NetWare 3.x.  See "Controlling Windows Swap Files"
+          above for more information.
+
+     2.)  If you are using the VLMs, try disabling packet burst,
+          by putting a PB BUFFERS = 0 statement in your NET.CFG
+          file.  If you do not encounter problems with this
+          configuration change, then investigate Novell's packet
+          burst updates for 3.11, 3.12 and 4.01.  (PBURST.EXE in
+          NOVLIB Library 5.)
+
+Printing to a NetWare Print Queue results in 65,535 copies
+requested:
+
+     1.)  This is a problem with the NE3200 EISA network adapter
+          driver.  In the NET.CFG file, under the "LINK DRIVER
+          NE3200" section, include a "Double Buffer" statement.
+          Note that there are a number of 32-bit EISA adapters
+          that are OEM versions of the NE3200, including the
+          Intel EtherExpress/32.
+
+Controlling Windows Swap Files:
+
+     1.)  The following statements under the [386Enh] section
+          header of SYSTEM.INI control the creation and placement
+          of Windows temporary swap files in 386 enhanced mode:
+
+          Paging=Off (disables paging)
+          MaxPagingFileSize=xxxx (max size of temporary swap file
+          in KB)
+          PagingDrive=d (paging files will be placed in the root
+          of this drive)
+          PagingFile=d:\path\SWAPFILE (Windows 3.1 only: name to
+          use for swap file, overrides PagingDrive entry)
+
+     2.)  The following statement under the [NonWindowsApp]
+          section of SYSTEM.INI controls the placement of swap
+          files created when switching between DOS applications
+          in Windows Standard mode:
+
+          SwapDisk=c:\path
+
+          If this path is not specified, then Windows will
+          default to the directory pointed to by the TEMP DOS
+          environmental variable (which many Windows applications
+          also use for controlling where they create temporary
+          files), or the root directory of your first hard disk
+          if the TEMP variable is not defined.
+
+     3.)  The following statements under the [386Enh] section
+          header of SYSTEM.INI control the location of permanent
+          swap files (Windows 3.1 Only):
+
+          PermSwapDOSDrive=c (drive letter)
+          PermSwapSizeK=xxxx (desired size of permanent swap
+          file)
+
+Accessing more than 3 network printers from Windows:
+
+     1.)  This is only possible using the VLMs (not NETX).
+
+     2.)  In the NET.CFG file, add the following line to the
+          "NetWare DOS Requester" section:
+
+          NETWORK PRINTERS = 9
+
+          (The default is 3.)
+
+     3.)  Use the NWUSER utility to make captures for connections
+          beyond LPT3.  (NetWare 3.x versions of CAPTURE are
+          limited to LPT1 thru LPT3.)
+
+     4.)  Under the [ports] section of your WIN.INI file include
+          lines for these additional printers so that Windows
+          will allow them to be used:
+
+          LPT4:=
+          LPT5:=
+          LPT6:=
+          LPT7:=
+          LPT8:=
+          LPT9:=
+
+Using NWUSER to set the CAPTURE timeout value results in large
+timeout values:
+
+     1.)  There is a bug fixed by NETWARE.DRV v3.02 which caused
+          timeout values to be set incorrectly by the NWUSER
+          utility.  (Typically timeout values would be off by a
+          factor of 18.)
+
+Loading NetWare Windows Drivers when not attached to network
+displays a warning message that the network is not present:
+
+     1.)  Specify "NetWarn=0" under the [windows] section of your
+          WIN.INI file, which tells Windows not to warn you about
+          loading network drivers when no network is present, if
+          you wish to disable this warning.
+
+Printing to a Local Printer locks the system or kills the network
+connection:
+
+     1.)  Using I/O address 360h on many network adapters can
+          conflict wit LPT1 which is often at I/O 378h (NE2000
+          Ethernet cards have a 20h byte I/O address range).
+
+     2.)  In your NET.CFG file, include a LOCAL PRINTERS = X
+          statement, where X is the number of the highest LPT
+          port in your system.
+
+Garbage when printing from Windows to a network printer:
+
+     1.)  Are you running PSERVER?  If you are, then you need to
+          be running PSERVER v1.22 or later.  PSERV6.EXE can be
+          downloaded from NOVLIB Library 6 on CompuServe/NetWire.
+          (Browse on PSERV*.* to find the latest version.)
+
+     2.)  What is your CAPTURE statement that you execute before
+          going into Windows?  You need to specify the NT (no tab
+          expansion) flag, and I recommend a timeout of at least
+          60 seconds (TI=60).  For PostScript printers, NB (no
+          banner) and NFF (no form feed) are also necessary.  NA
+          (no autoendcap) is also required in some Windows
+          configurations.
+
+          The NA flag will cause you some problems if you are
+          printing to LPTx.OS2 (or LPTx.DOS in Windows 3.1)
+          instead of LPTx.  While previous recommendations were
+          to print to LPTx.OS2, these recommendations have been
+          superseded because of updated Novell drivers.
+
+          If you are using all Windows applications, you should
+          be able to set TI=0 to disable the timeout feature, as
+          it is not necessary if applications print through the
+          standard Windows APIs.
+
+          NETX v3.26 has a bug in handling CAPTURE timeout values
+          under some configurations when running with the IPX ODI
+          drivers.  Instead of the timeout occurring after an xx
+          second pause in printing, the timeout occurs xx seconds
+          after printing begins, which can cause considerable
+          printing problems for large print jobs.  NETX v3.31 and
+          later address this problem.
+
+     3.)  In the Windows Control Panel/Printers/Configure menu,
+          disable the print manager if it is not already
+          disabled.  (Since NetWare print jobs are spooled to
+          disk anyway, using the print manager when spooling to a
+          network printer is redundant and can slow things down.)
+
+     4.)  Make sure that you have the latest NetWare drivers for
+          Windows.  For Windows 3.1, the drivers that ship with
+          the product are satisfactory.  For Windows 3.0, you
+          need VNETWARE.386 v2.0, the version that is included in
+          the WINUP*.* file in the NOVFILES file area on
+          CompuServe/NetWire.
+
+     5.)  Type CAPTURE SHOW in a DOS Window after going into
+          Windows, and make sure that these settings are the same
+          as what were set before going into Windows.  A Windows
+          "permanent list" setting can override the CAPTURE that
+          you set before going into Windows.  Check the [network]
+          section of your WIN.INI and delete any statements that
+          reference print captures to avoid confusion.
+
+     6.)  When all else fails, try connecting the printer to the
+          workstation directly to verify that this is indeed a
+          network problem.
+
+     7.)  Are you running RPRINTER on a workstation running
+          Windows in enhanced mode?  If so, see the "RPRINTER and
+          Windows" section of this document.
+
+DOS Environment Missing or Corrupt in DOS windows:
+
+     1.)  Make sure that you have the NetWare drivers for Windows
+          loaded:  "network.drv=netware.drv" under the [boot]
+          section of SYSTEM.INI, and for 386 enhanced mode,
+          "network.drv=vnetware.386" (*vnetbios & vipx.386 may
+          also be specified in this command) under the [386Enh]
+          section of SYSTEM.INI.
+
+     2.)  Verify that your NetWare drivers are up to date.
+          Review "Recommendations for ALL systems" in this
+          document.
+
+Changing directories on a network drive in one window affects all
+windows:
+
+     1.)  If you have NWShareHandles=TRUE in the [NetWare]
+          section of your WIN.INI file, then this is what is
+          causing the problem.
+
+     2.)  If you have a TASK MODE = statement in your NET.CFG (or
+          SHELL.CFG) file, then this is what is causing the
+          problem.
+
+     3.)  If you are using the VLM drivers, then v2.02 and higher
+          of VNETWARE.386 address this problem.
+
+Problems Retrieving Files from Network Drives with Microsoft Word
+for Windows
+
+     1.)  Include the statement "NovellNet=Yes" in the [Microsoft
+          Word] section of your WIN.INI file.
+
+Problems Saving Files on Network Drives with Microsoft Word for
+Windows
+
+     1.)  READ, WRITE, CREATE and DELETE NetWare trustee rights
+          are necessary to save a file that is initially being
+          created.  To replace an existing file also requires
+          MODIFY trustee rights.
+
+Problems running Windows in Enhanced Mode with Thomas Conrad
+Token Ring Cards
+
+     1.)  When using the TCTOKSH ODI driver, in the NET.CFG file,
+          under the "LINK DRIVER TCTOKSH" section, include a
+          "NON_VDS" statement.
+
+RPRINTER and Windows:
+
+     1.)  Third party alternatives may be the best solution.
+          Alternatives include hardware based solutions like
+          network cards installed in laser printers, as well as
+          the Castelle LanPress and Intel NetPort.  Software
+          solutions like LanSpool from Intel or I-Queue! Server
+          from Infinite Technologies are other options.
+
+          I-Queue! Server (IQS) from Infinite Technologies is an
+          additional software based print server solution that is
+          compatible with Windows.  In addition to providing
+          Windows compatibility, IQS has also been shown to
+          prevent hair loss, primarily the type that occurs when
+          you're pulling your hair out trying to make RPRINTER
+          work. <g>  A 30-day trial version of I-Queue! Server
+          can be downloaded under the filename IQS.ZIP in Library
+          4 of the NOVVEN forum on CompuServe.  Or call Infinite
+          Technologies at 410-363-1097 for additional
+          information.  (A subtle plug for my own company. <g>)
+
+          If you want to try RPRINTER, you can also experiment
+          with the following suggestions.
+
+     2.)  Run Windows in Standard Mode (WIN /S) on PCs that are
+          running RPRINTER.
+
+     3.)  Disable the Windows print manager.
+
+     4.)  Try increasing the SPX timeout values specified in your
+          NET.CFG (or SHELL.CFG).  For example:
+
+          SPX ABORT TIMEOUT = 4000
+          SPX LISTEN TIMEOUT = 2500
+
+     5.)  If you are using a PS/2 Model 56 or similar system, run
+          the Reference Diskette, and ensure that DMA Arbitration
+          is disabled.
+
+     6.)  With a newer version of RPRINTER (such as the one in
+          PSERV6.EXE in the NOVLIB Library), try using the -P
+          parameter for polled operation.
+
+     7.)  Review "Recommendations for ALL Systems" to ensure that
+          you have the latest drivers and proper configuration
+          support.
+
+Running Windows 3.1 on a non-dedicated NetWare 2.x File Server
+
+     1.)  This is NOT possible.  The NetWare 2.x operating system
+          requires all available extended memory and exclusive
+          control of protected mode operations.
+
+Windows Application no longer runs after flagging the executable
+file Execute Only
+
+     1.)  The execute-only attribute will not work with any
+          executable files that use internal overlays, which is
+          the inherent design of all Windows applications.  You
+          CANNOT use the execute-only attribute with Windows
+          applications.
+
+Option for Changing Drives and Printers Built into NetWare
+Drivers
+
+      There is an option built into NETWARE.DRV that gives you
+      hot-key access to a dialog that allows you to change drive
+      mappings, print queue assignments, and attach/detach to
+      other servers in your network.
+
+      Under the [options] section of your NETWARE.INI file,
+      include a statement "NetWareHotKey=1".
+
+      Restart Windows and press F6.  Any time you press F6, it
+      will pop-up a selection menu that gives you access to a
+      menu of NetWare functions.  Do not minimize this window or
+      switch away from it while active, or the application that
+      you popped this window up over will no longer be able to
+      receive keystrokes.
+
+Where to Go For More Information
+
+      "Running Windows on NetWare" by Stephen Saxon from M&T
+      Books
+
+      "Networking Windows: NetWare Edition" by Howard Marks,
+      Kristin Marks and Rick Segal from Sams Books
+
+      "Microsoft Windows Resource Kit" from Microsoft
+
+      "Windows 3.1 Secrets" by Brian Livingston
+
+      "NetWare Power Tools for Windows" by Charles Rose from
+      Bantam Books
+
+      NOVCLIENT Section 6 in the NetWire Family of Forums on
+      CompuServe
+
+
++------------------------------------------------------------------+
+| Compiled by Brett Warthen (Infinite Technologies).               |
+|                                                                  |
+| Address comments via e-mail...                                   |
+|                                                                  |
+|         MHS:  Brett @ Infinite (via CSERVE or NHUB)              |
+|  CompuServe:  >MHS:Brett@Infinite                                |
+|               (or 76704,63 in NOVVEN Sec 4 or NOVB Sec 15)       |
+|    Internet:  Brett@Infinite.mhs.compuserve.com                  |
+|         FAX:  +1-410-363-3779                                    |
+|      Others:  > NUL                                              |
+|                                                                  |
+| For Infinite Technologies Product Information, call 1-800-678-   |
+| 1097 or 410-363-1097.                                            |
+|                                                                  |
++------------------------------------------------------------------+
+
+
+Special thanks to all of those who participate and contribute in
+the NetWire forums on CompuServe, including:
+
+Jimmy Wright, Novell
+Scott Christensen, Novell
+Sandra Duncan, Novell
+Jon Hunt, Novell
+Mickey, Dave, Andy, Deb, Rich, Dennis, Peter, Jim, Brad, etc. on
+NetWire
+Charles Rose, Author "NetWare Power Tools for Windows", from
+Bantam Books (1-800-223-6834 x9479 to order)
+Stephen Saxon, Author "Running Windows on NetWare" on M&T Books
+(1-800-533-4372 to order)
+Howard Marks, Co-Author "Networking Windows: NetWare Edition" on
+Sams Books
+Rick Smith, Synergy Computing
+Tom Berdan
+Greg McGovern
+David Chamberlain
+Alan Woolfson
+Barry St. John
+Peter O'Rourke
+Peter Hauptmanns
+Michael Hader
+Jim Reese
+...and the original cast & crew of Gilligan's Island, for their inspiration...
+

@@ -1,0 +1,121 @@
+
+
+Dear SCO Customer,
+
+
+Enclosed find Support Level Supplement (SLS) unx251.  This SLS
+resolves outstanding problems with the SCO UNIX Operating System 
+Release 3.2 Version 2.0 GT.  These problems will be fixed in the 
+upcoming release for computers based on Micro Channel Architecture
+so the supplement will only be required for Industry Standard
+Architecture (AT) based computers.  The Supplement is also not 
+applicable to Operating Systems with SCO MPX installed.  The 
+following problems are resolved by installing SLS unx251:
+
+
+	1) Processes using the plock() system call would hang
+	   indefinitely.  Ps(C) would show the process state 
+	   as "B" when this occured.
+
+	2) Under a rare set of conditions, the in-core inode 
+	   table would appear to end up with an invalid
+	   entry.  In actuality, the problem was with the 
+	   directory name cache scheme which was added to 
+	   improve performance in the SCO UNIX System V/386 
+	   Operating System Release 3.2 Version 2.0 - hence 
+	   fsck would not detect an error.
+
+	3) 14 character directory names could not be renamed.
+
+
+                         INSTALLATION INSTRUCTIONS
+                       =============================
+
+To install SLS unx251, insert the floppy into your floppy drive 
+and, at a root prompt, type:
+
+
+    /etc/xinstall
+        
+You will see the following message:
+
+    For each volume in the distribution set, insert the
+    floppy into the drive, enter 'y', and press <RETURN>.
+    Enter the letter 'n' after the last volume.
+    
+    Should you see the message 'tar: please mount new volume'
+    insert the next floppy, and press <RETURN>.
+
+    First Floppy? (y/n)
+
+At this point enter 'y' and press <RETURN>.  You will then see the 
+message:
+
+    Extracting files...
+    
+If you do not have the LINK kit installed, you will be prompted with 
+the following message:
+
+    You must have the LINK kit installed
+    Do you wish to install the LINK kit now (y/n)
+
+Enter 'y' and then <RETURN>.  You will then be prompted for the 
+diskettes, and the serial number and activation key, all of which 
+were supplied with your SCO UNIX System V/386 Operating System Release 
+3.2 Version 2.0.  Once this process is complete, or if you already 
+have the LINK kit installed on your system, you will then see the 
+following messages:
+
+    Backing up /etc/conf/pack.d/kernel/os.o /etc/conf/pack.d/kernel/os.o.bak
+    Backing up /etc/conf/pack.d/s5/Driver.o /etc/conf/pack.d/s5/Driver.o.bak
+    Backing up /usr/include/sys/nami.h /usr/include/sys/nami.h.bak 
+
+
+    	The UNIX Operating System will now be rebuilt.
+    	This will take a few minutes.  Please wait.
+
+    	Root for this system build is /
+
+    	The UNIX Kernel has been rebuilt.
+
+    Do you want this kernel to boot by default (y/n)
+    
+Enter 'y' followed by <RETURN>.  You will see the message:
+
+    Backing up /unix to /unix.old
+    Installing new /unix
+
+    The kernel environment includes device node files and /etc/inittab.
+    The new kernel may require changes to /etc/inittab or device nodes.
+
+    Do you want the kernel environment rebuilt? (y/n)
+
+Enter 'n' followed by <RETURN> and you will see the message:
+
+    Device node or inittab changes associated with this new kernel have not
+    been made.  These changes should be made by running touch /etc/new_unix;
+    /etc/conf/bin/mkenv.
+
+    Next Floppy? (y/n)
+
+
+
+At this point, enter 'n' followed by <RETURN>.  You must now reboot the 
+system so that the changes made by SLS unx251 can take effect.  To shutdown 
+your system, first make certain that all users are logged off the system; 
+then enter the command:
+
+    shutdown -g0 -y
+
+The fix will take effect when your system is rebooted.  Note that if
+you re-install your LINK kit, you will need to re-install SLS unx251.
+
+
+If you have any questions please call our SCO Customer Services Department at
+(800) 347-4381.  SCO Customer Service is available Monday through Friday 6:00
+A.M. to 5:00 P.M. Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+

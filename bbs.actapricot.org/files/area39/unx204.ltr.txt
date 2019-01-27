@@ -1,0 +1,88 @@
+
+
+Dear SCO Customer:
+
+The enclosed Support Level Supplement (SLS) unx204 contains a driver 
+for the Logitech C9 Busmouse.  The driver corrects problems encountered 
+when trying to install the busmouse in SCO XENIX 386 Operating System 
+Release 2.3.2 and 2.3.3 and SCO UNIX System V/386 Operating System Release 
+3.2.0.
+
+The directions for installation are as follows:
+
+(1) Reboot your system and enter System Maintenance mode.
+
+(2) Insert the enclosed disk in the primary floppy drive and close the door.
+
+(3) For SCO UNIX System V/386 systems, type "/etc/xinstall"
+    For SCO XENIX systems, type "/etc/install"
+
+(4) Answer 'y' to the question "First Floppy? (y/n)".
+
+(5) If the Link Kit it not installed, you will be prompted:
+
+       The Link Kit is only partially installed.
+       Do you wish to install it now? (y/n)
+
+Answer 'y' to this question.  You cannot install SLS unx204 unless
+the Link Kit is installed.  You will need the operating system
+installation disks, along with your operating system serial number and
+activation key to install the Link Kit.  To install the Link Kit, follow 
+the directions at each of the prompts.  The installation of this SLS
+will continue after you have finished installing the Link Kit.
+
+(6) If the Link Kit is installed, you will be asked:
+
+          Do you wish to create a new kernel now? (y/n)
+  
+    Answer 'y' to this question.
+
+(7) After the new kernel is created, you will be asked:
+
+          Do you wish this kernel to boot by default? (y/n)
+
+    Answer 'y' to this question.
+
+(8) If you are on an SCO UNIX System V/386 system, you will be asked:
+
+          Do you wish to rebuild the kernel environment? (y/n)
+
+    Answer 'y' to this question.
+
+(9) Answer 'n' to the question "Next Floppy? (y/n)"
+
+
+   NOTE:  Installation of SLS unx204 on SCO UNIX System V/386 Release 3.2
+          will change the interrupt vector and address of the busmouse to 
+          vector 5, address 0x0.  If your mouse is set up different than this, 
+          be sure to change it by removing it and then adding it again with 
+          mkdev mouse; be sure to use the proper interrupt and address.
+
+   ALSO NOTE: If you are installing this on SCO XENIX 386 Operating System,
+              you must put your mouse at interrupt vector 5 address 0x23C.
+              If there is something else at that vector, the mouse will not 
+              work.  Make sure, after installing SLS unx204, to remove your 
+              mouse and add it again using the mkdev mouse utility.  In 
+              mkdev mouse, you may see the message "System Configuration 
+              Failed try again (y/n)?", answer "y" and the installation will 
+              continue.  If you install SCO VP/ix after installing this SLS, 
+              you will need to re-install the SLS so that the new driver will 
+              be added the vpixio library.
+
+(10) When you are finished, remove the disk from the drive and type
+
+          /etc/haltsys
+
+     at the prompt, to reboot your system.
+
+If you ever have to reinstall your Link Kit, you will have to reinstall SLS 
+unx204 also.
+
+If you have any questions, please call our SCO Customer Services Department 
+at (800) 347-4381.  SCO Customer Service is available Monday through Friday, 
+6 A.M. to 5 P.M., Pacific Time.
+
+We appreciate your business.
+
+SCO Support Services
+
