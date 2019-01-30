@@ -17,19 +17,19 @@ body.inverse a:hover,
 body.inverse a:active { color: skyblue; }
 
 /*
-    286      = 30mm
-    P4 478   = 35mm
-    386      = 37mm
-    486 + OD = 45mm
-    Pentium  = 50mm
-    PODP     = 50mm
-    P3       = 50mm
-    8086     = 52mm
-    P4 423   = 54mm
-    Pent S4  = 55mm
-    PODP 133 = 55mm
-    PPro     = 68mm
-    P II OD  = 82mm
+    286      =  30mm
+    P4 478   =  35mm
+    386      =  37mm
+    486 + OD =  45mm
+    Pentium  =  50mm
+    PODP     =  50mm
+    P3       =  50mm
+    8086     =  52mm
+    P4 423   =  54mm
+    Pent S4  =  55mm
+    PODP 133 =  55mm
+    PPro     =  68mm
+    P II OD  =  82mm
     P II/III = 125mm
     P II     = 139mm
 */
