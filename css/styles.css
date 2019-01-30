@@ -34,18 +34,17 @@ body.inverse a:active { color: skyblue; }
     P II     = 139mm
 */
 
-body.inverse ul.processors li { display: block; }
-body.inverse ul.processors .scroll { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; -webkit-overflow-scrolling: touch; }
-body.inverse ul.processors .scroll::-webkit-scrollbar { display: none; }
-body.inverse ul.processors .scroll img { display: inline-block; }
-body.inverse ul.processors .scroll img.w30 { width: 135px; }
-body.inverse ul.processors .scroll img.w35 { width: 160px; }
-body.inverse ul.processors .scroll img.w37 { width: 170px; }
-body.inverse ul.processors .scroll img.w45 { width: 205px; }
-body.inverse ul.processors .scroll img.w50 { width: 225px; }
-body.inverse ul.processors .scroll img.w52 { width: 235px; }
-body.inverse ul.processors .scroll img.w55 { width: 250px; }
-body.inverse ul.processors .scroll img.w68 { width: 305px; }
-body.inverse ul.processors .scroll img.w82 { width: 370px; }
-body.inverse ul.processors .scroll img.w125 { width: 585px; }
-body.inverse ul.processors .scroll img.w139 { width: 625px; }
+body.inverse .scroll { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+body.inverse .scroll::-webkit-scrollbar { display: none; }
+body.inverse .scroll img { display: inline-block; }
+body.inverse .scroll img.w30 { width: 135px; }
+body.inverse .scroll img.w35 { width: 160px; }
+body.inverse .scroll img.w37 { width: 170px; }
+body.inverse .scroll img.w45 { width: 205px; }
+body.inverse .scroll img.w50 { width: 225px; }
+body.inverse .scroll img.w52 { width: 235px; }
+body.inverse .scroll img.w55 { width: 250px; }
+body.inverse .scroll img.w68 { width: 305px; }
+body.inverse .scroll img.w82 { width: 370px; }
+body.inverse .scroll img.w125 { width: 585px; }
+body.inverse .scroll img.w139 { width: 625px; }
