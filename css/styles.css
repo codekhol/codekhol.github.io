@@ -6,7 +6,9 @@ nav {  box-sizing: border-box; padding: 15px 20px; }
 nav li { display: inline; margin-right: 10px; }
 main { box-sizing: border-box; padding: 20px; }
 
-.books img { height: 160px; margin-right: 20px; margin-bottom: 20px; }
+.books { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; }
+.books::-webkit-scrollbar { display: none; }
+.books img { display: inline-block; height: 160px; margin-right: 20px; margin-bottom: 20px; }
 
 body.inverse { background-color: #0A0A1F; color: #CCC; }
 body.inverse a,
