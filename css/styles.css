@@ -6,7 +6,7 @@ nav {  box-sizing: border-box; padding: 15px 20px; }
 nav li { display: inline; margin-right: 10px; }
 main { box-sizing: border-box; padding: 20px; }
 
-.books { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; }
+.books { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; -webkit-overflow-scrolling: touch; }
 .books::-webkit-scrollbar { display: none; }
 .books img { display: inline-block; height: 160px; margin-right: 20px; margin-bottom: 20px; }
 
@@ -34,7 +34,7 @@ body.inverse a:active { color: skyblue; }
     P II     = 139mm
 */
 body.inverse ul.processors li { display: block; }
-body.inverse ul.processors .scroll { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; }
+body.inverse ul.processors .scroll { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; -webkit-overflow-scrolling: touch; }
 body.inverse ul.processors .scroll::-webkit-scrollbar { display: none; }
 body.inverse ul.processors .scroll img { display: inline-block; }
 body.inverse ul.processors .scroll img.w30 { width: 135px; }
