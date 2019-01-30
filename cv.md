@@ -10,6 +10,8 @@ I am an experienced software engineer with over 14 years of employment record, w
 
 I am a proficient coder in several programming languages encompassing the entire stack from writing robust and efficient back-ends to implementing clear and consistent front-ends. I am particularly interested in designing and implementing cloud-native distributed systems in ♥ Go ♥ Programming Language.
 
+I am familiar with modern application architectures such as Microservices, CQRS and Event Sourcing, MVC, Reactive Programming, and Domain-Driven Design.
+
 ## SKILLS
 
 ### Languages 
@@ -28,7 +30,7 @@ I am a proficient coder in several programming languages encompassing the entire
 ### Mar 2018 - Present, Software Engineer, Utility Warehouse (London, UK)
 &nbsp; &nbsp; &nbsp; &nbsp; `Go` `Kafka` `NATS` `AWS` `Kubernetes` `Docker` `MongoDB` `Elasticsearch` `Terraform` `Prometheus`
 
-- Building Event-Driven Microservices using Go, Kafka, Protocol Buffers, and gRPC. Running on Kubernetes and AWS.
+- Building Event-sourced Microservices using Go, Kafka, Protocol Buffers, and gRPC. Running on Kubernetes and AWS
 
 ### 2014-2018, Technical Lead, Geeks Ltd (London, UK)
 ### 2010-2013, Senior Software Developer, Geeks Ltd (London, UK)
