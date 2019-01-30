@@ -1,11 +1,10 @@
-body { font-family: Inconsolata, monospace;  margin: 0; line-height: 1.5; }
+html, body, ul { padding: 0; margin: 0; }
+body { font-family: Inconsolata, monospace; line-height: 1.5; }
 a, a:visited, a:hover, a:active { color: blue; }
-ul { padding: 0; margin: 0; }
-li { display: inline; }
 
-nav {  box-sizing: border-box; width:800px; margin: auto; padding: 10px 40px; }
-nav li { margin-right: 10px; }
-main { box-sizing: border-box; width:800px; margin: auto; padding-left: 40px; padding-right: 40px; }
+nav {  box-sizing: border-box; padding: 15px 20px; }
+nav li { display: inline; margin-right: 10px; }
+main { box-sizing: border-box; padding: 20px; }
 
 .books img { height: 160px; margin-right: 20px; margin-bottom: 20px; }
 
@@ -32,20 +31,18 @@ body.inverse a:active { color: skyblue; }
     P II/III = 125mm
     P II     = 139mm
 */
-
-body.inverse ul.processors img.w30 { width: 135px; }
-body.inverse ul.processors img.w35 { width: 160px; }
-body.inverse ul.processors img.w37 { width: 170px; }
-body.inverse ul.processors img.w45 { width: 205px; }
-body.inverse ul.processors img.w50 { width: 225px; }
-body.inverse ul.processors img.w52 { width: 235px; }
-body.inverse ul.processors img.w55 { width: 250px; }
-body.inverse ul.processors img.w68 { width: 305px; }
-body.inverse ul.processors img.w82 { width: 370px; }
-body.inverse ul.processors img.w125 { width: 585px; }
-body.inverse ul.processors img.w139 { width: 625px; }
-
-@media screen and (max-width: 1024px) {
-    nav { width: 100%; padding: 10px 20px; }
-    main { width: 100%; padding-left: 20px; padding-right: 20px; }
-}
+body.inverse ul.processors li { display: block; }
+body.inverse ul.processors .scroll { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; }
+body.inverse ul.processors .scroll::-webkit-scrollbar { display: none; }
+body.inverse ul.processors .scroll img { display: inline-block; }
+body.inverse ul.processors .scroll img.w30 { width: 135px; }
+body.inverse ul.processors .scroll img.w35 { width: 160px; }
+body.inverse ul.processors .scroll img.w37 { width: 170px; }
+body.inverse ul.processors .scroll img.w45 { width: 205px; }
+body.inverse ul.processors .scroll img.w50 { width: 225px; }
+body.inverse ul.processors .scroll img.w52 { width: 235px; }
+body.inverse ul.processors .scroll img.w55 { width: 250px; }
+body.inverse ul.processors .scroll img.w68 { width: 305px; }
+body.inverse ul.processors .scroll img.w82 { width: 370px; }
+body.inverse ul.processors .scroll img.w125 { width: 585px; }
+body.inverse ul.processors .scroll img.w139 { width: 625px; }
