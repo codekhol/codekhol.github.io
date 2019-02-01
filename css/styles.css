@@ -1,20 +1,14 @@
 html, body, ul { padding: 0; margin: 0; }
-body { font-family: Inconsolata, monospace; line-height: 1.5; }
-a, a:visited, a:hover, a:active { color: blue; }
-
-nav {  box-sizing: border-box; padding: 15px 20px; }
+body { font-family: codepage437, monospace; line-height: 1.5; background-color: #0A0A1F; color: #CCC; }
+a, a:visited, a:hover, a:active { color: skyblue; }
+h1, h2 { font-weight: normal; }
+nav { box-sizing: border-box; padding: 15px 20px; }
 nav li { display: inline; margin-right: 10px; }
-main { box-sizing: border-box; padding: 20px; }
+main { box-sizing: border-box; padding:0px 20px; }
 
 .books { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; -webkit-overflow-scrolling: touch; }
 .books::-webkit-scrollbar { display: none; }
 .books img { display: inline-block; height: 160px; margin-right: 20px; margin-bottom: 20px; }
-
-body.inverse { background-color: #0A0A1F; color: #CCC; }
-body.inverse a,
-body.inverse a:visited,
-body.inverse a:hover,
-body.inverse a:active { color: skyblue; }
 
 /*
     286      =  30mm
@@ -34,17 +28,25 @@ body.inverse a:active { color: skyblue; }
     P II     = 139mm
 */
 
-body.inverse .scroll { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; -webkit-overflow-scrolling: touch; }
-body.inverse .scroll::-webkit-scrollbar { display: none; }
-body.inverse .scroll img { display: inline-block; }
-body.inverse .scroll img.w30 { width: 135px; }
-body.inverse .scroll img.w35 { width: 160px; }
-body.inverse .scroll img.w37 { width: 170px; }
-body.inverse .scroll img.w45 { width: 205px; }
-body.inverse .scroll img.w50 { width: 225px; }
-body.inverse .scroll img.w52 { width: 235px; }
-body.inverse .scroll img.w55 { width: 250px; }
-body.inverse .scroll img.w68 { width: 305px; }
-body.inverse .scroll img.w82 { width: 370px; }
-body.inverse .scroll img.w125 { width: 585px; }
-body.inverse .scroll img.w139 { width: 625px; }
+.museum .scroll { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+.museum .scroll::-webkit-scrollbar { display: none; }
+.museum .scroll img { display: inline-block; }
+.museum .scroll img.w30 { width: 135px; }
+.museum .scroll img.w35 { width: 160px; }
+.museum .scroll img.w37 { width: 170px; }
+.museum .scroll img.w45 { width: 205px; }
+.museum .scroll img.w50 { width: 225px; }
+.museum .scroll img.w52 { width: 235px; }
+.museum .scroll img.w55 { width: 250px; }
+.museum .scroll img.w68 { width: 305px; }
+.museum .scroll img.w82 { width: 370px; }
+.museum .scroll img.w125 { width: 585px; }
+.museum .scroll img.w139 { width: 625px; }
+
+@font-face {
+    font-family: 'codepage437';
+    src: url('../font/px437_ibm_vga9.woff2') format('woff2'),
+         url('../font/px437_ibm_vga9.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
