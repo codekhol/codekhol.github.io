@@ -30,18 +30,22 @@ main { box-sizing: border-box; padding:0px 20px; }
 
 .museum .scroll { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; -webkit-overflow-scrolling: touch; }
 .museum .scroll::-webkit-scrollbar { display: none; }
-.museum .scroll img { display: inline-block; }
-.museum .scroll img.w30 { width: 135px; }
-.museum .scroll img.w35 { width: 160px; }
-.museum .scroll img.w37 { width: 170px; }
-.museum .scroll img.w45 { width: 205px; }
-.museum .scroll img.w50 { width: 225px; }
-.museum .scroll img.w52 { width: 235px; }
-.museum .scroll img.w55 { width: 250px; }
-.museum .scroll img.w68 { width: 305px; }
-.museum .scroll img.w82 { width: 370px; }
-.museum .scroll img.w125 { width: 585px; }
-.museum .scroll img.w139 { width: 625px; }
+
+.museum .scroll .container { display: inline-block; position: relative; }
+.museum .scroll .container img:last-child { position: absolute; left: 0; -webkit-transition: opacity 0.3s ease-in-out; -moz-transition: opacity 0.3s ease-in-out; -o-transition: opacity 0.3s ease-in-out; transition: opacity 0.3s ease-in-out; }
+.museum .scroll .container img:hover { opacity: 0; }
+
+.museum .w30 { width: 135px; }
+.museum .w35 { width: 160px; }
+.museum .w37 { width: 170px; }
+.museum .w45 { width: 205px; }
+.museum .w50 { width: 225px; }
+.museum .w52 { width: 235px; }
+.museum .w55 { width: 250px; }
+.museum .w68 { width: 305px; }
+.museum .w82 { width: 370px; }
+.museum .w125 { width: 585px; }
+.museum .w139 { width: 625px; }
 
 @font-face {
     font-family: 'codepage437';
