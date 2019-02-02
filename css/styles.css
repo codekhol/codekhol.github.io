@@ -1,8 +1,8 @@
 html, body, ul { padding: 0; margin: 0; }
-body { font-family: codepage437, monospace; line-height: 1.5; background-color: #0A0A1F; color: #CCC; }
+body { font-family: codepage437, monospace; font-size: 18px; line-height: 1.5; background-color: #0A0A1F; color: #CCC; }
 a, a:visited, a:hover, a:active { color: skyblue; }
 h1, h2 { font-weight: normal; }
-nav { box-sizing: border-box; padding: 15px 20px; }
+nav { box-sizing: border-box; padding: 10px 20px; }
 nav li { display: inline; margin-right: 10px; }
 main { box-sizing: border-box; padding:0px 20px; }
 
