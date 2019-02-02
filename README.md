@@ -1,2 +1,2 @@
-# https://hamid6.github.io
-my homepage on github pages 
+# my homepage on github pages
+https://hamid6.github.io
