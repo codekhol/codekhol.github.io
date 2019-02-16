@@ -15,19 +15,19 @@ I am familiar with modern application architectures such as Microservices, Event
 ## SKILLS
 
 ### Languages
-&nbsp; &nbsp; &nbsp; &nbsp; `Go` `C#` `JavaScript` `TypeScript` `Visual Basic`
+`Go` `C#` `JavaScript` `TypeScript` `Visual Basic`
 
 ### Databases
-&nbsp; &nbsp; &nbsp; &nbsp; `SQL Server` `Oracle` `MongoDB` `Elasticsearch` `Redis` `etcd`
+`SQL Server` `Oracle` `MongoDB` `Elasticsearch` `Redis` `etcd`
 
 ### Messaging
-&nbsp; &nbsp; &nbsp; &nbsp; `Kafka` `NATS` `gRPC` `Protocol Buffers` `JSON` `XML`
+`Kafka` `NATS` `gRPC` `Protocol Buffers` `JSON` `XML`
 
 ### Operations
-&nbsp; &nbsp; &nbsp; &nbsp; `AWS` `Kubernetes` `Docker` `CI/CD` `Git` `Terraform` `Prometheus`
+`AWS` `Kubernetes` `Docker` `CI/CD` `Git` `Terraform` `Prometheus`
 
 ### Web
-&nbsp; &nbsp; &nbsp; &nbsp; `ASP.NET (WebForms/MVC)` `HTML` `CSS` `LESS` `SASS` `Chrome Extensions` `Selenium/WebDriver`
+`ASP.NET (WebForms/MVC)` `HTML` `CSS` `LESS` `SASS` `Chrome Extensions` `Selenium/WebDriver`
 
 ## EXPERIENCE
 
