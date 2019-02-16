@@ -1,5 +1,3 @@
-_Last update: February 2019_
-
 # Hamid Ghader
 
 [hamid.ghader@live.com](mailto:hamid.ghader@live.com)\
@@ -15,7 +13,7 @@ I am familiar with modern application architectures such as Microservices, Event
 ## SKILLS
 
 ### Languages
-`Go` `C#` `JavaScript` `TypeScript` `Visual Basic`
+`Go` `C#` `JavaScript/TypeScript` `Visual Basic`
 
 ### Databases
 `SQL Server` `Oracle` `MongoDB` `Elasticsearch` `Redis` `etcd`
@@ -62,3 +60,7 @@ I am familiar with modern application architectures such as Microservices, Event
 
 ### BSc Applied Computer Software
 - 2004-2007, Shamsipour Institute of Technology (Tehran, Iran)
+
+---
+_Last update: February 2019_
+
