@@ -30,7 +30,7 @@ I am familiar with modern application architectures such as Microservices, Event
 ## EXPERIENCE
 
 ### Mar 2018 - Present, Software Engineer, Utility Warehouse (London, UK)
-- Building Event Sourced Microservices using Go, Kafka, Protocol Buffers, and gRPC. Running on Kubernetes and AWS.
+- Building Event Sourced Microservices using Go, Kafka, Protocol Buffers, and gRPC. Running in Kubernetes and AWS.
 
 ### 2014-2018, Technical Lead, Geeks Ltd (London, UK)
 - Successfully delivered numerous mission-critical client projects on time and on budget.
@@ -64,3 +64,4 @@ I am familiar with modern application architectures such as Microservices, Event
 ---
 _Last update: February 2019_
 
+EOF
