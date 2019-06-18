@@ -4,16 +4,16 @@
 [linkedin.com/in/hghader](https://www.linkedin.com/in/hghader)
 
 ## ABOUT
-I am an experienced software engineer with over 14 years of employment record, worked as a Technical Lead and as a Software Developer. I have been involved in numerous successful projects, responsible for a variety of duties, including providing technical advice, architecting, designing, and coding software systems. 
+I am an experienced software engineer with over 14 years of employment record, worked as a Technical Lead and Software Developer in numerous successful projects. I have been responsible for a variety of duties, including design and development of software systems, as well as project planning and team mentoring.
 
-I am a proficient coder in several programming languages encompassing the entire stack from writing robust and efficient back-ends to implementing clear and consistent front-ends. I am particularly interested in designing and implementing cloud-native distributed systems in ♥ Go ♥ Programming Language.
+I am a proficient coder in several programming languages encompassing the entire stack from writing robust and efficient back-ends to implementing clear and consistent front-ends. I am particularly interested in writing cloud-native distributed systems in ♥ Go ♥ Programming Language.
 
-I am familiar with modern application architectures such as Microservices, Event Sourcing and CQRS, MVC, Reactive Programming, and Domain-Driven Design.
+I am familiar with modern application architectures, including Microservices, Event Sourcing and CQRS, MVC, Reactive Programming, and Domain-Driven Design.
 
 ## SKILLS
 
 ### Languages
-`Go` `C#` `JavaScript/TypeScript` `Visual Basic`
+`Go` `C#` `JavaScript/TypeScript/Node.js` `Visual Basic`
 
 ### Databases
 `SQL Server` `Oracle` `MongoDB` `Elasticsearch` `Redis` `etcd`
@@ -25,7 +25,7 @@ I am familiar with modern application architectures such as Microservices, Event
 `AWS` `Kubernetes` `Docker` `CI/CD` `Git` `Terraform` `Prometheus`
 
 ### Web
-`ASP.NET (WebForms/MVC)` `HTML` `CSS` `LESS` `SASS` `Chrome Extensions` `Selenium/WebDriver`
+`ASP.NET (WebForms/MVC)` `Express.js` `HTML` `CSS/LESS/SASS` `Chrome Extensions` `Selenium/WebDriver`
 
 ## EXPERIENCE
 
@@ -34,7 +34,7 @@ I am familiar with modern application architectures such as Microservices, Event
 
 ### 2014-2018, Technical Lead, Geeks Ltd (London, UK)
 - Successfully delivered numerous mission-critical client projects on time and on budget.
-- In charge of technical direction of projects, transforming client requirements to technical concepts, making architectural and design decisions, and reporting to directors.
+- In charge of technical direction of projects, transforming client requirements into technical concepts, making architectural and design decisions, and reporting to directors.
 - Interacted with PMs and BAs in UX design/wireframing process, project/sprint planning, providing estimations, and task delegation.
 - Mentoring developers, pair programming, code review, sharing knowledge, and applying best practices (Design Patterns, SOLID, KISS, and DRY).
 
