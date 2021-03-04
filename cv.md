@@ -18,7 +18,7 @@ I am a proficient coder in several programming languages. I am familiar with mod
 
 **Operations:** `AWS` `Kubernetes` `Docker` `CI/CD` `Git` `Terraform` `Prometheus` `Grafana`
 
-**Web:** `ASP.NET (WebForms/MVC)` `Express.js` `HTML` `CSS/LESS/SASS` `Chrome Extensions` `Selenium WebDriver`
+**Web:** `ASP.NET (WebForms/MVC)` `Express.js` `HTML` `CSS` `Chrome Extensions` `Selenium WebDriver`
 
 ## EXPERIENCE
 
@@ -39,14 +39,8 @@ I am a proficient coder in several programming languages. I am familiar with mod
 - Involved in day-to-day coding, debugging, testing, deployment, and maintenance of client projects.
 - Contributed to company's growth through knowledge sharing and training new developers.
 
-### 2009, Senior Software Developer, Saman Electronic Payment (Tehran, Iran)
-- Implemented a Windows Service to replicate large volume of financial transactions from Oracle to SQL Server for reporting purposes.
-
-### 2005-2008, Software Developer, Nofasoft (Tehran, Iran)
+### 2004-2009, Software Developer, Various companies (Tehran, Iran)
 - Provided a software solution to Cutting Stock Problem (CSP) using Genetic Algorithms, used by aluminium door and window makers to minimise their cutting waste.
-- Pleased to offer my own developed O/R Mapping tool to the company.
-
-### 2004, Software Developer, Mahfa Co (Tehran, Iran)
 - Redeveloped legacy MS Access accounting and stock management systems using C# and SQL Server with a focus on improving user experience.
 
 ## EDUCATION
