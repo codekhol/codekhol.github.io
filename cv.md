@@ -10,20 +10,15 @@ I am a proficient coder in several programming languages. I am familiar with mod
 
 ## SKILLS
 
-### Languages
-`Go` `C#` `JavaScript/TypeScript` `Visual Basic`
+**Languages:** `Go` `C#` `JavaScript/TypeScript` `Visual Basic`
 
-### Databases
-`PostgreSQL` `SQL Server` `MongoDB` `Oracle` `Elasticsearch` `Redis`
+**Databases:** `PostgreSQL` `SQL Server` `MongoDB` `Oracle` `Elasticsearch` `Redis`
 
-### Messaging
-`Kafka` `NATS` `gRPC` `Protocol Buffers` `RESTful API` `JSON` `XML`
+**Messaging:** `Kafka` `NATS` `gRPC` `Protocol Buffers` `RESTful API` `JSON` `XML`
 
-### Operations
-`AWS` `Kubernetes` `Docker` `CI/CD` `Git` `Terraform` `Prometheus` `Grafana`
+**Operations:** `AWS` `Kubernetes` `Docker` `CI/CD` `Git` `Terraform` `Prometheus` `Grafana`
 
-### Web
-`ASP.NET (WebForms/MVC)` `Express.js` `HTML` `CSS/LESS/SASS` `Chrome Extensions` `Selenium WebDriver`
+**Web:** `ASP.NET (WebForms/MVC)` `Express.js` `HTML` `CSS/LESS/SASS` `Chrome Extensions` `Selenium WebDriver`
 
 ## EXPERIENCE
 
