@@ -50,7 +50,7 @@ I am a proficient coder in several programming languages. I am familiar with mod
 
 ### BSc Applied Computer Software
 - 2004-2007, Shamsipour Institute of Technology (Tehran, Iran)
-
+---
 Last update: March 2021
 
 EOF
