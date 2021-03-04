@@ -18,7 +18,7 @@ I am a proficient coder in several programming languages. I am familiar with mod
 
 **Operations:** `AWS` `Kubernetes` `Docker` `CI/CD` `Git` `Terraform` `Prometheus` `Grafana`
 
-**Web:** `ASP.NET (WebForms/MVC)` `Express.js` `HTML` `CSS` `Chrome Extensions` `Selenium WebDriver`
+**Web:** `ASP.NET (WebForms/MVC)` `HTML` `CSS` `Chrome Extensions` `Selenium WebDriver`
 
 ## EXPERIENCE
 
