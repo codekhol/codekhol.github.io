@@ -27,7 +27,7 @@ I am a proficient coder in several programming languages. I am familiar with mod
 
 ## EXPERIENCE
 
-### Sep 2019 - Present, Senior Software Engineer, Uswitch (London, UK)
+### Aug 2019 - Present, Senior Software Engineer, Uswitch (London, UK)
 - Main contributor of the Energy Savings Calculator. A highly concurrent service written in Go that makes millions of comparisons everyday to help customers save money on their bills. Drives 15% of the company's energy comparison revenue.
 - Contributed in migrating over 25 services between Kubernetes clusters with 100% availability in mind.
 - Worked on the Customer Store. A central repository to store all customers data with an aim to simplify data analysis, GDPR processing, and cross-selling. 
