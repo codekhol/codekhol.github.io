@@ -4,7 +4,7 @@
 [linkedin.com/in/hghader](https://www.linkedin.com/in/hghader)
 
 ## ABOUT
-I am a software engineer with 15+ years of experience in delivering software systems for a wide range of business domains. I have worked as a software developer and a technical lead, involved in different stages of software development from inception to delivery.
+I am a software engineer with 15+ years of experience in delivering software systems for a wide range of business domains. I have worked as a developer and a technical lead, involved in different stages of software development from inception to delivery.
 
 I am a proficient coder in several programming languages. I am familiar with modern software architectures and concepts, including Microservices, Event Sourcing and CQRS, MVC, Reactive Programming, and Domain-driven design. I am particularly interested in design and development of Cloud-native distributed systems.
 
