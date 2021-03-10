@@ -33,7 +33,7 @@ I am a proficient coder in several programming languages. I am familiar with mod
 ### 2014-2018, Technical Lead, Geeks Ltd (London, UK)
 - Successfully delivered numerous mission-critical client projects on time and on budget.
 - Involved in full software development life-cycle of multiple projects. Interacted with PMs and BAs in UX design/wireframing process, project/sprint planning, providing estimations, and task delegation.
-- In charge of technical direction of projects, transforming client requirements into technical concepts, making architectural and design decisions, and reporting to directors.
+- In charge of technical direction of projects, making architectural and design decisions, providing technical support, and reporting to directors.
 
 ### 2010-2013, Senior Software Developer, Geeks Ltd (London, UK)
 - Involved in day-to-day coding, debugging, testing, deployment, and maintenance of client projects.
