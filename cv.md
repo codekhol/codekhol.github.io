@@ -31,12 +31,11 @@ I am a proficient coder in several programming languages. I am familiar with mod
 - As part of the Energy Team, delivered various microservices using Go, Kafka, Protocol Buffers, and gRPC for the new Smart Metering platform.
 
 ### 2014-2018, Technical Lead, Geeks Ltd (London, UK)
-- Successfully delivered numerous mission-critical client projects on time and on budget.
 - Involved in full software development life-cycle of multiple projects. Interacted with PMs and BAs in UX design/wireframing process, project/sprint planning, providing estimations, and task delegation.
 - In charge of technical direction of projects, making architectural and design decisions, providing technical support, and reporting to directors.
 
 ### 2010-2013, Senior Software Developer, Geeks Ltd (London, UK)
-- Involved in day-to-day coding, debugging, testing, deployment, and maintenance of client projects.
+- Successfully delivered several bespoke client projects on time and on budget.
 - Contributed to company's growth through knowledge sharing and training new developers.
 
 ### 2004-2009, Software Developer, Various companies (Tehran, Iran)
