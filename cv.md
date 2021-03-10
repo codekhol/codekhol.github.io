@@ -27,6 +27,8 @@ I am a proficient coder in several programming languages. I am familiar with mod
 - Contributed in migrating over 25 services between Kubernetes clusters with 100% availability in mind.
 - Worked on the Customer Store. A central repository to store all customers data with an aim to simplify data analysis, GDPR processing, and cross-selling. 
 
+<div style="page-break-after: always"></div>
+
 ### 2018 - 2019, Software Engineer, Utility Warehouse (London, UK)
 - As part of the Energy Team, delivered various microservices using Go, Kafka, Protocol Buffers, and gRPC for the new Smart Metering platform.
 
